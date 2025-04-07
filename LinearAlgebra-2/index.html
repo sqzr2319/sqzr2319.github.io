@@ -19,15 +19,15 @@
   <meta name="author" content="sqzr2319">
   <meta name="keywords" content="">
   
-    <meta name="description" content="大一下学期微积分A(2)的复习笔记，目前更新至含参积分。">
+    <meta name="description" content="大一下学期线性代数(2)的复习笔记，目前更新至 $\mathrm{Jordan}$ 标准形。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微积分A(2)">
-<meta property="og:url" content="https://sqzr2319.github.io/Calculus-A2/index.html">
+<meta property="og:title" content="线性代数(2)">
+<meta property="og:url" content="https://sqzr2319.github.io/LinearAlgebra-2/index.html">
 <meta property="og:site_name" content="sqzr2319&#39;s blog">
-<meta property="og:description" content="大一下学期微积分A(2)的复习笔记，目前更新至含参积分。">
+<meta property="og:description" content="大一下学期线性代数(2)的复习笔记，目前更新至 $\mathrm{Jordan}$ 标准形。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-04-07T04:04:23.000Z">
-<meta property="article:modified_time" content="2025-04-07T09:31:59.226Z">
+<meta property="article:published_time" content="2025-04-07T08:45:51.000Z">
+<meta property="article:modified_time" content="2025-04-07T09:33:15.552Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="数学">
 <meta property="article:tag" content="大一下">
@@ -35,7 +35,7 @@
   
   
   
-  <title>微积分A(2) - sqzr2319&#39;s blog</title>
+  <title>线性代数(2) - sqzr2319&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -215,7 +215,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="微积分A(2)"></span>
+            <span id="subtitle" data-typed-text="线性代数(2)"></span>
           
         </div>
 
@@ -226,8 +226,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-04-07 12:04" pubdate>
-          2025年4月7日 中午
+        <time datetime="2025-04-07 16:45" pubdate>
+          2025年4月7日 下午
         </time>
       </span>
     
@@ -238,7 +238,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.1k 字
+          825 字
         
       </span>
     
@@ -249,7 +249,7 @@
         
         
         
-          18 分钟
+          7 分钟
         
       </span>
     
@@ -286,141 +286,72 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">微积分A(2)</h1>
+            <h1 id="seo-header">线性代数(2)</h1>
             
             
               <div class="markdown-body">
                 
-                <font face="霞鹜文楷等宽">
-
-<p>大一下学期微积分A(2)的复习笔记，目前更新至含参积分。</p>
+                <p>大一下学期线性代数(2)的复习笔记，目前更新至 $\mathrm{Jordan}$ 标准形。</p>
 <span id="more"></span>
 
-<h2 id="一、多元微分"><a href="#一、多元微分" class="headerlink" title="一、多元微分"></a>一、多元微分</h2><ol>
-<li>赋范线性空间 $\mathbb R^n$<ol>
-<li>$\mathbb R^n$ 中非空的道路连通的开集称为开区域，<strong>开区域的闭包</strong>称为闭区域</li>
-<li>道路联通的闭集<strong>不一定</strong>是闭区域</li>
-<li>凸区域：$\forall x,y\in\Omega,\lambda x+(1-\lambda)y\in\Omega$</li>
+<font face="霞鹜文楷等宽">
+
+<h2 id="一、基本定义"><a href="#一、基本定义" class="headerlink" title="一、基本定义"></a>一、基本定义</h2><ol>
+<li>复数<ol>
+<li>矩阵形式：$T(a+bi)&#x3D;\begin{pmatrix} a &amp; -b \ b &amp; a \end{pmatrix}$，$T$ 保持加法和乘法</li>
+<li>复数的幂：整数幂唯一，有理数 $\frac{p}{q}$ 次幂有$p$个，无理数次幂无穷多</li>
+<li>$\mathrm{Hermite}$ 共轭：$A^H&#x3D;\overline{A^T}&#x3D;\overline{A}^T$</li>
 </ol>
 </li>
-<li>极限与连续<ol>
-<li>若 $x_0$ 是 $\Omega$ 的孤立点，则 $f$ 在 $x_0$ 处连续</li>
-<li>在<strong>开区域</strong>中定义的初等函数处处连续</li>
-<li>$|f(x)|\le M|g(x)|$，则 $f(x)&#x3D;O(g(x))\Leftrightarrow g(x)&#x3D;\Omega(f(x))$</li>
-<li>$f$ 为连续函数当且仅当开集的原像为开集</li>
-</ol>
-</li>
-<li>导数与微分<ol>
-<li>不可微时即使偏导函数都存在也不存在梯度</li>
-<li>隐函数定理(1)：$\frac{\partial F}{\partial y}(x_0,y_0)$ 可逆 $\Rightarrow \frac{\partial y}{\partial x}&#x3D;-(\frac{\partial F}{\partial y})^{-1}\frac{\partial F}{\partial x}$</li>
-<li>隐函数定理(2)：$\frac{\partial y}{\partial x_i}&#x3D;-\frac{\frac{\partial F}{\partial x_i}}{\frac{\partial F}{\partial y}}$</li>
-<li>逆映射定理：$J(F)|_{x_0}$ 可逆 $\Rightarrow J(f^{-1})&#x3D;(J(f))^{-1}$</li>
-</ol>
-</li>
-<li>$\mathrm{Taylor}$ 公式<ol>
-<li>$\displaystyle f(x)&#x3D;\sum_{k&#x3D;0}^{n}\frac{1}{k!}(h_1\frac{\partial}{\partial x_1}+h_2\frac{\partial}{\partial x_2}+\cdots+h_m\frac{\partial}{\partial x_m})^kf(x_0)+o(|x-x_0|^n)$</li>
-<li>$f(x)&#x3D;f(x_0)+J_f(x_0)\cdot(x-x_0)+\frac{1}{2}(x-x_0)^T H_f(x_0)(x-x_0)+o(||x-x_0||^2)$</li>
-</ol>
-</li>
-<li>空间曲线与曲面<ol>
-<li>详见<a href="https://sqzr2319.github.io/LinearAlgebra-1">线性代数(1)</a></li>
-<li>$z&#x3D;f(x,y)$ 法向量：$(-f’x,-f’y,1)$</li>
-<li>$F(x,y,z)&#x3D;0$ 法向量：$\nabla F$</li>
-</ol>
-</li>
-<li>无条件极值与条件极值<ol>
-<li>驻点 $+$ $\mathrm{Hesse}$ 矩阵正定或负定 $\Rightarrow$ 无条件极值（反之不成立）</li>
-<li>拉乘求得的解一定是条件最值但不一定是极值（需验算 $\mathrm{Hesse}$ 矩阵）</li>
-<li>存在函数 $f(x,y)&#x3D;x^2+y^2(1-x)^3$ 使得函数在 $\mathbb R^2$ 上一阶连续可微且存在唯一极值点，但该极值点不是最值点</li>
-</ol>
-</li>
-<li>例题<ol>
-<li>$(2021)$ 已知函数 $f(x,y)$ 在 $(1,1)$ 处可微，且 $f(1,1)&#x3D;1,f’_x(1,1)&#x3D;2,f’_y(1,1)&#x3D;3$，设 $g(x)&#x3D;f(x,f(x,x))$，求 $g’(1)$</li>
-<li>$(2021)$ 已知 $(axy^3-y^2\cos x)\mathrm{d}x+(1+by\sin x+3x^2y^2)\mathrm{d}y$ 为某一函数 $f(x,y)$ 的全微分，求 $a,b$ 的值及 $f(x,y)$</li>
-<li>$(2023)$ 设函数 $f(x,y)$ 在 $\mathbb R^2$ 上二次连续可微，对 $\forall \theta \in \mathbb R$，令 $g_\theta(t)&#x3D;f(t\cos\theta,t\sin\theta)$，假设 $\frac{\mathrm{d}g_\theta(t)}{\mathrm{d}t}\vert_{t&#x3D;0}&#x3D;0$ 且 $\frac{\mathrm{d}^2g_\theta(t)}{\mathrm{d}t^2}\vert_{t&#x3D;0}\gt 0,\forall \theta \in \mathbb R$，证明函数 $f(x,y)$ 在点 $(0,0)$ 处取得极小值</li>
-<li>$(2023)$ 根据隐函数定理，证明方程组 $\begin{cases}x^2+y^3&#x3D;2z^3\\x+y+z&#x3D;3\end{cases}$ 在点 $(1,1,1)$ 附近确定了两个 $C^{\infty}$ 类隐函数 $y&#x3D;y(x),z&#x3D;z(x)$，并证明隐函数 $z&#x3D;z(x)$ 在 $x&#x3D;1$ 处取得极值</li>
-<li>$(2024)$ 设可微函数 $u(x,y)$ 满足 $u(x,x^2)&#x3D;1$ 且 $\frac{\partial u}{\partial x}(x,x^2)&#x3D;x$，求 $\frac{\partial u}{\partial y}(x,x^2)$</li>
-<li>$(2023)$ 已知椭球面 $\frac{x^2}{8}+\frac{y^2}{4}+\frac{z^2}{2}&#x3D;1$ 与平面 $x+2y+2z&#x3D;0$ 的交线是椭圆，其在 $Oxy$ 平面上的投影曲线 $\Tau$ 也是椭圆，求 $\Tau$ 的四个顶点坐标</li>
-<li>$(3.15)$ 在方程 $(xy+z)\frac{\partial z}{\partial x}+(1-y^2)\frac{\partial z}{\partial y}&#x3D;x+yz$ 中作代换 $u&#x3D;yz-x,v&#x3D;xz-y,w&#x3D;xy-z$，其中视 $w$ 是 $u,v$ 的函数，求代换后的方程</li>
-<li>$(3.26)$ 曲线 $S$ 由方程 $ax+by+cz&#x3D;G(x^2+y^2+z^2)$ 确定，试证明：曲线 $S$ 上任一点的法线与某定直线相交</li>
-<li>$(3.27)$ 求两曲面 $F(x,y,z)&#x3D;0$ 和 $G(x,y,z)&#x3D;0$ 的交线在 $xy$ 平面上的投影曲线的切线方程</li>
-<li>$(4.34)$ 证明：椭球面 $\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}&#x3D;1$ 与平面 $Ax+By+Cz&#x3D;0$ 相交所截的椭圆面积为 $S&#x3D;\pi abc\sqrt{\frac{A^2+B^2+C^2}{A^2a^2+B^2b^2+C^2c^2}}$</li>
-</ol>
-</li>
-<li>证明题<ol>
-<li>$(2021)$ 已知函数 $f(x,y)$ 对每个变量 $x,y$ 分别连续，且对每个固定的 $x$，函数 $f(x,y)$ 对 $y$ 单调，证明：$f(x,y)$ 作为二元函数是连续函数</li>
-<li>$(2023)$ 对在 $\mathbb R^2$ 上连续可微的函数 $g(x,y)$，假设曲线 $\{(x,y)\in \mathbb R^2|G(x,y)&#x3D;0\}$ 具有无穷大符号 $\infty$ 的形状，问函数 $g(x,y)$ 在 $\mathbb R^2$ 上至少有多少个驻点？并证明你的结论。</li>
-<li>$(2024)$ 设 $D\subset\mathbb R^2$ 是一个非空有界闭区域，$f$ 是 $D$ 上的连续函数，证明：至多只有一个函数 $u(x,y)$ 在 $D$ 上连续，在 $D$ 的内部 $\mathring D$ 为 $C^2$ 类，且满足 $\begin{cases} u’’_{xx}+u’’_{yy}&#x3D;e^u,(x,y)\in \mathring D\\u&#x3D;f,(x,y) \in \partial D\end{cases}$</li>
-<li>$(2024)$ 设 $K$ 是 $\mathbb R^k$ 的非空有界闭子集，函数 $f:\mathbb R^m\times K\to \mathbb R$ 连续，记 $\displaystyle g(\mathrm{x})&#x3D;\min_{\mathrm{y}\in K}f(\mathrm{x},\mathrm{y})$，证明：$g:\mathbb R^m\to \mathbb R$ 连续</li>
-<li>$(2.12)$ 设 $\frac{\partial f}{\partial x}(x_0,y_0)$ 存在，$\frac{\partial f}{\partial y}(x,y)$ 连续，证明：$f(x,y)$ 在点 $(x_0,y_0)$ 处可微</li>
-<li>$(2.29)$ 设 $f’_x,f’_y$ 在点 $(x_0,y_0)$ 的某邻域内存在且 $f’’_{xy}$ 在 $(x_0,y_0)$ 连续，证明：$f’’_{yx}(x_0,y_0)$ 存在且 $f’’_{xy}(x_0,y_0)&#x3D;f’’_{yx}(x_0,y_0)$</li>
-<li>$(3.11)$ 设 $u&#x3D;f(z)$，其中 $z$ 是由方程 $z&#x3D;x+y\varphi(z)$ 所定义的变量为 $x,y$ 的隐函数，求证：$\displaystyle \frac{\partial^n u}{\partial y^n}&#x3D;\frac{\partial^{n-1}}{\partial x^{n-1}}\left((\varphi(z))^n\frac{\partial u}{\partial x}\right)$，其中 $\varphi(z)$ 无穷次可微</li>
-<li>$(4.11)$ $f$ 在 $\mathbb R^2$ 上一阶连续可微，且 $\forall (x,y)\neq (0,0)$，有 $xf’_x(x,y)+yf’_y(x,y)\gt 0$，证明：原点是 $f$ 的唯一极小值点，且 $\displaystyle \lim_{(x,y)\to (0,0)}\frac{f(x,y)-f(0,0)}{\sqrt{x^2+y^2}}&#x3D;0$</li>
-<li>$(4.13)$ 已知 $D&#x3D;\{(x,y):0\lt x\lt 1,0\lt y\lt 1\},f(x,y)&#x3D;ax^2+bxy+cy^2+dx+ey$，且 $\forall (x,y)\in \partial D$，有 $f(x,y)\le 0$，证明：$\forall (x,y)\in D$，有 $f(x,y)\le 0$</li>
+<li>代数结构：详见<a href="https://sqzr2319.github.io/DiscreteMath-2">离散数学(2)</a><ol>
+<li>半群：封闭性、结合律</li>
+<li>群：半群 $+$ 单位元、逆元</li>
+<li>交换群（$\mathrm{Abel}$ 群）：群 $+$ 交换律</li>
+<li>环：加法交换群 $+$ 乘法半群 $+$ 分配律</li>
+<li>域：环 $+$ 乘法交换群</li>
 </ol>
 </li>
 </ol>
-<h2 id="二、含参积分"><a href="#二、含参积分" class="headerlink" title="二、含参积分"></a>二、含参积分</h2><ol>
-<li>含参定积分的性质（参数范围为<strong>有限闭区间</strong>）<ol>
-<li>连续、可积：$f(x,y)$ 在 $[a,b]\times [\alpha,\beta]$ 上连续</li>
-<li>可微：$f(x,y),f’_y(x,y)$ 在 $[a,b]\times [\alpha,\beta]$ 上连续</li>
-<li>可微的计算：$\displaystyle \frac{\mathrm{d}}{\mathrm{d}y}\int_{\alpha(y)}^{\beta(y)} f(x,y)\mathrm{d}x&#x3D;\int_{\alpha(y)}^{\beta(y)} f’_y(x,y)\mathrm{d}x+f(\beta(y),y)\cdot\beta’(y)-f(\alpha(y),y)\cdot\alpha’(y)$</li>
+<h2 id="二、多项式"><a href="#二、多项式" class="headerlink" title="二、多项式"></a>二、多项式</h2><ol>
+<li>综合除法：$f(x)&#x3D;x^3-4x^2-5x+2$，求 $f(-3)$ 或求 $f(x)$ 除以 $x+3$ 的余式<br>$$\begin{bmatrix} -3 &amp; 1 &amp; -4 &amp; -5 &amp; 2 \ &amp;  &amp; -3 &amp; 21 &amp; -48 \ \hline &amp; 1 &amp; -7 &amp; 16 &amp; -46 \end{bmatrix}$$</li>
+<li>将 $f(x)$ 分解成 $x-a$ 的方幂和：$f(x)&#x3D;(x-a)g_0(x)+r_0(x)&#x3D;(x-a)((x-a)g_1(x)+r_1(x))+r_0(x)$</li>
+<li>$\mathrm{Lagrange}$ 插值<ol>
+<li>$n&#x3D;1$ 时：$f(x)&#x3D;f(x_0)\frac{(x-x_1)}{(x_0-x_1)}+f(x_1)\frac{(x-x_0)}{(x_1-x_0)}$</li>
+<li>$L_i(x)&#x3D;\frac{(x-a_0)\cdots(x-a_{i-1})(x-a_{i+1})\cdots(x-a_n)}{(a_i-a_0)\cdots(a_i-a_{i-1})(a_i-a_{i+1})\cdots(a_i-a_n)}$,$L(x)&#x3D;\sum_{i&#x3D;0}^n f(a_i)L_i(x)$</li>
 </ol>
 </li>
-<li>含参广义积分的性质（参数范围为<strong>有限闭区间</strong>）<ol>
-<li>连续、可积<ol>
-<li>$f(x,y)$ 在 $[a,+\infty)\times [\alpha,\beta]$ 上连续（同定积分）</li>
-<li>$\displaystyle \int_a^{+\infty}f(x,y)\mathrm{d}x$ 在 $y\in[\alpha,\beta]$ 上<strong>一致收敛</strong></li>
+<li>$\mathrm{Bezout}$ 等式：$(f(x),g(x))&#x3D;f(x)u(x)+g(x)v(x)$<ol>
+<li>$f(x)&#x3D;p(x)g(x)+r(x),g(x)&#x3D;q(x)r(x)+s(x),r(x)&#x3D;t(x)s(x)\Rightarrow s(x)&#x3D;g(x)-q(x)r(x)&#x3D;g(x)-q(x)(f(x)-p(x)g(x))$</li>
+<li>$f(x)u(x)+g(x)v(x)&#x3D;h(x)$ 不能推出 $h(x)$ 是最大公因式</li>
+<li>$f(x)u(x)+g(x)v(x)&#x3D;1\Leftrightarrow f(x)$ 和 $g(x)$ 互质</li>
 </ol>
 </li>
-<li>可微<ol>
-<li>$f(x,y),f’_y(x,y)$ 在 $[a,+\infty)\times [\alpha,\beta]$ 上连续（同定积分）</li>
-<li>$\displaystyle \int_a^{+\infty}f(x,y)\mathrm{d}x$ 在 $y\in[\alpha,\beta]$ 上<strong>逐点收敛</strong></li>
-<li>$\displaystyle \int_a^{+\infty}f’_y(x,y)\mathrm{d}x$ 在 $y\in[\alpha,\beta]$ 上<strong>一致收敛</strong></li>
-</ol>
-</li>
-</ol>
-</li>
-<li>二元无穷限累次积分的性质（参数范围为<strong>无穷限区间</strong>）<ol>
-<li>交换积分次序<ol>
-<li>$f(x,y)$ 在 $[a,+\infty)\times [\alpha,+\infty)$ 上连续（同定积分）</li>
-<li>$\displaystyle \forall \beta\gt \alpha,\int_a^{+\infty}f(x,y)\mathrm{d}x$ 在 $y\in[\alpha,\beta]$ 上<strong>一致收敛</strong></li>
-<li>$\displaystyle \forall b\gt a,\int_\alpha^{+\infty}f(x,y)\mathrm{d}y$ 在 $x\in[a,b]$ 上<strong>一致收敛</strong></li>
-<li>$\displaystyle \int_\alpha^{+\infty}\mathrm{d}y\int_a^{+\infty}\left|f(x,y)\right|\mathrm{d}x$ 和 $\displaystyle \int_a^{+\infty}\mathrm{d}y\int_\alpha^{+\infty}\left|f(x,y)\right|\mathrm{d}x$ 中至少有一个存在</li>
+<li>有理根定理：$f(x)&#x3D;a_nx^n+\cdots+a_0$，$\frac{p}{q}$ 是 $f(x)$ 的有理根  $\Rightarrow p|a_0,q|a_n$</li>
+<li>三次方程 $ax^3+bx^2+cx+d&#x3D;0$ 的根的性质<ol>
+<li>$\mathrm{Vieta}$ 定理：$x_1+x_2+x_3&#x3D;-\frac{b}{a},x_1x_2+x_2x_3+x_3x_1&#x3D;\frac{c}{a},x_1x_2x_3&#x3D;-\frac{d}{a}$</li>
+<li>$x^3+px+q&#x3D;0$ 的判别式：$\Delta&#x3D;-4p^3-27q^2$，$\Delta&gt;0$ 有三个不相等的实根，$\Delta&#x3D;0$ 有两个相等的实根，$\Delta&lt;0$ 有一个实根和两个共轭复根</li>
 </ol>
 </li>
 </ol>
-</li>
-<li>含参广义积分判敛<ol>
-<li>方法<ol>
-<li>定义</li>
-<li>$\mathrm{Cauchy}$</li>
-<li>$\mathrm{Weierstrass}$</li>
-<li>$\mathrm{Dirichlet}$</li>
-<li>$\mathrm{Abel}$</li>
+<h2 id="三、-mathrm-Jordan-标准形"><a href="#三、-mathrm-Jordan-标准形" class="headerlink" title="三、$\mathrm{Jordan}$ 标准形"></a>三、$\mathrm{Jordan}$ 标准形</h2><ol>
+<li>$\mathrm{Ker}T,\mathrm{Im}T,\mathrm{Ker}(T-aI)^k,\mathrm{Im}(T-aI)^k$ 是 $T-$ 不变子空间</li>
+<li>极小多项式<ol>
+<li>唯一且相似矩阵的极小多项式相同</li>
+<li>分块对角矩阵的极小多项式为分块对角矩阵的极小多项式的最小公倍式</li>
+<li>设 $|\lambda I_n-A|&#x3D;(\lambda -\lambda_1)^{n_1}(\lambda -\lambda_2)^{n_2}\cdots(\lambda -\lambda_s)^{n_s}$，则 $m_A(x)&#x3D;(x-\lambda_1)^{m_1}(x-\lambda_2)^{m_2}\cdots(x-\lambda_s)^{m_s}$，其中 $m_i$ 是使 $G_{\lambda_i}(A)$ 的维数最大的最小整数</li>
+<li>推论：可对角化等价于极小多项式无重根</li>
+<li>推论：若存在向量 $v$ 使得 $v,T(v),T^2(v),\cdots,T^{k}(v)$ 线性无关，则 $T$ 的极小多项式次数大于 $k$</li>
 </ol>
 </li>
-<li>技巧<ol>
-<li>连续延拓</li>
-<li>取任意闭区间 $[a,b]$ 逼近开区间</li>
+<li>循环子空间<ol>
+<li>幂零变换 $\Leftrightarrow$ 只有零特征值</li>
+<li>极大循环子空间 $\Leftrightarrow v\notin \mathrm{Im} T$</li>
+<li>循环子空间直和分解定理<ol>
+<li>循环子空间个数 $&#x3D;\mathrm{dim} \mathrm{Ker} T&#x3D;$ 零特征值的几何重数</li>
+<li>循环子空间最大维数 $&#x3D;$ 幂零次数 $&#x3D;$ 极小多项式次数</li>
+<li>阶数为 $d$ 的 $\mathrm{Jordan}$ 块个数 $&#x3D;r(A^{d-1})+r(A^{d+1})-2r(A^d)$</li>
 </ol>
 </li>
-<li>注意事项<ol>
-<li><strong>技巧2.2只能用于连续不能用于一致收敛</strong></li>
-<li>一致收敛是连续的<strong>充分非必要</strong>条件</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>技巧与例题<ol>
-<li>微分方程的求解：详见<a href="https://sqzr2319.github.io/Calculus-A1">微积分A(1)</a></li>
-<li>常用积分公式：$\begin{cases}\displaystyle \int e^{ax}\cos bx\mathrm{d}x&#x3D;\frac{e^{ax}}{a^2+b^2}(a\cos bx+b\sin bx)+C\\\displaystyle \int e^{ax}\sin bx\mathrm{d}x&#x3D;\frac{e^{ax}}{a^2+b^2}(a\sin bx-b\cos bx)+C\end{cases}$</li>
-<li>$(2024)$ 设 $\displaystyle I(y)&#x3D;\int_0^{+\infty}e^{-x^2}\sin(2xy)\mathrm{d}x$，证明：$\displaystyle I(y)&#x3D;e^{-y^2}\int_0^y e^{-t^2}\mathrm{d}t$</li>
-<li>$(5.26)$ 试利用积分 $\displaystyle \varphi(x)&#x3D;\int_0^1 \frac{e^{-x^2(1+u^2)}}{1+u^2}\mathrm{d}u$ 计算积分 $\displaystyle I&#x3D;\int_0^{+\infty} e^{-x^2}\mathrm{d}x$</li>
-</ol>
-</li>
-<li>证明题<ol>
-<li>$(5.17)$ 证明：$\displaystyle \int_0^{+\infty} \frac{\sin x^2y}{x}\mathrm{d}x$ 在 $y\in (0,+\infty)$ 不一致收敛，但连续</li>
 </ol>
 </li>
 </ol>
@@ -471,8 +402,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>微积分A(2)</div>
-      <div>https://sqzr2319.github.io/Calculus-A2/</div>
+      <div>线性代数(2)</div>
+      <div>https://sqzr2319.github.io/LinearAlgebra-2/</div>
     </div>
     <div class="license-meta">
       
@@ -516,9 +447,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/LinearAlgebra-2/" title="线性代数(2)">
+                      <a href="/Physics-B1/" title="大学物理B(1)">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">线性代数(2)</span>
+                        <span class="hidden-mobile">大学物理B(1)</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -526,8 +457,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/CSDIY-24Winter/" title="大一上自学笔记">
-                        <span class="hidden-mobile">大一上自学笔记</span>
+                      <a href="/Calculus-A2/" title="微积分A(2)">
+                        <span class="hidden-mobile">微积分A(2)</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

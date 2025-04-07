@@ -1,0 +1,991 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/sqzr2319.jpg">
+  <link rel="icon" href="/img/sqzr2319.jpg">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="sqzr2319">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="大一上学期离散数学(1)的复习笔记，目前已完结。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="离散数学(1)">
+<meta property="og:url" content="https://sqzr2319.github.io/DiscreteMath-1/index.html">
+<meta property="og:site_name" content="sqzr2319&#39;s blog">
+<meta property="og:description" content="大一上学期离散数学(1)的复习笔记，目前已完结。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-01-02T01:50:00.000Z">
+<meta property="article:modified_time" content="2025-04-07T09:32:39.629Z">
+<meta property="article:author" content="sqzr2319">
+<meta property="article:tag" content="数学">
+<meta property="article:tag" content="大一上">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>离散数学(1) - sqzr2319&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"sqzr2319.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\(', right: '\\)', display: false},
+        {left: '\\[', right: '\\]', display: true}
+      ]
+    });"></script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>sqzr2319</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/Planet.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="离散数学(1)"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-01-02 09:50" pubdate>
+          2025年1月2日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          26 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">离散数学(1)</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>大一上学期离散数学(1)的复习笔记，目前已完结。</p>
+<span id="more"></span>
+
+<font face="霞鹜文楷等宽">
+
+<h2 id="一、命题逻辑"><a href="#一、命题逻辑" class="headerlink" title="一、命题逻辑"></a>一、命题逻辑</h2><ol>
+<li>基本定义<ol>
+<li>命题：真值<strong>非真即假或待定</strong>的<strong>陈述句</strong></li>
+<li>合式公式：<strong>有限次</strong>联结，<strong>不包含空公式</strong></li>
+</ol>
+</li>
+<li>命题形式化：注意<strong>异或</strong>和<strong>充要条件</strong>的判断</li>
+<li>波兰表达式<ol>
+<li>中缀表示的扫描：发现第一个右括号 $\to$  返回最近的左括号 $\to$  向右继续扫描</li>
+<li>中缀式 $\Rightarrow$ 波兰式：根据优先级加括号 $\to$  从内层括号逐步向外层脱开</li>
+<li>波兰式 $\Rightarrow$ 中缀式：压栈</li>
+<li>$\neg A$ 的前缀为 $\neg A$，后缀为 $A\neg$</li>
+</ol>
+</li>
+<li>等值公式<ol>
+<li>蕴含<strong>没有结合律、交换律</strong></li>
+<li>双蕴含<strong>没有分配律</strong></li>
+<li>前提合取合并：$P\to (Q\to R)&#x3D;(P\wedge Q)\to R$ </li>
+<li>前提析取合并：$(P\to R)\wedge (Q\to R)&#x3D;(P\vee Q)\to R$ </li>
+<li>前提交换：$P\to (Q\to R)&#x3D;Q\to (P\to R)$ </li>
+<li>从 $T$ 行写双蕴含：$P\leftrightarrow Q&#x3D;(P\wedge Q)\vee (\neg P\wedge \neg Q)$ </li>
+<li>从 $F$ 行写双蕴含：$P\leftrightarrow Q&#x3D;(P\vee \neg Q)\wedge (\neg P\vee Q)$ </li>
+<li>归谬论：$(P\to Q)\wedge (P\to \neg Q)&#x3D;\neg P$ </li>
+<li>代入规则：只能对<strong>重言式</strong>中的<strong>原子命题</strong>使用，且必须<strong>全部代换</strong></li>
+<li>置换规则：只需等值</li>
+</ol>
+</li>
+<li>真值表<ol>
+<li>从 $T$ 行写：一个个情况累加，$1&#x3D;T, 0&#x3D;F$，用极小项构成主析取范式</li>
+<li>从 $F$ 行写：一个个情况排除，$1&#x3D;F, 0&#x3D;T$，用极大项构成主合取范式</li>
+</ol>
+</li>
+<li>真值函项：对 $n$ 个命题变元，每个变元有 $m$ 种取值：可定义 $m^{m^n}$ 个 $n$ 元联结词</li>
+<li>完备集：$\{\neg ,\wedge ,\vee\},\{\neg,\wedge \},\{\neg,\vee\},\{\neg,\to\},\{\uparrow\},\{\downarrow\}$</li>
+<li>对偶式<ol>
+<li>$A^*$：将 $A$ 中出现的 $\wedge ,\vee ,T, F$ 分别用 $\vee, \wedge ,F, T$ 代换</li>
+<li>$A^-$：将 $A$ 中的命题变项分别用各自的互补对代换</li>
+<li>$\neg A&#x3D;A^{*-}$</li>
+</ol>
+</li>
+<li>范式<ol>
+<li>步骤：消去蕴含 $\to$ 将否定内移到命题变项上 $\to$ 利用分配律或<strong>利用真值表</strong><ol>
+<li>$A\wedge (B\vee C)&#x3D;(A\wedge B)\vee (A\wedge C)$ 多用于求析取范式</li>
+<li>$A\vee (B\wedge C)&#x3D;(A\vee B)\wedge (A\vee C)$ 多用于求合取范式</li>
+</ol>
+</li>
+<li>快速填满变项：$\neg P\vee Q&#x3D;m^{0 x}\vee m^{x 1}&#x3D;\bigvee_{0,1,3}$ </li>
+<li>极大项与极小项的关系：$\neg m_2&#x3D;M_5,\neg M_2&#x3D;m_5$ </li>
+<li>否定：$A&#x3D;\bigvee_{0,1,3}\Leftrightarrow \neg A&#x3D;\bigvee_{2,4,5,6,7}, B&#x3D;\bigwedge_{0,1,3}\Leftrightarrow \neg B&#x3D;\bigwedge_{2,4,5,6,7}$ </li>
+<li>主合取范式与主析取范式的转换：$\bigvee_{0,1,3}&#x3D;\neg \neg \bigvee_{0,1,3}&#x3D;\neg \bigwedge_{4,6,7}&#x3D;\bigwedge_{0,1,2,3,5}$ </li>
+<li>永真式的主合取范式、矛盾式的主析取范式为空公式</li>
+</ol>
+</li>
+<li>推理公式<ol>
+<li>$P\wedge Q\Rightarrow P\Rightarrow P\vee Q$ </li>
+<li>假言推理： $P\wedge (P\to Q)\Rightarrow Q$ </li>
+<li>三段论：$(P\to Q)\wedge (Q\to R)\Rightarrow P\to R$</li>
+</ol>
+</li>
+<li>推理演算：注意附加前提引入</li>
+<li>归结推理<ol>
+<li>证明 $A\Rightarrow B$ 步骤：将 $A,\neg B$ 分别化为合取范式，建立子句集，归结出矛盾</li>
+<li><strong>半完备性</strong>：对真命题能够归结出空子句，对假命题得不到任何结论</li>
+</ol>
+</li>
+<li>公理系统<ol>
+<li>公理<ol>
+<li>$(P\vee P)\to P$ </li>
+<li>$P\to (P\vee Q)$</li>
+<li>$(P\vee Q)\to (Q\vee P)$ </li>
+<li>$(Q\to R)\to ((P\vee Q)\to (P\vee R))$ </li>
+<li>$\to,\wedge,\leftrightarrow$ 的定义</li>
+<li>代入、置换、分离规则</li>
+<li>演绎定理：若 $A$ 推出 $B$ 过程中不使用代入规则，则 $A\to B$ 成立</li>
+</ol>
+</li>
+<li>定理<ol>
+<li>$(Q\to R)\to ((P\to Q)\to (P\to R))$ </li>
+<li>$P\to P$ </li>
+<li>$\neg P\vee P$ </li>
+<li>$P\vee \neg P$ </li>
+<li>$P\to \neg \neg P$ </li>
+<li>$\neg \neg P\to P$ </li>
+<li>$(P\to Q)\to (\neg Q\to \neg P)$</li>
+</ol>
+</li>
+<li>例题<ol>
+<li>$(P\vee Q)\to (Q\to (P\vee Q))$ </li>
+<li>$(2022) (\neg Q\to P)\to (\neg P\to Q)$</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>性质<ol>
+<li>满足完备性：是否所有的定理都可由公理系统推导出来</li>
+<li>满足可靠性：非重言式或不成立的公式是否也可推导出来</li>
+<li>满足可判定性：存在一种机械的方法在有穷步内判定任意公式是否为定理</li>
+</ol>
+</li>
+</ol>
+<h2 id="二、谓词逻辑"><a href="#二、谓词逻辑" class="headerlink" title="二、谓词逻辑"></a>二、谓词逻辑</h2><ol>
+<li>基本定义<ol>
+<li>与命题逻辑的关系<ol>
+<li>谓词逻辑 $&#x3D;$ 命题逻辑 $+$ 个体词 $+$ 谓词 $+$ 量词 $+$ 函数</li>
+<li>$P (x), Q (f(x), y)$ 是<strong>命题形式</strong>，<strong>取定谓词、函数，并量化个体词后化为命题</strong></li>
+<li>一个命题是<strong>没有自由变元的谓词常项</strong></li>
+</ol>
+</li>
+<li>合式公式<ol>
+<li>两个合式公式的连接：<strong>无变元 $x$ 在 $A, B$ 中的一个是约束的而在另一个中是自由的</strong></li>
+<li>$A$ 是合式公式，且 $x$ 在 $A$ 中是<strong>自由</strong>变元，则 $(\forall x) A, (\exists x) A$ 是合式公式</li>
+<li>反例：$(\forall x) F (x)\wedge G (x), (\exists x)(\forall x) F (x), (\forall x) P (y)$</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>自然语句的形式化：注意<strong>唯一性</strong>的表示</li>
+<li>有限域下公式的表示法<ol>
+<li>解释：须取定谓词、函数</li>
+<li>有限域下公式的可满足性和普遍有效性依赖且仅依赖于个体域个体的数目</li>
+<li>在 $k$ 个体域上普遍有效 $\Rightarrow$ 在 $k-1$ 个体域上普遍有效</li>
+<li>在 $k$ 个体域上可满足 $\Rightarrow$ 在 $k+1$ 个体域上可满足</li>
+</ol>
+</li>
+<li>等值公式<ol>
+<li>由命题逻辑移植来的等值式</li>
+<li>量词的否定</li>
+<li>量词对无关命题变项的分配律（$\to$ 前件不变后件变）</li>
+<li>量词 $\forall$ 对 $\wedge$、量词 $\exists$ 对 $\vee$ 的分配律</li>
+<li>变元易名</li>
+</ol>
+</li>
+<li>范式<ol>
+<li>前束范式：消去蕴含 $\to$ 否定符内移 $\to$ 量词左移 $\to$ 变元易名</li>
+<li>$\mathrm{Skolem}$ 标准形：$(\exists x)(\forall y)(\exists z) P (x, y, z)&#x3D;P (a, y, f (y))$ </li>
+<li>前束范式与 $\mathrm{Skolem}$ 标准形在<strong>不可满足</strong>的意义下一致</li>
+</ol>
+</li>
+<li>推理公式<ol>
+<li>$(\forall x) P (x)\vee (\forall x) Q (x)\Rightarrow (\forall x)(P (x)\vee Q (x))$ </li>
+<li>$(\exists x)(P (x)\wedge Q (x))\Rightarrow (\exists x) P (x)\wedge (\exists x) Q (x)$ </li>
+<li>$(\forall x)(P (x)\to Q (x))\Rightarrow (\forall x)P(x)\to (\forall x)Q(x)$ </li>
+<li>$(\forall x)(P (x)\to Q (x))\Rightarrow (\exists x)P(x)\to (\exists x)Q(x)$ </li>
+<li>$(\forall x)(P (x)\leftrightarrow Q (x))\Rightarrow (\forall x) P (x)\leftrightarrow (\forall x) Q (x)$ </li>
+<li>$(\forall x)(P (x)\leftrightarrow Q (x))\Rightarrow (\exists x) P (x)\leftrightarrow (\exists x) Q (x)$ </li>
+<li>$(\forall x)(P (x)\to Q (x))\wedge (\forall x)(Q (x)\to R (x))\Rightarrow (\forall x)(P (x)\to R (x))$ </li>
+<li>$(\forall x)(P (x)\to Q (x))\wedge P (a)\Rightarrow Q (a)$ </li>
+<li>$(\forall x)(\forall y) P (x, y)\Rightarrow (\exists x)(\forall y) P (x, y)\Rightarrow (\forall y)(\exists x) P (x, y)$</li>
+</ol>
+</li>
+<li>推理演算<ol>
+<li>$UI$：$(\forall x) P (x)\Rightarrow P (y)$，其中 $y$ 不在 $P (x)$ 中约束出现</li>
+<li>$UG$：$P (y)\Rightarrow (\forall x) P (x)$，其中 $x$ 不在 $P (y)$ 中约束出现</li>
+<li>$EI$：$(\exists x) P (x)\Rightarrow P (c)$，其中 $c$ 不在 $P (x)$ 中出现，<strong>且 $P (x)$ 中无自由变元</strong><ol>
+<li>反例：$(\exists x)(x&gt;y)$ 成立，但 $c&gt;y$ 不成立</li>
+</ol>
+</li>
+<li>$EG$：$P (c)\Rightarrow (\exists x) P (x)$，其中 $x$ 不在 $P (c)$ 中出现</li>
+</ol>
+</li>
+<li>归结推理<ol>
+<li>步骤：将 $A,\neg B$ 分别化为前束范式，再化为 $\mathrm{Skolem}$ 标准形，建立子句集</li>
+<li>归结方法：$P (x)\vee Q (x)$ 与 $\neg P (a)\vee R (y)$ 归结出 $Q (a)\vee R (y)$</li>
+</ol>
+</li>
+<li>一阶逻辑公理系统<ol>
+<li>由命题逻辑移植来的公理（演绎定理除外）</li>
+<li>$(\forall x) P (x)\to P (y)$ </li>
+<li>$P (y)\to (\exists x) P (x)$ </li>
+<li>约束变元易名规则</li>
+<li>后件概括规则：若 $A\to B (x)$ 且 $x$ 在 $A$ 中不出现，则 $A\to (\forall x) B (x)$ </li>
+<li>前件存在规则：若 $A (x)\to B$ 且 $x$ 在 $B$ 中不出现，则 $(\exists x) A (x)\to B$ </li>
+<li>演绎定理：不使用代入规则、前件存在和后件概括规则</li>
+</ol>
+</li>
+<li>性质<ol>
+<li>满足完备性</li>
+<li>满足可靠性</li>
+<li><strong>不满足可判定性</strong>，但有子类是可判定的<ol>
+<li>只含有一元谓词变项的公式是可判定的</li>
+<li>个体域有穷时的谓词公式是可判定的</li>
+<li>$\exists,\forall$ 前束范式的母式中无量词和其他自由变项时是可判定的</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="三、集合"><a href="#三、集合" class="headerlink" title="三、集合"></a>三、集合</h2><ol>
+<li>集合的运算<ol>
+<li>$A\subseteq B\Leftrightarrow P (A)\subseteq P (B)$</li>
+<li>$A&#x3D;B\Leftrightarrow P (A)&#x3D;P (B)$ </li>
+<li>$P (A)\in P (B)\Rightarrow A\in B$ </li>
+<li>$P (A)\cap P (B)&#x3D;P (A\cap B)$ </li>
+<li>$P (A)\cup P (B)\subseteq P (A\cup B)$</li>
+<li>$P (A-B)\subseteq (P (A)-P (B))\cup \{\emptyset\}$ </li>
+<li>传递集合：$(\forall x)(\forall y)((x\in y\wedge y\in A)\to x\in A)$ <ol>
+<li>等价描述 $1$：传递集合元素的元素都是它的元素</li>
+<li>等价描述 $2$：传递集合的元素都是它的子集</li>
+</ol>
+</li>
+<li>$A$ 是传递集合 $\Leftrightarrow$ $A\subseteq P (A)\Leftrightarrow P(A)$ 是传递集合</li>
+<li>$A\subseteq B\Rightarrow \bigcup A\subseteq \bigcup B$ </li>
+<li>$A\subseteq B\Rightarrow \bigcap B\subseteq \bigcap A$，其中 $A, B$ 非空</li>
+<li>$\bigcup (A\cup B)&#x3D;(\bigcup A)\cup (\bigcup B)$ </li>
+<li>$\bigcap (A\cup B)&#x3D;(\bigcap A)\cap (\bigcap B)$，其中 $A, B$ 非空</li>
+<li>$\bigcup (P (A))&#x3D;A$ </li>
+<li>$A$ 是传递集合 $\Rightarrow$ $\bigcup A$ 是传递集合</li>
+<li>$A$ 的元素都是传递集合 $\Rightarrow$ $\bigcup A$ 是传递集合</li>
+<li>非空集合 $A$ 是传递集合 $\Rightarrow$ $\bigcap A$ 是传递集合，且 $\bigcap A&#x3D;\emptyset$</li>
+<li>非空集合 $A$ 的元素都是传递集合 $\Rightarrow$ $\bigcap A$ 是传递集合</li>
+</ol>
+</li>
+<li>集合论公理系统<ol>
+<li>外延公理</li>
+<li>空集合存在定理</li>
+<li>无序对集合存在定理</li>
+<li>广义并集合存在定理</li>
+<li>子集公理模式</li>
+<li>幂集合公理</li>
+<li>无穷公理</li>
+<li>替换公理模式</li>
+<li>正则公理：任意非空集合 $S$ 存在元素 $x$ 使得 $S$ 和 $x$ 不相交</li>
+<li>选择公理：对任意关系 $R$ 存在函数 $f$ 使得 $f\subseteq R, dom (f)&#x3D;dom (R)$ <ol>
+<li>等价形式：良序定理、$\mathrm{Zorn}$ 引理、基数的三歧性</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="四、关系"><a href="#四、关系" class="headerlink" title="四、关系"></a>四、关系</h2><ol>
+<li>关系的运算<ol>
+<li>$R_1\circ (R_2\cup R_3)&#x3D;R_1\circ R_2 \cup R_1\circ R_3$ </li>
+<li>$R_1\circ (R_2\cap R_3)\subseteq R_1\circ R_2\cap R_1\circ R_3$ </li>
+<li>$(R_1\cup R_2)\circ R_3&#x3D;R_1\circ R_3\cup R_2\circ R_3$ </li>
+<li>$(R_1\cap R_2)\circ R_3\subseteq R_1\circ R_3\cap R_2\circ R_3$ </li>
+<li>$R[A\cup B]&#x3D;R[A]\cup R[B]$ </li>
+<li>$R[\bigcup A]&#x3D;\bigcup\{R[B]|B\in A\}$ </li>
+<li>$R[A\cap B]\subseteq R[A]\cap R[B]$ </li>
+<li>$R[\bigcap A]\subseteq \bigcap\{R[B]|B\in A\}$，其中 $A$ 非空</li>
+<li>$R[A]-R[B]\subseteq R[A-B]$ </li>
+<li>$R\uparrow(A\cup B)&#x3D;R\uparrow A\cup R\uparrow B$ </li>
+<li>$R\uparrow (A\cap B)&#x3D;R\uparrow A\cap R\uparrow B$</li>
+</ol>
+</li>
+<li>关系的性质<ol>
+<li>自反：$I_A\subseteq R, r (R)&#x3D;R\cup I_A$  </li>
+<li>反自反：$R\cap I_A&#x3D;\emptyset$ </li>
+<li>对称：$R&#x3D;R^{-1}, s (R)&#x3D;R\cup R^{-1}$ </li>
+<li>反对称：$R\cap R^{-1}\subseteq I_A$ </li>
+<li>传递：$R\circ R\subseteq R, t (R)$ 使用 $\mathrm{Warshall}$ 算法 </li>
+<li>$R_1,R_2$ 自反 $\Rightarrow R^{-1}, R_1\cap R_2, R_1\cup R_2, R_1\circ R_2$ 自反</li>
+<li>$R_1, R_2$ 反自反&#x2F;对称 $\Rightarrow R^{-1}, R_1\cap R_2, R_1\cup R_2, R_1-R_2$ 反自反&#x2F;对称</li>
+<li>$R_1, R_2$ 反对称 $\Rightarrow R^{-1}, R_1\cap R_2, R_1-R_2$ 反对称</li>
+<li>$R_1, R_2$ 传递 $\Rightarrow R^{-1}, R_1\cap R_2$ 传递</li>
+<li>$R_1\subseteq R_2\Rightarrow r&#x2F;s&#x2F;t (R_1)\subseteq r&#x2F;s&#x2F;t (R_2)$ </li>
+<li>$r&#x2F;s (R_1)\cup r&#x2F;s (R_2)&#x3D;r&#x2F;s (R_1\cup R_2)$ </li>
+<li>$t (R_1)\cup t (R_2)\subseteq t (R_1\cup R_2)$ </li>
+<li>$R$ 自反 $\Rightarrow s&#x2F;t (R)$ 自反</li>
+<li>$R$ 对称 $\Rightarrow r&#x2F;t (R)$ 对称</li>
+<li>$R$ 传递 $\Rightarrow r (R)$ 传递</li>
+<li>$rs (R)&#x3D;sr (R)$ </li>
+<li>$rt (R)&#x3D;tr (R)$ </li>
+<li>$st (R)\subseteq ts (R)$ </li>
+<li>$(2022) R$ 的等价闭包：$tsr (R), trs (R), rts (R)$</li>
+</ol>
+</li>
+<li>特殊关系<ol>
+<li>等价关系：自反、对称、传递</li>
+<li>相容关系：自反、对称</li>
+<li>偏序关系：自反、反对称、传递</li>
+<li>拟序关系：反自反、反对称、传递</li>
+<li>全序关系：两两都可比的偏序关系</li>
+<li>良序关系：任意非空子集都有最小元的偏序关系</li>
+<li>偏序关系八大元与链<ol>
+<li>最大&#x2F;小元、上&#x2F;下确界不一定存在，若存在必唯一</li>
+<li>非空有限集合中极大&#x2F;小元一定存在，但不一定唯一</li>
+<li>最大&#x2F;小元为极大&#x2F;小元、上&#x2F;下界、上&#x2F;下确界</li>
+<li>属于子集的上&#x2F;下界为子集的最大&#x2F;小元</li>
+<li>最长链的长度为 $n\Rightarrow$ 至少存在 $n$ 个不相交的反链</li>
+</ol>
+</li>
+<li>良序集一定是全序集</li>
+<li>有限全序集一定是良序集</li>
+<li>良序定理：任意集合都可以良序化</li>
+</ol>
+</li>
+</ol>
+<h2 id="五、函数"><a href="#五、函数" class="headerlink" title="五、函数"></a>五、函数</h2><ol>
+<li>函数的性质<ol>
+<li>$f, g$ 是满射&#x2F;单射&#x2F;双射 $\Rightarrow f\circ g$ 是满射&#x2F;单射&#x2F;双射</li>
+<li>$f\circ g$ 是满射 $\Rightarrow f$ 是满射</li>
+<li>$f\circ g$ 是单射 $\Rightarrow g$ 是单射</li>
+<li>$f\circ g$ 是双射 $\Rightarrow f$ 是满射，$g$ 是单射</li>
+<li>左逆：$g\circ f&#x3D;I_A$；右逆：$f\circ g&#x3D;I_A$ </li>
+<li>$f$ 存在左逆&#x2F;右逆 $\Leftrightarrow$ $f$ 是单射&#x2F;满射</li>
+<li>$f$ 存在左逆、右逆且两者相等 $\Leftrightarrow f$ 是双射</li>
+<li>存在单射：$m\le n$；满射：$m\ge n\gt 0\vee m&#x3D;n&#x3D;0$；双射：$m&#x3D;n$ </li>
+<li>函数与函数相容：$x\in A\cap C\Rightarrow f (x)&#x3D;g (x)$ </li>
+<li>函数与等价关系相容：$\langle x, y\rangle\in R\Rightarrow \langle f (x), f (y)\rangle \in R$ </li>
+<li>$f, g$ 相容 $\Leftrightarrow$ $f\cup g$ 是函数 $\Leftrightarrow f\uparrow (A\cap C)&#x3D;g\uparrow (A\cap C)$ </li>
+<li>函数集合 $C$ 相容 $\Rightarrow F&#x3D;\bigcup C$ 是函数，$dom (F)&#x3D;\bigcup \{dom (f)|f\in C\}$ </li>
+<li>$R$ 与 $f$ 相容 $\Rightarrow$ $\exists ! F: A&#x2F;R\to A&#x2F;R, F ([x]_R)&#x3D;[f (x)]_R$</li>
+</ol>
+</li>
+<li>开集与闭集<ol>
+<li>闭集：导集是原集合的子集</li>
+<li>任意集合的导集是闭集</li>
+<li>任意个闭集的交集是闭集，有限个闭集的并集是闭集</li>
+<li>开集：原集合是内点集合的子集</li>
+<li>任意个开集的并集是开集，有限个开集的交集是开集</li>
+<li>若 $A$ 是开集&#x2F;闭集，则 $\mathbb R-A$ 是闭集&#x2F;开集</li>
+</ol>
+</li>
+<li>实数<ol>
+<li>$\mathbb N\to \mathbb Z\to \mathbb Q_1\to \mathbb Q\to \mathbb B\to \mathbb R$ </li>
+<li>$1_\mathbb N&#x3D;\{\emptyset\}, -1_\mathbb Z&#x3D;\langle 0,1\rangle,-1_\mathbb Q&#x3D;\{\frac{1}{-1},\frac{-1}{1},\frac{2}{-2},\frac{-2}{2},\dots\},-1_\mathbb R&#x3D;\{-1,-1+\frac{1}{n},\dots\}$ </li>
+<li>$\mathbb N\approx \mathbb Z, \mathbb R\approx \mathbb R^+, \mathbb N\times \mathbb N\approx \mathbb N, \mathbb N\approx \mathbb Q, (0,1)\approx \mathbb R,[0,1]\approx (0,1),\neg \mathbb N\approx \mathbb R$</li>
+<li>$P (A)\approx A_2,\neg A\approx P (A)$ </li>
+<li>$(2022) \mathbb R\approx \mathbb R\times \mathbb N$</li>
+</ol>
+</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%AC%94%E8%AE%B0/" class="category-chain-item">笔记</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E6%95%B0%E5%AD%A6/" class="print-no-link">#数学</a>
+      
+        <a href="/tags/%E5%A4%A7%E4%B8%80%E4%B8%8A/" class="print-no-link">#大一上</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>离散数学(1)</div>
+      <div>https://sqzr2319.github.io/DiscreteMath-1/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>sqzr2319</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年1月2日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/LinearAlgebra-1/" title="线性代数(1)">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">线性代数(1)</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/43Class-2/" title="肆叁小灶第二讲 数学软件与线性代数">
+                        <span class="hidden-mobile">肆叁小灶第二讲 数学软件与线性代数</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

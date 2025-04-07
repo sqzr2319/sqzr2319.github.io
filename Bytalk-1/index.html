@@ -19,23 +19,25 @@
   <meta name="author" content="sqzr2319">
   <meta name="keywords" content="">
   
-    <meta name="description" content="大一下学期微积分A(2)的复习笔记，目前更新至含参积分。">
+    <meta name="description" content="杂谈第一期，介绍了一道高三一模数学题的解法和思考。题目是关于函数的性质，涉及到一些高等数学的知识。通过引理和分情况讨论，最终证明了满足条件的函数只能是零函数。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微积分A(2)">
-<meta property="og:url" content="https://sqzr2319.github.io/Calculus-A2/index.html">
+<meta property="og:title" content="杂谈 | 一道高三一模数学题引发的思考">
+<meta property="og:url" content="https://sqzr2319.github.io/Bytalk-1/index.html">
 <meta property="og:site_name" content="sqzr2319&#39;s blog">
-<meta property="og:description" content="大一下学期微积分A(2)的复习笔记，目前更新至含参积分。">
+<meta property="og:description" content="杂谈第一期，介绍了一道高三一模数学题的解法和思考。题目是关于函数的性质，涉及到一些高等数学的知识。通过引理和分情况讨论，最终证明了满足条件的函数只能是零函数。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-04-07T04:04:23.000Z">
-<meta property="article:modified_time" content="2025-04-07T09:31:59.226Z">
+<meta property="og:image" content="https://sqzr2319.github.io/img/Bytalk-1-1.jpg">
+<meta property="article:published_time" content="2025-01-13T01:50:00.000Z">
+<meta property="article:modified_time" content="2025-04-07T09:41:08.858Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="数学">
-<meta property="article:tag" content="大一下">
+<meta property="article:tag" content="杂谈">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://sqzr2319.github.io/img/Bytalk-1-1.jpg">
   
   
   
-  <title>微积分A(2) - sqzr2319&#39;s blog</title>
+  <title>杂谈 | 一道高三一模数学题引发的思考 - sqzr2319&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -215,7 +217,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="微积分A(2)"></span>
+            <span id="subtitle" data-typed-text="杂谈 | 一道高三一模数学题引发的思考"></span>
           
         </div>
 
@@ -226,8 +228,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-04-07 12:04" pubdate>
-          2025年4月7日 中午
+        <time datetime="2025-01-13 09:50" pubdate>
+          2025年1月13日 上午
         </time>
       </span>
     
@@ -238,7 +240,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.1k 字
+          1k 字
         
       </span>
     
@@ -249,7 +251,7 @@
         
         
         
-          18 分钟
+          9 分钟
         
       </span>
     
@@ -286,144 +288,36 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">微积分A(2)</h1>
+            <h1 id="seo-header">杂谈 | 一道高三一模数学题引发的思考</h1>
             
             
               <div class="markdown-body">
                 
-                <font face="霞鹜文楷等宽">
-
-<p>大一下学期微积分A(2)的复习笔记，目前更新至含参积分。</p>
+                <p>杂谈第一期，介绍了一道高三一模数学题的解法和思考。题目是关于函数的性质，涉及到一些高等数学的知识。通过引理和分情况讨论，最终证明了满足条件的函数只能是零函数。</p>
 <span id="more"></span>
 
-<h2 id="一、多元微分"><a href="#一、多元微分" class="headerlink" title="一、多元微分"></a>一、多元微分</h2><ol>
-<li>赋范线性空间 $\mathbb R^n$<ol>
-<li>$\mathbb R^n$ 中非空的道路连通的开集称为开区域，<strong>开区域的闭包</strong>称为闭区域</li>
-<li>道路联通的闭集<strong>不一定</strong>是闭区域</li>
-<li>凸区域：$\forall x,y\in\Omega,\lambda x+(1-\lambda)y\in\Omega$</li>
-</ol>
-</li>
-<li>极限与连续<ol>
-<li>若 $x_0$ 是 $\Omega$ 的孤立点，则 $f$ 在 $x_0$ 处连续</li>
-<li>在<strong>开区域</strong>中定义的初等函数处处连续</li>
-<li>$|f(x)|\le M|g(x)|$，则 $f(x)&#x3D;O(g(x))\Leftrightarrow g(x)&#x3D;\Omega(f(x))$</li>
-<li>$f$ 为连续函数当且仅当开集的原像为开集</li>
-</ol>
-</li>
-<li>导数与微分<ol>
-<li>不可微时即使偏导函数都存在也不存在梯度</li>
-<li>隐函数定理(1)：$\frac{\partial F}{\partial y}(x_0,y_0)$ 可逆 $\Rightarrow \frac{\partial y}{\partial x}&#x3D;-(\frac{\partial F}{\partial y})^{-1}\frac{\partial F}{\partial x}$</li>
-<li>隐函数定理(2)：$\frac{\partial y}{\partial x_i}&#x3D;-\frac{\frac{\partial F}{\partial x_i}}{\frac{\partial F}{\partial y}}$</li>
-<li>逆映射定理：$J(F)|_{x_0}$ 可逆 $\Rightarrow J(f^{-1})&#x3D;(J(f))^{-1}$</li>
-</ol>
-</li>
-<li>$\mathrm{Taylor}$ 公式<ol>
-<li>$\displaystyle f(x)&#x3D;\sum_{k&#x3D;0}^{n}\frac{1}{k!}(h_1\frac{\partial}{\partial x_1}+h_2\frac{\partial}{\partial x_2}+\cdots+h_m\frac{\partial}{\partial x_m})^kf(x_0)+o(|x-x_0|^n)$</li>
-<li>$f(x)&#x3D;f(x_0)+J_f(x_0)\cdot(x-x_0)+\frac{1}{2}(x-x_0)^T H_f(x_0)(x-x_0)+o(||x-x_0||^2)$</li>
-</ol>
-</li>
-<li>空间曲线与曲面<ol>
-<li>详见<a href="https://sqzr2319.github.io/LinearAlgebra-1">线性代数(1)</a></li>
-<li>$z&#x3D;f(x,y)$ 法向量：$(-f’x,-f’y,1)$</li>
-<li>$F(x,y,z)&#x3D;0$ 法向量：$\nabla F$</li>
-</ol>
-</li>
-<li>无条件极值与条件极值<ol>
-<li>驻点 $+$ $\mathrm{Hesse}$ 矩阵正定或负定 $\Rightarrow$ 无条件极值（反之不成立）</li>
-<li>拉乘求得的解一定是条件最值但不一定是极值（需验算 $\mathrm{Hesse}$ 矩阵）</li>
-<li>存在函数 $f(x,y)&#x3D;x^2+y^2(1-x)^3$ 使得函数在 $\mathbb R^2$ 上一阶连续可微且存在唯一极值点，但该极值点不是最值点</li>
-</ol>
-</li>
-<li>例题<ol>
-<li>$(2021)$ 已知函数 $f(x,y)$ 在 $(1,1)$ 处可微，且 $f(1,1)&#x3D;1,f’_x(1,1)&#x3D;2,f’_y(1,1)&#x3D;3$，设 $g(x)&#x3D;f(x,f(x,x))$，求 $g’(1)$</li>
-<li>$(2021)$ 已知 $(axy^3-y^2\cos x)\mathrm{d}x+(1+by\sin x+3x^2y^2)\mathrm{d}y$ 为某一函数 $f(x,y)$ 的全微分，求 $a,b$ 的值及 $f(x,y)$</li>
-<li>$(2023)$ 设函数 $f(x,y)$ 在 $\mathbb R^2$ 上二次连续可微，对 $\forall \theta \in \mathbb R$，令 $g_\theta(t)&#x3D;f(t\cos\theta,t\sin\theta)$，假设 $\frac{\mathrm{d}g_\theta(t)}{\mathrm{d}t}\vert_{t&#x3D;0}&#x3D;0$ 且 $\frac{\mathrm{d}^2g_\theta(t)}{\mathrm{d}t^2}\vert_{t&#x3D;0}\gt 0,\forall \theta \in \mathbb R$，证明函数 $f(x,y)$ 在点 $(0,0)$ 处取得极小值</li>
-<li>$(2023)$ 根据隐函数定理，证明方程组 $\begin{cases}x^2+y^3&#x3D;2z^3\\x+y+z&#x3D;3\end{cases}$ 在点 $(1,1,1)$ 附近确定了两个 $C^{\infty}$ 类隐函数 $y&#x3D;y(x),z&#x3D;z(x)$，并证明隐函数 $z&#x3D;z(x)$ 在 $x&#x3D;1$ 处取得极值</li>
-<li>$(2024)$ 设可微函数 $u(x,y)$ 满足 $u(x,x^2)&#x3D;1$ 且 $\frac{\partial u}{\partial x}(x,x^2)&#x3D;x$，求 $\frac{\partial u}{\partial y}(x,x^2)$</li>
-<li>$(2023)$ 已知椭球面 $\frac{x^2}{8}+\frac{y^2}{4}+\frac{z^2}{2}&#x3D;1$ 与平面 $x+2y+2z&#x3D;0$ 的交线是椭圆，其在 $Oxy$ 平面上的投影曲线 $\Tau$ 也是椭圆，求 $\Tau$ 的四个顶点坐标</li>
-<li>$(3.15)$ 在方程 $(xy+z)\frac{\partial z}{\partial x}+(1-y^2)\frac{\partial z}{\partial y}&#x3D;x+yz$ 中作代换 $u&#x3D;yz-x,v&#x3D;xz-y,w&#x3D;xy-z$，其中视 $w$ 是 $u,v$ 的函数，求代换后的方程</li>
-<li>$(3.26)$ 曲线 $S$ 由方程 $ax+by+cz&#x3D;G(x^2+y^2+z^2)$ 确定，试证明：曲线 $S$ 上任一点的法线与某定直线相交</li>
-<li>$(3.27)$ 求两曲面 $F(x,y,z)&#x3D;0$ 和 $G(x,y,z)&#x3D;0$ 的交线在 $xy$ 平面上的投影曲线的切线方程</li>
-<li>$(4.34)$ 证明：椭球面 $\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}&#x3D;1$ 与平面 $Ax+By+Cz&#x3D;0$ 相交所截的椭圆面积为 $S&#x3D;\pi abc\sqrt{\frac{A^2+B^2+C^2}{A^2a^2+B^2b^2+C^2c^2}}$</li>
-</ol>
-</li>
-<li>证明题<ol>
-<li>$(2021)$ 已知函数 $f(x,y)$ 对每个变量 $x,y$ 分别连续，且对每个固定的 $x$，函数 $f(x,y)$ 对 $y$ 单调，证明：$f(x,y)$ 作为二元函数是连续函数</li>
-<li>$(2023)$ 对在 $\mathbb R^2$ 上连续可微的函数 $g(x,y)$，假设曲线 $\{(x,y)\in \mathbb R^2|G(x,y)&#x3D;0\}$ 具有无穷大符号 $\infty$ 的形状，问函数 $g(x,y)$ 在 $\mathbb R^2$ 上至少有多少个驻点？并证明你的结论。</li>
-<li>$(2024)$ 设 $D\subset\mathbb R^2$ 是一个非空有界闭区域，$f$ 是 $D$ 上的连续函数，证明：至多只有一个函数 $u(x,y)$ 在 $D$ 上连续，在 $D$ 的内部 $\mathring D$ 为 $C^2$ 类，且满足 $\begin{cases} u’’_{xx}+u’’_{yy}&#x3D;e^u,(x,y)\in \mathring D\\u&#x3D;f,(x,y) \in \partial D\end{cases}$</li>
-<li>$(2024)$ 设 $K$ 是 $\mathbb R^k$ 的非空有界闭子集，函数 $f:\mathbb R^m\times K\to \mathbb R$ 连续，记 $\displaystyle g(\mathrm{x})&#x3D;\min_{\mathrm{y}\in K}f(\mathrm{x},\mathrm{y})$，证明：$g:\mathbb R^m\to \mathbb R$ 连续</li>
-<li>$(2.12)$ 设 $\frac{\partial f}{\partial x}(x_0,y_0)$ 存在，$\frac{\partial f}{\partial y}(x,y)$ 连续，证明：$f(x,y)$ 在点 $(x_0,y_0)$ 处可微</li>
-<li>$(2.29)$ 设 $f’_x,f’_y$ 在点 $(x_0,y_0)$ 的某邻域内存在且 $f’’_{xy}$ 在 $(x_0,y_0)$ 连续，证明：$f’’_{yx}(x_0,y_0)$ 存在且 $f’’_{xy}(x_0,y_0)&#x3D;f’’_{yx}(x_0,y_0)$</li>
-<li>$(3.11)$ 设 $u&#x3D;f(z)$，其中 $z$ 是由方程 $z&#x3D;x+y\varphi(z)$ 所定义的变量为 $x,y$ 的隐函数，求证：$\displaystyle \frac{\partial^n u}{\partial y^n}&#x3D;\frac{\partial^{n-1}}{\partial x^{n-1}}\left((\varphi(z))^n\frac{\partial u}{\partial x}\right)$，其中 $\varphi(z)$ 无穷次可微</li>
-<li>$(4.11)$ $f$ 在 $\mathbb R^2$ 上一阶连续可微，且 $\forall (x,y)\neq (0,0)$，有 $xf’_x(x,y)+yf’_y(x,y)\gt 0$，证明：原点是 $f$ 的唯一极小值点，且 $\displaystyle \lim_{(x,y)\to (0,0)}\frac{f(x,y)-f(0,0)}{\sqrt{x^2+y^2}}&#x3D;0$</li>
-<li>$(4.13)$ 已知 $D&#x3D;\{(x,y):0\lt x\lt 1,0\lt y\lt 1\},f(x,y)&#x3D;ax^2+bxy+cy^2+dx+ey$，且 $\forall (x,y)\in \partial D$，有 $f(x,y)\le 0$，证明：$\forall (x,y)\in D$，有 $f(x,y)\le 0$</li>
-</ol>
-</li>
-</ol>
-<h2 id="二、含参积分"><a href="#二、含参积分" class="headerlink" title="二、含参积分"></a>二、含参积分</h2><ol>
-<li>含参定积分的性质（参数范围为<strong>有限闭区间</strong>）<ol>
-<li>连续、可积：$f(x,y)$ 在 $[a,b]\times [\alpha,\beta]$ 上连续</li>
-<li>可微：$f(x,y),f’_y(x,y)$ 在 $[a,b]\times [\alpha,\beta]$ 上连续</li>
-<li>可微的计算：$\displaystyle \frac{\mathrm{d}}{\mathrm{d}y}\int_{\alpha(y)}^{\beta(y)} f(x,y)\mathrm{d}x&#x3D;\int_{\alpha(y)}^{\beta(y)} f’_y(x,y)\mathrm{d}x+f(\beta(y),y)\cdot\beta’(y)-f(\alpha(y),y)\cdot\alpha’(y)$</li>
-</ol>
-</li>
-<li>含参广义积分的性质（参数范围为<strong>有限闭区间</strong>）<ol>
-<li>连续、可积<ol>
-<li>$f(x,y)$ 在 $[a,+\infty)\times [\alpha,\beta]$ 上连续（同定积分）</li>
-<li>$\displaystyle \int_a^{+\infty}f(x,y)\mathrm{d}x$ 在 $y\in[\alpha,\beta]$ 上<strong>一致收敛</strong></li>
-</ol>
-</li>
-<li>可微<ol>
-<li>$f(x,y),f’_y(x,y)$ 在 $[a,+\infty)\times [\alpha,\beta]$ 上连续（同定积分）</li>
-<li>$\displaystyle \int_a^{+\infty}f(x,y)\mathrm{d}x$ 在 $y\in[\alpha,\beta]$ 上<strong>逐点收敛</strong></li>
-<li>$\displaystyle \int_a^{+\infty}f’_y(x,y)\mathrm{d}x$ 在 $y\in[\alpha,\beta]$ 上<strong>一致收敛</strong></li>
-</ol>
-</li>
-</ol>
-</li>
-<li>二元无穷限累次积分的性质（参数范围为<strong>无穷限区间</strong>）<ol>
-<li>交换积分次序<ol>
-<li>$f(x,y)$ 在 $[a,+\infty)\times [\alpha,+\infty)$ 上连续（同定积分）</li>
-<li>$\displaystyle \forall \beta\gt \alpha,\int_a^{+\infty}f(x,y)\mathrm{d}x$ 在 $y\in[\alpha,\beta]$ 上<strong>一致收敛</strong></li>
-<li>$\displaystyle \forall b\gt a,\int_\alpha^{+\infty}f(x,y)\mathrm{d}y$ 在 $x\in[a,b]$ 上<strong>一致收敛</strong></li>
-<li>$\displaystyle \int_\alpha^{+\infty}\mathrm{d}y\int_a^{+\infty}\left|f(x,y)\right|\mathrm{d}x$ 和 $\displaystyle \int_a^{+\infty}\mathrm{d}y\int_\alpha^{+\infty}\left|f(x,y)\right|\mathrm{d}x$ 中至少有一个存在</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>含参广义积分判敛<ol>
-<li>方法<ol>
-<li>定义</li>
-<li>$\mathrm{Cauchy}$</li>
-<li>$\mathrm{Weierstrass}$</li>
-<li>$\mathrm{Dirichlet}$</li>
-<li>$\mathrm{Abel}$</li>
-</ol>
-</li>
-<li>技巧<ol>
-<li>连续延拓</li>
-<li>取任意闭区间 $[a,b]$ 逼近开区间</li>
-</ol>
-</li>
-<li>注意事项<ol>
-<li><strong>技巧2.2只能用于连续不能用于一致收敛</strong></li>
-<li>一致收敛是连续的<strong>充分非必要</strong>条件</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>技巧与例题<ol>
-<li>微分方程的求解：详见<a href="https://sqzr2319.github.io/Calculus-A1">微积分A(1)</a></li>
-<li>常用积分公式：$\begin{cases}\displaystyle \int e^{ax}\cos bx\mathrm{d}x&#x3D;\frac{e^{ax}}{a^2+b^2}(a\cos bx+b\sin bx)+C\\\displaystyle \int e^{ax}\sin bx\mathrm{d}x&#x3D;\frac{e^{ax}}{a^2+b^2}(a\sin bx-b\cos bx)+C\end{cases}$</li>
-<li>$(2024)$ 设 $\displaystyle I(y)&#x3D;\int_0^{+\infty}e^{-x^2}\sin(2xy)\mathrm{d}x$，证明：$\displaystyle I(y)&#x3D;e^{-y^2}\int_0^y e^{-t^2}\mathrm{d}t$</li>
-<li>$(5.26)$ 试利用积分 $\displaystyle \varphi(x)&#x3D;\int_0^1 \frac{e^{-x^2(1+u^2)}}{1+u^2}\mathrm{d}u$ 计算积分 $\displaystyle I&#x3D;\int_0^{+\infty} e^{-x^2}\mathrm{d}x$</li>
-</ol>
-</li>
-<li>证明题<ol>
-<li>$(5.17)$ 证明：$\displaystyle \int_0^{+\infty} \frac{\sin x^2y}{x}\mathrm{d}x$ 在 $y\in (0,+\infty)$ 不一致收敛，但连续</li>
-</ol>
-</li>
-</ol>
+<font face="霞鹜文楷等宽">
+
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p><img src="/img/Bytalk-1-1.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>上图为今年上海市崇明区高三数学一模压轴题最后一问的原题以及区教研组提供的参考答案。事实上，题设中的条件已经够强，只需要借助一些高等知识，就可以证明：满足条件的 $f$ 只能是零函数。</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>为了证明 $f&#x3D;0$，先证明两个引理：</p>
+<p><strong>引理 $1$：满足条件的 $f$ 若存在两个零点 $x_1\neq x_2$，则 $\forall x\in[x_1,x_2],f(x)&#x3D;0$</strong></p>
+<p>证明：考虑函数 $g(x)&#x3D;|f(x)|$，由 $g(x)$ 的连续性，$g$ 在 $[x_1,x_2]$ 上存在最大值，分两种情况讨论：</p>
+<p>$(1)$ $g$ 在区间上的最大值在端点处取到，则自然有 $\forall x\in[x_1,x_2],|f(x)|&#x3D;0\Leftrightarrow f(x)&#x3D;0$ 成立</p>
+<p>$(2)$ $g$ 在区间上的最大值在内点 $x_0$ 处取到，此时有 $g(x_0)\neq 0$，不妨设 $g(x_0)\gt 0$，则在 $x_0$ 的邻域上有 $g(x)&#x3D;f(x)$ 或 $g(x)&#x3D;-f(x)$，则 $g(x)$ 在 $x_0$ 处可导，因此由 $\mathrm{Fermat}$ 引理，有 $g’(x_0)&#x3D;0$，则 $g(x_0)&#x3D;g’(x_0)&#x3D;0$，故也有 $\forall x\in[x_1,x_2],|f(x)|&#x3D;0\Leftrightarrow f(x)&#x3D;0$ 成立</p>
+<p><strong>引理 $2$：若函数在区间 $I$ 上不存在零点，则函数在该区间上单调</strong></p>
+<p>证明：若函数不单调，则 $\exists \xi\in I,s.t. f’(\xi)&#x3D;0$，则 $f(\xi)&#x3D;0$，与函数在区间 $I$ 上不存在零点矛盾</p>
+<p><strong>接下来考虑 $f$ 的零点构成的集合 $S$，分四种情况讨论：</strong></p>
+<p>$(1)$ $S$ 不存在上下确界，则由引理 $1$，$S&#x3D;\mathbb R$，则 $f&#x3D;0$</p>
+<p>$(2)$ $S$ 的上下确界中的一个不存在，不妨设下确界不存在，记 $S$ 的上确界为 $M$，则 $f$ 在 $[M,+\infty)$ 上单调，且 $f(M-1)&#x3D;0$，由于添加零区间不影响函数的单调性，故 $f$ 在 $[M-1,+\infty)$ 上也单调，不妨设 $f$ 在 $[M-1,+\infty)$ 上单调递增，$f’(x)\ge 0$，则由条件 $1$ 和 $f$ 的单调性有 $0\le f(x)\le f’(x)$，此时考虑函数 $\displaystyle h(x)&#x3D;\frac{f(x)}{e^x}$，$\displaystyle h’(x)&#x3D;\frac{f’(x)-f(x)}{e^x}\ge 0$，$h(x)$ 在 $[M-1,+\infty)$ 上单调递增，再将 $f(x)&#x3D;h(x)e^x$ 代入条件 $2$，有 $\displaystyle 0\le h(x)\le \frac{\sqrt{2}}{e^x}$，由夹逼定理，则 $\displaystyle \lim_{x\to +\infty} h(x)&#x3D;0$，又由于 $h(M-1)&#x3D;0$，且 $h$ 在 $[M-1,+\infty)$ 上单调递增，故 $\forall x\in[M-1,+\infty),h(x)&#x3D;0\Rightarrow f(x)&#x3D;0$，而又由于引理 $1$， $(-\infty,M-1]\subset S$，故 $\forall x\in \mathbb R, f(x)&#x3D;0$ </p>
+<p>$(3)$ $S$ 上下确界均存在，此时仿照 $(2)$ 即可</p>
+<p>$(4)$ $S$ 为空集，不妨设 $f\gt 0$，记 $f(0)&#x3D;m_0\gt 0$，由于 $f$ 在 $\mathbb R$ 上单调，再分两种情况讨论：</p>
+<p>$(\mathrm{i})$ 若 $f$ 单调递增，则 $\forall x\in [0,+\infty),f’(x)\ge f(x)\ge f(0)&#x3D;m_0\gt 0$，显然与 $f$ 有界矛盾</p>
+<p>$(\mathrm{ii})$ 若 $f$ 单调递减，考虑函数 $h(x)&#x3D;f(-x)$，容易验证若 $f$ 满足条件，则 $h$ 也满足条件，且有 $h(0)\gt 0$，$h$ 在 $\mathbb R$ 上单调递增，由情况 $(\mathrm{i})$，$h$ 不存在，故 $f$ 也不存在，矛盾</p>
+<p>综上，$f$ 满足条件当且仅当 $f&#x3D;0$</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>原题作为高三数学一模压轴题的最后一问，题设的条件显然欠妥；然而，改编后的题目却很适合作为微积分或数学分析的一道习题。</p>
+<p>事实上，证明过程中的引理 $1$ 是今年上海交通大学高等数学 $\mathrm{A}(1)$ 期末考试的压轴题，而情况 $(2)$ 中构造的函数 $h$ 也是利用微分方程解决不等式问题的常见技巧。</p>
+<p>希望能借这道题帮看到这篇文章的同学们回顾一下上学期所学的微积分知识，也祝同学们在微积分 $\mathrm{A}(1)$ 中取得满意的成绩。（笔者已经寄了，$\mathrm{qwq}$）</p>
 
                 
               </div>
@@ -442,7 +336,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E7%AC%94%E8%AE%B0/" class="category-chain-item">笔记</a>
+  <a href="/categories/%E6%8E%A8%E9%80%81/" class="category-chain-item">推送</a>
   
   
 
@@ -459,7 +353,7 @@
       
         <a href="/tags/%E6%95%B0%E5%AD%A6/" class="print-no-link">#数学</a>
       
-        <a href="/tags/%E5%A4%A7%E4%B8%80%E4%B8%8B/" class="print-no-link">#大一下</a>
+        <a href="/tags/%E6%9D%82%E8%B0%88/" class="print-no-link">#杂谈</a>
       
     </div>
   
@@ -471,8 +365,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>微积分A(2)</div>
-      <div>https://sqzr2319.github.io/Calculus-A2/</div>
+      <div>杂谈 | 一道高三一模数学题引发的思考</div>
+      <div>https://sqzr2319.github.io/Bytalk-1/</div>
     </div>
     <div class="license-meta">
       
@@ -484,7 +378,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年4月7日</div>
+          <div>2025年1月13日</div>
         </div>
       
       
@@ -516,9 +410,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/LinearAlgebra-2/" title="线性代数(2)">
+                      <a href="/Bytalk-2/" title="杂谈 | 逆天高三模卷数学压轴一则">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">线性代数(2)</span>
+                        <span class="hidden-mobile">杂谈 | 逆天高三模卷数学压轴一则</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -526,8 +420,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/CSDIY-24Winter/" title="大一上自学笔记">
-                        <span class="hidden-mobile">大一上自学笔记</span>
+                      <a href="/Calculus-A1/" title="微积分A(1)">
+                        <span class="hidden-mobile">微积分A(1)</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
