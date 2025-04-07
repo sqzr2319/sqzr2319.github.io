@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url('/fonts/nunito.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: '霞鹜文楷等宽';
+    src: url('/fonts/lxgwwenkai.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /* 设置网页全局字体 */
+  body {
+    font-family: 'Nunito', '霞鹜文楷等宽';
+  }
