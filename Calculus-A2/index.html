@@ -27,7 +27,7 @@
 <meta property="og:description" content="大一下学期微积分A(2)的复习笔记，目前更新至含参积分。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-04-07T04:04:23.000Z">
-<meta property="article:modified_time" content="2025-04-07T12:43:02.361Z">
+<meta property="article:modified_time" content="2025-04-09T01:20:38.189Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="数学">
 <meta property="article:tag" content="大一下">
@@ -323,7 +323,7 @@
 </li>
 <li>空间曲线与曲面<ol>
 <li>详见<a href="https://sqzr2319.github.io/LinearAlgebra-1">线性代数(1)</a></li>
-<li>$z&#x3D;f(x,y)$ 法向量：$(-f’x,-f’y,1)$</li>
+<li>$z&#x3D;f(x,y)$ 法向量：$(-f^{\prime}x,-f^{\prime}y,1)$</li>
 <li>$F(x,y,z)&#x3D;0$ 法向量：$\nabla F$</li>
 </ol>
 </li>
@@ -334,10 +334,10 @@
 </ol>
 </li>
 <li>例题<ol>
-<li>$(2021)$ 已知函数 $f(x,y)$ 在 $(1,1)$ 处可微，且 $f(1,1)&#x3D;1,f’_x(1,1)&#x3D;2,f’_y(1,1)&#x3D;3$，设 $g(x)&#x3D;f(x,f(x,x))$，求 $g’(1)$</li>
+<li>$(2021)$ 已知函数 $f(x,y)$ 在 $(1,1)$ 处可微，且 $f(1,1)&#x3D;1,f^{\prime}_x(1,1)&#x3D;2,f^{\prime}_y(1,1)&#x3D;3$，设 $g(x)&#x3D;f(x,f(x,x))$，求 $g^{\prime}(1)$</li>
 <li>$(2021)$ 已知 $(axy^3-y^2\cos x)\mathrm{d}x+(1+by\sin x+3x^2y^2)\mathrm{d}y$ 为某一函数 $f(x,y)$ 的全微分，求 $a,b$ 的值及 $f(x,y)$</li>
 <li>$(2023)$ 设函数 $f(x,y)$ 在 $\mathbb R^2$ 上二次连续可微，对 $\forall \theta \in \mathbb R$，令 $g_\theta(t)&#x3D;f(t\cos\theta,t\sin\theta)$，假设 $\frac{\mathrm{d}g_\theta(t)}{\mathrm{d}t}\vert_{t&#x3D;0}&#x3D;0$ 且 $\frac{\mathrm{d}^2g_\theta(t)}{\mathrm{d}t^2}\vert_{t&#x3D;0}\gt 0,\forall \theta \in \mathbb R$，证明函数 $f(x,y)$ 在点 $(0,0)$ 处取得极小值</li>
-<li>$(2023)$ 根据隐函数定理，证明方程组 $\begin{cases}x^2+y^3&#x3D;2z^3\\x+y+z&#x3D;3\end{cases}$ 在点 $(1,1,1)$ 附近确定了两个 $C^{\infty}$ 类隐函数 $y&#x3D;y(x),z&#x3D;z(x)$，并证明隐函数 $z&#x3D;z(x)$ 在 $x&#x3D;1$ 处取得极值</li>
+<li>$(2023)$ 根据隐函数定理，证明方程组 $\begin{cases}x^3+y^3&#x3D;2z^3\\x+y+z&#x3D;3\end{cases}$ 在点 $(1,1,1)$ 附近确定了两个 $C^{\infty}$ 类隐函数 $y&#x3D;y(x),z&#x3D;z(x)$，并证明隐函数 $z&#x3D;z(x)$ 在 $x&#x3D;1$ 处取得极值</li>
 <li>$(2024)$ 设可微函数 $u(x,y)$ 满足 $u(x,x^2)&#x3D;1$ 且 $\frac{\partial u}{\partial x}(x,x^2)&#x3D;x$，求 $\frac{\partial u}{\partial y}(x,x^2)$</li>
 <li>$(2023)$ 已知椭球面 $\frac{x^2}{8}+\frac{y^2}{4}+\frac{z^2}{2}&#x3D;1$ 与平面 $x+2y+2z&#x3D;0$ 的交线是椭圆，其在 $Oxy$ 平面上的投影曲线 $\Tau$ 也是椭圆，求 $\Tau$ 的四个顶点坐标</li>
 <li>$(3.15)$ 在方程 $(xy+z)\frac{\partial z}{\partial x}+(1-y^2)\frac{\partial z}{\partial y}&#x3D;x+yz$ 中作代换 $u&#x3D;yz-x,v&#x3D;xz-y,w&#x3D;xy-z$，其中视 $w$ 是 $u,v$ 的函数，求代换后的方程</li>
@@ -348,13 +348,12 @@
 </li>
 <li>证明题<ol>
 <li>$(2021)$ 已知函数 $f(x,y)$ 对每个变量 $x,y$ 分别连续，且对每个固定的 $x$，函数 $f(x,y)$ 对 $y$ 单调，证明：$f(x,y)$ 作为二元函数是连续函数</li>
-<li>$(2023)$ 对在 $\mathbb R^2$ 上连续可微的函数 $g(x,y)$，假设曲线 $\{(x,y)\in \mathbb R^2|G(x,y)&#x3D;0\}$ 具有无穷大符号 $\infty$ 的形状，问函数 $g(x,y)$ 在 $\mathbb R^2$ 上至少有多少个驻点？并证明你的结论。</li>
-<li>$(2024)$ 设 $D\subset\mathbb R^2$ 是一个非空有界闭区域，$f$ 是 $D$ 上的连续函数，证明：至多只有一个函数 $u(x,y)$ 在 $D$ 上连续，在 $D$ 的内部 $\mathring D$ 为 $C^2$ 类，且满足 $\begin{cases} u’’_{xx}+u’’_{yy}&#x3D;e^u,(x,y)\in \mathring D\\u&#x3D;f,(x,y) \in \partial D\end{cases}$</li>
+<li>$(2023)$ 对在 $\mathbb R^2$ 上连续可微的函数 $g(x,y)$，假设曲线 $\{(x,y)\in \mathbb R^2|g(x,y)&#x3D;0\}$ 具有无穷大符号 $\infty$ 的形状，问函数 $g(x,y)$ 在 $\mathbb R^2$ 上至少有多少个驻点？并证明你的结论。</li>
+<li>$(2024)$ 设 $D\subset\mathbb R^2$ 是一个非空有界闭区域，$f$ 是 $D$ 上的连续函数，证明：至多只有一个函数 $u(x,y)$ 在 $D$ 上连续，在 $D$ 的内部 $\mathring D$ 为 $C^2$ 类，且满足 $\begin{cases} u^{\prime\prime}_{xx}+u^{\prime\prime}_{yy}&#x3D;e^u,(x,y)\in \mathring D\\u&#x3D;f,(x,y) \in \partial D\end{cases}$</li>
 <li>$(2024)$ 设 $K$ 是 $\mathbb R^k$ 的非空有界闭子集，函数 $f:\mathbb R^m\times K\to \mathbb R$ 连续，记 $\displaystyle g(\mathrm{x})&#x3D;\min_{\mathrm{y}\in K}f(\mathrm{x},\mathrm{y})$，证明：$g:\mathbb R^m\to \mathbb R$ 连续</li>
 <li>$(2.12)$ 设 $\frac{\partial f}{\partial x}(x_0,y_0)$ 存在，$\frac{\partial f}{\partial y}(x,y)$ 连续，证明：$f(x,y)$ 在点 $(x_0,y_0)$ 处可微</li>
-<li>$(2.29)$ 设 $f’_x,f’_y$ 在点 $(x_0,y_0)$ 的某邻域内存在且 $f’’_{xy}$ 在 $(x_0,y_0)$ 连续，证明：$f’’_{yx}(x_0,y_0)$ 存在且 $f’’_{xy}(x_0,y_0)&#x3D;f’’_{yx}(x_0,y_0)$</li>
 <li>$(3.11)$ 设 $u&#x3D;f(z)$，其中 $z$ 是由方程 $z&#x3D;x+y\varphi(z)$ 所定义的变量为 $x,y$ 的隐函数，求证：$\displaystyle \frac{\partial^n u}{\partial y^n}&#x3D;\frac{\partial^{n-1}}{\partial x^{n-1}}\left((\varphi(z))^n\frac{\partial u}{\partial x}\right)$，其中 $\varphi(z)$ 无穷次可微</li>
-<li>$(4.11)$ $f$ 在 $\mathbb R^2$ 上一阶连续可微，且 $\forall (x,y)\neq (0,0)$，有 $xf’_x(x,y)+yf’_y(x,y)\gt 0$，证明：原点是 $f$ 的唯一极小值点，且 $\displaystyle \lim_{(x,y)\to (0,0)}\frac{f(x,y)-f(0,0)}{\sqrt{x^2+y^2}}&#x3D;0$</li>
+<li>$(4.11)$ $f$ 在 $\mathbb R^2$ 上一阶连续可微，且 $\forall (x,y)\neq (0,0)$，有 $xf^{\prime}_x(x,y)+yf^{\prime}_y(x,y)\gt 0$，证明：原点是 $f$ 的唯一极小值点，且 $\displaystyle \lim_{(x,y)\to (0,0)}\frac{f(x,y)-f(0,0)}{\sqrt{x^2+y^2}}&#x3D;0$</li>
 <li>$(4.13)$ 已知 $D&#x3D;\{(x,y):0\lt x\lt 1,0\lt y\lt 1\},f(x,y)&#x3D;ax^2+bxy+cy^2+dx+ey$，且 $\forall (x,y)\in \partial D$，有 $f(x,y)\le 0$，证明：$\forall (x,y)\in D$，有 $f(x,y)\le 0$</li>
 </ol>
 </li>
@@ -362,8 +361,8 @@
 <h2 id="二、含参积分"><a href="#二、含参积分" class="headerlink" title="二、含参积分"></a>二、含参积分</h2><ol>
 <li>含参定积分的性质（参数范围为<strong>有限闭区间</strong>）<ol>
 <li>连续、可积：$f(x,y)$ 在 $[a,b]\times [\alpha,\beta]$ 上连续</li>
-<li>可微：$f(x,y),f’_y(x,y)$ 在 $[a,b]\times [\alpha,\beta]$ 上连续</li>
-<li>可微的计算：$\displaystyle \frac{\mathrm{d}}{\mathrm{d}y}\int_{\alpha(y)}^{\beta(y)} f(x,y)\mathrm{d}x&#x3D;\int_{\alpha(y)}^{\beta(y)} f’_y(x,y)\mathrm{d}x+f(\beta(y),y)\cdot\beta’(y)-f(\alpha(y),y)\cdot\alpha’(y)$</li>
+<li>可微：$f(x,y),f^{\prime}_y(x,y)$ 在 $[a,b]\times [\alpha,\beta]$ 上连续</li>
+<li>可微的计算：$\displaystyle \frac{\mathrm{d}}{\mathrm{d}y}\int_{\alpha(y)}^{\beta(y)} f(x,y)\mathrm{d}x&#x3D;\int_{\alpha(y)}^{\beta(y)} f^{\prime}_y(x,y)\mathrm{d}x+f(\beta(y),y)\cdot\beta^{\prime}(y)-f(\alpha(y),y)\cdot\alpha^{\prime}(y)$</li>
 </ol>
 </li>
 <li>含参广义积分的性质（参数范围为<strong>有限闭区间</strong>）<ol>
@@ -373,9 +372,9 @@
 </ol>
 </li>
 <li>可微<ol>
-<li>$f(x,y),f’_y(x,y)$ 在 $[a,+\infty)\times [\alpha,\beta]$ 上连续（同定积分）</li>
+<li>$f(x,y),f^{\prime}_y(x,y)$ 在 $[a,+\infty)\times [\alpha,\beta]$ 上连续（同定积分）</li>
 <li>$\displaystyle \int_a^{+\infty}f(x,y)\mathrm{d}x$ 在 $y\in[\alpha,\beta]$ 上<strong>逐点收敛</strong></li>
-<li>$\displaystyle \int_a^{+\infty}f’_y(x,y)\mathrm{d}x$ 在 $y\in[\alpha,\beta]$ 上<strong>一致收敛</strong></li>
+<li>$\displaystyle \int_a^{+\infty}f^{\prime}_y(x,y)\mathrm{d}x$ 在 $y\in[\alpha,\beta]$ 上<strong>一致收敛</strong></li>
 </ol>
 </li>
 </ol>
@@ -385,7 +384,7 @@
 <li>$f(x,y)$ 在 $[a,+\infty)\times [\alpha,+\infty)$ 上连续（同定积分）</li>
 <li>$\displaystyle \forall \beta\gt \alpha,\int_a^{+\infty}f(x,y)\mathrm{d}x$ 在 $y\in[\alpha,\beta]$ 上<strong>一致收敛</strong></li>
 <li>$\displaystyle \forall b\gt a,\int_\alpha^{+\infty}f(x,y)\mathrm{d}y$ 在 $x\in[a,b]$ 上<strong>一致收敛</strong></li>
-<li>$\displaystyle \int_\alpha^{+\infty}\mathrm{d}y\int_a^{+\infty}\left|f(x,y)\right|\mathrm{d}x$ 和 $\displaystyle \int_a^{+\infty}\mathrm{d}y\int_\alpha^{+\infty}\left|f(x,y)\right|\mathrm{d}x$ 中至少有一个存在</li>
+<li>$\displaystyle \int_\alpha^{+\infty}\mathrm{d}y\int_a^{+\infty}\left|f(x,y)\right|\mathrm{d}x$ 和 $\displaystyle \int_a^{+\infty}\mathrm{d}x\int_\alpha^{+\infty}\left|f(x,y)\right|\mathrm{d}y$ 中至少有一个存在</li>
 </ol>
 </li>
 </ol>
@@ -419,6 +418,7 @@
 </ol>
 </li>
 <li>证明题<ol>
+<li>$(5.4)$ 证明：$\mathrm{Bessel}$ 函数 $\displaystyle I_n(x)&#x3D;\frac{1}{\pi}\int_0^{\pi}\cos(n\varphi-x\sin\varphi)\mathrm{d}\varphi,n\in \mathbb Z$ 满足 $\mathrm{Bessel}$ 方程 $x^2I^{\prime\prime}_n(x)+xI^{\prime}_n(x)+(x^2-n^2)I_n(x)&#x3D;0$</li>
 <li>$(5.17)$ 证明：$\displaystyle \int_0^{+\infty} \frac{\sin x^2y}{x}\mathrm{d}x$ 在 $y\in (0,+\infty)$ 不一致收敛，但连续</li>
 </ol>
 </li>

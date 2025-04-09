@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://sqzr2319.github.io/img/43Class-2-4.jpg">
 <meta property="og:image" content="https://sqzr2319.github.io/img/43Class-2-5.jpg">
 <meta property="article:published_time" content="2024-12-17T01:50:00.000Z">
-<meta property="article:modified_time" content="2025-04-07T12:43:04.718Z">
+<meta property="article:modified_time" content="2025-04-09T01:23:36.095Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="肆叁小灶">
 <meta property="article:tag" content="数学">
@@ -349,7 +349,7 @@
 <p>借助内积空间理论，我们研究了向量到矩阵列空间的投影。对于列向量线性无关的矩阵 $A$，我们推出了投影矩阵 $\mathbb P_{C(A)}&#x3D;A(A^TA)^{-1}A^T$，并推出了最小二乘法。</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs MATLAB">(* Mathematica 计算最小二乘法 *)<br>LeastSquares[&#123;&#123;<span class="hljs-number">1</span>,<span class="hljs-number">1</span>&#125;,&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>&#125;,&#123;<span class="hljs-number">1</span>,<span class="hljs-number">3</span>&#125;&#125;,&#123;&#123;<span class="hljs-number">7</span>&#125;,&#123;<span class="hljs-number">7</span>&#125;,&#123;<span class="hljs-number">8</span>&#125;&#125;]<br></code></pre></td></tr></table></figure>
 
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs MATLAB"><span class="hljs-comment">% MATLAB 计算最小二乘法</span><br>A=[<span class="hljs-number">1</span>,<span class="hljs-number">1</span>;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>;<span class="hljs-number">1</span>,<span class="hljs-number">3</span>]<br>b=[<span class="hljs-number">7</span>;<span class="hljs-number">7</span>;<span class="hljs-number">8</span>]<br>x=inv(A&#x27;*A)*A&#x27;*b<br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs MATLAB"><span class="hljs-comment">% MATLAB 计算最小二乘法</span><br>A=[<span class="hljs-number">1</span>,<span class="hljs-number">1</span>;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>;<span class="hljs-number">1</span>,<span class="hljs-number">3</span>]<br>b=[<span class="hljs-number">7</span>;<span class="hljs-number">7</span>;<span class="hljs-number">8</span>]<br>x=inv(A^&#123;\prime&#125;*A)*A^&#123;\prime&#125;*b<br></code></pre></td></tr></table></figure>
 
 <p>但我们发现投影矩阵的求解过程计算量过大，于是我们借助 Gram-Schmidt 正交化得到了正交矩阵，对于正交矩阵 $Q$，投影矩阵 $\mathbb P_{C(Q)}&#x3D;QQ^T$，大大简化了计算。</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs MATLAB">(* Mathematica 计算 QR 分解 *)<br>&#123;q,r&#125;=QRDecomposition[&#123;&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>&#125;,&#123;<span class="hljs-number">3</span>,<span class="hljs-number">4</span>&#125;&#125;]<br></code></pre></td></tr></table></figure>
