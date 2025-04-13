@@ -19,23 +19,23 @@
   <meta name="author" content="sqzr2319">
   <meta name="keywords" content="">
   
-    <meta name="description" content="大一下学期微积分A(2)的复习笔记，目前更新至含参积分。">
+    <meta name="description" content="大一下学期工程图学的复习笔记，目前更新至组合体。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微积分A(2)">
-<meta property="og:url" content="https://sqzr2319.github.io/Calculus-A2/index.html">
+<meta property="og:title" content="工程图学">
+<meta property="og:url" content="https://sqzr2319.github.io/EngineerGraph/index.html">
 <meta property="og:site_name" content="sqzr2319&#39;s blog">
-<meta property="og:description" content="大一下学期微积分A(2)的复习笔记，目前更新至含参积分。">
+<meta property="og:description" content="大一下学期工程图学的复习笔记，目前更新至组合体。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-04-07T04:04:23.000Z">
-<meta property="article:modified_time" content="2025-04-09T13:39:42.859Z">
+<meta property="article:published_time" content="2025-04-09T12:51:14.000Z">
+<meta property="article:modified_time" content="2025-04-13T16:34:01.923Z">
 <meta property="article:author" content="sqzr2319">
-<meta property="article:tag" content="数学">
 <meta property="article:tag" content="大一下">
+<meta property="article:tag" content="机电">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>微积分A(2) - sqzr2319&#39;s blog</title>
+  <title>工程图学 - sqzr2319&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="微积分A(2)"></span>
+            <span id="subtitle" data-typed-text="工程图学"></span>
           
         </div>
 
@@ -227,8 +227,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-04-07 12:04" pubdate>
-          2025年4月7日 中午
+        <time datetime="2025-04-09 20:51" pubdate>
+          2025年4月9日 晚上
         </time>
       </span>
     
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.1k 字
+          1.6k 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          18 分钟
+          13 分钟
         
       </span>
     
@@ -287,139 +287,175 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">微积分A(2)</h1>
+            <h1 id="seo-header">工程图学</h1>
             
             
               <div class="markdown-body">
                 
-                <p>大一下学期微积分A(2)的复习笔记，目前更新至含参积分。</p>
+                <p>大一下学期工程图学的复习笔记，目前更新至组合体。</p>
 <span id="more"></span>
 
-<h2 id="一、多元微分"><a href="#一、多元微分" class="headerlink" title="一、多元微分"></a>一、多元微分</h2><ol>
-<li>赋范线性空间 $\mathbb R^n$<ol>
-<li>$\mathbb R^n$ 中非空的道路连通的开集称为开区域，<strong>开区域的闭包</strong>称为闭区域</li>
-<li>道路联通的闭集<strong>不一定</strong>是闭区域</li>
-<li>凸区域：$\forall x,y\in\Omega,\lambda x+(1-\lambda)y\in\Omega$</li>
+<h2 id="一、点线面"><a href="#一、点线面" class="headerlink" title="一、点线面"></a>一、点线面</h2><h3 id="1-投影"><a href="#1-投影" class="headerlink" title="1. 投影"></a>1. 投影</h3><ol>
+<li>投影面平行线<ol>
+<li>在其平行的那个投影面上的投影反映实长，并反映直线与另两投影面倾角的实际大小</li>
+<li>另两个投影面上的投影平行于相应的投影轴，其到相应投影轴距离反映直线与它所平行的投影面之间的距离</li>
 </ol>
 </li>
-<li>极限与连续<ol>
-<li>若 $x_0$ 是 $\Omega$ 的孤立点，则 $f$ 在 $x_0$ 处连续</li>
-<li>在<strong>开区域</strong>中定义的初等函数处处连续</li>
-<li>$|f(x)|\le M|g(x)|$，则 $f(x)&#x3D;O(g(x))\Leftrightarrow g(x)&#x3D;\Omega(f(x))$</li>
-<li>$f$ 为连续函数当且仅当开集的原像为开集</li>
+<li>投影面垂直线<ol>
+<li>在其垂直的投影面上，投影有积聚性</li>
+<li>另外两个投影，反映线段实长，且垂直于相应的投影轴</li>
 </ol>
 </li>
-<li>导数与微分<ol>
-<li>不可微时即使偏导函数都存在也不存在梯度</li>
-<li>隐函数定理(1)：$\frac{\partial F}{\partial y}(x_0,y_0)$ 可逆 $\Rightarrow \frac{\partial y}{\partial x}&#x3D;-(\frac{\partial F}{\partial y})^{-1}\frac{\partial F}{\partial x}$</li>
-<li>隐函数定理(2)：$\frac{\partial y}{\partial x_i}&#x3D;-\frac{\frac{\partial F}{\partial x_i}}{\frac{\partial F}{\partial y}}$</li>
-<li>逆映射定理：$J(F)|_{x_0}$ 可逆 $\Rightarrow J(f^{-1})&#x3D;(J(f))^{-1}$</li>
+<li>投影面垂直面<ol>
+<li>在它垂直的投影面上的投影积聚成直线。且反映空间平面与另外两投影面夹角的大小</li>
+<li>另外两个投影面上的投影是类似形</li>
 </ol>
 </li>
-<li>$\mathrm{Taylor}$ 公式<ol>
-<li>$\displaystyle f(x)&#x3D;\sum_{k&#x3D;0}^{n}\frac{1}{k!}(h_1\frac{\partial}{\partial x_1}+h_2\frac{\partial}{\partial x_2}+\cdots+h_m\frac{\partial}{\partial x_m})^kf(x_0)+o(|x-x_0|^n)$</li>
-<li>$f(x)&#x3D;f(x_0)+J_f(x_0)\cdot(x-x_0)+\frac{1}{2}(x-x_0)^T H_f(x_0)(x-x_0)+o(||x-x_0||^2)$</li>
-</ol>
-</li>
-<li>空间曲线与曲面<ol>
-<li>详见<a href="https://sqzr2319.github.io/LinearAlgebra-1">线性代数(1)</a></li>
-<li>$z&#x3D;f(x,y)$ 法向量：$(-f^{\prime}x,-f^{\prime}y,1)$</li>
-<li>$F(x,y,z)&#x3D;0$ 法向量：$\nabla F$</li>
-</ol>
-</li>
-<li>无条件极值与条件极值<ol>
-<li>驻点 $+$ $\mathrm{Hesse}$ 矩阵正定或负定 $\Rightarrow$ 无条件极值（反之不成立）</li>
-<li>拉乘求得的解一定是条件最值但不一定是极值（需验算 $\mathrm{Hesse}$ 矩阵）</li>
-<li>存在函数 $f(x,y)&#x3D;x^2+y^2(1-x)^3$ 使得函数在 $\mathbb R^2$ 上一阶连续可微且存在唯一极值点，但该极值点不是最值点</li>
-</ol>
-</li>
-<li>例题<ol>
-<li>$(2021)$ 已知函数 $f(x,y)$ 在 $(1,1)$ 处可微，且 $f(1,1)&#x3D;1,f^{\prime}_x(1,1)&#x3D;2,f^{\prime}_y(1,1)&#x3D;3$，设 $g(x)&#x3D;f(x,f(x,x))$，求 $g^{\prime}(1)$</li>
-<li>$(2021)$ 已知 $(axy^3-y^2\cos x)\mathrm{d}x+(1+by\sin x+3x^2y^2)\mathrm{d}y$ 为某一函数 $f(x,y)$ 的全微分，求 $a,b$ 的值及 $f(x,y)$</li>
-<li>$(2023)$ 设函数 $f(x,y)$ 在 $\mathbb R^2$ 上二次连续可微，对 $\forall \theta \in \mathbb R$，令 $g_\theta(t)&#x3D;f(t\cos\theta,t\sin\theta)$，假设 $\frac{\mathrm{d}g_\theta(t)}{\mathrm{d}t}\vert_{t&#x3D;0}&#x3D;0$ 且 $\frac{\mathrm{d}^2g_\theta(t)}{\mathrm{d}t^2}\vert_{t&#x3D;0}\gt 0,\forall \theta \in \mathbb R$，证明函数 $f(x,y)$ 在点 $(0,0)$ 处取得极小值</li>
-<li>$(2023)$ 根据隐函数定理，证明方程组 $\begin{cases}x^3+y^3&#x3D;2z^3\\x+y+z&#x3D;3\end{cases}$ 在点 $(1,1,1)$ 附近确定了两个 $C^{\infty}$ 类隐函数 $y&#x3D;y(x),z&#x3D;z(x)$，并证明隐函数 $z&#x3D;z(x)$ 在 $x&#x3D;1$ 处取得极值</li>
-<li>$(2024)$ 设可微函数 $u(x,y)$ 满足 $u(x,x^2)&#x3D;1$ 且 $\frac{\partial u}{\partial x}(x,x^2)&#x3D;x$，求 $\frac{\partial u}{\partial y}(x,x^2)$</li>
-<li>$(2023)$ 已知椭球面 $\frac{x^2}{8}+\frac{y^2}{4}+\frac{z^2}{2}&#x3D;1$ 与平面 $x+2y+2z&#x3D;0$ 的交线是椭圆，其在 $Oxy$ 平面上的投影曲线 $\Tau$ 也是椭圆，求 $\Tau$ 的四个顶点坐标</li>
-<li>$(3.15)$ 在方程 $(xy+z)\frac{\partial z}{\partial x}+(1-y^2)\frac{\partial z}{\partial y}&#x3D;x+yz$ 中作代换 $u&#x3D;yz-x,v&#x3D;xz-y,w&#x3D;xy-z$，其中视 $w$ 是 $u,v$ 的函数，求代换后的方程</li>
-<li>$(3.26)$ 曲线 $S$ 由方程 $ax+by+cz&#x3D;G(x^2+y^2+z^2)$ 确定，试证明：曲线 $S$ 上任一点的法线与某定直线相交</li>
-<li>$(3.27)$ 求两曲面 $F(x,y,z)&#x3D;0$ 和 $G(x,y,z)&#x3D;0$ 的交线在 $xy$ 平面上的投影曲线的切线方程</li>
-<li>$(4.34)$ 证明：椭球面 $\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}&#x3D;1$ 与平面 $Ax+By+Cz&#x3D;0$ 相交所截的椭圆面积为 $S&#x3D;\pi abc\sqrt{\frac{A^2+B^2+C^2}{A^2a^2+B^2b^2+C^2c^2}}$</li>
-</ol>
-</li>
-<li>证明题<ol>
-<li>$(2021)$ 已知函数 $f(x,y)$ 对每个变量 $x,y$ 分别连续，且对每个固定的 $x$，函数 $f(x,y)$ 对 $y$ 单调，证明：$f(x,y)$ 作为二元函数是连续函数</li>
-<li>$(2023)$ 对在 $\mathbb R^2$ 上连续可微的函数 $g(x,y)$，假设曲线 $\{(x,y)\in \mathbb R^2|g(x,y)&#x3D;0\}$ 具有无穷大符号 $\infty$ 的形状，问函数 $g(x,y)$ 在 $\mathbb R^2$ 上至少有多少个驻点？并证明你的结论。</li>
-<li>$(2024)$ 设 $D\subset\mathbb R^2$ 是一个非空有界闭区域，$f$ 是 $D$ 上的连续函数，证明：至多只有一个函数 $u(x,y)$ 在 $D$ 上连续，在 $D$ 的内部 $\mathring D$ 为 $C^2$ 类，且满足 $\begin{cases} u^{\prime\prime}_{xx}+u^{\prime\prime}_{yy}&#x3D;e^u,(x,y)\in \mathring D\\u&#x3D;f,(x,y) \in \partial D\end{cases}$</li>
-<li>$(2024)$ 设 $K$ 是 $\mathbb R^k$ 的非空有界闭子集，函数 $f:\mathbb R^m\times K\to \mathbb R$ 连续，记 $\displaystyle g(\mathrm{x})&#x3D;\min_{\mathrm{y}\in K}f(\mathrm{x},\mathrm{y})$，证明：$g:\mathbb R^m\to \mathbb R$ 连续</li>
-<li>$(2.12)$ 设 $\frac{\partial f}{\partial x}(x_0,y_0)$ 存在，$\frac{\partial f}{\partial y}(x,y)$ 连续，证明：$f(x,y)$ 在点 $(x_0,y_0)$ 处可微</li>
-<li>$(3.11)$ 设 $u&#x3D;f(z)$，其中 $z$ 是由方程 $z&#x3D;x+y\varphi(z)$ 所定义的变量为 $x,y$ 的隐函数，求证：$\displaystyle \frac{\partial^n u}{\partial y^n}&#x3D;\frac{\partial^{n-1}}{\partial x^{n-1}}\left((\varphi(z))^n\frac{\partial u}{\partial x}\right)$，其中 $\varphi(z)$ 无穷次可微</li>
-<li>$(4.11)$ $f$ 在 $\mathbb R^2$ 上一阶连续可微，且 $\forall (x,y)\neq (0,0)$，有 $xf^{\prime}_x(x,y)+yf^{\prime}_y(x,y)\gt 0$，证明：原点是 $f$ 的唯一极小值点，且 $\displaystyle \lim_{(x,y)\to (0,0)}\frac{f(x,y)-f(0,0)}{\sqrt{x^2+y^2}}&#x3D;0$</li>
-<li>$(4.13)$ 已知 $D&#x3D;\{(x,y):0\lt x\lt 1,0\lt y\lt 1\},f(x,y)&#x3D;ax^2+bxy+cy^2+dx+ey$，且 $\forall (x,y)\in \partial D$，有 $f(x,y)\le 0$，证明：$\forall (x,y)\in D$，有 $f(x,y)\le 0$</li>
+<li>投影面平行面<ol>
+<li>在它所平行的投影面上的投影反映实形</li>
+<li>另两个投影面上的投影积聚成直线，并且与相应的投影轴平行</li>
 </ol>
 </li>
 </ol>
-<h2 id="二、含参积分"><a href="#二、含参积分" class="headerlink" title="二、含参积分"></a>二、含参积分</h2><ol>
-<li>含参定积分的性质（参数范围为<strong>有限闭区间</strong>）<ol>
-<li>连续、可积：$f(x,y)$ 在 $[a,b]\times [\alpha,\beta]$ 上连续</li>
-<li>可微：$f(x,y),f^{\prime}_y(x,y)$ 在 $[a,b]\times [\alpha,\beta]$ 上连续</li>
-<li>可微的计算：$\displaystyle \frac{\mathrm{d}}{\mathrm{d}y}\int_{\alpha(y)}^{\beta(y)} f(x,y)\mathrm{d}x&#x3D;\int_{\alpha(y)}^{\beta(y)} f^{\prime}_y(x,y)\mathrm{d}x+f(\beta(y),y)\cdot\beta^{\prime}(y)-f(\alpha(y),y)\cdot\alpha^{\prime}(y)$</li>
+<h3 id="2-点线面的关系"><a href="#2-点线面的关系" class="headerlink" title="2. 点线面的关系"></a>2. 点线面的关系</h3><ol>
+<li>内部<ol>
+<li>平面上的直线<ol>
+<li>若一直线过平面上的两点，则此直线必在该平面内</li>
+<li>若一直线过平面上的一点，且平行于该平面上的另一直线，则此直线在该平面内</li>
 </ol>
 </li>
-<li>含参广义积分的性质（参数范围为<strong>有限闭区间</strong>）<ol>
-<li>连续、可积<ol>
-<li>$f(x,y)$ 在 $[a,+\infty)\times [\alpha,\beta]$ 上连续（同定积分）</li>
-<li>$\displaystyle \int_a^{+\infty}f(x,y)\mathrm{d}x$ 在 $y\in[\alpha,\beta]$ 上<strong>一致收敛</strong></li>
-</ol>
-</li>
-<li>可微<ol>
-<li>$f(x,y),f^{\prime}_y(x,y)$ 在 $[a,+\infty)\times [\alpha,\beta]$ 上连续（同定积分）</li>
-<li>$\displaystyle \int_a^{+\infty}f(x,y)\mathrm{d}x$ 在 $y\in[\alpha,\beta]$ 上<strong>逐点收敛</strong></li>
-<li>$\displaystyle \int_a^{+\infty}f^{\prime}_y(x,y)\mathrm{d}x$ 在 $y\in[\alpha,\beta]$ 上<strong>一致收敛</strong></li>
+<li>平面上的点<ol>
+<li>若点在平面内，则该点必属于平面内一直线</li>
 </ol>
 </li>
 </ol>
 </li>
-<li>二元无穷限累次积分的性质（参数范围为<strong>无穷限区间</strong>）<ol>
-<li>交换积分次序<ol>
-<li>$f(x,y)$ 在 $[a,+\infty)\times [\alpha,+\infty)$ 上连续（同定积分）</li>
-<li>$\displaystyle \forall \beta\gt \alpha,\int_a^{+\infty}f(x,y)\mathrm{d}x$ 在 $y\in[\alpha,\beta]$ 上<strong>一致收敛</strong></li>
-<li>$\displaystyle \forall b\gt a,\int_\alpha^{+\infty}f(x,y)\mathrm{d}y$ 在 $x\in[a,b]$ 上<strong>一致收敛</strong></li>
-<li>$\displaystyle \int_\alpha^{+\infty}\mathrm{d}y\int_a^{+\infty}\left|f(x,y)\right|\mathrm{d}x$ 和 $\displaystyle \int_a^{+\infty}\mathrm{d}x\int_\alpha^{+\infty}\left|f(x,y)\right|\mathrm{d}y$ 中至少有一个存在</li>
+<li>平行<ol>
+<li>两直线平行<ol>
+<li>若空间两直线平行，则它们的各同名投影必然平行；反之亦然</li>
+<li>一般情况下，任意两对同名投影平行即可以判定两直线空间也平行；若两直线是投影面平行线时，还需进一步判断，如通过求第三投影的方法等</li>
+</ol>
+</li>
+<li>直线与平面平行<ol>
+<li>若直线平行于平面内某一直线，则该直线平行于平面；反之，若直线平行于平面，则在平面内任一点必可作一直线与该直线平行</li>
+<li>若一直线与某一投影面垂直面平行，则该平面有积聚性的投影与该直线的同名投影平行</li>
+</ol>
+</li>
+<li>两平面平行<ol>
+<li>若两平面内有一对相交直线对应平行，则该两平面平行</li>
+<li>若两投影面垂直面相互平行，则它们具有积聚性的那组投影必相互平行</li>
 </ol>
 </li>
 </ol>
 </li>
-<li>含参广义积分判敛<ol>
-<li>方法<ol>
-<li>定义</li>
-<li>$\mathrm{Cauchy}$</li>
-<li>$\mathrm{Weierstrass}$</li>
-<li>$\mathrm{Dirichlet}$</li>
-<li>$\mathrm{Abel}$</li>
+<li>相交<ol>
+<li>两直线相交<ol>
+<li>若空间两直线相交，则其同名投影必相交，且交点的投影必符合空间点的投影规律；反之亦然</li>
+<li>相叉不相交：同面投影可能相交，但“交点”不符合空间一个点的投影规律；“交点”是两直线上的一对重影点的投影</li>
 </ol>
 </li>
-<li>技巧<ol>
-<li>连续延拓</li>
-<li>取任意闭区间 $[a,b]$ 逼近开区间</li>
+<li>直线与平面相交<ol>
+<li>当直线或平面至少其一具有积聚性投影时，交点必在具有积聚性的投影上</li>
+<li>一般位置：包含已知直线作一个特殊位置平面，求辅助平面与已知平面的交线，再求交线与已知直线的交点</li>
 </ol>
 </li>
-<li>注意事项<ol>
-<li><strong>技巧2.2只能用于连续不能用于一致收敛</strong></li>
-<li>一致收敛是连续的<strong>充分非必要</strong>条件</li>
+<li>平面与平面相交<ol>
+<li>当两平面中至少其一具有积聚性投影时，可利用积聚性投影解题</li>
+<li>一般位置：转化为线面相交，包含已知直线作两个特殊位置平面</li>
+</ol>
+</li>
+<li>利用重影点判断可见性</li>
+</ol>
+</li>
+<li>垂直<ol>
+<li>两直线垂直<ol>
+<li>当直角的一条边平行于投影面时，直角在该投影面上的投影仍为直角；反之亦然</li>
+<li>一般位置：过线外点作一平面垂直于直线；求直线与平面的交点</li>
+</ol>
+</li>
+<li>直线与平面垂直<ol>
+<li>若直线垂直于平面上两条相交直线，则该直线与该平面垂直</li>
+<li>直线若垂直于平面，必垂直于平面上的所有直线，包含平面上的投影面平行线</li>
+<li>若一条直线垂直于某一平面，则该直线在各投影面上的投影必定垂直于该平面的同名迹线</li>
+</ol>
+</li>
+<li>平面与平面垂直<ol>
+<li>使平面通过垂直于已知平面的直线</li>
+<li>使平面垂直于已知平面上的一条直线</li>
 </ol>
 </li>
 </ol>
 </li>
-<li>技巧与例题<ol>
-<li>微分方程的求解：详见<a href="https://sqzr2319.github.io/Calculus-A1">微积分A(1)</a></li>
-<li>常用积分公式：$\begin{cases}\displaystyle \int e^{ax}\cos bx\mathrm{d}x&#x3D;\frac{e^{ax}}{a^2+b^2}(a\cos bx+b\sin bx)+C\\\displaystyle \int e^{ax}\sin bx\mathrm{d}x&#x3D;\frac{e^{ax}}{a^2+b^2}(a\sin bx-b\cos bx)+C\end{cases}$</li>
-<li>$(2024)$ 设 $\displaystyle I(y)&#x3D;\int_0^{+\infty}e^{-x^2}\sin(2xy)\mathrm{d}x$，证明：$\displaystyle I(y)&#x3D;e^{-y^2}\int_0^y e^{-t^2}\mathrm{d}t$</li>
-<li>$(5.26)$ 试利用积分 $\displaystyle \varphi(x)&#x3D;\int_0^1 \frac{e^{-x^2(1+u^2)}}{1+u^2}\mathrm{d}u$ 计算积分 $\displaystyle I&#x3D;\int_0^{+\infty} e^{-x^2}\mathrm{d}x$</li>
+</ol>
+<h3 id="3-换面法"><a href="#3-换面法" class="headerlink" title="3. 换面法"></a>3. 换面法</h3><ol>
+<li>变换成投影面平行线<ol>
+<li>一次换面</li>
+<li>新投影：反映直线的实长及与该侧平面倾角实际大小</li>
 </ol>
 </li>
-<li>证明题<ol>
-<li>$(5.4)$ 证明：$\mathrm{Bessel}$ 函数 $\displaystyle I_n(x)&#x3D;\frac{1}{\pi}\int_0^{\pi}\cos(n\varphi-x\sin\varphi)\mathrm{d}\varphi,n\in \mathbb Z$ 满足 $\mathrm{Bessel}$ 方程 $x^2I^{\prime\prime}_n(x)+xI^{\prime}_n(x)+(x^2-n^2)I_n(x)&#x3D;0$</li>
-<li>$(5.17)$ 证明：$\displaystyle \int_0^{+\infty} \frac{\sin x^2y}{x}\mathrm{d}x$ 在 $y\in (0,+\infty)$ 不一致收敛，但连续</li>
+<li>变换成投影面垂直线<ol>
+<li>两次换面：一般位置直线 $\to $ 投影面平行线 $\to $ 投影面垂直线</li>
+<li>新投影：积聚为一点</li>
+</ol>
+</li>
+<li>变换成投影面垂直面<ol>
+<li>一次换面：以投影面平行线为主</li>
+<li>新投影：投影面平行线积聚为点，面积聚为线且反映平面与该侧平面倾角实际大小</li>
+</ol>
+</li>
+<li>变换成投影面平行面<ol>
+<li>两次换面</li>
+<li>新投影：反映图形的实际形状</li>
+</ol>
+</li>
+</ol>
+<h2 id="二、体"><a href="#二、体" class="headerlink" title="二、体"></a>二、体</h2><h3 id="1-基本体"><a href="#1-基本体" class="headerlink" title="1. 基本体"></a>1. 基本体</h3><ol>
+<li>圆锥：辅助直线或辅助圆</li>
+<li>球：辅助圆（本质：辅助平面）</li>
+<li>圆环：辅助圆（本质：辅助平面）</li>
+</ol>
+<h3 id="2-截切"><a href="#2-截切" class="headerlink" title="2. 截切"></a>2. 截切</h3><ol>
+<li>平面体的截切<ol>
+<li>截交线的特点<ol>
+<li>封闭的平面多边形</li>
+<li>截交线是截平面与立体表面的共有线（公有性）</li>
+<li>截交线的每条边是截平面与棱面的交线</li>
+<li>截交线的每个端点是截平面与棱线的交点</li>
+<li>求截交线的实质是求两平面的交线</li>
+</ol>
+</li>
+<li>求法<ol>
+<li>棱线法：求各棱线与截平面的交点，然后连接而成</li>
+<li>棱面法：求各棱面与截平面的交线，然后连接而成</li>
+</ol>
+</li>
+<li>步骤<ol>
+<li>空间分析：平面体的形状、截平面与体的相对位置（确定截交线的空间形状）</li>
+<li>投影分析：截平面与投影面的相对位置（确定截交线的投影特性）</li>
+<li>画出截交线的投影：棱线法或棱面法</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>回转体的截切<ol>
+<li>截交线的特点<ol>
+<li>封闭的平面曲线和直线</li>
+</ol>
+</li>
+<li>求法<ol>
+<li>先找特殊点，补充中间点</li>
+<li>将各点光滑地连接起来</li>
+</ol>
+</li>
+<li>平面截圆锥<ol>
+<li>过锥顶：两相交直线</li>
+<li>圆、椭圆、抛物线、双曲线</li>
+</ol>
+</li>
+<li>平面截圆环<ol>
+<li>可以是一条或两条（波修斯曲线、伯努利曲线、卡西尼卵形线）</li>
+</ol>
+</li>
 </ol>
 </li>
 </ol>
@@ -456,9 +492,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E6%95%B0%E5%AD%A6/" class="print-no-link">#数学</a>
-      
         <a href="/tags/%E5%A4%A7%E4%B8%80%E4%B8%8B/" class="print-no-link">#大一下</a>
+      
+        <a href="/tags/%E6%9C%BA%E7%94%B5/" class="print-no-link">#机电</a>
       
     </div>
   
@@ -470,8 +506,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>微积分A(2)</div>
-      <div>https://sqzr2319.github.io/Calculus-A2/</div>
+      <div>工程图学</div>
+      <div>https://sqzr2319.github.io/EngineerGraph/</div>
     </div>
     <div class="license-meta">
       
@@ -483,7 +519,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年4月7日</div>
+          <div>2025年4月9日</div>
         </div>
       
       
@@ -515,18 +551,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/LinearAlgebra-2/" title="线性代数(2)">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">线性代数(2)</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/CSDIY-24Winter/" title="大一上自学笔记">
-                        <span class="hidden-mobile">大一上自学笔记</span>
+                      <a href="/Physics-B1/" title="大学物理B(1)">
+                        <span class="hidden-mobile">大学物理B(1)</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
