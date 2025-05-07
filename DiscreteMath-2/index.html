@@ -8,8 +8,8 @@
 <head>
   <meta charset="UTF-8">
 
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/sqzr2319.jpg">
-  <link rel="icon" href="/img/sqzr2319.jpg">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/sqzr2319.png">
+  <link rel="icon" href="/img/sqzr2319.png">
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
@@ -19,15 +19,15 @@
   <meta name="author" content="sqzr2319">
   <meta name="keywords" content="">
   
-    <meta name="description" content="大一上学期离散数学(2)的复习笔记，目前更新至 Hamilton 图。">
+    <meta name="description" content="大一上学期离散数学(2)的复习笔记，目前更新至哈密顿图。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="离散数学(2)">
 <meta property="og:url" content="https://sqzr2319.github.io/DiscreteMath-2/index.html">
 <meta property="og:site_name" content="sqzr2319&#39;s blog">
-<meta property="og:description" content="大一上学期离散数学(2)的复习笔记，目前更新至 Hamilton 图。">
+<meta property="og:description" content="大一上学期离散数学(2)的复习笔记，目前更新至哈密顿图。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-05-06T11:45:33.000Z">
-<meta property="article:modified_time" content="2025-05-06T15:25:51.345Z">
+<meta property="article:modified_time" content="2025-05-07T01:29:32.267Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="数学">
 <meta property="article:tag" content="大一下">
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k 字
+          1.9k 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          10 分钟
+          16 分钟
         
       </span>
     
@@ -292,7 +292,7 @@
             
               <div class="markdown-body">
                 
-                <p>大一上学期离散数学(2)的复习笔记，目前更新至 Hamilton 图。</p>
+                <p>大一上学期离散数学(2)的复习笔记，目前更新至哈密顿图。</p>
 <span id="more"></span>
 
 <h2 id="一、图论"><a href="#一、图论" class="headerlink" title="一、图论"></a>一、图论</h2><h3 id="0-定义"><a href="#0-定义" class="headerlink" title="0. 定义"></a>0. 定义</h3><ol>
@@ -346,7 +346,11 @@
 </ol>
 </li>
 <li>距离 $d(u,v)$：短程线长度</li>
-<li></li>
+<li>弦：回路中不属于回路的边</li>
+<li>欧拉回路：每条边恰好经过一次</li>
+<li>哈密顿回路：每个顶点恰好经过一次</li>
+<li>旅行商问题：完全图中最短的哈密顿回路</li>
+<li>中国邮路：每条边至少经过一次的最短回路</li>
 </ol>
 <h3 id="1-道路与回路"><a href="#1-道路与回路" class="headerlink" title="1. 道路与回路"></a>1. 道路与回路</h3><ol>
 <li>握手定理</li>
@@ -356,14 +360,14 @@
 </ol>
 </li>
 <li>割边的性质<ol>
-<li>边 $e$ 不属于 G$ 的任何回路</li>
+<li>边 $e$ 不属于 $G$ 的任何回路</li>
 <li>存在 $G$ 的顶点 $u$ 和 $w$，使 $e$ 属于 $u$ 和 $w$ 的任何一条道路 $P_{uw}$</li>
 <li>图 $G-e$ 可以划分为两个顶点集 $U$ 和 $W$，使得对任意顶点 $u\in U$ 和 $w\in W$，道路 $P_{uw}$ 都经过 $e$</li>
 </ol>
 </li>
 <li>去掉点割集后连通分支数 $\ge 2$，去掉边割集后连通分支数 $&#x3D;2$</li>
 <li>连通图中，$k(G)\le \lambda(G)\le \delta(G)$</li>
-<li>块的性质<ol>
+<li><strong>块的性质</strong><ol>
 <li>$G$ 的任何两个顶点同属某一初级回路</li>
 <li>$G$ 的任何一个顶点和任何一条边同属某个初级回路</li>
 <li>$G$ 的任何两条边同属某个初级回路</li>
@@ -372,10 +376,39 @@
 <li>对 $G$ 的任意三个不同的顶点，存在一条只包含其中两点而不含第三点的道路</li>
 </ol>
 </li>
-<li>$Hamilton$ 图判定<ol>
+<li>连通图的 $k$ 笔画<ol>
+<li>无向图：$2k$ 个奇点（均为偶点则为欧拉图）</li>
+<li>有向图：出度入度不平衡数（均平衡则为欧拉图）</li>
+</ol>
+</li>
+<li>哈密顿图判定<ol>
+<li>证伪<ol>
 <li>带有 $1$ 度顶点的图没有哈密顿回路</li>
 <li>$2$ 度顶点的两条边属于任何哈密顿回路</li>
-<li></li>
+<li>有割点的图不是哈密顿图</li>
+<li>二分哈密顿图中 $|V_1|&#x3D;|V_2|$</li>
+</ol>
+</li>
+<li>充分条件<ol>
+<li>$\mathrm{H}$ 回路：简单图中任意两点 $d(u)+d(v)\ge n$</li>
+<li>$\mathrm{H}$ 道路：简单图中任意两点 $d(u)+d(v)\ge n+1$</li>
+</ol>
+</li>
+<li>必要条件<ol>
+<li>$\mathrm{H}$ 回路：$p(G-S)\le |S|$，$S$ 为任意顶点集</li>
+<li>$\mathrm{H}$ 道路：$p(G-S)\le |S|+1$，$S$ 为任意顶点集</li>
+</ol>
+</li>
+<li>充要条件<ol>
+<li>简单图中 $u,v$ 不相邻且 $d(u)+d(v)\ge n$，则 $G$ 有 $\mathrm{H}$ 回路等价于 $G+(u,v)$ 有 $\mathrm{H}$ 回路</li>
+<li>简单图有 $\mathrm{H}$ 回路等价于其闭合图有 $\mathrm{H}$ 回路</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>中国邮路判定<ol>
+<li>每条边最多重复一次</li>
+<li>$G$ 的任意一个回路上，重复边的长度之和不超过该回路长度的一半</li>
 </ol>
 </li>
 </ol>
@@ -390,15 +423,47 @@
 <li>十字链表</li>
 </ol>
 </li>
-<li>全源可达：$Warshall$ 算法</li>
-<li>单源可达：$BFS,DFS$</li>
-<li>构造欧拉图：找回路 $\to $ 余图找新回路 $\to $ 以公共点为起末连接</li>
-<li>连通图的 $k$ 笔画<ol>
-<li>无向图：$2k$ 个奇点（均为偶点则为欧拉图）</li>
-<li>有向图：出度入度不平衡数（均平衡则为欧拉图）</li>
+<li>连通性<ol>
+<li>全源：$\mathrm{Warshall}$ 算法</li>
+<li>单源：$\mathrm{BFS,DFS}$</li>
 </ol>
 </li>
-<li></li>
+<li>构造欧拉图：找回路 $\to $ 余图找新回路 $\to $ 以公共点为起末连接</li>
+<li>旅行商问题<ol>
+<li>分支定界：按边权从小到大排序（$O(n!)$）</li>
+<li>近似算法：插点法（$O(n^2)$）</li>
+<li>近似解&#x2F;最优解 $\lt 2$</li>
+</ol>
+</li>
+<li>最短路<ol>
+<li>单源正边权：$\mathrm{Dijkstra}$ 算法（$O(n^2)$）</li>
+<li>单源负边权：$\mathrm{Bellman-Ford}$ 算法（$O(nm)$）</li>
+<li>*单源 $1$ 边权：$\mathrm{BFS}$（$O(m)$）</li>
+<li>全源：$\mathrm{Floyd}$ 算法（$O(n^3)$）</li>
+<li>$\mathrm{Bellman-Ford}$ 负环不终止，$\mathrm{Floyd}$ 不正确</li>
+</ol>
+</li>
+<li>关键路径<ol>
+<li>$\mathrm{PT}$ 图拓扑排序</li>
+<li>最大允许延误时间：反向求最晚启动时间，再相减</li>
+<li><strong>$\mathrm{PERT}$ 图</strong></li>
+</ol>
+</li>
+<li>中国邮路<ol>
+<li>欧拉图：欧拉回路</li>
+<li>半欧拉图：欧拉道路 $+$ 奇点间最短路</li>
+<li>非欧拉图：重复某些边后的欧拉回路<ol>
+<li>奇偶点图上作业法：补全奇点 $\to $ 检查回路 $\to $ 翻转回路</li>
+<li>最小权匹配法：奇点集全源最短路 $\to $ 最小权匹配 $\to $ 重复边</li>
+</ol>
+</li>
+<li>有向图<ol>
+<li>添加超发超收点 $v_s,v_t$</li>
+<li>求 $d(v_s)$ 条过以 $v_s, v_t$ 为两端点的形如 $(v_s, v_i), (v_j, v_t)$，每边一次且仅一次的总和最小的 $P_{st}$ 道路，记下 $G$ 中各边在这些道路里的重复次</li>
+</ol>
+</li>
+</ol>
+</li>
 </ol>
 <h3 id="附录-2：图论证明技巧"><a href="#附录-2：图论证明技巧" class="headerlink" title="附录 2：图论证明技巧"></a>附录 2：图论证明技巧</h3><ol>
 <li>对偶图<ol>
@@ -413,26 +478,37 @@
 </li>
 <li>取极长&#x2F;最长路径<ol>
 <li>无向图中若所有点度数 $\ge 2$，则存在回路</li>
+<li>若连通图的最长道路不唯一，则它们必定相交</li>
+<li>简单图每个顶点度数 $\ge 3$，则存在带弦的回路</li>
 </ol>
 </li>
 <li>图论建模<ol>
-<li>$Ramsey$ 问题（完全图）<ol>
+<li>$\mathrm{Ramsey}$ 问题（完全图）<ol>
 <li>$R(a,b)$：或者有 $a$ 个人互相认识，或者有 $b$ 个人互相不认识</li>
 <li>$R(3,3)&#x3D;6$</li>
+<li>$9$ 个人中若非至少有 $4$ 个人互相认识，则至少有 $3$ 个人互相不认识</li>
 </ol>
 </li>
 <li>计算机编码盘设计（欧拉图）</li>
 </ol>
 </li>
-<li></li>
+<li>归纳法<ol>
+<li>有 $k$ 个连通支的简单图 $m\le \frac{1}{2}(n-k+1)(n-k)$</li>
+<li>简单图若 $n\ge 4,m\ge 2n-3$，则含有带弦的回路</li>
+</ol>
+</li>
 </ol>
 <h3 id="附录-3：图的点数与边数"><a href="#附录-3：图的点数与边数" class="headerlink" title="附录 3：图的点数与边数"></a>附录 3：图的点数与边数</h3><ol>
 <li>边数与连通性<ol>
-<li>简单图中若 $m \gt \frac{1}{2}(n-1)(n-2)$，则联通</li>
 <li>简单连通图中 $k(G)\le \lceil \frac{2m}{n} \rceil$</li>
+<li>简单图若 $m\gt \frac{1}{2}(n-1)(n-2)$，则连通</li>
+<li>不含 $K_3$ 的简单图中：<ol>
+<li>$\sum d^2(v_i)\le mn$（技巧：所有顶点的邻居的度数之和为 $\sum d^2(v_i)$）</li>
+<li>（$\mathrm{Mantel}$） $m\le \frac{1}{4}n^2$</li>
 </ol>
 </li>
-<li></li>
+</ol>
+</li>
 </ol>
 <h2 id="二、代数结构"><a href="#二、代数结构" class="headerlink" title="二、代数结构"></a>二、代数结构</h2>
                 
