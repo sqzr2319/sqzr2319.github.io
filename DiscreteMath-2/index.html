@@ -19,15 +19,15 @@
   <meta name="author" content="sqzr2319">
   <meta name="keywords" content="">
   
-    <meta name="description" content="大一上学期离散数学(2)的复习笔记，目前更新至树。">
+    <meta name="description" content="大一下学期离散数学(2)的复习笔记，目前更新至着色。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="离散数学(2)">
 <meta property="og:url" content="https://sqzr2319.github.io/DiscreteMath-2/index.html">
 <meta property="og:site_name" content="sqzr2319&#39;s blog">
-<meta property="og:description" content="大一上学期离散数学(2)的复习笔记，目前更新至树。">
+<meta property="og:description" content="大一下学期离散数学(2)的复习笔记，目前更新至着色。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-05-06T11:45:33.000Z">
-<meta property="article:modified_time" content="2025-05-07T08:41:13.057Z">
+<meta property="article:modified_time" content="2025-05-07T17:01:12.277Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="数学">
 <meta property="article:tag" content="大一下">
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.7k 字
+          3.9k 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          23 分钟
+          33 分钟
         
       </span>
     
@@ -292,7 +292,7 @@
             
               <div class="markdown-body">
                 
-                <p>大一上学期离散数学(2)的复习笔记，目前更新至树。</p>
+                <p>大一下学期离散数学(2)的复习笔记，目前更新至着色。</p>
 <span id="more"></span>
 
 <h2 id="一、图论"><a href="#一、图论" class="headerlink" title="一、图论"></a>一、图论</h2><h3 id="0-定义"><a href="#0-定义" class="headerlink" title="0. 定义"></a>0. 定义</h3><ol>
@@ -329,6 +329,7 @@
 <li>导出子图：节点集或边集</li>
 <li>图同构：对节点重新编号<ol>
 <li>必要条件：顶点数、边数、度数列相同；存在同构的导出子图</li>
+<li>图同胚：插入或消去 $2$ 度顶点后同构</li>
 </ol>
 </li>
 <li>图的对称差：顶点取并，边取对称差</li>
@@ -352,6 +353,13 @@
 <li>旅行商问题：完全图中最短的哈密顿回路</li>
 <li>中国邮路：每条边至少经过一次的最短回路</li>
 <li>最优二叉树：带权路径长度之和最小</li>
+<li>可平面图；平面图（一个嵌入）；非平面图</li>
+<li>$\mathrm{Jordan}$ 曲线：连续的，自身不相交的，起点和终点相重合的曲线</li>
+<li>面&#x2F;域：平面图中不含节点及边的区域；面的次数 $\deg(R)$</li>
+<li>极大平面图：$n\ge 3$ 的简单平面图，任意不相邻节点间加边都会破坏可平面性</li>
+<li>极小非平面图：删除任意边后变成平面图（一定为简单图，$K_5,K_{3,3}$）</li>
+<li>自对偶图：如轮图 $W_n$</li>
+<li>色数：最少颜色数目；点色数 $\gamma(G)$；边色数 $\gamma^\prime(G)$；面色数 $\gamma^{\prime\prime}(G)$</li>
 </ol>
 <h3 id="1-道路与回路"><a href="#1-道路与回路" class="headerlink" title="1. 道路与回路"></a>1. 道路与回路</h3><ol>
 <li>握手定理</li>
@@ -426,13 +434,12 @@
 <li>关联矩阵&#x2F;基本关联矩阵的秩为 $n-1$</li>
 <li>关联矩阵&#x2F;基本关联矩阵中回路所对应的各列线性相关</li>
 <li>基本关联矩阵中行列式非零的 $n-1$ 阶子阵对应支撑树</li>
-<li>$(\mathrm{Binet-Cauchy})$ $A&#x3D;(a_{ij})<em>{m\times n},B&#x3D;(b</em>{ij})_{n\times m},n\ge m$，则 $\det(AB)&#x3D;\sum A_iB_i$</li>
 <li>关联矩阵任意子阵的行列式为 $0$ 或 $\pm 1$</li>
 </ol>
 </li>
 <li>基本回路矩阵的性质（有向连通图）<ol>
 <li>基本回路：余树边所对应的回路，方向与余树边相同</li>
-<li>基本回路矩阵调换顺序后变成 $[I,C_f{12}]$，$I$ 对应余树</li>
+<li>基本回路矩阵调换顺序后变成 $[I,C_{f_{12}}]$，$I$ 对应余树</li>
 <li>关联矩阵与完全回路矩阵的边对应时，$BC_e^T&#x3D;0$</li>
 <li>基本回路矩阵&#x2F;完全回路矩阵的秩为 $m-n+1$</li>
 <li>回路矩阵：由任意 $m-n+1$ 条线性无关的回路所组成的矩阵<ol>
@@ -441,12 +448,12 @@
 </ol>
 </li>
 <li>回路矩阵中行列式非零的 $m-n+1$ 阶子阵对应余树</li>
-<li>若基本关联矩阵和基本回路矩阵的边次序相同，则 $C_{f12}&#x3D;-B_{11}^TB_{12}^{-T}$</li>
+<li>若基本关联矩阵和基本回路矩阵的边次序相同，则 $C_{f_{12}}&#x3D;-B_{11}^TB_{12}^{-T}$</li>
 </ol>
 </li>
 <li>基本割集矩阵的性质（有向连通图）<ol>
 <li>基本割集：树边所对应的割集，方向与树边相同</li>
-<li>基本割集矩阵调换顺序后变成 $[S_{f11},I]$，$I$ 对应树</li>
+<li>基本割集矩阵调换顺序后变成 $[S_{f_{11}},I]$，$I$ 对应树</li>
 <li>完全回路矩阵与完全割集矩阵的边对应时，$S_eC_e^T&#x3D;0$</li>
 <li>基本割集矩阵&#x2F;完全割集矩阵的秩为 $n-1$</li>
 <li>割集矩阵：由任意 $n-1$ 个线性无关的割集所组成的矩阵<ol>
@@ -455,17 +462,102 @@
 </ol>
 </li>
 <li>割集矩阵中行列式非零的 $n-1$ 阶子阵对应树</li>
-<li>若基本割集矩阵与基本回路矩阵的边次序相同，则 $S_{f11}&#x3D;-C_{f12}^T&#x3D;B_{12}^{-1}B_{11}$</li>
+<li>若基本割集矩阵与基本回路矩阵的边次序相同，则 $S_{f_{11}}&#x3D;-C_{f_{12}}^T&#x3D;B_{12}^{-1}B_{11}$</li>
 </ol>
 </li>
 </ol>
-<h3 id="3-平面、对偶与染色"><a href="#3-平面、对偶与染色" class="headerlink" title="3. 平面、对偶与染色"></a>3. 平面、对偶与染色</h3><h3 id="4-匹配"><a href="#4-匹配" class="headerlink" title="4. 匹配"></a>4. 匹配</h3><h3 id="5-网络流"><a href="#5-网络流" class="headerlink" title="5. 网络流"></a>5. 网络流</h3><h3 id="附录-1：图论算法"><a href="#附录-1：图论算法" class="headerlink" title="附录 1：图论算法"></a>附录 1：图论算法</h3><ol>
+<h3 id="3-平面、对偶与染色"><a href="#3-平面、对偶与染色" class="headerlink" title="3. 平面、对偶与染色"></a>3. 平面、对偶与染色</h3><ol>
+<li>$\mathrm{Jordan}$ 曲线定理：连接 $\mathrm{int}J$ 的点和 $\mathrm{ext}J$ 的点的任何连线必在某点和 $J$ 相交<ol>
+<li>推论：$K_5$ 是非平面图</li>
+</ol>
+</li>
+<li>不是割边的边必为某两个域的公共边界（割边 $\deg$ 数两次）</li>
+<li>测地变换<ol>
+<li>可平面等价于可球面</li>
+<li>可将任何一个内部域改换为外部域</li>
+</ol>
+</li>
+<li>平面图的判定定理<ol>
+<li>平面图的任何子图都是平面图</li>
+<li>$K_n(n\le 4),K_{1,n}(n\ge 1),K_{2,n}(n\ge 2)$ 是平面图</li>
+<li>$K_n(n\ge 5),K_{3,n}(n\ge 3)$ 是非平面图</li>
+<li>重边和自环不影响可平面性</li>
+<li>$\mathrm{Kuratowski}$ 定理：图 $G$ 是平面图当且仅当：<ol>
+<li>$G$ 中不含与 $K_5,K_{3,3}$ 同胚的子图</li>
+<li>$G$ 中不含可收缩到 $K_5,K_{3,3}$ 的子图</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>平面图的判定算法<ol>
+<li>检测每个连通支，移去连通支中的割点，检测每个块</li>
+<li>移去自环，消去 $2$ 度顶点，移去重边，直到无法继续进行</li>
+<li>若 $m\lt 9$ 或 $n\lt 5$，则是平面图</li>
+<li>若 $m\gt 3n-6$，则是非平面图</li>
+</ol>
+</li>
+<li>对偶图的性质<ol>
+<li>有且仅有平面图有对偶图，且对偶图唯一</li>
+<li>同构的两个图，对偶图不一定同构</li>
+<li>对偶图是连通图</li>
+<li>对偶图是平面图</li>
+</ol>
+</li>
+<li>设 $C$ 是平面图 $G$ 的一个初级回路，$S^*$ 是 $G^*$ 中与 $C$ 的各边 $e_i$ 对应的 $e_i^*$ 的集合，则 $S^*$ 是 $G^*$ 的一个割集<ol>
+<li><strong>例：设 $i,j$ 是平面连通图无限域边界上的两个节点，求 $G$ 中分离 $i,j$ 的所有割集</strong></li>
+<li>连接 $i,j$，做对偶图，对偶图中除了 $(i,j)$ 外所有的 $P_{ij}$ 都是 $G$ 的割集</li>
+</ol>
+</li>
+<li>特例图的点色数<ol>
+<li>奇圈：$3$；偶圈：$2$</li>
+<li>奇阶轮图：$4$；偶阶轮图：$3$</li>
+<li>$\gamma(G)&#x3D;2 \Leftrightarrow G$ 是二分图 $\Leftrightarrow G$ 无奇圈</li>
+<li>树：$2$</li>
+<li>平面连通图 $G$ 的域可 $2$ 着色当且仅当 $G$ 是欧拉图</li>
+</ol>
+</li>
+<li>点色数的估计与确定<ol>
+<li>对于任意不含自环的图，有 $\gamma(G)\le \Delta(G)+1$</li>
+<li>若连通图 $G$ 不是完全图，也不是奇圈，则 $\gamma(G)\le \Delta(G)$</li>
+<li>$\mathrm{Welch-Powell}$ 近似算法：按度数从大到小排列，逐个染色</li>
+<li>记 $\mathring{G_{ij}},\overline{G_{ij}}$ 分别为 收缩和连接 $i,j$ 后的图，则 $\gamma(G)&#x3D;\min\{\gamma(\mathring{G_{ij}}),\gamma(\overline{G_{ij}})\}$</li>
+</ol>
+</li>
+<li>点色数多项式<ol>
+<li>$f(G,t)$：最多用 $t$ 种颜色染色 $\Rightarrow t\lt \gamma(G),f(G,t)&#x3D;0$</li>
+<li>记 $m_i$ 为正好用 $t$ 种颜色染色，则 $m_i$ 只有在 $\gamma(G)\le i\le \min\{t,n\}$ 时才不为零，$\displaystyle f(G,t)&#x3D;\sum_{i&#x3D;1}^n m_iC(t,i)$</li>
+<li>$f(K_n,t)&#x3D;t(t-1)(t-2)\cdots(t-n+1)$</li>
+<li>$f(T_n,t)&#x3D;t(t-1)^{n-1}$</li>
+<li>$f(G,t)&#x3D;f(\overline{G_{ij}},t)+f(\mathring{G_{ij}},t)$</li>
+</ol>
+</li>
+<li>边着色<ol>
+<li>转化为点着色：每个边上取一个点；两条边若关联于同一个点则连一条边</li>
+<li>$\mathrm{Vizing}$ 定理：简单图中 $\Delta(G)\le \gamma^\prime(G)\le \Delta(G)+1$</li>
+<li>特例边色数<ol>
+<li>偶圈：$2$；奇圈：$3$</li>
+<li>轮图 $W_n$：$n-1$</li>
+<li>奇完全图 $K_n$：$n$；偶完全图：$n-1$</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>面着色<ol>
+<li>等价于对偶图的点着色</li>
+<li>六色定理、五色定理、四色定理</li>
+<li>若任意 $3-$ 正则平面图可面 $4$ 着色，则四色猜想成立</li>
+<li>哈密顿平面图可面 $4$ 着色</li>
+<li>$\mathrm{Tait}$ 猜想：任意 $3-$ 正则平面图都是哈密顿图（不成立）</li>
+</ol>
+</li>
+</ol>
+<h3 id="4-匹配"><a href="#4-匹配" class="headerlink" title="4. 匹配"></a>4. 匹配</h3><h3 id="5-网络流"><a href="#5-网络流" class="headerlink" title="5. 网络流"></a>5. 网络流</h3><h3 id="附录-1：图论算法"><a href="#附录-1：图论算法" class="headerlink" title="附录 1：图论算法"></a>附录 1：图论算法</h3><ol>
 <li>图的代数表示<ol>
 <li>邻接矩阵</li>
 <li>权矩阵</li>
-<li>关联矩阵：$b_{ij}:v_i,e_j$</li>
+<li>关联矩阵</li>
 <li>边列表</li>
-<li>正向表：节点从 $0$ 开始编号；$[A_i,A_{i+1})；$A$ 长度 $n+1$</li>
+<li>正向表：节点从 $0$ 开始编号；$[A_i,A_{i+1})$；$A$ 长度 $n+1$</li>
 <li>邻接表</li>
 <li>十字链表</li>
 </ol>
@@ -586,8 +678,27 @@
 </li>
 </ol>
 </li>
+<li>边数与平面图<ol>
+<li>$\sum \deg(R_i)&#x3D;2m$</li>
+<li>$\mathrm{Euler}$ 定理：$n-m+r&#x3D;p(G)+1$</li>
+<li>简单连通平面图中，若每个域边界数至少为 $t$，则 $m\le (n-2)\frac{t}{t-2}$</li>
+<li>简单连通平面图为极大平面图 $\Leftrightarrow \forall R_i,\deg(R_i)&#x3D;3 \Rightarrow 3r&#x3D;2m$</li>
+<li>极大平面图 $m&#x3D;3n-6,r&#x3D;2n-4$</li>
+<li>简单连通平面图 $m\le 3n-6,r\le 2n-4$</li>
+<li>简单连通平面图中 $\delta \le 5$</li>
+<li>例题<ol>
+<li>$K_5,K_{3,3}$ 是非平面图</li>
+<li>不含 $K_3$ 的简单平面图中 $m\le 2n-4$</li>
+<li>简单平面图中，若 $n\le 11$，则 $\delta \lt 5$</li>
+<li>$K_n(n\ge 7)$ 是非平面图</li>
+<li>若简单平面图中 $r\lt 12$，且每个点度数 $\ge 3$，则至少有一个域的边界数 $\lt 5$</li>
+<li>若 $G$ 是顶点数 $\gt 10$ 的简单图，则 $G,\overline{G}$ 中至少有一个非平面图</li>
 </ol>
-<h2 id="二、代数结构"><a href="#二、代数结构" class="headerlink" title="二、代数结构"></a>二、代数结构</h2>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="二、代数结构"><a href="#二、代数结构" class="headerlink" title="二、代数结构"></a>二、代数结构</h2><h2 id="附录一、图论算法的代码实现"><a href="#附录一、图论算法的代码实现" class="headerlink" title="附录一、图论算法的代码实现"></a>附录一、图论算法的代码实现</h2>
                 
               </div>
             
