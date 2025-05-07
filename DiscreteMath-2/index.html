@@ -27,7 +27,7 @@
 <meta property="og:description" content="大一上学期离散数学(2)的复习笔记，目前更新至树。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-05-06T11:45:33.000Z">
-<meta property="article:modified_time" content="2025-05-07T08:35:19.729Z">
+<meta property="article:modified_time" content="2025-05-07T08:41:13.057Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="数学">
 <meta property="article:tag" content="大一下">
@@ -332,15 +332,19 @@
 </ol>
 </li>
 <li>图的对称差：顶点取并，边取对称差</li>
-<li>道路与回路 </li>
+<li>道路与回路 <ol>
 <li>有重复边、有重复点：通路&#x2F;道路&#x2F;回路</li>
 <li>无重复边、有重复点：简单通路&#x2F;简单回路</li>
 <li>无重复边、无重复点：初级通路&#x2F;路径&#x2F;初级回路&#x2F;圈</li>
-<li>有向联通</li>
+</ol>
+</li>
+<li>有向联通<ol>
 <li>可达；互相可达</li>
 <li>弱联通：不考虑方向时联通</li>
 <li>单向联通：任意两点存在一个可达方向</li>
 <li>强联通：任意两点互相可达</li>
+</ol>
+</li>
 <li>距离 $d(u,v)$：短程线长度</li>
 <li>弦：回路中不属于回路的边</li>
 <li>欧拉回路：每条边恰好经过一次</li>
@@ -515,7 +519,7 @@
 <li>根树：$\det(\vec{B_k}B_k^T),\vec{B_k}$ 为 $B_k$ 中将 $1$ 变成 $0$</li>
 </ol>
 </li>
-<li>最小支撑树</li>
+<li>最小支撑树<ol>
 <li>$\mathrm{Prim}$ 算法 $(O(n^2)\to O(m\log n))$</li>
 <li>$\mathrm{Kruskal}$ 算法 $(O(m+p\log m),p\in (n,m))$</li>
 <li>判断是否形成回路：并查集<ol>
@@ -524,13 +528,17 @@
 </ol>
 </li>
 <li>稠密图用 $\mathrm{Prim}$，稀疏图用 $\mathrm{Kruskal}$</li>
-<li>最优二叉树</li>
+</ol>
+</li>
+<li>最优二叉树<ol>
 <li>$\mathrm{Huffman}$ 算法：按权值从小到大排序，两两合并</li>
 <li>应用：编码<ol>
 <li>前缀码：若字符串集合中两两互不为前缀</li>
 <li>二元前缀码：只出现 $0,1$ 的前缀码</li>
 <li>最佳前缀码：由最优二叉树产生的二元前缀码</li>
 <li>最佳前缀码不唯一（左右可互换）</li>
+</ol>
+</li>
 </ol>
 </li>
 </ol>
