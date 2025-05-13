@@ -19,15 +19,15 @@
   <meta name="author" content="sqzr2319">
   <meta name="keywords" content="">
   
-    <meta name="description" content="大一下学期离散数学(2)的复习笔记，目前更新至着色。">
+    <meta name="description" content="大一下学期离散数学(2)的复习笔记，目前更新至网络流。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="离散数学(2)">
 <meta property="og:url" content="https://sqzr2319.github.io/DiscreteMath-2/index.html">
 <meta property="og:site_name" content="sqzr2319&#39;s blog">
-<meta property="og:description" content="大一下学期离散数学(2)的复习笔记，目前更新至着色。">
+<meta property="og:description" content="大一下学期离散数学(2)的复习笔记，目前更新至网络流。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-05-06T11:45:33.000Z">
-<meta property="article:modified_time" content="2025-05-07T17:01:12.277Z">
+<meta property="article:modified_time" content="2025-05-13T15:40:56.744Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="数学">
 <meta property="article:tag" content="大一下">
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.9k 字
+          4.3k 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          33 分钟
+          36 分钟
         
       </span>
     
@@ -292,7 +292,7 @@
             
               <div class="markdown-body">
                 
-                <p>大一下学期离散数学(2)的复习笔记，目前更新至着色。</p>
+                <p>大一下学期离散数学(2)的复习笔记，目前更新至网络流。</p>
 <span id="more"></span>
 
 <h2 id="一、图论"><a href="#一、图论" class="headerlink" title="一、图论"></a>一、图论</h2><h3 id="0-定义"><a href="#0-定义" class="headerlink" title="0. 定义"></a>0. 定义</h3><ol>
@@ -307,7 +307,7 @@
 <li>补图</li>
 </ol>
 </li>
-<li>二分图：无奇圈</li>
+<li>二分图</li>
 <li>连通支：极大连通子图；连通支个数 $p(G)$</li>
 <li>点割集、边割集、点断集、边断集<ol>
 <li>割集：删除真子集不增加连通支数目</li>
@@ -360,6 +360,7 @@
 <li>极小非平面图：删除任意边后变成平面图（一定为简单图，$K_5,K_{3,3}$）</li>
 <li>自对偶图：如轮图 $W_n$</li>
 <li>色数：最少颜色数目；点色数 $\gamma(G)$；边色数 $\gamma^\prime(G)$；面色数 $\gamma^{\prime\prime}(G)$</li>
+<li>极大匹配；最大匹配；交互道路；可增广道路；完全匹配；完美匹配；覆盖</li>
 </ol>
 <h3 id="1-道路与回路"><a href="#1-道路与回路" class="headerlink" title="1. 道路与回路"></a>1. 道路与回路</h3><ol>
 <li>握手定理</li>
@@ -551,7 +552,16 @@
 </ol>
 </li>
 </ol>
-<h3 id="4-匹配"><a href="#4-匹配" class="headerlink" title="4. 匹配"></a>4. 匹配</h3><h3 id="5-网络流"><a href="#5-网络流" class="headerlink" title="5. 网络流"></a>5. 网络流</h3><h3 id="附录-1：图论算法"><a href="#附录-1：图论算法" class="headerlink" title="附录 1：图论算法"></a>附录 1：图论算法</h3><ol>
+<h3 id="4-匹配与网络流"><a href="#4-匹配与网络流" class="headerlink" title="4. 匹配与网络流"></a>4. 匹配与网络流</h3><ol>
+<li>可增广道路一定包含奇数条边，且其中不属于原匹配的边多一条</li>
+<li>$M$ 为 $G$ 的最大匹配，当且仅当 $G$ 中不含关于 $M$ 的可增广道路</li>
+<li>$\mathrm{Hall}$ 定理（相异性条件）：二分图中存在 $V_1$ 到 $V_2$ 的完全匹配当且仅当 $V_1$ 中任意 $k$ 个顶点至少与 $V_2$ 中的 $k$ 个顶点相邻</li>
+<li>$k$ 条件：若 $V_1$ 中的每个顶点度数都不少于 $k$，$V_2$ 中的每个顶点度数都不大于 $k$，则 $G$ 中存在 $V_1$ 到 $V_2$ 的完全匹配</li>
+<li>二分图中从 $X$ 到 $Y$ 的最大匹配数是 $|X|-\delta (G)$，其中 $A$ 为 $X$ 中任意个数节点的子集，$\displaystyle \delta (G)&#x3D;\max_{A\subseteq X} \delta (A),\delta (A)&#x3D;|A|-|N(A)|$，$N(A)$ 为 $A$ 的邻接点集</li>
+<li>$\mathrm{König}$ 定理：二分图中最大匹配数等于最小覆盖数</li>
+<li>网络流图中，其最大流量等于其最小割切的容量</li>
+</ol>
+<h3 id="附录-1：图论算法"><a href="#附录-1：图论算法" class="headerlink" title="附录 1：图论算法"></a>附录 1：图论算法</h3><ol>
 <li>图的代数表示<ol>
 <li>邻接矩阵</li>
 <li>权矩阵</li>
@@ -633,11 +643,23 @@
 </li>
 </ol>
 </li>
+<li>二分图匹配<ol>
+<li>最大匹配：匈牙利算法 $(O(mn))$</li>
+<li>最佳匹配：网络流</li>
+<li>应用：打鸟、放机器人</li>
+</ol>
+</li>
+<li>网络流<ol>
+<li>最大流：$\mathrm{Ford-Fulkerson}$ 算法</li>
+<li>应用：工作任务分配、逃生路线</li>
+</ol>
+</li>
 </ol>
 <h3 id="附录-2：图论证明技巧"><a href="#附录-2：图论证明技巧" class="headerlink" title="附录 2：图论证明技巧"></a>附录 2：图论证明技巧</h3><ol>
 <li>对偶图<ol>
 <li>不存在具有奇数个面且每个面都具有奇数条棱的多面体</li>
 <li>穿行房间问题</li>
+<li>无法将五边形分割成有限个三角形且无奇点</li>
 </ol>
 </li>
 <li>鸽笼原理<ol>
@@ -664,6 +686,12 @@
 <li>归纳法<ol>
 <li>有 $k$ 个连通支的简单图 $m\le \frac{1}{2}(n-k+1)(n-k)$</li>
 <li>简单图若 $n\ge 4,m\ge 2n-3$，则含有带弦的回路</li>
+</ol>
+</li>
+<li>二分图<ol>
+<li>充要条件：无奇圈；可点 $2$ 着色；对偶图为欧拉图</li>
+<li>性质：$V_1$ 的度数和等于 $V_2$ 的度数和</li>
+<li>不能将五边形分割为有限个三角形使得无奇点</li>
 </ol>
 </li>
 </ol>
@@ -698,7 +726,7 @@
 </ol>
 </li>
 </ol>
-<h2 id="二、代数结构"><a href="#二、代数结构" class="headerlink" title="二、代数结构"></a>二、代数结构</h2><h2 id="附录一、图论算法的代码实现"><a href="#附录一、图论算法的代码实现" class="headerlink" title="附录一、图论算法的代码实现"></a>附录一、图论算法的代码实现</h2>
+<h2 id="二、代数结构"><a href="#二、代数结构" class="headerlink" title="二、代数结构"></a>二、代数结构</h2>
                 
               </div>
             
