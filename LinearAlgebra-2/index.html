@@ -19,15 +19,15 @@
   <meta name="author" content="sqzr2319">
   <meta name="keywords" content="">
   
-    <meta name="description" content="大一下学期线性代数(2)的复习笔记，目前更新至 Jordan 标准形。">
+    <meta name="description" content="大一下学期线性代数(2)的复习笔记，目前更新至酉空间。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="线性代数(2)">
 <meta property="og:url" content="https://sqzr2319.github.io/LinearAlgebra-2/index.html">
 <meta property="og:site_name" content="sqzr2319&#39;s blog">
-<meta property="og:description" content="大一下学期线性代数(2)的复习笔记，目前更新至 Jordan 标准形。">
+<meta property="og:description" content="大一下学期线性代数(2)的复习笔记，目前更新至酉空间。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-04-07T08:45:51.000Z">
-<meta property="article:modified_time" content="2025-04-13T16:35:30.514Z">
+<meta property="article:modified_time" content="2025-05-24T05:15:48.934Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="数学">
 <meta property="article:tag" content="大一下">
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          824 字
+          1.3k 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          7 分钟
+          11 分钟
         
       </span>
     
@@ -292,14 +292,13 @@
             
               <div class="markdown-body">
                 
-                <p>大一下学期线性代数(2)的复习笔记，目前更新至 Jordan 标准形。</p>
+                <p>大一下学期线性代数(2)的复习笔记，目前更新至酉空间。</p>
 <span id="more"></span>
 
 <h2 id="一、基本定义"><a href="#一、基本定义" class="headerlink" title="一、基本定义"></a>一、基本定义</h2><ol>
 <li>复数<ol>
-<li>矩阵形式：$T(a+bi)&#x3D;\begin{pmatrix} a &amp; -b \ b &amp; a \end{pmatrix}$，$T$ 保持加法和乘法</li>
+<li>矩阵形式：$T(a+bi)&#x3D;\begin{pmatrix} a &amp; -b \\ b &amp; a \end{pmatrix}$，$T$ 保持加法和乘法</li>
 <li>复数的幂：整数幂唯一，有理数 $\frac{p}{q}$ 次幂有$p$个，无理数次幂无穷多</li>
-<li>$\mathrm{Hermite}$ 共轭：$A^H&#x3D;\overline{A^T}&#x3D;\overline{A}^T$</li>
 </ol>
 </li>
 <li>代数结构：详见<a href="https://sqzr2319.github.io/DiscreteMath-2">离散数学(2)</a><ol>
@@ -312,7 +311,7 @@
 </li>
 </ol>
 <h2 id="二、多项式"><a href="#二、多项式" class="headerlink" title="二、多项式"></a>二、多项式</h2><ol>
-<li>综合除法：$f(x)&#x3D;x^3-4x^2-5x+2$，求 $f(-3)$ 或求 $f(x)$ 除以 $x+3$ 的余式<br>$$\begin{bmatrix} -3 &amp; 1 &amp; -4 &amp; -5 &amp; 2 \ &amp;  &amp; -3 &amp; 21 &amp; -48 \ \hline &amp; 1 &amp; -7 &amp; 16 &amp; -46 \end{bmatrix}$$</li>
+<li>综合除法：$f(x)&#x3D;x^3-4x^2-5x+2$，求 $f(-3)$ 或求 $f(x)$ 除以 $x+3$ 的余式<br>$$\begin{bmatrix} -3 &amp; 1 &amp; -4 &amp; -5 &amp; 2 \\ &amp;  &amp; -3 &amp; 21 &amp; -48 \\ \hline &amp; 1 &amp; -7 &amp; 16 &amp; -46 \end{bmatrix}$$</li>
 <li>将 $f(x)$ 分解成 $x-a$ 的方幂和：$f(x)&#x3D;(x-a)g_0(x)+r_0(x)&#x3D;(x-a)((x-a)g_1(x)+r_1(x))+r_0(x)$</li>
 <li>$\mathrm{Lagrange}$ 插值<ol>
 <li>$n&#x3D;1$ 时：$f(x)&#x3D;f(x_0)\frac{(x-x_1)}{(x_0-x_1)}+f(x_1)\frac{(x-x_0)}{(x_1-x_0)}$</li>
@@ -354,7 +353,37 @@
 </ol>
 </li>
 </ol>
-
+<h2 id="四、矩阵函数"><a href="#四、矩阵函数" class="headerlink" title="四、矩阵函数"></a>四、矩阵函数</h2><ol>
+<li>函数矩阵的逆 $&#x3D;\frac{1}{\det A(x)}\mathrm{adj} A(x)$</li>
+<li>$m$ 个 $n$ 维函数向量线性无关 $\Leftrightarrow$ $m$ 阶 $\mathrm{Gram}$ 矩阵满秩 $(g_{ij}&#x3D;\int_a^b a_i^T(x)a_j(x)\mathrm{d}x)$</li>
+<li>$m$ 个 $n$ 维函数向量线性无关 $\Leftrightarrow$ $\mathrm{Wronsky}$ 矩阵 $W(x)&#x3D;\left(A(x),A’(x),\cdots,A^{(m-1)}(x)\right)_{m\times mn}$ 在某点满行秩</li>
+<li>矩阵级数绝对收敛 $\Leftrightarrow \sum_{k&#x3D;1}^{\infty} ||A^k||_{\infty}$ 收敛</li>
+<li>$f(A)&#x3D;Pf(J)P^{-1},f(J_{\lambda_0,m})&#x3D;\mathrm{diag}(f(\lambda_0),f^{\prime}(\lambda_0),\frac{1}{2!}f^{\prime\prime}(\lambda_0),\cdots)$</li>
+<li>$|\lambda I_n-f(A)|&#x3D;(\lambda-f(\mu_1))^{n_1}(\lambda-f(\mu_2))^{n_2}\cdots(\lambda-f(\mu_s))^{n_s}$</li>
+<li>待定系数法：$r(z)&#x3D;a_0+a_1z+a_2z^2+\cdots+a_{n-1}z^{n-1}+a_{m-1}z^{m-1},m&#x3D;\sum m_i,r(\sigma_i)&#x3D;f(\sigma_i),f(A)&#x3D;r(A)$</li>
+</ol>
+<h2 id="五、酉空间"><a href="#五、酉空间" class="headerlink" title="五、酉空间"></a>五、酉空间</h2><ol>
+<li>内积：共轭对称性、线性性、正定性</li>
+<li>$\mathrm{Frobenius}$ 内积：$\mathrm{tr}(AB^H)$</li>
+<li>若 $\vec{u_1},\vec{u_2},\cdots,\vec{u_n}$ 标准正交，则 $v&#x3D;\sum_{i&#x3D;1}^n (v,\vec{u_i})\vec{u_i}$ （投影向量）</li>
+<li>$\mathrm{C}^n&#x3D;C(A)\oplus N(A^H)$</li>
+<li>$T,T^*$ 在一组标准正交基下的矩阵是 $A,A^H$</li>
+<li>若 $W$ 是 $T-$ 不变子空间，则 $W^\perp$ 是 $T^*-$ 不变子空间</li>
+<li>若 $\lambda$ 是 $T$ 的特征值，则 $\overline{\lambda}$ 是 $T^*$ 的特征值</li>
+<li>保积变换是线性同构（单：$\mathrm{Ker}T&#x3D;{0}$，满：$\mathrm{Im}T&#x3D;V$）</li>
+<li>第一&#x2F;第二类正交变换：$\det&#x3D;1$，$\det&#x3D;-1$</li>
+<li>正规变换性质<ol>
+<li>$T\alpha&#x3D;\lambda\alpha\Rightarrow T^*\alpha&#x3D;\overline{\lambda}\alpha$</li>
+<li>在不同特征值下的特征向量正交</li>
+<li>当且仅当可正交对角化</li>
+</ol>
+</li>
+<li>推广 $\mathrm{Schur}$ 定理：酉上三角化（借助 $UR$ 分解）</li>
+<li>$\mathrm{Hermite}$ 阵的特征值是实数</li>
+<li>极分解：$A&#x3D;Re^{iM}$，$R&#x3D;U\mathrm{diag}(r_1,r_2,\cdots,r_n)U^H$ 为半正定 $\mathrm{Hermite}$ 阵，$M&#x3D;U\mathrm{diag}(\theta_1,\theta_2,\cdots,\theta_n)U^H$ 是 $\mathrm{Hermite}$ 阵，$RM&#x3D;MR$</li>
+<li>$A$ 列满秩 $\Rightarrow$ $A^HA$ 是正定 $\mathrm{Hermite}$ 阵；行满秩 $\Rightarrow$ $AA^H$ 是正定 $\mathrm{Hermite}$ 阵</li>
+</ol>
+<h2 id="六、双线性型与张量"><a href="#六、双线性型与张量" class="headerlink" title="六、双线性型与张量"></a>六、双线性型与张量</h2>
                 
               </div>
             
