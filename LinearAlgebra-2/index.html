@@ -27,7 +27,7 @@
 <meta property="og:description" content="大一下学期线性代数(2)的复习笔记，目前更新至酉空间。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-04-07T08:45:51.000Z">
-<meta property="article:modified_time" content="2025-05-24T05:15:48.934Z">
+<meta property="article:modified_time" content="2025-05-28T16:42:58.375Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="数学">
 <meta property="article:tag" content="大一下">
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k 字
+          2k 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          11 分钟
+          17 分钟
         
       </span>
     
@@ -361,6 +361,8 @@
 <li>$f(A)&#x3D;Pf(J)P^{-1},f(J_{\lambda_0,m})&#x3D;\mathrm{diag}(f(\lambda_0),f^{\prime}(\lambda_0),\frac{1}{2!}f^{\prime\prime}(\lambda_0),\cdots)$</li>
 <li>$|\lambda I_n-f(A)|&#x3D;(\lambda-f(\mu_1))^{n_1}(\lambda-f(\mu_2))^{n_2}\cdots(\lambda-f(\mu_s))^{n_s}$</li>
 <li>待定系数法：$r(z)&#x3D;a_0+a_1z+a_2z^2+\cdots+a_{n-1}z^{n-1}+a_{m-1}z^{m-1},m&#x3D;\sum m_i,r(\sigma_i)&#x3D;f(\sigma_i),f(A)&#x3D;r(A)$</li>
+<li>$e^{J_{\lambda,m}t}&#x3D;e^{(\lambda t)I+N}&#x3D;e^{\lambda t}(I+N+\frac{1}{2!}N^2+\cdots+\frac{1}{(m-1)!}N^{m-1})$</li>
+<li>$\frac{\mathrm{d}X}{\mathrm{d}t}&#x3D;AX$ 的解：$x(t)&#x3D;Pe^{Jt}\vec{c}$；$x(0)&#x3D;\alpha\Rightarrow \vec{c}&#x3D;P^{-1}\alpha$</li>
 </ol>
 <h2 id="五、酉空间"><a href="#五、酉空间" class="headerlink" title="五、酉空间"></a>五、酉空间</h2><ol>
 <li>内积：共轭对称性、线性性、正定性</li>
@@ -383,7 +385,35 @@
 <li>极分解：$A&#x3D;Re^{iM}$，$R&#x3D;U\mathrm{diag}(r_1,r_2,\cdots,r_n)U^H$ 为半正定 $\mathrm{Hermite}$ 阵，$M&#x3D;U\mathrm{diag}(\theta_1,\theta_2,\cdots,\theta_n)U^H$ 是 $\mathrm{Hermite}$ 阵，$RM&#x3D;MR$</li>
 <li>$A$ 列满秩 $\Rightarrow$ $A^HA$ 是正定 $\mathrm{Hermite}$ 阵；行满秩 $\Rightarrow$ $AA^H$ 是正定 $\mathrm{Hermite}$ 阵</li>
 </ol>
-<h2 id="六、双线性型与张量"><a href="#六、双线性型与张量" class="headerlink" title="六、双线性型与张量"></a>六、双线性型与张量</h2>
+<h2 id="六、双线性型与张量"><a href="#六、双线性型与张量" class="headerlink" title="六、双线性型与张量"></a>六、双线性型与张量</h2><h2 id="七、例题"><a href="#七、例题" class="headerlink" title="七、例题"></a>七、例题</h2><ol>
+<li>设 $V$ 是复数域上的 $n$ 维线性空间，$\sigma,\tau$ 是 $V$ 的线性变换，且 $\sigma\tau&#x3D;\tau\sigma$，证明：<ol>
+<li>如果 $\lambda_0$ 是 $\sigma$ 的特征值，那么 $\lambda_0$ 的特征子空间 $V_{\lambda_0}$ 是 $\tau$ 的不变子空间</li>
+<li>$\sigma,\tau$ 至少有一个公共的特征向量</li>
+</ol>
+</li>
+<li>设 $A,B$ 分别是 $m,n$ 阶矩阵，求证：矩阵方程 $AX&#x3D;XB$ 只有零解的充要条件是 $A,B$ 无公共特征值</li>
+<li>设 $V$ 是 $n$ 维内积空间，$T$ 是 $V$ 上的线性变换，证明：$ImT^*&#x3D;(KerT)^\perp$</li>
+<li>设 $A,B$ 是 $m\times n$ 实矩阵，求证：$A^TA&#x3D;B^TB$ 的充要条件是存在 $m$ 阶正交矩阵 $Q$，使得 $A&#x3D;QB$</li>
+<li>设 $Q$ 为 $n$ 阶正交矩阵，$1$ 不是 $Q$ 的特征值，设 $P&#x3D;I-2\alpha\alpha^T$，其中 $\alpha$ 是 $n$ 维实列向量且 $\alpha^T\alpha&#x3D;1$，证明：$1$ 是 $PQ$ 的特征值</li>
+<li>设 $A,B$ 为正规矩阵，且 $AB&#x3D;BA$，证明：存在酉阵 $U$ 使得 $U^{-1}AU$ 和 $U^{-1}BU$ 同时为对角阵</li>
+<li>设 $T$ 是 $n$ 维酉空间 $V$ 上的线性变换，求证：$T$ 是正规变换的充要条件是对 $V$ 中任意的向量 $\alpha$，都有 $||T\alpha||&#x3D;||T^*\alpha||$</li>
+<li>证明：$n$ 阶 $\mathrm{Hermite}$ 阵正定的充要条件是它的 $n$ 个顺序主子式全大于零</li>
+<li>设 $V$ 是 $n$ 维 $\mathrm{Euclid}$ 空间，$T:V\to V$ 是可逆线性变换，证明：<ol>
+<li>$T$ 是 $V$ 上的一个全等变换（保角、保长度）当且仅当 $T$ 是 $V$ 的正交变换</li>
+<li>$T$ 是 $V$ 的一个相似变换（保角）当且仅当 $\exists c\gt 0,\forall \vec{\alpha},\vec{\beta}\in V$，有 $(T(\vec{\alpha}),T(\vec{\beta}))&#x3D;c(\vec{\alpha},\vec{\beta})$</li>
+<li>$T$ 是 $V$ 的一个相似变换当且仅当 $T&#x3D;cT_0$，其中 $c\gt 0$，$T_0$ 是一个正交变换</li>
+</ol>
+</li>
+<li>设 $V&#x3D;M_n(\mathbb{R})$，对于任意 $A,B\in V$，定义：$(A,B)&#x3D;\mathrm{tr}(AB^T)$，设 $P,Q$ 是 $V$ 中可逆矩阵，令 $T:V\to V$ 满足 $T(M)&#x3D;PMQ$，对于任意 $M\in V$，证明：$T$ 是一个正交变换 $\Leftrightarrow \exists c\neq 0,P^TP&#x3D;cI_n,Q^TQ&#x3D;\frac{1}{c}I_n$</li>
+<li>设 $A,B$ 是实方阵，证明 $A,B$ 在 $\mathbb{C}$ 上相似当且仅当 $A,B$ 在 $\mathbb{R}$ 上相似</li>
+<li>设 $T$ 是复 $n$ 维空间 $V$ 上的线性变换，$T$ 在 $V$ 的一组基下矩阵是 $A&#x3D;\begin{bmatrix}0^T &amp; -a_0\\I_{n-1} &amp; \vec{\alpha}\end{bmatrix}$，其中 $\alpha&#x3D;(-a_1,-a_2,\cdots,-a_{n-1})^T$。<ol>
+<li>求 $T$ 的特征多项式 $f_T(\lambda)$ 和极小多项式 $m_T(\lambda)$</li>
+<li>$T$ 是否可对角化？</li>
+</ol>
+</li>
+<li>设 $A,B\in M_n(\mathbb{C})$，且 $\mathrm{rank}(AB-BA)&#x3D;1$，证明：$(AB-BA)^2&#x3D;0_{n\times n}$</li>
+</ol>
+
                 
               </div>
             
