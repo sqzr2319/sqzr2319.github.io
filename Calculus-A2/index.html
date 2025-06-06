@@ -19,15 +19,15 @@
   <meta name="author" content="sqzr2319">
   <meta name="keywords" content="">
   
-    <meta name="description" content="大一下学期微积分A(2)的复习笔记，目前更新至Stokes定理。">
+    <meta name="description" content="大一下学期微积分A(2)的复习笔记，目前已完结。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="微积分A(2)">
 <meta property="og:url" content="https://sqzr2319.github.io/Calculus-A2/index.html">
 <meta property="og:site_name" content="sqzr2319&#39;s blog">
-<meta property="og:description" content="大一下学期微积分A(2)的复习笔记，目前更新至Stokes定理。">
+<meta property="og:description" content="大一下学期微积分A(2)的复习笔记，目前已完结。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-04-07T04:04:23.000Z">
-<meta property="article:modified_time" content="2025-05-29T07:45:52.076Z">
+<meta property="article:published_time" content="2025-06-13T04:04:23.000Z">
+<meta property="article:modified_time" content="2025-06-06T15:02:24.700Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="数学">
 <meta property="article:tag" content="大一下">
@@ -227,8 +227,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-04-07 12:04" pubdate>
-          2025年4月7日 中午
+        <time datetime="2025-06-13 12:04" pubdate>
+          2025年6月13日 中午
         </time>
       </span>
     
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.6k 字
+          5.9k 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          39 分钟
+          49 分钟
         
       </span>
     
@@ -292,7 +292,7 @@
             
               <div class="markdown-body">
                 
-                <p>大一下学期微积分A(2)的复习笔记，目前更新至Stokes定理。</p>
+                <p>大一下学期微积分A(2)的复习笔记，目前已完结。</p>
 <span id="more"></span>
 
 <h2 id="一、多元微分"><a href="#一、多元微分" class="headerlink" title="一、多元微分"></a>一、多元微分</h2><h3 id="1-赋范线性空间-mathbb-R-n"><a href="#1-赋范线性空间-mathbb-R-n" class="headerlink" title="1. 赋范线性空间 $\mathbb R^n$"></a>1. 赋范线性空间 $\mathbb R^n$</h3><ol>
@@ -505,7 +505,84 @@
 <li>$(9.8)$ 设 $P(x,y),Q(x,y)$ 在全平面上有连续偏导数，而且对任意点 $(x_0,y_0)$ 为中心，以任意正数 $r$ 为半径的上半圆 $C:x&#x3D;x_0+r\cos \theta,y&#x3D;y_0+r\sin \theta(0\le \theta\le \pi)$，都有 $\displaystyle \int_C P\mathrm{d}x+Q\mathrm{d}y&#x3D;0$，证明：$P(x,y)&#x3D;0,\dfrac{\partial Q}{\partial y}&#x3D;0$</li>
 <li>$(9.16)$ 设 $\vec{v}&#x3D;(P(x,y,z),Q(x,y,z),R(x,y,z))^T\in C^1(\mathbb{R}^3)$，且 $\begin{cases}\nabla \cdot \vec{v}(x,y,z)&#x3D;0,\forall (x,y,z)\in \Omega\\\vec{v}(x,y,z)&#x3D;(1,1,1)^T,\forall (x,y,z)\in \partial \Omega\end{cases}$，其中 $\Omega$ 是 $\mathbb R^3$ 中以原点为球心的单位球，证明：$\displaystyle \iiint_\Omega (P+Q+R)\mathrm{d}x\mathrm{d}y\mathrm{d}z&#x3D;4\pi$</li>
 </ol>
-<h2 id="四、级数"><a href="#四、级数" class="headerlink" title="四、级数"></a>四、级数</h2>
+<h2 id="四、级数"><a href="#四、级数" class="headerlink" title="四、级数"></a>四、级数</h2><h3 id="1-常数项级数"><a href="#1-常数项级数" class="headerlink" title="1. 常数项级数"></a>1. 常数项级数</h3><ol>
+<li>常数项级数的性质<ol>
+<li>$\mathrm{Cauchy}$ 收敛原理：$\displaystyle \forall \varepsilon\gt 0,\exists N\in \mathbb N,\forall m,n\ge N,\left|\sum_{k&#x3D;m}^n a_k\right|\lt \varepsilon$</li>
+<li>收敛的级数必有 $\displaystyle \lim_{n\to +\infty} a_n&#x3D;0$</li>
+</ol>
+</li>
+<li>非负项级数<ol>
+<li>收敛充要条件：部分和数列有上界</li>
+<li>$\mathrm{Cauchy}$ 积分判别法：设 $f(x)$ 在 $[1,+\infty)$ 上单调下降且非负，则 $\displaystyle \sum_{n&#x3D;1}^{\infty} f(n)$ 与 $\int_1^{+\infty}f(x)\mathrm{d}x$ 同敛散</li>
+<li>比较判别法</li>
+<li>$\mathrm{Cauchy}$ 根式判别法：$q\lt 1$ 收敛，$q\gt 1$ 发散</li>
+<li>比值判别法</li>
+<li>$\mathrm{D’Alembert}$ 判别法：$q\lt 1$ 收敛，$q\gt 1$ 发散</li>
+<li>$\mathrm{Raabe}$ 判别法：$n\left(\frac{a_n}{a_{n+1}}-1\right)\to r$，则 $r\gt 1$ 收敛，$r\lt 1$ 发散</li>
+<li>$\mathrm{Gauss}$ 判别法：$\frac{a_n}{a_{n+1}}&#x3D;\lambda+\frac{\mu}{n}+\frac{\nu}{n\ln n}+o\left(\frac{1}{n\ln n}\right),\nu\gt 1$ 收敛，$\nu\lt 1$ 发散</li>
+</ol>
+</li>
+<li>任意项级数<ol>
+<li>比较判别法对任意项级数不成立，如级数 $\frac{(-1)^n}{n+(-1)^n}$ 收敛，但级数 $\frac{(-1)^n}{\sqrt{n}+(-1)^n}$ 发散</li>
+<li>交错项级数的 $\mathrm{Leibnitz}$ 判别法：单调递减趋于零</li>
+<li>$\mathrm{Dirichlet}$ 判别法：$a_n$ 单调递减趋于零，$b_n$ 部分和有界</li>
+<li>$\mathrm{Abel}$ 判别法：$a_n$ 单调有界，$b_n$ 部分和收敛</li>
+<li>$\displaystyle \sum_{k&#x3D;1}^n \cos k&#x3D;\frac{\sin(n+\frac{1}{2})-\sin\frac{1}{2}}{2\sin\frac{1}{2}}$，从而级数 $\frac{\cos n}{n}$ 收敛</li>
+<li>若使用结合律后每个括号内同正负，则原级数收敛</li>
+<li>绝对收敛的数列有交换律，条件收敛没有交换律</li>
+<li>$\mathrm{Cauchy}$ 乘积：$\displaystyle \sum_{n&#x3D;1}^{\infty} (a_1b_n+\cdots+a_nb_1)$ 为级数 $a_n,b_n$ 的 $\mathrm{Cauchy}$ 乘积，若级数 $a_n,b_n$ 收敛，则其 $\mathrm{Cauchy}$ 乘积收敛到其乘积</li>
+</ol>
+</li>
+<li>例题<ol>
+<li>级数 $a_n^2,b_n^2$ 收敛，证明：级数 $(a_n+b_n)^2$ 收敛，级数 $\frac{a_n}{n}$ 绝对收敛</li>
+<li>$(10.13)$ 设 $a_n\gt 0$，证明：无论级数 $a_n$ 是否收敛，级数 $\frac{a_n}{S_n^p}$ 对任意 $p\gt 1$ 收敛</li>
+<li>$(10.21)$ 已知级数 $u_n$ 收敛，则以下级数中收敛的有：级数 $(-1)^n\frac{u_n}{n}$，级数 $u_n^2$，级数 $u_n-u_{2n}$，级数 $u_n+u_{n+1}$</li>
+</ol>
+</li>
+</ol>
+<h3 id="2-函数项级数"><a href="#2-函数项级数" class="headerlink" title="2. 函数项级数"></a>2. 函数项级数</h3><ol>
+<li>一致收敛的判定<ol>
+<li>$\mathrm{Cauchy}$ 准则：级数 $u_n(x)$ 一致收敛当且仅当 $\displaystyle \forall \varepsilon\gt 0,\exists N\in \mathbb N,\forall m,n\ge N,\left|\left|\sum_{k&#x3D;m}^n a_k(x)\right|\right|_{\infty}\lt \varepsilon$</li>
+<li>$\mathrm{Weierstrass}$ 判别法：$||u_n(x)||_\infty\le M_n$</li>
+<li>$\mathrm{Dirichlet}$ 判别法：$\forall x_0,u_n(x_0)$ 单调且 $u_n(x)$ 一致趋于零，$v_n(x)$ 部分和一致有界</li>
+<li>$\mathrm{Abel}$ 判别法：$\forall x_0,u_n(x_0)$ 单调且 $u_n(x)$ 一致有界，级数 $v_n(x)$ 一致收敛</li>
+</ol>
+</li>
+<li>一致收敛的性质<ol>
+<li>$u_n(x)$ 连续，级数 $u_n(x)$ 一致收敛，则可逐项取极限</li>
+<li>$u_n(x)$ 连续，级数 $u_n(x)$ 一致收敛，则可逐项积分</li>
+<li>$u_n(x)$ 导函数连续，级数 $u_n^\prime(x)$ 一致收敛，且存在 $x_0$ 使得级数 $u_n(x_0)$ 收敛，则级数 $u_n(x)$ 一致收敛，且可逐项求导</li>
+</ol>
+</li>
+<li>幂级数<ol>
+<li>幂级数在收敛半径内点点绝对收敛，收敛半径外点点发散，在收敛域上内闭一致绝对收敛</li>
+<li>若在 $x_0$ 处条件收敛，则收敛半径等于 $x_0$</li>
+<li>若 $\displaystyle \lim_{n\to \infty} \sqrt[n]{|a_n|}&#x3D;q$，则 $\rho&#x3D;\frac{1}{q}$</li>
+<li>若 $\displaystyle \lim_{n\to \infty} \frac{|a_n|}{|a_{n+1}|}&#x3D;q$，则 $\rho&#x3D;\frac{1}{q}$</li>
+<li>逐项积分、逐项求导不改变收敛半径，但可能改变收敛域</li>
+<li>若导函数列在 $x_0$ 的邻域内一致有界，则 $f$ 在 $x_0$ 的邻域内可展开成 $\mathrm{Taylor}$ 级数</li>
+</ol>
+</li>
+<li>例题<ol>
+<li>$(11.17)$ 求 $\displaystyle \frac{x\sin\alpha}{1-2x\cos\alpha+x^2}$ 的幂级数展开式</li>
+<li>$(11.24)$ 设 $\displaystyle \lim_{n\to \infty}a_n&#x3D;a,f(x)&#x3D;\sum_{n&#x3D;1}^\infty a_nx^n$，证明：<ol>
+<li>$\displaystyle \lim_{x\to 1^-}(1-x)f(x)&#x3D;a$</li>
+<li>$\displaystyle \lim_{x\to 1^-}(1-x)\int_0^x \frac{f(t)}{1-t}\mathrm{d}t&#x3D;a$</li>
+</ol>
+</li>
+<li>$(11.33)$ 验证函数 $\displaystyle y(x)&#x3D;\sum_{n&#x3D;0}^{\infty} \frac{x^{3n}}{(3n)!}$ 满足微分方程 $y^{\prime\prime}+y^\prime+y&#x3D;e^x$，并求其和函数</li>
+<li>$(11.36)$ 设幂级数 $a_nx^n$ 的收敛半径大于零，$a_1\neq 0$，且在原点的一个邻域内 $\displaystyle \left|\sum_{n&#x3D;1}^{\infty}a_nx^n\right|\ge|a_1||x|-2x^2$，证明：$|a_2|\le 2$</li>
+</ol>
+</li>
+</ol>
+<h3 id="3-mathrm-Fourier-级数"><a href="#3-mathrm-Fourier-级数" class="headerlink" title="3. $\mathrm{Fourier}$ 级数"></a>3. $\mathrm{Fourier}$ 级数</h3><ol>
+<li>$\displaystyle f(x)&#x3D;\frac{a_0}{2}+\sum_{n&#x3D;1}^{+\infty}\left(a_n\cos \frac{n\pi x}{l}+b_n\sin \frac{n\pi x}{l}\right)$，其中 $\displaystyle a_n&#x3D;\frac{1}{l}\int_{-l}^{l}f(x)\cos \frac{n\pi x}{l}\mathrm{d}x,b_n&#x3D;\frac{1}{l}\int_{-l}^{l}f(x)\sin \frac{n\pi x}{l}\mathrm{d}x$</li>
+<li>分段可微：每个开区间上可微，端点处存在左右单侧极限和左右广义单侧导数</li>
+<li>分段可微的函数其 $\mathrm{Fourier}$ 级数收敛到左右极限的平均值</li>
+<li>分段单调有界的函数其 $\mathrm{Fourier}$ 级数收敛到左右极限的平均值</li>
+<li>$\mathrm{Parseval}$ 等式：$\displaystyle \frac{a_0^2}{2}+\sum_{n&#x3D;1}^{\infty}\left(a_n^2+b_n^2\right)&#x3D;\frac{1}{l}\int_{-l}^{l}f^2(x)\mathrm{d}x$</li>
+</ol>
+
                 
               </div>
             
@@ -565,7 +642,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年4月7日</div>
+          <div>2025年6月13日</div>
         </div>
       
       
@@ -597,18 +674,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/LinearAlgebra-2/" title="线性代数(2)">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">线性代数(2)</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/CSDIY-24Winter/" title="大一上自学笔记">
-                        <span class="hidden-mobile">大一上自学笔记</span>
+                      <a href="/LinearAlgebra-2/" title="线性代数(2)">
+                        <span class="hidden-mobile">线性代数(2)</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
