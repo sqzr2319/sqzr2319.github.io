@@ -27,7 +27,7 @@
 <meta property="og:description" content="大一下学期微积分A(2)的复习笔记，目前已完结。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-06-13T04:04:23.000Z">
-<meta property="article:modified_time" content="2025-06-06T15:02:24.700Z">
+<meta property="article:modified_time" content="2025-06-07T02:57:41.614Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="数学">
 <meta property="article:tag" content="大一下">
@@ -250,7 +250,7 @@
         
         
         
-          49 分钟
+          50 分钟
         
       </span>
     
@@ -295,7 +295,7 @@
                 <p>大一下学期微积分A(2)的复习笔记，目前已完结。</p>
 <span id="more"></span>
 
-<h2 id="一、多元微分"><a href="#一、多元微分" class="headerlink" title="一、多元微分"></a>一、多元微分</h2><h3 id="1-赋范线性空间-mathbb-R-n"><a href="#1-赋范线性空间-mathbb-R-n" class="headerlink" title="1. 赋范线性空间 $\mathbb R^n$"></a>1. 赋范线性空间 $\mathbb R^n$</h3><ol>
+<h2 id="一、多元微分"><a href="#一、多元微分" class="headerlink" title="一、多元微分"></a>一、多元微分</h2><h3 id="1-赋范线性空间"><a href="#1-赋范线性空间" class="headerlink" title="1. 赋范线性空间"></a>1. 赋范线性空间</h3><ol>
 <li>$\mathbb R^n$ 中非空的道路连通的开集称为开区域，<strong>开区域的闭包</strong>称为闭区域</li>
 <li>道路联通的闭集<strong>不一定</strong>是闭区域</li>
 <li>凸区域：$\forall x,y\in\Omega,\lambda x+(1-\lambda)y\in\Omega$</li>
@@ -312,7 +312,7 @@
 <li>隐函数定理(2)：$\frac{\partial y}{\partial x_i}&#x3D;-\frac{\frac{\partial F}{\partial x_i}}{\frac{\partial F}{\partial y}}$</li>
 <li>逆映射定理：$J(F)|_{x_0}$ 可逆 $\Rightarrow J(f^{-1})&#x3D;(J(f))^{-1}$</li>
 </ol>
-<h3 id="4-mathrm-Taylor-公式"><a href="#4-mathrm-Taylor-公式" class="headerlink" title="4. $\mathrm{Taylor}$ 公式"></a>4. $\mathrm{Taylor}$ 公式</h3><ol>
+<h3 id="4-Taylor-公式"><a href="#4-Taylor-公式" class="headerlink" title="4. Taylor 公式"></a>4. Taylor 公式</h3><ol>
 <li>$\displaystyle f(x)&#x3D;\sum_{k&#x3D;0}^{n}\frac{1}{k!}(h_1\frac{\partial}{\partial x_1}+h_2\frac{\partial}{\partial x_2}+\cdots+h_m\frac{\partial}{\partial x_m})^kf(x_0)+o(|x-x_0|^n)$</li>
 <li>$f(x)&#x3D;f(x_0)+J_f(x_0)\cdot(x-x_0)+\frac{1}{2}(x-x_0)^T H_f(x_0)(x-x_0)+o(||x-x_0||^2)$</li>
 </ol>
@@ -513,7 +513,7 @@
 </li>
 <li>非负项级数<ol>
 <li>收敛充要条件：部分和数列有上界</li>
-<li>$\mathrm{Cauchy}$ 积分判别法：设 $f(x)$ 在 $[1,+\infty)$ 上单调下降且非负，则 $\displaystyle \sum_{n&#x3D;1}^{\infty} f(n)$ 与 $\int_1^{+\infty}f(x)\mathrm{d}x$ 同敛散</li>
+<li>$\mathrm{Cauchy}$ 积分判别法：设 $f(x)$ 在 $[1,+\infty)$ 上单调下降且非负，则 $\displaystyle \sum_{n&#x3D;1}^{\infty} f(n)$ 与 $\displaystyle \int_1^{+\infty}f(x)\mathrm{d}x$ 同敛散</li>
 <li>比较判别法</li>
 <li>$\mathrm{Cauchy}$ 根式判别法：$q\lt 1$ 收敛，$q\gt 1$ 发散</li>
 <li>比值判别法</li>
@@ -563,8 +563,17 @@
 <li>若导函数列在 $x_0$ 的邻域内一致有界，则 $f$ 在 $x_0$ 的邻域内可展开成 $\mathrm{Taylor}$ 级数</li>
 </ol>
 </li>
+<li>$\mathrm{Fourier}$ 级数<ol>
+<li>$\displaystyle f(x)&#x3D;\frac{a_0}{2}+\sum_{n&#x3D;1}^{+\infty}\left(a_n\cos \frac{n\pi x}{l}+b_n\sin \frac{n\pi x}{l}\right)$，其中 $\displaystyle a_n&#x3D;\frac{1}{l}\int_{-l}^{l}f(x)\cos \frac{n\pi x}{l}\mathrm{d}x,b_n&#x3D;\frac{1}{l}\int_{-l}^{l}f(x)\sin \frac{n\pi x}{l}\mathrm{d}x$</li>
+<li>分段可微的函数其 $\mathrm{Fourier}$ 级数收敛到左右极限的平均值</li>
+<li>分段单调有界的函数其 $\mathrm{Fourier}$ 级数收敛到左右极限的平均值</li>
+<li>$\mathrm{Parseval}$ 等式：$\displaystyle \frac{a_0^2}{2}+\sum_{n&#x3D;1}^{\infty}\left(a_n^2+b_n^2\right)&#x3D;\frac{1}{l}\int_{-l}^{l}f^2(x)\mathrm{d}x$</li>
+<li>绝对可积的函数其 $\mathrm{Fourier}$ 级数逐项可积，且级数 $\frac{b_n}{n}$ 收敛</li>
+<li>导函数绝对可积的函数其 $\mathrm{Fourier}$ 级数逐项可微</li>
+</ol>
+</li>
 <li>例题<ol>
-<li>$(11.17)$ 求 $\displaystyle \frac{x\sin\alpha}{1-2x\cos\alpha+x^2}$ 的幂级数展开式</li>
+<li>$(11.17)$ 求 $\frac{x\sin\alpha}{1-2x\cos\alpha+x^2}$ 的幂级数展开式</li>
 <li>$(11.24)$ 设 $\displaystyle \lim_{n\to \infty}a_n&#x3D;a,f(x)&#x3D;\sum_{n&#x3D;1}^\infty a_nx^n$，证明：<ol>
 <li>$\displaystyle \lim_{x\to 1^-}(1-x)f(x)&#x3D;a$</li>
 <li>$\displaystyle \lim_{x\to 1^-}(1-x)\int_0^x \frac{f(t)}{1-t}\mathrm{d}t&#x3D;a$</li>
@@ -572,15 +581,10 @@
 </li>
 <li>$(11.33)$ 验证函数 $\displaystyle y(x)&#x3D;\sum_{n&#x3D;0}^{\infty} \frac{x^{3n}}{(3n)!}$ 满足微分方程 $y^{\prime\prime}+y^\prime+y&#x3D;e^x$，并求其和函数</li>
 <li>$(11.36)$ 设幂级数 $a_nx^n$ 的收敛半径大于零，$a_1\neq 0$，且在原点的一个邻域内 $\displaystyle \left|\sum_{n&#x3D;1}^{\infty}a_nx^n\right|\ge|a_1||x|-2x^2$，证明：$|a_2|\le 2$</li>
+<li>$(12.27)$ 证明：存在收敛的三角级数，其不是任何函数的 $\mathrm{Fourier}$ 级数</li>
+<li>证明：级数 $\frac{\sin nx}{\ln n}$，级数 $\frac{\sin nx}{\ln\ln n}$ 不是任何绝对可积函数的 $\mathrm{Fourier}$ 级数</li>
 </ol>
 </li>
-</ol>
-<h3 id="3-mathrm-Fourier-级数"><a href="#3-mathrm-Fourier-级数" class="headerlink" title="3. $\mathrm{Fourier}$ 级数"></a>3. $\mathrm{Fourier}$ 级数</h3><ol>
-<li>$\displaystyle f(x)&#x3D;\frac{a_0}{2}+\sum_{n&#x3D;1}^{+\infty}\left(a_n\cos \frac{n\pi x}{l}+b_n\sin \frac{n\pi x}{l}\right)$，其中 $\displaystyle a_n&#x3D;\frac{1}{l}\int_{-l}^{l}f(x)\cos \frac{n\pi x}{l}\mathrm{d}x,b_n&#x3D;\frac{1}{l}\int_{-l}^{l}f(x)\sin \frac{n\pi x}{l}\mathrm{d}x$</li>
-<li>分段可微：每个开区间上可微，端点处存在左右单侧极限和左右广义单侧导数</li>
-<li>分段可微的函数其 $\mathrm{Fourier}$ 级数收敛到左右极限的平均值</li>
-<li>分段单调有界的函数其 $\mathrm{Fourier}$ 级数收敛到左右极限的平均值</li>
-<li>$\mathrm{Parseval}$ 等式：$\displaystyle \frac{a_0^2}{2}+\sum_{n&#x3D;1}^{\infty}\left(a_n^2+b_n^2\right)&#x3D;\frac{1}{l}\int_{-l}^{l}f^2(x)\mathrm{d}x$</li>
 </ol>
 
                 
