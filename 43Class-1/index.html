@@ -26,16 +26,16 @@
 <meta property="og:site_name" content="sqzr2319&#39;s blog">
 <meta property="og:description" content="肆叁小灶第一讲，介绍了 STL 库的基本用法，主要包括 deque 和 set 的使用方法以及一些常用的 STL 函数。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://sqzr2319.github.io/img/43Class-1-1.jpg">
-<meta property="og:image" content="https://sqzr2319.github.io/img/43Class-1-2.jpg">
-<meta property="og:image" content="https://sqzr2319.github.io/img/43Class-1-3.jpg">
+<meta property="og:image" content="https://sqzr2319.github.io/img/43Class-1/1.jpg">
+<meta property="og:image" content="https://sqzr2319.github.io/img/43Class-1/2.jpg">
+<meta property="og:image" content="https://sqzr2319.github.io/img/43Class-1/3.jpg">
 <meta property="article:published_time" content="2024-11-23T01:50:00.000Z">
-<meta property="article:modified_time" content="2025-04-07T12:43:06.030Z">
+<meta property="article:modified_time" content="2025-06-18T09:57:10.846Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="肆叁小灶">
 <meta property="article:tag" content="计算机">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://sqzr2319.github.io/img/43Class-1-1.jpg">
+<meta name="twitter:image" content="https://sqzr2319.github.io/img/43Class-1/1.jpg">
   
   
   
@@ -325,13 +325,13 @@
 <p>1 入栈，2 入栈，3 入栈，3 出栈，2 出栈，4 入栈，4 出栈，1 出栈，5 入栈，5 出栈。</p>
 <p>这样我们就成功的把 [1,2,3,4,5] 通过一个栈转化成了 [3,2,4,1,5]。</p>
 <p>下面这张图可以辅助大家理解：</p>
-<p><img src="/img/43Class-1-1.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/img/43Class-1/1.jpg" srcset="/img/loading.gif" lazyload></p>
 <p>而队列则和栈恰好相反，特点是“先进先出”，可以理解为在食堂排队，先入队的自然能先领到午饭。</p>
 <p>同样举一个简单的例子：</p>
 <p>1 入队，2 入队，3 入队，1 出队，4 入队，2 出队，3 出队，5 入队，4 出队，5 出队。</p>
 <p>可能你会发现，这样一通操作下来不还是 [1,2,3,4,5] 吗？没错，因为这并不是队列的正确用途。等大家学到广度优先搜索就会明白队列的作用了。</p>
 <p>同样给一张图辅助大家理解：</p>
-<p><img src="/img/43Class-1-2.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/img/43Class-1/2.jpg" srcset="/img/loading.gif" lazyload></p>
 <p>所以讲了那么久的栈和队列，Deque呢？</p>
 <p>我知道你很急，但你先别急。</p>
 <p>Deque 的全称是 Double Queue（双端队列），简而言之，它既可以从前面插入可以从后面插入，既可以从前面取出也可以从后面取出。</p>
@@ -361,7 +361,7 @@
 <li>distance：求两个迭代器之间的距离</li>
 </ol>
 <p>上面的代码稍作修改就可以无痛速通这道程设 OJ 作业：</p>
-<p><img src="/img/43Class-1-3.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/img/43Class-1/3.jpg" srcset="/img/loading.gif" lazyload></p>
 <p>当然，这道题的输入数据已经是升序排列的了，也就不需要再使用 set 容器，直接使用普通数组或前面介绍的 deque 容器配合上述 algorithm 库函数即可。实际上 algorithm 库中还有很多有奇效的函数，如 next_permutation 等等，由于篇幅所限就不展开了。<del>同样留作课后习题</del></p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>考虑到初学 C 语言的同学了解底层架构的必要性，STL 库在 OJ 作业和期末考试中是禁用的，切勿模板一时爽期末火葬场（据学长所说数据结构课也是禁用 STL 的）。然而在大作业中 STL 库可以随意使用，能够大幅提升代码构建效率和运行效率。此外，对于想参加算法竞赛的同学，个人建议在熟练使用的同时也去了解一下 STL 库函数的底层实现，可以大大加深对数据结构与算法优化的理解。</p>
 <p>这期的内容到这里就结束了，感谢大家读到这里。下期我们将为大家简要介绍 Markdown 和 LaTeX 环境的配置过程和入门语法，这些内容对正在修读离散数学（1）的同学可能并不陌生，希望能够帮到未选课的同学。</p>
