@@ -19,23 +19,28 @@
   <meta name="author" content="sqzr2319">
   <meta name="keywords" content="">
   
-    <meta name="description" content="肆叁小灶第六讲，介绍了线性函数与对偶空间、线性形式与张量，以及 Pytorch 库的一些基本用法。">
+    <meta name="description" content="大一下学期的自学笔记，主要包括SRT、信息论、计算机组成等。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="肆叁小灶第六讲 从线性函数到机器学习">
-<meta property="og:url" content="https://sqzr2319.github.io/43Class-6/index.html">
+<meta property="og:title" content="大一下自学笔记">
+<meta property="og:url" content="https://sqzr2319.github.io/CSDIY-24Summer/index.html">
 <meta property="og:site_name" content="sqzr2319&#39;s blog">
-<meta property="og:description" content="肆叁小灶第六讲，介绍了线性函数与对偶空间、线性形式与张量，以及 Pytorch 库的一些基本用法。">
+<meta property="og:description" content="大一下学期的自学笔记，主要包括SRT、信息论、计算机组成等。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-06-19T04:24:46.000Z">
-<meta property="article:modified_time" content="2025-06-18T10:21:33.298Z">
+<meta property="og:image" content="https://sqzr2319.github.io/img/CSDIY-24Summer/4.png">
+<meta property="og:image" content="https://sqzr2319.github.io/img/CSDIY-24Summer/1.png">
+<meta property="og:image" content="https://sqzr2319.github.io/img/CSDIY-24Summer/2.png">
+<meta property="og:image" content="https://sqzr2319.github.io/img/CSDIY-24Summer/3.png">
+<meta property="article:published_time" content="2025-07-01T11:46:31.000Z">
+<meta property="article:modified_time" content="2025-06-28T18:05:04.633Z">
 <meta property="article:author" content="sqzr2319">
-<meta property="article:tag" content="肆叁小灶">
 <meta property="article:tag" content="计算机">
+<meta property="article:tag" content="大一下">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://sqzr2319.github.io/img/CSDIY-24Summer/4.png">
   
   
   
-  <title>肆叁小灶第六讲 从线性函数到机器学习 - sqzr2319&#39;s blog</title>
+  <title>大一下自学笔记 - sqzr2319&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +221,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="肆叁小灶第六讲 从线性函数到机器学习"></span>
+            <span id="subtitle" data-typed-text="大一下自学笔记"></span>
           
         </div>
 
@@ -227,8 +232,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-06-19 12:24" pubdate>
-          2025年6月19日 中午
+        <time datetime="2025-07-01 19:46" pubdate>
+          2025年7月1日 晚上
         </time>
       </span>
     
@@ -239,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          37 字
+          694 字
         
       </span>
     
@@ -250,7 +255,7 @@
         
         
         
-          1 分钟
+          6 分钟
         
       </span>
     
@@ -287,13 +292,85 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">肆叁小灶第六讲 从线性函数到机器学习</h1>
+            <h1 id="seo-header">大一下自学笔记</h1>
             
             
               <div class="markdown-body">
                 
-                <p>肆叁小灶第六讲，介绍了线性函数与对偶空间、线性形式与张量，以及 Pytorch 库的一些基本用法。</p>
+                <p>大一下学期的自学笔记，主要包括SRT、信息论、计算机组成等。</p>
 <span id="more"></span>
+
+<h2 id="一、SRT"><a href="#一、SRT" class="headerlink" title="一、SRT"></a>一、SRT</h2><h3 id="1-统计学习"><a href="#1-统计学习" class="headerlink" title="1. 统计学习"></a>1. 统计学习</h3><ol>
+<li>回归问题<ol>
+<li>损失函数：平方损失函数，$\sum (f(x)-y)^2$</li>
+<li>改进：基函数（获取非线性）、正则项（$\mathrm{L2,L1}$）</li>
+</ol>
+</li>
+<li>二分类问题<ol>
+<li>连接函数：$\mathrm{Sigmoid}$，$\sigma(f(x))&#x3D;\frac{1}{1+e^{-f(x)}}$</li>
+<li>损失函数：交叉熵，$l(x,y)&#x3D;y\log(\sigma(f(x)))+(1-y)\log(1-\sigma(f(x)))$</li>
+</ol>
+</li>
+<li>多分类问题<ol>
+<li>连接函数：$\mathrm{Softmax}$，$\sigma_i(f(x))&#x3D;\frac{e^{f_i(x)}}{\sum_j e^{f_j(x)}}$</li>
+<li>损失函数：交叉熵，$l(x,y)&#x3D;-\log(\sigma_y(f(x)))$</li>
+</ol>
+</li>
+<li>学习理论<ol>
+<li>估计误差：训练所得函数与假设空间中最佳函数的距离</li>
+<li>近似误差：假设空间中最佳函数与真值函数的距离</li>
+<li>泛化误差：估计误差与近似误差之和</li>
+</ol>
+</li>
+<li>优化方法<ol>
+<li>一阶方法：梯度下降（随机梯度下降）</li>
+<li>学习率衰减：$\eta_{\min}+\frac{1}{2}(\eta_{\max}-\eta_{\min})(1+\cos(\frac{T_{cur}}{T_{all}}\pi))$</li>
+<li>冲量法：$\Delta_t&#x3D;\beta\Delta_{t-1}+(1-\beta)\nabla J(\theta_t)$</li>
+<li>$\mathrm{Nesterov}$：$\theta_t^\prime&#x3D;\theta_t-\beta\Delta_{t-1},\Delta_t&#x3D;\beta\Delta_{t-1}+(1-\beta)\nabla J(\theta_t^\prime)$</li>
+<li>自适应学习率（$\mathrm{AdaGrad}$）：$h&#x3D;\frac{1}{\sqrt{r_t}+\delta}$，$r_t$ 为历史梯度平方和，但容易爆炸</li>
+<li>$\mathrm{RMSProp}$：$r_t&#x3D;\rho r_{t-1}+(1-\rho)\nabla J(\theta_t)^2$，解决爆炸问题，可与冲量法连用</li>
+<li>自适应冲量（$\mathrm{Adam}$）：将 $h$ 也作用在冲量项上，但需用分母修正 $r,s$ 偏差，可与 $\mathrm{Nesterov}$ 连用</li>
+<li>二阶方法：$\theta&#x3D;\theta-H^{-1}\nabla J(\theta)$（增量算法可直接算逆）</li>
+</ol>
+</li>
+</ol>
+<p><img src="/img/CSDIY-24Summer/4.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="2-强化学习"><a href="#2-强化学习" class="headerlink" title="2. 强化学习"></a>2. 强化学习</h3><ol>
+<li>表格式学习（状态、动作都离散）<ol>
+<li>算法：$\mathrm{SARSA}\to \mathrm{Q-learning}$（将$\mathrm{A^\prime}$ 替换为最优动作）</li>
+<li>改进：资格迹（每步衰减 $\gamma\lambda$，遇到就 $+1$）</li>
+</ol>
+</li>
+</ol>
+<p><img src="/img/CSDIY-24Summer/1.png" srcset="/img/loading.gif" lazyload></p>
+<ol start="2">
+<li>价值函数逼近（状态空间连续）<ol>
+<li>核心思想：用以 $w$ 为参数的模型估计 $Q(S,A)$</li>
+<li>$\mathrm{TD-error}:\delta&#x3D;R+\gamma Q(S^\prime,A^\prime)-Q(S,A)$</li>
+<li>$w&#x3D;w-\alpha \nabla w\cdot\delta$（一步梯度下降）</li>
+<li>改进：$\mathrm{Q-learning}$、资格迹（将 $+1$ 替换为 $\nabla w\cdot Q(S,A))$</li>
+</ol>
+</li>
+<li>策略梯度方法（状态、动作都连续）<ol>
+<li>核心思想：用一个以 $\theta$ 为参数的模型获得策略</li>
+<li>离散型策略：$\mathrm{Softmax}$，$\pi(a|s,\theta)&#x3D;\frac{e^{J(s,a)}}{\sum_b e^{J(s,b)}}$</li>
+<li>连续型策略：$\mathrm{Gaussian}$</li>
+<li>策略梯度定理：$\nabla J(\theta)\propto q(s,a)\nabla \log \pi(a|s,\theta)$</li>
+<li>$\mathrm{REINFORCE}$：基于 $\mathrm{Monte Carlo}$ 方法</li>
+<li>改进：引入 Baseline（状态价值函数）减小方差，与价值函数逼近联用</li>
+<li>$\mathrm{Actor-Critic}$：基于时序差分方法，可引入资格迹 $\nabla \log \pi(a|s,\theta)$</li>
+</ol>
+</li>
+</ol>
+<p><img src="/img/CSDIY-24Summer/2.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/img/CSDIY-24Summer/3.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="3-深度学习"><a href="#3-深度学习" class="headerlink" title="3. 深度学习"></a>3. 深度学习</h3><ol>
+<li>多层感知机</li>
+<li>卷积神经网络</li>
+<li>循环神经网络</li>
+<li>图神经网络</li>
+</ol>
+<h2 id="二、信息论"><a href="#二、信息论" class="headerlink" title="二、信息论"></a>二、信息论</h2><h2 id="三、计算机组成"><a href="#三、计算机组成" class="headerlink" title="三、计算机组成"></a>三、计算机组成</h2><h2 id="四、开发与暑培"><a href="#四、开发与暑培" class="headerlink" title="四、开发与暑培"></a>四、开发与暑培</h2><h2 id="五、算法"><a href="#五、算法" class="headerlink" title="五、算法"></a>五、算法</h2>
                 
               </div>
             
@@ -311,7 +388,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%8E%A8%E9%80%81/" class="category-chain-item">推送</a>
+  <a href="/categories/%E7%AC%94%E8%AE%B0/" class="category-chain-item">笔记</a>
   
   
 
@@ -326,9 +403,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E8%82%86%E5%8F%81%E5%B0%8F%E7%81%B6/" class="print-no-link">#肆叁小灶</a>
-      
         <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="print-no-link">#计算机</a>
+      
+        <a href="/tags/%E5%A4%A7%E4%B8%80%E4%B8%8B/" class="print-no-link">#大一下</a>
       
     </div>
   
@@ -340,8 +417,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>肆叁小灶第六讲 从线性函数到机器学习</div>
-      <div>https://sqzr2319.github.io/43Class-6/</div>
+      <div>大一下自学笔记</div>
+      <div>https://sqzr2319.github.io/CSDIY-24Summer/</div>
     </div>
     <div class="license-meta">
       
@@ -353,7 +430,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年6月19日</div>
+          <div>2025年7月1日</div>
         </div>
       
       
@@ -385,18 +462,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/CSDIY-24Summer/" title="大一下自学笔记">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">大一下自学笔记</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/43Class-5/" title="肆叁小灶第五讲 数据结构预备知识（下）">
-                        <span class="hidden-mobile">肆叁小灶第五讲 数据结构预备知识（下）</span>
+                      <a href="/43Class-6/" title="肆叁小灶第六讲 从线性函数到机器学习">
+                        <span class="hidden-mobile">肆叁小灶第六讲 从线性函数到机器学习</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
