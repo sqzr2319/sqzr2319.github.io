@@ -26,17 +26,15 @@
 <meta property="og:site_name" content="sqzr2319&#39;s blog">
 <meta property="og:description" content="大一下学期的自学笔记，主要包括SRT、信息论、计算机组成等。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://sqzr2319.github.io/img/CSDIY-24Summer/4.png">
 <meta property="og:image" content="https://sqzr2319.github.io/img/CSDIY-24Summer/1.png">
 <meta property="og:image" content="https://sqzr2319.github.io/img/CSDIY-24Summer/2.png">
-<meta property="og:image" content="https://sqzr2319.github.io/img/CSDIY-24Summer/3.png">
 <meta property="article:published_time" content="2025-07-01T11:46:31.000Z">
-<meta property="article:modified_time" content="2025-06-28T18:05:04.633Z">
+<meta property="article:modified_time" content="2025-07-06T09:17:50.601Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="计算机">
 <meta property="article:tag" content="大一下">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://sqzr2319.github.io/img/CSDIY-24Summer/4.png">
+<meta name="twitter:image" content="https://sqzr2319.github.io/img/CSDIY-24Summer/1.png">
   
   
   
@@ -244,7 +242,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          694 字
+          1.4k 字
         
       </span>
     
@@ -255,7 +253,7 @@
         
         
         
-          6 分钟
+          12 分钟
         
       </span>
     
@@ -302,7 +300,7 @@
 
 <h2 id="一、SRT"><a href="#一、SRT" class="headerlink" title="一、SRT"></a>一、SRT</h2><h3 id="1-统计学习"><a href="#1-统计学习" class="headerlink" title="1. 统计学习"></a>1. 统计学习</h3><ol>
 <li>回归问题<ol>
-<li>损失函数：平方损失函数，$\sum (f(x)-y)^2$</li>
+<li>损失函数：均方误差损失 $\mathrm{MSE}$，$\sum (f(x)-y)^2$</li>
 <li>改进：基函数（获取非线性）、正则项（$\mathrm{L2,L1}$）</li>
 </ol>
 </li>
@@ -317,8 +315,8 @@
 </ol>
 </li>
 <li>学习理论<ol>
-<li>估计误差：训练所得函数与假设空间中最佳函数的距离</li>
-<li>近似误差：假设空间中最佳函数与真值函数的距离</li>
+<li>估计误差 $\mathrm{Estimation}$：训练所得函数与假设空间中最佳函数的距离</li>
+<li>近似误差 $\mathrm{Approximation}$：假设空间中最佳函数与真值函数的距离</li>
 <li>泛化误差：估计误差与近似误差之和</li>
 </ol>
 </li>
@@ -327,23 +325,60 @@
 <li>学习率衰减：$\eta_{\min}+\frac{1}{2}(\eta_{\max}-\eta_{\min})(1+\cos(\frac{T_{cur}}{T_{all}}\pi))$</li>
 <li>冲量法：$\Delta_t&#x3D;\beta\Delta_{t-1}+(1-\beta)\nabla J(\theta_t)$</li>
 <li>$\mathrm{Nesterov}$：$\theta_t^\prime&#x3D;\theta_t-\beta\Delta_{t-1},\Delta_t&#x3D;\beta\Delta_{t-1}+(1-\beta)\nabla J(\theta_t^\prime)$</li>
-<li>自适应学习率（$\mathrm{AdaGrad}$）：$h&#x3D;\frac{1}{\sqrt{r_t}+\delta}$，$r_t$ 为历史梯度平方和，但容易爆炸</li>
+<li>自适应学习率 $\mathrm{AdaGrad}$：$h&#x3D;\frac{1}{\sqrt{r_t}+\delta}$，$r_t$ 为历史梯度平方和，但容易爆炸</li>
 <li>$\mathrm{RMSProp}$：$r_t&#x3D;\rho r_{t-1}+(1-\rho)\nabla J(\theta_t)^2$，解决爆炸问题，可与冲量法连用</li>
-<li>自适应冲量（$\mathrm{Adam}$）：将 $h$ 也作用在冲量项上，但需用分母修正 $r,s$ 偏差，可与 $\mathrm{Nesterov}$ 连用</li>
+<li>自适应冲量 $\mathrm{Adam}$：将 $h$ 也作用在冲量项上，但需用分母修正 $r,s$ 偏差，可与 $\mathrm{Nesterov}$ 连用</li>
 <li>二阶方法：$\theta&#x3D;\theta-H^{-1}\nabla J(\theta)$（增量算法可直接算逆）</li>
 </ol>
 </li>
 </ol>
-<p><img src="/img/CSDIY-24Summer/4.png" srcset="/img/loading.gif" lazyload></p>
-<h3 id="2-强化学习"><a href="#2-强化学习" class="headerlink" title="2. 强化学习"></a>2. 强化学习</h3><ol>
+<p><img src="/img/CSDIY-24Summer/1.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="2-深度学习"><a href="#2-深度学习" class="headerlink" title="2. 深度学习"></a>2. 深度学习</h3><ol>
+<li>多层感知机 $\mathrm{MLP}$<ol>
+<li>感知机学习算法：$(x,\pm 1),y&#x3D;\mathrm{sgn}(\theta x)$，错误时 $\theta&#x3D;\theta+xy$，设置阈值并堆叠模拟逻辑或函数运算</li>
+<li>激活函数：$\mathrm{Sigmoid},\mathrm{ReLU},\mathrm{tanh},\mathrm{Softmax},\mathrm{GeLU},\mathrm{LeakyReLU}$</li>
+<li>优化：反向传播（基于残差或计算图）</li>
+<li>训练技巧：$\mathrm{Dropout}$、$\mathrm{ReLU}$ 初始方差改为 $\frac{2}{n}$</li>
+</ol>
+</li>
+<li>卷积神经网络 $\mathrm{CNN}$<ol>
+<li>不变性（$fT&#x3D;f$）、等变性（$fT&#x3D;Tf$）</li>
+<li>卷积核参数：$\mathrm{Stride},\mathrm{Padding},\mathrm{Dilation}$</li>
+<li>训练技巧：池化 $\mathrm{Pooling}$、$\mathrm{BatchNormalization}$（改进：$\mathrm{GroupNormalization}$）、数据增广</li>
+<li>标准架构：$1\times 1$ 卷积、$\mathrm{Inception}$（多尺度卷积）、$\mathrm{ResNet}$（残差直连）</li>
+<li>轻量化：剪枝、权重聚类、组卷积（组间可洗牌）、通道分离卷积</li>
+<li>改进：视频 $\mathrm{3D}$ 卷积、$\mathrm{Attention}$（全局距离加权，度量学习）、通道加权、神经架构搜索</li>
+</ol>
+</li>
+<li>循环神经网络 $\mathrm{RNN}$<ol>
+<li>$h_t&#x3D;f(h_{t-1},x_t)&#x3D;\mathrm{tanh}(Wh_{t-1}+Ux_t),y_t&#x3D;Vh_t$，可改进为双向、多层</li>
+<li>应用方式：多对一、一对多、多对多</li>
+<li>优化：反向传播，但容易梯度爆炸或消失</li>
+<li>梯度爆炸：分块、梯度裁剪（$\mathrm{Clip}$）</li>
+<li>梯度消失：$\mathrm{LSTM}$（遗忘、写入、读取）</li>
+<li>训练技巧：$\mathrm{Dropout}$ 共享、$\mathrm{Layer Normalization}$（通道间归一）、课程学习（逐步将真值 $y$ 替换为预测）</li>
+<li>$\mathrm{Attention}$：逐层做 $h_t$ 相关性加权</li>
+</ol>
+</li>
+<li>图神经网络 $\mathrm{GNN}$<ol>
+<li>节点相似性：$\frac{N(u)\cap N(v)}{N(u)\cup N(v)}$，但无法刻画远距离</li>
+<li>$\mathrm{DeepWalk}$：用随机游走的概率表示节点相似性，损失函数 $\sum_{u\in V}\sum_{v\in N(u)}-\log(\frac{\exp(z_u^Tz_v)}{\sum_{n\in V}\exp(z_u^Tz_n)})$</li>
+<li>改进：$\mathrm{node2vec}$（加权随机游走，平衡 $\mathrm{BFS}$ 和 $\mathrm{DFS}$）、分母随机采样降低复杂度</li>
+<li>图卷积网络 $\mathrm{GCN}$：效仿 $\mathrm{CNN}$ 特征聚合、同层参数共享，$h_v^k&#x3D;\sigma(W_k\sum_{u\in N(v)}\frac{h_u^{k-1}}{|N(v)|}+B_kh_v^{k-1})$</li>
+<li>改进：图注意力网络 $\mathrm{GAT}$（邻居加权）、聚类 $\mathrm{ClusterGCN}$（降低复杂度）</li>
+<li>训练技巧：在部分顶点上训练降低复杂度、将图卷积层改为 $\mathrm{MLP}$ 避免过平滑（小世界原理）、残差连接</li>
+</ol>
+</li>
+<li>$\mathrm{Transformer}$</li>
+<li>大模型</li>
+<li>迁移学习</li>
+</ol>
+<h3 id="3-强化学习"><a href="#3-强化学习" class="headerlink" title="3. 强化学习"></a>3. 强化学习</h3><ol>
 <li>表格式学习（状态、动作都离散）<ol>
 <li>算法：$\mathrm{SARSA}\to \mathrm{Q-learning}$（将$\mathrm{A^\prime}$ 替换为最优动作）</li>
 <li>改进：资格迹（每步衰减 $\gamma\lambda$，遇到就 $+1$）</li>
 </ol>
 </li>
-</ol>
-<p><img src="/img/CSDIY-24Summer/1.png" srcset="/img/loading.gif" lazyload></p>
-<ol start="2">
 <li>价值函数逼近（状态空间连续）<ol>
 <li>核心思想：用以 $w$ 为参数的模型估计 $Q(S,A)$</li>
 <li>$\mathrm{TD-error}:\delta&#x3D;R+\gamma Q(S^\prime,A^\prime)-Q(S,A)$</li>
@@ -356,19 +391,24 @@
 <li>离散型策略：$\mathrm{Softmax}$，$\pi(a|s,\theta)&#x3D;\frac{e^{J(s,a)}}{\sum_b e^{J(s,b)}}$</li>
 <li>连续型策略：$\mathrm{Gaussian}$</li>
 <li>策略梯度定理：$\nabla J(\theta)\propto q(s,a)\nabla \log \pi(a|s,\theta)$</li>
-<li>$\mathrm{REINFORCE}$：基于 $\mathrm{Monte Carlo}$ 方法</li>
-<li>改进：引入 Baseline（状态价值函数）减小方差，与价值函数逼近联用</li>
-<li>$\mathrm{Actor-Critic}$：基于时序差分方法，可引入资格迹 $\nabla \log \pi(a|s,\theta)$</li>
+<li>$\mathrm{REINFORCE}$：基于 $\mathrm{Monte Carlo}$ 方法，可引入 $\mathrm{Baseline}$（状态价值函数）减小方差，与价值函数逼近联用</li>
+<li>$\mathrm{Actor-Critic}$：基于时序差分方法，可引入资格迹 $\nabla \log \pi(a|s,\theta)$、$\mathrm{Baseline}$</li>
+<li>改进：近端策略优化 $\mathrm{TRPO},\mathrm{PPO}$，防止更新过大导致策略崩溃（用 $\mathrm{KL}$ 散度衡量新旧策略差异）</li>
+</ol>
+</li>
+<li>现代强化学习<ol>
+<li>$\mathrm{DDPG}$：确定性策略梯度方法，在连续动作空间中更有效</li>
+<li>$\mathrm{SAC}$：优化策略的同时最大化策略的熵，鼓励随机探索</li>
+<li>基于模型的强化学习：学习环境模型，用模拟数据与真实数据一起训练策略，如 $\mathrm{Dyna-Q}$</li>
+<li>$\mathrm{RLHF}$：基础模型 $\to$ 监督微调 $\to$ 训练奖励模型 $\to$ 强化学习</li>
 </ol>
 </li>
 </ol>
 <p><img src="/img/CSDIY-24Summer/2.png" srcset="/img/loading.gif" lazyload></p>
-<p><img src="/img/CSDIY-24Summer/3.png" srcset="/img/loading.gif" lazyload></p>
-<h3 id="3-深度学习"><a href="#3-深度学习" class="headerlink" title="3. 深度学习"></a>3. 深度学习</h3><ol>
-<li>多层感知机</li>
-<li>卷积神经网络</li>
-<li>循环神经网络</li>
-<li>图神经网络</li>
+<h3 id="4-生成式模型"><a href="#4-生成式模型" class="headerlink" title="4. 生成式模型"></a>4. 生成式模型</h3><ol>
+<li>生成对抗网络 $\mathrm{GAN}$</li>
+<li>变分自编码器 $\mathrm{VAE}$</li>
+<li>扩散模型 $\mathrm{Diffusion}$</li>
 </ol>
 <h2 id="二、信息论"><a href="#二、信息论" class="headerlink" title="二、信息论"></a>二、信息论</h2><h2 id="三、计算机组成"><a href="#三、计算机组成" class="headerlink" title="三、计算机组成"></a>三、计算机组成</h2><h2 id="四、开发与暑培"><a href="#四、开发与暑培" class="headerlink" title="四、开发与暑培"></a>四、开发与暑培</h2><h2 id="五、算法"><a href="#五、算法" class="headerlink" title="五、算法"></a>五、算法</h2>
                 
@@ -466,8 +506,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/43Class-6/" title="肆叁小灶第六讲 从线性函数到机器学习">
-                        <span class="hidden-mobile">肆叁小灶第六讲 从线性函数到机器学习</span>
+                      <a href="/43Class-6/" title="肆叁小灶第六讲 C#">
+                        <span class="hidden-mobile">肆叁小灶第六讲 C#</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
