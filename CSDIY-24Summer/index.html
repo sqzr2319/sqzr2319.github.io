@@ -19,17 +19,17 @@
   <meta name="author" content="sqzr2319">
   <meta name="keywords" content="">
   
-    <meta name="description" content="大一下学期的自学笔记，主要包括SRT、信息论、计算机组成等。">
+    <meta name="description" content="大一下学期的自学笔记，主要包括机器学习、信息论、计算机组成等。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="大一下自学笔记">
 <meta property="og:url" content="https://sqzr2319.github.io/CSDIY-24Summer/index.html">
 <meta property="og:site_name" content="sqzr2319&#39;s blog">
-<meta property="og:description" content="大一下学期的自学笔记，主要包括SRT、信息论、计算机组成等。">
+<meta property="og:description" content="大一下学期的自学笔记，主要包括机器学习、信息论、计算机组成等。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://sqzr2319.github.io/img/CSDIY-24Summer/1.png">
 <meta property="og:image" content="https://sqzr2319.github.io/img/CSDIY-24Summer/2.png">
 <meta property="article:published_time" content="2025-07-01T11:46:31.000Z">
-<meta property="article:modified_time" content="2025-07-06T09:17:50.601Z">
+<meta property="article:modified_time" content="2025-07-07T17:26:46.552Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="计算机">
 <meta property="article:tag" content="大一下">
@@ -242,7 +242,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.4k 字
+          2k 字
         
       </span>
     
@@ -253,7 +253,7 @@
         
         
         
-          12 分钟
+          17 分钟
         
       </span>
     
@@ -295,10 +295,10 @@
             
               <div class="markdown-body">
                 
-                <p>大一下学期的自学笔记，主要包括SRT、信息论、计算机组成等。</p>
+                <p>大一下学期的自学笔记，主要包括机器学习、信息论、计算机组成等。</p>
 <span id="more"></span>
 
-<h2 id="一、SRT"><a href="#一、SRT" class="headerlink" title="一、SRT"></a>一、SRT</h2><h3 id="1-统计学习"><a href="#1-统计学习" class="headerlink" title="1. 统计学习"></a>1. 统计学习</h3><ol>
+<h2 id="一、机器学习"><a href="#一、机器学习" class="headerlink" title="一、机器学习"></a>一、机器学习</h2><h3 id="1-统计学习"><a href="#1-统计学习" class="headerlink" title="1. 统计学习"></a>1. 统计学习</h3><ol>
 <li>回归问题<ol>
 <li>损失函数：均方误差损失 $\mathrm{MSE}$，$\sum (f(x)-y)^2$</li>
 <li>改进：基函数（获取非线性）、正则项（$\mathrm{L2,L1}$）</li>
@@ -369,9 +369,37 @@
 <li>训练技巧：在部分顶点上训练降低复杂度、将图卷积层改为 $\mathrm{MLP}$ 避免过平滑（小世界原理）、残差连接</li>
 </ol>
 </li>
-<li>$\mathrm{Transformer}$</li>
-<li>大模型</li>
-<li>迁移学习</li>
+<li>$\mathrm{Transformer}$<ol>
+<li>$\mathrm{Attention}$：将 $x$ 转化为 $q,k,v$，$a&#x3D;\mathrm{Softmax}(\frac{q^Tk}{\sqrt{d}})$，$\mathrm{MQA,GQA}$ 头间共享 $k,v$</li>
+<li>$\mathrm{FFN}$：$\mathrm{FFN}(x)&#x3D;\mathrm{GeLU}(W_1x+b_1)W_2+b_2$，$\mathrm{dim}W&#x3D;d^2$ 且参数共享，$\mathrm{MoE}$ 中多个共用</li>
+<li>模仿 $\mathrm{CNN,RNN}$，引入<strong>加权</strong>残差连接、预先 $\mathrm{LayerNormalization}$（归一化或单位化）</li>
+<li>位置编码：$e_i(2j)&#x3D;\sin(\frac{i}{10000^{2j&#x2F;d}}),e_i(2j+1)&#x3D;\cos(\frac{i}{10000^{2j&#x2F;d}})$；或相对位置编码 $\mathrm{ALiBi}$、旋转位置编码 $f(x,m)&#x3D;xe^{im\theta},\theta_i&#x3D;10000^{-2(i-1)&#x2F;d}$</li>
+<li>改进：线性注意力、$\mathrm{MaskAttention}$（遮挡）、$\mathrm{FlashAttention}$（分块）、$\mathrm{RingAttention}$（分布式）</li>
+<li>$\mathrm{GPT}$：$\mathrm{Decoder}$，生成式预训练；$\mathrm{BERT}$：$\mathrm{Encoder}$，填空式预训练；$\mathrm{T5}$：完整版</li>
+</ol>
+</li>
+<li>语言模型<ol>
+<li>$\mathrm{ScalingLaw}$：参数量 $\gt$ $\mathrm{BatchSize}\gt \mathrm{epoch}$，推理 $\gt$ 训练</li>
+<li>微调：全量微调（微调数据量大）、低秩适应微调 $\mathrm{LoRA}$（$\theta&#x3D;\theta+AB$）</li>
+<li>$\mathrm{RLHF}$：监督微调 $\to$ 训练奖励模型 $\to$ 强化学习；或 $\mathrm{DPO}$（直接用成对数据微调，可用大模型生成）</li>
+<li>$\mathrm{Prompting}$：$\mathrm{InContextLearning}$，思维链，集成工具，检索增强生成 $\mathrm{RAG}$（文档向量化 $\to$ 与问题计算相似度 $\to$ 写入 $\mathrm{Prompt}$）</li>
+<li>部署：量化（浮点转小整数）、推测解码 $\mathrm{SpeculativeDecoding}$（小模型生成大模型验证）</li>
+<li>视觉：$\mathrm{CLIP}$（弱监督图文对相似度矩阵对角化）、$\mathrm{Flamingo}$（将图 $\mathrm{token}$ 映射到文本空间）、$\mathrm{Q-Former}$（将图转化为 $\mathrm{query}$）</li>
+</ol>
+</li>
+<li>多模态与智能体<ol>
+<li>底层：$\mathrm{ViT}$（分块 $\mathrm{MLP}$ 后块间注意力）、$\mathrm{SwinTransformer}$（块内注意力，块滑动）</li>
+<li>训练方式：生成式预训练，如 $\mathrm{ImageGPT}$</li>
+<li>$\mathrm{CLIP}$：弱监督图文对，让相似度矩阵对角化</li>
+<li>多模态语言模型：$\mathrm{Flamingo}$（将图转为 $\mathrm{token}$ 嵌入文本）、$\mathrm{Q-Former}$（将图转为 $\mathrm{query}$）</li>
+<li>纯多模态模型：$\mathrm{Fuyu}$（图文同等映射到另一空间）</li>
+<li>$\mathrm{Agent}$：规划（目标分解、自我反思）、记忆（长：历史经验；短：上下文）、工具（外部应用、大模型）、行动（虚拟、具身）、协作（人机、多代理）</li>
+</ol>
+</li>
+<li>迁移学习<ol>
+<li></li>
+</ol>
+</li>
 </ol>
 <h3 id="3-强化学习"><a href="#3-强化学习" class="headerlink" title="3. 强化学习"></a>3. 强化学习</h3><ol>
 <li>表格式学习（状态、动作都离散）<ol>
@@ -400,17 +428,21 @@
 <li>$\mathrm{DDPG}$：确定性策略梯度方法，在连续动作空间中更有效</li>
 <li>$\mathrm{SAC}$：优化策略的同时最大化策略的熵，鼓励随机探索</li>
 <li>基于模型的强化学习：学习环境模型，用模拟数据与真实数据一起训练策略，如 $\mathrm{Dyna-Q}$</li>
-<li>$\mathrm{RLHF}$：基础模型 $\to$ 监督微调 $\to$ 训练奖励模型 $\to$ 强化学习</li>
 </ol>
 </li>
 </ol>
 <p><img src="/img/CSDIY-24Summer/2.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="4-生成式模型"><a href="#4-生成式模型" class="headerlink" title="4. 生成式模型"></a>4. 生成式模型</h3><ol>
-<li>生成对抗网络 $\mathrm{GAN}$</li>
+<li>生成对抗网络 $\mathrm{GAN}$<ol>
+<li>损失函数：对抗学习，$\displaystyle \min_G\max_D(\log D(x)+\log(1-D(G(z))))$，$D$ 为判别器，$G$ 为生成器</li>
+<li>改进：$\log(1-x)$ 好样本梯度爆炸、坏样本梯度消失，改为优化 $\log(D(G(z)))$</li>
+<li>生成器实现：$\mathrm{DCGAN}$（逆向 $\mathrm{CNN}$，使用转置卷积）、</li>
+</ol>
+</li>
 <li>变分自编码器 $\mathrm{VAE}$</li>
 <li>扩散模型 $\mathrm{Diffusion}$</li>
 </ol>
-<h2 id="二、信息论"><a href="#二、信息论" class="headerlink" title="二、信息论"></a>二、信息论</h2><h2 id="三、计算机组成"><a href="#三、计算机组成" class="headerlink" title="三、计算机组成"></a>三、计算机组成</h2><h2 id="四、开发与暑培"><a href="#四、开发与暑培" class="headerlink" title="四、开发与暑培"></a>四、开发与暑培</h2><h2 id="五、算法"><a href="#五、算法" class="headerlink" title="五、算法"></a>五、算法</h2>
+<h2 id="二、论文阅读"><a href="#二、论文阅读" class="headerlink" title="二、论文阅读"></a>二、论文阅读</h2><h2 id="三、信息论"><a href="#三、信息论" class="headerlink" title="三、信息论"></a>三、信息论</h2><h2 id="四、计算机组成"><a href="#四、计算机组成" class="headerlink" title="四、计算机组成"></a>四、计算机组成</h2><h2 id="五、开发与暑培"><a href="#五、开发与暑培" class="headerlink" title="五、开发与暑培"></a>五、开发与暑培</h2><h2 id="六、算法"><a href="#六、算法" class="headerlink" title="六、算法"></a>六、算法</h2>
                 
               </div>
             
