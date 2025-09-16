@@ -19,26 +19,26 @@
   <meta name="author" content="sqzr2319">
   <meta name="keywords" content="">
   
-    <meta name="description" content="大一下学期的自学笔记，主要包括机器学习、信息论、计算机组成等。">
+    <meta name="description" content="大一下学期的自学笔记，由机器学习、深度学习课程组成。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="大一下自学笔记">
-<meta property="og:url" content="https://sqzr2319.github.io/CSDIY-24Summer/index.html">
+<meta property="og:title" content="自学笔记(2)">
+<meta property="og:url" content="https://sqzr2319.github.io/CSDIY-2/index.html">
 <meta property="og:site_name" content="sqzr2319&#39;s blog">
-<meta property="og:description" content="大一下学期的自学笔记，主要包括机器学习、信息论、计算机组成等。">
+<meta property="og:description" content="大一下学期的自学笔记，由机器学习、深度学习课程组成。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://sqzr2319.github.io/img/CSDIY-24Summer/1.png">
 <meta property="og:image" content="https://sqzr2319.github.io/img/CSDIY-24Summer/2.png">
 <meta property="article:published_time" content="2025-07-01T11:46:31.000Z">
-<meta property="article:modified_time" content="2025-07-10T15:16:30.115Z">
+<meta property="article:modified_time" content="2025-09-16T12:31:25.520Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="计算机">
-<meta property="article:tag" content="大一下">
+<meta property="article:tag" content="自学">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://sqzr2319.github.io/img/CSDIY-24Summer/1.png">
   
   
   
-  <title>大一下自学笔记 - sqzr2319&#39;s blog</title>
+  <title>自学笔记(2) - sqzr2319&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -219,7 +219,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="大一下自学笔记"></span>
+            <span id="subtitle" data-typed-text="自学笔记(2)"></span>
           
         </div>
 
@@ -290,37 +290,32 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">大一下自学笔记</h1>
+            <h1 id="seo-header">自学笔记(2)</h1>
             
             
               <div class="markdown-body">
                 
-                <p>大一下学期的自学笔记，主要包括机器学习、信息论、计算机组成等。</p>
+                <p>大一下学期的自学笔记，由机器学习、深度学习课程组成。</p>
 <span id="more"></span>
 
-<h2 id="一、机器学习"><a href="#一、机器学习" class="headerlink" title="一、机器学习"></a>一、机器学习</h2><h3 id="1-统计学习"><a href="#1-统计学习" class="headerlink" title="1. 统计学习"></a>1. 统计学习</h3><ol>
-<li>回归问题<ol>
+<h2 id="一、统计学习"><a href="#一、统计学习" class="headerlink" title="一、统计学习"></a>一、统计学习</h2><h3 id="1-回归问题"><a href="#1-回归问题" class="headerlink" title="1. 回归问题"></a>1. 回归问题</h3><ol>
 <li>损失函数：均方误差损失 $\mathrm{MSE}$，$\sum (f(x)-y)^2$</li>
 <li>改进：基函数（获取非线性）、正则项（$\mathrm{L2,L1}$）</li>
 </ol>
-</li>
-<li>二分类问题<ol>
+<h3 id="2-二分类问题"><a href="#2-二分类问题" class="headerlink" title="2. 二分类问题"></a>2. 二分类问题</h3><ol>
 <li>连接函数：$\mathrm{Sigmoid}$，$\sigma(f(x))&#x3D;\frac{1}{1+e^{-f(x)}}$</li>
 <li>损失函数：交叉熵，$l(x,y)&#x3D;y\log(\sigma(f(x)))+(1-y)\log(1-\sigma(f(x)))$</li>
 </ol>
-</li>
-<li>多分类问题<ol>
+<h3 id="3-多分类问题"><a href="#3-多分类问题" class="headerlink" title="3. 多分类问题"></a>3. 多分类问题</h3><ol>
 <li>连接函数：$\mathrm{Softmax}$，$\sigma_i(f(x))&#x3D;\frac{e^{f_i(x)}}{\sum_j e^{f_j(x)}}$</li>
 <li>损失函数：交叉熵，$l(x,y)&#x3D;-\log(\sigma_y(f(x)))$</li>
 </ol>
-</li>
-<li>学习理论<ol>
+<h3 id="4-学习理论"><a href="#4-学习理论" class="headerlink" title="4. 学习理论"></a>4. 学习理论</h3><ol>
 <li>估计误差 $\mathrm{Estimation}$：训练所得函数与假设空间中最佳函数的距离</li>
 <li>近似误差 $\mathrm{Approximation}$：假设空间中最佳函数与真值函数的距离</li>
 <li>泛化误差：估计误差与近似误差之和</li>
 </ol>
-</li>
-<li>优化方法<ol>
+<h3 id="5-优化方法"><a href="#5-优化方法" class="headerlink" title="5. 优化方法"></a>5. 优化方法</h3><ol>
 <li>一阶方法：梯度下降（随机梯度下降）</li>
 <li>学习率衰减：$\eta_{\min}+\frac{1}{2}(\eta_{\max}-\eta_{\min})(1+\cos(\frac{T_{cur}}{T_{all}}\pi))$</li>
 <li>冲量法：$\Delta_t&#x3D;\beta\Delta_{t-1}+(1-\beta)\nabla J(\theta_t)$</li>
@@ -330,18 +325,14 @@
 <li>自适应冲量 $\mathrm{Adam}$：将 $h$ 也作用在冲量项上，但需用分母修正 $r,s$ 偏差，可与 $\mathrm{Nesterov}$ 连用</li>
 <li>二阶方法：$\theta&#x3D;\theta-H^{-1}\nabla J(\theta)$（增量算法可直接算逆）</li>
 </ol>
-</li>
-</ol>
 <p><img src="/img/CSDIY-24Summer/1.png" srcset="/img/loading.gif" lazyload></p>
-<h3 id="2-深度学习"><a href="#2-深度学习" class="headerlink" title="2. 深度学习"></a>2. 深度学习</h3><ol>
-<li>多层感知机 $\mathrm{MLP}$<ol>
+<h2 id="二、深度学习"><a href="#二、深度学习" class="headerlink" title="二、深度学习"></a>二、深度学习</h2><h3 id="6-多层感知机-mathrm-MLP"><a href="#6-多层感知机-mathrm-MLP" class="headerlink" title="6. 多层感知机 $\mathrm{MLP}$"></a>6. 多层感知机 $\mathrm{MLP}$</h3><ol>
 <li>感知机学习算法：$(x,\pm 1),y&#x3D;\mathrm{sgn}(\theta x)$，错误时 $\theta&#x3D;\theta+xy$，设置阈值并堆叠模拟逻辑或函数运算</li>
 <li>激活函数：$\mathrm{Sigmoid},\mathrm{ReLU},\mathrm{tanh},\mathrm{Softmax},\mathrm{GeLU},\mathrm{LeakyReLU}$</li>
 <li>优化：反向传播（基于残差或计算图）</li>
 <li>训练技巧：$\mathrm{Dropout}$、$\mathrm{ReLU}$ 初始方差改为 $\frac{2}{n}$</li>
 </ol>
-</li>
-<li>卷积神经网络 $\mathrm{CNN}$<ol>
+<h3 id="7-卷积神经网络-mathrm-CNN"><a href="#7-卷积神经网络-mathrm-CNN" class="headerlink" title="7. 卷积神经网络 $\mathrm{CNN}$"></a>7. 卷积神经网络 $\mathrm{CNN}$</h3><ol>
 <li>不变性（$fT&#x3D;f$）、等变性（$fT&#x3D;Tf$）</li>
 <li>卷积核参数：$\mathrm{Stride},\mathrm{Padding},\mathrm{Dilation}$</li>
 <li>训练技巧：池化 $\mathrm{Pooling}$、$\mathrm{BatchNormalization}$（改进：$\mathrm{GroupNormalization}$）、数据增广</li>
@@ -349,8 +340,7 @@
 <li>轻量化：剪枝、权重聚类、组卷积（组间可洗牌）、通道分离卷积</li>
 <li>改进：视频 $\mathrm{3D}$ 卷积、$\mathrm{Attention}$（全局距离加权，度量学习）、通道加权、神经架构搜索</li>
 </ol>
-</li>
-<li>循环神经网络 $\mathrm{RNN}$<ol>
+<h3 id="8-循环神经网络-mathrm-RNN"><a href="#8-循环神经网络-mathrm-RNN" class="headerlink" title="8. 循环神经网络 $\mathrm{RNN}$"></a>8. 循环神经网络 $\mathrm{RNN}$</h3><ol>
 <li>$h_t&#x3D;f(h_{t-1},x_t)&#x3D;\mathrm{tanh}(Wh_{t-1}+Ux_t),y_t&#x3D;Vh_t$，可改进为双向、多层</li>
 <li>应用方式：多对一、一对多、多对多</li>
 <li>优化：反向传播，但容易梯度爆炸或消失</li>
@@ -359,8 +349,7 @@
 <li>训练技巧：$\mathrm{Dropout}$ 共享、$\mathrm{Layer Normalization}$（通道间归一）、课程学习（逐步将真值 $y$ 替换为预测）</li>
 <li>$\mathrm{Attention}$：逐层做 $h_t$ 相关性加权</li>
 </ol>
-</li>
-<li>图神经网络 $\mathrm{GNN}$<ol>
+<h3 id="9-图神经网络-mathrm-GNN"><a href="#9-图神经网络-mathrm-GNN" class="headerlink" title="9. 图神经网络 $\mathrm{GNN}$"></a>9. 图神经网络 $\mathrm{GNN}$</h3><ol>
 <li>节点相似性：$\frac{N(u)\cap N(v)}{N(u)\cup N(v)}$，但无法刻画远距离</li>
 <li>$\mathrm{DeepWalk}$：用随机游走的概率表示节点相似性，损失函数 $\displaystyle \sum_{u\in V}\sum_{v\in N(u)}-\log(\frac{\exp(z_u^Tz_v)}{\sum_{n\in V}\exp(z_u^Tz_n)})$</li>
 <li>改进：$\mathrm{node2vec}$（加权随机游走，平衡 $\mathrm{BFS}$ 和 $\mathrm{DFS}$）、分母随机采样降低复杂度</li>
@@ -368,8 +357,7 @@
 <li>改进：图注意力网络 $\mathrm{GAT}$（邻居加权）、聚类 $\mathrm{ClusterGCN}$（降低复杂度）</li>
 <li>训练技巧：在部分顶点上训练降低复杂度、将图卷积层改为 $\mathrm{MLP}$ 避免过平滑（小世界原理）、残差连接</li>
 </ol>
-</li>
-<li>$\mathrm{Transformer}$<ol>
+<h3 id="10-mathrm-Transformer"><a href="#10-mathrm-Transformer" class="headerlink" title="10. $\mathrm{Transformer}$"></a>10. $\mathrm{Transformer}$</h3><ol>
 <li>$\mathrm{Attention}$：将 $x$ 转化为 $q,k,v$，$a&#x3D;\mathrm{Softmax}(\frac{q^Tk}{\sqrt{d}})$，$\mathrm{MQA,GQA}$ 头间共享 $k,v$</li>
 <li>$\mathrm{FFN}$：$\mathrm{FFN}(x)&#x3D;\mathrm{GeLU}(W_1x+b_1)W_2+b_2$，$\mathrm{dim}W&#x3D;d^2$ 且参数共享，$\mathrm{MoE}$ 中多个共用</li>
 <li>模仿 $\mathrm{CNN,RNN}$，引入<strong>加权</strong>残差连接、预先 $\mathrm{LayerNormalization}$（归一化或单位化）</li>
@@ -377,8 +365,7 @@
 <li>改进：线性注意力、$\mathrm{MaskAttention}$（遮挡）、$\mathrm{FlashAttention}$（分块）、$\mathrm{RingAttention}$（分布式）</li>
 <li>$\mathrm{GPT}$：$\mathrm{Decoder}$，生成式预训练；$\mathrm{BERT}$：$\mathrm{Encoder}$，填空式预训练；$\mathrm{T5}$：完整版</li>
 </ol>
-</li>
-<li>语言模型<ol>
+<h3 id="11-语言模型"><a href="#11-语言模型" class="headerlink" title="11. 语言模型"></a>11. 语言模型</h3><ol>
 <li>$\mathrm{ScalingLaw}$：参数量 $\gt$ $\mathrm{BatchSize}\gt \mathrm{epoch}$；推理 $\gt$ 训练；扩大单模型 $\mathrm{vs}$ 多模型集成</li>
 <li>微调：全量微调（数据多易负迁移）、$\mathrm{Adapter}$（插适配头，如低秩适应微调 $\mathrm{LoRA}$，$\theta&#x3D;\theta+AB$）、部分微调（如调倒数两三层，数据少易过拟合）</li>
 <li>改进：加入正则项限制微调改变量、重跑预训练任务检查精度变化、多模型微调（根据相关性加权蒸馏）</li>
@@ -387,8 +374,7 @@
 <li>部署：量化（浮点转小整数）、推测解码 $\mathrm{SpeculativeDecoding}$（小模型生成大模型验证）</li>
 <li>视觉：$\mathrm{CLIP}$（弱监督图文对相似度矩阵对角化）、$\mathrm{Flamingo}$（将图 $\mathrm{token}$ 映射到文本空间）、$\mathrm{Q-Former}$（将图转化为 $\mathrm{query}$）</li>
 </ol>
-</li>
-<li>多模态与智能体<ol>
+<h3 id="12-多模态与智能体"><a href="#12-多模态与智能体" class="headerlink" title="12. 多模态与智能体"></a>12. 多模态与智能体</h3><ol>
 <li>底层：$\mathrm{ViT}$（分块 $\mathrm{MLP}$ 后块间注意力）、$\mathrm{SwinTransformer}$（块内注意力，块滑动）</li>
 <li>训练方式：生成式预训练，如 $\mathrm{ImageGPT}$</li>
 <li>$\mathrm{CLIP}$：弱监督图文对，让相似度矩阵对角化</li>
@@ -396,8 +382,7 @@
 <li>纯多模态模型：$\mathrm{Fuyu}$（图文同等映射到另一空间）</li>
 <li>$\mathrm{Agent}$：规划（目标分解、自我反思）、记忆（长：历史经验；短：上下文）、工具（外部应用、大模型）、行动（虚拟、具身）、协作（人机、多代理）</li>
 </ol>
-</li>
-<li>迁移学习<ol>
+<h3 id="13-迁移学习"><a href="#13-迁移学习" class="headerlink" title="13. 迁移学习"></a>13. 迁移学习</h3><ol>
 <li>多任务学习：共享参数 $+$ 任务头，损失函数加权（或范数归一、任务不确定性、帕累托最优）</li>
 <li>元学习：输入数据集直接输出最优学习器，分为训练任务（支撑集、验证集）、测试任务（训练集、测试集），优化目标为 $n$ 个训练任务的平均损失函数</li>
 <li>生成学习：先编码再解码算相似度，可对编码器做限制（稀疏性、范数、加噪声、加遮挡）</li>
@@ -405,22 +390,17 @@
 <li>改进：$\mathrm{MemoryBank}$ 存储定量 $\mathrm{key}$ 降低复杂度、$\mathrm{MoCo}$（用 $q$ 编码器的滑动平均更新 $k$ 编码器）、$\mathrm{SimSiam}$（无负例，单边解码，另一边停止梯度）</li>
 <li>领域自适应：$\mathrm{OOD}$，用 $H\Delta H$ 对称差散度衡量分布差异，如领域对抗神经网络 $\mathrm{DANN}$（用 $\mathrm{GAN}$ 将两领域映射到接近的领域，在接近领域上学习）</li>
 </ol>
-</li>
-</ol>
-<h3 id="3-强化学习"><a href="#3-强化学习" class="headerlink" title="3. 强化学习"></a>3. 强化学习</h3><ol>
-<li>表格式学习（状态、动作都离散）<ol>
+<h2 id="三、强化学习"><a href="#三、强化学习" class="headerlink" title="三、强化学习"></a>三、强化学习</h2><h3 id="14-表格式学习（状态、动作都离散）"><a href="#14-表格式学习（状态、动作都离散）" class="headerlink" title="14. 表格式学习（状态、动作都离散）"></a>14. 表格式学习（状态、动作都离散）</h3><ol>
 <li>算法：$\mathrm{SARSA}\to \mathrm{Q-learning}$（将$\mathrm{A^\prime}$ 替换为最优动作）</li>
 <li>改进：资格迹（每步衰减 $\gamma\lambda$，遇到就 $+1$）</li>
 </ol>
-</li>
-<li>价值函数逼近（状态空间连续）<ol>
+<h3 id="15-价值函数逼近（状态空间连续）"><a href="#15-价值函数逼近（状态空间连续）" class="headerlink" title="15. 价值函数逼近（状态空间连续）"></a>15. 价值函数逼近（状态空间连续）</h3><ol>
 <li>核心思想：用以 $w$ 为参数的模型估计 $Q(S,A)$</li>
 <li>$\mathrm{TD-error}:\delta&#x3D;R+\gamma Q(S^\prime,A^\prime)-Q(S,A)$</li>
 <li>$w&#x3D;w-\alpha \nabla w\cdot\delta$（一步梯度下降）</li>
 <li>改进：$\mathrm{Q-learning}$、资格迹（将 $+1$ 替换为 $\nabla w\cdot Q(S,A))$</li>
 </ol>
-</li>
-<li>策略梯度方法（状态、动作都连续）<ol>
+<h3 id="16-策略梯度方法（状态、动作都连续）"><a href="#16-策略梯度方法（状态、动作都连续）" class="headerlink" title="16. 策略梯度方法（状态、动作都连续）"></a>16. 策略梯度方法（状态、动作都连续）</h3><ol>
 <li>核心思想：用一个以 $\theta$ 为参数的模型获得策略</li>
 <li>离散型策略：$\mathrm{Softmax}$，$\pi(a|s,\theta)&#x3D;\frac{e^{J(s,a)}}{\sum e^{J(s,b)}}$</li>
 <li>连续型策略：$\mathrm{Gaussian}$</li>
@@ -429,17 +409,13 @@
 <li>$\mathrm{Actor-Critic}$：基于时序差分方法，可引入资格迹 $\nabla \log \pi(a|s,\theta)$、$\mathrm{Baseline}$</li>
 <li>改进：近端策略优化 $\mathrm{TRPO,PPO}$，防止更新过大导致策略崩溃（用 $\mathrm{KL}$ 散度衡量新旧策略差异）</li>
 </ol>
-</li>
-<li>现代强化学习<ol>
+<h3 id="17-现代强化学习"><a href="#17-现代强化学习" class="headerlink" title="17. 现代强化学习"></a>17. 现代强化学习</h3><ol>
 <li>$\mathrm{DDPG}$：确定性策略梯度方法，在连续动作空间中更有效</li>
 <li>$\mathrm{SAC}$：优化策略的同时最大化策略的熵，鼓励随机探索</li>
 <li>基于模型的强化学习：学习环境模型，用模拟数据与真实数据一起训练策略，如 $\mathrm{Dyna-Q}$</li>
 </ol>
-</li>
-</ol>
 <p><img src="/img/CSDIY-24Summer/2.png" srcset="/img/loading.gif" lazyload></p>
-<h3 id="4-生成式模型"><a href="#4-生成式模型" class="headerlink" title="4. 生成式模型"></a>4. 生成式模型</h3><ol>
-<li>生成对抗网络 $\mathrm{GAN}$<ol>
+<h3 id="4-生成式模型"><a href="#4-生成式模型" class="headerlink" title="4. 生成式模型"></a>4. 生成式模型</h3><h3 id="18-生成对抗网络-mathrm-GAN"><a href="#18-生成对抗网络-mathrm-GAN" class="headerlink" title="18. 生成对抗网络 $\mathrm{GAN}$"></a>18. 生成对抗网络 $\mathrm{GAN}$</h3><ol>
 <li>损失函数：对抗学习，$\displaystyle \min_G\max_D(\log D(x)+\log(1-D(G(z))))$，$D$ 为判别器，$G$ 为生成器（$\mathrm{Jensen-Shannon}$ 散度）</li>
 <li>改进：$\log(1-x)$ 好样本梯度爆炸、坏样本梯度消失，改为优化 $\log(D(G(z)))$；换用 $\mathrm{Wasserstein}$ 距离（将 $D$ 改为满足 $\mathrm{1-Lipschitz}$ 的连续函数）</li>
 <li>生成器实现：$\mathrm{DCGAN}$（逆向 $\mathrm{CNN}$，转置卷积）</li>
@@ -447,11 +423,7 @@
 <li>模式崩溃：使用 $\mathrm{GradientPenalty}$ 或系数矩阵谱归一化限制 $\mathrm{Lipschitz}$ 系数</li>
 <li>条件生成：加入重建误差，对标签数据 $(x_i,y_i)$ 优化 $\displaystyle\min_G\max_D(\log D(x_i,y_i)+\log(1-D(G(x_i,z_i)))+|G(x_i,z_i)-y_i|)$</li>
 </ol>
-</li>
-<li>变分自编码器 $\mathrm{VAE}$</li>
-<li>扩散模型 $\mathrm{Diffusion}$</li>
-</ol>
-<h2 id="二、论文阅读"><a href="#二、论文阅读" class="headerlink" title="二、论文阅读"></a>二、论文阅读</h2><h2 id="三、信息论"><a href="#三、信息论" class="headerlink" title="三、信息论"></a>三、信息论</h2><h2 id="四、计算机组成"><a href="#四、计算机组成" class="headerlink" title="四、计算机组成"></a>四、计算机组成</h2><h2 id="五、开发与暑培"><a href="#五、开发与暑培" class="headerlink" title="五、开发与暑培"></a>五、开发与暑培</h2><h2 id="六、算法"><a href="#六、算法" class="headerlink" title="六、算法"></a>六、算法</h2>
+<h3 id="19-变分自编码器-mathrm-VAE"><a href="#19-变分自编码器-mathrm-VAE" class="headerlink" title="19. 变分自编码器 $\mathrm{VAE}$"></a>19. 变分自编码器 $\mathrm{VAE}$</h3><h3 id="20-扩散模型-mathrm-Diffusion"><a href="#20-扩散模型-mathrm-Diffusion" class="headerlink" title="20. 扩散模型 $\mathrm{Diffusion}$"></a>20. 扩散模型 $\mathrm{Diffusion}$</h3>
                 
               </div>
             
@@ -486,7 +458,7 @@
       
         <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="print-no-link">#计算机</a>
       
-        <a href="/tags/%E5%A4%A7%E4%B8%80%E4%B8%8B/" class="print-no-link">#大一下</a>
+        <a href="/tags/%E8%87%AA%E5%AD%A6/" class="print-no-link">#自学</a>
       
     </div>
   
@@ -498,8 +470,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>大一下自学笔记</div>
-      <div>https://sqzr2319.github.io/CSDIY-24Summer/</div>
+      <div>自学笔记(2)</div>
+      <div>https://sqzr2319.github.io/CSDIY-2/</div>
     </div>
     <div class="license-meta">
       
