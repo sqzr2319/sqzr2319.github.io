@@ -1,0 +1,779 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/sqzr2319.png">
+  <link rel="icon" href="/img/sqzr2319.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="sqzr2319">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="肆叁小灶第七讲，介绍了信息论、编码理论和 $\mathrm{Huffman}$ 编码。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="肆叁小灶第七讲 从 Huffman 树到信息论">
+<meta property="og:url" content="https://sqzr2319.github.io/43Class-7/index.html">
+<meta property="og:site_name" content="sqzr2319&#39;s blog">
+<meta property="og:description" content="肆叁小灶第七讲，介绍了信息论、编码理论和 $\mathrm{Huffman}$ 编码。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://sqzr2319.github.io/img/43Class-7/1.png">
+<meta property="og:image" content="https://sqzr2319.github.io/img/43Class-7/2.png">
+<meta property="article:published_time" content="2025-10-07T04:24:46.000Z">
+<meta property="article:modified_time" content="2025-11-02T05:16:02.933Z">
+<meta property="article:author" content="sqzr2319">
+<meta property="article:tag" content="肆叁小灶">
+<meta property="article:tag" content="计算机">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://sqzr2319.github.io/img/43Class-7/1.png">
+  
+  
+  
+  <title>肆叁小灶第七讲 从 Huffman 树到信息论 - sqzr2319&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"sqzr2319.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\(', right: '\\)', display: false},
+        {left: '\\[', right: '\\]', display: true}
+      ]
+    });"></script>
+    <link rel="stylesheet" href="/css/custom.css">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>sqzr2319</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/Planet.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="肆叁小灶第七讲 从 Huffman 树到信息论"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-10-07 12:24" pubdate>
+          2025年10月7日 中午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          48 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">肆叁小灶第七讲 从 Huffman 树到信息论</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>肆叁小灶第七讲，介绍了信息论、编码理论和 $\mathrm{Huffman}$ 编码。</p>
+<span id="more"></span>
+
+<p>笃实 43 班的同学们大家好。本学期《肆叁小灶》将预计更新 3-4 期：本期我们将从《数据结构》课中介绍的 $\mathrm{Huffman}$ 树出发，讲解其背后的理论基础——编码理论与信息论；之后，我们将用 2-3 期的篇幅带大家从零开始了解人工智能技术，直至学术前沿。希望同学们能通过本学期的《肆叁小灶》系列推送，对人工智能有一个初步的认识，为下学期的《人工智能基础》课程做好准备。</p>
+<p>废话不多说，让我们直接进入正题。</p>
+<h2 id="一、-mathrm-Huffman-编码"><a href="#一、-mathrm-Huffman-编码" class="headerlink" title="一、$\mathrm{Huffman}$ 编码"></a>一、$\mathrm{Huffman}$ 编码</h2><p>在《数据结构》课上，提到了 $\mathrm{Huffman}$ 树是“最优编码树”，但并没有给出具体的证明过程。事实上，由 $\mathrm{Huffman}$ 树构造而来的 $\mathrm{Huffman}$ 编码不仅是<strong>前缀码</strong>中最优的，也是所有<strong>唯一可译码</strong>中最优的；而在实际应用中，非唯一可译码并没有什么意义（因为它可能导致歧义），因此 $\mathrm{Huffman}$ 编码可以说是所有编码中最优的。</p>
+<blockquote>
+<p>“唯一可译码”和“前缀码”并不等价。例如将符号集 ${A, B, C, D}$ 编码为 ${10, 00, 11, 110}$，这个编码并不是前缀码（因为 $11$ 是 $110$ 的前缀），但它是唯一可译的。为了区分 $C$ 和 $D$，我们只需要等待下一个 $1$ 出现：如果中间的 $0$ 的数量是偶数，我们解码 $11$，否则我们解码 $110$。</p>
+</blockquote>
+<p>也正因此，$\mathrm{Huffman}$ 编码在数据压缩领域有着极其广泛的应用。下面，就让我们一步步来证明 $\mathrm{Huffman}$ 编码的最优性。</p>
+<h3 id="1-1-最优前缀码"><a href="#1-1-最优前缀码" class="headerlink" title="1.1 最优前缀码"></a>1.1 最优前缀码</h3><p>首先，如果将 $01$ 编码视为一个二叉树，那么在前缀码所对应的二叉树中，码字一定对应于这棵树的叶节点。</p>
+<p>这是因为，如果存在码字的对应节点不是叶节点，那么一定存在另一个码字的对应节点是这个节点的后代，也即这两个码字的对应节点在同一条路径上——这意味着前者是后者的前缀，而这与前缀码的定义相矛盾。</p>
+<p>所以，给定一组符号及其频率，如果我们将每个符号与其频率视作一个带权的节点，那么最小化平均码长的问题就转化为：构造一个以上面这些带权节点为叶节点的二叉树，使得所有叶节点的加权路径长度之和最小。</p>
+<p>接下来，我们可以注意到两个最优前缀码所必须的性质：</p>
+<ol>
+<li>根据排序不等式，概率更大的符号应该具有更小的码长，即概率的排序应与码长的排序恰好相反；</li>
+<li>其对应的二叉树不可能存在只有一个子节点的中间节点，否则可以将其子节点直接提升为其父节点的子节点，从而降低总权值。</li>
+</ol>
+<p>上面的两个性质就可以导出一个结论：存在一个最优的前缀码，使得两个最不可能的码字仅在最后一位不同，即两个最不可能的码字是兄弟。这是因为：</p>
+<ol>
+<li>这两个码字必须拥有同样且最大的码长（如果不是最大，则与上面的第一个性质矛盾；如果不相同，则只有一个码字拥有最大的码长，这说明这个码字在树上的父节点只有一个子节点，而这与上面的第二个性质矛盾）；</li>
+<li>如果它们没有相同的父节点，这意味着一定存在第三个拥有相同码长的码字（因为不存在只有一个子节点的中间节点），故可以将这两个码字与第三个码字交换，从而使得它们成为兄弟。</li>
+</ol>
+<p>这也就是说，让这两个最不可能的码字成为兄弟不影响整体的最优性，那我们就不妨让它们成为兄弟。这样一来，我们就可以将它们合并为一个新的符号，其频率为这两个码字的频率之和：这是因为，只要获得了这个新符号的最优前缀码，我们只需要通过在其码字后分别添加 $0$ 和 $1$，就可以获得原来两个码字的最优前缀码。如此，我们就把问题的规模从 $n$ 降低到了 $n-1$。然后，我们就可以通过反复的合并操作，最终将问题简化为只有两个符号的情况，而这时显然只存在唯一且最优的前缀码：$0$ 和 $1$。</p>
+<h3 id="1-2-前缀码与唯一可译码"><a href="#1-2-前缀码与唯一可译码" class="headerlink" title="1.2 前缀码与唯一可译码"></a>1.2 前缀码与唯一可译码</h3><p>前面提到，唯一可译码和前缀码并不等价。但显然，前缀码一定是唯一可译的，而且是“即时可译”的：也就是说，在接收到一个码字流时，我们可以从左到右逐位读取码字，并且一旦读到一个完整的码字，就可以立即将其译码，而不需要等待后续的码字。而非前缀的唯一可译码则可能不具备这个性质，就比如前面提到的例子。</p>
+<p>那么自然会有一个问题：是否有可能存在非前缀的唯一可译码，其平均码长小于所有前缀码的平均码长？如果能够证明其不存在，那么 $\mathrm{Huffman}$ 编码的最优性就可以推广到所有唯一可译码。事实上，这就是信息论中著名的 $\mathrm{McMillan}$ 定理。</p>
+<p>首先，容易证明：存在一个码字长度为 $l_1,l_2,\cdots,l_n$ 的前缀码当且仅当 $\displaystyle \sum_{i&#x3D;1}^n 2^{-l_i}\leq 1$。这是因为，如果给深度为 $l$ 的叶节点分配权值 $2^{-l}$，那么一个真二叉树中所有叶节点的权值之和为 $1$；而前缀码一定对应于一棵二叉树的叶节点，也即一个真二叉树叶节点的子集。我们称这个不等式为 <strong>$\mathrm{Kraft}$ 不等式</strong>。</p>
+<p>接下来，如果我们能够证明所有唯一可译码都满足 $\mathrm{Kraft}$ 不等式，那么就说明对于任意唯一可译码，我们都可以找到一个前缀码，其码字长度与该唯一可译码相同，而这也就意味着该前缀码的平均码长与该唯一可译码相同。</p>
+<p>假设某个随机消息有 $r$ 个可能的值 $u\in U$（这里集合 $U$ 表示消息字母表）。我们为这个随机消息设计一个唯一可译码，它为每个可能的符号 $u\in U$ 分配一个长度为 $l(u)$ 的码字，设 $l(u)$ 的最大值为 $l_{\max}$。接下来我们考虑 $\displaystyle\left(\sum_{u\in U}2^{-l(u)}\right)^v$，其中 $v$ 为正整数。容易发现，这等价于 $\displaystyle \sum_{u_1\in U}\sum_{u_2\in U}\cdots\sum_{u_v\in U}2^{-(l(u_1)+l(u_2)+\cdots+l(u_v))}&#x3D;\sum_{w\in U^v}2^{-l(w)}$，其中 $w$ 表示长度为 $v$ 的消息序列，$l(w)$ 表示该消息序列的码字长度。</p>
+<p>接着，我们把 $U^v$ 中所有码字长度相同的消息序列合在一起。显然长度为 $v$ 的消息序列的码字长度不可能超过 $vl_{\max}$，因此我们可以把上面的求和写成 $\displaystyle \sum_{t&#x3D;1}^{vl_{\max}}w(t)2^{-t}$，其中 $w(t)$ 表示码字长度为 $t$ 的消息序列的数量。又由于我们使用的是唯一可译码，所以消息序列必然也是唯一可译的，这要求码字长度为 $t$ 的消息序列的数量不能超过 $2^t$，否则就会出现码字冲突。因此，我们有 $w(t)\leq 2^t$，从而 $\displaystyle \sum_{t&#x3D;1}^{vl_{\max}}w(t)2^{-t}\leq \sum_{t&#x3D;1}^{vl_{\max}}2^t2^{-t}&#x3D;vl_{\max}$，也即 $\sum_{u\in U}2^{-l(u)}\leq (vl_{\max})^{\frac{1}{v}}$。</p>
+<p>由于上式对任意正整数 $v$ 都成立，我们令 $v\to +\infty$，就得到 $\displaystyle \sum_{u\in U}2^{-l(u)}\leq 1$，而这正是 $\mathrm{Kraft}$ 不等式。这样，我们就完成了 $\mathrm{McMillan}$ 定理的证明，从而证明了 $\mathrm{Huffman}$ 编码在所有唯一可译码中的最优性。</p>
+<h2 id="二、平均码长的理论下界"><a href="#二、平均码长的理论下界" class="headerlink" title="二、平均码长的理论下界"></a>二、平均码长的理论下界</h2><p>想必大家都听说过这样一个轶闻：苏联曾试图研究三进制计算机，因为理论上最高效的进制是 $e$ 进制，但现实中进制只能取整数，因此二进制和三进制就成了妥协。</p>
+<p>那么类似地，在编码领域，$\mathrm{Huffman}$ 编码是否也只是“码长只能取整数”的一种妥协？如果我们允许码长取非整数值，是否能够获得更优的编码？如果是，这种非整数码长编码的平均码长是可以任意小，还是存在某个理论下界？而这就是信息论中的另一个重要结论：大名鼎鼎的<strong>信息熵</strong>。</p>
+<h3 id="2-1-信息量的度量"><a href="#2-1-信息量的度量" class="headerlink" title="2.1 信息量的度量"></a>2.1 信息量的度量</h3><p>首先：什么是信息？让我们看一个例子：</p>
+<p>你观察一个赌徒抛一个公平的硬币，然后告诉你的朋友。通过这样做，你给了你的朋友一定量的信息。接着，你继续观察他掷一个公平的骰子，然后告诉你的朋友。通过这样做，你又给了你的朋友一定量的信息。</p>
+<p>现在的问题是：这两次你给朋友的信息量一样多吗？</p>
+<p>显然，后者包含的信息量要大于前者。这是因为，前者只可能有两种回答：正或反，而后者则有 $6$ 种可能。从中我们可以看出，信息量的大小应该与可能的答案数量 $r$ 正相关。</p>
+<p>让我们继续上面的例子：接下来，你观察赌徒掷骰子三次。同样，你记录下三次的结果并告诉你的朋友。</p>
+<p>显然，这次你给朋友的信息量是前一次的三倍。从中我们可以看出，“信息”在某种程度上应该是可加的。</p>
+<p>但现在我们面临一个新问题：以上面赌徒的例子为例，后者可能的答案数量是前者的 $36$ 倍，但我们希望信息量只是三倍的关系。于是，我们自然会想到，信息量应该与可能的答案数量的<strong>对数</strong>成正比。</p>
+<p>但如果每个答案发生的概率并不相同呢？显然，如果一个事件几乎必然发生，那么它发生时所包含的信息量就应该很小；反之，如果一个事件几乎不可能发生，那么它发生时所包含的信息量就应该很大。</p>
+<p>定量地说，假设有一枚神秘的四面体骰子，其中某一面朝下的概率为 $\frac{1}{2}$，其余三面朝下的概率均为 $\frac{1}{6}$。那么，当你告诉朋友 $\frac{1}{2}$ 面朝下时，所包含的信息量其实就相当于一个公平硬币的投掷结果。</p>
+<p>可见，我们可以通过对概率取<strong>倒数</strong>把非等可能事件转化为等可能事件；接着，根据上面的分析，我们就可以对其取对数，从而得到信息量的度量。也就是说，信息量应该与概率的<strong>负对数</strong>成正比。</p>
+<p>形式化地，我们考虑一个随机变量 $X$，它有 $n$ 个可能的取值 $x_1,x_2,\cdots,x_n$，对应的概率分别为 $p(x_1),p(x_2),\cdots,p(x_n)$。那么，当 $x_i$ 发生时，所包含的信息量可以定义为：$I(x_i)&#x3D;\log\left(\frac{1}{p(x_i)}\right)$。接着，再对所有可能的取值求期望，我们就得到了这个随机变量的信息量的度量：$\displaystyle H(X)&#x3D;\mathbb E[I(X)]&#x3D;\sum_{i&#x3D;1}^n p(x_i)I(x_i)&#x3D;-\sum_{i&#x3D;1}^n p(x_i)\log p(x_i)$，这就被称为<strong>信息熵</strong>。</p>
+<p>对数的底数可以取任意值（不同的底数等价于一个常数因子），在信息论中通常取 $2$，因为这样我们就可以直接使用<strong>比特</strong>来作为信息熵的单位了。</p>
+<h3 id="2-2-信源编码定理"><a href="#2-2-信源编码定理" class="headerlink" title="2.2 信源编码定理"></a>2.2 信源编码定理</h3><p>有了信息熵的概念，平均码长存在理论下界就是显而易见的了：</p>
+<p>我们将原始符号集 $U$ 中的每个符号 $u$ 视作一个随机变量 $X$ 的取值，其概率为 $p(u)$。那么，一单位的 $X$ 所包含的信息量就是 $H(X)$；而一单位的 $01$ 码最多只能携带 $1$ 比特的信息量（当且仅当 $01$ 等概率时，这可以通过简单的计算来验证），因此要传输 $H(X)$ 比特的信息量，至少需要 $H(X)$ 单位的码字长度。</p>
+<p>这就是著名的 <strong>$\mathrm{Shannon}$ 第一定理</strong>，又称<strong>信源编码定理</strong>。它告诉我们，任何编码的平均码长都不能小于信息熵 $H(X)$，取等的一个必要条件是 $01$ 码等概率出现。</p>
+<h2 id="三、通信误差"><a href="#三、通信误差" class="headerlink" title="三、通信误差"></a>三、通信误差</h2><p>然而，在现实中，由于信道噪声的存在，传输过程中往往会出现误码现象。形式化地，假设信源给出的是随机变量 $X$，接收端接收到的是随机变量 $Y$，则转移概率矩阵 $P_{Y|X}(y_j|x_i)$ 并不一定是单位矩阵。</p>
+<h3 id="3-1-条件熵、联合熵与互信息"><a href="#3-1-条件熵、联合熵与互信息" class="headerlink" title="3.1 条件熵、联合熵与互信息"></a>3.1 条件熵、联合熵与互信息</h3><p>在概率论课程中，我们学习过条件分布和条件期望的概念。类似地，在信息论中，我们也可以定义<strong>条件熵</strong>：$\displaystyle H(Y|X&#x3D;x_i)&#x3D;-\sum_j P_{Y|X}(y_j|x_i)\log P_{Y|X}(y_j|x_i)$ 表示在已知 $X&#x3D;x_i$ 的条件下，$Y$ 的不确定性；再对所有可能的 $x_i$ 求期望，我们就得到了条件熵：$\displaystyle H(Y|X)&#x3D;\sum_i P_X(x_i)H(Y|X&#x3D;x_i)&#x3D;-\sum_{i}\sum_{j}P_{X,Y}(x_i,y_j)\log P_{Y|X}(y_j|x_i)$。</p>
+<p>条件熵衡量了信道引入的不确定性。不难发现：在无损信道中转移概率矩阵 $P_{Y|X}(y_j|x_i)$ 是单位矩阵，条件熵 $H(Y|X)&#x3D;0$；而在完全噪声信道中（即接收到的信号与发送的信号独立），$P_{Y|X}(y_j|x_i)&#x3D;P_Y(y_j)$，条件熵 $H(Y|X)&#x3D;H(Y)$。</p>
+<p>将信源本身的不确定性和信道引入的不确定性相加，我们就得到了<strong>联合熵</strong>：$\displaystyle H(X,Y)&#x3D;H(X)+H(Y|X)&#x3D;-\sum_{i}\sum_{j}P_{X,Y}(x_i,y_j)\log P_{X,Y}(x_i,y_j)$。联合熵衡量了信源和信道整个系统的总不确定性。</p>
+<p>我们还可以定义<strong>互信息</strong>：$\displaystyle I(X;Y)&#x3D;H(X)-H(X|Y)&#x3D;\sum_{i}\sum_{j}P_{X,Y}(x_i,y_j)\log\left(\frac{P_{X,Y}(x_i,y_j)}{P_X(x_i)P_Y(y_j)}\right)$。互信息衡量了接收到 $Y$ 后对 $X$ 的不确定性减少了多少。</p>
+<p>互信息有两个极端情况：当信道无损时，接收到 $Y$ 后 $X$ 的不确定性完全消失，因此 $I(X;Y)&#x3D;H(X)$；而当 $X$ 和 $Y$ 独立时，接收到 $Y$ 后对 $X$ 的不确定性没有任何减少，因此 $I(X;Y)&#x3D;0$。</p>
+<p>下面这张图可以帮助大家理解这些概念之间的关系：</p>
+<p><img src="/img/43Class-7/1.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="3-2-信道容量与信道编码定理"><a href="#3-2-信道容量与信道编码定理" class="headerlink" title="3.2 信道容量与信道编码定理"></a>3.2 信道容量与信道编码定理</h3><p>互信息 $I(X;Y)$ 依赖于输入分布 $P_X(\cdot)$。如果我们能够选择输入分布，那么我们就可以通过选择不同的输入分布来最大化互信息，从而最大化每次传输所能携带的信息量。这个最大值就被称为<strong>信道容量</strong>：$\displaystyle C&#x3D;\max_{P_X(\cdot)}I(X;Y)$。</p>
+<p>一个输入分布 $P_X(\cdot)$ 能够达到信道容量 $C$ 需要满足的条件称为 <strong>$\mathrm{Karush–Kuhn–Tucker(KKT)}$ 条件</strong>， 其形式为：$I(x;Y)&#x3D;C$ 当且仅当 $P_X(x)&gt;0$；$I(x;Y)\le C$ 当且仅当 $P_X(x)&#x3D;0$。这个条件其实非常直观：如果某个输入符号 $x$ 的平均互信息小于信道容量 $C$，那么我们就不应该使用它（即 $P_X(x)&#x3D;0$），否则就无法达到信道容量。</p>
+<p>在通信中，往往需要经过两道编码过程：<strong>信源编码</strong>和<strong>信道编码</strong>。直观地说，信源编码是用于将原始符号集以尽可能高的效率压缩到 $01$ 码中，而信道编码则是用于将 $01$ 码以尽可能高的可靠性传输到接收端，而这必然要求在传输过程中引入冗余。</p>
+<p><strong>信道传输速度</strong>就是用于衡量信道编码引入的冗余量的，其定义为：$\displaystyle R&#x3D;\frac{\mathrm{avg}(L_1)}{\mathrm{avg}(L_1,L_2)}$，其中 $\mathrm{avg}(L_1)$ 表示原始信息经过信源编码后的平均码长，$\mathrm{avg}(L_1,L_2)$ 表示原始信息经过信源和信道两层编码后的平均码长。</p>
+<p>例如：假设原始信息是等概率的 ${A,B,C}$，我们用 ${0,10,11}$ 对其进行信源编码，那么平均码长为 $\frac{1+2+2}{3}&#x3D;\frac{5}{3}$；接着，我们使用三重重复码（即将每个比特重复三次）再对其进行信道编码，那么平均码长变为 $\frac{3+6+6}{3}&#x3D;5$，因此信道传输速度为 $R&#x3D;\frac{5&#x2F;3}{5}&#x3D;\frac{1}{3}$。</p>
+<p>信道容量和信道传输速度间的关系由著名的 <strong>$\mathrm{Shannon}$ 第二定理</strong>，又称<strong>信道编码定理</strong>给出。它指出：只要信道传输速率 $R\le C$，就存在一种编码方式，使得误码率可以任意小（只要码长足够长）；反之，如果 $R&gt;C$，则任何编码方式的误码率都有一个不为零的下限。</p>
+<p>直观上看，噪声越少的信道，其信道容量 $C$ 越大，因此允许的信道传输速率 $R$ 也就越大（即在信道编码中可以引入更少的冗余来保证传输的可靠性）；反之，噪声越大的信道，其信道容量 $C$ 越小，因此允许的信道传输速率 $R$ 也就越小（即在信道编码中必须引入更多的冗余来保证传输的可靠性）。</p>
+<p>$\mathrm{Shannon}$ 第二定理本身的证明比较复杂，这里就不再赘述了。有兴趣的同学可以参考文末的阅读材料，或者直接阅读 $\mathrm{Shannon}$ 的原始论文《A Mathematical Theory of Communication》。这篇论文是整个信息论的奠基之作，其完整性甚至到今天还能作信息论教材使用，再怎么赞美都不为过。</p>
+<h2 id="四、信息论的扩展与应用"><a href="#四、信息论的扩展与应用" class="headerlink" title="四、信息论的扩展与应用"></a>四、信息论的扩展与应用</h2><p>受 $\mathrm{Shannon}$ 信息论的启发，后续的研究者们提出了很多用于度量概率分布间距离的指标。这些指标至今仍在人工智能和概率统计领域有着广泛的应用。</p>
+<h3 id="4-1-分布间距离的度量"><a href="#4-1-分布间距离的度量" class="headerlink" title="4.1 分布间距离的度量"></a>4.1 分布间距离的度量</h3><p>在这些指标中，最著名的莫过于<strong>交叉熵</strong>：$\displaystyle H(P,Q)&#x3D;-\sum_x P(x)\log Q(x)$，它衡量了按照概率分布 $Q$ 的最优编码对真实分布为 $P$ 的信息进行编码的平均码长。在给定 $P$ 的情况下，如果 $Q$ 和 $P$ 越接近，交叉熵越小；如果 $Q$ 和 $P$ 越远，交叉熵就越大。</p>
+<p>容易发现，交叉熵的绝对大小与 $Q$ 本身的熵有关。为了消除这个影响，我们可以定义<strong>相对熵</strong>（又称 <strong>$\mathrm{Kullback–Leibler(KL)}$ 散度</strong>）：$\displaystyle KL(P,Q)&#x3D;H(P,Q)-H(P)&#x3D;-\sum_x P(x)\log\left(\frac{Q(x)}{P(x)}\right)$。$\mathrm{KL}$ 散度总是非负的，它衡量了使用 $Q$ 对 $P$ 进行编码时所引入的额外码长。</p>
+<p>然而，$\mathrm{KL}$ 散度并不满足对称性。**$\mathrm{Jensen-Shannon(JS)}$ 散度**是 $\mathrm{KL}$ 散度的一种改进，其定义为：$JS(P,Q)&#x3D;\frac{1}{2}KL\left(P,\frac{P+Q}{2}\right)+\frac{1}{2}KL\left(Q,\frac{P+Q}{2}\right)$。它解决了 $\mathrm{KL}$ 散度不对称的问题，但这两个散度都存在一个问题：如果两个分布没有重叠或者重叠非常少时，散度值会变得非常大，甚至趋于无穷大，这在实际应用中并不理想。</p>
+<p>为了解决这个问题，研究者们提出了 <strong>$\mathrm{Wasserstein}$ 距离</strong>。它的形式化定义比较复杂，但可以直观地理解为：如果将两个分布看作两个土堆，那么 $\mathrm{Wasserstein}$ 距离就是将一个土堆变成另一个土堆所需搬运的最小工作量。就比如下图所示：</p>
+<p><img src="/img/43Class-7/2.png" srcset="/img/loading.gif" lazyload></p>
+<p>$\mathrm{Wasserstein}$ 距离相较 $\mathrm{KL}$ 散度和 $\mathrm{JS}$ 散度的优势在于：即使两个分布没有重叠或者重叠非常少，$\mathrm{Wasserstein}$ 距离仍然能反映两个分布的远近。</p>
+<h3 id="4-2-信息论在人工智能中的应用"><a href="#4-2-信息论在人工智能中的应用" class="headerlink" title="4.2 信息论在人工智能中的应用"></a>4.2 信息论在人工智能中的应用</h3><p>前面提到，信息论中的这些分布间距离度量的指标在人工智能领域有着广泛的应用。例如，机器学习中最常用的损失函数之一<strong>交叉熵损失函数</strong>就是基于交叉熵定义的；又例如，今年年初爆火的 $\mathrm{DeepSeek-R1}$ 模型所使用的 $\mathrm{GRPO}$ 算法中就包含了 $\mathrm{KL}$ 散度惩罚项，用于稳定强化学习训练过程。</p>
+<p>此外，在生成式模型中，由于需要衡量生成分布和真实数据分布之间的差异，信息论中的这些指标也被广泛使用。例如：在生成对抗网络（$\mathrm{GAN}$）中，原始的 $\mathrm{GAN}$ 使用 $\mathrm{JS}$ 散度来衡量生成分布和真实数据分布之间的差异；而后续的 $\mathrm{Wasserstein}$ $\mathrm{GAN}$ 则使用 $\mathrm{Wasserstein}$ 距离来替代 $\mathrm{JS}$ 散度，从而提升了训练的稳定性和生成样本的质量。</p>
+<p>信息熵本身也在人工智能的学术前沿有着一席之地。众所周知，大模型的最终输出是从一个概率分布中采样得到的，而信息熵正是衡量这个概率分布不确定性的一个重要指标。一个质量更高的回答应当具有更高还是更低的信息熵，至今仍然是一个开放性的问题。</p>
+<p>关于人工智能的更多内容，敬请期待本学期后续的《肆叁小灶》系列推送。</p>
+<h2 id="阅读材料"><a href="#阅读材料" class="headerlink" title="阅读材料"></a>阅读材料</h2><ol>
+<li>C. E. Shannon, “A Mathematical Theory of Communication”</li>
+<li>Stefan M. Moser, “A Student’s Guide to Coding and Information Theory”</li>
+<li>邱锡鹏，《神经网络与深度学习》nndl.github.io</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8E%A8%E9%80%81/" class="category-chain-item">推送</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E8%82%86%E5%8F%81%E5%B0%8F%E7%81%B6/" class="print-no-link">#肆叁小灶</a>
+      
+        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="print-no-link">#计算机</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>肆叁小灶第七讲 从 Huffman 树到信息论</div>
+      <div>https://sqzr2319.github.io/43Class-7/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>sqzr2319</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年10月7日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/43Class-8/" title="肆叁小灶第八讲 人工智能初步（上）">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">肆叁小灶第八讲 人工智能初步（上）</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/CSDIY-4/" title="自学笔记(4)">
+                        <span class="hidden-mobile">自学笔记(4)</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"byMlA6LzFKznnESJrecWspL9-gzGzoHsz","appKey":"1yTsGiEmKhEyjL3JTJzFKiDu","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
