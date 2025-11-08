@@ -19,23 +19,23 @@
   <meta name="author" content="sqzr2319">
   <meta name="keywords" content="">
   
-    <meta name="description" content="大一寒假的自学笔记，由两门计算机导论课程组成。">
+    <meta name="description" content="大二上学期大学物理B(2)的复习笔记，目前更新至 $\mathrm{Maxwell}$ 方程组。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="自学(1)：计算机导论">
-<meta property="og:url" content="https://sqzr2319.github.io/CSDIY-1/index.html">
+<meta property="og:title" content="大学物理B(2)">
+<meta property="og:url" content="https://sqzr2319.github.io/Physics-B2/index.html">
 <meta property="og:site_name" content="sqzr2319&#39;s blog">
-<meta property="og:description" content="大一寒假的自学笔记，由两门计算机导论课程组成。">
+<meta property="og:description" content="大二上学期大学物理B(2)的复习笔记，目前更新至 $\mathrm{Maxwell}$ 方程组。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-02-16T01:50:00.000Z">
-<meta property="article:modified_time" content="2025-11-08T18:24:13.941Z">
+<meta property="article:published_time" content="2025-11-09T08:49:03.000Z">
+<meta property="article:modified_time" content="2025-11-08T18:22:34.242Z">
 <meta property="article:author" content="sqzr2319">
-<meta property="article:tag" content="计算机">
-<meta property="article:tag" content="自学">
+<meta property="article:tag" content="物理">
+<meta property="article:tag" content="大二上">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>自学(1)：计算机导论 - sqzr2319&#39;s blog</title>
+  <title>大学物理B(2) - sqzr2319&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="自学(1)：计算机导论"></span>
+            <span id="subtitle" data-typed-text="大学物理B(2)"></span>
           
         </div>
 
@@ -227,8 +227,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-02-16 09:50" pubdate>
-          2025年2月16日 上午
+        <time datetime="2025-11-09 16:49" pubdate>
+          2025年11月9日 下午
         </time>
       </span>
     
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          842 字
+          872 字
         
       </span>
     
@@ -287,102 +287,61 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">自学(1)：计算机导论</h1>
+            <h1 id="seo-header">大学物理B(2)</h1>
             
             
               <div class="markdown-body">
                 
-                <p>大一寒假的自学笔记，由两门计算机导论课程组成。</p>
+                <p>大二上学期大学物理B(2)的复习笔记，目前更新至 $\mathrm{Maxwell}$ 方程组。</p>
 <span id="more"></span>
 
-<h2 id="一、Crash-Course-Computer-Science"><a href="#一、Crash-Course-Computer-Science" class="headerlink" title="一、Crash Course : Computer Science"></a>一、Crash Course : Computer Science</h2><h3 id="1-计算机底层"><a href="#1-计算机底层" class="headerlink" title="1. 计算机底层"></a>1. 计算机底层</h3><ol>
-<li>晶体管</li>
-<li>逻辑门</li>
-<li>半加器、寄存器</li>
-<li>$\mathrm{ALU}$、$\mathrm{RAM}$</li>
-<li>二进制编程</li>
-<li>$\mathrm{CPU}$</li>
-<li>汇编语言</li>
-<li>操作系统</li>
-<li>文件系统</li>
-<li>编译型语言</li>
-<li>解释型语言</li>
+<h2 id="四、电磁学"><a href="#四、电磁学" class="headerlink" title="四、电磁学"></a>四、电磁学</h2><h3 id="1-静电场"><a href="#1-静电场" class="headerlink" title="1. 静电场"></a>1. 静电场</h3><ol>
+<li>电偶极矩 $\vec{p}&#x3D;q\vec{l}$，从负电荷指向正电荷</li>
+<li>均匀带电直线：$E_x&#x3D;\frac{\lambda}{4\pi \varepsilon_0a}(\sin\theta_2-\sin\theta_1),E_y&#x3D;\frac{\lambda}{4\pi \varepsilon_0a}(\cos\theta_1-\cos\theta_2)$</li>
+<li>无限大均匀带电平面：$E&#x3D;\frac{\sigma}{2\varepsilon_0}$</li>
+<li>高斯定理：$\oint \vec{E}\cdot \mathrm{d}\vec{S}&#x3D;\frac{1}{\varepsilon_0}\sum q_{\text{内}}$</li>
 </ol>
-<h3 id="2-计算机硬件"><a href="#2-计算机硬件" class="headerlink" title="2. 计算机硬件"></a>2. 计算机硬件</h3><ol>
-<li>存储器：延迟线 $\Rightarrow$ 磁芯 $\Rightarrow$ 磁带 $\Rightarrow$ 磁盘 $\Rightarrow$ 光盘 $\Rightarrow$ 固态硬盘</li>
-<li>$\mathrm{IO}$<ol>
-<li>电传打字机 $\Rightarrow$ 阴极射线管 $\Rightarrow \mathrm{LCD}$</li>
-<li>矢量扫描、光栅扫描</li>
+<h3 id="2-电势"><a href="#2-电势" class="headerlink" title="2. 电势"></a>2. 电势</h3><ol>
+<li>电荷系静电能：$W&#x3D;\frac{1}{2}\sum q_i\phi_i,\phi_i$ 为其他电荷在 $q_i$ 处产生的电势</li>
+<li>连续分布：$W&#x3D;\frac{1}{2}\int\mathrm{d}q\phi$，$\phi$ 为所有电荷在 $\mathrm{d}q$ 处产生的电势</li>
 </ol>
-</li>
-<li>$\mathrm{3D}$<ol>
-<li>正交投影、透视投影</li>
-<li>多边形渲染、扫描线、抗锯齿</li>
-<li>画家算法、深度缓冲</li>
-<li>表面法线、纹理映射</li>
+<h3 id="3-导体"><a href="#3-导体" class="headerlink" title="3. 导体"></a>3. 导体</h3><ol>
+<li>静电平衡条件：内部无场等势，表面是等势面，场强垂直于表面</li>
+<li>电荷分布：内部无静电荷，表面电荷密度 $\sigma&#x3D;\varepsilon_0 E$，与曲率正相关</li>
+<li>接地：电势为零（不一定无电荷）</li>
 </ol>
-</li>
+<h3 id="4-电介质"><a href="#4-电介质" class="headerlink" title="4. 电介质"></a>4. 电介质</h3><ol>
+<li>电极化强度：$\vec{P}&#x3D;\frac{\sum\vec{p}}{\Delta V}&#x3D;n\vec{p}&#x3D;\varepsilon_0(\varepsilon_r-1)\vec{E}$</li>
+<li>面极化电荷密度：$\sigma&#x3D;\vec{P}\cdot \hat{n}$，$q_{\text{外}}^\prime&#x3D;-q_{\text{内}}^\prime&#x3D;\oint \vec{P}\cdot \mathrm{d}\vec{S}$</li>
+<li>电位移矢量：$\vec{D}&#x3D;\varepsilon_0\vec{E}+\vec{P}&#x3D;\varepsilon_0\varepsilon_r\vec{E}$</li>
+<li>电介质高斯定理：$\oint \vec{D}\cdot \mathrm{d}\vec{S}&#x3D;\sum q_{\text{0内}}$</li>
+<li>静电场边值关系：电位移法向连续，场强切向连续，$\frac{\tan\theta_1}{\tan\theta_2}&#x3D;\frac{\varepsilon_{r1}}{\varepsilon_{r2}}$</li>
+<li>电容器能量 $W&#x3D;\frac{1}{2}CU^2$</li>
+<li>电场能量密度 $w&#x3D;\frac{1}{2}\varepsilon E^2,W&#x3D;\int w\mathrm{d}V$</li>
 </ol>
-<h3 id="3-计算机软件"><a href="#3-计算机软件" class="headerlink" title="3. 计算机软件"></a>3. 计算机软件</h3><ol>
-<li>网络<ol>
-<li>物理层</li>
-<li>数据链路层：$\mathrm{MAC}$、载波侦听多路访问、指数退避</li>
-<li>网络层：交换机、路由、跳数限制</li>
-<li>传输层：报文、数据包、$\mathrm{IP}$、$\mathrm{UDP}$、$\mathrm{TCP}$ </li>
-<li>会话层：$\mathrm{URL}$、$\mathrm{DNS}$、$\mathrm{HTTP}$、$\mathrm{HTML}$</li>
+<h3 id="5-恒定电流"><a href="#5-恒定电流" class="headerlink" title="5. 恒定电流"></a>5. 恒定电流</h3><ol>
+<li>电流：$I&#x3D;\frac{\mathrm{d}q}{\mathrm{d}t}&#x3D;\iint \vec{J}\cdot \mathrm{d}\vec{S}$</li>
+<li>电流密度：$\vec{J}&#x3D;\frac{\mathrm{d}I}{\mathrm{d}\vec{S}}&#x3D;nq\vec{v}$</li>
+<li>恒定电流：$\oiint \vec{J}\cdot \mathrm{d}\vec{S}&#x3D;-\frac{\mathrm{d}q_{\text{内}}}{\mathrm{d}t}&#x3D;0$，$\sum I_i&#x3D;0$</li>
+<li>恒定电场：电荷分布不随时间改变，满足高斯定理、环路定理，但导体静电不平衡、需要能量维持</li>
+<li>电阻率：$\rho&#x3D;\rho_0(1+\alpha t)$</li>
+<li>电导率：$\sigma&#x3D;\frac{1}{\rho},\vec{J}&#x3D;\sigma \vec{E}$</li>
+<li>$-\sum(\pm)\varepsilon+\sum(\pm) IR&#x3D;0$，电动势方向：负极到正极；$I$ 与回路绕向一致取正</li>
+<li>$\vec{J}&#x3D;\frac{ne^2\tau}{m}\vec{E}$，$\sigma&#x3D;\frac{ne^2\tau}{m}$，$\tau$ 为两次碰撞间的平均时间</li>
+<li>焦耳定律：$p&#x3D;\sigma E^2$，$p$ 为电流热功率密度（单位时间体积内能）</li>
 </ol>
-</li>
-<li>信息安全<ol>
-<li>$\mathrm{Bell-LaPadula}$ 模型</li>
-<li>攻击方式：社会工程学、钓鱼、假托、木马、暴力、$\mathrm{NAND}$ 镜像</li>
-<li>漏洞利用：缓存区溢出（边界检查、金丝雀）、$\mathrm{SQL}$ 注入、蠕虫、僵尸网络</li>
-<li>加密：$\mathrm{Diffie-Hellman}$ 密钥交换（模幂）、非对称加密</li>
+<h3 id="6-磁场"><a href="#6-磁场" class="headerlink" title="6. 磁场"></a>6. 磁场</h3><ol>
+<li>$\vec{E},\vec{D}$ 为极矢量（垂直反转，镜像面上平行），$\vec{B},\vec{H}$ 为轴矢量（平行反转，镜像面上垂直）</li>
+<li>洛伦兹力：$\vec{F}&#x3D;q\vec{v}\times \vec{B}$</li>
+<li>电流元磁场：$\mathrm{d}\vec{B}&#x3D;\frac{\mu_0}{4\pi}\frac{I\mathrm{d}\vec{l}\times \hat{r}}{r^2}$</li>
+<li>载流直导线：$B&#x3D;\frac{\mu_0 I}{4\pi a}(\cos\phi_1-\cos\phi_2)$</li>
+<li>线圈：$B&#x3D;\frac{\mu_0 IR^2}{2x^3}$，螺线管：$B&#x3D;\frac{1}{2}\mu_0 n I(\cos\phi_2-\cos\phi_1)$</li>
+<li>磁偶极子：载有电流的小线圈，磁矩 $\vec{p}&#x3D;I\vec{S}$</li>
+<li>高斯定理：$\oint \vec{B}\cdot \mathrm{d}\vec{S}&#x3D;0$，磁通量仅由公共边界线决定，可定义磁矢势 $\oint \vec{A}\cdot \mathrm{d}\vec{L}&#x3D;\oiint \vec{B}\cdot \mathrm{d}\vec{S}$</li>
+<li>安培环路定理：$\oint \vec{B}\cdot \mathrm{d}\vec{l}&#x3D;\mu_0 \sum I_{\text{内}}$，$I_{\text{内}}$：与 $L$ 套连，与 $L$ 绕行方向右手螺旋取正</li>
+<li>无限大均匀载流平面：$B&#x3D;\frac{\mu_0}{2}j$，$j$：面电流密度</li>
 </ol>
-</li>
-<li>人工智能<ol>
-<li>分类：决策边界、混淆矩阵 $\Rightarrow$ 决策树 $\Rightarrow$ 森林 $\Rightarrow$ 支持向量机</li>
-<li>神经网络：加权、求和、偏置、激活</li>
-<li>$\mathrm{CV}$：颜色跟踪 $\Rightarrow$ 特征检测（核、卷积）$\Rightarrow$ 卷积神经网络</li>
-<li>$\mathrm{NLP}$：分析树、知识图谱、语音识别（$\mathrm{FFT}$）、语音合成</li>
-</ol>
-</li>
-</ol>
-<h2 id="二、MIT-Missing-Semester"><a href="#二、MIT-Missing-Semester" class="headerlink" title="二、MIT Missing Semester"></a>二、MIT Missing Semester</h2><h3 id="4-Shell"><a href="#4-Shell" class="headerlink" title="4. Shell"></a>4. Shell</h3><ol>
-<li>以 <code>/</code> 或盘符开头的是绝对路径，否则是相对路径；Linux,MacOS 用 <code>/</code>，Windows 用 <code>\</code></li>
-<li>命令：<code>which</code>，<code>sudo su</code>，<code>cat</code>，<code>curl</code>，<code>grep</code>，<code>tee</code></li>
-<li><code>cd</code> 需要权限 <code>x</code>；<code>ls</code> 需要权限 <code>r</code></li>
-<li><code>&#39;</code> 不转义变量，<code>&quot;</code> 转义变量</li>
-<li><code>$0</code> 脚本名，<code>$1-$9</code> 脚本参数，<code>$@</code> 所有参数，<code>$#</code> 参数个数，<code>$?</code> 返回值，<code>$$</code> PID，<code>!!</code> 上一个命令，<code>$_</code> 最后一个参数</li>
-<li>标准错误流 <code>2&gt;</code>；不等于 <code>-ne</code>；比较时用 <code>[[ ]]</code></li>
-<li>通配符：<code>*</code> 任意字符，<code>?</code> 单个字符，<code>[]</code> 字符集，<code>&#123;&#125;</code> 多个字符</li>
-<li><code>find</code>: <code>-name</code> 文件名，<code>-type</code> 文件类型，<code>-size</code> 文件大小，<code>-exec</code> 执行命令，<code>path</code> 路径，<code>-mtime</code> 修改时间</li>
-<li>正则表达式：<code>^</code> 开头，<code>$</code> 结尾，<code>.</code> 任意字符，<code>*</code> 0-多次，<code>+</code> 1-多次，<code>?</code> 0-1次，<code>[]</code> 字符集，<code>()</code> 分组，<code>|</code> 或，<code>\1,\2</code> 捕获组</li>
-<li>数据整理：<code>awk</code>，<code>sed</code>，<code>sort</code>，<code>uniq</code>，<code>paste</code>，<code>wc</code>，<code>head</code>，<code>tail</code></li>
-<li>终止：<code>^C</code> &#x3D; <code>SIGINT</code>，<code>^D</code> &#x3D; <code>EOF</code>，<code>^\</code> &#x3D; <code>SIGQUIT</code>，<code>kill</code> &#x3D; <code>SIGTERM</code>，<code>^Z</code> &#x3D; <code>SIGTSTP</code>，<code>SIGKILL</code> 立刻结束</li>
-<li>进程管理：<code>fg</code> 前台继续，<code>bg</code> 后台继续，<code>jobs</code> 查看，<code>pgrep</code> 查找，<code>$!</code> 最后一个进程，<code>nohup</code> 后台运行</li>
-<li>常用参数：<code>--verbose</code>，<code>-v</code>，<code>-vvv</code>，<code>--quiet</code>，<code>-</code>，<code>-r</code>，<code>-- -r</code></li>
-<li>常见目录：<code>/etc</code>，<code>/var</code>，<code>/tmp</code>，<code>/dev</code>，<code>/bin</code>，<code>/sbin</code>，<code>/opt</code>，<code>/lib</code></li>
-</ol>
-<h3 id="5-VIM"><a href="#5-VIM" class="headerlink" title="5. VIM"></a>5. VIM</h3><ol>
-<li>切模式：<code>i</code> 插入，<code>v</code> 可视，<code>V</code> 行可视，<code>^V</code> 块可视，<code>R</code> 替换，<code>:</code> 命令，<code>a</code> 插入</li>
-<li>移动：<code>hjkl</code>，<code>w</code>，<code>b</code>，<code>e</code>，<code>0</code>，<code>^</code>，<code>$</code>，<code>gg</code>，<code>G</code>，<code>H</code>，<code>M</code>，<code>L</code>，<code>^U</code>，<code>^D</code></li>
-<li>搜索：<code>%</code> 找配对括号，<code>f</code>,<code>t</code>,<code>F</code>,<code>T</code> 查找，<code>/</code> 搜索，<code>,</code>,<code>;</code>,<code>n</code>,<code>N</code> 导航匹配</li>
-<li>编辑：<code>o</code>，<code>O</code>，<code>r</code>，<code>d</code>，<code>x</code>，<code>s</code>，<code>y</code>，<code>p</code>，<code>u</code>，<code>~</code>，<code>.</code>，<code>i</code> 内部，<code>a</code> 周围，<code>ci[</code></li>
-</ol>
-<h3 id="6-GIT"><a href="#6-GIT" class="headerlink" title="6. GIT"></a>6. GIT</h3><ol>
-<li>命令：<code>init</code>，<code>status</code>，<code>add</code>，<code>commit</code>，<code>log</code>，<code>diff</code>，<code>checkout</code>，<code>branch</code>，<code>merge</code></li>
-<li>远程：<code>remote add</code>，<code>push</code>，<code>pull</code>，<code>clone</code>，<code>fetch</code></li>
-</ol>
-<h3 id="7-杂项"><a href="#7-杂项" class="headerlink" title="7. 杂项"></a>7. 杂项</h3><ol>
-<li>tmux：<code>tmux</code>，<code>tmux ls</code>，<code>tmux a</code>，<code>^A</code>+<code>d</code>,<code>c</code>,<code>1</code>,<code>n</code>,<code>p</code>,<code>,</code>,<code>w</code>,<code>&quot;</code>,<code>%</code>,<code>x</code>,<code>y</code>,<code>z</code></li>
-<li>ssh：<code>ssh</code>，<code>scp</code>，<code>ssh-keygen</code>，<code>ssh-copy-id</code></li>
-<li>配置文件：<code>~/.bashrc</code>，<code>~/.gitconfig</code>，<code>~/.vimrc</code>，<code>~/.tmux.conf</code>，<code>~/.ssh/config</code></li>
-<li>版本管理：主版本号.次版本号.补丁号</li>
-<li>元编程：Makefile，CMake，CI，GitHub Pages，Jekyll</li>
-<li>密码学：Hash 函数，盐，对称加密，密钥交换，非对称加密，加密邮件，数字签名</li>
-<li>其他：VM，Docker，Jupyter Notebook</li>
-</ol>
-
+<h3 id="7-磁力"><a href="#7-磁力" class="headerlink" title="7. 磁力"></a>7. 磁力</h3><h3 id="8-磁介质"><a href="#8-磁介质" class="headerlink" title="8. 磁介质"></a>8. 磁介质</h3><h3 id="9-电磁感应"><a href="#9-电磁感应" class="headerlink" title="9. 电磁感应"></a>9. 电磁感应</h3><h3 id="10-mathrm-Maxwell-方程组"><a href="#10-mathrm-Maxwell-方程组" class="headerlink" title="10. $\mathrm{Maxwell}$ 方程组"></a>10. $\mathrm{Maxwell}$ 方程组</h3>
                 
               </div>
             
@@ -415,9 +374,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="print-no-link">#计算机</a>
+        <a href="/tags/%E7%89%A9%E7%90%86/" class="print-no-link">#物理</a>
       
-        <a href="/tags/%E8%87%AA%E5%AD%A6/" class="print-no-link">#自学</a>
+        <a href="/tags/%E5%A4%A7%E4%BA%8C%E4%B8%8A/" class="print-no-link">#大二上</a>
       
     </div>
   
@@ -429,8 +388,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>自学(1)：计算机导论</div>
-      <div>https://sqzr2319.github.io/CSDIY-1/</div>
+      <div>大学物理B(2)</div>
+      <div>https://sqzr2319.github.io/Physics-B2/</div>
     </div>
     <div class="license-meta">
       
@@ -442,7 +401,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年2月16日</div>
+          <div>2025年11月9日</div>
         </div>
       
       
@@ -474,9 +433,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/43Class-3/" title="肆叁小灶第三讲 三大公式背后的“边界”之谜">
+                      <a href="/ProbStats/" title="随机数学与统计">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">肆叁小灶第三讲 三大公式背后的“边界”之谜</span>
+                        <span class="hidden-mobile">随机数学与统计</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -484,8 +443,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/Bytalk-2/" title="杂谈 | 逆天高三模卷数学压轴一则">
-                        <span class="hidden-mobile">杂谈 | 逆天高三模卷数学压轴一则</span>
+                      <a href="/43Class-9/" title="肆叁小灶第九讲 人工智能初步（下）">
+                        <span class="hidden-mobile">肆叁小灶第九讲 人工智能初步（下）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

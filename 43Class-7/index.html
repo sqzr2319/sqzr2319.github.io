@@ -29,7 +29,7 @@
 <meta property="og:image" content="https://sqzr2319.github.io/img/43Class-7/1.png">
 <meta property="og:image" content="https://sqzr2319.github.io/img/43Class-7/2.png">
 <meta property="article:published_time" content="2025-10-07T04:24:46.000Z">
-<meta property="article:modified_time" content="2025-11-02T05:16:02.933Z">
+<meta property="article:modified_time" content="2025-11-02T14:49:29.770Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="肆叁小灶">
 <meta property="article:tag" content="计算机">
@@ -298,7 +298,8 @@
                 <p>肆叁小灶第七讲，介绍了信息论、编码理论和 $\mathrm{Huffman}$ 编码。</p>
 <span id="more"></span>
 
-<p>笃实 43 班的同学们大家好。本学期《肆叁小灶》将预计更新 3-4 期：本期我们将从《数据结构》课中介绍的 $\mathrm{Huffman}$ 树出发，讲解其背后的理论基础——编码理论与信息论；之后，我们将用 2-3 期的篇幅带大家从零开始了解人工智能技术，直至学术前沿。希望同学们能通过本学期的《肆叁小灶》系列推送，对人工智能有一个初步的认识，为下学期的《人工智能基础》课程做好准备。</p>
+<p>笃实 43 班的同学们大家好。</p>
+<p>本学期《肆叁小灶》将预计更新 3-4 期：本期我们将从《数据结构》课中介绍的 $\mathrm{Huffman}$ 树出发，讲解其背后的理论基础——编码理论与信息论；之后，我们将用 2-3 期的篇幅带大家从零开始了解人工智能技术，直至学术前沿。希望同学们能通过本学期的《肆叁小灶》系列推送，对人工智能有一个初步的认识，为下学期的《人工智能基础》课程做好准备。</p>
 <p>废话不多说，让我们直接进入正题。</p>
 <h2 id="一、-mathrm-Huffman-编码"><a href="#一、-mathrm-Huffman-编码" class="headerlink" title="一、$\mathrm{Huffman}$ 编码"></a>一、$\mathrm{Huffman}$ 编码</h2><p>在《数据结构》课上，提到了 $\mathrm{Huffman}$ 树是“最优编码树”，但并没有给出具体的证明过程。事实上，由 $\mathrm{Huffman}$ 树构造而来的 $\mathrm{Huffman}$ 编码不仅是<strong>前缀码</strong>中最优的，也是所有<strong>唯一可译码</strong>中最优的；而在实际应用中，非唯一可译码并没有什么意义（因为它可能导致歧义），因此 $\mathrm{Huffman}$ 编码可以说是所有编码中最优的。</p>
 <blockquote>
@@ -358,22 +359,23 @@
 <p>例如：假设原始信息是等概率的 ${A,B,C}$，我们用 ${0,10,11}$ 对其进行信源编码，那么平均码长为 $\frac{1+2+2}{3}&#x3D;\frac{5}{3}$；接着，我们使用三重重复码（即将每个比特重复三次）再对其进行信道编码，那么平均码长变为 $\frac{3+6+6}{3}&#x3D;5$，因此信道传输速度为 $R&#x3D;\frac{5&#x2F;3}{5}&#x3D;\frac{1}{3}$。</p>
 <p>信道容量和信道传输速度间的关系由著名的 <strong>$\mathrm{Shannon}$ 第二定理</strong>，又称<strong>信道编码定理</strong>给出。它指出：只要信道传输速率 $R\le C$，就存在一种编码方式，使得误码率可以任意小（只要码长足够长）；反之，如果 $R&gt;C$，则任何编码方式的误码率都有一个不为零的下限。</p>
 <p>直观上看，噪声越少的信道，其信道容量 $C$ 越大，因此允许的信道传输速率 $R$ 也就越大（即在信道编码中可以引入更少的冗余来保证传输的可靠性）；反之，噪声越大的信道，其信道容量 $C$ 越小，因此允许的信道传输速率 $R$ 也就越小（即在信道编码中必须引入更多的冗余来保证传输的可靠性）。</p>
-<p>$\mathrm{Shannon}$ 第二定理本身的证明比较复杂，这里就不再赘述了。有兴趣的同学可以参考文末的阅读材料，或者直接阅读 $\mathrm{Shannon}$ 的原始论文《A Mathematical Theory of Communication》。这篇论文是整个信息论的奠基之作，其完整性甚至到今天还能作信息论教材使用，再怎么赞美都不为过。</p>
+<p>$\mathrm{Shannon}$ 第二定理本身的证明比较复杂，这里就不再赘述了。有兴趣的同学可以参考文末的“扩展阅读”章节，或者直接阅读 $\mathrm{Shannon}$ 的原始论文《A Mathematical Theory of Communication》。这篇论文是整个信息论的奠基之作，其完整性甚至到今天还能作信息论教材使用，再怎么赞美都不为过。</p>
 <h2 id="四、信息论的扩展与应用"><a href="#四、信息论的扩展与应用" class="headerlink" title="四、信息论的扩展与应用"></a>四、信息论的扩展与应用</h2><p>受 $\mathrm{Shannon}$ 信息论的启发，后续的研究者们提出了很多用于度量概率分布间距离的指标。这些指标至今仍在人工智能和概率统计领域有着广泛的应用。</p>
 <h3 id="4-1-分布间距离的度量"><a href="#4-1-分布间距离的度量" class="headerlink" title="4.1 分布间距离的度量"></a>4.1 分布间距离的度量</h3><p>在这些指标中，最著名的莫过于<strong>交叉熵</strong>：$\displaystyle H(P,Q)&#x3D;-\sum_x P(x)\log Q(x)$，它衡量了按照概率分布 $Q$ 的最优编码对真实分布为 $P$ 的信息进行编码的平均码长。在给定 $P$ 的情况下，如果 $Q$ 和 $P$ 越接近，交叉熵越小；如果 $Q$ 和 $P$ 越远，交叉熵就越大。</p>
-<p>容易发现，交叉熵的绝对大小与 $Q$ 本身的熵有关。为了消除这个影响，我们可以定义<strong>相对熵</strong>（又称 <strong>$\mathrm{Kullback–Leibler(KL)}$ 散度</strong>）：$\displaystyle KL(P,Q)&#x3D;H(P,Q)-H(P)&#x3D;-\sum_x P(x)\log\left(\frac{Q(x)}{P(x)}\right)$。$\mathrm{KL}$ 散度总是非负的，它衡量了使用 $Q$ 对 $P$ 进行编码时所引入的额外码长。</p>
-<p>然而，$\mathrm{KL}$ 散度并不满足对称性。**$\mathrm{Jensen-Shannon(JS)}$ 散度**是 $\mathrm{KL}$ 散度的一种改进，其定义为：$JS(P,Q)&#x3D;\frac{1}{2}KL\left(P,\frac{P+Q}{2}\right)+\frac{1}{2}KL\left(Q,\frac{P+Q}{2}\right)$。它解决了 $\mathrm{KL}$ 散度不对称的问题，但这两个散度都存在一个问题：如果两个分布没有重叠或者重叠非常少时，散度值会变得非常大，甚至趋于无穷大，这在实际应用中并不理想。</p>
+<p>容易发现，交叉熵的绝对大小与 $P$ 本身的熵有关。为了消除这个影响，我们可以定义<strong>相对熵</strong>（又称 <strong>$\mathrm{Kullback–Leibler(KL)}$ 散度</strong>）：$\displaystyle KL(P,Q)&#x3D;H(P,Q)-H(P)&#x3D;-\sum_x P(x)\log\left(\frac{Q(x)}{P(x)}\right)$。$\mathrm{KL}$ 散度总是非负的，它衡量了使用 $Q$ 对 $P$ 进行编码时所引入的额外码长。</p>
+<p>然而，$\mathrm{KL}$ 散度并不满足对称性。 <strong>$\mathrm{Jensen-Shannon(JS)}$ 散度</strong>是 $\mathrm{KL}$ 散度的一种改进，其定义为：$JS(P,Q)&#x3D;\frac{1}{2}KL\left(P,\frac{P+Q}{2}\right)+\frac{1}{2}KL\left(Q,\frac{P+Q}{2}\right)$。它解决了 $\mathrm{KL}$ 散度不对称的问题，但这两个散度都存在一个问题：如果两个分布没有重叠或者重叠非常少时，散度值会变得非常大，甚至趋于无穷大，这在实际应用中并不理想。</p>
 <p>为了解决这个问题，研究者们提出了 <strong>$\mathrm{Wasserstein}$ 距离</strong>。它的形式化定义比较复杂，但可以直观地理解为：如果将两个分布看作两个土堆，那么 $\mathrm{Wasserstein}$ 距离就是将一个土堆变成另一个土堆所需搬运的最小工作量。就比如下图所示：</p>
 <p><img src="/img/43Class-7/2.png" srcset="/img/loading.gif" lazyload></p>
 <p>$\mathrm{Wasserstein}$ 距离相较 $\mathrm{KL}$ 散度和 $\mathrm{JS}$ 散度的优势在于：即使两个分布没有重叠或者重叠非常少，$\mathrm{Wasserstein}$ 距离仍然能反映两个分布的远近。</p>
 <h3 id="4-2-信息论在人工智能中的应用"><a href="#4-2-信息论在人工智能中的应用" class="headerlink" title="4.2 信息论在人工智能中的应用"></a>4.2 信息论在人工智能中的应用</h3><p>前面提到，信息论中的这些分布间距离度量的指标在人工智能领域有着广泛的应用。例如，机器学习中最常用的损失函数之一<strong>交叉熵损失函数</strong>就是基于交叉熵定义的；又例如，今年年初爆火的 $\mathrm{DeepSeek-R1}$ 模型所使用的 $\mathrm{GRPO}$ 算法中就包含了 $\mathrm{KL}$ 散度惩罚项，用于稳定强化学习训练过程。</p>
-<p>此外，在生成式模型中，由于需要衡量生成分布和真实数据分布之间的差异，信息论中的这些指标也被广泛使用。例如：在生成对抗网络（$\mathrm{GAN}$）中，原始的 $\mathrm{GAN}$ 使用 $\mathrm{JS}$ 散度来衡量生成分布和真实数据分布之间的差异；而后续的 $\mathrm{Wasserstein}$ $\mathrm{GAN}$ 则使用 $\mathrm{Wasserstein}$ 距离来替代 $\mathrm{JS}$ 散度，从而提升了训练的稳定性和生成样本的质量。</p>
+<p>此外，在生成式模型中，由于需要衡量生成分布和真实数据分布之间的差异，信息论中的这些指标也被广泛使用。例如：在生成对抗网络（$\mathrm{GAN}$）中，原始的 $\mathrm{GAN}$ 使用 $\mathrm{JS}$ 散度来衡量生成分布和真实数据分布之间的差异；而后续的 $\mathrm{WassersteinGAN}$ 则使用 $\mathrm{Wasserstein}$ 距离来替代 $\mathrm{JS}$ 散度，从而提升了训练的稳定性和生成样本的质量。</p>
 <p>信息熵本身也在人工智能的学术前沿有着一席之地。众所周知，大模型的最终输出是从一个概率分布中采样得到的，而信息熵正是衡量这个概率分布不确定性的一个重要指标。一个质量更高的回答应当具有更高还是更低的信息熵，至今仍然是一个开放性的问题。</p>
-<p>关于人工智能的更多内容，敬请期待本学期后续的《肆叁小灶》系列推送。</p>
-<h2 id="阅读材料"><a href="#阅读材料" class="headerlink" title="阅读材料"></a>阅读材料</h2><ol>
+<p>关于人工智能的更多内容，敬请期待本学期后续的《肆叁小灶》系列推送。临近期中，也祝大家复习顺利，考试成功。</p>
+<h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><ol>
 <li>C. E. Shannon, “A Mathematical Theory of Communication”</li>
 <li>Stefan M. Moser, “A Student’s Guide to Coding and Information Theory”</li>
 <li>邱锡鹏，《神经网络与深度学习》nndl.github.io</li>
+<li>龙明盛，《机器学习》《深度学习》</li>
 </ol>
 
                 
@@ -477,8 +479,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/CSDIY-4/" title="自学笔记(4)">
-                        <span class="hidden-mobile">自学笔记(4)</span>
+                      <a href="/CSDIY-3/" title="自学(3)：离散数学">
+                        <span class="hidden-mobile">自学(3)：离散数学</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
