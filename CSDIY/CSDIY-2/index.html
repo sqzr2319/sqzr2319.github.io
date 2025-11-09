@@ -1,0 +1,827 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/sqzr2319.png">
+  <link rel="icon" href="/img/sqzr2319.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="sqzr2319">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="大一下学期的自学笔记，由机器学习、深度学习课程组成。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自学(2)：机器学习">
+<meta property="og:url" content="https://sqzr2319.github.io/CSDIY/CSDIY-2/index.html">
+<meta property="og:site_name" content="sqzr2319&#39;s blog">
+<meta property="og:description" content="大一下学期的自学笔记，由机器学习、深度学习课程组成。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://sqzr2319.github.io/img/CSDIY-24Summer/1.png">
+<meta property="og:image" content="https://sqzr2319.github.io/img/CSDIY-24Summer/2.png">
+<meta property="article:published_time" content="2025-07-01T11:46:31.000Z">
+<meta property="article:modified_time" content="2025-11-08T18:24:22.728Z">
+<meta property="article:author" content="sqzr2319">
+<meta property="article:tag" content="计算机">
+<meta property="article:tag" content="自学">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://sqzr2319.github.io/img/CSDIY-24Summer/1.png">
+  
+  
+  
+  <title>自学(2)：机器学习 - sqzr2319&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"sqzr2319.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\(', right: '\\)', display: false},
+        {left: '\\[', right: '\\]', display: true}
+      ]
+    });"></script>
+    <link rel="stylesheet" href="/css/custom.css">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>sqzr2319</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/Planet.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="自学(2)：机器学习"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-07-01 19:46" pubdate>
+          2025年7月1日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          21 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">自学(2)：机器学习</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>大一下学期的自学笔记，由机器学习、深度学习课程组成。</p>
+<span id="more"></span>
+
+<h2 id="一、统计学习"><a href="#一、统计学习" class="headerlink" title="一、统计学习"></a>一、统计学习</h2><h3 id="1-回归问题"><a href="#1-回归问题" class="headerlink" title="1. 回归问题"></a>1. 回归问题</h3><ol>
+<li>损失函数：均方误差损失 $\mathrm{MSE}$，$\sum (f(x)-y)^2$</li>
+<li>改进：基函数（获取非线性）、正则项（$\mathrm{L2,L1}$）</li>
+</ol>
+<h3 id="2-二分类问题"><a href="#2-二分类问题" class="headerlink" title="2. 二分类问题"></a>2. 二分类问题</h3><ol>
+<li>连接函数：$\mathrm{Sigmoid}$，$\sigma(f(x))&#x3D;\frac{1}{1+e^{-f(x)}}$</li>
+<li>损失函数：交叉熵，$l(x,y)&#x3D;y\log(\sigma(f(x)))+(1-y)\log(1-\sigma(f(x)))$</li>
+</ol>
+<h3 id="3-多分类问题"><a href="#3-多分类问题" class="headerlink" title="3. 多分类问题"></a>3. 多分类问题</h3><ol>
+<li>连接函数：$\mathrm{Softmax}$，$\sigma_i(f(x))&#x3D;\frac{e^{f_i(x)}}{\sum_j e^{f_j(x)}}$</li>
+<li>损失函数：交叉熵，$l(x,y)&#x3D;-\log(\sigma_y(f(x)))$</li>
+</ol>
+<h3 id="4-学习理论"><a href="#4-学习理论" class="headerlink" title="4. 学习理论"></a>4. 学习理论</h3><ol>
+<li>估计误差 $\mathrm{Estimation}$：训练所得函数与假设空间中最佳函数的距离</li>
+<li>近似误差 $\mathrm{Approximation}$：假设空间中最佳函数与真值函数的距离</li>
+<li>泛化误差：估计误差与近似误差之和</li>
+</ol>
+<h3 id="5-优化方法"><a href="#5-优化方法" class="headerlink" title="5. 优化方法"></a>5. 优化方法</h3><ol>
+<li>一阶方法：梯度下降（随机梯度下降）</li>
+<li>学习率衰减：$\eta_{\min}+\frac{1}{2}(\eta_{\max}-\eta_{\min})(1+\cos(\frac{T_{cur}}{T_{all}}\pi))$</li>
+<li>冲量法：$\Delta_t&#x3D;\beta\Delta_{t-1}+(1-\beta)\nabla J(\theta_t)$</li>
+<li>$\mathrm{Nesterov}$：$\theta_t^\prime&#x3D;\theta_t-\beta\Delta_{t-1},\Delta_t&#x3D;\beta\Delta_{t-1}+(1-\beta)\nabla J(\theta_t^\prime)$</li>
+<li>自适应学习率 $\mathrm{AdaGrad}$：$h&#x3D;\frac{1}{\sqrt{r_t}+\delta}$，$r_t$ 为历史梯度平方和，但容易爆炸</li>
+<li>$\mathrm{RMSProp}$：$r_t&#x3D;\rho r_{t-1}+(1-\rho)\nabla J(\theta_t)^2$，解决爆炸问题，可与冲量法连用</li>
+<li>自适应冲量 $\mathrm{Adam}$：将 $h$ 也作用在冲量项上，但需用分母修正 $r,s$ 偏差，可与 $\mathrm{Nesterov}$ 连用</li>
+<li>二阶方法：$\theta&#x3D;\theta-H^{-1}\nabla J(\theta)$（增量算法可直接算逆）</li>
+</ol>
+<p><img src="/img/CSDIY-24Summer/1.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="二、深度学习"><a href="#二、深度学习" class="headerlink" title="二、深度学习"></a>二、深度学习</h2><h3 id="6-多层感知机-mathrm-MLP"><a href="#6-多层感知机-mathrm-MLP" class="headerlink" title="6. 多层感知机 $\mathrm{MLP}$"></a>6. 多层感知机 $\mathrm{MLP}$</h3><ol>
+<li>感知机学习算法：$(x,\pm 1),y&#x3D;\mathrm{sgn}(\theta x)$，错误时 $\theta&#x3D;\theta+xy$，设置阈值并堆叠模拟逻辑或函数运算</li>
+<li>激活函数：$\mathrm{Sigmoid},\mathrm{ReLU},\mathrm{tanh},\mathrm{Softmax},\mathrm{GeLU},\mathrm{LeakyReLU}$</li>
+<li>优化：反向传播（基于残差或计算图）</li>
+<li>训练技巧：$\mathrm{Dropout}$、$\mathrm{ReLU}$ 初始方差改为 $\frac{2}{n}$</li>
+</ol>
+<h3 id="7-卷积神经网络-mathrm-CNN"><a href="#7-卷积神经网络-mathrm-CNN" class="headerlink" title="7. 卷积神经网络 $\mathrm{CNN}$"></a>7. 卷积神经网络 $\mathrm{CNN}$</h3><ol>
+<li>不变性（$fT&#x3D;f$）、等变性（$fT&#x3D;Tf$）</li>
+<li>卷积核参数：$\mathrm{Stride},\mathrm{Padding},\mathrm{Dilation}$</li>
+<li>训练技巧：池化 $\mathrm{Pooling}$、$\mathrm{BatchNormalization}$（改进：$\mathrm{GroupNormalization}$）、数据增广</li>
+<li>标准架构：$1\times 1$ 卷积、$\mathrm{Inception}$（多尺度卷积）、$\mathrm{ResNet}$（残差直连）</li>
+<li>轻量化：剪枝、权重聚类、组卷积（组间可洗牌）、通道分离卷积</li>
+<li>改进：视频 $\mathrm{3D}$ 卷积、$\mathrm{Attention}$（全局距离加权，度量学习）、通道加权、神经架构搜索</li>
+</ol>
+<h3 id="8-循环神经网络-mathrm-RNN"><a href="#8-循环神经网络-mathrm-RNN" class="headerlink" title="8. 循环神经网络 $\mathrm{RNN}$"></a>8. 循环神经网络 $\mathrm{RNN}$</h3><ol>
+<li>$h_t&#x3D;f(h_{t-1},x_t)&#x3D;\mathrm{tanh}(Wh_{t-1}+Ux_t),y_t&#x3D;Vh_t$，可改进为双向、多层</li>
+<li>应用方式：多对一、一对多、多对多</li>
+<li>优化：反向传播，但容易梯度爆炸或消失</li>
+<li>梯度爆炸：分块、梯度裁剪（$\mathrm{Clip}$）</li>
+<li>梯度消失：$\mathrm{LSTM}$（遗忘、写入、读取）</li>
+<li>训练技巧：$\mathrm{Dropout}$ 共享、$\mathrm{Layer Normalization}$（通道间归一）、课程学习（逐步将真值 $y$ 替换为预测）</li>
+<li>$\mathrm{Attention}$：逐层做 $h_t$ 相关性加权</li>
+</ol>
+<h3 id="9-图神经网络-mathrm-GNN"><a href="#9-图神经网络-mathrm-GNN" class="headerlink" title="9. 图神经网络 $\mathrm{GNN}$"></a>9. 图神经网络 $\mathrm{GNN}$</h3><ol>
+<li>节点相似性：$\frac{N(u)\cap N(v)}{N(u)\cup N(v)}$，但无法刻画远距离</li>
+<li>$\mathrm{DeepWalk}$：用随机游走的概率表示节点相似性，损失函数 $\displaystyle \sum_{u\in V}\sum_{v\in N(u)}-\log(\frac{\exp(z_u^Tz_v)}{\sum_{n\in V}\exp(z_u^Tz_n)})$</li>
+<li>改进：$\mathrm{node2vec}$（加权随机游走，平衡 $\mathrm{BFS}$ 和 $\mathrm{DFS}$）、分母随机采样降低复杂度</li>
+<li>图卷积网络 $\mathrm{GCN}$：效仿 $\mathrm{CNN}$ 特征聚合、同层参数共享，$\displaystyle h_v^k&#x3D;\sigma(W_k\sum_{u\in N(v)}\frac{h_u^{k-1}}{|N(v)|}+B_kh_v^{k-1})$</li>
+<li>改进：图注意力网络 $\mathrm{GAT}$（邻居加权）、聚类 $\mathrm{ClusterGCN}$（降低复杂度）</li>
+<li>训练技巧：在部分顶点上训练降低复杂度、将图卷积层改为 $\mathrm{MLP}$ 避免过平滑（小世界原理）、残差连接</li>
+</ol>
+<h3 id="10-mathrm-Transformer"><a href="#10-mathrm-Transformer" class="headerlink" title="10. $\mathrm{Transformer}$"></a>10. $\mathrm{Transformer}$</h3><ol>
+<li>$\mathrm{Attention}$：将 $x$ 转化为 $q,k,v$，$a&#x3D;\mathrm{Softmax}(\frac{q^Tk}{\sqrt{d}})$，$\mathrm{MQA,GQA}$ 头间共享 $k,v$</li>
+<li>$\mathrm{FFN}$：$\mathrm{FFN}(x)&#x3D;\mathrm{GeLU}(W_1x+b_1)W_2+b_2$，$\mathrm{dim}W&#x3D;d^2$ 且参数共享，$\mathrm{MoE}$ 中多个共用</li>
+<li>模仿 $\mathrm{CNN,RNN}$，引入<strong>加权</strong>残差连接、预先 $\mathrm{LayerNormalization}$（归一化或单位化）</li>
+<li>位置编码：$e_i(2j)&#x3D;\sin(\frac{i}{10000^{2j&#x2F;d}}),e_i(2j+1)&#x3D;\cos(\frac{i}{10000^{2j&#x2F;d}})$；或相对位置编码 $\mathrm{ALiBi}$、旋转位置编码 $f(x,m)&#x3D;xe^{im\theta},\theta_i&#x3D;10000^{-2(i-1)&#x2F;d}$</li>
+<li>改进：线性注意力、$\mathrm{MaskAttention}$（遮挡）、$\mathrm{FlashAttention}$（分块）、$\mathrm{RingAttention}$（分布式）</li>
+<li>$\mathrm{GPT}$：$\mathrm{Decoder}$，生成式预训练；$\mathrm{BERT}$：$\mathrm{Encoder}$，填空式预训练；$\mathrm{T5}$：完整版</li>
+</ol>
+<h3 id="11-语言模型"><a href="#11-语言模型" class="headerlink" title="11. 语言模型"></a>11. 语言模型</h3><ol>
+<li>$\mathrm{ScalingLaw}$：参数量 $\gt$ $\mathrm{BatchSize}\gt \mathrm{epoch}$；推理 $\gt$ 训练；扩大单模型 $\mathrm{vs}$ 多模型集成</li>
+<li>微调：全量微调（数据多易负迁移）、$\mathrm{Adapter}$（插适配头，如低秩适应微调 $\mathrm{LoRA}$，$\theta&#x3D;\theta+AB$）、部分微调（如调倒数两三层，数据少易过拟合）</li>
+<li>改进：加入正则项限制微调改变量、重跑预训练任务检查精度变化、多模型微调（根据相关性加权蒸馏）</li>
+<li>$\mathrm{RLHF}$：监督微调 $\to$ 训练奖励模型 $\to$ 强化学习；或 $\mathrm{DPO}$（直接用成对数据微调，可用大模型生成）</li>
+<li>$\mathrm{Prompting}$：$\mathrm{InContextLearning}$，思维链，集成工具，检索增强生成 $\mathrm{RAG}$（文档向量化 $\to$ 与问题计算相似度 $\to$ 写入 $\mathrm{Prompt}$）</li>
+<li>部署：量化（浮点转小整数）、推测解码 $\mathrm{SpeculativeDecoding}$（小模型生成大模型验证）</li>
+<li>视觉：$\mathrm{CLIP}$（弱监督图文对相似度矩阵对角化）、$\mathrm{Flamingo}$（将图 $\mathrm{token}$ 映射到文本空间）、$\mathrm{Q-Former}$（将图转化为 $\mathrm{query}$）</li>
+</ol>
+<h3 id="12-多模态与智能体"><a href="#12-多模态与智能体" class="headerlink" title="12. 多模态与智能体"></a>12. 多模态与智能体</h3><ol>
+<li>底层：$\mathrm{ViT}$（分块 $\mathrm{MLP}$ 后块间注意力）、$\mathrm{SwinTransformer}$（块内注意力，块滑动）</li>
+<li>训练方式：生成式预训练，如 $\mathrm{ImageGPT}$</li>
+<li>$\mathrm{CLIP}$：弱监督图文对，让相似度矩阵对角化</li>
+<li>多模态语言模型：$\mathrm{Flamingo}$（将图转为 $\mathrm{token}$ 嵌入文本）、$\mathrm{Q-Former}$（将图转为 $\mathrm{query}$）、$\mathrm{VQGAN}$（图转为最近码字，再解码计算相似度）</li>
+<li>纯多模态模型：$\mathrm{Fuyu}$（图文同等映射到另一空间）</li>
+<li>$\mathrm{Agent}$：规划（目标分解、自我反思）、记忆（长：历史经验；短：上下文）、工具（外部应用、大模型）、行动（虚拟、具身）、协作（人机、多代理）</li>
+</ol>
+<h3 id="13-迁移学习"><a href="#13-迁移学习" class="headerlink" title="13. 迁移学习"></a>13. 迁移学习</h3><ol>
+<li>多任务学习：共享参数 $+$ 任务头，损失函数加权（或范数归一、任务不确定性、帕累托最优）</li>
+<li>元学习：输入数据集直接输出最优学习器，分为训练任务（支撑集、验证集）、测试任务（训练集、测试集），优化目标为 $n$ 个训练任务的平均损失函数</li>
+<li>生成学习：先编码再解码算相似度，可对编码器做限制（稀疏性、范数、加噪声、加遮挡）</li>
+<li>对比学习：增广两个副本 $\to$ 分别转为特征向量 $\mathrm{query,key}\to$ 计算相似度，优化对比损失函数 $-\sum\log\frac{\exp(k_i^Tq_i&#x2F;\tau)}{\sum\exp(k_j^Tq_i&#x2F;\tau)}$，$\mathrm{SimCLR}$ 引入解码器</li>
+<li>改进：$\mathrm{MemoryBank}$ 存储定量 $\mathrm{key}$ 降低复杂度、$\mathrm{MoCo}$（用 $q$ 编码器的滑动平均更新 $k$ 编码器）、$\mathrm{SimSiam}$（无负例，单边解码，另一边停止梯度）</li>
+<li>领域自适应：$\mathrm{OOD}$，用 $H\Delta H$ 对称差散度衡量分布差异，如领域对抗神经网络 $\mathrm{DANN}$（用 $\mathrm{GAN}$ 将两领域映射到接近的领域，在接近领域上学习）</li>
+</ol>
+<h2 id="三、强化学习"><a href="#三、强化学习" class="headerlink" title="三、强化学习"></a>三、强化学习</h2><h3 id="14-表格式学习（状态、动作都离散）"><a href="#14-表格式学习（状态、动作都离散）" class="headerlink" title="14. 表格式学习（状态、动作都离散）"></a>14. 表格式学习（状态、动作都离散）</h3><ol>
+<li>算法：$\mathrm{SARSA}\to \mathrm{Q-learning}$（将$\mathrm{A^\prime}$ 替换为最优动作）</li>
+<li>改进：资格迹（每步衰减 $\gamma\lambda$，遇到就 $+1$）</li>
+</ol>
+<h3 id="15-价值函数逼近（状态空间连续）"><a href="#15-价值函数逼近（状态空间连续）" class="headerlink" title="15. 价值函数逼近（状态空间连续）"></a>15. 价值函数逼近（状态空间连续）</h3><ol>
+<li>核心思想：用以 $w$ 为参数的模型估计 $Q(S,A)$</li>
+<li>$\mathrm{TD-error}:\delta&#x3D;R+\gamma Q(S^\prime,A^\prime)-Q(S,A)$</li>
+<li>$w&#x3D;w-\alpha \nabla w\cdot\delta$（一步梯度下降）</li>
+<li>改进：$\mathrm{Q-learning}$、资格迹（将 $+1$ 替换为 $\nabla w\cdot Q(S,A))$</li>
+</ol>
+<h3 id="16-策略梯度方法（状态、动作都连续）"><a href="#16-策略梯度方法（状态、动作都连续）" class="headerlink" title="16. 策略梯度方法（状态、动作都连续）"></a>16. 策略梯度方法（状态、动作都连续）</h3><ol>
+<li>核心思想：用一个以 $\theta$ 为参数的模型获得策略</li>
+<li>离散型策略：$\mathrm{Softmax}$，$\pi(a|s,\theta)&#x3D;\frac{e^{J(s,a)}}{\sum e^{J(s,b)}}$</li>
+<li>连续型策略：$\mathrm{Gaussian}$</li>
+<li>策略梯度定理：$\nabla J(\theta)\propto q(s,a)\nabla \log \pi(a|s,\theta)$</li>
+<li>$\mathrm{REINFORCE}$：基于 $\mathrm{Monte Carlo}$ 方法，可引入 $\mathrm{Baseline}$（状态价值函数）减小方差，与价值函数逼近联用</li>
+<li>$\mathrm{Actor-Critic}$：基于时序差分方法，可引入资格迹 $\nabla \log \pi(a|s,\theta)$、$\mathrm{Baseline}$</li>
+<li>改进：近端策略优化 $\mathrm{TRPO,PPO}$，防止更新过大导致策略崩溃（用 $\mathrm{KL}$ 散度衡量新旧策略差异）</li>
+</ol>
+<h3 id="17-现代强化学习"><a href="#17-现代强化学习" class="headerlink" title="17. 现代强化学习"></a>17. 现代强化学习</h3><ol>
+<li>$\mathrm{DDPG}$：确定性策略梯度方法，在连续动作空间中更有效</li>
+<li>$\mathrm{SAC}$：优化策略的同时最大化策略的熵，鼓励随机探索</li>
+<li>基于模型的强化学习：学习环境模型，用模拟数据与真实数据一起训练策略，如 $\mathrm{Dyna-Q}$</li>
+</ol>
+<p><img src="/img/CSDIY-24Summer/2.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="4-生成式模型"><a href="#4-生成式模型" class="headerlink" title="4. 生成式模型"></a>4. 生成式模型</h3><h3 id="18-生成对抗网络-mathrm-GAN"><a href="#18-生成对抗网络-mathrm-GAN" class="headerlink" title="18. 生成对抗网络 $\mathrm{GAN}$"></a>18. 生成对抗网络 $\mathrm{GAN}$</h3><ol>
+<li>损失函数：对抗学习，$\displaystyle \min_G\max_D(\log D(x)+\log(1-D(G(z))))$，$D$ 为判别器，$G$ 为生成器（$\mathrm{Jensen-Shannon}$ 散度）</li>
+<li>改进：$\log(1-x)$ 好样本梯度爆炸、坏样本梯度消失，改为优化 $\log(D(G(z)))$；换用 $\mathrm{Wasserstein}$ 距离（将 $D$ 改为满足 $\mathrm{1-Lipschitz}$ 的连续函数）</li>
+<li>生成器实现：$\mathrm{DCGAN}$（逆向 $\mathrm{CNN}$，转置卷积）</li>
+<li>$\mathrm{Benchmark}$：$\mathrm{InceptionScore}$（可识别性分布与生成多样性分布的 $\mathrm{KL}$ 散度）、$\mathrm{FID}$（生成样本与真实样本的高斯分布差异）</li>
+<li>模式崩溃：使用 $\mathrm{GradientPenalty}$ 或系数矩阵谱归一化限制 $\mathrm{Lipschitz}$ 系数</li>
+<li>条件生成：加入重建误差，对标签数据 $(x_i,y_i)$ 优化 $\displaystyle\min_G\max_D(\log D(x_i,y_i)+\log(1-D(G(x_i,z_i)))+|G(x_i,z_i)-y_i|)$</li>
+</ol>
+<h3 id="19-变分自编码器-mathrm-VAE"><a href="#19-变分自编码器-mathrm-VAE" class="headerlink" title="19. 变分自编码器 $\mathrm{VAE}$"></a>19. 变分自编码器 $\mathrm{VAE}$</h3><h3 id="20-扩散模型-mathrm-Diffusion"><a href="#20-扩散模型-mathrm-Diffusion" class="headerlink" title="20. 扩散模型 $\mathrm{Diffusion}$"></a>20. 扩散模型 $\mathrm{Diffusion}$</h3>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%AC%94%E8%AE%B0/" class="category-chain-item">笔记</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="print-no-link">#计算机</a>
+      
+        <a href="/tags/%E8%87%AA%E5%AD%A6/" class="print-no-link">#自学</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>自学(2)：机器学习</div>
+      <div>https://sqzr2319.github.io/CSDIY/CSDIY-2/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>sqzr2319</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年7月1日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/43Class/43Class-6/" title="肆叁小灶第六讲 .NET 开发与 C# 基础">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">肆叁小灶第六讲 .NET 开发与 C# 基础</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/43Class/43Class-5/" title="肆叁小灶第五讲 数据结构预备知识（下）">
+                        <span class="hidden-mobile">肆叁小灶第五讲 数据结构预备知识（下）</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"byMlA6LzFKznnESJrecWspL9-gzGzoHsz","appKey":"1yTsGiEmKhEyjL3JTJzFKiDu","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

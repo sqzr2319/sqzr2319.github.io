@@ -1,0 +1,988 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/sqzr2319.png">
+  <link rel="icon" href="/img/sqzr2319.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="sqzr2319">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="大一下学期微积分A(2)的复习笔记，目前已完结。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微积分A(2)">
+<meta property="og:url" content="https://sqzr2319.github.io/25Spring/Calculus-A2/index.html">
+<meta property="og:site_name" content="sqzr2319&#39;s blog">
+<meta property="og:description" content="大一下学期微积分A(2)的复习笔记，目前已完结。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-06-13T04:04:23.000Z">
+<meta property="article:modified_time" content="2025-06-12T13:08:07.232Z">
+<meta property="article:author" content="sqzr2319">
+<meta property="article:tag" content="数学">
+<meta property="article:tag" content="大一下">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>微积分A(2) - sqzr2319&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"sqzr2319.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\(', right: '\\)', display: false},
+        {left: '\\[', right: '\\]', display: true}
+      ]
+    });"></script>
+    <link rel="stylesheet" href="/css/custom.css">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>sqzr2319</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/Planet.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="微积分A(2)"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-06-13 12:04" pubdate>
+          2025年6月13日 中午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          50 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">微积分A(2)</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>大一下学期微积分A(2)的复习笔记，目前已完结。</p>
+<span id="more"></span>
+
+<h2 id="一、多元微分"><a href="#一、多元微分" class="headerlink" title="一、多元微分"></a>一、多元微分</h2><h3 id="1-赋范线性空间"><a href="#1-赋范线性空间" class="headerlink" title="1. 赋范线性空间"></a>1. 赋范线性空间</h3><ol>
+<li>$\mathbb R^n$ 中非空的道路连通的开集称为开区域，<strong>开区域的闭包</strong>称为闭区域</li>
+<li>道路联通的闭集<strong>不一定</strong>是闭区域</li>
+<li>凸区域：$\forall x,y\in\Omega,\lambda x+(1-\lambda)y\in\Omega$</li>
+</ol>
+<h3 id="2-极限与连续"><a href="#2-极限与连续" class="headerlink" title="2. 极限与连续"></a>2. 极限与连续</h3><ol>
+<li>若 $x_0$ 是 $\Omega$ 的孤立点，则 $f$ 在 $x_0$ 处连续</li>
+<li>在<strong>开区域</strong>中定义的初等函数处处连续</li>
+<li>$|f(x)|\le M|g(x)|$，则 $f(x)&#x3D;O(g(x))\Leftrightarrow g(x)&#x3D;\Omega(f(x))$</li>
+<li>$f$ 为连续函数当且仅当开集的原像为开集</li>
+</ol>
+<h3 id="3-导数与微分"><a href="#3-导数与微分" class="headerlink" title="3. 导数与微分"></a>3. 导数与微分</h3><ol>
+<li>不可微时即使偏导函数都存在也不存在梯度</li>
+<li>隐函数定理(1)：$\frac{\partial F}{\partial y}(x_0,y_0)$ 可逆 $\Rightarrow \frac{\partial y}{\partial x}&#x3D;-(\frac{\partial F}{\partial y})^{-1}\frac{\partial F}{\partial x}$</li>
+<li>隐函数定理(2)：$\frac{\partial y}{\partial x_i}&#x3D;-\frac{\frac{\partial F}{\partial x_i}}{\frac{\partial F}{\partial y}}$</li>
+<li>逆映射定理：$J(f)|_{x_0}$ 可逆 $\Rightarrow J(f^{-1})&#x3D;(J(f))^{-1}$</li>
+</ol>
+<h3 id="4-Taylor-公式"><a href="#4-Taylor-公式" class="headerlink" title="4. Taylor 公式"></a>4. Taylor 公式</h3><ol>
+<li>$\displaystyle f(x)&#x3D;\sum_{k&#x3D;0}^{n}\frac{1}{k!}(h_1\frac{\partial}{\partial x_1}+h_2\frac{\partial}{\partial x_2}+\cdots+h_m\frac{\partial}{\partial x_m})^kf(x_0)+o(|x-x_0|^n)$</li>
+<li>$f(x)&#x3D;f(x_0)+J_f(x_0)\cdot(x-x_0)+\frac{1}{2}(x-x_0)^T H_f(x_0)(x-x_0)+o(||x-x_0||^2)$</li>
+</ol>
+<h3 id="5-空间曲线与曲面"><a href="#5-空间曲线与曲面" class="headerlink" title="5. 空间曲线与曲面"></a>5. 空间曲线与曲面</h3><ol>
+<li>详见<a href="https://sqzr2319.github.io/LinearAlgebra-1">线性代数(1)</a></li>
+<li>$z&#x3D;f(x,y)$ 法向量：$(-f^{\prime}x,-f^{\prime}y,1)$</li>
+<li>$F(x,y,z)&#x3D;0$ 法向量：$\nabla F$</li>
+</ol>
+<h3 id="6-无条件极值与条件极值"><a href="#6-无条件极值与条件极值" class="headerlink" title="6. 无条件极值与条件极值"></a>6. 无条件极值与条件极值</h3><ol>
+<li>驻点 $+$ $\mathrm{Hesse}$ 矩阵正定或负定 $\Rightarrow$ 无条件极值（反之不成立）</li>
+<li>拉乘求得的解一定是条件最值但不一定是极值（需验算 $\mathrm{Hesse}$ 矩阵）</li>
+<li>存在函数 $f(x,y)&#x3D;x^2+y^2(1-x)^3$ 使得函数在 $\mathbb R^2$ 上一阶连续可微且存在唯一极值点，但该极值点不是最值点</li>
+</ol>
+<h3 id="7-例题"><a href="#7-例题" class="headerlink" title="7. 例题"></a>7. 例题</h3><ol>
+<li>$(2021)$ 已知函数 $f(x,y)$ 在 $(1,1)$ 处可微，且 $f(1,1)&#x3D;1,f^{\prime}_x(1,1)&#x3D;2,f^{\prime}_y(1,1)&#x3D;3$，设 $g(x)&#x3D;f(x,f(x,x))$，求 $g^{\prime}(1)$</li>
+<li>$(2021)$ 已知 $(axy^3-y^2\cos x)\mathrm{d}x+(1+by\sin x+3x^2y^2)\mathrm{d}y$ 为某一函数 $f(x,y)$ 的全微分，求 $a,b$ 的值及 $f(x,y)$</li>
+<li>$(2023)$ 设函数 $f(x,y)$ 在 $\mathbb R^2$ 上二次连续可微，对 $\forall \theta \in \mathbb R$，令 $g_\theta(t)&#x3D;f(t\cos\theta,t\sin\theta)$，假设 $\frac{\mathrm{d}g_\theta(t)}{\mathrm{d}t}\vert_{t&#x3D;0}&#x3D;0$ 且 $\frac{\mathrm{d}^2g_\theta(t)}{\mathrm{d}t^2}\vert_{t&#x3D;0}\gt 0,\forall \theta \in \mathbb R$，证明函数 $f(x,y)$ 在点 $(0,0)$ 处取得极小值</li>
+<li>$(2023)$ 根据隐函数定理，证明方程组 $\begin{cases}x^3+y^3&#x3D;2z^3\\x+y+z&#x3D;3\end{cases}$ 在点 $(1,1,1)$ 附近确定了两个 $C^{\infty}$ 类隐函数 $y&#x3D;y(x),z&#x3D;z(x)$，并证明隐函数 $z&#x3D;z(x)$ 在 $x&#x3D;1$ 处取得极值</li>
+<li>$(2024)$ 设可微函数 $u(x,y)$ 满足 $u(x,x^2)&#x3D;1$ 且 $\frac{\partial u}{\partial x}(x,x^2)&#x3D;x$，求 $\frac{\partial u}{\partial y}(x,x^2)$</li>
+<li>$(2023)$ 已知椭球面 $\frac{x^2}{8}+\frac{y^2}{4}+\frac{z^2}{2}&#x3D;1$ 与平面 $x+2y+2z&#x3D;0$ 的交线是椭圆，其在 $Oxy$ 平面上的投影曲线 $\Tau$ 也是椭圆，求 $\Tau$ 的四个顶点坐标</li>
+<li>$(3.15)$ 在方程 $(xy+z)\frac{\partial z}{\partial x}+(1-y^2)\frac{\partial z}{\partial y}&#x3D;x+yz$ 中作代换 $u&#x3D;yz-x,v&#x3D;xz-y,w&#x3D;xy-z$，其中视 $w$ 是 $u,v$ 的函数，求代换后的方程</li>
+<li>$(3.26)$ 曲线 $S$ 由方程 $ax+by+cz&#x3D;G(x^2+y^2+z^2)$ 确定，试证明：曲线 $S$ 上任一点的法线与某定直线相交</li>
+<li>$(3.27)$ 求两曲面 $F(x,y,z)&#x3D;0$ 和 $G(x,y,z)&#x3D;0$ 的交线在 $xy$ 平面上的投影曲线的切线方程</li>
+<li>$(4.34)$ 证明：椭球面 $\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}&#x3D;1$ 与平面 $Ax+By+Cz&#x3D;0$ 相交所截的椭圆面积为 $S&#x3D;\pi abc\sqrt{\frac{A^2+B^2+C^2}{A^2a^2+B^2b^2+C^2c^2}}$</li>
+</ol>
+<h3 id="8-证明题"><a href="#8-证明题" class="headerlink" title="8. 证明题"></a>8. 证明题</h3><ol>
+<li>$(2021)$ 已知函数 $f(x,y)$ 对每个变量 $x,y$ 分别连续，且对每个固定的 $x$，函数 $f(x,y)$ 对 $y$ 单调，证明：$f(x,y)$ 作为二元函数是连续函数</li>
+<li>$(2023)$ 对在 $\mathbb R^2$ 上连续可微的函数 $g(x,y)$，假设曲线 $\{(x,y)\in \mathbb R^2|g(x,y)&#x3D;0\}$ 具有无穷大符号 $\infty$ 的形状，问函数 $g(x,y)$ 在 $\mathbb R^2$ 上至少有多少个驻点？并证明你的结论。</li>
+<li>$(2024)$ 设 $D\subset\mathbb R^2$ 是一个非空有界闭区域，$f$ 是 $D$ 上的连续函数，证明：至多只有一个函数 $u(x,y)$ 在 $D$ 上连续，在 $D$ 的内部 $\mathring D$ 为 $C^2$ 类，且满足 $\begin{cases} u^{\prime\prime}_{xx}+u^{\prime\prime}_{yy}&#x3D;e^u,(x,y)\in \mathring D\\u&#x3D;f,(x,y) \in \partial D\end{cases}$</li>
+<li>$(2024)$ 设 $K$ 是 $\mathbb R^k$ 的非空有界闭子集，函数 $f:\mathbb R^m\times K\to \mathbb R$ 连续，记 $\displaystyle g(\mathrm{x})&#x3D;\min_{\mathrm{y}\in K}f(\mathrm{x},\mathrm{y})$，证明：$g:\mathbb R^m\to \mathbb R$ 连续</li>
+<li>$(2.12)$ 设 $\frac{\partial f}{\partial x}(x_0,y_0)$ 存在，$\frac{\partial f}{\partial y}(x,y)$ 连续，证明：$f(x,y)$ 在点 $(x_0,y_0)$ 处可微</li>
+<li>$(3.11)$ 设 $u&#x3D;f(z)$，其中 $z$ 是由方程 $z&#x3D;x+y\varphi(z)$ 所定义的变量为 $x,y$ 的隐函数，求证：$\displaystyle \frac{\partial^n u}{\partial y^n}&#x3D;\frac{\partial^{n-1}}{\partial x^{n-1}}\left((\varphi(z))^n\frac{\partial u}{\partial x}\right)$，其中 $\varphi(z)$ 无穷次可微</li>
+<li>$(4.11)$ $f$ 在 $\mathbb R^2$ 上一阶连续可微，且 $\forall (x,y)\neq (0,0)$，有 $xf^{\prime}_x(x,y)+yf^{\prime}_y(x,y)\gt 0$，证明：原点是 $f$ 的唯一极小值点，且 $\displaystyle \lim_{(x,y)\to (0,0)}\frac{f(x,y)-f(0,0)}{\sqrt{x^2+y^2}}&#x3D;0$</li>
+<li>$(4.13)$ 已知 $D&#x3D;\{(x,y):0\lt x\lt 1,0\lt y\lt 1\},f(x,y)&#x3D;ax^2+bxy+cy^2+dx+ey$，且 $\forall (x,y)\in \partial D$，有 $f(x,y)\le 0$，证明：$\forall (x,y)\in D$，有 $f(x,y)\le 0$</li>
+</ol>
+<h2 id="二、含参积分"><a href="#二、含参积分" class="headerlink" title="二、含参积分"></a>二、含参积分</h2><h3 id="1-含参定积分的性质（参数范围为有限闭区间）"><a href="#1-含参定积分的性质（参数范围为有限闭区间）" class="headerlink" title="1. 含参定积分的性质（参数范围为有限闭区间）"></a>1. 含参定积分的性质（参数范围为<strong>有限闭区间</strong>）</h3><ol>
+<li>连续、可积：$f(x,y)$ 在 $[a,b]\times [\alpha,\beta]$ 上连续</li>
+<li>可微：$f(x,y),f^{\prime}_y(x,y)$ 在 $[a,b]\times [\alpha,\beta]$ 上连续</li>
+<li>可微的计算：$\displaystyle \frac{\mathrm{d}}{\mathrm{d}y}\int_{\alpha(y)}^{\beta(y)} f(x,y)\mathrm{d}x&#x3D;\int_{\alpha(y)}^{\beta(y)} f^{\prime}_y(x,y)\mathrm{d}x+f(\beta(y),y)\cdot\beta^{\prime}(y)-f(\alpha(y),y)\cdot\alpha^{\prime}(y)$</li>
+</ol>
+<h3 id="2-含参广义积分的性质（参数范围为有限闭区间）"><a href="#2-含参广义积分的性质（参数范围为有限闭区间）" class="headerlink" title="2. 含参广义积分的性质（参数范围为有限闭区间）"></a>2. 含参广义积分的性质（参数范围为<strong>有限闭区间</strong>）</h3><ol>
+<li>连续、可积<ol>
+<li>$f(x,y)$ 在 $[a,+\infty)\times [\alpha,\beta]$ 上连续（同定积分）</li>
+<li>$\displaystyle \int_a^{+\infty}f(x,y)\mathrm{d}x$ 在 $y\in[\alpha,\beta]$ 上<strong>一致收敛</strong></li>
+</ol>
+</li>
+<li>可微<ol>
+<li>$f(x,y),f^{\prime}_y(x,y)$ 在 $[a,+\infty)\times [\alpha,\beta]$ 上连续（同定积分）</li>
+<li>$\displaystyle \int_a^{+\infty}f(x,y)\mathrm{d}x$ 在 $y\in[\alpha,\beta]$ 上<strong>逐点收敛</strong></li>
+<li>$\displaystyle \int_a^{+\infty}f^{\prime}_y(x,y)\mathrm{d}x$ 在 $y\in[\alpha,\beta]$ 上<strong>一致收敛</strong></li>
+</ol>
+</li>
+</ol>
+<h3 id="3-二元无穷限累次积分的性质（参数范围为无穷限区间）"><a href="#3-二元无穷限累次积分的性质（参数范围为无穷限区间）" class="headerlink" title="3. 二元无穷限累次积分的性质（参数范围为无穷限区间）"></a>3. 二元无穷限累次积分的性质（参数范围为<strong>无穷限区间</strong>）</h3><ol>
+<li>交换积分次序<ol>
+<li>$f(x,y)$ 在 $[a,+\infty)\times [\alpha,+\infty)$ 上连续（同定积分）</li>
+<li>$\displaystyle \forall \beta\gt \alpha,\int_a^{+\infty}f(x,y)\mathrm{d}x$ 在 $y\in[\alpha,\beta]$ 上<strong>一致收敛</strong></li>
+<li>$\displaystyle \forall b\gt a,\int_\alpha^{+\infty}f(x,y)\mathrm{d}y$ 在 $x\in[a,b]$ 上<strong>一致收敛</strong></li>
+<li>$\displaystyle \int_\alpha^{+\infty}\mathrm{d}y\int_a^{+\infty}\left|f(x,y)\right|\mathrm{d}x$ 和 $\displaystyle \int_a^{+\infty}\mathrm{d}x\int_\alpha^{+\infty}\left|f(x,y)\right|\mathrm{d}y$ 中至少有一个存在</li>
+</ol>
+</li>
+</ol>
+<h3 id="4-含参广义积分判敛"><a href="#4-含参广义积分判敛" class="headerlink" title="4. 含参广义积分判敛"></a>4. 含参广义积分判敛</h3><ol>
+<li>方法<ol>
+<li>定义</li>
+<li>$\mathrm{Cauchy}$</li>
+<li>$\mathrm{Weierstrass}$</li>
+<li>$\mathrm{Dirichlet}$</li>
+<li>$\mathrm{Abel}$</li>
+</ol>
+</li>
+<li>技巧<ol>
+<li>连续延拓</li>
+<li>取任意闭区间 $[a,b]$ 逼近开区间</li>
+</ol>
+</li>
+<li>注意事项<ol>
+<li><strong>技巧2.2只能用于连续不能用于一致收敛</strong></li>
+<li>一致收敛是连续的<strong>充分非必要</strong>条件</li>
+</ol>
+</li>
+</ol>
+<h3 id="5-技巧与例题"><a href="#5-技巧与例题" class="headerlink" title="5. 技巧与例题"></a>5. 技巧与例题</h3><ol>
+<li>微分方程的求解：详见<a href="https://sqzr2319.github.io/Calculus-A1">微积分A(1)</a></li>
+<li>常用积分公式：$\begin{cases}\displaystyle \int e^{ax}\cos bx\mathrm{d}x&#x3D;\frac{e^{ax}}{a^2+b^2}(a\cos bx+b\sin bx)+C\\\displaystyle \int e^{ax}\sin bx\mathrm{d}x&#x3D;\frac{e^{ax}}{a^2+b^2}(a\sin bx-b\cos bx)+C\end{cases}$</li>
+<li>$(2024)$ 设 $\displaystyle I(y)&#x3D;\int_0^{+\infty}e^{-x^2}\sin(2xy)\mathrm{d}x$，证明：$\displaystyle I(y)&#x3D;e^{-y^2}\int_0^y e^{-t^2}\mathrm{d}t$</li>
+<li>$(5.26)$ 试利用积分 $\displaystyle \varphi(x)&#x3D;\int_0^1 \frac{e^{-x^2(1+u^2)}}{1+u^2}\mathrm{d}u$ 计算积分 $\displaystyle I&#x3D;\int_0^{+\infty} e^{-x^2}\mathrm{d}x$</li>
+<li>$(5.4)$ 证明：$\mathrm{Bessel}$ 函数 $\displaystyle I_n(x)&#x3D;\frac{1}{\pi}\int_0^{\pi}\cos(n\varphi-x\sin\varphi)\mathrm{d}\varphi,n\in \mathbb Z$ 满足 $\mathrm{Bessel}$ 方程 $x^2I^{\prime\prime}_n(x)+xI^{\prime}_n(x)+(x^2-n^2)I_n(x)&#x3D;0$</li>
+<li>$(5.17)$ 证明：$\displaystyle \int_0^{+\infty} \frac{\sin x^2y}{x}\mathrm{d}x$ 在 $y\in (0,+\infty)$ 不一致收敛，但连续</li>
+</ol>
+<h2 id="三、重积分与曲线曲面积分"><a href="#三、重积分与曲线曲面积分" class="headerlink" title="三、重积分与曲线曲面积分"></a>三、重积分与曲线曲面积分</h2><h3 id="1-重积分的性质"><a href="#1-重积分的性质" class="headerlink" title="1. 重积分的性质"></a>1. 重积分的性质</h3><ol>
+<li>可积条件：$D$ 为有界闭集，$f$ 为 $D$ 上的有界函数，$f$ 在 $D$ 上的间断点集为零面积集，$\partial D$ 为零面积集</li>
+<li>积分估值：$\displaystyle \left|\iint_D f(x,y)\mathrm{d}x\mathrm{d}y\right|\le \iint_D |f(x,y)|\mathrm{d}x\mathrm{d}y$</li>
+<li>对称性：$D$ 关于 $OX$ 轴对称，若 $f(x,y)$ 关于 $y$ 为奇函数，则 $\displaystyle \iint_D f(x,y)\mathrm{d}x\mathrm{d}y&#x3D;0$；若为偶函数，则 $\displaystyle \iint_D f(x,y)\mathrm{d}x\mathrm{d}y&#x3D;2\iint_{D_1} f(x,y)\mathrm{d}x\mathrm{d}y$，其中 $D_1$ 为 $D$ 关于 $OX$ 轴的上半部分</li>
+<li>轮换不变性：$D$ 关于 $x,y$ 轮换对称，则 $\displaystyle \iint_D f(x,y)\mathrm{d}x\mathrm{d}y&#x3D;\iint_D f(y,x)\mathrm{d}x\mathrm{d}y$</li>
+<li>积分中值定理：$f,g$ 在连通集 $D$ 上连续且$g$ 不变号，则 $\displaystyle \iint_D f(x,y)g(x,y)\mathrm{d}x\mathrm{d}y&#x3D;f(\xi,\eta)\cdot \iint_D g(x,y)\mathrm{d}x\mathrm{d}y$，其中 $(\xi,\eta)$ 为 $D$ 内某点</li>
+</ol>
+<h3 id="2-重积分的计算"><a href="#2-重积分的计算" class="headerlink" title="2. 重积分的计算"></a>2. 重积分的计算</h3><ol>
+<li>极坐标&#x2F;柱坐标：$\displaystyle \iint_D f(x,y)\mathrm{d}x\mathrm{d}y&#x3D;\iint_E f(r\cos \theta,r\sin \theta)r\mathrm{d}r\mathrm{d}\theta$</li>
+<li>变量替换：$\displaystyle \iint_D f(x,y)\mathrm{d}x\mathrm{d}y&#x3D;\iint_E f(x(u,v),y(u,v))\left|\frac{\partial(x,y)}{\partial(u,v)}\right|\mathrm{d}u\mathrm{d}v$</li>
+<li>球坐标：$\displaystyle \iiint_D f(x,y,z)\mathrm{d}x\mathrm{d}y\mathrm{d}z&#x3D;\iiint_E f(r\sin\varphi\cos\theta,r\sin\varphi\sin\theta,r\cos\varphi)r^2\sin \varphi \mathrm{d}r\mathrm{d}\theta\mathrm{d}\varphi$</li>
+</ol>
+<h3 id="3-第一型曲线曲面积分的性质"><a href="#3-第一型曲线曲面积分的性质" class="headerlink" title="3. 第一型曲线曲面积分的性质"></a>3. 第一型曲线曲面积分的性质</h3><ol>
+<li>可积条件：$S$ 为光滑曲面，$f(x,y,z)$ 在 $S$ 上连续</li>
+<li>积分估值：$\displaystyle \left|\iint_S f(x,y,z)\mathrm{d}S\right|\le \iint_S |f(x,y,z)|\mathrm{d}S$</li>
+<li>轮换不变性：$S$ 关于 $x,y$ 轮换对称，则 $\displaystyle \iint_S f(x,y,z)\mathrm{d}S&#x3D;\iint_S f(y,x,z)\mathrm{d}S$</li>
+<li>对称性：$S$ 关于 $xy$ 平面对称，$f(x,y,z)$ 关于 $z$ 为奇函数，则 $\displaystyle \iint_S f(x,y,z)\mathrm{d}S&#x3D;0$</li>
+</ol>
+<h3 id="4-第一型曲线曲面积分的计算"><a href="#4-第一型曲线曲面积分的计算" class="headerlink" title="4. 第一型曲线曲面积分的计算"></a>4. 第一型曲线曲面积分的计算</h3><ol>
+<li>曲面参数形式：$\displaystyle \iint_S f(x,y,z)\mathrm{d}S&#x3D;\iint_D f(x(u,v),y(u,v),z(u,v))||r^\prime u\times r^\prime v||\mathrm{d}u\mathrm{d}v$</li>
+<li>曲面函数形式：$\displaystyle \iint_S f(x,y,z)\mathrm{d}S&#x3D;\iint_D f(x,y,z(x,y))\sqrt{1+z^{\prime}_x(x,y)^2+z^{\prime}_y(x,y)^2}\mathrm{d}x\mathrm{d}y$</li>
+<li>曲线参数形式：$\displaystyle \int_L f(x,y,z)\mathrm{d}l&#x3D;\int_a^b f(x(t),y(t),z(t))\sqrt{x^\prime(t)^2+y^\prime(t)^2+z^\prime(t)^2}\mathrm{d}t$</li>
+</ol>
+<h3 id="5-第二型曲线曲面积分的性质"><a href="#5-第二型曲线曲面积分的性质" class="headerlink" title="5. 第二型曲线曲面积分的性质"></a>5. 第二型曲线曲面积分的性质</h3><ol>
+<li>可积条件：$S$ 为有向光滑曲面，向量场 $\vec{v}(x,y,z)$ 在 $S$ 上连续</li>
+<li>$\displaystyle \iint_{S^-} \vec{v}\cdot \mathrm{d}\vec{S}&#x3D;-\iint_S \vec{v}\cdot \mathrm{d}\vec{S}$</li>
+</ol>
+<h3 id="6-第二型曲线曲面积分的计算"><a href="#6-第二型曲线曲面积分的计算" class="headerlink" title="6. 第二型曲线曲面积分的计算"></a>6. 第二型曲线曲面积分的计算</h3><ol>
+<li>曲面参数形式：$\displaystyle \iint_S \vec{v}\cdot \mathrm{d}\vec{S}&#x3D;\pm\iint_D(PA+QB+RC)\mathrm{d}u\mathrm{d}v$，$(A,B,C)$ 与正单位法向量同向时取正号</li>
+<li>曲面函数形式：$\displaystyle \iint_S \vec{v}\cdot \mathrm{d}\vec{S}&#x3D;\pm\iint_D(-Pf^{\prime}_x(x,y)-Qf^{\prime}_y(x,y)+R)\mathrm{d}x\mathrm{d}y$，$(-f^{\prime}_x(x,y),-f^{\prime}_y(x,y),1)$ 与正单位法向量同向时取正号</li>
+<li><strong>推论</strong>：$\displaystyle \iint_S R\mathrm{d}x\wedge \mathrm{d}y&#x3D;\pm \iint_D R\mathrm{d}x\mathrm{d}y$，$OZ$ 与正单位法向量同向时取正号</li>
+<li><strong>推论</strong>：球面法向量 $&#x3D;r\sin \varphi\cdot (x,y,z)^T$</li>
+<li>曲线参数形式：$\displaystyle \int_L \vec{v}\cdot \mathrm{d}\vec{l}&#x3D;\int_a^b(Px^\prime(t)+Qy^\prime(t)+Rz^\prime(t))\mathrm{d}t$，$a,b$ 对应曲线起点、终点</li>
+</ol>
+<h3 id="7-常用积分公式：详见微积分A-1"><a href="#7-常用积分公式：详见微积分A-1" class="headerlink" title="7. 常用积分公式：详见微积分A(1)"></a>7. 常用积分公式：详见<a href="https://sqzr2319.github.io/Calculus-A1">微积分A(1)</a></h3><ol>
+<li>$\displaystyle \int_0^{\frac{\pi}{2}}\sin^{2n}\theta\mathrm{d}\theta&#x3D;\int_0^{\frac{\pi}{2}}\cos^{2n}\theta\mathrm{d}\theta&#x3D;\frac{(2n-1)!!}{(2n)!!}\cdot \frac{\pi}{2}$</li>
+<li>$\displaystyle \int_0^{\frac{\pi}{2}}\sin^{2n-1}\theta\mathrm{d}\theta&#x3D;\int_0^{\frac{\pi}{2}}\cos^{2n-1}\theta\mathrm{d}\theta&#x3D;\frac{(2n-2)!!}{(2n-1)!!}$</li>
+<li>$\displaystyle \int\frac{\mathrm{d}x}{\sqrt{x^2\pm a^2}}&#x3D;\ln\left|x+\sqrt{x^2\pm a^2}\right|+C$</li>
+<li>$\displaystyle \int \sqrt{a^2-x^2}\mathrm{d}x&#x3D;\frac{x}{2}\sqrt{a^2-x^2}+\frac{a^2}{2}\arcsin\frac{x}{a}+C$</li>
+<li>$\displaystyle \int \sqrt{x^2\pm a^2}\mathrm{d}x&#x3D;\frac{x}{2}\sqrt{x^2\pm a^2}\pm\frac{a^2}{2}\ln\left|x+\sqrt{x^2\pm a^2}\right|+C$</li>
+<li>$\displaystyle \int\frac{\mathrm{d}x}{(a^2+x^2)^2}&#x3D;\frac{1}{2a^2}\left(\frac{x}{a^2+x^2}+\frac{1}{a}\arctan\frac{x}{a}\right)+C$</li>
+</ol>
+<h3 id="8-三大公式"><a href="#8-三大公式" class="headerlink" title="8. 三大公式"></a>8. 三大公式</h3><ol>
+<li>$\mathrm{Green}$ 公式：有界闭区域 $D$，$\partial D$ 逐段光滑，且沿 $\partial D$ 的正向前进时，$D$ 在 $\partial D$ 的左侧，$\vec{v}$ 在 $D$ 上连续可微，则 $\begin{cases}\displaystyle \oint_{\partial D} \vec{v}\cdot \vec{\tau}\mathrm{d}l&#x3D;\iint_D \nabla \times \vec{v}\mathrm{d}x\mathrm{d}y\\\displaystyle \oint_{\partial D} \vec{v}\cdot \vec{n}\mathrm{d}S&#x3D;\iint_D \nabla \cdot \vec{v}\mathrm{d}x\mathrm{d}y\end{cases}$</li>
+<li>$\mathrm{Gauss}$ 公式：有界闭区域 $D$，$D$ 的外边界曲面 $\partial D$ 逐片光滑，$\vec{v}$ 在 $D$ 上连续可微，则 $\displaystyle \oiint_{\partial D} \vec{v}\cdot \vec{n}\mathrm{d}S&#x3D;\iiint_D \nabla \cdot \vec{v}\mathrm{d}x\mathrm{d}y\mathrm{d}z$</li>
+<li>$\mathrm{Stokes}$ 公式：有向曲面 $S$ 逐片光滑，$\partial S$ 逐段光滑，站在 $S$ 的正面，沿 $\partial S$ 的正向前进时，$S$ 在 $\partial S$ 的左侧，$\vec{v}$ 在 $S$ 上连续可微，则 $\displaystyle \oint_{\partial S} \vec{v}\cdot \vec{\tau} \mathrm{d}l&#x3D;\iint_S (\nabla \times \vec{v})\cdot \vec{n}\mathrm{d}S$</li>
+<li>常见应用方式<ol>
+<li>将围绕奇点的复杂闭曲线转化为简单闭曲线</li>
+<li>将无旋场中的复杂曲线转化为简单曲线</li>
+<li>与常规方法联用证明等式</li>
+</ol>
+</li>
+</ol>
+<h3 id="9-场论"><a href="#9-场论" class="headerlink" title="9. 场论"></a>9. 场论</h3><ol>
+<li>定义<ol>
+<li>保守场：积分与路径无关</li>
+<li>单连通：任意简单闭曲线的内部都包含在区域中（可连续收缩变形为一点）</li>
+<li>面连通：任意封闭曲面的内部都包含在区域中</li>
+<li>线连通：任一简单闭曲线均有区域中的曲面以其为边界</li>
+<li>线连通与面连通既不充分也不必要</li>
+</ol>
+</li>
+<li>连续的保守场 $\Leftrightarrow$ 有势场</li>
+<li>连续可微的保守场 $\Rightarrow$ 无旋场</li>
+<li>单连通&#x2F;线连通区域上的连续可微保守场 $\Leftrightarrow$ 无旋场</li>
+<li>场论视角下的恰当方程：详见<a href="https://sqzr2319.github.io/Calculus-A1">微积分A(1)</a></li>
+</ol>
+<h3 id="10-证明题"><a href="#10-证明题" class="headerlink" title="10. 证明题"></a>10. 证明题</h3><ol>
+<li>$(§3.2)$ 设 $f(x)\in C[0,1],f\gt 0,f$ 递减，证明：$\displaystyle \frac{\int_0^1 xf^2(x)\mathrm{d}x}{\int_0^1 xf(x)\mathrm{d}x}\le \frac{\int_0^1 f^2(x)\mathrm{d}x}{\int_0^1 f(x)\mathrm{d}x}$</li>
+<li>$(§3.2)$ 设 $D&#x3D;\{(x,y)|0\le x,y\le 1\},z&#x3D;f(x,y)\in C^2(D)$，若 $\begin{cases}\left|\dfrac{\partial^2 f(x,y)}{\partial x\partial y}\right|\le 4,\forall (x,y)\in D\\f(x,y)&#x3D;f^{\prime}_x(x,y)&#x3D;0,\forall (x,y)\in \partial D\end{cases}$，证明：$\displaystyle \left|\iint_D f(x,y)\mathrm{d}x\mathrm{d}y\right|\le 1$</li>
+<li>$(§3.3)$ 证明：若 $f$ 连续，则 $\displaystyle \iint_{|x|,|y|\le \frac{a}{2}} f(x-y)\mathrm{d}x\mathrm{d}y&#x3D;\int_{-a}^a f(t)(a-|t|)\mathrm{d}t$</li>
+<li>$(6.27)$ 证明：$\displaystyle \iint_{[0,1]^2} (xy)^{xy} \mathrm{d}x\mathrm{d}y&#x3D;\int_0^1 t^t dt$</li>
+<li>$(6.30)$ 设 $f\in C[0,\pi],0\lt f(x,y)\le M$，证明：$\displaystyle 0\lt I&#x3D;\left(\int_0^\pi f(x)\mathrm{d}x\right)^2-\left(\int_0^\pi f(x)\cos x\mathrm{d}x\right)^2-\left(\int_0^\pi f(x)\sin x\mathrm{d}x\right)^2\le M^2(\pi^2-4)$</li>
+<li>$(6.32)$ 设 $p(x)$ 在 $[a,b]$ 上非负可积，$f(x),g(x)$ 在 $[a,b]$ 上递增，证明：$\displaystyle \int_a^b p(x)f(x)\mathrm{d}x\cdot \int_a^b p(x)g(x)\mathrm{d}x\le \int_a^b p(x)\mathrm{d}x\cdot \int_a^b p(x)f(x)g(x)\mathrm{d}x$</li>
+<li>$(6.35)$ 设 $D&#x3D;\{(x,y)|x^2+y^2\le 1\}$，函数 $f(x,y)$ 在 $D$ 上有二阶连续偏导数，在 $\partial D$ 上 $f(x,y)&#x3D;0$，证明：$\displaystyle \iint_D f(x,y)\left(\frac{\partial^2 f}{\partial x^2}+\frac{\partial^2 f}{\partial y^2}\right)\mathrm{d}x\mathrm{d}y\le 0$</li>
+<li>$(6.36)$ 设 $D&#x3D;\{(x,y)|0\le x,y\le 1\},f(x,y)\in C^4(D),\left|\dfrac{\partial^4 f(x,y)}{\partial x^2\partial y^2}\right|\le M,\forall (x,y)\in D,f(x,y)&#x3D;0,\forall (x,y)\in \partial D$，证明：<ol>
+<li>令 $g(x,y)&#x3D;xy(1-x)(1-y)$，则 $\displaystyle \iint_D \frac{\partial^4 f(x,y)}{\partial x^2\partial y^2}g(x,y)\mathrm{d}x\mathrm{d}y&#x3D;\iint_D \frac{\partial^4 g(x,y)}{\partial x^2\partial y^2}f(x,y)\mathrm{d}x\mathrm{d}y$</li>
+<li>$\displaystyle \left|\iint_D f(x,y)\mathrm{d}x\mathrm{d}y\right|\le \frac{M}{144}$</li>
+</ol>
+</li>
+<li>$(§4.1)$ 设 $f(x)\in C[0,1]$，证明：<ol>
+<li>$\displaystyle \int_0^{\frac{\pi}{2}} \mathrm{d}\theta\int_0^{\frac{\pi}{2}} \sin\varphi f(\sin\varphi\sin\theta)\mathrm{d}\varphi&#x3D;\frac{\pi}{2}\int_0^{\frac{\pi}{2}}\sin\varphi f(\cos\varphi)\mathrm{d}\varphi$</li>
+<li>计算 $\displaystyle I&#x3D;\iint_{0\le \varphi,\theta\le \frac{\pi}{2}} \sin\varphi e^{\sin\varphi\sin\theta}\mathrm{d}\varphi\mathrm{d}\theta$</li>
+</ol>
+</li>
+<li>$(§4.1)(\mathrm{Poisson})$ 设 $S&#x3D;\{(x,y,z)|x^2+y^2+z^2&#x3D;1\}$，证明：$\displaystyle \oiint_S f(ax+by+cz)\mathrm{d}S&#x3D;2\pi\int_{-1}^1 f(\sqrt{a^2+b^2+c^2}t)\mathrm{d}t$</li>
+<li>$(§4.4)$ 设 $\Omega$ 为平面区域，$u(x,y)\in C^2(\Omega)$，证明：$u^{\prime\prime}_{xx}+u^{\prime\prime}_{yy}&#x3D;0$ 的充要条件是对 $\Omega$ 内的任意区域 $D$，有 $\displaystyle \oint_{\partial D} \frac{\partial u}{\partial \vec{n}}\mathrm{d}l&#x3D;0$</li>
+<li>$(§4.4)$ 设 $f(x,y)\in C^2(\mathbb R),f^{\prime\prime}_{xx}+f^{\prime\prime}_{yy}&#x3D;e^{-(x^2+y^2)}$，证明：<ol>
+<li>$\displaystyle \oint_{L_r} \frac{\partial f}{\partial \vec{n}}\mathrm{d}l&#x3D;\pi (1-e^{-r^2}),L_r:x^2+y^2&#x3D;r^2$，逆时针</li>
+<li>$\displaystyle \iint_{x^2+y^2\le 1} (xf^{\prime}_x(x,y)+yf^{\prime}_y(x,y))\mathrm{d}x\mathrm{d}y&#x3D;\frac{\pi}{2e}$</li>
+</ol>
+</li>
+<li>$(8.22)$ 设 $P(x,y),Q(x,y)$ 是从 $A$ 到 $B$ 的光滑曲线 $AB$ 上的连续函数，$AB$ 的长度为 $l$，证明：<ol>
+<li>$\displaystyle \left|\int_{AB} P\mathrm{d}x+Q\mathrm{d}y\right|\le lM$，其中 $\displaystyle M&#x3D;\max_{(x,y)\in AB}\sqrt{P^2(x,y)+Q^2(x,y)}$</li>
+<li>设 $L:x^2+y^2&#x3D;R^2$，逆时针方向，$\displaystyle I_R&#x3D;\int_L \frac{y\mathrm{d}x-x\mathrm{d}y}{(x^2+xy+y^2)^2}$，则 $\displaystyle \lim_{R\to +\infty} I_R&#x3D;0$</li>
+</ol>
+</li>
+<li>$(9.8)$ 设 $P(x,y),Q(x,y)$ 在全平面上有连续偏导数，而且对任意点 $(x_0,y_0)$ 为中心，以任意正数 $r$ 为半径的上半圆 $C:x&#x3D;x_0+r\cos \theta,y&#x3D;y_0+r\sin \theta(0\le \theta\le \pi)$，都有 $\displaystyle \int_C P\mathrm{d}x+Q\mathrm{d}y&#x3D;0$，证明：$P(x,y)&#x3D;0,\dfrac{\partial Q}{\partial y}&#x3D;0$</li>
+<li>$(9.16)$ 设 $\vec{v}&#x3D;(P(x,y,z),Q(x,y,z),R(x,y,z))^T\in C^1(\mathbb{R}^3)$，且 $\begin{cases}\nabla \cdot \vec{v}(x,y,z)&#x3D;0,\forall (x,y,z)\in \Omega\\\vec{v}(x,y,z)&#x3D;(1,1,1)^T,\forall (x,y,z)\in \partial \Omega\end{cases}$，其中 $\Omega$ 是 $\mathbb R^3$ 中以原点为球心的单位球，证明：$\displaystyle \iiint_\Omega (P+Q+R)\mathrm{d}x\mathrm{d}y\mathrm{d}z&#x3D;4\pi$</li>
+</ol>
+<h2 id="四、级数"><a href="#四、级数" class="headerlink" title="四、级数"></a>四、级数</h2><h3 id="1-常数项级数"><a href="#1-常数项级数" class="headerlink" title="1. 常数项级数"></a>1. 常数项级数</h3><ol>
+<li>常数项级数的性质<ol>
+<li>$\mathrm{Cauchy}$ 收敛原理：$\displaystyle \forall \varepsilon\gt 0,\exists N\in \mathbb N,\forall m,n\ge N,\left|\sum_{k&#x3D;m}^n a_k\right|\lt \varepsilon$</li>
+<li>收敛的级数必有 $\displaystyle \lim_{n\to +\infty} a_n&#x3D;0$</li>
+</ol>
+</li>
+<li>非负项级数<ol>
+<li>收敛充要条件：部分和数列有上界</li>
+<li>$\mathrm{Cauchy}$ 积分判别法：设 $f(x)$ 在 $[1,+\infty)$ 上单调下降且非负，则 $\displaystyle \sum_{n&#x3D;1}^{\infty} f(n)$ 与 $\displaystyle \int_1^{+\infty}f(x)\mathrm{d}x$ 同敛散</li>
+<li>比较判别法</li>
+<li>$\mathrm{Cauchy}$ 根式判别法：$q\lt 1$ 收敛，$q\gt 1$ 发散</li>
+<li>比值判别法</li>
+<li>$\mathrm{D’Alembert}$ 判别法：$q\lt 1$ 收敛，$q\gt 1$ 发散</li>
+<li>$\mathrm{Raabe}$ 判别法：$n\left(\frac{a_n}{a_{n+1}}-1\right)\to r$，则 $r\gt 1$ 收敛，$r\lt 1$ 发散</li>
+<li>$\mathrm{Gauss}$ 判别法：$\frac{a_n}{a_{n+1}}&#x3D;\lambda+\frac{\mu}{n}+\frac{\nu}{n\ln n}+o\left(\frac{1}{n\ln n}\right),\nu\gt 1$ 收敛，$\nu\lt 1$ 发散</li>
+</ol>
+</li>
+<li>任意项级数<ol>
+<li>比较判别法对任意项级数不成立，如级数 $\frac{(-1)^n}{n+(-1)^n}$ 收敛，但级数 $\frac{(-1)^n}{\sqrt{n}+(-1)^n}$ 发散</li>
+<li>交错项级数的 $\mathrm{Leibnitz}$ 判别法：单调递减趋于零</li>
+<li>$\mathrm{Dirichlet}$ 判别法：$a_n$ 单调递减趋于零，$b_n$ 部分和有界</li>
+<li>$\mathrm{Abel}$ 判别法：$a_n$ 单调有界，$b_n$ 部分和收敛</li>
+<li>$\displaystyle \sum_{k&#x3D;1}^n \cos k&#x3D;\frac{\sin(n+\frac{1}{2})-\sin\frac{1}{2}}{2\sin\frac{1}{2}}$，从而级数 $\frac{\cos n}{n}$ 收敛</li>
+<li>若使用结合律后每个括号内同正负，则原级数收敛</li>
+<li>绝对收敛的数列有交换律，条件收敛没有交换律</li>
+<li>$\mathrm{Cauchy}$ 乘积：$\displaystyle \sum_{n&#x3D;1}^{\infty} (a_1b_n+\cdots+a_nb_1)$ 为级数 $a_n,b_n$ 的 $\mathrm{Cauchy}$ 乘积，若级数 $a_n,b_n$ 收敛，则其 $\mathrm{Cauchy}$ 乘积收敛到其乘积</li>
+</ol>
+</li>
+<li>例题<ol>
+<li>级数 $a_n^2,b_n^2$ 收敛，证明：级数 $(a_n+b_n)^2$ 收敛，级数 $\frac{a_n}{n}$ 绝对收敛</li>
+<li>$(10.13)$ 设 $a_n\gt 0$，证明：无论级数 $a_n$ 是否收敛，级数 $\frac{a_n}{S_n^p}$ 对任意 $p\gt 1$ 收敛</li>
+<li>$(10.21)$ 已知级数 $u_n$ 收敛，则以下级数中收敛的有：级数 $(-1)^n\frac{u_n}{n}$，级数 $u_n^2$，级数 $u_n-u_{2n}$，级数 $u_n+u_{n+1}$</li>
+</ol>
+</li>
+</ol>
+<h3 id="2-函数项级数"><a href="#2-函数项级数" class="headerlink" title="2. 函数项级数"></a>2. 函数项级数</h3><ol>
+<li>一致收敛的判定<ol>
+<li>$\mathrm{Cauchy}$ 准则：级数 $u_n(x)$ 一致收敛当且仅当 $\displaystyle \forall \varepsilon\gt 0,\exists N\in \mathbb N,\forall m,n\ge N,\left|\left|\sum_{k&#x3D;m}^n a_k(x)\right|\right|_{\infty}\lt \varepsilon$</li>
+<li>$\mathrm{Weierstrass}$ 判别法：$||u_n(x)||_\infty\le M_n$</li>
+<li>$\mathrm{Dirichlet}$ 判别法：$\forall x_0,u_n(x_0)$ 单调且 $u_n(x)$ 一致趋于零，$v_n(x)$ 部分和一致有界</li>
+<li>$\mathrm{Abel}$ 判别法：$\forall x_0,u_n(x_0)$ 单调且 $u_n(x)$ 一致有界，级数 $v_n(x)$ 一致收敛</li>
+</ol>
+</li>
+<li>一致收敛的性质<ol>
+<li>$u_n(x)$ 连续，级数 $u_n(x)$ 一致收敛，则可逐项取极限</li>
+<li>$u_n(x)$ 连续，级数 $u_n(x)$ 一致收敛，则可逐项积分</li>
+<li>$u_n(x)$ 导函数连续，级数 $u_n^\prime(x)$ 一致收敛，且存在 $x_0$ 使得级数 $u_n(x_0)$ 收敛，则级数 $u_n(x)$ 一致收敛，且可逐项求导</li>
+</ol>
+</li>
+<li>幂级数<ol>
+<li>幂级数在收敛半径内点点绝对收敛，收敛半径外点点发散，在收敛域上内闭一致绝对收敛</li>
+<li>若在 $x_0$ 处条件收敛，则收敛半径等于 $x_0$</li>
+<li>若 $\displaystyle \lim_{n\to \infty} \sqrt[n]{|a_n|}&#x3D;q$，则 $\rho&#x3D;\frac{1}{q}$</li>
+<li>若 $\displaystyle \lim_{n\to \infty} \frac{|a_{n+1}|}{|a_{n}|}&#x3D;q$，则 $\rho&#x3D;\frac{1}{q}$</li>
+<li>逐项积分、逐项求导不改变收敛半径，但可能改变收敛域</li>
+<li>若导函数列在 $x_0$ 的邻域内一致有界，则 $f$ 在 $x_0$ 的邻域内可展开成 $\mathrm{Taylor}$ 级数</li>
+</ol>
+</li>
+<li>$\mathrm{Fourier}$ 级数<ol>
+<li>$\displaystyle f(x)&#x3D;\frac{a_0}{2}+\sum_{n&#x3D;1}^{+\infty}\left(a_n\cos \frac{n\pi x}{l}+b_n\sin \frac{n\pi x}{l}\right)$，其中 $\displaystyle a_n&#x3D;\frac{1}{l}\int_{-l}^{l}f(x)\cos \frac{n\pi x}{l}\mathrm{d}x,b_n&#x3D;\frac{1}{l}\int_{-l}^{l}f(x)\sin \frac{n\pi x}{l}\mathrm{d}x$</li>
+<li>分段可微的函数其 $\mathrm{Fourier}$ 级数收敛到左右极限的平均值</li>
+<li>分段单调有界的函数其 $\mathrm{Fourier}$ 级数收敛到左右极限的平均值</li>
+<li>$\mathrm{Parseval}$ 等式：$\displaystyle \frac{a_0^2}{2}+\sum_{n&#x3D;1}^{\infty}\left(a_n^2+b_n^2\right)&#x3D;\frac{1}{l}\int_{-l}^{l}f^2(x)\mathrm{d}x$</li>
+<li>绝对可积的函数其 $\mathrm{Fourier}$ 级数逐项可积，且级数 $\frac{b_n}{n}$ 收敛</li>
+<li>导函数绝对可积的函数其 $\mathrm{Fourier}$ 级数逐项可微</li>
+</ol>
+</li>
+<li>例题<ol>
+<li>$(11.17)$ 求 $\frac{x\sin\alpha}{1-2x\cos\alpha+x^2}$ 的幂级数展开式</li>
+<li>$(11.24)$ 设 $\displaystyle \lim_{n\to \infty}a_n&#x3D;a,f(x)&#x3D;\sum_{n&#x3D;1}^\infty a_nx^n$，证明：<ol>
+<li>$\displaystyle \lim_{x\to 1^-}(1-x)f(x)&#x3D;a$</li>
+<li>$\displaystyle \lim_{x\to 1^-}(1-x)\int_0^x \frac{f(t)}{1-t}\mathrm{d}t&#x3D;a$</li>
+</ol>
+</li>
+<li>$(11.33)$ 验证函数 $\displaystyle y(x)&#x3D;\sum_{n&#x3D;0}^{\infty} \frac{x^{3n}}{(3n)!}$ 满足微分方程 $y^{\prime\prime}+y^\prime+y&#x3D;e^x$，并求其和函数</li>
+<li>$(11.36)$ 设幂级数 $a_nx^n$ 的收敛半径大于零，$a_1\neq 0$，且在原点的一个邻域内 $\displaystyle \left|\sum_{n&#x3D;1}^{\infty}a_nx^n\right|\ge|a_1||x|-2x^2$，证明：$|a_2|\le 2$</li>
+<li>$(12.27)$ 证明：存在收敛的三角级数，其不是任何函数的 $\mathrm{Fourier}$ 级数</li>
+<li>证明：级数 $\frac{\sin nx}{\ln n}$，级数 $\frac{\sin nx}{\ln\ln n}$ 不是任何绝对可积函数的 $\mathrm{Fourier}$ 级数</li>
+</ol>
+</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%AC%94%E8%AE%B0/" class="category-chain-item">笔记</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E6%95%B0%E5%AD%A6/" class="print-no-link">#数学</a>
+      
+        <a href="/tags/%E5%A4%A7%E4%B8%80%E4%B8%8B/" class="print-no-link">#大一下</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>微积分A(2)</div>
+      <div>https://sqzr2319.github.io/25Spring/Calculus-A2/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>sqzr2319</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年6月13日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Others/LSSXQM/" title="离散数学(2) 期末真题">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">离散数学(2) 期末真题</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/25Spring/LinearAlgebra-2/" title="线性代数(2)">
+                        <span class="hidden-mobile">线性代数(2)</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"byMlA6LzFKznnESJrecWspL9-gzGzoHsz","appKey":"1yTsGiEmKhEyjL3JTJzFKiDu","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
