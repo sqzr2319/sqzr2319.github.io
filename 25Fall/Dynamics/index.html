@@ -19,13 +19,15 @@
   <meta name="author" content="sqzr2319">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="article">
+    <meta name="description" content="大二上学期动力学的复习笔记，目前更新至动力学普遍定理。">
+<meta property="og:type" content="article">
 <meta property="og:title" content="动力学基础">
 <meta property="og:url" content="https://sqzr2319.github.io/25Fall/Dynamics/index.html">
 <meta property="og:site_name" content="sqzr2319&#39;s blog">
+<meta property="og:description" content="大二上学期动力学的复习笔记，目前更新至动力学普遍定理。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-12-09T10:49:03.000Z">
-<meta property="article:modified_time" content="2025-11-12T16:45:06.995Z">
+<meta property="article:published_time" content="2025-11-15T04:04:23.000Z">
+<meta property="article:modified_time" content="2025-12-06T17:32:58.978Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="大二上">
 <meta property="article:tag" content="物理">
@@ -225,8 +227,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-12-09 18:49" pubdate>
-          2025年12月9日 晚上
+        <time datetime="2025-11-15 12:04" pubdate>
+          2025年11月15日 中午
         </time>
       </span>
     
@@ -237,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          0 字
+          1.6k 字
         
       </span>
     
@@ -248,7 +250,7 @@
         
         
         
-          1 分钟
+          13 分钟
         
       </span>
     
@@ -290,7 +292,102 @@
             
               <div class="markdown-body">
                 
-                
+                <p>大二上学期动力学的复习笔记，目前更新至动力学普遍定理。</p>
+<span id="more"></span>
+
+<h2 id="一、质点运动"><a href="#一、质点运动" class="headerlink" title="一、质点运动"></a>一、质点运动</h2><h3 id="1-直角坐标"><a href="#1-直角坐标" class="headerlink" title="1. 直角坐标"></a>1. 直角坐标</h3><ol>
+<li>标量三重积（混合积）：$\mathbf{a}\cdot(\mathbf{b}\times \mathbf{c})&#x3D;\mathbf{b}\cdot(\mathbf{c}\times \mathbf{a})&#x3D;\mathbf{c}\cdot(\mathbf{a}\times \mathbf{b})$</li>
+<li>矢量三重积：$\mathbf{a}\times(\mathbf{b}\times \mathbf{c})&#x3D;\mathbf{b}(\mathbf{a}\cdot \mathbf{c})-\mathbf{c}(\mathbf{a}\cdot \mathbf{b})$</li>
+</ol>
+<h3 id="2-自然坐标"><a href="#2-自然坐标" class="headerlink" title="2. 自然坐标"></a>2. 自然坐标</h3><ol>
+<li>速度：$\mathbf{v}(t)&#x3D;\dot{s}\boldsymbol{\tau}(s)$</li>
+<li>加速度：$\mathbf{a}(t)&#x3D;\ddot{s}\boldsymbol{\tau}(s)+\frac{\dot{s}^2}{\rho}\mathbf{n}(s)&#x3D;\mathbf{a}_\tau+\mathbf{a}_n$</li>
+</ol>
+<h3 id="3-极坐标"><a href="#3-极坐标" class="headerlink" title="3. 极坐标"></a>3. 极坐标</h3><ol>
+<li>矢径：$\mathbf{r}(t)&#x3D;\rho(t)\mathbf{e}_\rho(t)$</li>
+<li>速度：$\mathbf{v}(t)&#x3D;\dot{\rho}\mathbf{e}_\rho+\rho\dot{\varphi}\mathbf{e}_\varphi&#x3D;\mathbf{v}_\rho+\mathbf{v}_\varphi$</li>
+<li>加速度：$\mathbf{a}(t)&#x3D;(\ddot{\rho}-\rho\dot{\varphi}^2)\mathbf{e}_\rho+(\rho\ddot{\varphi}+2\dot{\rho}\dot{\varphi})\mathbf{e}_\varphi&#x3D;\mathbf{a}_\rho+\mathbf{a}_\varphi$</li>
+</ol>
+<h2 id="二、刚体运动"><a href="#二、刚体运动" class="headerlink" title="二、刚体运动"></a>二、刚体运动</h2><h3 id="1-一般运动"><a href="#1-一般运动" class="headerlink" title="1. 一般运动"></a>1. 一般运动</h3><ol>
+<li>方程：$\mathbf{R}_O&#x3D;\mathbf{R}_O(t),\mathbf{A}&#x3D;\mathbf{A}(t)\ (3+3)$</li>
+<li>速度：$\mathbf{v}_P&#x3D;\mathbf{v}<em>O+\boldsymbol{\omega}\times\mathbf{r}</em>{OP}$</li>
+<li>加速度：$\mathbf{a}<em>P&#x3D;\mathbf{a}<em>O+\boldsymbol{\varepsilon}\times \mathbf{r}</em>{OP}+\boldsymbol{\omega}\times(\boldsymbol{\omega}\times \mathbf{r}</em>{OP})$</li>
+<li>速度有投影定理，<strong>加速度无投影定理</strong></li>
+</ol>
+<h3 id="2-平面运动"><a href="#2-平面运动" class="headerlink" title="2. 平面运动"></a>2. 平面运动</h3><ol>
+<li>方程：$\mathbf{R}_O&#x3D;\mathbf{R}_O(t),\theta&#x3D;\theta(t)\ (2+1)$</li>
+<li>角速度：$\boldsymbol{\omega}&#x3D;\frac{\mathbf{v}<em>B\cdot\boldsymbol{\rho}-\mathbf{v}<em>A\cdot\boldsymbol{\rho}}{r</em>{AB}}$，$\boldsymbol{\rho}$ 为 $\boldsymbol{\omega}</em>{AB}\times \mathbf{r}_{AB}$ 的单位方向矢量</li>
+<li>速度：基点法（五个变量两个方程）、速度投影定理、瞬心法、点的运动学</li>
+<li>加速度：基点法（五个变量两个方程）、加速度瞬心法、点的运动学，$\boldsymbol{\omega}\times(\boldsymbol{\omega}\times \mathbf{r})&#x3D;-\omega^2\mathbf{r}$</li>
+</ol>
+<h3 id="3-定点运动"><a href="#3-定点运动" class="headerlink" title="3. 定点运动"></a>3. 定点运动</h3><ol>
+<li>瞬时转动轴：刚体或其<strong>延拓部分</strong>上两个瞬时速度为零的点</li>
+<li>角加速度：角速度端点的速度，$\boldsymbol{\varepsilon}_A&#x3D;\boldsymbol{\omega}_C\times\boldsymbol{\omega}_A$</li>
+<li>思路：找瞬时转动轴 $\to$ 求角速度 $\to$ 求角加速度 $\to$ 求点的速度和加速度</li>
+</ol>
+<h2 id="三、复合运动"><a href="#三、复合运动" class="headerlink" title="三、复合运动"></a>三、复合运动</h2><h3 id="1-点的复合运动"><a href="#1-点的复合运动" class="headerlink" title="1. 点的复合运动"></a>1. 点的复合运动</h3><ol>
+<li>绝对运动 $&#x3D;$ 相对运动 $+$ 牵连运动</li>
+<li>速度：$\mathbf{v}&#x3D;\mathbf{v}_O+\boldsymbol{\omega}\times \mathbf{r}+\frac{\mathrm{d}\boldsymbol{\rho}}{\mathrm{d}t}&#x3D;\mathbf{v}_e+\mathbf{v}_r$</li>
+<li>加速度： $\mathbf{a}&#x3D;\mathbf{a}_O+\boldsymbol{\varepsilon}\times \mathbf{r}+\boldsymbol{\omega}\times(\boldsymbol{\omega}\times \mathbf{r})+\frac{\mathrm{d}\mathbf{v}_r}{\mathrm{d}t}+2\boldsymbol{\omega}\times \mathbf{v}_r&#x3D;\mathbf{a}_e+\mathbf{a}_r+\mathbf{a}_c$</li>
+<li>思路：动点动系选在<strong>不同刚体</strong>上；动点的<strong>相对轨迹</strong>简单</li>
+</ol>
+<h3 id="2-刚体复合运动"><a href="#2-刚体复合运动" class="headerlink" title="2. 刚体复合运动"></a>2. 刚体复合运动</h3><ol>
+<li>相对运动：刚体相对动系作<strong>定点运动</strong>，动系相对定系作<strong>定点运动</strong></li>
+<li>角速度：$\boldsymbol{\omega}&#x3D;\boldsymbol{\omega}_e+\boldsymbol{\omega}_r$</li>
+<li>角加速度：$\boldsymbol{\varepsilon}&#x3D;\boldsymbol{\varepsilon}_e+\boldsymbol{\varepsilon}_r+\boldsymbol{\omega}_e\times \boldsymbol{\omega}_r$</li>
+</ol>
+<h2 id="四、动力学基本概念"><a href="#四、动力学基本概念" class="headerlink" title="四、动力学基本概念"></a>四、动力学基本概念</h2><h3 id="1-微分方程"><a href="#1-微分方程" class="headerlink" title="1. 微分方程"></a>1. 微分方程</h3><ol>
+<li>$F&#x3D;F(t)$：$\int_{t_0}^t F(t)\mathrm{d}t&#x3D;m\dot{x}-m\dot{x}_0$（质点动量定理）</li>
+<li>$F&#x3D;F(v)$：$\int_{v_0}^v \frac{m}{F(v)}\mathrm{d}v&#x3D;t-t_0$</li>
+<li>$F&#x3D;F(x)$：$\int_{x_0}^x F(x)\mathrm{d}x&#x3D;\frac{1}{2}m v^2-\frac{1}{2}m v_0^2$（质点动能定理）</li>
+<li>二阶线性常微分方程：$y(x)&#x3D;c_1y_1(x)+c_2y_2(x)+y^*(x)$，互异实根 $y_1(x),y_2(x)&#x3D;e^{\lambda_1 x},e^{\lambda_2 x}$，重根 $y_1(x),y_2(x)&#x3D;e^{\lambda x},xe^{\lambda x}$，共轭复根 $y_1(x),y_2(x)&#x3D;e^{\alpha x}\cos \beta x,e^{\alpha x}\sin \beta x$，特解常数变易 $y^*(x)&#x3D;c_1(x)y_1(x)+c_2(x)y_2(x)$</li>
+</ol>
+<h3 id="2-非惯性系"><a href="#2-非惯性系" class="headerlink" title="2. 非惯性系"></a>2. 非惯性系</h3><ol>
+<li>惯性力：牵连惯性力 $S_e&#x3D;-m\mathbf{a}_e$，科氏惯性力 $S_c&#x3D;-m\mathbf{a}_c$</li>
+<li>相对运动微分方程：$m\mathbf{a}_r&#x3D;\mathbf{F}+\mathbf{S}_e+\mathbf{S}_c$</li>
+</ol>
+<h3 id="3-力系"><a href="#3-力系" class="headerlink" title="3. 力系"></a>3. 力系</h3><ol>
+<li>主矢量：$\mathbf{R}&#x3D;\sum \mathbf{F}_i$</li>
+<li>力对点的矩：$\mathbf{m}_O(\mathbf{F})&#x3D;\mathbf{r}\times \mathbf{F}$</li>
+<li>力对轴的矩：$\mathbf{m}_z(\mathbf{F})&#x3D;\mathbf{m}_O(\mathbf{F})\cdot \hat{z}&#x3D;\mathbf{m}<em>O(\mathbf{F}</em>{xy})$，$O$ 为轴与垂直面交点</li>
+<li>力系对点的主矩：$\mathbf{M}_O&#x3D;\sum \mathbf{m}_O(\mathbf{F}_i)$</li>
+<li>力系对不同矩心的主矩：$\mathbf{M}_P&#x3D;\mathbf{M}<em>O+\mathbf{R}\times \mathbf{r}</em>{OP}$</li>
+<li>力系的不变量：$\mathbf{R},\mathbf{R}\cdot \mathbf{M}_O$</li>
+</ol>
+<h2 id="五、动力学普遍定理"><a href="#五、动力学普遍定理" class="headerlink" title="五、动力学普遍定理"></a>五、动力学普遍定理</h2><h3 id="1-动量定理"><a href="#1-动量定理" class="headerlink" title="1. 动量定理"></a>1. 动量定理</h3><ol>
+<li>质系动量：$\mathbf{P}&#x3D;\sum m_i \mathbf{v}_i&#x3D;m\mathbf{v}_C$</li>
+<li>质系动量定理：$\frac{\mathrm{d}\mathbf{P}}{\mathrm{d}t}&#x3D;\mathbf{R}^\text{外}&#x3D;m\mathbf{a}_C$（质心运动定理）</li>
+<li>投影形式只适用于<strong>固定轴</strong></li>
+</ol>
+<h3 id="2-动量矩定理"><a href="#2-动量矩定理" class="headerlink" title="2. 动量矩定理"></a>2. 动量矩定理</h3><ol>
+<li>质系对点的动量矩：$\mathbf{L}<em>A&#x3D;\sum \boldsymbol{\rho}</em>{i}\times m_i \mathbf{v}_{i}$</li>
+<li>不同矩心：$\mathbf{L}_O&#x3D;\mathbf{L}<em>A+\mathbf{r}</em>{OA}\times m\mathbf{v}_C$</li>
+<li>定点或质心：$\mathbf{L}<em>C&#x3D;\mathbf{L}</em>{Cr}&#x3D;\sum \boldsymbol{\rho}<em>i\times m_i \mathbf{v}</em>{ir}$</li>
+<li>定轴转动：$\mathbf{L}_z&#x3D;J_z \boldsymbol{\omega}$，转动惯量 $J_z&#x3D;\sum m_i \rho_i^2&#x3D;m\rho_z^2$，$\rho_z$ 为物体对 $z$ 轴的回转半径</li>
+<li>常用转动惯量<ol>
+<li>均匀圆盘或圆柱：$J_C&#x3D;\frac{1}{2}mR^2$</li>
+<li>均匀细杆：$J_C&#x3D;\frac{1}{12}mL^2$</li>
+<li>球：$J_C&#x3D;\frac{2}{5}mR^2$</li>
+</ol>
+</li>
+<li>质系对点的动量矩定理：$\frac{\mathrm{d}\mathbf{L}_A}{\mathrm{d}t}&#x3D;\mathbf{M}_A^{\text{外}}+m\mathbf{v}_C\times \mathbf{v}_A$</li>
+<li>定点或质心：$\frac{\mathrm{d}\mathbf{L}_O}{\mathrm{d}t}&#x3D;\mathbf{M}_O^{\text{外}}$</li>
+<li>定轴转动：$J_z\boldsymbol{\varepsilon}&#x3D;\mathbf{M}_z^{\text{外}}$</li>
+<li>思路：应用<strong>质心运动定理</strong>和<strong>对质心的动量矩定理</strong></li>
+</ol>
+<h3 id="3-动能定理"><a href="#3-动能定理" class="headerlink" title="3. 动能定理"></a>3. 动能定理</h3><ol>
+<li>质系动能：$T&#x3D;\frac{1}{2}\sum m_i v_i^2&#x3D;\frac{1}{2}m v_C^2+J_C\omega^2$（柯尼希定理）</li>
+<li>元功：$\mathrm{d}^\prime A&#x3D;\mathbf{F}\cdot \mathrm{d}\mathbf{r}$ 或 $\mathbf{M}\mathrm{d}\theta$</li>
+<li>质系动能定理：$\mathrm{d}T&#x3D;\sum \mathrm{d}^\prime A_i$，积分形式 $T_2-T_1&#x3D;A_{1\to 2}$</li>
+</ol>
+<h3 id="4-碰撞"><a href="#4-碰撞" class="headerlink" title="4. 碰撞"></a>4. 碰撞</h3><ol>
+<li>有限形式动量定理：$\mathbf{P}_2-\mathbf{P}_1&#x3D;\sum \mathbf{I}_i^\text{外}$，<strong>外冲量和为零则动量守恒</strong></li>
+<li>有限形式动量矩定理：$\mathbf{L}<em>{A2}-\mathbf{L}</em>{A1}&#x3D;\sum \mathbf{M}_A(\mathbf{I}_i^\text{外})$，<strong>外冲量矩和为零则动量矩守恒</strong></li>
+<li>恢复系数：碰撞后法向相对速度与碰撞前法向相对速度之比</li>
+<li>$\mathbf{u}<em>{1n}&#x3D;[(m_1-em_2)\mathbf{v}</em>{1n}+(1+e)m_2\mathbf{v}<em>{2n}]&#x2F;(m_1+m_2)$，$\mathbf{u}</em>{2n}&#x3D;[(m_2-em_1)\mathbf{v}<em>{2n}+(1+e)m_1\mathbf{v}</em>{1n}]&#x2F;(m_1+m_2)$</li>
+<li>动能损失：$\Delta T&#x3D;\frac{1}{2}\frac{m_1 m_2}{m_1+m_2}(1-e^2)(\mathbf{v}<em>{1n}-\mathbf{v}</em>{2n})^2$</li>
+</ol>
+
                 
               </div>
             
@@ -350,7 +447,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年12月9日</div>
+          <div>2025年11月15日</div>
         </div>
       
       
@@ -382,9 +479,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/25Fall/Operations/" title="运筹学(1)">
+                      <a href="/25Fall/CSAPP/" title="计算机组成原理">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">运筹学(1)</span>
+                        <span class="hidden-mobile">计算机组成原理</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -392,8 +489,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/25Fall/DSA/" title="数据结构">
-                        <span class="hidden-mobile">数据结构</span>
+                      <a href="/25Fall/ProbStats/" title="随机数学与统计">
+                        <span class="hidden-mobile">随机数学与统计</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

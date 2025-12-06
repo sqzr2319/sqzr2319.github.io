@@ -19,15 +19,15 @@
   <meta name="author" content="sqzr2319">
   <meta name="keywords" content="">
   
-    <meta name="description" content="大二上学期随机数学与统计的复习笔记，目前更新至 $\mathrm{Poisson}$ 过程。">
+    <meta name="description" content="大二上学期随机数学与统计的复习笔记，目前更新至极限定理。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="随机数学与统计">
 <meta property="og:url" content="https://sqzr2319.github.io/25Fall/ProbStats/index.html">
 <meta property="og:site_name" content="sqzr2319&#39;s blog">
-<meta property="og:description" content="大二上学期随机数学与统计的复习笔记，目前更新至 $\mathrm{Poisson}$ 过程。">
+<meta property="og:description" content="大二上学期随机数学与统计的复习笔记，目前更新至极限定理。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-11-13T04:04:23.000Z">
-<meta property="article:modified_time" content="2025-11-16T05:50:10.711Z">
+<meta property="article:modified_time" content="2025-12-06T16:44:01.350Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="数学">
 <meta property="article:tag" content="大二上">
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.2k 字
+          2.4k 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          19 分钟
+          20 分钟
         
       </span>
     
@@ -292,7 +292,7 @@
             
               <div class="markdown-body">
                 
-                <p>大二上学期随机数学与统计的复习笔记，目前更新至 $\mathrm{Poisson}$ 过程。</p>
+                <p>大二上学期随机数学与统计的复习笔记，目前更新至极限定理。</p>
 <span id="more"></span>
 
 <h2 id="一、概率与概率空间"><a href="#一、概率与概率空间" class="headerlink" title="一、概率与概率空间"></a>一、概率与概率空间</h2><h3 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1. 基本概念"></a>1. 基本概念</h3><ol>
@@ -350,7 +350,7 @@
 <li>从 $1,2,\cdots,N$ 中有放回地取 $n$ 个数，按大小排列为 $X_1\le X_2\le \cdots\le X_n$，求 $P(X_m&#x3D;M)$</li>
 <li>从 $1,2,\cdots,N$ 中不放回地取 $n$ 个数，按大小排列为 $X_1\lt X_2\lt \cdots\lt X_n$，试证 $E(X_n)&#x3D;(N+1)\frac{n}{n+1}$</li>
 <li>把 $r$ 个球随机地放到 $n$ 个盒子中，记 $X$ 表示空盒个数，求 $E(X)$</li>
-<li>设随机变量 $X\sim B(n,p),Y&#x3D;\begin{cases} 1,&amp;X\text{ 为偶数} \ -1,&amp;X\text{ 为奇数} \end{cases}$，求 $EY$</li>
+<li>设随机变量 $X\sim B(n,p),Y&#x3D;\begin{cases} 1,&amp;X\text{ 为偶数} \\ -1,&amp;X\text{ 为奇数} \end{cases}$，求 $EY$</li>
 <li>$X\sim B(n,p)$，求 $E\left(\frac{1}{1+X}\right)$</li>
 <li>$X\sim \mathrm{Poisson}(\lambda)$，$B$ 为事件 $X$ 为偶数，求 $X$ 在 $B$ 下的条件分布</li>
 <li>设随机变量 $X$ 在 $[a,b]$ 中取值，证明：$DX\le \frac{(b-a)^2}{4}$，并说明取等条件</li>
@@ -391,7 +391,7 @@
 <li>$E(Y-g(X))^2&#x3D;E(Y-E(Y|X))^2+E(E(Y|X)-g(X))^2$ 始终成立</li>
 <li>取 $g(X)&#x3D;E(Y|X)$ 得最佳预测，预测误差 $Y-E(Y|X)$ 与预测变量 $X$ 和预测值 $E(Y|X)$ 都不相关</li>
 <li>取 $g(X)&#x3D;EY$ 得全方差公式 $DY&#x3D;E(D(Y|X))+D(E(Y|X))$，推论：$DY\ge D(E(Y|X))$，当且仅当 $Y&#x3D;E(Y|X)$ 时取等号</li>
-<li>例：随机变量随机和 $EY&#x3D;NEX_1,DY&#x3D;ENDX_1+DN(EX_1)^2$</li>
+<li>例：随机变量随机和 $EY&#x3D;ENEX_1,DY&#x3D;ENDX_1+DN(EX_1)^2$</li>
 </ol>
 <h3 id="7-随机过程与徘徊"><a href="#7-随机过程与徘徊" class="headerlink" title="7. 随机过程与徘徊"></a>7. 随机过程与徘徊</h3><ol>
 <li>定义：依赖参数 $t$ 的随机变量族 $\{X(t),t\in T\}$，$T$ 为指标集</li>
@@ -420,6 +420,12 @@
 <h3 id="4-复合-mathrm-Poisson-过程"><a href="#4-复合-mathrm-Poisson-过程" class="headerlink" title="4. 复合 $\mathrm{Poisson}$ 过程"></a>4. 复合 $\mathrm{Poisson}$ 过程</h3><ol>
 <li>定义：$\displaystyle Y_t&#x3D;\sum_{i&#x3D;1}^{N_t} X_i$，$\{X_i\}$ 独立同分布且与 $\{N_t\}$ 独立，是时齐的独立增量过程</li>
 <li>$EY_t&#x3D;\lambda t EX_1,DY_t&#x3D;\lambda t E(X_1^2),M_{Y_t}(u)&#x3D;e^{\lambda t[M_{X_1}(u)-1]}$</li>
+</ol>
+<h2 id="四、连续型随机变量"><a href="#四、连续型随机变量" class="headerlink" title="四、连续型随机变量"></a>四、连续型随机变量</h2><h2 id="五、-mathrm-Gauss-分布与-mathrm-Brown-运动"><a href="#五、-mathrm-Gauss-分布与-mathrm-Brown-运动" class="headerlink" title="五、$\mathrm{Gauss}$ 分布与 $\mathrm{Brown}$ 运动"></a>五、$\mathrm{Gauss}$ 分布与 $\mathrm{Brown}$ 运动</h2><h3 id="1-留数定理"><a href="#1-留数定理" class="headerlink" title="1. 留数定理"></a>1. 留数定理</h3><ol>
+<li>留数的计算：$\displaystyle\mathrm{Res}(f,z_0)&#x3D;\frac{1}{(m-1)!}\lim_{z\to z_0}\frac{\mathrm{d}^{m-1}}{\mathrm{d}z^{m-1}}\left[(z-z_0)^mf(z)\right]$</li>
+<li><strong>实函数</strong>无穷积分：上半平面 $|z|\to\infty$ 时 $zf(z)\to 0$，则 $\displaystyle\int_{-\infty}^{+\infty} f(x)dx&#x3D;2\pi i\sum \mathrm{Res}f(z)$</li>
+<li>$\mathrm{Jordan}$ 引理（上半）：若 $p\gt 0$，且上半平面 $|z|\to\infty$ 时 $Q(z)\to 0$，则 $\displaystyle\int_{-\infty}^{+\infty}Q(z)e^{ipz}dz&#x3D;2\pi i\sum \mathrm{Res}[Q(z)e^{ipz}]$</li>
+<li>$\mathrm{Jordan}$ 引理（下半）：若 $p\lt 0$，且下半平面 $|z|\to\infty$ 时 $Q(z)\to 0$，则 $\displaystyle\int_{-\infty}^{+\infty}Q(z)e^{ipz}dz&#x3D;-2\pi i\sum \mathrm{Res}[Q(z)e^{ipz}]$</li>
 </ol>
 
                 
@@ -513,9 +519,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/25Fall/CSAPP/" title="计算机组成原理">
+                      <a href="/25Fall/Dynamics/" title="动力学基础">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">计算机组成原理</span>
+                        <span class="hidden-mobile">动力学基础</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
