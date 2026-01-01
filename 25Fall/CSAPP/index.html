@@ -19,13 +19,15 @@
   <meta name="author" content="sqzr2319">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="article">
+    <meta name="description" content="大二上学期计算机组成原理的复习笔记，目前已完结。">
+<meta property="og:type" content="article">
 <meta property="og:title" content="计算机组成原理">
 <meta property="og:url" content="https://sqzr2319.github.io/25Fall/CSAPP/index.html">
 <meta property="og:site_name" content="sqzr2319&#39;s blog">
+<meta property="og:description" content="大二上学期计算机组成原理的复习笔记，目前已完结。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-12-09T08:49:03.000Z">
-<meta property="article:modified_time" content="2025-11-12T16:44:32.209Z">
+<meta property="article:published_time" content="2026-01-09T08:49:03.000Z">
+<meta property="article:modified_time" content="2026-01-01T04:56:39.739Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="大二上">
 <meta property="article:tag" content="计算机">
@@ -225,8 +227,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-12-09 16:49" pubdate>
-          2025年12月9日 下午
+        <time datetime="2026-01-09 16:49" pubdate>
+          2026年1月9日 下午
         </time>
       </span>
     
@@ -237,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          0 字
+          896 字
         
       </span>
     
@@ -248,7 +250,7 @@
         
         
         
-          1 分钟
+          8 分钟
         
       </span>
     
@@ -290,7 +292,94 @@
             
               <div class="markdown-body">
                 
-                
+                <p>大二上学期计算机组成原理的复习笔记，目前已完结。</p>
+<span id="more"></span>
+
+<h2 id="一、数据"><a href="#一、数据" class="headerlink" title="一、数据"></a>一、数据</h2><h3 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1. 基本概念"></a>1. 基本概念</h3><ol>
+<li>字长：指针数据的标称大小，32 位系统为 4 字节</li>
+<li>对象的地址为低地址（最小地址），最低有效字节在低地址（67 45 23 01）</li>
+<li>逻辑运算符 &amp;&amp; 和 || 有短路性，位运算符没有</li>
+<li>加减法的优先级高于移位运算</li>
+<li>整数运算有交换结合分配律没有单调性；浮点运算有单调性、只有交换律</li>
+</ol>
+<h3 id="2-整数"><a href="#2-整数" class="headerlink" title="2. 整数"></a>2. 整数</h3><ol>
+<li>逻辑右移补零，算术右移补符号位</li>
+<li>%d,%u,%x 分别输出有符号十进制、无符号十进制、十六进制</li>
+<li>有符号和无符号运算时，有符号被转为无符号</li>
+<li>short 转 unsigned：先扩展（补符号位），再转为无符号</li>
+<li>加法溢出：无符号 $s&lt;x$；有符号 $x,y$ 同号且结果异号</li>
+<li>TMin 的逆元为 TMin，其余为相反数</li>
+<li>有无符号右移为向下取整，但有符号除法要向零：<code>x&lt;0 ? x+(1&lt;&lt;k)-1 : x) &gt;&gt; k</code></li>
+<li>~x+1 等价于 -x</li>
+</ol>
+<h3 id="3-浮点数"><a href="#3-浮点数" class="headerlink" title="3. 浮点数"></a>3. 浮点数</h3><ol>
+<li>32 位：1+8+23，64 位：1+11+52</li>
+<li>$V&#x3D;(-1)^s\times M\times 2^E,E&#x3D;e-Bias&#x3D;e-2^{k-1}-1$</li>
+<li>规格化数 $M&#x3D;1+f$；非规格化数 $M&#x3D;f,e&#x3D;1$</li>
+<li>向偶数舍入，最低有效位为 0 为偶数（只对 X.Y100 有效）</li>
+<li>$NaN+x&#x3D;NaN$</li>
+</ol>
+<h2 id="二、汇编"><a href="#二、汇编" class="headerlink" title="二、汇编"></a>二、汇编</h2><h3 id="1-基本概念-1"><a href="#1-基本概念-1" class="headerlink" title="1. 基本概念"></a>1. 基本概念</h3><ol>
+<li>movq 不支持内存到内存</li>
+<li>leaq 仅做地址计算，不访问内存，不设置条件码</li>
+<li>sarq 算术右移，shrq 逻辑右移</li>
+<li>ZF：零；SF：负；CF&#x2F;OF：无符号&#x2F;有符号溢出</li>
+<li>cmp,test 设置条件码，不保存结果</li>
+<li>ja&#x2F;jb 无符号大于&#x2F;小于；jl&#x3D;(SF^OF)</li>
+<li>setX 只支持低地址单字节，配合 movzbl（32 位）</li>
+<li>条件移动 cmovX：不用于复杂计算、风险引用和副作用计算</li>
+</ol>
+<h3 id="2-过程调用"><a href="#2-过程调用" class="headerlink" title="2. 过程调用"></a>2. 过程调用</h3><ol>
+<li>栈：向低地址生长，%rsp 指向当前栈顶</li>
+<li>call 将下一条指令地址入栈，属于调用者栈帧</li>
+<li>参数顺序：%rdi,%rsi,%rdx,%rcx,%r8,%r9，Arg7 在低地址</li>
+<li>调用者保存：%rax,%r10,%r11 和六个参数</li>
+<li>存储空间：text 代码，data 全局变量，heap 动态分配，stack 局部变量</li>
+<li>栈攻击防护：检查输入长度、安全函数、栈随机化、栈不可执行、金丝雀</li>
+</ol>
+<h2 id="三、处理器"><a href="#三、处理器" class="headerlink" title="三、处理器"></a>三、处理器</h2><h3 id="1-Y86-64-指令集"><a href="#1-Y86-64-指令集" class="headerlink" title="1. Y86-64 指令集"></a>1. Y86-64 指令集</h3><ol>
+<li>无 %r15，无 CF（只有 opq 设置），小端法</li>
+<li>寄存器：%rax,%rcx,%rdx,%rbx,%rsp,%rbp,%rsi,%rdi</li>
+<li>icode：halt,nop,cmov,irmovq,rmmovq,mrmovq,opq,jxx,call,ret,pushq,popq</li>
+<li>irmovq 寄存器 F,rB；mrmovq D(rB),rA</li>
+<li>ifun：le,l,e,ne,ge,g；add,sub,and,xor</li>
+<li>状态：AOK,HLT,ADR,INS&#x3D;1,2,3,4</li>
+<li>程序结构：从零地址开始，需初始化栈指针和数据</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs assembly">init:<br>    irmovq Stack, %rsp<br>    call Main<br>    halt<br><br>    .align 8<br>Array:<br>    .quad ...<br>    .quad 0<br><br>Main:<br>    ...<br><br>    .pos 0x100<br>Stack:<br><br></code></pre></td></tr></table></figure>
+
+<h3 id="2-顺序处理器"><a href="#2-顺序处理器" class="headerlink" title="2. 顺序处理器"></a>2. 顺序处理器</h3><ol>
+<li>HCL：小写 bool 大写 words，&amp;&amp;&#x2F;||&#x2F;!；in {}</li>
+<li>阶段：Fetch,Decode,Execute,Memory,WriteBack,PC<ol>
+<li>Fetch：icode,ifun；rA,rB；valC；valP</li>
+<li>Decode：valA,srcA；valB,srcB</li>
+<li>Execute：valB&#x2F;0 OP&#x2F;ALUADD valA&#x2F;valC&#x2F;8；0xF</li>
+<li>Memory：valM</li>
+<li>WriteBack：valE,dstE；valM,dstM</li>
+<li>PC：Cnd? (Cnd $\leftarrow$ Cond(CC,ifun))</li>
+</ol>
+</li>
+<li>控制流<ol>
+<li><code>int icode=[imem_error:INOP;1:mem_icode;];</code></li>
+<li><code>int ifun=[imem_error:FNONE;1:mem_ifun;];</code></li>
+<li><code>int Stat=[imem_error||dmem_error:SADR;!instr_valid:SINS;icode==IHALT:SHLT;1:SAOK;];</code></li>
+<li><code>need_regids;mem_addr;mem_read;new_pc</code></li>
+</ol>
+</li>
+</ol>
+<h2 id="四、存储"><a href="#四、存储" class="headerlink" title="四、存储"></a>四、存储</h2><h3 id="1-缓存"><a href="#1-缓存" class="headerlink" title="1. 缓存"></a>1. 缓存</h3><ol>
+<li>Miss：cold(compulsory),capacity,conflict</li>
+<li>S&#x3D;2^s sets, E&#x3D;2^e lines&#x2F;set, B&#x3D;2^b bytes&#x2F;block</li>
+<li>Address：m&#x3D;t+s+b，(S,E,B,m)</li>
+<li>Write-through&#x2F;back；Write-allocate&#x2F;no-write-allocate</li>
+<li>存储器山：时间局部性脊，空间局部性斜坡，硬件预取脊</li>
+</ol>
+<h3 id="2-程序优化"><a href="#2-程序优化" class="headerlink" title="2. 程序优化"></a>2. 程序优化</h3><ol>
+<li>矩阵乘法：<code>A[i][k]*B[k][*]=C[i][*]</code>；分块 $3B^2&lt;C$</li>
+<li>通用方法：代码移动（减少函数调用）、临时变量</li>
+<li>循环展开：减少数据依赖，展开、重组、并行</li>
+</ol>
+
                 
               </div>
             
@@ -350,7 +439,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年12月9日</div>
+          <div>2026年1月9日</div>
         </div>
       
       
@@ -382,9 +471,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/25Fall/DSA/" title="数据结构">
+                      <a href="/25Fall/ProbStats/" title="随机数学与统计">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">数据结构</span>
+                        <span class="hidden-mobile">随机数学与统计</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -392,8 +481,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/25Fall/Dynamics/" title="动力学基础">
-                        <span class="hidden-mobile">动力学基础</span>
+                      <a href="/25Fall/DSA/" title="数据结构">
+                        <span class="hidden-mobile">数据结构</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
