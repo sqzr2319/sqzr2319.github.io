@@ -27,7 +27,7 @@
 <meta property="og:description" content="大二上学期随机数学与统计的复习笔记，目前更新至极限定理。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-01-10T04:04:23.000Z">
-<meta property="article:modified_time" content="2026-01-02T07:37:37.807Z">
+<meta property="article:modified_time" content="2026-01-02T18:56:13.225Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="大二上">
 <meta property="article:tag" content="数学">
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.4k 字
+          3.6k 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          20 分钟
+          30 分钟
         
       </span>
     
@@ -421,13 +421,69 @@
 <li>定义：$\displaystyle Y_t&#x3D;\sum_{i&#x3D;1}^{N_t} X_i$，$\{X_i\}$ 独立同分布且与 $\{N_t\}$ 独立，是时齐的独立增量过程</li>
 <li>$EY_t&#x3D;\lambda t EX_1,DY_t&#x3D;\lambda t E(X_1^2),M_{Y_t}(u)&#x3D;e^{\lambda t[M_{X_1}(u)-1]}$</li>
 </ol>
-<h2 id="四、连续型随机变量"><a href="#四、连续型随机变量" class="headerlink" title="四、连续型随机变量"></a>四、连续型随机变量</h2><h2 id="五、-mathrm-Gauss-分布与过程"><a href="#五、-mathrm-Gauss-分布与过程" class="headerlink" title="五、$\mathrm{Gauss}$ 分布与过程"></a>五、$\mathrm{Gauss}$ 分布与过程</h2><h3 id="1-留数定理"><a href="#1-留数定理" class="headerlink" title="1. 留数定理"></a>1. 留数定理</h3><ol>
+<h2 id="四、连续型随机变量与过程"><a href="#四、连续型随机变量与过程" class="headerlink" title="四、连续型随机变量与过程"></a>四、连续型随机变量与过程</h2><h3 id="1-常见分布"><a href="#1-常见分布" class="headerlink" title="1. 常见分布"></a>1. 常见分布</h3><ol>
+<li>标准 $\mathrm{Cauchy}$ 分布：$f(x)&#x3D;\frac{1}{\pi(1+x^2)}$，无期望与方差</li>
+<li>均匀分布：$EX&#x3D;\frac{a+b}{2},DX&#x3D;\frac{(b-a)^2}{12},M_X(u)&#x3D;\frac{e^{ub}-e^{ua}}{u(b-a)}$</li>
+<li>指数分布：$X\sim E(\lambda)\Rightarrow EX&#x3D;\frac{1}{\lambda},DX&#x3D;\frac{1}{\lambda^2},M_X(u)&#x3D;\frac{\lambda}{\lambda-u}$</li>
+<li>$\mathrm{Gamma}$ 函数：$\Gamma(\alpha)&#x3D;\int_0^{+\infty} x^{\alpha-1}e^{-x}dx$，$\Gamma(\alpha+1)&#x3D;\alpha\Gamma(\alpha)$&#x3D;$\alpha!$，$\Gamma(\frac{1}{2})&#x3D;\sqrt{\pi}$</li>
+<li>$\mathrm{Gamma}$ 分布：$X\sim\Gamma(\alpha,\lambda)\Rightarrow f(x)&#x3D;\frac{\lambda^\alpha}{\Gamma(\alpha)}x^{\alpha-1}e^{-\lambda x}$，$\Gamma(\frac{n}{2},\frac{1}{2})&#x3D;\chi^2(n)$</li>
+<li>$\mathrm{Beta}$ 函数：$\Beta(\alpha,\beta)&#x3D;\int_0^1 x^{\alpha-1}(1-x)^{\beta-1}dx&#x3D;\frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}$</li>
+<li>$\mathrm{Beta}$ 分布：$X\sim \Beta(\alpha,\beta)\Rightarrow f(x)&#x3D;\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1},EX&#x3D;\frac{\alpha}{\alpha+\beta},DX&#x3D;\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}$</li>
+</ol>
+<h3 id="2-基本性质"><a href="#2-基本性质" class="headerlink" title="2. 基本性质"></a>2. 基本性质</h3><ol>
+<li>条件密度：$f_{X|Y}(x|y)&#x3D;\frac{f_{X,Y}(x,y)}{f_Y(y)}$</li>
+<li>一维变换：$Y&#x3D;g(X),f_Y(y)&#x3D;f_X(g^{-1}(y))\left|\frac{\mathrm{d}}{\mathrm{d}y}g^{-1}(y)\right|$，$g^{-1}(y)$ 在 $f_X$ 的支撑集中，反函数多值则相加</li>
+<li>二维变换：$(Y_1,Y_2)&#x3D;T(X_1,X_2),f_{Y_1,Y_2}(y_1,y_2)&#x3D;f_{X_1,X_2}(x_1(y_1,y_2),x_2(y_1,y_2))|J(y_1,y_2)|,J(y_1,y_2)&#x3D;\frac{\partial(x_1,x_2)}{\partial(y_1,y_2)}$，$T^{-1}(y_1,y_2)$ 在 $f_{X_1,X_2}$ 的支撑集中，逆映射多值则相加</li>
+<li>随机数生成：$u\sim U(0,1)$，生成 $X\sim F(x)$，取 $X&#x3D;F^{-1}(u)$（即 $F(X)\sim U(0,1)$）</li>
+<li>$X\sim\Gamma(\alpha_1,\lambda),Y\sim\Gamma(\alpha_2,\lambda)$ 独立，则 $\frac{X}{X+Y}\sim \Beta(\alpha_1,\alpha_2),X+Y\sim \Gamma(\alpha_1+\alpha_2,\lambda)$ 独立</li>
+</ol>
+<h3 id="3-留数定理"><a href="#3-留数定理" class="headerlink" title="3. 留数定理"></a>3. 留数定理</h3><ol>
 <li>留数的计算：$\displaystyle\mathrm{Res}(f,z_0)&#x3D;\frac{1}{(m-1)!}\lim_{z\to z_0}\frac{\mathrm{d}^{m-1}}{\mathrm{d}z^{m-1}}\left[(z-z_0)^mf(z)\right]$</li>
 <li><strong>实函数</strong>无穷积分：上半平面 $|z|\to\infty$ 时 $zf(z)\to 0$，则 $\displaystyle\int_{-\infty}^{+\infty} f(x)dx&#x3D;2\pi i\sum \mathrm{Res}f(z)$</li>
 <li>$\mathrm{Jordan}$ 引理（上半）：若 $p\gt 0$，且上半平面 $|z|\to\infty$ 时 $Q(z)\to 0$，则 $\displaystyle\int_{-\infty}^{+\infty}Q(z)e^{ipz}dz&#x3D;2\pi i\sum \mathrm{Res}[Q(z)e^{ipz}]$</li>
 <li>$\mathrm{Jordan}$ 引理（下半）：若 $p\lt 0$，且下半平面 $|z|\to\infty$ 时 $Q(z)\to 0$，则 $\displaystyle\int_{-\infty}^{+\infty}Q(z)e^{ipz}dz&#x3D;-2\pi i\sum \mathrm{Res}[Q(z)e^{ipz}]$</li>
 </ol>
-<h2 id="六、极限定理"><a href="#六、极限定理" class="headerlink" title="六、极限定理"></a>六、极限定理</h2>
+<h3 id="4-特征函数"><a href="#4-特征函数" class="headerlink" title="4. 特征函数"></a>4. 特征函数</h3><ol>
+<li>特征函数是非负定函数：$\displaystyle\sum_{i&#x3D;1}^n\sum_{j&#x3D;1}^n \varphi(t_i-t_j)c_i\overline{c_j}\ge 0$</li>
+<li>$F$ 和 $\varphi$ 一一对应：$P(x\lt X\lt y)+\frac{P(X&#x3D;x)+P(X&#x3D;y)}{2}&#x3D;$$\displaystyle \lim_{T\to\infty}\frac{1}{2\pi}\int_{-T}^T \frac{e^{-i\theta x}-e^{-i\theta y}}{i\theta}\varphi(\theta)\mathrm{d}\theta,f_X(x)&#x3D;\frac{1}{2\pi}\int_{-\infty}^{+\infty} e^{-i\theta x}\varphi(\theta)\mathrm{d}\theta$</li>
+<li>依分布收敛：一切连续点上有 $F_{X_n}(x)\to F_X(x)$，等价于 $\varphi_{X_n}(\theta)\to \varphi_X(\theta)$</li>
+<li>$X_1,X_2,\cdots,X_m$ 独立等价于 $\displaystyle\varphi(\theta_1,\theta_2,\cdots,\theta_m)&#x3D;\prod_{i&#x3D;1}^m \varphi_{X_i}(\theta_i)$</li>
+</ol>
+<h3 id="5-mathrm-Gauss-分布"><a href="#5-mathrm-Gauss-分布" class="headerlink" title="5. $\mathrm{Gauss}$ 分布"></a>5. $\mathrm{Gauss}$ 分布</h3><ol>
+<li>一维正态分布：$E(X^{2k})&#x3D;(2k-1)!!,\mathrm{Kurt}(X)&#x3D;E\left(\frac{X-EX}{\sqrt{DX}}\right)^4-3&#x3D;0$</li>
+<li>多维 $\mathrm{Gauss}$ 分布：$\mathbf{X}&#x3D;\mathbf{A}_{m\times n}\mathbf{Z}+\boldsymbol{\mu}\sim \mathbf{N}(\boldsymbol{\mu},\mathbf{AA^T}),Z_i\sim N(0,1)$ 独立，$\mathrm{rank}(\mathbf{A})&#x3D;m$ 为正态</li>
+<li>特征函数：$\varphi_{\mathbf{X}}(\boldsymbol{\theta})&#x3D;e^{i\boldsymbol{\theta^T\mu}-\frac{1}{2}\boldsymbol{\theta^T\Sigma \theta}}$</li>
+<li>$\mathrm{Gauss}$ 向量分量独立等价于不相关</li>
+<li>密度函数：$f(\mathbf{x})&#x3D;\frac{1}{(2\pi)^{m&#x2F;2}|\boldsymbol{\Sigma}|^{1&#x2F;2}}e^{-\frac{1}{2}(\mathbf{x}-\boldsymbol{\mu})^T\boldsymbol{\Sigma}^{-1}(\mathbf{x}-\boldsymbol{\mu})}$</li>
+<li>条件分布：$\mathbf{X}&#x3D;\begin{pmatrix} \mathbf{X_1} \\ \mathbf{X_2} \end{pmatrix}\sim \mathbf{N}\left(\begin{pmatrix} \boldsymbol{\mu_1} \\ \boldsymbol{\mu_2} \end{pmatrix},\begin{pmatrix} \boldsymbol{\Sigma_{11}} &amp; \boldsymbol{\Sigma_{12}} \\ \boldsymbol{\Sigma_{21}} &amp; \boldsymbol{\Sigma_{22}} \end{pmatrix}\right)$，则 $\mathbf{X_1|X_2&#x3D;x_2}\sim \mathbf{N}(\boldsymbol{\mu_1}+\boldsymbol{\Sigma_{12}}\boldsymbol{\Sigma_{22}^{-1}}(\mathbf{x_2}-\boldsymbol{\mu_2}),\boldsymbol{\Sigma_{11}}-\boldsymbol{\Sigma_{12}}\boldsymbol{\Sigma_{22}^{-1}}\boldsymbol{\Sigma_{21}})$</li>
+</ol>
+<h3 id="6-mathrm-Brown-运动"><a href="#6-mathrm-Brown-运动" class="headerlink" title="6. $\mathrm{Brown}$ 运动"></a>6. $\mathrm{Brown}$ 运动</h3><ol>
+<li>背景：时齐独立增量、空间对称、$\sigma(t)&#x3D;E(B_{t+h}-B_t)^2$ 连续 $\Rightarrow B_{s+t}-B_s\sim N(0,t)$</li>
+<li>$\mathrm{Brown}$ 运动 $\Leftrightarrow$ $\mathrm{Gauss}$ 过程（有限维向量服从 $\mathrm{Gauss}$ 分布）且 $EB_t&#x3D;0,E(B_sB_t)&#x3D;\min(s,t)$</li>
+<li>不变性：$\{\frac{B_{ct}}{\sqrt{c}}\},\{tB_{\frac{1}{t}}\}$ 是 $\mathrm{Brown}$ 运动</li>
+<li>$\mathrm{Brown}$ 桥：$B_t^*&#x3D;B_t-tB_1,0\le t\le 1$，不是 $\mathrm{Brown}$ 运动</li>
+<li>对时间积分：$\displaystyle \int_0^t B_s\mathrm{d}s\sim N\left(0,\frac{t^3}{3}\right)$</li>
+</ol>
+<h2 id="五、极限定理"><a href="#五、极限定理" class="headerlink" title="五、极限定理"></a>五、极限定理</h2><h3 id="1-依概率收敛"><a href="#1-依概率收敛" class="headerlink" title="1. 依概率收敛"></a>1. 依概率收敛</h3><ol>
+<li>定义：$\displaystyle\forall \varepsilon\gt 0,\lim_{n\to\infty} P(|X_n-X|\ge \varepsilon)&#x3D;0$</li>
+<li>性质：连续映射保持、四则运算、蕴含依分布收敛（收敛到常数时等价）</li>
+<li>$\mathrm{Slutsky}$ 定理：$X_n\stackrel{D}{\to} X,Y_n\stackrel{P}{\to} a$，则 $X_n+Y_n\stackrel{D}{\to} X+a,X_nY_n\stackrel{D}{\to} aX,\frac{X_n}{Y_n}\stackrel{D}{\to} \frac{X}{a}$</li>
+<li>$\mathrm{Delta}$ 方法：$\sqrt{n}(X_n-\theta)\stackrel{D}{\to} N(0,\sigma^2)\Rightarrow \sqrt{n}(g(X_n)-g(\theta))\stackrel{D}{\to} N(0,(g’(\theta))^2\sigma^2)$</li>
+<li>$Y_n&#x3D;o_p(X_n)\Leftrightarrow \frac{Y_n}{X_n}\stackrel{P}{\to} 0,Y_n&#x3D;O_p(X_n)\Leftrightarrow \frac{Y_n}{X_n}$ 依概率有界</li>
+<li>$Y_n&#x3D;o_p(X_n)$ 且 $X_n$ 依概率有界 $\Rightarrow Y_n\stackrel{P}{\to} 0$</li>
+</ol>
+<h3 id="2-大数定律"><a href="#2-大数定律" class="headerlink" title="2. 大数定律"></a>2. 大数定律</h3><ol>
+<li>定义：$\displaystyle \frac{1}{n}\left(\sum_{i&#x3D;1}^n(X_i-EX_i)\right)\stackrel{P}{\to} 0$</li>
+<li>$\mathrm{Chebyshev\ LLN}$：两两不相关、方差一致有界</li>
+<li>$\mathrm{Khintchine\ LLN}$：独立同分布</li>
+</ol>
+<h3 id="3-中心极限定理"><a href="#3-中心极限定理" class="headerlink" title="3. 中心极限定理"></a>3. 中心极限定理</h3><ol>
+<li>定义：$\displaystyle \frac{\sum_{i&#x3D;1}^n (X_i - EX_i)}{\sqrt{D\left(\sum_{i&#x3D;1}^n X_i\right)}}\stackrel{D}{\to} N(0,1)$</li>
+<li>$\mathrm{Levy-Lindeberg\ CLT}$：独立同分布</li>
+<li>$\mathrm{Liapunov\ CLT}$：$\displaystyle B_n^2&#x3D;\sum_{i&#x3D;1}^n DX_i$，满足 $\displaystyle \exists \delta\gt 0,\lim_{n\to\infty} \frac{1}{B_n^{2+\delta}}\sum_{i&#x3D;1}^n E|X_i-EX_i|^{2+\delta}&#x3D;0$</li>
+<li>$\mathrm{Lindeberg\ CLT}$：满足 $\displaystyle\forall \varepsilon\gt 0,\lim_{n\to\infty} \frac{1}{B_n^2}\sum_{i&#x3D;1}^n \int_{|x-EX_i|\ge \varepsilon B_n} (x-EX_i)^2 f_{X_i}(x)\mathrm{d}x&#x3D;0$</li>
+</ol>
+<h2 id="六、抽样分布"><a href="#六、抽样分布" class="headerlink" title="六、抽样分布"></a>六、抽样分布</h2><h2 id="七、点估计"><a href="#七、点估计" class="headerlink" title="七、点估计"></a>七、点估计</h2><h2 id="八、区间估计与检验"><a href="#八、区间估计与检验" class="headerlink" title="八、区间估计与检验"></a>八、区间估计与检验</h2><h2 id="九、-mathrm-Bayes-估计与检验"><a href="#九、-mathrm-Bayes-估计与检验" class="headerlink" title="九、$\mathrm{Bayes}$ 估计与检验"></a>九、$\mathrm{Bayes}$ 估计与检验</h2>
                 
               </div>
             
