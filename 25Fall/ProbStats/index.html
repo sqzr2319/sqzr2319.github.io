@@ -19,15 +19,15 @@
   <meta name="author" content="sqzr2319">
   <meta name="keywords" content="">
   
-    <meta name="description" content="大二上学期随机数学与统计的复习笔记，目前更新至极限定理。">
+    <meta name="description" content="大二上学期随机数学与统计的复习笔记，目前已完结。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="随机数学与统计">
 <meta property="og:url" content="https://sqzr2319.github.io/25Fall/ProbStats/index.html">
 <meta property="og:site_name" content="sqzr2319&#39;s blog">
-<meta property="og:description" content="大二上学期随机数学与统计的复习笔记，目前更新至极限定理。">
+<meta property="og:description" content="大二上学期随机数学与统计的复习笔记，目前已完结。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-01-10T04:04:23.000Z">
-<meta property="article:modified_time" content="2026-01-02T18:56:13.225Z">
+<meta property="article:modified_time" content="2026-01-03T08:57:33.104Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="大二上">
 <meta property="article:tag" content="数学">
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.6k 字
+          5.6k 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          30 分钟
+          47 分钟
         
       </span>
     
@@ -292,7 +292,7 @@
             
               <div class="markdown-body">
                 
-                <p>大二上学期随机数学与统计的复习笔记，目前更新至极限定理。</p>
+                <p>大二上学期随机数学与统计的复习笔记，目前已完结。</p>
 <span id="more"></span>
 
 <h2 id="一、概率与概率空间"><a href="#一、概率与概率空间" class="headerlink" title="一、概率与概率空间"></a>一、概率与概率空间</h2><h3 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1. 基本概念"></a>1. 基本概念</h3><ol>
@@ -426,7 +426,7 @@
 <li>均匀分布：$EX&#x3D;\frac{a+b}{2},DX&#x3D;\frac{(b-a)^2}{12},M_X(u)&#x3D;\frac{e^{ub}-e^{ua}}{u(b-a)}$</li>
 <li>指数分布：$X\sim E(\lambda)\Rightarrow EX&#x3D;\frac{1}{\lambda},DX&#x3D;\frac{1}{\lambda^2},M_X(u)&#x3D;\frac{\lambda}{\lambda-u}$</li>
 <li>$\mathrm{Gamma}$ 函数：$\Gamma(\alpha)&#x3D;\int_0^{+\infty} x^{\alpha-1}e^{-x}dx$，$\Gamma(\alpha+1)&#x3D;\alpha\Gamma(\alpha)$&#x3D;$\alpha!$，$\Gamma(\frac{1}{2})&#x3D;\sqrt{\pi}$</li>
-<li>$\mathrm{Gamma}$ 分布：$X\sim\Gamma(\alpha,\lambda)\Rightarrow f(x)&#x3D;\frac{\lambda^\alpha}{\Gamma(\alpha)}x^{\alpha-1}e^{-\lambda x}$，$\Gamma(\frac{n}{2},\frac{1}{2})&#x3D;\chi^2(n)$</li>
+<li>$\mathrm{Gamma}$ 分布：$X\sim\Gamma(\alpha,\lambda)\Rightarrow f(x)&#x3D;\frac{\lambda^\alpha}{\Gamma(\alpha)}x^{\alpha-1}e^{-\lambda x}$</li>
 <li>$\mathrm{Beta}$ 函数：$\Beta(\alpha,\beta)&#x3D;\int_0^1 x^{\alpha-1}(1-x)^{\beta-1}dx&#x3D;\frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}$</li>
 <li>$\mathrm{Beta}$ 分布：$X\sim \Beta(\alpha,\beta)\Rightarrow f(x)&#x3D;\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1},EX&#x3D;\frac{\alpha}{\alpha+\beta},DX&#x3D;\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}$</li>
 </ol>
@@ -445,8 +445,7 @@
 </ol>
 <h3 id="4-特征函数"><a href="#4-特征函数" class="headerlink" title="4. 特征函数"></a>4. 特征函数</h3><ol>
 <li>特征函数是非负定函数：$\displaystyle\sum_{i&#x3D;1}^n\sum_{j&#x3D;1}^n \varphi(t_i-t_j)c_i\overline{c_j}\ge 0$</li>
-<li>$F$ 和 $\varphi$ 一一对应：$P(x\lt X\lt y)+\frac{P(X&#x3D;x)+P(X&#x3D;y)}{2}&#x3D;$$\displaystyle \lim_{T\to\infty}\frac{1}{2\pi}\int_{-T}^T \frac{e^{-i\theta x}-e^{-i\theta y}}{i\theta}\varphi(\theta)\mathrm{d}\theta,f_X(x)&#x3D;\frac{1}{2\pi}\int_{-\infty}^{+\infty} e^{-i\theta x}\varphi(\theta)\mathrm{d}\theta$</li>
-<li>依分布收敛：一切连续点上有 $F_{X_n}(x)\to F_X(x)$，等价于 $\varphi_{X_n}(\theta)\to \varphi_X(\theta)$</li>
+<li>$F$ 和 $\varphi$ 一一对应：$P(x\lt X\lt y)+\frac{P(X&#x3D;x)+P(X&#x3D;y)}{2}&#x3D;$ $\displaystyle \lim_{T\to\infty}\frac{1}{2\pi}\int_{-T}^T \frac{e^{-i\theta x}-e^{-i\theta y}}{i\theta}\varphi(\theta)\mathrm{d}\theta,f_X(x)&#x3D;\frac{1}{2\pi}\int_{-\infty}^{+\infty} e^{-i\theta x}\varphi(\theta)\mathrm{d}\theta$</li>
 <li>$X_1,X_2,\cdots,X_m$ 独立等价于 $\displaystyle\varphi(\theta_1,\theta_2,\cdots,\theta_m)&#x3D;\prod_{i&#x3D;1}^m \varphi_{X_i}(\theta_i)$</li>
 </ol>
 <h3 id="5-mathrm-Gauss-分布"><a href="#5-mathrm-Gauss-分布" class="headerlink" title="5. $\mathrm{Gauss}$ 分布"></a>5. $\mathrm{Gauss}$ 分布</h3><ol>
@@ -464,11 +463,13 @@
 <li>$\mathrm{Brown}$ 桥：$B_t^*&#x3D;B_t-tB_1,0\le t\le 1$，不是 $\mathrm{Brown}$ 运动</li>
 <li>对时间积分：$\displaystyle \int_0^t B_s\mathrm{d}s\sim N\left(0,\frac{t^3}{3}\right)$</li>
 </ol>
-<h2 id="五、极限定理"><a href="#五、极限定理" class="headerlink" title="五、极限定理"></a>五、极限定理</h2><h3 id="1-依概率收敛"><a href="#1-依概率收敛" class="headerlink" title="1. 依概率收敛"></a>1. 依概率收敛</h3><ol>
-<li>定义：$\displaystyle\forall \varepsilon\gt 0,\lim_{n\to\infty} P(|X_n-X|\ge \varepsilon)&#x3D;0$</li>
-<li>性质：连续映射保持、四则运算、蕴含依分布收敛（收敛到常数时等价）</li>
+<h2 id="五、极限定理"><a href="#五、极限定理" class="headerlink" title="五、极限定理"></a>五、极限定理</h2><h3 id="1-收敛性"><a href="#1-收敛性" class="headerlink" title="1. 收敛性"></a>1. 收敛性</h3><ol>
+<li>依分布收敛：一切连续点上有 $F_{X_n}(x)\to F_X(x)$，等价于 $\varphi_{X_n}(\theta)\to \varphi_X(\theta)$</li>
+<li>依概率收敛：$\displaystyle\forall \varepsilon\gt 0,\lim_{n\to\infty} P(|X_n-X|\ge \varepsilon)&#x3D;0$，连续映射和四则运算下保持、可推出依分布收敛（收敛到常数时等价）</li>
+<li>几乎处处收敛：$\displaystyle P(\lim_{n\to\infty} X_n&#x3D;X)&#x3D;1$，可推出依概率收敛</li>
+<li>$k$ 阶矩收敛：$\displaystyle\lim_{n\to\infty} E|X_n-X|^k&#x3D;0$，可推出依概率收敛、高阶矩可推出低阶矩</li>
 <li>$\mathrm{Slutsky}$ 定理：$X_n\stackrel{D}{\to} X,Y_n\stackrel{P}{\to} a$，则 $X_n+Y_n\stackrel{D}{\to} X+a,X_nY_n\stackrel{D}{\to} aX,\frac{X_n}{Y_n}\stackrel{D}{\to} \frac{X}{a}$</li>
-<li>$\mathrm{Delta}$ 方法：$\sqrt{n}(X_n-\theta)\stackrel{D}{\to} N(0,\sigma^2)\Rightarrow \sqrt{n}(g(X_n)-g(\theta))\stackrel{D}{\to} N(0,(g’(\theta))^2\sigma^2)$</li>
+<li>$\mathrm{Delta}$ 方法：$\sqrt{n}(X_n-\theta)\stackrel{D}{\to} N(0,\sigma^2)\Rightarrow \sqrt{n}(g(X_n)-g(\theta))\stackrel{D}{\to} N(0,(g^\prime(\theta))^2\sigma^2)$</li>
 <li>$Y_n&#x3D;o_p(X_n)\Leftrightarrow \frac{Y_n}{X_n}\stackrel{P}{\to} 0,Y_n&#x3D;O_p(X_n)\Leftrightarrow \frac{Y_n}{X_n}$ 依概率有界</li>
 <li>$Y_n&#x3D;o_p(X_n)$ 且 $X_n$ 依概率有界 $\Rightarrow Y_n\stackrel{P}{\to} 0$</li>
 </ol>
@@ -483,7 +484,107 @@
 <li>$\mathrm{Liapunov\ CLT}$：$\displaystyle B_n^2&#x3D;\sum_{i&#x3D;1}^n DX_i$，满足 $\displaystyle \exists \delta\gt 0,\lim_{n\to\infty} \frac{1}{B_n^{2+\delta}}\sum_{i&#x3D;1}^n E|X_i-EX_i|^{2+\delta}&#x3D;0$</li>
 <li>$\mathrm{Lindeberg\ CLT}$：满足 $\displaystyle\forall \varepsilon\gt 0,\lim_{n\to\infty} \frac{1}{B_n^2}\sum_{i&#x3D;1}^n \int_{|x-EX_i|\ge \varepsilon B_n} (x-EX_i)^2 f_{X_i}(x)\mathrm{d}x&#x3D;0$</li>
 </ol>
-<h2 id="六、抽样分布"><a href="#六、抽样分布" class="headerlink" title="六、抽样分布"></a>六、抽样分布</h2><h2 id="七、点估计"><a href="#七、点估计" class="headerlink" title="七、点估计"></a>七、点估计</h2><h2 id="八、区间估计与检验"><a href="#八、区间估计与检验" class="headerlink" title="八、区间估计与检验"></a>八、区间估计与检验</h2><h2 id="九、-mathrm-Bayes-估计与检验"><a href="#九、-mathrm-Bayes-估计与检验" class="headerlink" title="九、$\mathrm{Bayes}$ 估计与检验"></a>九、$\mathrm{Bayes}$ 估计与检验</h2>
+<h2 id="六、抽样分布"><a href="#六、抽样分布" class="headerlink" title="六、抽样分布"></a>六、抽样分布</h2><h3 id="1-统计量"><a href="#1-统计量" class="headerlink" title="1. 统计量"></a>1. 统计量</h3><ol>
+<li>定义：样本的函数，不含未知参数</li>
+<li>常见统计量：$D(\bar{X})&#x3D;\frac{DX}{n},E(S^2)&#x3D;DX,EM_k&#x3D;EX^k$</li>
+<li>无偏与有效：$\mathrm{MSE}(\hat{\theta}-\theta)&#x3D;E(\hat{\theta}-\theta)^2&#x3D;D\hat{\theta}+E(\hat{\theta}-\theta)^2$</li>
+<li>$\mathrm{MLE}$ 的不变性：$\hat{\theta}$ 是 $\theta$ 的 $\mathrm{MLE}$，则 $g(\hat{\theta})$ 是 $g(\theta)$ 的 $\mathrm{MLE}$</li>
+</ol>
+<h3 id="2-经验分布函数"><a href="#2-经验分布函数" class="headerlink" title="2. 经验分布函数"></a>2. 经验分布函数</h3><ol>
+<li>定义：$F_n(x)&#x3D;\frac{V_n(x)}{n}$，$V_n(x)$ 为样本中不大于 $x$ 的个数 $\sim B(n,F(x))\Rightarrow E(F_n(x))&#x3D;F(x),D(F_n(x))&#x3D;\frac{F(x)(1-F(x))}{n}$</li>
+<li>由 $\mathrm{CLT}$：$\sqrt{n}(F_n(x)-F(x))\stackrel{D}{\to} N(0,F(x)(1-F(x)))$</li>
+<li>由 $\mathrm{Delta}$ 方法：$\sqrt{n}(F^{-1}(F_n(x))-x)&#x3D;\sqrt{n}(X_{([np])}-x)\stackrel{D}{\to} N\left(0,\frac{F(x)(1-F(x))}{(f(x))^2}\right)$</li>
+<li>$\mathrm{Glivenko}$ 定理：$\displaystyle \sup_x |F_n(x)-F(x)|\stackrel{a.s.}{\to} 0$</li>
+</ol>
+<h3 id="3-顺序统计量"><a href="#3-顺序统计量" class="headerlink" title="3. 顺序统计量"></a>3. 顺序统计量</h3><ol>
+<li>分布：$\displaystyle f_{X_{(1)},X_{(2)},\cdots,X_{(n)}}(x_{(1)},x_{(2)},\cdots,x_{(n)})&#x3D;n! \prod_{i&#x3D;1}^n f(x_{(i)})$</li>
+<li>边缘：$X_{(k)}\sim \frac{n!}{(k-1)!(n-k)!}[F(x)]^{k-1}[1-F(x)]^{n-k}f(x)$</li>
+<li>样本 $p$ 分位数：$X_p&#x3D;\begin{cases} X_{([np+1])},&amp;np\text{ 非整数} \\ \frac{X_{(np)}+X_{(np+1)}}{2},&amp;np\text{ 整数} \end{cases}$</li>
+<li>$X_p$ 的渐进分布：$X_p\stackrel{D}{\to} N\left(x_p,\frac{p(1-p)}{nf^2(x_p)}\right)$</li>
+</ol>
+<h3 id="4-常见抽样分布"><a href="#4-常见抽样分布" class="headerlink" title="4. 常见抽样分布"></a>4. 常见抽样分布</h3><ol>
+<li>$\chi^2$ 分布：$\chi^2\sim \chi^2(n)\Leftrightarrow \chi^2&#x3D;\sum_{i&#x3D;1}^n X_i^2,X_i\sim N(0,1)$ 独立，$\chi^2(n)&#x3D;\Gamma(\frac{n}{2},\frac{1}{2})$</li>
+<li>$t$ 分布：$T\sim t(n)\Leftrightarrow T&#x3D;\frac{X}{\sqrt{Y&#x2F;n}},X\sim N(0,1),Y\sim \chi^2(n)$ 独立，$n&#x3D;1$ 为标准 $\mathrm{Cauchy}$ 分布；$n\gt 1,ET&#x3D;0$；$n\gt 2,DT&#x3D;\frac{n}{n-2}$</li>
+<li>$F$ 分布：$F\sim F(m,n)\Leftrightarrow F&#x3D;\frac{X&#x2F;m}{Y&#x2F;n},X\sim \chi^2(m),Y\sim \chi^2(n)$ 独立</li>
+<li>正态总体<ol>
+<li>$\bar{X}$ 与 $S^2$ 独立（对称分布不相关）</li>
+<li>$\bar{X}$ 与 $X_{(n)}-X_{(1)}$ 独立</li>
+<li>单总体均值，方差已知：$\frac{\bar{X}-\mu}{\sigma&#x2F;\sqrt{n}}\sim N(0,1)$</li>
+<li>单总体均值，方差未知：$\frac{\bar{X}-\mu}{S&#x2F;\sqrt{n}}\sim t(n-1)$</li>
+<li>单总体方差，均值已知：$\frac{\sum_{i&#x3D;1}^n (X_i-\mu)^2}{\sigma^2}\sim \chi^2(n)$</li>
+<li>单总体方差，均值未知：$\frac{(n-1)S^2}{\sigma^2}\sim \chi^2(n-1)$</li>
+<li>双总体均值差，方差已知：$\frac{(\bar{X}-\bar{Y})-(\mu_1-\mu_2)}{\sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}}\sim N(0,1)$</li>
+<li>双总体均值差，方差齐性：$\frac{\bar{X}-\bar{Y}-(\mu_1-\mu_2)}{S_w\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}\sim t(n_1+n_2-2),S_w^2&#x3D;\frac{(n_1-1)S_1^2+(n_2-1)S_2^2}{n_1+n_2-2}$</li>
+<li>双总体均值差，方差未知：$\frac{\bar{X}-\bar{Y}-(\mu_1-\mu_2)}{\sqrt{\frac{S_1^2}{n_1}+\frac{S_2^2}{n_2}}}\stackrel{D}\sim N(0,1)$</li>
+<li>双总体方差比：$\frac{\sigma_2^2 S_1^2}{\sigma_1^2 S_2^2}\sim F(n_1-1,n_2-1)$</li>
+</ol>
+</li>
+</ol>
+<h2 id="七、点估计"><a href="#七、点估计" class="headerlink" title="七、点估计"></a>七、点估计</h2><h3 id="1-相合估计"><a href="#1-相合估计" class="headerlink" title="1. 相合估计"></a>1. 相合估计</h3><ol>
+<li>定义：$\hat{\theta}_n\stackrel{P}{\to} \theta$</li>
+<li>常见统计量：$M_k,S^2,S_n^2$ 都相合，但 $S_n^2$ 有偏</li>
+<li>若渐进无偏 $\displaystyle\lim_{n\to\infty}E\hat{\theta_n}&#x3D;\theta$ 且 $\displaystyle\lim_{n\to\infty} D\hat{\theta}_n&#x3D;0$，则 $\hat{\theta}_n$ 是相合估计</li>
+<li>若 $\hat{\theta}_n^k$ 是 $\theta_k$ 的相合估计，则 $g(\hat{\theta}_n^1,\hat{\theta}_n^2,\cdots,\hat{\theta}_n^k)$ 是 $g(\theta_1,\theta_2,\cdots,\theta_k)$ 的相合估计</li>
+</ol>
+<h3 id="2-充分统计量"><a href="#2-充分统计量" class="headerlink" title="2. 充分统计量"></a>2. 充分统计量</h3><ol>
+<li>定义：$(X_1,X_2,\cdots,X_n)$ 关于统计量的条件分布与参数无关</li>
+<li>因子分解定理：$\displaystyle\prod_{i&#x3D;1}^n f(x_i;\theta)&#x3D;h(x_1,x_2,\cdots,x_n)g(T(x_1,x_2,\cdots,x_n);\theta)$</li>
+<li>若 $T$ 是 $\theta$ 的充分统计量，$S&#x3D;g(T)$ 是双射，则 $S$ 也是 $\theta$ 的充分统计量</li>
+</ol>
+<h3 id="3-完备统计量"><a href="#3-完备统计量" class="headerlink" title="3. 完备统计量"></a>3. 完备统计量</h3><ol>
+<li>完备分布族：$\forall\theta,E_\theta(g(X))&#x3D;0\Rightarrow P_\theta(g(X)&#x3D;0)&#x3D;1$</li>
+<li>二项分布族、$\mathrm{Poisson}$ 分布族、几何分布族、指数分布族、均匀分布族、$\mathrm{Gamma}$ 分布族、$\mathrm{Beta}$ 分布族都是完备分布族</li>
+<li>正态分布族：关于 $(\mu,\sigma^2)$ 和 $\mu$ 完备，关于 $\sigma^2$ 不完备</li>
+<li>完备分布族的统计量是完备统计量</li>
+<li>指数族分布：$f(x;\theta)&#x3D;h(x)c(\theta)e^{\sum_{j&#x3D;1}^k \xi_j(\theta)T_j(x)}$，必要条件为支撑集与参数无关</li>
+<li>满秩指数族：$\{(\xi_1(\theta),\xi_2(\theta),\cdots,\xi_k(\theta))\}$ 包含 $R^k$ 的一个开集，即 $\mathrm{dim}&#x3D;k$</li>
+<li>满秩指数族的充分统计量是完备统计量</li>
+</ol>
+<h3 id="4-mathrm-UMVUE"><a href="#4-mathrm-UMVUE" class="headerlink" title="4. $\mathrm{UMVUE}$"></a>4. $\mathrm{UMVUE}$</h3><ol>
+<li>定义：最小方差无偏估计</li>
+<li>$\mathrm{Rao-Blackwell}$ 定理：$\hat{\theta}$ 是 $\theta$ 的无偏估计，$T$ 是 $\theta$ 的充分统计量，则 $\varphi(T)&#x3D;E(\hat{\theta}|T)$ 方差不大于 $\hat{\theta}$</li>
+<li>零无偏估计定理：$\hat{\theta}$ 是 $\theta$ 的无偏估计，且对任意零无偏估计 $\varphi$ 有 $\mathrm{Cov}_\theta(\hat{\theta},\varphi)&#x3D;0$，则 $\hat{\theta}$ 是 $\theta$ 的 $\mathrm{UMVUE}$</li>
+<li>$\mathrm{Lehmann-Scheffe}$ 定理：$T$ 是 $\theta$ 的完备充分统计量，$\varphi$ 是 $g(\theta)$ 的无偏估计，则 $E[\varphi|T]$ 是 $g(\theta)$ 的唯一 $\mathrm{UMVUE}$</li>
+</ol>
+<h3 id="5-有效估计"><a href="#5-有效估计" class="headerlink" title="5. 有效估计"></a>5. 有效估计</h3><ol>
+<li>$\mathrm{Score}$ 函数：对数似然关于参数的梯度</li>
+<li>$\mathrm{Score}$ 量：随机变量 $s(X)$，$E(s(X))&#x3D;0,D(s(X))&#x3D;I_n(\theta)&#x3D;-E\left(\frac{\partial^2}{\partial \theta^2}\ln f(X;\theta)\right)$，称为 $\mathrm{Fisher}$ 信息量</li>
+<li>独立样本 $(X,Y)$ 的 $\mathrm{Fisher}$ 信息量为各自信息量之和</li>
+<li>$\mathrm{Cramer-Rao}$ 不等式：$D(T(X))\ge \frac{(\frac{\partial}{\partial\theta}E(T(X)))^2}{I_n(\theta)}$，无偏时等于 $\frac{(g^\prime(\theta))^2}{I_n(\theta)}$</li>
+<li>支撑集与参数有关时一般不能用 $\mathrm{Cramer-Rao}$ 不等式，但指数族分布一定可用</li>
+<li>有效估计：达到 $\mathrm{Cramer-Rao}$ 下界的无偏估计，必为 $\mathrm{UMVUE}$</li>
+</ol>
+<h2 id="八、区间估计与检验"><a href="#八、区间估计与检验" class="headerlink" title="八、区间估计与检验"></a>八、区间估计与检验</h2><h3 id="1-置信区间"><a href="#1-置信区间" class="headerlink" title="1. 置信区间"></a>1. 置信区间</h3><ol>
+<li>枢轴变量：先找 $\theta$ 的点估计 $T$（充分统计量或 $\mathrm{MLE}$），再找 $Z(T,\theta)$，使得 $Z$ 本身不含其他未知参数，$Z$ 的分布不含估计参数和其他未知参数</li>
+<li>最优置信区间：在所有置信水平为 $1-\alpha$ 的置信区间中，长度最短的置信区间</li>
+<li>枢轴变量的分布为单峰对称分布时，最优置信区间等价于等尾置信区间</li>
+<li>构造枢轴量的一般方法：$T\sim F(t;\theta)$，取 $F(T;\theta)\sim U(0,1)$</li>
+</ol>
+<h3 id="2-显著性检验"><a href="#2-显著性检验" class="headerlink" title="2. 显著性检验"></a>2. 显著性检验</h3><ol>
+<li>两类错误：弃真 $\alpha(\theta)$，存伪 $\beta(\theta)$</li>
+<li>势函数 $g(\theta)&#x3D;E_\theta(\delta(X))&#x3D;P_\theta(X\in W)&#x3D;\begin{cases} \alpha(\theta),&amp;\theta\in \Theta_0 \\ 1-\beta(\theta),&amp;\theta\in \Theta_1 \end{cases},\delta(x)&#x3D;\begin{cases}1,&amp;x\in W\\0,&amp;x\notin W\end{cases}$，$W$ 为拒绝域</li>
+<li>显著性检验：控制第一类错误 $\alpha(\theta)$ 不超过显著性水平 $\alpha$，将原假设的取等条件代入枢轴量</li>
+<li>单参数指数族分布：若 $\xi(\theta)$ 严格增，取统计量为 $T(X)$，若 $E_\theta(T)$ 关于 $\theta$ 严格增，则 $T$ 较小时拒绝 $H_0:\theta\ge \theta_0$</li>
+<li>$p$ 值：原假设为真时出现观察样本及更极端情况的概率，$p\lt \alpha$ 则拒绝原假设</li>
+</ol>
+<h3 id="3-最优势检验"><a href="#3-最优势检验" class="headerlink" title="3. 最优势检验"></a>3. 最优势检验</h3><ol>
+<li>有效性：样本容量 $n$ 固定，检验法 $\phi_1,\phi_2$ 的势函数分别为 $g_1(\theta),g_2(\theta)$，若两者显著性水平均为 $\alpha$，即 $\displaystyle\sup_{\theta\in\Theta_0} g_1(\theta),\sup_{\theta\in\Theta_0} g_2(\theta)\le\alpha$，且 $\forall \theta\in \Theta,g_1(\theta)\ge g_2(\theta)$，则称 $\phi_1$ 比 $\phi_2$ 有效（控制第一类错误概率下，第二类错误概率更小）</li>
+<li>似然比检验：简单假设对简单假设，$\lambda(x_1,x_2,\cdots,x_n)&#x3D;\frac{L(x_1,x_2,\cdots,x_n;\theta_1)}{L(x_1,x_2,\cdots,x_n;\theta_0)}$，拒绝域为 $\{(x_1,x_2,\cdots,x_n):\lambda(x_1,x_2,\cdots,x_n)\ge k\}$</li>
+<li>$\mathrm{Neyman-Pearson}$ 引理：简单假设对简单假设时，似然比检验是显著性水平相同时的最优势检验</li>
+<li>复合假设：分子取 $\displaystyle\sup_{\theta\in\Theta}$，分母取 $\displaystyle\sup_{\theta\in\Theta_0}$</li>
+</ol>
+<h2 id="九、-mathrm-Bayes-统计"><a href="#九、-mathrm-Bayes-统计" class="headerlink" title="九、$\mathrm{Bayes}$ 统计"></a>九、$\mathrm{Bayes}$ 统计</h2><h3 id="1-mathrm-Bayes-估计"><a href="#1-mathrm-Bayes-估计" class="headerlink" title="1. $\mathrm{Bayes}$ 估计"></a>1. $\mathrm{Bayes}$ 估计</h3><ol>
+<li>后验分布 $\pi(\theta|X)\propto f(X|\theta)\pi(\theta)$</li>
+<li>共轭先验分布族：先验和后验分布属于同一个分布族</li>
+<li>$\mathrm{Jeffreys}$ 先验：$\pi_{J}(\theta)\propto \sqrt{I(\theta)}$</li>
+<li>不变性：双射 $g(\theta)$ 的先验仍为 $\sqrt{I(\theta)}$ 形式</li>
+</ol>
+<h3 id="2-mathrm-Bayes-检验"><a href="#2-mathrm-Bayes-检验" class="headerlink" title="2. $\mathrm{Bayes}$ 检验"></a>2. $\mathrm{Bayes}$ 检验</h3><ol>
+<li>后验概率比：对 $H_0:\theta\in \Theta_0,H_1:\theta\in \Theta_1$，后验分布 $\pi(\theta|X)$，$\frac{\alpha_0}{\alpha_1}&#x3D;\frac{P(\theta\in\Theta_0)}{P(\theta\in\Theta_1)}$</li>
+<li>$\mathrm{Jeffreys}$ 准则：$\frac{\alpha_0}{\alpha_1}\lt 1$ 拒绝 $H_0$</li>
+<li>$\mathrm{Bayes}$ 因子：先验分布 $\pi$，$B^\pi&#x3D;\frac{\alpha_0&#x2F;\alpha_1}{\pi_0&#x2F;\pi_1}$，越大约偏向于接受 $H_0$</li>
+</ol>
+
                 
               </div>
             
