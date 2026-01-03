@@ -27,10 +27,10 @@
 <meta property="og:description" content="大二上学期随机数学与统计的复习笔记，目前已完结。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-01-10T04:04:23.000Z">
-<meta property="article:modified_time" content="2026-01-03T08:57:33.104Z">
+<meta property="article:modified_time" content="2026-01-03T19:00:14.509Z">
 <meta property="article:author" content="sqzr2319">
-<meta property="article:tag" content="大二上">
 <meta property="article:tag" content="数学">
+<meta property="article:tag" content="大二上">
 <meta name="twitter:card" content="summary_large_image">
   
   
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.6k 字
+          7k 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          47 分钟
+          59 分钟
         
       </span>
     
@@ -345,17 +345,6 @@
 <li>随机变量的可加性：匹配数问题</li>
 <li>可靠性问题</li>
 </ol>
-<h3 id="8-例题"><a href="#8-例题" class="headerlink" title="8. 例题"></a>8. 例题</h3><ol>
-<li>已知 $P(AB)&#x3D;P(A)P(B),AB\subset C,A^CB^C\subset C^C$，求证 $P(AC)\ge P(A)P(C)$</li>
-<li>从 $1,2,\cdots,N$ 中有放回地取 $n$ 个数，按大小排列为 $X_1\le X_2\le \cdots\le X_n$，求 $P(X_m&#x3D;M)$</li>
-<li>从 $1,2,\cdots,N$ 中不放回地取 $n$ 个数，按大小排列为 $X_1\lt X_2\lt \cdots\lt X_n$，试证 $E(X_n)&#x3D;(N+1)\frac{n}{n+1}$</li>
-<li>把 $r$ 个球随机地放到 $n$ 个盒子中，记 $X$ 表示空盒个数，求 $E(X)$</li>
-<li>设随机变量 $X\sim B(n,p),Y&#x3D;\begin{cases} 1,&amp;X\text{ 为偶数} \\ -1,&amp;X\text{ 为奇数} \end{cases}$，求 $EY$</li>
-<li>$X\sim B(n,p)$，求 $E\left(\frac{1}{1+X}\right)$</li>
-<li>$X\sim \mathrm{Poisson}(\lambda)$，$B$ 为事件 $X$ 为偶数，求 $X$ 在 $B$ 下的条件分布</li>
-<li>设随机变量 $X$ 在 $[a,b]$ 中取值，证明：$DX\le \frac{(b-a)^2}{4}$，并说明取等条件</li>
-<li>三人同时投掷硬币，每人投掷出正面向上后停止，求进行的轮数的期望。</li>
-</ol>
 <h2 id="二、离散型随机变量与过程"><a href="#二、离散型随机变量与过程" class="headerlink" title="二、离散型随机变量与过程"></a>二、离散型随机变量与过程</h2><h3 id="1-基本概念-1"><a href="#1-基本概念-1" class="headerlink" title="1. 基本概念"></a>1. 基本概念</h3><ol>
 <li>随机变量：定义在随机试验样本空间上的单值实函数，且 $\forall x\in \mathbb{R}, \{\omega|X(\omega)\le x\}\in \mathcal{F}$</li>
 <li>分布函数：$F(x)&#x3D;P(X\le x)$，右连续</li>
@@ -425,9 +414,9 @@
 <li>标准 $\mathrm{Cauchy}$ 分布：$f(x)&#x3D;\frac{1}{\pi(1+x^2)}$，无期望与方差</li>
 <li>均匀分布：$EX&#x3D;\frac{a+b}{2},DX&#x3D;\frac{(b-a)^2}{12},M_X(u)&#x3D;\frac{e^{ub}-e^{ua}}{u(b-a)}$</li>
 <li>指数分布：$X\sim E(\lambda)\Rightarrow EX&#x3D;\frac{1}{\lambda},DX&#x3D;\frac{1}{\lambda^2},M_X(u)&#x3D;\frac{\lambda}{\lambda-u}$</li>
-<li>$\mathrm{Gamma}$ 函数：$\Gamma(\alpha)&#x3D;\int_0^{+\infty} x^{\alpha-1}e^{-x}dx$，$\Gamma(\alpha+1)&#x3D;\alpha\Gamma(\alpha)$&#x3D;$\alpha!$，$\Gamma(\frac{1}{2})&#x3D;\sqrt{\pi}$</li>
+<li>$\mathrm{Gamma}$ 函数：$\displaystyle \Gamma(\alpha)&#x3D;\int_0^{+\infty} x^{\alpha-1}e^{-x}dx$，$\Gamma(\alpha+1)&#x3D;\alpha\Gamma(\alpha)$&#x3D;$\alpha!$，$\Gamma(\frac{1}{2})&#x3D;\sqrt{\pi}$</li>
 <li>$\mathrm{Gamma}$ 分布：$X\sim\Gamma(\alpha,\lambda)\Rightarrow f(x)&#x3D;\frac{\lambda^\alpha}{\Gamma(\alpha)}x^{\alpha-1}e^{-\lambda x}$</li>
-<li>$\mathrm{Beta}$ 函数：$\Beta(\alpha,\beta)&#x3D;\int_0^1 x^{\alpha-1}(1-x)^{\beta-1}dx&#x3D;\frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}$</li>
+<li>$\mathrm{Beta}$ 函数：$\displaystyle \Beta(\alpha,\beta)&#x3D;\int_0^1 x^{\alpha-1}(1-x)^{\beta-1}dx&#x3D;\frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}$</li>
 <li>$\mathrm{Beta}$ 分布：$X\sim \Beta(\alpha,\beta)\Rightarrow f(x)&#x3D;\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1},EX&#x3D;\frac{\alpha}{\alpha+\beta},DX&#x3D;\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}$</li>
 </ol>
 <h3 id="2-基本性质"><a href="#2-基本性质" class="headerlink" title="2. 基本性质"></a>2. 基本性质</h3><ol>
@@ -479,7 +468,7 @@
 <li>$\mathrm{Khintchine\ LLN}$：独立同分布</li>
 </ol>
 <h3 id="3-中心极限定理"><a href="#3-中心极限定理" class="headerlink" title="3. 中心极限定理"></a>3. 中心极限定理</h3><ol>
-<li>定义：$\displaystyle \frac{\sum_{i&#x3D;1}^n (X_i - EX_i)}{\sqrt{D\left(\sum_{i&#x3D;1}^n X_i\right)}}\stackrel{D}{\to} N(0,1)$</li>
+<li>定义：$\frac{\sum_{i&#x3D;1}^n (X_i - EX_i)}{\sqrt{D\left(\sum_{i&#x3D;1}^n X_i\right)}}\stackrel{D}{\to} N(0,1)$</li>
 <li>$\mathrm{Levy-Lindeberg\ CLT}$：独立同分布</li>
 <li>$\mathrm{Liapunov\ CLT}$：$\displaystyle B_n^2&#x3D;\sum_{i&#x3D;1}^n DX_i$，满足 $\displaystyle \exists \delta\gt 0,\lim_{n\to\infty} \frac{1}{B_n^{2+\delta}}\sum_{i&#x3D;1}^n E|X_i-EX_i|^{2+\delta}&#x3D;0$</li>
 <li>$\mathrm{Lindeberg\ CLT}$：满足 $\displaystyle\forall \varepsilon\gt 0,\lim_{n\to\infty} \frac{1}{B_n^2}\sum_{i&#x3D;1}^n \int_{|x-EX_i|\ge \varepsilon B_n} (x-EX_i)^2 f_{X_i}(x)\mathrm{d}x&#x3D;0$</li>
@@ -506,17 +495,25 @@
 <li>$\chi^2$ 分布：$\chi^2\sim \chi^2(n)\Leftrightarrow \chi^2&#x3D;\sum_{i&#x3D;1}^n X_i^2,X_i\sim N(0,1)$ 独立，$\chi^2(n)&#x3D;\Gamma(\frac{n}{2},\frac{1}{2})$</li>
 <li>$t$ 分布：$T\sim t(n)\Leftrightarrow T&#x3D;\frac{X}{\sqrt{Y&#x2F;n}},X\sim N(0,1),Y\sim \chi^2(n)$ 独立，$n&#x3D;1$ 为标准 $\mathrm{Cauchy}$ 分布；$n\gt 1,ET&#x3D;0$；$n\gt 2,DT&#x3D;\frac{n}{n-2}$</li>
 <li>$F$ 分布：$F\sim F(m,n)\Leftrightarrow F&#x3D;\frac{X&#x2F;m}{Y&#x2F;n},X\sim \chi^2(m),Y\sim \chi^2(n)$ 独立</li>
-<li>正态总体<ol>
+<li>单正态总体<ol>
 <li>$\bar{X}$ 与 $S^2$ 独立（对称分布不相关）</li>
 <li>$\bar{X}$ 与 $X_{(n)}-X_{(1)}$ 独立</li>
-<li>单总体均值，方差已知：$\frac{\bar{X}-\mu}{\sigma&#x2F;\sqrt{n}}\sim N(0,1)$</li>
-<li>单总体均值，方差未知：$\frac{\bar{X}-\mu}{S&#x2F;\sqrt{n}}\sim t(n-1)$</li>
-<li>单总体方差，均值已知：$\frac{\sum_{i&#x3D;1}^n (X_i-\mu)^2}{\sigma^2}\sim \chi^2(n)$</li>
-<li>单总体方差，均值未知：$\frac{(n-1)S^2}{\sigma^2}\sim \chi^2(n-1)$</li>
-<li>双总体均值差，方差已知：$\frac{(\bar{X}-\bar{Y})-(\mu_1-\mu_2)}{\sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}}\sim N(0,1)$</li>
-<li>双总体均值差，方差齐性：$\frac{\bar{X}-\bar{Y}-(\mu_1-\mu_2)}{S_w\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}\sim t(n_1+n_2-2),S_w^2&#x3D;\frac{(n_1-1)S_1^2+(n_2-1)S_2^2}{n_1+n_2-2}$</li>
-<li>双总体均值差，方差未知：$\frac{\bar{X}-\bar{Y}-(\mu_1-\mu_2)}{\sqrt{\frac{S_1^2}{n_1}+\frac{S_2^2}{n_2}}}\stackrel{D}\sim N(0,1)$</li>
-<li>双总体方差比：$\frac{\sigma_2^2 S_1^2}{\sigma_1^2 S_2^2}\sim F(n_1-1,n_2-1)$</li>
+<li>方差已知：$\frac{\bar{X}-\mu}{\sigma&#x2F;\sqrt{n}}\sim N(0,1)$</li>
+<li>方差未知：$\frac{\bar{X}-\mu}{S&#x2F;\sqrt{n}}\sim t(n-1)$</li>
+<li>均值已知：$\frac{\sum_{i&#x3D;1}^n (X_i-\mu)^2}{\sigma^2}\sim \chi^2(n)$</li>
+<li>均值未知：$\frac{(n-1)S^2}{\sigma^2}\sim \chi^2(n-1)$</li>
+</ol>
+</li>
+<li>双正态总体<ol>
+<li>均值差，方差已知：$\frac{(\bar{X}-\bar{Y})-(\mu_1-\mu_2)}{\sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}}\sim N(0,1)$</li>
+<li>均值差，方差齐性：$\frac{\bar{X}-\bar{Y}-(\mu_1-\mu_2)}{S_w\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}\sim t(n_1+n_2-2),S_w^2&#x3D;\frac{(n_1-1)S_1^2+(n_2-1)S_2^2}{n_1+n_2-2}$</li>
+<li>均值差，方差未知：$\frac{\bar{X}-\bar{Y}-(\mu_1-\mu_2)}{\sqrt{\frac{S_1^2}{n_1}+\frac{S_2^2}{n_2}}}\stackrel{D}\sim N(0,1)$ 或 $t(f),f&#x3D;\frac{\left(\frac{S_1^2}{n_1}+\frac{S_2^2}{n_2}\right)^2}{\frac{(S_1^2&#x2F;n_1)^2}{n_1-1}+\frac{(S_2^2&#x2F;n_2)^2}{n_2-1}}$</li>
+<li>方差比：$\frac{S_1^2&#x2F;\sigma_1^2}{S_2^2&#x2F;\sigma_2^2}\sim F(n_1-1,n_2-1)$</li>
+</ol>
+</li>
+<li>$\mathrm{Bernoulli}$ 分布<ol>
+<li>单总体：$\frac{\bar{X}-p}{\sqrt{\frac{p(1-p)}{n}}}\stackrel{D}{\sim} N(0,1)$</li>
+<li>双总体均值差：$\frac{\bar{X}-\bar{Y}-(p_1-p_2)}{\sqrt{\frac{\bar{X}(1-\bar{X})}{n_1}+\frac{\bar{Y}(1-\bar{Y})}{n_2}}}\stackrel{D}{\sim} N(0,1)$</li>
 </ol>
 </li>
 </ol>
@@ -584,6 +581,62 @@
 <li>$\mathrm{Jeffreys}$ 准则：$\frac{\alpha_0}{\alpha_1}\lt 1$ 拒绝 $H_0$</li>
 <li>$\mathrm{Bayes}$ 因子：先验分布 $\pi$，$B^\pi&#x3D;\frac{\alpha_0&#x2F;\alpha_1}{\pi_0&#x2F;\pi_1}$，越大约偏向于接受 $H_0$</li>
 </ol>
+<h2 id="十、例题"><a href="#十、例题" class="headerlink" title="十、例题"></a>十、例题</h2><h3 id="1-离散型随机变量与过程"><a href="#1-离散型随机变量与过程" class="headerlink" title="1. 离散型随机变量与过程"></a>1. 离散型随机变量与过程</h3><ol>
+<li>已知 $P(AB)&#x3D;P(A)P(B),AB\subset C,A^CB^C\subset C^C$，求证 $P(AC)\ge P(A)P(C)$</li>
+<li>从 $1,2,\cdots,N$ 中有放回地取 $n$ 个数，按大小排列为 $X_1\le X_2\le \cdots\le X_n$，求 $P(X_m&#x3D;M)$</li>
+<li>从 $1,2,\cdots,N$ 中不放回地取 $n$ 个数，按大小排列为 $X_1\lt X_2\lt \cdots\lt X_n$，试证 $E(X_n)&#x3D;(N+1)\frac{n}{n+1}$</li>
+<li>把 $r$ 个球随机地放到 $n$ 个盒子中，记 $X$ 表示空盒个数，求 $E(X)$</li>
+<li>设随机变量 $X\sim B(n,p),Y&#x3D;\begin{cases} 1,&amp;X\text{ 为偶数} \\ -1,&amp;X\text{ 为奇数} \end{cases}$，求 $EY$</li>
+<li>$X\sim B(n,p)$，求 $E\left(\frac{1}{1+X}\right)$</li>
+<li>$X\sim \mathrm{Poisson}(\lambda)$，$B$ 为事件 $X$ 为偶数，求 $X$ 在 $B$ 下的条件分布</li>
+<li>设随机变量 $X$ 在 $[a,b]$ 中取值，证明：$DX\le \frac{(b-a)^2}{4}$，并说明取等条件</li>
+<li>三人同时投掷硬币，每人投掷出正面向上后停止，求进行的轮数的期望。</li>
+</ol>
+<h3 id="2-连续型随机变量与过程"><a href="#2-连续型随机变量与过程" class="headerlink" title="2. 连续型随机变量与过程"></a>2. 连续型随机变量与过程</h3><ol>
+<li>若 $\{B_t\}$ 为 $\mathrm{Brown}$ 运动，证明：$E(B_s|B_t&#x3D;x)&#x3D;\frac{s}{t}x,s\lt t$</li>
+<li>若 $\{B_t\}$ 为 $\mathrm{Brown}$ 运动，由 $Y_t&#x3D;e^{B_t}$ 定义的过程 $\{Y_t:t\gt 0\}$ 称为几何 $\mathrm{Brown}$ 运动。求 $EY_t$ 和 $DY_t$。</li>
+<li>设 $\{B(t),t\ge 0\}$ 为标准 $\mathrm{Brown}$ 运动，$B(0)&#x3D;0$。令 $T_a&#x3D;\inf\{t\gt 0:B(t)&#x3D;a\}$ 表示首达时间。<ol>
+<li>求 $P(T_1\lt T_{-1}\lt T_2)$</li>
+<li>$\forall t_1\lt t_2$，记事件 $0(t_1,t_2)$ 为 $B(t)$ 在区间 $(t_1,t_2)$ 内至少过一次零点，证明：$P(0(t_1,t_2))&#x3D;\frac{2}{\pi}\arccos\sqrt{\frac{t_1}{t_2}}$</li>
+</ol>
+</li>
+<li>设连续型随机变量 $X$ 的分布函数为 $F(x)$ 且 $EX$ 存在，证明：<ol>
+<li>$\displaystyle \lim_{x\to -\infty}xF(x)&#x3D;0,\lim_{x\to +\infty}x(1-F(x))&#x3D;0$</li>
+<li>$\displaystyle EX&#x3D;\int_0^{+\infty} (1-F(x))\mathrm{d}x-\int_{-\infty}^0 F(x)\mathrm{d}x$</li>
+</ol>
+</li>
+<li>连续型随机变量 $X$ 与 $Y$ 相互独立，且 $EX&#x3D;EY&#x3D;0$，$E|X|,E|Y|$ 均存在，证明：$E|X+Y|\ge \max\{E|X|,E|Y|\}$</li>
+<li>设随机向量 $(X_1,X_2,X_3)$ 相互之间的相关系数分别为 $\rho_{12},\rho_{23},\rho_{31}$，证明：$\rho_{12}^2+\rho_{23}^2+\rho_{31}^2\le 1+2\rho_{12}\rho_{23}\rho_{31}$</li>
+<li>设 $M_X(s)&#x3D;E(e^{sX})$ 是随机变量 $X$ 的矩母函数，假定该矩母函数在 $s&#x3D;0$ 的一个小区域内取有限值，设 $\displaystyle\phi(a)&#x3D;\max_{s\ge 0}(sa-\ln M_X(s))$，证明：<ol>
+<li>如果 $a\gt EX$，则 $\phi(a)\gt 0$</li>
+<li>设 $X_1,X_2,\cdots,X_n$ 是独立的随机变量序列，均从 $\{0,1\}$ 当中取值。设 $\displaystyle X&#x3D;\sum_{i&#x3D;1}^n X_i,\mu\ge EX$，则 $\forall\delta\gt 0$，有 $P(X\gt (1+\delta)\mu)\lt \left(\frac{e^\delta}{(1+\delta)^{1+\delta}}\right)^\mu$</li>
+</ol>
+</li>
+</ol>
+<h3 id="3-极限定理与抽样分布"><a href="#3-极限定理与抽样分布" class="headerlink" title="3. 极限定理与抽样分布"></a>3. 极限定理与抽样分布</h3><ol>
+<li>设随机变量 $\displaystyle X\sim U[-\pi,\pi],S_n&#x3D;\sum_{k&#x3D;1}^n \cos(kX)$，证明：$\frac{S_n}{n}\stackrel{P}{\to} 0$</li>
+<li>$\eta_{(1)}\le \eta_{(2)}\le \cdots\le \eta_{(n)}$ 为来自均匀分布 $U[0,1]$ 的样本的顺序统计量，求 $\mathrm{Cov}(\eta_{(i)},\eta_{(j)})$</li>
+<li>设总体 $X$ 的密度函数为 $f(x)&#x3D;\begin{cases} 3x^2,&amp;0\lt x\lt 1 \\ 0,&amp;\text{其他} \end{cases}$，$X_{(1)}\le X_{(2)}\le \cdots\le X_{(5)}$ 为来自该总体的样本的顺序统计量，证明：$\frac{X_{(2)}}{X_{(4)}}$ 和 $X_{(4)}$ 独立</li>
+<li>设 $X_{(1)},X_{(2)},\cdots,X_{(n)}$ 是来自总体 $U(0,\theta)$ 的样本的顺序统计量，记统计量 $Y_i&#x3D;\frac{X_{(i)}}{X_{(i+1)}},1\le i\le n-1,Y_n&#x3D;X_{(n)}$，证明：$Y_1,Y_2,\cdots,Y_n$ 相互独立</li>
+<li>设总体 $X$ 的三阶矩存在，若 $X_1,X_2,\cdots,X_n$ 是取自该总体的简单随机样本，$\bar{X}$ 为样本均值，$S^2$ 为样本方差，证明：$\mathrm{Cov}(\bar{X},S^2)&#x3D;\frac{E(X-EX)^3}{n}$</li>
+<li>设随机变量 $X\sim F(n,m)$，证明：$Z&#x3D;\frac{(n&#x2F;m)X}{1+(n&#x2F;m)X}$ 服从 $\mathrm{Beta}$ 分布，并求其参数</li>
+<li>设 $X_1,X_2$ 是来自 $N(0,\sigma^2)$ 的样本，求 $Y&#x3D;\left(\frac{X_1+X_2}{X_1-X_2}\right)^2$ 的分布</li>
+<li>设 $X_1,X_2,\cdots,X_n$ 是来自 $N(\mu_1,\sigma^2)$ 的样本，$Y_1,Y_2,\cdots,Y_m$ 是来自 $N(\mu_2,\sigma^2)$ 的样本，$c,d$ 是任意两个不为零的常数，证明：$t&#x3D;\frac{c(\bar{X}-\mu_1)+d(\bar{Y}-\mu_2)}{S_w\sqrt{\frac{c^2}{n}+\frac{d^2}{m}}}\sim t(n+m-2)$，其中 $S_w^2&#x3D;\frac{(n-1)S_X^2+(m-1)S_Y^2}{n+m-2}$</li>
+<li>设 $X_1,X_2,\cdots,X_{n+1}$ 是来自正态总体的简单样本，$\displaystyle\bar{X}&#x3D;\frac{1}{n}\sum_{i&#x3D;1}^n X_i,S_n^2&#x3D;\frac{1}{n}\sum_{i&#x3D;1}^n (X_i-\bar{X})^2$，求 $\frac{X_{n+1}-\bar{X}}{S_n}\sqrt{\frac{n-1}{n+1}}$ 的分布</li>
+</ol>
+<h3 id="4-统计与检验"><a href="#4-统计与检验" class="headerlink" title="4. 统计与检验"></a>4. 统计与检验</h3><ol>
+<li>设 $X_1,X_2,\cdots,X_n$ 为独立同分布变量，$0\lt\theta\lt 1$，$P(X_1&#x3D;-1)&#x3D;\frac{1-\theta}{2},P(X_1&#x3D;0)&#x3D;\frac{1}{2},P(X_1&#x3D;1)&#x3D;\frac{1+\theta}{2}$，求 $\theta$ 的 $\mathrm{MLE}$，并检验其无偏性</li>
+<li>设 $X_1,X_2,\cdots,X_n\mathrm{i.i.d}\sim N(\mu,1)$，求 $\mu^2$ 的 $\mathrm{UMVUE}$，并检验其有效性</li>
+<li>已知 $X_1,X_2,\cdots,X_n$ 是取自总体 $X$ 的样本，已知 $Y&#x3D;\ln X$ 服从正态分布 $N(\mu,1)$，求 $X$ 的数学期望的置信水平为 95% 的等尾置信区间</li>
+<li>设 $X_1,X_2,\cdots,X_n$ 是来自 $E(\lambda)$ 的样本，求均值 $\mu&#x3D;\frac{1}{\lambda}$ 的置信水平为 90% 的等尾置信区间</li>
+<li>设 $X_1,X_2,\cdots,X_n$ 是总体 $X$ 的样本，$X$ 的密度函数为 $f(x;\theta)&#x3D;\begin{cases} \frac{2}{\pi\theta}e^{-\frac{x^2}{\theta}},&amp;x\gt 0 \\ 0,&amp;\text{其他}\end{cases}$，已知 $\hat{\theta_\mathrm{MLE}}&#x3D;\frac{2}{n}\sum_{i&#x3D;1}^n X_i^2$，基于 $\hat{\theta_\mathrm{MLE}}$ 构造枢轴量，并求出参数 $\theta$ 的置信水平为 $1-\alpha$ 的双侧等尾置信区间</li>
+<li>若总体 $X\sim N(\mu_1,\sigma_1^2),Y\sim N(\mu_2,\sigma_2^2)$ 且 $X,Y$ 相互独立。$X_1,X_2,\cdots,X_n$ 与 $Y_1,Y_2,\cdots,Y_m$ 分别是 $X$ 和 $Y$ 的简单随机样本。已知 $\sigma_1^2&#x3D;\frac{1}{4}\sigma_2^2$，但具体数据未知。<ol>
+<li>证明：$\displaystyle S_w^2&#x3D;\frac{1}{n+m-2}\left(\sum_{i&#x3D;1}^n (X_i-\bar{X})^2+\frac{1}{4}\sum_{i&#x3D;1}^m (Y_i-\bar{Y})^2\right)$ 是 $\sigma_1^2$ 的无偏估计量</li>
+<li>给出假设检验 $H_0:\mu_1&#x3D;\mu_2\leftrightarrow H_1:\mu_1\ne \mu_2$ 的检验法</li>
+</ol>
+</li>
+<li>设 $X_1,X_2,\cdots,X_n$ 是总体 $X$ 的简单随机样本，$X$ 的密度函数为 $f(x;\sigma)&#x3D;\begin{cases} \frac{1}{\sigma}\sqrt{\frac{2}{\pi}}e^{-\frac{x^2}{2\sigma^2}},&amp;x\gt 0 \\ 0,&amp;\text{其他} \end{cases}$，求假设 $H_0:\sigma&#x3D;1\leftrightarrow H_1:\sigma&#x3D;2$ 的似然比检验的拒绝域（检验水平为 $\alpha$）</li>
+</ol>
 
                 
               </div>
@@ -617,9 +670,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%A4%A7%E4%BA%8C%E4%B8%8A/" class="print-no-link">#大二上</a>
-      
         <a href="/tags/%E6%95%B0%E5%AD%A6/" class="print-no-link">#数学</a>
+      
+        <a href="/tags/%E5%A4%A7%E4%BA%8C%E4%B8%8A/" class="print-no-link">#大二上</a>
       
     </div>
   
