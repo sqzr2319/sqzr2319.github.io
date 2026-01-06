@@ -27,7 +27,7 @@
 <meta property="og:description" content="大二上学期动力学基础的复习笔记，目前已完结。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-01-07T04:04:23.000Z">
-<meta property="article:modified_time" content="2026-01-05T11:07:05.884Z">
+<meta property="article:modified_time" content="2026-01-06T08:49:53.104Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="大二上">
 <meta property="article:tag" content="物理">
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.7k 字
+          1.8k 字
         
       </span>
     
@@ -350,19 +350,22 @@
 <li>均匀圆盘或圆柱：$J_C&#x3D;\frac{1}{2}mR^2$</li>
 <li>均匀细杆：$J_C&#x3D;\frac{1}{12}mL^2$</li>
 <li>球：$J_C&#x3D;\frac{2}{5}mR^2$</li>
+<li>长方形板：$J_C&#x3D;\frac{1}{12}m(a^2+b^2)$</li>
 </ol>
 </li>
 <li>质系对动点的动量矩定理：$\frac{\mathrm{d}\mathbf{L}_A}{\mathrm{d}t}&#x3D;\mathbf{M}_A^{\text{外}}+m\mathbf{v}_C\times \mathbf{v}_A$</li>
+<li><strong>有心力则动量矩守恒</strong></li>
 </ol>
 <h3 id="3-动能定理"><a href="#3-动能定理" class="headerlink" title="3. 动能定理"></a>3. 动能定理</h3><ol>
 <li>质系动能：$T&#x3D;\frac{1}{2}\sum m_i v_i^2&#x3D;\frac{1}{2}m v_C^2+\frac{1}{2}J_C\omega^2$</li>
 <li>元功：$\mathrm{d}^\prime A&#x3D;\mathbf{F}\cdot \mathrm{d}\mathbf{r}$ 或 $\mathbf{M}\mathrm{d}\theta$</li>
 <li>质系动能定理：$\mathrm{d}T&#x3D;\sum \mathrm{d}^\prime A_i$，积分形式 $T_2-T_1&#x3D;A_{1\to 2}$</li>
+<li><strong>沿 $\alpha$ 夹角拉 $R$ 轮 $r$ 小轮的绳：$\frac{R\cos\alpha\pm r}{R}x$</strong></li>
 </ol>
-<h3 id="4-拉格朗日原理"><a href="#4-拉格朗日原理" class="headerlink" title="4. 拉格朗日原理"></a>4. 拉格朗日原理</h3><ol>
+<h3 id="5-拉格朗日原理"><a href="#5-拉格朗日原理" class="headerlink" title="5. 拉格朗日原理"></a>5. 拉格朗日原理</h3><ol>
 <li>理想双面约束：$\sum (\mathbf{F}_i-m\mathbf{a}_i)\cdot \delta \mathbf{r}_i&#x3D;0$</li>
 <li>广义坐标形式：完整约束，$\frac{\mathrm{d}}{\mathrm{d}t}\left(\frac{\partial T}{\partial \dot{q}_j}\right)-\frac{\partial T}{\partial q_j}&#x3D;Q_j$</li>
-<li>主动力有势：动势 $L&#x3D;T-V,\frac{\mathrm{d}}{\mathrm{d}t}\left(\frac{\partial L}{\partial \dot{q}_j}\right)-\frac{\partial L}{\partial q_j}&#x3D;0$</li>
+<li>主动力有势：动势 $L&#x3D;T-V,\frac{\mathrm{d}}{\mathrm{d}t}\left(\frac{\partial L}{\partial \dot{q}_j}\right)-\frac{\partial L}{\partial q_j}&#x3D;0$，动势取极小则稳定</li>
 <li>动能的结构：$T&#x3D;T_2+T_1+T_0$，定常约束 $T_1&#x3D;T_0&#x3D;0$</li>
 <li>$L$ 不显含 $t$：$T_2-T_0+V&#x3D;E$</li>
 <li>$L$ 不显含 $q_j$：$\frac{\partial L}{\partial \dot{q}_j}&#x3D;C_j$</li>
@@ -370,7 +373,7 @@
 <h3 id="5-碰撞"><a href="#5-碰撞" class="headerlink" title="5. 碰撞"></a>5. 碰撞</h3><ol>
 <li>有限形式动量定理：$\mathbf{P}_2-\mathbf{P}_1&#x3D;\sum \mathbf{I}_i^\text{外}$，<strong>外冲量和为零则动量守恒</strong></li>
 <li>有限形式动量矩定理：$\mathbf{L_{A2}}-\mathbf{L_{A1}}&#x3D;\sum \mathbf{M_A(\mathbf{I}_i^\text{外})}$，<strong>外冲量矩和为零则动量矩守恒</strong></li>
-<li><strong>思路：动量定理、对质心动量矩定理</strong></li>
+<li><strong>思路：判断守恒 $\to$ 设碰撞冲量 $\to$ 动量定理和对质心的动量矩定理</strong></li>
 <li>恢复系数 $e$：碰撞后法向相对速度与碰撞前法向相对速度之比</li>
 <li>$\mathbf{v_{1n}}&#x3D;[(m_1-em_2)\mathbf{u_{1n}}+(1+e)m_2\mathbf{u_{2n}}]&#x2F;(m_1+m_2)$</li>
 <li>动能损失：$\Delta T&#x3D;\frac{1}{2}\frac{m_1 m_2}{m_1+m_2}(1-e^2)(\mathbf{u_{1n}}-\mathbf{u_{2n}})^2$</li>
