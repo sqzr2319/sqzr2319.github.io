@@ -1,0 +1,795 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/sqzr2319.png">
+  <link rel="icon" href="/img/sqzr2319.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="sqzr2319">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="肆叁小灶第 10 讲，介绍了CSAPP第 1-7 章内容。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="肆叁小灶第10讲 计算机系统漫游">
+<meta property="og:url" content="https://sqzr2319.github.io/43Class/43Class-10/index.html">
+<meta property="og:site_name" content="sqzr2319&#39;s blog">
+<meta property="og:description" content="肆叁小灶第 10 讲，介绍了CSAPP第 1-7 章内容。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://sqzr2319.github.io/img/43Class-10/1.png">
+<meta property="article:published_time" content="2025-10-08T04:24:46.000Z">
+<meta property="article:modified_time" content="2026-01-20T07:29:49.771Z">
+<meta property="article:author" content="sqzr2319">
+<meta property="article:tag" content="计算机">
+<meta property="article:tag" content="肆叁小灶">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://sqzr2319.github.io/img/43Class-10/1.png">
+  
+  
+  
+  <title>肆叁小灶第10讲 计算机系统漫游 - sqzr2319&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"sqzr2319.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\(', right: '\\)', display: false},
+        {left: '\\[', right: '\\]', display: true}
+      ]
+    });"></script>
+    <link rel="stylesheet" href="/css/custom.css">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>sqzr2319</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/Planet.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="肆叁小灶第10讲 计算机系统漫游"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-10-08 12:24" pubdate>
+          2025年10月8日 中午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          39 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">肆叁小灶第10讲 计算机系统漫游</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>肆叁小灶第 10 讲，介绍了CSAPP第 1-7 章内容。</p>
+<span id="more"></span>
+
+<p>笃实 43 班的同学们大家好。</p>
+<p>下学期起，我们将正式开始接触“基础加强”课组限选课：计算机组成原理、应用统计与数据分析、固体力学基础三选一。虽然不是每位同学都会选修计算机组成原理课程，但了解其基本思想，能帮助我们理解程序如何一步步拆解成二进制机器码、内存中的机器码如何通过操作系统在 CPU 上运行，这有助于我们优化程序性能，编写对计算机友好的代码。</p>
+<p>软院开设的《计算机组成原理》课程大体上是基于《深入理解计算机系统》（CSAPP）一书的内容进行教学的。这本书来自卡耐基梅隆大学，是计算机科学领域的经典教材，国内清华、北大、复旦、南大等高校的计算机组成原理&#x2F;计算机系统概论课程也多以此书为参考。</p>
+<p>众所周知，以 C 语言为例，C 代码需要经过编译、汇编、链接转化为二进制机器码，随后载入内存，由操作系统分配给 CPU 执行。CSAPP 正是以此为线索来编写的，全书共有 12 章，整体框架如下：</p>
+<p><img src="/img/43Class-10/1.png" srcset="/img/loading.gif" lazyload></p>
+<p>由于课时所限，软院的计算机组成原理只涵盖了 CSAPP 的第 1-6 章内容，第 8-10 章和第 11-12 章的内容则在操作系统和计算机网络两门课程中详细讲解。本次肆叁小灶，我们将以一个 A+B 程序的生命周期为线索，带大家快速浏览 CSAPP 第 1-7 章的内容，帮助大家建立对计算机系统的整体认识。</p>
+<h2 id="一、整数与浮点数的表示"><a href="#一、整数与浮点数的表示" class="headerlink" title="一、整数与浮点数的表示"></a>一、整数与浮点数的表示</h2><p>让我们从一个简单的 A+B 程序开始：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-type">int</span> a;<br>    <span class="hljs-type">float</span> b;<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d %f&quot;</span>, &amp;a, &amp;b);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Sum: %f\n&quot;</span>, a + b);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>众所周知，计算机只能处理二进制数据，因此我们需要将程序中的整数和浮点数都转换为二进制表示。在 C 语言中，整数和浮点数有完全不同的表示方法：整数采用补码表示法，而浮点数则采用 IEEE 754 标准。</p>
+<h3 id="1-1-整数的补码表示"><a href="#1-1-整数的补码表示" class="headerlink" title="1.1 整数的补码表示"></a>1.1 整数的补码表示</h3><p>在补码表示法中，我们将负数看成很大的正数。例如，在 8 位补码中，一共可以表示 256 个数，我们将 0-127 分配给 0-127，将 128-255 分配给 -128 到 -1。如 +5 的二进制补码表示为 00000101，而 -5 相当于 251，即 11111011。可以发现，取负相当于对原数按位取反后再加 1。</p>
+<p>为什么要使用补码表示法呢？这是因为补码表示法使得加减运算可以统一处理，这就可以大大简化硬件的设计。例如，5 - 3 可以转化为 5 + (-3)，即 00000101 + 11111101 &#x3D; 00000010，即 2。</p>
+<p>当然，补码表示法的某些特性对初学者而言可能难以适应。比如，对绝大多数整数 x，都有 -(-x) &#x3D; x，但对最小的负数 -128 而言，-128 的补码表示为 10000000，取反加 1 后仍然是 10000000，即 -(-128) &#x3D; -128。此外，关于溢出的处理也需要格外注意。</p>
+<h3 id="1-2-浮点数的-IEEE-754-表示"><a href="#1-2-浮点数的-IEEE-754-表示" class="headerlink" title="1.2 浮点数的 IEEE 754 表示"></a>1.2 浮点数的 IEEE 754 表示</h3><p>我们知道，float 和 int 同样占用 4 个字节，但 float 相比 int 不但能表示小数，还能表示非常大的数。这是因为 float 采用了科学计数法的思想，在 32 位二进制表示中，最高位 0&#x2F;1 表示正负号，接下来的 8 位表示指数部分，最后的 23 位表示尾数部分，即 $(-1)^s\times M\times 2^E$。</p>
+<p>当然，范围的扩大是以精度的损失为代价的。比如在表示很大的数时，浮点数的精度很低，加上一个很小的数可能就会被忽略掉，这是使用科学计数法的必然结果。因此，结合律、分配律等性质在浮点运算中并不总是成立的，这是初学者需要注意的地方。</p>
+<p>此外，课程中还会布置一个实验（DataLab），让大家在禁用 if 等语句的情况下实现整数和浮点数的各种操作，帮助大家加深理解。</p>
+<h3 id="1-3-整数和浮点数在内存中的存储"><a href="#1-3-整数和浮点数在内存中的存储" class="headerlink" title="1.3 整数和浮点数在内存中的存储"></a>1.3 整数和浮点数在内存中的存储</h3><p>比较反直觉的一点是：整数和浮点数在内存中都是“反过来”存储的，即低地址存储低位字节，高地址存储高位字节，这种存储方式称为“小端序”（Little-Endian）。例如，四字节整数 0x12345678（0x 表示十六进制，如 0x12 就是二进制 00010010）在内存中的存储顺序如下：</p>
+<table>
+<thead>
+<tr>
+<th>地址</th>
+<th>0x00</th>
+<th>0x01</th>
+<th>0x02</th>
+<th>0x03</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>内容</td>
+<td>0x78</td>
+<td>0x56</td>
+<td>0x34</td>
+<td>0x12</td>
+</tr>
+</tbody></table>
+<p>其实这种存储方式并没有什么显著的优缺点，只是历史原因使得 x86 架构采用了小端序。x86 架构就是我们常用的 Intel 和 AMD CPU 所采用的架构，也是我们下一节的主角。</p>
+<h2 id="二、编译：从-C-到汇编"><a href="#二、编译：从-C-到汇编" class="headerlink" title="二、编译：从 C 到汇编"></a>二、编译：从 C 到汇编</h2><p>CPU 当然不能直接识别 C 代码，我们需要通过编译器将 C 代码转换为汇编代码，再通过汇编器将汇编代码转换为机器码；如果程序由多个源文件组成，还需要通过链接器将多个汇编文件合并起来。在计算机组成原理课程中，我们不关心编译器的具体实现细节（这会在形式语言与自动机、编译原理课程中讲解），只关心 C 代码经过编译器后变成了什么样的汇编代码。</p>
+<p>在本节中，我们对前面的 A+B 程序稍作修改，以便更好地展示汇编代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-type">int</span> <span class="hljs-title function_">abs</span><span class="hljs-params">(<span class="hljs-type">int</span> a)</span> &#123;<br>    <span class="hljs-keyword">if</span> (a &lt; <span class="hljs-number">0</span>) &#123;<br>        <span class="hljs-keyword">return</span> -a;<br>    &#125;<br>    <span class="hljs-keyword">return</span> a;<br>&#125;<br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-type">int</span> absolute = <span class="hljs-built_in">abs</span>(a);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-comment">// 省略 scanf 和 printf 部分</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>编译器在进行汇编操作之前，会先进行预处理：简单来说，就是将 <code>#include &lt;stdio.h&gt;</code> 语句展开为 stdio.h 头文件的内容。接着，编译器会进行词法分析、语法分析、语义分析等步骤，最终将 C 代码转换为汇编代码。该程序经过 gcc 编译器生成的汇编代码大致如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs asm">    # 假设 a 通过 scanf 函数写入了栈空间<br>abs:<br>    cmp $0, %rdi          # 比较 a 和 0<br>    jge .L2               # 如果 a &gt;= 0，跳转到 .L2<br>    neg %rdi              # 否则，取 -a<br>.L2:<br>    mov %rdi, %rax        # 将结果放入 %rax 寄存器<br>    ret                   # 返回<br><br>main:<br>    popq %rdi             # 从栈中弹出 a 到 %rdi<br>    call abs              # 调用 abs 函数<br>    pushq %rax            # 将返回值压入栈<br>    mov $0, %rax          # 返回 0<br>    ret                   # 返回<br></code></pre></td></tr></table></figure>
+
+<p>可以看出，汇编代码与 C 代码有很大差别。C 代码中的变量在汇编代码中并没有直接对应的变量名，而是通过寄存器（如 %rdi、%rax）和内存中的栈空间来存储。函数调用需要通过 call 指令，并通过 %rdi 等寄存器传递参数；函数返回则通过 ret 指令，并通过 %rax 寄存器传递返回值。C 语言中的控制流语句（如 if 语句）则通过比较指令（如 cmp）和条件跳转指令（如 jge）来实现。</p>
+<p>由于程序代码和数据在内存中都是以二进制形式存储的，这就为栈攻击等安全漏洞提供了可乘之机。具体而言，我们可以精心设计一段字符串数据，字符串数据通过 scanf 函数写入栈空间后，让程序将字符串数据作为指令执行，从而达到攻击的目的。</p>
+<p>这就是课程中缓冲区溢出攻击实验（AttackLab）的基本原理。在去年学习程设课程时，VS 会提议将 scanf 替换为更安全的 scanf_s，也正是为了防止类似的攻击。</p>
+<h2 id="三、汇编：汇编如何运行"><a href="#三、汇编：汇编如何运行" class="headerlink" title="三、汇编：汇编如何运行"></a>三、汇编：汇编如何运行</h2><p>接下来我们考虑汇编代码如何在 CPU 上运行。在 CSAPP 课程中，考虑到对学生而言实现 x86 指令集的 CPU 过于复杂，课程采用了一个简化版的指令集—— Y86 指令集。Y86 指令集保留了 x86 指令集的基本结构和思想，但大大简化了指令的数量和复杂度。具体而言，Y86 指令集只包含以下几类指令：</p>
+<ol>
+<li>数据传输指令：如 rrmovq、irmovq、mrmovq、rmmovq 等，用于在寄存器和内存之间传输数据；</li>
+<li>算术逻辑指令：如 addq、subq、andq、xorq 等，用于进行加减乘除等运算；</li>
+<li>控制流指令：如 jmp、je、jne、call、ret 等，用于实现条件语句和函数调用；</li>
+<li>其他指令：如 nop、halt 等，用于停机等操作。</li>
+</ol>
+<p>每个指令都有固定的二进制编码格式，如 addq 指令编码为 0x60XX，其中 XX 表示两个寄存器的编号。这样一来，汇编器就可以将汇编代码转换为机器码。随后，操作系统会将机器码载入内存，并将程序计数器（PC）指向程序的入口地址，CPU 就可以通过读取内存中的二进制指令，执行相应的操作。</p>
+<p>为了提高 CPU 硬件的复用率，我们需要将每个指令拆分为多个微操作，每个微操作完成指令的一部分功能。具体而言，CPU 的执行过程可以分为以下几个阶段：</p>
+<ol>
+<li>取指（Fetch）：从内存中读取指令，并将指令存储到指令寄存器中；</li>
+<li>译码（Decode）：解析指令的二进制编码，确定指令的类型和操作数；</li>
+<li>执行（Execute）：根据指令类型，执行相应的操作，如加减乘除等；</li>
+<li>访存（Memory Access）：如果指令需要访问内存，则在此阶段进行内存读写操作；</li>
+<li>写回（Write Back）：将结果写回寄存器。</li>
+<li>跳转（PC Update）：根据指令类型，确定下一条指令的地址。</li>
+</ol>
+<p>同样以 addq 为例，CPU 执行该指令的微操作序列大致如下：</p>
+<ol>
+<li>取指：从内存中读取 addq 指令，并将指令存储到指令寄存器中；</li>
+<li>译码：解析 addq 指令的二进制编码，确定需要操作的寄存器编号；</li>
+<li>执行：从寄存器中读取操作数，进行加法运算；</li>
+<li>访存：无操作，跳过；</li>
+<li>写回：将加法结果写回目标寄存器；</li>
+<li>跳转：更新程序计数器，指向下一条指令。</li>
+</ol>
+<p>每个指令都可以被拆分为类似的微操作序列，从而实现指令的执行。通过这种方式，只需要设计一套通用的微操作硬件，就可以支持多种指令的执行，大大提高了 CPU 硬件的复用率。但这也带来了性能上的损失，因为每条指令都需要经过多个微操作阶段才能完成。</p>
+<p>我们可以通过流水线技术来提高指令的执行效率：例如，在前一条指令正在译码时就开始取下一条指令，从而实现指令的并行执行。当然，流水线技术也带来了数据冒险、控制冒险等问题，需要通过数据转发、分支预测等技术来解决。课程中会通过处理器架构实验（ArchLab）让大家为 Y86 流水线处理器添加新指令来优化程序性能，帮助大家加深理解。</p>
+<h2 id="四、链接：多文件的合并"><a href="#四、链接：多文件的合并" class="headerlink" title="四、链接：多文件的合并"></a>四、链接：多文件的合并</h2><p>上面我们介绍了单个 C 代码文件如何通过编译器转化为汇编代码，再通过汇编器转化为机器码，最后由 CPU 执行。接下来我们考虑一个更复杂的场景：程序需要由多个源文件拼起来，例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// main.cpp</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;add.h&quot;</span></span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-type">int</span> a = <span class="hljs-number">5</span>;<br>    <span class="hljs-type">int</span> b = <span class="hljs-number">10</span>;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Sum: %d\n&quot;</span>, add(a, b));<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-comment">// add.h</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">add</span><span class="hljs-params">(<span class="hljs-type">int</span> x, <span class="hljs-type">int</span> y)</span>&#123;<br>    <span class="hljs-keyword">return</span> x + y;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>在这种情况下，我们需要通过链接器将多个源文件生成的机器码合并为一个可执行文件。实际上，机器码文件除了二进制指令串外，还包含了符号表和重定位信息。例如编译器在编译 main.cpp 时，发现调用的 add 函数并没有在当前文件中定义，于是会在符号表中记录下 add 函数的引用信息，并在 <code>call add</code> 处留下地址占位符。</p>
+<p>于是，链接器先扫描 main.cpp 的机器码文件 main.o，发现 add 函数未定义，于是继续扫描 add.h 的机器码文件 add.o，找到了 add 函数的定义。随后，链接器将 add 函数的机器码并入 main.o，并将 main.o 中 <code>call add</code> 处的地址占位符替换为 add 函数的实际地址。最终，链接器生成了一个完整的可执行文件 a.out。</p>
+<p>这种链接方式被称为静态链接。容易发现，静态链接存在一个明显的问题：如果先扫描 add.o 再扫描 main.o，链接器在扫描 add.o 时不会留下任何痕迹，因为 add.o 本身并没有任何未定义的问题，于是继续扫描 main.o 时就找不到 add 函数的定义了。也就是说，被依赖的文件必须置于依赖文件之后，否则链接器无法正确解析符号。但如果依赖关系存在循环呢？</p>
+<p>我们可以通过动态链接来解决这个问题。动态链接的基本思想是：在程序运行时再进行链接，而不是在编译时进行链接。具体而言，程序在编译时会生成一个包含未定义符号的可执行文件（如 a.out），而这些未定义符号会在程序运行时由动态链接器解析。动态链接器会在程序启动时加载所需的共享库，并将未定义符号解析为共享库中的实际地址。这样一来，程序在编译时不需要知道所有的依赖关系，只需要在运行时加载所需的共享库即可。动态链接的具体实现机制超出了 CSAPP 课程的范围，这里只做简单介绍。</p>
+<h2 id="五、缓存：提高访问速度"><a href="#五、缓存：提高访问速度" class="headerlink" title="五、缓存：提高访问速度"></a>五、缓存：提高访问速度</h2><p>在前面的章节中，我们介绍了程序如何从 C 代码转化为机器码，并由 CPU 执行。然而，CPU 的速度远远快于内存的访问速度，这就导致了 CPU 在执行程序时经常需要等待内存数据的到来，从而严重影响了程序的性能。为了解决这个问题，计算机系统引入了缓存机制。</p>
+<p>缓存机制的基本思想是：将频繁访问的数据存储在速度更快的存储器中，从而提高数据的访问速度。具体而言，计算机系统通常会设计多级缓存结构，如 L1、L2、L3 缓存，每一级缓存的容量和速度都不同。CPU 首先尝试从 L1 缓存中读取数据，如果未命中，则继续尝试从 L2 缓存中读取，依此类推，直到最终从内存中读取数据。</p>
+<p>缓存机制能够得以生效，是因为程序的局部性原理。局部性原理包括时间局部性和空间局部性两方面：时间局部性指的是如果一个数据被访问过，那么在不久的将来它很可能会被再次访问；空间局部性指的是如果一个数据被访问过，那么它附近的数据很可能也会被访问。就比如下面这段代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; N; i++) &#123;<br>    sum += <span class="hljs-built_in">array</span>[i];<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>在这段代码中，数组 array 的元素被顺序访问，这就利用了空间局部性原理。由于数组元素在内存中是连续存储的，当访问 array[i] 时，CPU 会将包含 array[i] 的行加载到缓存中，从而使得后续对 array[i+1]、array[i+2] 等元素的访问能够直接从缓存中读取，大大提高了访问速度。此外，循环体内的 sum 变量被频繁访问，这就利用了时间局部性原理。CPU 会将 sum 变量存储在寄存器中，从而使得对 sum 的访问速度更快。</p>
+<p>我们可以使用局部性原理分析下面两个矩阵乘法代码的性能差异：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// 代码1</span><br><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; N; i++) &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; N; j++) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> k = <span class="hljs-number">0</span>; k &lt; N; k++) &#123;<br>            C[i][j] += A[i][k] * B[k][j];<br>        &#125;<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">// 代码2</span><br><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> k = <span class="hljs-number">0</span>; k &lt; N; k++) &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; N; i++) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; N; j++) &#123;<br>            C[i][j] += A[i][k] * B[k][j];<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>虽然看着只是把循环顺序从 ijk 换成了 kij，但实际上，在矩阵规模较大时，代码 2 会比代码 1 快五倍以上。这是因为代码 1 在访问矩阵 B 时，从 B[k][j] 到 B[k+1][j] 并不是连续的内存访问，导致缓存命中率较低；而代码 2 在访问矩阵 A 和 B 时，都是连续的内存访问，充分利用了空间局部性原理，从而提高了缓存命中率。在 CMU 的 CSAPP 课程中，有一个专门的缓存实验（CacheLab），让大家通过编写矩阵乘法代码来优化缓存性能，但在软院的计算机组成原理课程中，由于课时所限，没有安排这个实验。</p>
+<p>这就是学习计算机组成原理课程的意义：如果说数据结构与算法课程关注大 O 级别的理论性能优化，那么计算机组成原理课程则更关注常数级别的实际性能优化。通过理解程序如何在计算机上运行，能够帮助我们编写对计算机友好的代码，从而提高程序的性能。</p>
+<p>实际上，前面我们假设程序运行时独占了整台计算机的内存和 CPU 资源，但在现实中，操作系统会通过异常控制流和虚拟内存等机制，让多个程序共享计算机的资源，从而提高计算机的利用率。这部分内容在 CSAPP 的第 8-10 章中有所涉及，下学期的操作系统课程会对其进行更详细的讲解。</p>
+<p>本期肆叁小灶就到这里，希望有助于大家下学期的学习。祝寒假愉快！</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8E%A8%E9%80%81/" class="category-chain-item">推送</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="print-no-link">#计算机</a>
+      
+        <a href="/tags/%E8%82%86%E5%8F%81%E5%B0%8F%E7%81%B6/" class="print-no-link">#肆叁小灶</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>肆叁小灶第10讲 计算机系统漫游</div>
+      <div>https://sqzr2319.github.io/43Class/43Class-10/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>sqzr2319</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年10月8日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/43Class/43Class-11/" title="肆叁小灶第11讲">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">肆叁小灶第11讲</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/43Class/43Class-7/" title="肆叁小灶第七讲 从 Huffman 树到信息论">
+                        <span class="hidden-mobile">肆叁小灶第七讲 从 Huffman 树到信息论</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"byMlA6LzFKznnESJrecWspL9-gzGzoHsz","appKey":"1yTsGiEmKhEyjL3JTJzFKiDu","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

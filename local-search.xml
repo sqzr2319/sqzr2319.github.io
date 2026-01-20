@@ -4,6 +4,168 @@
   
   
   <entry>
+    <title>金融学基础</title>
+    <link href="/26Spring/Finance/"/>
+    <url>/26Spring/Finance/</url>
+    
+    <content type="html"><![CDATA[<p>大二寒假及下学期的经济、会计与金融自学与课程笔记。</p><span id="more"></span><h2 id="一、微观经济学"><a href="#一、微观经济学" class="headerlink" title="一、微观经济学"></a>一、微观经济学</h2><h2 id="二、宏观经济学"><a href="#二、宏观经济学" class="headerlink" title="二、宏观经济学"></a>二、宏观经济学</h2><h2 id="三、会计学"><a href="#三、会计学" class="headerlink" title="三、会计学"></a>三、会计学</h2><h2 id="四、金融学"><a href="#四、金融学" class="headerlink" title="四、金融学"></a>四、金融学</h2>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>大二下</tag>
+      
+      <tag>通识</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>电工电子技术基础</title>
+    <link href="/26Spring/EE/"/>
+    <url>/26Spring/EE/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>大二下</tag>
+      
+      <tag>物理</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>数据库原理</title>
+    <link href="/26Spring/DB/"/>
+    <url>/26Spring/DB/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>大二下</tag>
+      
+      <tag>计算机</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>操作系统</title>
+    <link href="/26Spring/OS/"/>
+    <url>/26Spring/OS/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>大二下</tag>
+      
+      <tag>计算机</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>数值分析基础</title>
+    <link href="/26Spring/Numerical/"/>
+    <url>/26Spring/Numerical/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>数学</tag>
+      
+      <tag>大二下</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>人工智能基础</title>
+    <link href="/26Spring/AI/"/>
+    <url>/26Spring/AI/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>大二下</tag>
+      
+      <tag>计算机</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>大学物理B(2)</title>
     <link href="/25Fall/Physics-B2/"/>
     <url>/25Fall/Physics-B2/</url>
@@ -20,9 +182,9 @@
     
     <tags>
       
-      <tag>大二上</tag>
-      
       <tag>物理</tag>
+      
+      <tag>大二上</tag>
       
     </tags>
     
@@ -47,9 +209,9 @@
     
     <tags>
       
-      <tag>大二上</tag>
-      
       <tag>数学</tag>
+      
+      <tag>大二上</tag>
       
     </tags>
     
@@ -74,9 +236,9 @@
     
     <tags>
       
-      <tag>大二上</tag>
-      
       <tag>计算机</tag>
+      
+      <tag>大二上</tag>
       
     </tags>
     
@@ -101,9 +263,9 @@
     
     <tags>
       
-      <tag>大二上</tag>
-      
       <tag>计算机</tag>
+      
+      <tag>大二上</tag>
       
     </tags>
     
@@ -128,9 +290,9 @@
     
     <tags>
       
-      <tag>大二上</tag>
-      
       <tag>物理</tag>
+      
+      <tag>大二上</tag>
       
     </tags>
     
@@ -139,11 +301,11 @@
   
   
   <entry>
-    <title>肆叁小灶第九讲 人工智能初步（下）</title>
-    <link href="/43Class/43Class-9/"/>
-    <url>/43Class/43Class-9/</url>
+    <title>肆叁小灶第11讲</title>
+    <link href="/43Class/43Class-11/"/>
+    <url>/43Class/43Class-11/</url>
     
-    <content type="html"><![CDATA[<p>肆叁小灶第九讲，介绍了大模型的前沿技术：强化学习、多模态和具身智能。</p><span id="more"></span>]]></content>
+    <content type="html"><![CDATA[<p>肆叁小灶第11讲，介绍了</p><span id="more"></span>]]></content>
     
     
     <categories>
@@ -166,11 +328,11 @@
   
   
   <entry>
-    <title>肆叁小灶第八讲 人工智能初步（上）</title>
-    <link href="/43Class/43Class-8/"/>
-    <url>/43Class/43Class-8/</url>
+    <title>肆叁小灶第10讲 计算机系统漫游</title>
+    <link href="/43Class/43Class-10/"/>
+    <url>/43Class/43Class-10/</url>
     
-    <content type="html"><![CDATA[<p>肆叁小灶第八讲，介绍了机器学习和深度学习的基础知识。</p><span id="more"></span>]]></content>
+    <content type="html"><![CDATA[<p>肆叁小灶第 10 讲，介绍了CSAPP第 1-7 章内容。</p><span id="more"></span><p>笃实 43 班的同学们大家好。</p><p>下学期起，我们将正式开始接触“基础加强”课组限选课：计算机组成原理、应用统计与数据分析、固体力学基础三选一。虽然不是每位同学都会选修计算机组成原理课程，但了解其基本思想，能帮助我们理解程序如何一步步拆解成二进制机器码、内存中的机器码如何通过操作系统在 CPU 上运行，这有助于我们优化程序性能，编写对计算机友好的代码。</p><p>软院开设的《计算机组成原理》课程大体上是基于《深入理解计算机系统》（CSAPP）一书的内容进行教学的。这本书来自卡耐基梅隆大学，是计算机科学领域的经典教材，国内清华、北大、复旦、南大等高校的计算机组成原理&#x2F;计算机系统概论课程也多以此书为参考。</p><p>众所周知，以 C 语言为例，C 代码需要经过编译、汇编、链接转化为二进制机器码，随后载入内存，由操作系统分配给 CPU 执行。CSAPP 正是以此为线索来编写的，全书共有 12 章，整体框架如下：</p><p><img src="/img/43Class-10/1.png"></p><p>由于课时所限，软院的计算机组成原理只涵盖了 CSAPP 的第 1-6 章内容，第 8-10 章和第 11-12 章的内容则在操作系统和计算机网络两门课程中详细讲解。本次肆叁小灶，我们将以一个 A+B 程序的生命周期为线索，带大家快速浏览 CSAPP 第 1-7 章的内容，帮助大家建立对计算机系统的整体认识。</p><h2 id="一、整数与浮点数的表示"><a href="#一、整数与浮点数的表示" class="headerlink" title="一、整数与浮点数的表示"></a>一、整数与浮点数的表示</h2><p>让我们从一个简单的 A+B 程序开始：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-type">int</span> a;<br>    <span class="hljs-type">float</span> b;<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d %f&quot;</span>, &amp;a, &amp;b);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Sum: %f\n&quot;</span>, a + b);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure><p>众所周知，计算机只能处理二进制数据，因此我们需要将程序中的整数和浮点数都转换为二进制表示。在 C 语言中，整数和浮点数有完全不同的表示方法：整数采用补码表示法，而浮点数则采用 IEEE 754 标准。</p><h3 id="1-1-整数的补码表示"><a href="#1-1-整数的补码表示" class="headerlink" title="1.1 整数的补码表示"></a>1.1 整数的补码表示</h3><p>在补码表示法中，我们将负数看成很大的正数。例如，在 8 位补码中，一共可以表示 256 个数，我们将 0-127 分配给 0-127，将 128-255 分配给 -128 到 -1。如 +5 的二进制补码表示为 00000101，而 -5 相当于 251，即 11111011。可以发现，取负相当于对原数按位取反后再加 1。</p><p>为什么要使用补码表示法呢？这是因为补码表示法使得加减运算可以统一处理，这就可以大大简化硬件的设计。例如，5 - 3 可以转化为 5 + (-3)，即 00000101 + 11111101 &#x3D; 00000010，即 2。</p><p>当然，补码表示法的某些特性对初学者而言可能难以适应。比如，对绝大多数整数 x，都有 -(-x) &#x3D; x，但对最小的负数 -128 而言，-128 的补码表示为 10000000，取反加 1 后仍然是 10000000，即 -(-128) &#x3D; -128。此外，关于溢出的处理也需要格外注意。</p><h3 id="1-2-浮点数的-IEEE-754-表示"><a href="#1-2-浮点数的-IEEE-754-表示" class="headerlink" title="1.2 浮点数的 IEEE 754 表示"></a>1.2 浮点数的 IEEE 754 表示</h3><p>我们知道，float 和 int 同样占用 4 个字节，但 float 相比 int 不但能表示小数，还能表示非常大的数。这是因为 float 采用了科学计数法的思想，在 32 位二进制表示中，最高位 0&#x2F;1 表示正负号，接下来的 8 位表示指数部分，最后的 23 位表示尾数部分，即 $(-1)^s\times M\times 2^E$。</p><p>当然，范围的扩大是以精度的损失为代价的。比如在表示很大的数时，浮点数的精度很低，加上一个很小的数可能就会被忽略掉，这是使用科学计数法的必然结果。因此，结合律、分配律等性质在浮点运算中并不总是成立的，这是初学者需要注意的地方。</p><p>此外，课程中还会布置一个实验（DataLab），让大家在禁用 if 等语句的情况下实现整数和浮点数的各种操作，帮助大家加深理解。</p><h3 id="1-3-整数和浮点数在内存中的存储"><a href="#1-3-整数和浮点数在内存中的存储" class="headerlink" title="1.3 整数和浮点数在内存中的存储"></a>1.3 整数和浮点数在内存中的存储</h3><p>比较反直觉的一点是：整数和浮点数在内存中都是“反过来”存储的，即低地址存储低位字节，高地址存储高位字节，这种存储方式称为“小端序”（Little-Endian）。例如，四字节整数 0x12345678（0x 表示十六进制，如 0x12 就是二进制 00010010）在内存中的存储顺序如下：</p><table><thead><tr><th>地址</th><th>0x00</th><th>0x01</th><th>0x02</th><th>0x03</th></tr></thead><tbody><tr><td>内容</td><td>0x78</td><td>0x56</td><td>0x34</td><td>0x12</td></tr></tbody></table><p>其实这种存储方式并没有什么显著的优缺点，只是历史原因使得 x86 架构采用了小端序。x86 架构就是我们常用的 Intel 和 AMD CPU 所采用的架构，也是我们下一节的主角。</p><h2 id="二、编译：从-C-到汇编"><a href="#二、编译：从-C-到汇编" class="headerlink" title="二、编译：从 C 到汇编"></a>二、编译：从 C 到汇编</h2><p>CPU 当然不能直接识别 C 代码，我们需要通过编译器将 C 代码转换为汇编代码，再通过汇编器将汇编代码转换为机器码；如果程序由多个源文件组成，还需要通过链接器将多个汇编文件合并起来。在计算机组成原理课程中，我们不关心编译器的具体实现细节（这会在形式语言与自动机、编译原理课程中讲解），只关心 C 代码经过编译器后变成了什么样的汇编代码。</p><p>在本节中，我们对前面的 A+B 程序稍作修改，以便更好地展示汇编代码：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-type">int</span> <span class="hljs-title function_">abs</span><span class="hljs-params">(<span class="hljs-type">int</span> a)</span> &#123;<br>    <span class="hljs-keyword">if</span> (a &lt; <span class="hljs-number">0</span>) &#123;<br>        <span class="hljs-keyword">return</span> -a;<br>    &#125;<br>    <span class="hljs-keyword">return</span> a;<br>&#125;<br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-type">int</span> absolute = <span class="hljs-built_in">abs</span>(a);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-comment">// 省略 scanf 和 printf 部分</span><br>&#125;<br></code></pre></td></tr></table></figure><p>编译器在进行汇编操作之前，会先进行预处理：简单来说，就是将 <code>#include &lt;stdio.h&gt;</code> 语句展开为 stdio.h 头文件的内容。接着，编译器会进行词法分析、语法分析、语义分析等步骤，最终将 C 代码转换为汇编代码。该程序经过 gcc 编译器生成的汇编代码大致如下：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs asm">    # 假设 a 通过 scanf 函数写入了栈空间<br>abs:<br>    cmp $0, %rdi          # 比较 a 和 0<br>    jge .L2               # 如果 a &gt;= 0，跳转到 .L2<br>    neg %rdi              # 否则，取 -a<br>.L2:<br>    mov %rdi, %rax        # 将结果放入 %rax 寄存器<br>    ret                   # 返回<br><br>main:<br>    popq %rdi             # 从栈中弹出 a 到 %rdi<br>    call abs              # 调用 abs 函数<br>    pushq %rax            # 将返回值压入栈<br>    mov $0, %rax          # 返回 0<br>    ret                   # 返回<br></code></pre></td></tr></table></figure><p>可以看出，汇编代码与 C 代码有很大差别。C 代码中的变量在汇编代码中并没有直接对应的变量名，而是通过寄存器（如 %rdi、%rax）和内存中的栈空间来存储。函数调用需要通过 call 指令，并通过 %rdi 等寄存器传递参数；函数返回则通过 ret 指令，并通过 %rax 寄存器传递返回值。C 语言中的控制流语句（如 if 语句）则通过比较指令（如 cmp）和条件跳转指令（如 jge）来实现。</p><p>由于程序代码和数据在内存中都是以二进制形式存储的，这就为栈攻击等安全漏洞提供了可乘之机。具体而言，我们可以精心设计一段字符串数据，字符串数据通过 scanf 函数写入栈空间后，让程序将字符串数据作为指令执行，从而达到攻击的目的。</p><p>这就是课程中缓冲区溢出攻击实验（AttackLab）的基本原理。在去年学习程设课程时，VS 会提议将 scanf 替换为更安全的 scanf_s，也正是为了防止类似的攻击。</p><h2 id="三、汇编：汇编如何运行"><a href="#三、汇编：汇编如何运行" class="headerlink" title="三、汇编：汇编如何运行"></a>三、汇编：汇编如何运行</h2><p>接下来我们考虑汇编代码如何在 CPU 上运行。在 CSAPP 课程中，考虑到对学生而言实现 x86 指令集的 CPU 过于复杂，课程采用了一个简化版的指令集—— Y86 指令集。Y86 指令集保留了 x86 指令集的基本结构和思想，但大大简化了指令的数量和复杂度。具体而言，Y86 指令集只包含以下几类指令：</p><ol><li>数据传输指令：如 rrmovq、irmovq、mrmovq、rmmovq 等，用于在寄存器和内存之间传输数据；</li><li>算术逻辑指令：如 addq、subq、andq、xorq 等，用于进行加减乘除等运算；</li><li>控制流指令：如 jmp、je、jne、call、ret 等，用于实现条件语句和函数调用；</li><li>其他指令：如 nop、halt 等，用于停机等操作。</li></ol><p>每个指令都有固定的二进制编码格式，如 addq 指令编码为 0x60XX，其中 XX 表示两个寄存器的编号。这样一来，汇编器就可以将汇编代码转换为机器码。随后，操作系统会将机器码载入内存，并将程序计数器（PC）指向程序的入口地址，CPU 就可以通过读取内存中的二进制指令，执行相应的操作。</p><p>为了提高 CPU 硬件的复用率，我们需要将每个指令拆分为多个微操作，每个微操作完成指令的一部分功能。具体而言，CPU 的执行过程可以分为以下几个阶段：</p><ol><li>取指（Fetch）：从内存中读取指令，并将指令存储到指令寄存器中；</li><li>译码（Decode）：解析指令的二进制编码，确定指令的类型和操作数；</li><li>执行（Execute）：根据指令类型，执行相应的操作，如加减乘除等；</li><li>访存（Memory Access）：如果指令需要访问内存，则在此阶段进行内存读写操作；</li><li>写回（Write Back）：将结果写回寄存器。</li><li>跳转（PC Update）：根据指令类型，确定下一条指令的地址。</li></ol><p>同样以 addq 为例，CPU 执行该指令的微操作序列大致如下：</p><ol><li>取指：从内存中读取 addq 指令，并将指令存储到指令寄存器中；</li><li>译码：解析 addq 指令的二进制编码，确定需要操作的寄存器编号；</li><li>执行：从寄存器中读取操作数，进行加法运算；</li><li>访存：无操作，跳过；</li><li>写回：将加法结果写回目标寄存器；</li><li>跳转：更新程序计数器，指向下一条指令。</li></ol><p>每个指令都可以被拆分为类似的微操作序列，从而实现指令的执行。通过这种方式，只需要设计一套通用的微操作硬件，就可以支持多种指令的执行，大大提高了 CPU 硬件的复用率。但这也带来了性能上的损失，因为每条指令都需要经过多个微操作阶段才能完成。</p><p>我们可以通过流水线技术来提高指令的执行效率：例如，在前一条指令正在译码时就开始取下一条指令，从而实现指令的并行执行。当然，流水线技术也带来了数据冒险、控制冒险等问题，需要通过数据转发、分支预测等技术来解决。课程中会通过处理器架构实验（ArchLab）让大家为 Y86 流水线处理器添加新指令来优化程序性能，帮助大家加深理解。</p><h2 id="四、链接：多文件的合并"><a href="#四、链接：多文件的合并" class="headerlink" title="四、链接：多文件的合并"></a>四、链接：多文件的合并</h2><p>上面我们介绍了单个 C 代码文件如何通过编译器转化为汇编代码，再通过汇编器转化为机器码，最后由 CPU 执行。接下来我们考虑一个更复杂的场景：程序需要由多个源文件拼起来，例如：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// main.cpp</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;add.h&quot;</span></span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-type">int</span> a = <span class="hljs-number">5</span>;<br>    <span class="hljs-type">int</span> b = <span class="hljs-number">10</span>;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Sum: %d\n&quot;</span>, add(a, b));<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-comment">// add.h</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">add</span><span class="hljs-params">(<span class="hljs-type">int</span> x, <span class="hljs-type">int</span> y)</span>&#123;<br>    <span class="hljs-keyword">return</span> x + y;<br>&#125;<br></code></pre></td></tr></table></figure><p>在这种情况下，我们需要通过链接器将多个源文件生成的机器码合并为一个可执行文件。实际上，机器码文件除了二进制指令串外，还包含了符号表和重定位信息。例如编译器在编译 main.cpp 时，发现调用的 add 函数并没有在当前文件中定义，于是会在符号表中记录下 add 函数的引用信息，并在 <code>call add</code> 处留下地址占位符。</p><p>于是，链接器先扫描 main.cpp 的机器码文件 main.o，发现 add 函数未定义，于是继续扫描 add.h 的机器码文件 add.o，找到了 add 函数的定义。随后，链接器将 add 函数的机器码并入 main.o，并将 main.o 中 <code>call add</code> 处的地址占位符替换为 add 函数的实际地址。最终，链接器生成了一个完整的可执行文件 a.out。</p><p>这种链接方式被称为静态链接。容易发现，静态链接存在一个明显的问题：如果先扫描 add.o 再扫描 main.o，链接器在扫描 add.o 时不会留下任何痕迹，因为 add.o 本身并没有任何未定义的问题，于是继续扫描 main.o 时就找不到 add 函数的定义了。也就是说，被依赖的文件必须置于依赖文件之后，否则链接器无法正确解析符号。但如果依赖关系存在循环呢？</p><p>我们可以通过动态链接来解决这个问题。动态链接的基本思想是：在程序运行时再进行链接，而不是在编译时进行链接。具体而言，程序在编译时会生成一个包含未定义符号的可执行文件（如 a.out），而这些未定义符号会在程序运行时由动态链接器解析。动态链接器会在程序启动时加载所需的共享库，并将未定义符号解析为共享库中的实际地址。这样一来，程序在编译时不需要知道所有的依赖关系，只需要在运行时加载所需的共享库即可。动态链接的具体实现机制超出了 CSAPP 课程的范围，这里只做简单介绍。</p><h2 id="五、缓存：提高访问速度"><a href="#五、缓存：提高访问速度" class="headerlink" title="五、缓存：提高访问速度"></a>五、缓存：提高访问速度</h2><p>在前面的章节中，我们介绍了程序如何从 C 代码转化为机器码，并由 CPU 执行。然而，CPU 的速度远远快于内存的访问速度，这就导致了 CPU 在执行程序时经常需要等待内存数据的到来，从而严重影响了程序的性能。为了解决这个问题，计算机系统引入了缓存机制。</p><p>缓存机制的基本思想是：将频繁访问的数据存储在速度更快的存储器中，从而提高数据的访问速度。具体而言，计算机系统通常会设计多级缓存结构，如 L1、L2、L3 缓存，每一级缓存的容量和速度都不同。CPU 首先尝试从 L1 缓存中读取数据，如果未命中，则继续尝试从 L2 缓存中读取，依此类推，直到最终从内存中读取数据。</p><p>缓存机制能够得以生效，是因为程序的局部性原理。局部性原理包括时间局部性和空间局部性两方面：时间局部性指的是如果一个数据被访问过，那么在不久的将来它很可能会被再次访问；空间局部性指的是如果一个数据被访问过，那么它附近的数据很可能也会被访问。就比如下面这段代码：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; N; i++) &#123;<br>    sum += <span class="hljs-built_in">array</span>[i];<br>&#125;<br></code></pre></td></tr></table></figure><p>在这段代码中，数组 array 的元素被顺序访问，这就利用了空间局部性原理。由于数组元素在内存中是连续存储的，当访问 array[i] 时，CPU 会将包含 array[i] 的行加载到缓存中，从而使得后续对 array[i+1]、array[i+2] 等元素的访问能够直接从缓存中读取，大大提高了访问速度。此外，循环体内的 sum 变量被频繁访问，这就利用了时间局部性原理。CPU 会将 sum 变量存储在寄存器中，从而使得对 sum 的访问速度更快。</p><p>我们可以使用局部性原理分析下面两个矩阵乘法代码的性能差异：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// 代码1</span><br><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; N; i++) &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; N; j++) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> k = <span class="hljs-number">0</span>; k &lt; N; k++) &#123;<br>            C[i][j] += A[i][k] * B[k][j];<br>        &#125;<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">// 代码2</span><br><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> k = <span class="hljs-number">0</span>; k &lt; N; k++) &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; N; i++) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; N; j++) &#123;<br>            C[i][j] += A[i][k] * B[k][j];<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>虽然看着只是把循环顺序从 ijk 换成了 kij，但实际上，在矩阵规模较大时，代码 2 会比代码 1 快五倍以上。这是因为代码 1 在访问矩阵 B 时，从 B[k][j] 到 B[k+1][j] 并不是连续的内存访问，导致缓存命中率较低；而代码 2 在访问矩阵 A 和 B 时，都是连续的内存访问，充分利用了空间局部性原理，从而提高了缓存命中率。在 CMU 的 CSAPP 课程中，有一个专门的缓存实验（CacheLab），让大家通过编写矩阵乘法代码来优化缓存性能，但在软院的计算机组成原理课程中，由于课时所限，没有安排这个实验。</p><p>这就是学习计算机组成原理课程的意义：如果说数据结构与算法课程关注大 O 级别的理论性能优化，那么计算机组成原理课程则更关注常数级别的实际性能优化。通过理解程序如何在计算机上运行，能够帮助我们编写对计算机友好的代码，从而提高程序的性能。</p><p>实际上，前面我们假设程序运行时独占了整台计算机的内存和 CPU 资源，但在现实中，操作系统会通过异常控制流和虚拟内存等机制，让多个程序共享计算机的资源，从而提高计算机的利用率。这部分内容在 CSAPP 的第 8-10 章中有所涉及，下学期的操作系统课程会对其进行更详细的讲解。</p><p>本期肆叁小灶就到这里，希望有助于大家下学期的学习。祝寒假愉快！</p>]]></content>
     
     
     <categories>
@@ -220,11 +382,11 @@
   
   
   <entry>
-    <title>自学(3)：离散数学</title>
+    <title>自学(3)：数学优化</title>
     <link href="/CSDIY/CSDIY-3/"/>
     <url>/CSDIY/CSDIY-3/</url>
     
-    <content type="html"><![CDATA[<p>大二上学期的自学笔记，由三门离散数学课程组成。</p><span id="more"></span><h2 id="一、信息论"><a href="#一、信息论" class="headerlink" title="一、信息论"></a>一、信息论</h2><h3 id="1-错误检测码"><a href="#1-错误检测码" class="headerlink" title="1. 错误检测码"></a>1. 错误检测码</h3><ol><li>奇偶校验码：在数据后加一位，使得 1 的个数为奇数或偶数（例：$\mathrm{ASCII}$）</li><li>改进：按 $N$ 位划分数据块，添加 $N$ 位校验码</li><li>加权校验码：$wxyz\to 4w+3x+2y+z$，再加一位使得和能被某数整除（例：身份证号）</li><li>$x_4&#x3D;x_1+x_2,x_5&#x3D;x_1+x_3,x_6&#x3D;x_2+x_3$</li></ol><h3 id="2-错误纠正码"><a href="#2-错误纠正码" class="headerlink" title="2. 错误纠正码"></a>2. 错误纠正码</h3><ol><li>线性码：将 $k$ 位映射到 $n$ 位，$x&#x3D;sG$，$G$ 为 $k\times n$ 矩阵</li><li>校验：$Hy^T\neq 0$ 则有错，$H$ 为 $(n-k)\times n$ 矩阵，$HG^T&#x3D;0$</li><li>对偶码：将 $H$ 作为生成矩阵，$G$ 作为校验矩阵</li><li>例：三重重复码、$(7,4)\ \mathrm{Hamming}$ 码 $(p_1&#x3D;x_1+x_2+x_4,p_2&#x3D;x_1+x_3+x_4,p_3&#x3D;x_2+x_3+x_4)$</li></ol><h3 id="3-数据压缩"><a href="#3-数据压缩" class="headerlink" title="3. 数据压缩"></a>3. 数据压缩</h3><ol><li>熵：$H(X)&#x3D;-\sum p(x)\log p(x)$</li><li>香农第一定理：编码平均长度 $\geq H(X)$，取等时必为平均分布</li><li>数据压缩码：$\mathrm{Huffman}$ 码（最优前缀码、最优唯一可译码）</li></ol><h3 id="4-信道编码"><a href="#4-信道编码" class="headerlink" title="4. 信道编码"></a>4. 信道编码</h3><ol><li>定义 $P_{X,Y}(x_i,y_j)$：发出 $x_i$ 且接收 $y_j$ 的概率，$P_{Y|X}(y_j|x_i)$：发出 $x_i$ 时接收 $y_j$ 的条件概率</li><li>熵：$H(X,Y)&#x3D;-\sum P_{X,Y}(x_i,y_j)\log P_{X,Y}(x_i,y_j)$，$H(Y|X)&#x3D;-\sum P_{X,Y}(x_i,y_j)\log P_{Y|X}(y_j|x_i)$</li><li>链式法则：$H(X,Y)&#x3D;H(X)+H(Y|X)$（信道的总熵等于输入的熵加上信道引入的熵）</li><li>互信息：$I(x_i;y_j)&#x3D;\log(\frac{1}{P_{X}(x_i)})-\log(\frac{1}{P_{X|Y}(x_i|y_j)})$（接收到 $y_j$ 后对 $x_i$ 的不确定性减少了多少）</li><li>平均互信息：$I(X;Y)&#x3D;\sum P_{X,Y}(x_i,y_j)I(x_i;y_j)&#x3D;H(X)-H(X|Y)$</li><li>性质：$I(X;Y)&#x3D;H(X)$ 当且仅当无损；$I(X;Y)&#x3D;0$ 当且仅当 $X,Y$ 独立（无信息量）</li><li>信道容量：$\displaystyle C&#x3D;\max_{P_X(\cdot)}I(X;Y)$（对所有可能的输入分布求最大平均互信息）</li><li>香农第二定理：若 $R&lt;C$，则存在编码使得误码率 $\to 0$，只要码长足够长；若 $R&gt;C$，则任何编码误码率均有下限，其中 $R$ 为信道传输速率（用几个比特传输一个符号）</li></ol><h2 id="二、博弈论"><a href="#二、博弈论" class="headerlink" title="二、博弈论"></a>二、博弈论</h2><ol><li>自身的策略要<strong>最大化</strong>对方的策略可能带来的<strong>最小收益</strong></li><li>鞍点：每个参与者的策略在给定其他参与者策略的情况下都是最优的（纯策略纳什均衡）</li><li>混合策略：<strong>最大化</strong>对方选择每一个纯策略所带来的<strong>最小期望收益</strong></li><li>最大最小值定理：零和博弈两个混合策略线性规划互为对偶，最优值相等（对偶定理）</li><li>非常和博弈：纳什均衡存在定理（纯策略或混合策略），但不一定是帕累托最优</li></ol><h2 id="三、形式语言与自动机"><a href="#三、形式语言与自动机" class="headerlink" title="三、形式语言与自动机"></a>三、形式语言与自动机</h2>]]></content>
+    <content type="html"><![CDATA[<p>大二上学期及寒假的自学笔记，由信息论、博弈论和最优化方法组成。</p><span id="more"></span><h2 id="一、信息论"><a href="#一、信息论" class="headerlink" title="一、信息论"></a>一、信息论</h2><h3 id="1-错误检测码"><a href="#1-错误检测码" class="headerlink" title="1. 错误检测码"></a>1. 错误检测码</h3><ol><li>奇偶校验码：在数据后加一位，使得 1 的个数为奇数或偶数（例：$\mathrm{ASCII}$）</li><li>改进：按 $N$ 位划分数据块，添加 $N$ 位校验码</li><li>加权校验码：$wxyz\to 4w+3x+2y+z$，再加一位使得和能被某数整除（例：身份证号）</li><li>$x_4&#x3D;x_1+x_2,x_5&#x3D;x_1+x_3,x_6&#x3D;x_2+x_3$</li></ol><h3 id="2-错误纠正码"><a href="#2-错误纠正码" class="headerlink" title="2. 错误纠正码"></a>2. 错误纠正码</h3><ol><li>线性码：将 $k$ 位映射到 $n$ 位，$x&#x3D;sG$，$G$ 为 $k\times n$ 矩阵</li><li>校验：$Hy^T\neq 0$ 则有错，$H$ 为 $(n-k)\times n$ 矩阵，$HG^T&#x3D;0$</li><li>对偶码：将 $H$ 作为生成矩阵，$G$ 作为校验矩阵</li><li>例：三重重复码、$(7,4)\ \mathrm{Hamming}$ 码 $(p_1&#x3D;x_1+x_2+x_4,p_2&#x3D;x_1+x_3+x_4,p_3&#x3D;x_2+x_3+x_4)$</li></ol><h3 id="3-数据压缩"><a href="#3-数据压缩" class="headerlink" title="3. 数据压缩"></a>3. 数据压缩</h3><ol><li>熵：$H(X)&#x3D;-\sum p(x)\log p(x)$</li><li>香农第一定理：编码平均长度 $\geq H(X)$，取等时必为平均分布</li><li>数据压缩码：$\mathrm{Huffman}$ 码（最优前缀码、最优唯一可译码）</li></ol><h3 id="4-信道编码"><a href="#4-信道编码" class="headerlink" title="4. 信道编码"></a>4. 信道编码</h3><ol><li>定义 $P_{X,Y}(x_i,y_j)$：发出 $x_i$ 且接收 $y_j$ 的概率，$P_{Y|X}(y_j|x_i)$：发出 $x_i$ 时接收 $y_j$ 的条件概率</li><li>熵：$H(X,Y)&#x3D;-\sum P_{X,Y}(x_i,y_j)\log P_{X,Y}(x_i,y_j)$，$H(Y|X)&#x3D;-\sum P_{X,Y}(x_i,y_j)\log P_{Y|X}(y_j|x_i)$</li><li>链式法则：$H(X,Y)&#x3D;H(X)+H(Y|X)$（信道的总熵等于输入的熵加上信道引入的熵）</li><li>互信息：$I(x_i;y_j)&#x3D;\log(\frac{1}{P_{X}(x_i)})-\log(\frac{1}{P_{X|Y}(x_i|y_j)})$（接收到 $y_j$ 后对 $x_i$ 的不确定性减少了多少）</li><li>平均互信息：$I(X;Y)&#x3D;\sum P_{X,Y}(x_i,y_j)I(x_i;y_j)&#x3D;H(X)-H(X|Y)$</li><li>性质：$I(X;Y)&#x3D;H(X)$ 当且仅当无损；$I(X;Y)&#x3D;0$ 当且仅当 $X,Y$ 独立（无信息量）</li><li>信道容量：$\displaystyle C&#x3D;\max_{P_X(\cdot)}I(X;Y)$（对所有可能的输入分布求最大平均互信息）</li><li>香农第二定理：若 $R&lt;C$，则存在编码使得误码率 $\to 0$，只要码长足够长；若 $R&gt;C$，则任何编码误码率均有下限，其中 $R$ 为信道传输速率（用几个比特传输一个符号）</li></ol><h2 id="二、博弈论"><a href="#二、博弈论" class="headerlink" title="二、博弈论"></a>二、博弈论</h2><ol><li>自身的策略要<strong>最大化</strong>对方的策略可能带来的<strong>最小收益</strong></li><li>鞍点：每个参与者的策略在给定其他参与者策略的情况下都是最优的（纯策略纳什均衡）</li><li>混合策略：<strong>最大化</strong>对方选择每一个纯策略所带来的<strong>最小期望收益</strong></li><li>最大最小值定理：零和博弈两个混合策略线性规划互为对偶，最优值相等（对偶定理）</li><li>非常和博弈：纳什均衡存在定理（纯策略或混合策略），但不一定是帕累托最优</li></ol><h2 id="三、最优化方法"><a href="#三、最优化方法" class="headerlink" title="三、最优化方法"></a>三、最优化方法</h2>]]></content>
     
     
     <categories>
@@ -278,7 +440,7 @@
     <link href="/CSDIY/CSDIY-2/"/>
     <url>/CSDIY/CSDIY-2/</url>
     
-    <content type="html"><![CDATA[<p>大一下学期的自学笔记，由机器学习、深度学习课程组成。</p><span id="more"></span><h2 id="一、统计学习"><a href="#一、统计学习" class="headerlink" title="一、统计学习"></a>一、统计学习</h2><h3 id="1-回归问题"><a href="#1-回归问题" class="headerlink" title="1. 回归问题"></a>1. 回归问题</h3><ol><li>损失函数：均方误差损失 $\mathrm{MSE}$，$\sum (f(x)-y)^2$</li><li>改进：基函数（获取非线性）、正则项（$\mathrm{L2,L1}$）</li></ol><h3 id="2-二分类问题"><a href="#2-二分类问题" class="headerlink" title="2. 二分类问题"></a>2. 二分类问题</h3><ol><li>连接函数：$\mathrm{Sigmoid}$，$\sigma(f(x))&#x3D;\frac{1}{1+e^{-f(x)}}$</li><li>损失函数：交叉熵，$l(x,y)&#x3D;y\log(\sigma(f(x)))+(1-y)\log(1-\sigma(f(x)))$</li></ol><h3 id="3-多分类问题"><a href="#3-多分类问题" class="headerlink" title="3. 多分类问题"></a>3. 多分类问题</h3><ol><li>连接函数：$\mathrm{Softmax}$，$\sigma_i(f(x))&#x3D;\frac{e^{f_i(x)}}{\sum_j e^{f_j(x)}}$</li><li>损失函数：交叉熵，$l(x,y)&#x3D;-\log(\sigma_y(f(x)))$</li></ol><h3 id="4-学习理论"><a href="#4-学习理论" class="headerlink" title="4. 学习理论"></a>4. 学习理论</h3><ol><li>估计误差 $\mathrm{Estimation}$：训练所得函数与假设空间中最佳函数的距离</li><li>近似误差 $\mathrm{Approximation}$：假设空间中最佳函数与真值函数的距离</li><li>泛化误差：估计误差与近似误差之和</li></ol><h3 id="5-优化方法"><a href="#5-优化方法" class="headerlink" title="5. 优化方法"></a>5. 优化方法</h3><ol><li>一阶方法：梯度下降（随机梯度下降）</li><li>学习率衰减：$\eta_{\min}+\frac{1}{2}(\eta_{\max}-\eta_{\min})(1+\cos(\frac{T_{cur}}{T_{all}}\pi))$</li><li>冲量法：$\Delta_t&#x3D;\beta\Delta_{t-1}+(1-\beta)\nabla J(\theta_t)$</li><li>$\mathrm{Nesterov}$：$\theta_t^\prime&#x3D;\theta_t-\beta\Delta_{t-1},\Delta_t&#x3D;\beta\Delta_{t-1}+(1-\beta)\nabla J(\theta_t^\prime)$</li><li>自适应学习率 $\mathrm{AdaGrad}$：$h&#x3D;\frac{1}{\sqrt{r_t}+\delta}$，$r_t$ 为历史梯度平方和，但容易爆炸</li><li>$\mathrm{RMSProp}$：$r_t&#x3D;\rho r_{t-1}+(1-\rho)\nabla J(\theta_t)^2$，解决爆炸问题，可与冲量法连用</li><li>自适应冲量 $\mathrm{Adam}$：将 $h$ 也作用在冲量项上，但需用分母修正 $r,s$ 偏差，可与 $\mathrm{Nesterov}$ 连用</li><li>二阶方法：$\theta&#x3D;\theta-H^{-1}\nabla J(\theta)$（增量算法可直接算逆）</li></ol><p><img src="/img/CSDIY-24Summer/1.png"></p><h2 id="二、深度学习"><a href="#二、深度学习" class="headerlink" title="二、深度学习"></a>二、深度学习</h2><h3 id="1-多层感知机-mathrm-MLP"><a href="#1-多层感知机-mathrm-MLP" class="headerlink" title="1. 多层感知机 $\mathrm{MLP}$"></a>1. 多层感知机 $\mathrm{MLP}$</h3><ol><li>感知机学习算法：$(x,\pm 1),y&#x3D;\mathrm{sgn}(\theta x)$，错误时 $\theta&#x3D;\theta+xy$，设置阈值并堆叠模拟逻辑或函数运算</li><li>激活函数：$\mathrm{Sigmoid},\mathrm{ReLU},\mathrm{tanh},\mathrm{Softmax},\mathrm{GeLU},\mathrm{LeakyReLU}$</li><li>优化：反向传播（基于残差或计算图）</li><li>训练技巧：$\mathrm{Dropout}$、$\mathrm{ReLU}$ 初始方差改为 $\frac{2}{n}$</li></ol><h3 id="2-卷积神经网络-mathrm-CNN"><a href="#2-卷积神经网络-mathrm-CNN" class="headerlink" title="2. 卷积神经网络 $\mathrm{CNN}$"></a>2. 卷积神经网络 $\mathrm{CNN}$</h3><ol><li>不变性（$fT&#x3D;f$）、等变性（$fT&#x3D;Tf$）</li><li>卷积核参数：$\mathrm{Stride},\mathrm{Padding},\mathrm{Dilation}$</li><li>训练技巧：池化 $\mathrm{Pooling}$、$\mathrm{BatchNormalization}$（改进：$\mathrm{GroupNormalization}$）、数据增广</li><li>标准架构：$1\times 1$ 卷积、$\mathrm{Inception}$（多尺度卷积）、$\mathrm{ResNet}$（残差直连）</li><li>轻量化：剪枝、权重聚类、组卷积（组间可洗牌）、通道分离卷积</li><li>改进：视频 $\mathrm{3D}$ 卷积、$\mathrm{Attention}$（全局距离加权，度量学习）、通道加权、神经架构搜索</li></ol><h3 id="3-循环神经网络-mathrm-RNN"><a href="#3-循环神经网络-mathrm-RNN" class="headerlink" title="3. 循环神经网络 $\mathrm{RNN}$"></a>3. 循环神经网络 $\mathrm{RNN}$</h3><ol><li>$h_t&#x3D;f(h_{t-1},x_t)&#x3D;\mathrm{tanh}(Wh_{t-1}+Ux_t),y_t&#x3D;Vh_t$，可改进为双向、多层</li><li>应用方式：多对一、一对多、多对多</li><li>优化：反向传播，但容易梯度爆炸或消失</li><li>梯度爆炸：分块、梯度裁剪（$\mathrm{Clip}$）</li><li>梯度消失：$\mathrm{LSTM}$（遗忘、写入、读取）</li><li>训练技巧：$\mathrm{Dropout}$ 共享、$\mathrm{Layer Normalization}$（通道间归一）、课程学习（逐步将真值 $y$ 替换为预测）</li><li>$\mathrm{Attention}$：逐层做 $h_t$ 相关性加权</li></ol><h3 id="4-图神经网络-mathrm-GNN"><a href="#4-图神经网络-mathrm-GNN" class="headerlink" title="4. 图神经网络 $\mathrm{GNN}$"></a>4. 图神经网络 $\mathrm{GNN}$</h3><ol><li>节点相似性：$\frac{N(u)\cap N(v)}{N(u)\cup N(v)}$，但无法刻画远距离</li><li>$\mathrm{DeepWalk}$：用随机游走的概率表示节点相似性，损失函数 $\displaystyle \sum_{u\in V}\sum_{v\in N(u)}-\log(\frac{\exp(z_u^Tz_v)}{\sum_{n\in V}\exp(z_u^Tz_n)})$</li><li>改进：$\mathrm{node2vec}$（加权随机游走，平衡 $\mathrm{BFS}$ 和 $\mathrm{DFS}$）、分母随机采样降低复杂度</li><li>图卷积网络 $\mathrm{GCN}$：效仿 $\mathrm{CNN}$ 特征聚合、同层参数共享，$\displaystyle h_v^k&#x3D;\sigma(W_k\sum_{u\in N(v)}\frac{h_u^{k-1}}{|N(v)|}+B_kh_v^{k-1})$</li><li>改进：图注意力网络 $\mathrm{GAT}$（邻居加权）、聚类 $\mathrm{ClusterGCN}$（降低复杂度）</li><li>训练技巧：在部分顶点上训练降低复杂度、将图卷积层改为 $\mathrm{MLP}$ 避免过平滑（小世界原理）、残差连接</li></ol><h3 id="5-mathrm-Transformer"><a href="#5-mathrm-Transformer" class="headerlink" title="5. $\mathrm{Transformer}$"></a>5. $\mathrm{Transformer}$</h3><ol><li>$\mathrm{Attention}$：将 $x$ 转化为 $q,k,v$，$a&#x3D;\mathrm{Softmax}(\frac{q^Tk}{\sqrt{d}})$，$\mathrm{MQA,GQA}$ 头间共享 $k,v$</li><li>$\mathrm{FFN}$：$\mathrm{FFN}(x)&#x3D;\mathrm{GeLU}(W_1x+b_1)W_2+b_2$，$\mathrm{dim}W&#x3D;d^2$ 且参数共享，$\mathrm{MoE}$ 中多个共用</li><li>模仿 $\mathrm{CNN,RNN}$，引入<strong>加权</strong>残差连接、预先 $\mathrm{LayerNormalization}$（归一化或单位化）</li><li>位置编码：$e_i(2j)&#x3D;\sin(\frac{i}{10000^{2j&#x2F;d}}),e_i(2j+1)&#x3D;\cos(\frac{i}{10000^{2j&#x2F;d}})$；或相对位置编码 $\mathrm{ALiBi}$、旋转位置编码 $f(x,m)&#x3D;xe^{im\theta},\theta_i&#x3D;10000^{-2(i-1)&#x2F;d}$</li><li>改进：线性注意力、$\mathrm{MaskAttention}$（遮挡）、$\mathrm{FlashAttention}$（分块）、$\mathrm{RingAttention}$（分布式）</li><li>$\mathrm{GPT}$：$\mathrm{Decoder}$，生成式预训练；$\mathrm{BERT}$：$\mathrm{Encoder}$，填空式预训练；$\mathrm{T5}$：完整版</li></ol><h3 id="6-语言模型"><a href="#6-语言模型" class="headerlink" title="6. 语言模型"></a>6. 语言模型</h3><ol><li>$\mathrm{ScalingLaw}$：参数量 $\gt$ $\mathrm{BatchSize}\gt \mathrm{epoch}$；推理 $\gt$ 训练；扩大单模型 $\mathrm{vs}$ 多模型集成</li><li>微调：全量微调（数据多易负迁移）、$\mathrm{Adapter}$（插适配头，如低秩适应微调 $\mathrm{LoRA}$，$\theta&#x3D;\theta+AB$）、部分微调（如调倒数两三层，数据少易过拟合）</li><li>改进：加入正则项限制微调改变量、重跑预训练任务检查精度变化、多模型微调（根据相关性加权蒸馏）</li><li>$\mathrm{RLHF}$：监督微调 $\to$ 训练奖励模型 $\to$ 强化学习；或 $\mathrm{DPO}$（直接用成对数据微调，可用大模型生成）</li><li>$\mathrm{Prompting}$：$\mathrm{InContextLearning}$，思维链，集成工具，检索增强生成 $\mathrm{RAG}$（文档向量化 $\to$ 与问题计算相似度 $\to$ 写入 $\mathrm{Prompt}$）</li><li>部署：量化（浮点转小整数）、推测解码 $\mathrm{SpeculativeDecoding}$（小模型生成大模型验证）</li><li>视觉：$\mathrm{CLIP}$（弱监督图文对相似度矩阵对角化）、$\mathrm{Flamingo}$（将图 $\mathrm{token}$ 映射到文本空间）、$\mathrm{Q-Former}$（将图转化为 $\mathrm{query}$）</li></ol><h3 id="7-多模态与智能体"><a href="#7-多模态与智能体" class="headerlink" title="7. 多模态与智能体"></a>7. 多模态与智能体</h3><ol><li>底层：$\mathrm{ViT}$（分块 $\mathrm{MLP}$ 后块间注意力）、$\mathrm{SwinTransformer}$（块内注意力，块滑动）</li><li>训练方式：生成式预训练，如 $\mathrm{ImageGPT}$</li><li>$\mathrm{CLIP}$：弱监督图文对，让相似度矩阵对角化</li><li>多模态语言模型：$\mathrm{Flamingo}$（将图转为 $\mathrm{token}$ 嵌入文本）、$\mathrm{Q-Former}$（将图转为 $\mathrm{query}$）、$\mathrm{VQGAN}$（图转为最近码字，再解码计算相似度）</li><li>纯多模态模型：$\mathrm{Fuyu}$（图文同等映射到另一空间）</li><li>$\mathrm{Agent}$：规划（目标分解、自我反思）、记忆（长：历史经验；短：上下文）、工具（外部应用、大模型）、行动（虚拟、具身）、协作（人机、多代理）</li></ol><h3 id="8-迁移学习"><a href="#8-迁移学习" class="headerlink" title="8. 迁移学习"></a>8. 迁移学习</h3><ol><li>多任务学习：共享参数 $+$ 任务头，损失函数加权（或范数归一、任务不确定性、帕累托最优）</li><li>元学习：输入数据集直接输出最优学习器，分为训练任务（支撑集、验证集）、测试任务（训练集、测试集），优化目标为 $n$ 个训练任务的平均损失函数</li><li>生成学习：先编码再解码算相似度，可对编码器做限制（稀疏性、范数、加噪声、加遮挡）</li><li>对比学习：增广两个副本 $\to$ 分别转为特征向量 $\mathrm{query,key}\to$ 计算相似度，优化对比损失函数 $-\sum\log\frac{\exp(k_i^Tq_i&#x2F;\tau)}{\sum\exp(k_j^Tq_i&#x2F;\tau)}$，$\mathrm{SimCLR}$ 引入解码器</li><li>改进：$\mathrm{MemoryBank}$ 存储定量 $\mathrm{key}$ 降低复杂度、$\mathrm{MoCo}$（用 $q$ 编码器的滑动平均更新 $k$ 编码器）、$\mathrm{SimSiam}$（无负例，单边解码，另一边停止梯度）</li><li>领域自适应：$\mathrm{OOD}$，用 $H\Delta H$ 对称差散度衡量分布差异，如领域对抗神经网络 $\mathrm{DANN}$（用 $\mathrm{GAN}$ 将两领域映射到接近的领域，在接近领域上学习）</li></ol><h2 id="三、强化学习"><a href="#三、强化学习" class="headerlink" title="三、强化学习"></a>三、强化学习</h2><h3 id="1-表格式学习（状态、动作都离散）"><a href="#1-表格式学习（状态、动作都离散）" class="headerlink" title="1. 表格式学习（状态、动作都离散）"></a>1. 表格式学习（状态、动作都离散）</h3><ol><li>算法：$\mathrm{SARSA}\to \mathrm{Q-learning}$（将$\mathrm{A^\prime}$ 替换为最优动作）</li><li>改进：资格迹（每步衰减 $\gamma\lambda$，遇到就 $+1$）</li></ol><h3 id="2-价值函数逼近（状态空间连续）"><a href="#2-价值函数逼近（状态空间连续）" class="headerlink" title="2. 价值函数逼近（状态空间连续）"></a>2. 价值函数逼近（状态空间连续）</h3><ol><li>核心思想：用以 $w$ 为参数的模型估计 $Q(S,A)$</li><li>$\mathrm{TD-error}:\delta&#x3D;R+\gamma Q(S^\prime,A^\prime)-Q(S,A)$</li><li>$w&#x3D;w-\alpha \nabla w\cdot\delta$（一步梯度下降）</li><li>改进：$\mathrm{Q-learning}$、资格迹（将 $+1$ 替换为 $\nabla w\cdot Q(S,A))$</li></ol><h3 id="3-策略梯度方法（状态、动作都连续）"><a href="#3-策略梯度方法（状态、动作都连续）" class="headerlink" title="3. 策略梯度方法（状态、动作都连续）"></a>3. 策略梯度方法（状态、动作都连续）</h3><ol><li>核心思想：用一个以 $\theta$ 为参数的模型获得策略</li><li>离散型策略：$\mathrm{Softmax}$，$\pi(a|s,\theta)&#x3D;\frac{e^{J(s,a)}}{\sum e^{J(s,b)}}$</li><li>连续型策略：$\mathrm{Gaussian}$</li><li>策略梯度定理：$\nabla J(\theta)\propto q(s,a)\nabla \log \pi(a|s,\theta)$</li><li>$\mathrm{REINFORCE}$：基于 $\mathrm{Monte Carlo}$ 方法，可引入 $\mathrm{Baseline}$（状态价值函数）减小方差，与价值函数逼近联用</li><li>$\mathrm{Actor-Critic}$：基于时序差分方法，可引入资格迹 $\nabla \log \pi(a|s,\theta)$、$\mathrm{Baseline}$</li><li>改进：近端策略优化 $\mathrm{TRPO,PPO}$，防止更新过大导致策略崩溃（用 $\mathrm{KL}$ 散度衡量新旧策略差异）</li></ol><h3 id="4-现代强化学习"><a href="#4-现代强化学习" class="headerlink" title="4. 现代强化学习"></a>4. 现代强化学习</h3><ol><li>$\mathrm{DDPG}$：确定性策略梯度方法，在连续动作空间中更有效</li><li>$\mathrm{SAC}$：优化策略的同时最大化策略的熵，鼓励随机探索</li><li>基于模型的强化学习：学习环境模型，用模拟数据与真实数据一起训练策略，如 $\mathrm{Dyna-Q}$</li></ol><p><img src="/img/CSDIY-24Summer/2.png"></p><h2 id="四-生成式模型"><a href="#四-生成式模型" class="headerlink" title="四. 生成式模型"></a>四. 生成式模型</h2><h3 id="1-生成对抗网络-mathrm-GAN"><a href="#1-生成对抗网络-mathrm-GAN" class="headerlink" title="1. 生成对抗网络 $\mathrm{GAN}$"></a>1. 生成对抗网络 $\mathrm{GAN}$</h3><ol><li>损失函数：对抗学习，$\displaystyle \min_G\max_D(\log D(x)+\log(1-D(G(z))))$，$D$ 为判别器，$G$ 为生成器（$\mathrm{Jensen-Shannon}$ 散度）</li><li>改进：$\log(1-x)$ 好样本梯度爆炸、坏样本梯度消失，改为优化 $\log(D(G(z)))$；换用 $\mathrm{Wasserstein}$ 距离（将 $D$ 改为满足 $\mathrm{1-Lipschitz}$ 的连续函数）</li><li>生成器实现：$\mathrm{DCGAN}$（逆向 $\mathrm{CNN}$，转置卷积）</li><li>$\mathrm{Benchmark}$：$\mathrm{InceptionScore}$（可识别性分布与生成多样性分布的 $\mathrm{KL}$ 散度）、$\mathrm{FID}$（生成样本与真实样本的高斯分布差异）</li><li>模式崩溃：使用 $\mathrm{GradientPenalty}$ 或系数矩阵谱归一化限制 $\mathrm{Lipschitz}$ 系数</li><li>条件生成：加入重建误差，对标签数据 $(x_i,y_i)$ 优化 $\displaystyle\min_G\max_D(\log D(x_i,y_i)+\log(1-D(G(x_i,z_i)))+|G(x_i,z_i)-y_i|)$</li></ol><h3 id="2-变分自编码器-mathrm-VAE"><a href="#2-变分自编码器-mathrm-VAE" class="headerlink" title="2. 变分自编码器 $\mathrm{VAE}$"></a>2. 变分自编码器 $\mathrm{VAE}$</h3><h3 id="3-扩散模型-mathrm-Diffusion"><a href="#3-扩散模型-mathrm-Diffusion" class="headerlink" title="3. 扩散模型 $\mathrm{Diffusion}$"></a>3. 扩散模型 $\mathrm{Diffusion}$</h3>]]></content>
+    <content type="html"><![CDATA[<p>大一下学期的自学笔记，由机器学习、深度学习课程组成。</p><span id="more"></span><h2 id="一、统计学习"><a href="#一、统计学习" class="headerlink" title="一、统计学习"></a>一、统计学习</h2><h3 id="1-回归问题"><a href="#1-回归问题" class="headerlink" title="1. 回归问题"></a>1. 回归问题</h3><ol><li>损失函数：均方误差损失 $\mathrm{MSE}$，$\sum (f(x)-y)^2$</li><li>改进：基函数（获取非线性）、正则项（$\mathrm{L2,L1}$）</li></ol><h3 id="2-二分类问题"><a href="#2-二分类问题" class="headerlink" title="2. 二分类问题"></a>2. 二分类问题</h3><ol><li>连接函数：$\mathrm{Sigmoid}$，$\sigma(f(x))&#x3D;\frac{1}{1+e^{-f(x)}}$</li><li>损失函数：交叉熵，$l(x,y)&#x3D;y\log(\sigma(f(x)))+(1-y)\log(1-\sigma(f(x)))$</li></ol><h3 id="3-多分类问题"><a href="#3-多分类问题" class="headerlink" title="3. 多分类问题"></a>3. 多分类问题</h3><ol><li>连接函数：$\mathrm{Softmax}$，$\sigma_i(f(x))&#x3D;\frac{e^{f_i(x)}}{\sum_j e^{f_j(x)}}$</li><li>损失函数：交叉熵，$l(x,y)&#x3D;-\log(\sigma_y(f(x)))$</li></ol><h3 id="4-学习理论"><a href="#4-学习理论" class="headerlink" title="4. 学习理论"></a>4. 学习理论</h3><ol><li>估计误差 $\mathrm{Estimation}$：训练所得函数与假设空间中最佳函数的距离</li><li>近似误差 $\mathrm{Approximation}$：假设空间中最佳函数与真值函数的距离</li><li>泛化误差：估计误差与近似误差之和</li></ol><h3 id="5-优化方法"><a href="#5-优化方法" class="headerlink" title="5. 优化方法"></a>5. 优化方法</h3><ol><li>一阶方法：梯度下降（随机梯度下降）</li><li>学习率衰减：$\eta_{\min}+\frac{1}{2}(\eta_{\max}-\eta_{\min})(1+\cos(\frac{T_{cur}}{T_{all}}\pi))$</li><li>冲量法：$\Delta_t&#x3D;\beta\Delta_{t-1}+(1-\beta)\nabla J(\theta_t)$</li><li>$\mathrm{Nesterov}$：$\theta_t^\prime&#x3D;\theta_t-\beta\Delta_{t-1},\Delta_t&#x3D;\beta\Delta_{t-1}+(1-\beta)\nabla J(\theta_t^\prime)$</li><li>自适应学习率 $\mathrm{AdaGrad}$：$h&#x3D;\frac{1}{\sqrt{r_t}+\delta}$，$r_t$ 为历史梯度平方和，但容易爆炸</li><li>$\mathrm{RMSProp}$：$r_t&#x3D;\rho r_{t-1}+(1-\rho)\nabla J(\theta_t)^2$，解决爆炸问题，可与冲量法连用</li><li>自适应冲量 $\mathrm{Adam}$：将 $h$ 也作用在冲量项上，但需用分母修正 $r,s$ 偏差，可与 $\mathrm{Nesterov}$ 连用</li><li>二阶方法：$\theta&#x3D;\theta-H^{-1}\nabla J(\theta)$（增量算法可直接算逆）</li></ol><p><img src="/img/CSDIY-24Summer/1.png"></p><h2 id="二、深度学习"><a href="#二、深度学习" class="headerlink" title="二、深度学习"></a>二、深度学习</h2><h3 id="1-多层感知机-mathrm-MLP"><a href="#1-多层感知机-mathrm-MLP" class="headerlink" title="1. 多层感知机 $\mathrm{MLP}$"></a>1. 多层感知机 $\mathrm{MLP}$</h3><ol><li>感知机学习算法：$(x,\pm 1),y&#x3D;\mathrm{sgn}(\theta x)$，错误时 $\theta&#x3D;\theta+xy$，设置阈值并堆叠模拟逻辑或函数运算</li><li>激活函数：$\mathrm{Sigmoid},\mathrm{ReLU},\mathrm{tanh},\mathrm{Softmax},\mathrm{GeLU},\mathrm{LeakyReLU}$</li><li>优化：反向传播（基于残差或计算图）</li><li>训练技巧：$\mathrm{Dropout}$、$\mathrm{ReLU}$ 初始方差改为 $\frac{2}{n}$</li></ol><h3 id="2-卷积神经网络-mathrm-CNN"><a href="#2-卷积神经网络-mathrm-CNN" class="headerlink" title="2. 卷积神经网络 $\mathrm{CNN}$"></a>2. 卷积神经网络 $\mathrm{CNN}$</h3><ol><li>不变性（$fT&#x3D;f$）、等变性（$fT&#x3D;Tf$）</li><li>卷积核参数：$\mathrm{Stride},\mathrm{Padding},\mathrm{Dilation}$</li><li>训练技巧：池化 $\mathrm{Pooling}$、$\mathrm{BatchNormalization}$（改进：$\mathrm{GroupNormalization}$）、数据增广</li><li>标准架构：$1\times 1$ 卷积、$\mathrm{Inception}$（多尺度卷积）、$\mathrm{ResNet}$（残差直连）</li><li>轻量化：剪枝、权重聚类、组卷积（组间可洗牌）、通道分离卷积</li><li>改进：视频 $\mathrm{3D}$ 卷积、$\mathrm{Attention}$（全局距离加权，度量学习）、通道加权、神经架构搜索</li></ol><h3 id="3-循环神经网络-mathrm-RNN"><a href="#3-循环神经网络-mathrm-RNN" class="headerlink" title="3. 循环神经网络 $\mathrm{RNN}$"></a>3. 循环神经网络 $\mathrm{RNN}$</h3><ol><li>$h_t&#x3D;f(h_{t-1},x_t)&#x3D;\mathrm{tanh}(Wh_{t-1}+Ux_t),y_t&#x3D;Vh_t$，可改进为双向、多层</li><li>应用方式：多对一、一对多、多对多</li><li>优化：反向传播，但容易梯度爆炸或消失</li><li>梯度爆炸：分块、梯度裁剪（$\mathrm{Clip}$）</li><li>梯度消失：$\mathrm{LSTM}$（遗忘、写入、读取）</li><li>训练技巧：$\mathrm{Dropout}$ 共享、$\mathrm{Layer Normalization}$（通道间归一）、课程学习（逐步将真值 $y$ 替换为预测）</li><li>$\mathrm{Attention}$：逐层做 $h_t$ 相关性加权</li></ol><h3 id="4-图神经网络-mathrm-GNN"><a href="#4-图神经网络-mathrm-GNN" class="headerlink" title="4. 图神经网络 $\mathrm{GNN}$"></a>4. 图神经网络 $\mathrm{GNN}$</h3><ol><li>节点相似性：$\frac{N(u)\cap N(v)}{N(u)\cup N(v)}$，但无法刻画远距离</li><li>$\mathrm{DeepWalk}$：用随机游走的概率表示节点相似性，损失函数 $\displaystyle \sum_{u\in V}\sum_{v\in N(u)}-\log(\frac{\exp(z_u^Tz_v)}{\sum_{n\in V}\exp(z_u^Tz_n)})$</li><li>改进：$\mathrm{node2vec}$（加权随机游走，平衡 $\mathrm{BFS}$ 和 $\mathrm{DFS}$）、分母随机采样降低复杂度</li><li>图卷积网络 $\mathrm{GCN}$：效仿 $\mathrm{CNN}$ 特征聚合、同层参数共享，$\displaystyle h_v^k&#x3D;\sigma(W_k\sum_{u\in N(v)}\frac{h_u^{k-1}}{|N(v)|}+B_kh_v^{k-1})$</li><li>改进：图注意力网络 $\mathrm{GAT}$（邻居加权）、聚类 $\mathrm{ClusterGCN}$（降低复杂度）</li><li>训练技巧：在部分顶点上训练降低复杂度、将图卷积层改为 $\mathrm{MLP}$ 避免过平滑（小世界原理）、残差连接</li></ol><h3 id="5-mathrm-Transformer"><a href="#5-mathrm-Transformer" class="headerlink" title="5. $\mathrm{Transformer}$"></a>5. $\mathrm{Transformer}$</h3><ol><li>$\mathrm{Attention}$：将 $x$ 转化为 $q,k,v$，$a&#x3D;\mathrm{Softmax}(\frac{q^Tk}{\sqrt{d}})$，$\mathrm{MQA,GQA}$ 头间共享 $k,v$</li><li>$\mathrm{FFN}$：$\mathrm{FFN}(x)&#x3D;\mathrm{GeLU}(W_1x+b_1)W_2+b_2$，$\mathrm{dim}W&#x3D;d^2$ 且参数共享，$\mathrm{MoE}$ 中多个共用</li><li>模仿 $\mathrm{CNN,RNN}$，引入<strong>加权</strong>残差连接、预先 $\mathrm{LayerNormalization}$（归一化或单位化）</li><li>位置编码：$e_i(2j)&#x3D;\sin(\frac{i}{10000^{2j&#x2F;d}}),e_i(2j+1)&#x3D;\cos(\frac{i}{10000^{2j&#x2F;d}})$；或相对位置编码 $\mathrm{ALiBi}$、旋转位置编码 $f(x,m)&#x3D;xe^{im\theta},\theta_i&#x3D;10000^{-2(i-1)&#x2F;d}$</li><li>改进：线性注意力、$\mathrm{MaskAttention}$（遮挡）、$\mathrm{FlashAttention}$（分块）、$\mathrm{RingAttention}$（分布式）</li><li>$\mathrm{GPT}$：$\mathrm{Decoder}$，生成式预训练；$\mathrm{BERT}$：$\mathrm{Encoder}$，填空式预训练；$\mathrm{T5}$：完整版</li></ol><h3 id="6-语言模型"><a href="#6-语言模型" class="headerlink" title="6. 语言模型"></a>6. 语言模型</h3><ol><li>$\mathrm{ScalingLaw}$：参数量 $\gt$ $\mathrm{BatchSize}\gt \mathrm{epoch}$；推理 $\gt$ 训练；扩大单模型 $\mathrm{vs}$ 多模型集成</li><li>微调：全量微调（数据多易负迁移）、$\mathrm{Adapter}$（插适配头，如低秩适应微调 $\mathrm{LoRA}$，$\theta&#x3D;\theta+AB$）、部分微调（如调倒数两三层，数据少易过拟合）</li><li>改进：加入正则项限制微调改变量、重跑预训练任务检查精度变化、多模型微调（根据相关性加权蒸馏）</li><li>$\mathrm{RLHF}$：监督微调 $\to$ 训练奖励模型 $\to$ 强化学习；或 $\mathrm{DPO}$（直接用成对数据微调，可用大模型生成）</li><li>$\mathrm{Prompting}$：$\mathrm{InContextLearning}$，思维链，集成工具，检索增强生成 $\mathrm{RAG}$（文档向量化 $\to$ 与问题计算相似度 $\to$ 写入 $\mathrm{Prompt}$）</li><li>部署：量化（浮点转小整数）、推测解码 $\mathrm{SpeculativeDecoding}$（小模型生成大模型验证）</li><li>视觉：$\mathrm{CLIP}$（弱监督图文对相似度矩阵对角化）、$\mathrm{Flamingo}$（将图 $\mathrm{token}$ 映射到文本空间）、$\mathrm{Q-Former}$（将图转化为 $\mathrm{query}$）</li></ol><h3 id="7-多模态与智能体"><a href="#7-多模态与智能体" class="headerlink" title="7. 多模态与智能体"></a>7. 多模态与智能体</h3><ol><li>底层：$\mathrm{ViT}$（分块 $\mathrm{MLP}$ 后块间注意力）、$\mathrm{SwinTransformer}$（块内注意力，块滑动）</li><li>训练方式：生成式预训练，如 $\mathrm{ImageGPT}$</li><li>$\mathrm{CLIP}$：弱监督图文对，让相似度矩阵对角化</li><li>多模态语言模型：$\mathrm{Flamingo}$（将图转为 $\mathrm{token}$ 嵌入文本）、$\mathrm{Q-Former}$（将图转为 $\mathrm{query}$）、$\mathrm{VQGAN}$（图转为最近码字，再解码计算相似度）</li><li>纯多模态模型：$\mathrm{Fuyu}$（图文同等映射到另一空间）</li><li>$\mathrm{Agent}$：规划（目标分解、自我反思）、记忆（长：历史经验；短：上下文）、工具（外部应用、大模型）、行动（虚拟、具身）、协作（人机、多代理）</li></ol><h3 id="8-迁移学习"><a href="#8-迁移学习" class="headerlink" title="8. 迁移学习"></a>8. 迁移学习</h3><ol><li>多任务学习：共享参数 $+$ 任务头，损失函数加权（或范数归一、任务不确定性、帕累托最优）</li><li>元学习：输入数据集直接输出最优学习器，分为训练任务（支撑集、验证集）、测试任务（训练集、测试集），优化目标为 $n$ 个训练任务的平均损失函数</li><li>生成学习：先编码再解码算相似度，可对编码器做限制（稀疏性、范数、加噪声、加遮挡）</li><li>对比学习：增广两个副本 $\to$ 分别转为特征向量 $\mathrm{query,key}\to$ 计算相似度，优化对比损失函数 $-\sum\log\frac{\exp(k_i^Tq_i&#x2F;\tau)}{\sum\exp(k_j^Tq_i&#x2F;\tau)}$，$\mathrm{SimCLR}$ 引入解码器</li><li>改进：$\mathrm{MemoryBank}$ 存储定量 $\mathrm{key}$ 降低复杂度、$\mathrm{MoCo}$（用 $q$ 编码器的滑动平均更新 $k$ 编码器）、$\mathrm{SimSiam}$（无负例，单边解码，另一边停止梯度）</li><li>领域自适应：$\mathrm{OOD}$，用 $H\Delta H$ 对称差散度衡量分布差异，如领域对抗神经网络 $\mathrm{DANN}$（用 $\mathrm{GAN}$ 将两领域映射到接近的领域，在接近领域上学习）</li></ol><h3 id="9-生成式模型"><a href="#9-生成式模型" class="headerlink" title="9. 生成式模型"></a>9. 生成式模型</h3><ol><li>损失函数：对抗学习，$\displaystyle \min_G\max_D(\log D(x)+\log(1-D(G(z))))$，$D$ 为判别器，$G$ 为生成器（$\mathrm{Jensen-Shannon}$ 散度）</li><li>改进：$\log(1-x)$ 好样本梯度爆炸、坏样本梯度消失，改为优化 $\log(D(G(z)))$；换用 $\mathrm{Wasserstein}$ 距离（将 $D$ 改为满足 $\mathrm{1-Lipschitz}$ 的连续函数）</li><li>生成器实现：$\mathrm{DCGAN}$（逆向 $\mathrm{CNN}$，转置卷积）</li><li>$\mathrm{Benchmark}$：$\mathrm{InceptionScore}$（可识别性分布与生成多样性分布的 $\mathrm{KL}$ 散度）、$\mathrm{FID}$（生成样本与真实样本的高斯分布差异）</li><li>模式崩溃：使用 $\mathrm{GradientPenalty}$ 或系数矩阵谱归一化限制 $\mathrm{Lipschitz}$ 系数</li><li>条件生成：加入重建误差，对标签数据 $(x_i,y_i)$ 优化 $\displaystyle\min_G\max_D(\log D(x_i,y_i)+\log(1-D(G(x_i,z_i)))+|G(x_i,z_i)-y_i|)$</li></ol><h2 id="三、强化学习"><a href="#三、强化学习" class="headerlink" title="三、强化学习"></a>三、强化学习</h2><h3 id="1-表格式学习（状态、动作都离散）"><a href="#1-表格式学习（状态、动作都离散）" class="headerlink" title="1. 表格式学习（状态、动作都离散）"></a>1. 表格式学习（状态、动作都离散）</h3><ol><li>算法：$\mathrm{SARSA}\to \mathrm{Q-learning}$（将$\mathrm{A^\prime}$ 替换为最优动作）</li><li>改进：资格迹（每步衰减 $\gamma\lambda$，遇到就 $+1$）</li></ol><h3 id="2-价值函数逼近（状态空间连续）"><a href="#2-价值函数逼近（状态空间连续）" class="headerlink" title="2. 价值函数逼近（状态空间连续）"></a>2. 价值函数逼近（状态空间连续）</h3><ol><li>核心思想：用以 $w$ 为参数的模型估计 $Q(S,A)$</li><li>$\mathrm{TD-error}:\delta&#x3D;R+\gamma Q(S^\prime,A^\prime)-Q(S,A)$</li><li>$w&#x3D;w-\alpha \nabla w\cdot\delta$（一步梯度下降）</li><li>改进：$\mathrm{Q-learning}$、资格迹（将 $+1$ 替换为 $\nabla w\cdot Q(S,A))$</li></ol><h3 id="3-策略梯度方法（状态、动作都连续）"><a href="#3-策略梯度方法（状态、动作都连续）" class="headerlink" title="3. 策略梯度方法（状态、动作都连续）"></a>3. 策略梯度方法（状态、动作都连续）</h3><ol><li>核心思想：用一个以 $\theta$ 为参数的模型获得策略</li><li>离散型策略：$\mathrm{Softmax}$，$\pi(a|s,\theta)&#x3D;\frac{e^{J(s,a)}}{\sum e^{J(s,b)}}$</li><li>连续型策略：$\mathrm{Gaussian}$</li><li>策略梯度定理：$\nabla J(\theta)\propto q(s,a)\nabla \log \pi(a|s,\theta)$</li><li>$\mathrm{REINFORCE}$：基于 $\mathrm{Monte Carlo}$ 方法，可引入 $\mathrm{Baseline}$（状态价值函数）减小方差，与价值函数逼近联用</li><li>$\mathrm{Actor-Critic}$：基于时序差分方法，可引入资格迹 $\nabla \log \pi(a|s,\theta)$、$\mathrm{Baseline}$</li><li>改进：近端策略优化 $\mathrm{TRPO,PPO}$，防止更新过大导致策略崩溃（用 $\mathrm{KL}$ 散度衡量新旧策略差异）</li></ol><h3 id="4-现代强化学习"><a href="#4-现代强化学习" class="headerlink" title="4. 现代强化学习"></a>4. 现代强化学习</h3><ol><li>$\mathrm{DDPG}$：确定性策略梯度方法，在连续动作空间中更有效</li><li>$\mathrm{SAC}$：优化策略的同时最大化策略的熵，鼓励随机探索</li><li>基于模型的强化学习：学习环境模型，用模拟数据与真实数据一起训练策略，如 $\mathrm{Dyna-Q}$</li></ol><p><img src="/img/CSDIY-24Summer/2.png"></p>]]></content>
     
     
     <categories>
@@ -552,7 +714,7 @@
     <link href="/CSDIY/CSDIY-1/"/>
     <url>/CSDIY/CSDIY-1/</url>
     
-    <content type="html"><![CDATA[<p>大一寒假的自学笔记，由两门计算机导论课程组成。</p><span id="more"></span><h2 id="一、Crash-Course-Computer-Science"><a href="#一、Crash-Course-Computer-Science" class="headerlink" title="一、Crash Course : Computer Science"></a>一、Crash Course : Computer Science</h2><h3 id="1-计算机底层"><a href="#1-计算机底层" class="headerlink" title="1. 计算机底层"></a>1. 计算机底层</h3><ol><li>晶体管</li><li>逻辑门</li><li>半加器、寄存器</li><li>$\mathrm{ALU}$、$\mathrm{RAM}$</li><li>二进制编程</li><li>$\mathrm{CPU}$</li><li>汇编语言</li><li>操作系统</li><li>文件系统</li><li>编译型语言</li><li>解释型语言</li></ol><h3 id="2-计算机硬件"><a href="#2-计算机硬件" class="headerlink" title="2. 计算机硬件"></a>2. 计算机硬件</h3><ol><li>存储器：延迟线 $\Rightarrow$ 磁芯 $\Rightarrow$ 磁带 $\Rightarrow$ 磁盘 $\Rightarrow$ 光盘 $\Rightarrow$ 固态硬盘</li><li>$\mathrm{IO}$<ol><li>电传打字机 $\Rightarrow$ 阴极射线管 $\Rightarrow \mathrm{LCD}$</li><li>矢量扫描、光栅扫描</li></ol></li><li>$\mathrm{3D}$<ol><li>正交投影、透视投影</li><li>多边形渲染、扫描线、抗锯齿</li><li>画家算法、深度缓冲</li><li>表面法线、纹理映射</li></ol></li></ol><h3 id="3-计算机软件"><a href="#3-计算机软件" class="headerlink" title="3. 计算机软件"></a>3. 计算机软件</h3><ol><li>网络<ol><li>物理层</li><li>数据链路层：$\mathrm{MAC}$、载波侦听多路访问、指数退避</li><li>网络层：交换机、路由、跳数限制</li><li>传输层：报文、数据包、$\mathrm{IP}$、$\mathrm{UDP}$、$\mathrm{TCP}$ </li><li>会话层：$\mathrm{URL}$、$\mathrm{DNS}$、$\mathrm{HTTP}$、$\mathrm{HTML}$</li></ol></li><li>信息安全<ol><li>$\mathrm{Bell-LaPadula}$ 模型</li><li>攻击方式：社会工程学、钓鱼、假托、木马、暴力、$\mathrm{NAND}$ 镜像</li><li>漏洞利用：缓存区溢出（边界检查、金丝雀）、$\mathrm{SQL}$ 注入、蠕虫、僵尸网络</li><li>加密：$\mathrm{Diffie-Hellman}$ 密钥交换（模幂）、非对称加密</li></ol></li><li>人工智能<ol><li>分类：决策边界、混淆矩阵 $\Rightarrow$ 决策树 $\Rightarrow$ 森林 $\Rightarrow$ 支持向量机</li><li>神经网络：加权、求和、偏置、激活</li><li>$\mathrm{CV}$：颜色跟踪 $\Rightarrow$ 特征检测（核、卷积）$\Rightarrow$ 卷积神经网络</li><li>$\mathrm{NLP}$：分析树、知识图谱、语音识别（$\mathrm{FFT}$）、语音合成</li></ol></li></ol><h2 id="二、MIT-Missing-Semester"><a href="#二、MIT-Missing-Semester" class="headerlink" title="二、MIT Missing Semester"></a>二、MIT Missing Semester</h2><h3 id="4-Shell"><a href="#4-Shell" class="headerlink" title="4. Shell"></a>4. Shell</h3><ol><li>以 <code>/</code> 或盘符开头的是绝对路径，否则是相对路径；Linux,MacOS 用 <code>/</code>，Windows 用 <code>\</code></li><li>命令：<code>which</code>，<code>sudo su</code>，<code>cat</code>，<code>curl</code>，<code>grep</code>，<code>tee</code></li><li><code>cd</code> 需要权限 <code>x</code>；<code>ls</code> 需要权限 <code>r</code></li><li><code>&#39;</code> 不转义变量，<code>&quot;</code> 转义变量</li><li><code>$0</code> 脚本名，<code>$1-$9</code> 脚本参数，<code>$@</code> 所有参数，<code>$#</code> 参数个数，<code>$?</code> 返回值，<code>$$</code> PID，<code>!!</code> 上一个命令，<code>$_</code> 最后一个参数</li><li>标准错误流 <code>2&gt;</code>；不等于 <code>-ne</code>；比较时用 <code>[[ ]]</code></li><li>通配符：<code>*</code> 任意字符，<code>?</code> 单个字符，<code>[]</code> 字符集，<code>&#123;&#125;</code> 多个字符</li><li><code>find</code>: <code>-name</code> 文件名，<code>-type</code> 文件类型，<code>-size</code> 文件大小，<code>-exec</code> 执行命令，<code>path</code> 路径，<code>-mtime</code> 修改时间</li><li>正则表达式：<code>^</code> 开头，<code>$</code> 结尾，<code>.</code> 任意字符，<code>*</code> 0-多次，<code>+</code> 1-多次，<code>?</code> 0-1次，<code>[]</code> 字符集，<code>()</code> 分组，<code>|</code> 或，<code>\1,\2</code> 捕获组</li><li>数据整理：<code>awk</code>，<code>sed</code>，<code>sort</code>，<code>uniq</code>，<code>paste</code>，<code>wc</code>，<code>head</code>，<code>tail</code></li><li>终止：<code>^C</code> &#x3D; <code>SIGINT</code>，<code>^D</code> &#x3D; <code>EOF</code>，<code>^\</code> &#x3D; <code>SIGQUIT</code>，<code>kill</code> &#x3D; <code>SIGTERM</code>，<code>^Z</code> &#x3D; <code>SIGTSTP</code>，<code>SIGKILL</code> 立刻结束</li><li>进程管理：<code>fg</code> 前台继续，<code>bg</code> 后台继续，<code>jobs</code> 查看，<code>pgrep</code> 查找，<code>$!</code> 最后一个进程，<code>nohup</code> 后台运行</li><li>常用参数：<code>--verbose</code>，<code>-v</code>，<code>-vvv</code>，<code>--quiet</code>，<code>-</code>，<code>-r</code>，<code>-- -r</code></li><li>常见目录：<code>/etc</code>，<code>/var</code>，<code>/tmp</code>，<code>/dev</code>，<code>/bin</code>，<code>/sbin</code>，<code>/opt</code>，<code>/lib</code></li></ol><h3 id="5-VIM"><a href="#5-VIM" class="headerlink" title="5. VIM"></a>5. VIM</h3><ol><li>切模式：<code>i</code> 插入，<code>v</code> 可视，<code>V</code> 行可视，<code>^V</code> 块可视，<code>R</code> 替换，<code>:</code> 命令，<code>a</code> 插入</li><li>移动：<code>hjkl</code>，<code>w</code>，<code>b</code>，<code>e</code>，<code>0</code>，<code>^</code>，<code>$</code>，<code>gg</code>，<code>G</code>，<code>H</code>，<code>M</code>，<code>L</code>，<code>^U</code>，<code>^D</code></li><li>搜索：<code>%</code> 找配对括号，<code>f</code>,<code>t</code>,<code>F</code>,<code>T</code> 查找，<code>/</code> 搜索，<code>,</code>,<code>;</code>,<code>n</code>,<code>N</code> 导航匹配</li><li>编辑：<code>o</code>，<code>O</code>，<code>r</code>，<code>d</code>，<code>x</code>，<code>s</code>，<code>y</code>，<code>p</code>，<code>u</code>，<code>~</code>，<code>.</code>，<code>i</code> 内部，<code>a</code> 周围，<code>ci[</code></li></ol><h3 id="6-GIT"><a href="#6-GIT" class="headerlink" title="6. GIT"></a>6. GIT</h3><ol><li>命令：<code>init</code>，<code>status</code>，<code>add</code>，<code>commit</code>，<code>log</code>，<code>diff</code>，<code>checkout</code>，<code>branch</code>，<code>merge</code></li><li>远程：<code>remote add</code>，<code>push</code>，<code>pull</code>，<code>clone</code>，<code>fetch</code></li></ol><h3 id="7-杂项"><a href="#7-杂项" class="headerlink" title="7. 杂项"></a>7. 杂项</h3><ol><li>tmux：<code>tmux</code>，<code>tmux ls</code>，<code>tmux a</code>，<code>^A</code>+<code>d</code>,<code>c</code>,<code>1</code>,<code>n</code>,<code>p</code>,<code>,</code>,<code>w</code>,<code>&quot;</code>,<code>%</code>,<code>x</code>,<code>y</code>,<code>z</code></li><li>ssh：<code>ssh</code>，<code>scp</code>，<code>ssh-keygen</code>，<code>ssh-copy-id</code></li><li>配置文件：<code>~/.bashrc</code>，<code>~/.gitconfig</code>，<code>~/.vimrc</code>，<code>~/.tmux.conf</code>，<code>~/.ssh/config</code></li><li>版本管理：主版本号.次版本号.补丁号</li><li>元编程：Makefile，CMake，CI，GitHub Pages，Jekyll</li><li>密码学：Hash 函数，盐，对称加密，密钥交换，非对称加密，加密邮件，数字签名</li><li>其他：VM，Docker，Jupyter Notebook</li></ol>]]></content>
+    <content type="html"><![CDATA[<p>大一寒假的自学笔记，由两门计算机导论课程组成。</p><span id="more"></span><h2 id="一、Crash-Course-Computer-Science"><a href="#一、Crash-Course-Computer-Science" class="headerlink" title="一、Crash Course : Computer Science"></a>一、Crash Course : Computer Science</h2><h3 id="1-计算机底层"><a href="#1-计算机底层" class="headerlink" title="1. 计算机底层"></a>1. 计算机底层</h3><ol><li>晶体管</li><li>逻辑门</li><li>半加器、寄存器</li><li>$\mathrm{ALU}$、$\mathrm{RAM}$</li><li>二进制编程</li><li>$\mathrm{CPU}$</li><li>汇编语言</li><li>操作系统</li><li>文件系统</li><li>编译型语言</li><li>解释型语言</li></ol><h3 id="2-计算机硬件"><a href="#2-计算机硬件" class="headerlink" title="2. 计算机硬件"></a>2. 计算机硬件</h3><ol><li>存储器：延迟线 $\Rightarrow$ 磁芯 $\Rightarrow$ 磁带 $\Rightarrow$ 磁盘 $\Rightarrow$ 光盘 $\Rightarrow$ 固态硬盘</li><li>$\mathrm{IO}$<ol><li>电传打字机 $\Rightarrow$ 阴极射线管 $\Rightarrow \mathrm{LCD}$</li><li>矢量扫描、光栅扫描</li></ol></li><li>$\mathrm{3D}$<ol><li>正交投影、透视投影</li><li>多边形渲染、扫描线、抗锯齿</li><li>画家算法、深度缓冲</li><li>表面法线、纹理映射</li></ol></li></ol><h3 id="3-计算机软件"><a href="#3-计算机软件" class="headerlink" title="3. 计算机软件"></a>3. 计算机软件</h3><ol><li>网络<ol><li>物理层</li><li>数据链路层：$\mathrm{MAC}$、载波侦听多路访问、指数退避</li><li>网络层：交换机、路由、跳数限制</li><li>传输层：报文、数据包、$\mathrm{IP}$、$\mathrm{UDP}$、$\mathrm{TCP}$ </li><li>会话层：$\mathrm{URL}$、$\mathrm{DNS}$、$\mathrm{HTTP}$、$\mathrm{HTML}$</li></ol></li><li>信息安全<ol><li>$\mathrm{Bell-LaPadula}$ 模型</li><li>攻击方式：社会工程学、钓鱼、假托、木马、暴力、$\mathrm{NAND}$ 镜像</li><li>漏洞利用：缓存区溢出（边界检查、金丝雀）、$\mathrm{SQL}$ 注入、蠕虫、僵尸网络</li><li>加密：$\mathrm{Diffie-Hellman}$ 密钥交换（模幂）、非对称加密</li></ol></li><li>人工智能<ol><li>分类：决策边界、混淆矩阵 $\Rightarrow$ 决策树 $\Rightarrow$ 森林 $\Rightarrow$ 支持向量机</li><li>神经网络：加权、求和、偏置、激活</li><li>$\mathrm{CV}$：颜色跟踪 $\Rightarrow$ 特征检测（核、卷积）$\Rightarrow$ 卷积神经网络</li><li>$\mathrm{NLP}$：分析树、知识图谱、语音识别（$\mathrm{FFT}$）、语音合成</li></ol></li></ol><h2 id="二、MIT-Missing-Semester"><a href="#二、MIT-Missing-Semester" class="headerlink" title="二、MIT Missing Semester"></a>二、MIT Missing Semester</h2><h3 id="1-Shell"><a href="#1-Shell" class="headerlink" title="1. Shell"></a>1. Shell</h3><ol><li>以 <code>/</code> 或盘符开头的是绝对路径，否则是相对路径；Linux,MacOS 用 <code>/</code>，Windows 用 <code>\</code></li><li>命令：<code>which</code>，<code>sudo su</code>，<code>cat</code>，<code>curl</code>，<code>grep</code>，<code>tee</code></li><li><code>cd</code> 需要权限 <code>x</code>；<code>ls</code> 需要权限 <code>r</code></li><li><code>&#39;</code> 不转义变量，<code>&quot;</code> 转义变量</li><li><code>$0</code> 脚本名，<code>$1-$9</code> 脚本参数，<code>$@</code> 所有参数，<code>$#</code> 参数个数，<code>$?</code> 返回值，<code>$$</code> PID，<code>!!</code> 上一个命令，<code>$_</code> 最后一个参数</li><li>标准错误流 <code>2&gt;</code>；不等于 <code>-ne</code>；比较时用 <code>[[ ]]</code></li><li>通配符：<code>*</code> 任意字符，<code>?</code> 单个字符，<code>[]</code> 字符集，<code>&#123;&#125;</code> 多个字符</li><li><code>find</code>: <code>-name</code> 文件名，<code>-type</code> 文件类型，<code>-size</code> 文件大小，<code>-exec</code> 执行命令，<code>path</code> 路径，<code>-mtime</code> 修改时间</li><li>正则表达式：<code>^</code> 开头，<code>$</code> 结尾，<code>.</code> 任意字符，<code>*</code> 0-多次，<code>+</code> 1-多次，<code>?</code> 0-1次，<code>[]</code> 字符集，<code>()</code> 分组，<code>|</code> 或，<code>\1,\2</code> 捕获组</li><li>数据整理：<code>awk</code>，<code>sed</code>，<code>sort</code>，<code>uniq</code>，<code>paste</code>，<code>wc</code>，<code>head</code>，<code>tail</code></li><li>终止：<code>^C</code> &#x3D; <code>SIGINT</code>，<code>^D</code> &#x3D; <code>EOF</code>，<code>^\</code> &#x3D; <code>SIGQUIT</code>，<code>kill</code> &#x3D; <code>SIGTERM</code>，<code>^Z</code> &#x3D; <code>SIGTSTP</code>，<code>SIGKILL</code> 立刻结束</li><li>进程管理：<code>fg</code> 前台继续，<code>bg</code> 后台继续，<code>jobs</code> 查看，<code>pgrep</code> 查找，<code>$!</code> 最后一个进程，<code>nohup</code> 后台运行</li><li>常用参数：<code>--verbose</code>，<code>-v</code>，<code>-vvv</code>，<code>--quiet</code>，<code>-</code>，<code>-r</code>，<code>-- -r</code></li><li>常见目录：<code>/etc</code>，<code>/var</code>，<code>/tmp</code>，<code>/dev</code>，<code>/bin</code>，<code>/sbin</code>，<code>/opt</code>，<code>/lib</code></li></ol><h3 id="2-VIM"><a href="#2-VIM" class="headerlink" title="2. VIM"></a>2. VIM</h3><ol><li>切模式：<code>i</code> 插入，<code>v</code> 可视，<code>V</code> 行可视，<code>^V</code> 块可视，<code>R</code> 替换，<code>:</code> 命令，<code>a</code> 插入</li><li>移动：<code>hjkl</code>，<code>w</code>，<code>b</code>，<code>e</code>，<code>0</code>，<code>^</code>，<code>$</code>，<code>gg</code>，<code>G</code>，<code>H</code>，<code>M</code>，<code>L</code>，<code>^U</code>，<code>^D</code></li><li>搜索：<code>%</code> 找配对括号，<code>f</code>,<code>t</code>,<code>F</code>,<code>T</code> 查找，<code>/</code> 搜索，<code>,</code>,<code>;</code>,<code>n</code>,<code>N</code> 导航匹配</li><li>编辑：<code>o</code>，<code>O</code>，<code>r</code>，<code>d</code>，<code>x</code>，<code>s</code>，<code>y</code>，<code>p</code>，<code>u</code>，<code>~</code>，<code>.</code>，<code>i</code> 内部，<code>a</code> 周围，<code>ci[</code></li></ol><h3 id="3-GIT"><a href="#3-GIT" class="headerlink" title="3. GIT"></a>3. GIT</h3><ol><li>命令：<code>init</code>，<code>status</code>，<code>add</code>，<code>commit</code>，<code>log</code>，<code>diff</code>，<code>checkout</code>，<code>branch</code>，<code>merge</code></li><li>远程：<code>remote add</code>，<code>push</code>，<code>pull</code>，<code>clone</code>，<code>fetch</code></li></ol><h3 id="4-杂项"><a href="#4-杂项" class="headerlink" title="4. 杂项"></a>4. 杂项</h3><ol><li>tmux：<code>tmux</code>，<code>tmux ls</code>，<code>tmux a</code>，<code>^A</code>+<code>d</code>,<code>c</code>,<code>1</code>,<code>n</code>,<code>p</code>,<code>,</code>,<code>w</code>,<code>&quot;</code>,<code>%</code>,<code>x</code>,<code>y</code>,<code>z</code></li><li>ssh：<code>ssh</code>，<code>scp</code>，<code>ssh-keygen</code>，<code>ssh-copy-id</code></li><li>配置文件：<code>~/.bashrc</code>，<code>~/.gitconfig</code>，<code>~/.vimrc</code>，<code>~/.tmux.conf</code>，<code>~/.ssh/config</code></li><li>版本管理：主版本号.次版本号.补丁号</li><li>元编程：Makefile，CMake，CI，GitHub Pages，Jekyll</li><li>密码学：Hash 函数，盐，对称加密，密钥交换，非对称加密，加密邮件，数字签名</li><li>其他：VM，Docker，Jupyter Notebook</li></ol>]]></content>
     
     
     <categories>
@@ -645,9 +807,9 @@
     
     <tags>
       
-      <tag>数学</tag>
-      
       <tag>大一上</tag>
+      
+      <tag>数学</tag>
       
     </tags>
     
@@ -672,9 +834,9 @@
     
     <tags>
       
-      <tag>计算机</tag>
-      
       <tag>大一上</tag>
+      
+      <tag>计算机</tag>
       
     </tags>
     
@@ -699,9 +861,9 @@
     
     <tags>
       
-      <tag>数学</tag>
-      
       <tag>大一上</tag>
+      
+      <tag>数学</tag>
       
     </tags>
     
@@ -726,9 +888,9 @@
     
     <tags>
       
-      <tag>数学</tag>
-      
       <tag>大一上</tag>
+      
+      <tag>数学</tag>
       
     </tags>
     
