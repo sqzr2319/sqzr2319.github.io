@@ -27,7 +27,7 @@
 <meta property="og:description" content="大二上学期及寒假的自学笔记，由信息论、博弈论和最优化方法组成。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-09-16T12:32:36.000Z">
-<meta property="article:modified_time" content="2026-01-19T11:40:07.155Z">
+<meta property="article:modified_time" content="2026-01-23T14:59:50.143Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="计算机">
 <meta property="article:tag" content="自学">
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          715 字
+          920 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          6 分钟
+          8 分钟
         
       </span>
     
@@ -329,7 +329,20 @@
 <li>最大最小值定理：零和博弈两个混合策略线性规划互为对偶，最优值相等（对偶定理）</li>
 <li>非常和博弈：纳什均衡存在定理（纯策略或混合策略），但不一定是帕累托最优</li>
 </ol>
-<h2 id="三、最优化方法"><a href="#三、最优化方法" class="headerlink" title="三、最优化方法"></a>三、最优化方法</h2>
+<h2 id="三、最优化方法"><a href="#三、最优化方法" class="headerlink" title="三、最优化方法"></a>三、最优化方法</h2><h3 id="1-最优性理论"><a href="#1-最优性理论" class="headerlink" title="1. 最优性理论"></a>1. 最优性理论</h3><ol>
+<li>共轭函数：$\displaystyle f^*(y)&#x3D;\sup_{x\in \mathrm{dom}f}(y^Tx-f(x))$，二次共轭 $\displaystyle f^{<em><em>}(x)&#x3D;\sup_{y\in \mathrm{dom}f^</em>}(y^Tx-f^</em>(y))&#x3D;f(x)$</li>
+<li>拉格朗日函数 $\displaystyle L(x,\lambda)&#x3D;f(x)+\sum_{i&#x3D;1}^m \lambda_i g_i(x),\lambda_i \geq 0,g_i(x)\leq 0$ 是原函数的下界</li>
+<li>对偶函数 $\displaystyle g(\lambda)&#x3D;\inf_{x\in \mathrm{dom}f}L(x,\lambda)$ 是原问题的下界，对偶问题即最优下界 $\displaystyle \max_{\lambda} g(\lambda),\lambda \geq 0$</li>
+<li>一阶 $\mathrm{KKT}$ 条件：<ol>
+<li>可行性条件：$g_i(x^*)\leq 0,h_j(x^*)&#x3D;0$</li>
+<li>对偶可行性条件：$\lambda_i^* \geq 0$</li>
+<li>驻点条件：$\nabla_x L(x^*,\lambda^*)&#x3D;0$</li>
+<li>互补松弛条件：$\lambda_i^* g_i(x^*)&#x3D;0$</li>
+</ol>
+</li>
+<li>二阶条件：$d^T\nabla_{xx}^2 L(x^*,\lambda^*)d \geq 0$ 对所有临界锥内的 $d$，即 $\lambda_i^<em>\nabla g_i(x^</em>)^Td&#x3D;0$</li>
+</ol>
+<h3 id="2-无约束优化"><a href="#2-无约束优化" class="headerlink" title="2. 无约束优化"></a>2. 无约束优化</h3><h3 id="3-约束优化"><a href="#3-约束优化" class="headerlink" title="3. 约束优化"></a>3. 约束优化</h3><h3 id="4-复合优化"><a href="#4-复合优化" class="headerlink" title="4. 复合优化"></a>4. 复合优化</h3>
                 
               </div>
             
