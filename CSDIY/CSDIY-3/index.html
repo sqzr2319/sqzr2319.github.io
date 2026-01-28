@@ -19,15 +19,15 @@
   <meta name="author" content="sqzr2319">
   <meta name="keywords" content="">
   
-    <meta name="description" content="大二上学期及寒假的自学笔记，由信息论、最优化方法和博弈论组成。">
+    <meta name="description" content="大二上学期及寒假的自学笔记，由信息论、最优化方法、形式语言与自动机和博弈论组成。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="自学(3)：数学优化">
+<meta property="og:title" content="自学(3)：数学基础">
 <meta property="og:url" content="https://sqzr2319.github.io/CSDIY/CSDIY-3/index.html">
 <meta property="og:site_name" content="sqzr2319&#39;s blog">
-<meta property="og:description" content="大二上学期及寒假的自学笔记，由信息论、最优化方法和博弈论组成。">
+<meta property="og:description" content="大二上学期及寒假的自学笔记，由信息论、最优化方法、形式语言与自动机和博弈论组成。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-09-16T12:32:36.000Z">
-<meta property="article:modified_time" content="2026-01-25T14:26:23.836Z">
+<meta property="article:modified_time" content="2026-01-28T15:03:01.804Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="计算机">
 <meta property="article:tag" content="自学">
@@ -35,7 +35,7 @@
   
   
   
-  <title>自学(3)：数学优化 - sqzr2319&#39;s blog</title>
+  <title>自学(3)：数学基础 - sqzr2319&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="自学(3)：数学优化"></span>
+            <span id="subtitle" data-typed-text="自学(3)：数学基础"></span>
           
         </div>
 
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k 字
+          1.7k 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          11 分钟
+          15 分钟
         
       </span>
     
@@ -287,12 +287,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">自学(3)：数学优化</h1>
+            <h1 id="seo-header">自学(3)：数学基础</h1>
             
             
               <div class="markdown-body">
                 
-                <p>大二上学期及寒假的自学笔记，由信息论、最优化方法和博弈论组成。</p>
+                <p>大二上学期及寒假的自学笔记，由信息论、最优化方法、形式语言与自动机和博弈论组成。</p>
 <span id="more"></span>
 
 <h2 id="一、信息论"><a href="#一、信息论" class="headerlink" title="一、信息论"></a>一、信息论</h2><h3 id="1-错误检测码"><a href="#1-错误检测码" class="headerlink" title="1. 错误检测码"></a>1. 错误检测码</h3><ol>
@@ -350,7 +350,37 @@
 <li>分块坐标下降法：将自变量 $x$ 拆成 $s$ 块，固定其他块交替优化每一块</li>
 <li>随机优化：详见<a href="https://sqzr2319.github.io/CSDIY/CSDIY-2/">机器学习</a></li>
 </ol>
-<h2 id="三、博弈论"><a href="#三、博弈论" class="headerlink" title="三、博弈论"></a>三、博弈论</h2><ol>
+<h2 id="三、形式语言与自动机"><a href="#三、形式语言与自动机" class="headerlink" title="三、形式语言与自动机"></a>三、形式语言与自动机</h2><h3 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1. 基本概念"></a>1. 基本概念</h3><ol>
+<li>0型&#x2F;短语结构文法 $\mathrm{PSG}$：无限制，生成递归可枚举语言</li>
+<li>1型&#x2F;上下文有关文法 $\mathrm{CSG}$：$\forall\alpha\to\beta\in P,|\beta|\ge|\alpha|$</li>
+<li>2型&#x2F;上下文无关文法 $\mathrm{CFG}$：$\alpha\in V$</li>
+<li>3型&#x2F;正则&#x2F;右线性文法 $\mathrm{RG}$：$A\to w|wB,A,B\in V,w\in T^*$</li>
+</ol>
+<h3 id="2-正则语言"><a href="#2-正则语言" class="headerlink" title="2. 正则语言"></a>2. 正则语言</h3><ol>
+<li>有限状态自动机 $\mathrm{FA}$：读入读头字符，转移状态，右移读头</li>
+<li>正则表达式 $\mathrm{RE}$：$r,s$ 表示语言 $R,S$，$(r+s)$ 表示 $R\cup S$；$a^+,a^*$</li>
+<li>正则文法 $\Leftrightarrow$ 正则表达式 $\Leftrightarrow$ 有限状态自动机 $\mathrm{FA}$</li>
+</ol>
+<h3 id="3-上下文无关语言"><a href="#3-上下文无关语言" class="headerlink" title="3. 上下文无关语言"></a>3. 上下文无关语言</h3><ol>
+<li>乔姆斯基范式 $\mathrm{CNF}$：$A\to BC|a$</li>
+<li>格雷巴赫范式 $\mathrm{GNF}$：$A\to a\alpha,a\in T,\alpha\in V^*$</li>
+<li>自嵌套文法：$\exists A\overset{+}{\Rightarrow} \alpha A\beta,\alpha,\beta\in (V\cup T)^+$</li>
+<li>非自嵌套文法 $\Rightarrow$ 正则语言</li>
+<li>下推自动机 $\mathrm{PDA}$：基于 $\mathrm{GNF}$，读入读头字符，弹出栈顶符号，压入栈顶符号串并转移状态，右移读头</li>
+<li>上下文无关文法 $\Leftrightarrow$ 下推自动机</li>
+</ol>
+<h3 id="4-图灵机"><a href="#4-图灵机" class="headerlink" title="4. 图灵机"></a>4. 图灵机</h3><ol>
+<li>图灵机 $\mathrm{TM}$：读入读头字符，写入带符号，左&#x2F;右移读头，转移状态</li>
+<li>变形：双向、多带、不确定、多维、多头、离线（只读）</li>
+<li>图灵机 $\Leftrightarrow$ 短语结构文法</li>
+<li>可判定性：递归语言（图灵机停机），是递归可枚举语言的真子集</li>
+<li>$\mathrm{P&#x2F;NP&#x2F;NPC&#x2F;NP-hard}$：多项式可解&#x2F;多项式可验证&#x2F;多项式归约到所有 $\mathrm{NP}$ 且属于 $\mathrm{NP}$&#x2F;多项式归约到所有 $\mathrm{NP}$</li>
+</ol>
+<h3 id="5-上下文有关语言"><a href="#5-上下文有关语言" class="headerlink" title="5. 上下文有关语言"></a>5. 上下文有关语言</h3><ol>
+<li>线性有界自动机 $\mathrm{LBA}$：非确定图灵机，读头限制在端点间，端点不可改写</li>
+<li>上下文有关文法 $\Leftrightarrow$ 线性有界自动机</li>
+</ol>
+<h2 id="四、博弈论"><a href="#四、博弈论" class="headerlink" title="四、博弈论"></a>四、博弈论</h2><ol>
 <li>自身的策略要<strong>最大化</strong>对方的策略可能带来的<strong>最小收益</strong></li>
 <li>鞍点：每个参与者的策略在给定其他参与者策略的情况下都是最优的（纯策略纳什均衡）</li>
 <li>混合策略：<strong>最大化</strong>对方选择每一个纯策略所带来的<strong>最小期望收益</strong></li>
@@ -404,7 +434,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>自学(3)：数学优化</div>
+      <div>自学(3)：数学基础</div>
       <div>https://sqzr2319.github.io/CSDIY/CSDIY-3/</div>
     </div>
     <div class="license-meta">
