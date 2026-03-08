@@ -19,23 +19,25 @@
   <meta name="author" content="sqzr2319">
   <meta name="keywords" content="">
   
-    <meta name="description" content="肆叁小灶第11讲，介绍了">
+    <meta name="description" content="大二下学期的自学笔记，由 GAMES 101 课程组成。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="肆叁小灶第11讲">
-<meta property="og:url" content="https://sqzr2319.github.io/43Class/43Class-11/index.html">
+<meta property="og:title" content="自学(4)：计算机图形学">
+<meta property="og:url" content="https://sqzr2319.github.io/CSDIY/CSDIY-4/index.html">
 <meta property="og:site_name" content="sqzr2319&#39;s blog">
-<meta property="og:description" content="肆叁小灶第11讲，介绍了">
+<meta property="og:description" content="大二下学期的自学笔记，由 GAMES 101 课程组成。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-10-09T04:24:46.000Z">
-<meta property="article:modified_time" content="2026-01-23T15:20:11.437Z">
+<meta property="og:image" content="https://sqzr2319.github.io/img/CSDIY-4/1.png">
+<meta property="article:published_time" content="2026-02-16T12:32:36.000Z">
+<meta property="article:modified_time" content="2026-03-08T14:44:13.711Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="计算机">
-<meta property="article:tag" content="肆叁小灶">
+<meta property="article:tag" content="自学">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://sqzr2319.github.io/img/CSDIY-4/1.png">
   
   
   
-  <title>肆叁小灶第11讲 - sqzr2319&#39;s blog</title>
+  <title>自学(4)：计算机图形学 - sqzr2319&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +218,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="肆叁小灶第11讲"></span>
+            <span id="subtitle" data-typed-text="自学(4)：计算机图形学"></span>
           
         </div>
 
@@ -227,8 +229,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-10-09 12:24" pubdate>
-          2025年10月9日 中午
+        <time datetime="2026-02-16 20:32" pubdate>
+          2026年2月16日 晚上
         </time>
       </span>
     
@@ -239,7 +241,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          10 字
+          1.4k 字
         
       </span>
     
@@ -250,7 +252,7 @@
         
         
         
-          1 分钟
+          12 分钟
         
       </span>
     
@@ -287,13 +289,72 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">肆叁小灶第11讲</h1>
+            <h1 id="seo-header">自学(4)：计算机图形学</h1>
             
             
               <div class="markdown-body">
                 
-                <p>肆叁小灶第11讲，介绍了</p>
+                <p>大二下学期的自学笔记，由 GAMES 101 课程组成。</p>
 <span id="more"></span>
+
+<p><img src="/img/CSDIY-4/1.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="一、变换"><a href="#一、变换" class="headerlink" title="一、变换"></a>一、变换</h2><ol>
+<li>$\vec{a}\times \vec{b}&#x3D;A*\vec{b}&#x3D;\begin{bmatrix}0 &amp; -a_z &amp; a_y\\a_z &amp; 0 &amp; -a_x\\-a_y &amp; a_x &amp; 0\end{bmatrix}\vec{b}$，用于判断左右、内外</li>
+<li>仿射坐标：点 $(x,y,z,1)$，向量 $(x,y,z,0)$</li>
+<li>交比：直线上四点 $A,B,C,D$，$(A,B;C,D)&#x3D;\frac{\vec{AC}&#x2F;\vec{CB}}{\vec{AD}&#x2F;\vec{DB}}$，射影变换前后保持不变</li>
+<li>欧拉角：绕 $x,y,z$ 轴旋转 $\alpha,\beta,\gamma$ 角，$R&#x3D;R_z(\gamma)R_y(\beta)R_x(\alpha)$</li>
+<li>绕 $\vec{n}$ 轴旋转 $\alpha$ 角：$R(\vec{n},\alpha)&#x3D;\cos\alpha I+(1-\cos\alpha)\vec{n}\vec{n}^T+\sin\alpha \begin{bmatrix}0 &amp; -n_z &amp; n_y\\n_z &amp; 0 &amp; -n_x\\-n_y &amp; n_x &amp; 0\end{bmatrix}$</li>
+<li>视角变换：把摄像机移动到原点，$y$ 轴向上，看向 $-z$</li>
+<li>正交投影：把长方体变换到 $[-1,1]^3$</li>
+<li>透视投影：把视锥压缩成长方体再正交投影，前平面不变，后平面压缩且中心点不变</li>
+</ol>
+<h2 id="二、几何"><a href="#二、几何" class="headerlink" title="二、几何"></a>二、几何</h2><ol>
+<li>隐式表示：$f(x,y,z)&#x3D;0$、几何体加减、距离函数（可用于插值）、水平集</li>
+<li>显示表示：$(u,v)\to (x,y,z)$、点云、多边形网格</li>
+<li>贝塞尔曲线：三阶 $b_0^3(t)&#x3D;(1-t)^3 b_0+3(1-t)^2tb_1+3(1-t)t^2b_2+t^3b_3$，为保证 $\mathbb{C}^1$ 连续需连接点处平分控制点</li>
+<li>贝塞尔曲面：16 个控制点，先沿 $u$ 求四条曲线，再对每个 $v$ 以四条曲线为控制点</li>
+<li>曲面细分：Loop 细分（三角形加三个中点，一拆四）、Catmull-Clark 细分（加边中点、面中心）</li>
+<li>曲面简化：边收缩，使用二次度量误差建优先队列，贪心收缩</li>
+<li>曲线坐标：切线（方向变化快慢为曲率）、法线（切向量导数）、副法线（叉乘，方向变化快慢为挠率）</li>
+<li>曲面第一基本形式：$I&#x3D;E\mathrm{d}u^2+2F\mathrm{d}u\mathrm{d}v+G\mathrm{d}v^2,E&#x3D;\vec{r_u}\cdot \vec{r_u},F&#x3D;\vec{r_u}\cdot \vec{r_v},G&#x3D;\vec{r_v}\cdot \vec{r_v}$，切向量 $\vec{r_u},\vec{r}_v$，法向量 $\vec{n}$</li>
+<li>曲面第二基本形式：$II&#x3D;L\mathrm{d}u^2+2M\mathrm{d}u\mathrm{d}v+N\mathrm{d}v^2,L&#x3D;\vec{n}\cdot \vec{r_{uu}},M&#x3D;\vec{n}\cdot \vec{r_{uv}},N&#x3D;\vec{n}\cdot \vec{r_{vv}}$，$r_uv$ 为二阶导数</li>
+<li>曲率：法曲率（沿切平面中某方向截曲面得平面曲线的曲率）$\kappa_n&#x3D;\frac{II}{I}$，主曲率（法曲率最大最小值）$\kappa_1,\kappa_2$，平均曲率 $H&#x3D;\frac{\kappa_1+\kappa_2}{2}$，高斯曲率 $K&#x3D;\kappa_1\kappa_2$ 与曲面在 $\mathbb{R}^3$ 中的嵌入无关</li>
+</ol>
+<h2 id="三、摄影"><a href="#三、摄影" class="headerlink" title="三、摄影"></a>三、摄影</h2><ol>
+<li>视场：传感器大小、焦距，等效焦距为 35mm 传感器时</li>
+<li>曝光：光圈直径、快门时间、ISO 倍数</li>
+<li>景深：对焦距离附近的清晰区间，焦距越长、光圈越大、对焦距离越近景深越浅</li>
+<li>光场：前后平面共四维，同物体不同角度、同角度不同物体</li>
+<li>光场相机：微透镜阵列，每一角度对应普通相机一张图，可后期调整焦距、光圈等</li>
+<li>颜色：光谱与视锥细胞响应函数乘积，有同色异谱</li>
+<li>加色系统：sRGB（用三纯色调出纯频率，再调出光谱）、XYZ（人为定义，Y 代表亮度）、HSV（色调、饱和度、明度）、Lab（亮度、绿红轴、蓝黄轴，互补色原理）</li>
+<li>色彩空间：XYZ，固定 Y，$(x,y,z)&#x3D;\frac{(X,Y,Z)}{X+Y+Z}$，$sRGB$ 为三角形</li>
+<li>减色系统：CMYK（品红黄青黑，印刷用）</li>
+</ol>
+<h2 id="四、光栅化"><a href="#四、光栅化" class="headerlink" title="四、光栅化"></a>四、光栅化</h2><ol>
+<li>三角形：判断像素中心是否在内部，可用先模糊或多重采样（MSAA）反走样</li>
+<li>反走样原理：采样等于时域上乘积等于频域上卷积（重复），高低频信号混叠，模糊等于低通滤波</li>
+<li>深度缓冲：逐像素记录最近深度</li>
+<li>着色模型：Blinn-Phong，环境光常数、漫反射（系数、平方反比、余弦）、高光（系数、平方反比、半程向量余弦幂）</li>
+<li>着色频率：逐平面、平面内插值顶点着色、平面内插值顶点法线</li>
+<li>插值方法：重心坐标（用三顶点坐标表示平面内点）、双线性（先 u 再 v，解决纹理过小）、Mipmap（预先计算指数级不同分辨率纹理，解决纹理过大），各向异性过滤（存长方形纹理）</li>
+<li>渲染管线：几何 $\to$ 纹理 $\to$ 着色 $\to$ 变换 $\to$ 光栅化</li>
+<li>高级纹理：环境光贴图、法线贴图、位移贴图</li>
+<li>阴影贴图：从光源视角渲染深度图，像素在深度图中对应位置深度小于等于该值则有光照</li>
+</ol>
+<h2 id="五、光线追踪"><a href="#五、光线追踪" class="headerlink" title="五、光线追踪"></a>五、光线追踪</h2><ol>
+<li>传统方法：从视角发射光线，每次与场景相交时计算着色和反射折射，着色递归相加</li>
+<li>求交：$f(\vec{o}+t\vec{d})&#x3D;0$，三角形先计算平面交点再判断内外或直接套公式</li>
+<li>加速结构：轴对齐包围盒、均匀网格、空间切分（KD 树、层次包围体）</li>
+<li>现代方法：辐射度量学 $\to$ 渲染方程 $\to$ 蒙特卡洛积分 $\to$ 路径追踪</li>
+</ol>
+<h2 id="六、动画"><a href="#六、动画" class="headerlink" title="六、动画"></a>六、动画</h2><ol>
+<li>基本方法：关键帧插值、物理模拟（质量弹簧、有限元、质点系统、逆运动学）、动捕</li>
+<li>质量弹簧系统：弹力、阻尼（相对速度在连线上的投影），可模拟布料（对角网格加跳连）</li>
+<li>ODE 求解：欧拉法 $x^{t+\delta t}&#x3D;x^t+\dot{x}^t\delta t$，中点法 $x^{t+\delta t}&#x3D;x^t+\dot{x}_{\mathrm{mid}}\delta t$，隐式欧拉法 $x^{t+\delta t}&#x3D;x^t+\dot{x}^{t+\delta t}\delta t$（逆向优化求解），四阶 Runge-Kutta 法</li>
+<li>流体模拟：质点位置基方法，分质点法（拉格朗日）、格点法（欧拉）、物质点法（混合）</li>
+</ol>
+
                 
               </div>
             
@@ -311,7 +372,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%8E%A8%E9%80%81/" class="category-chain-item">推送</a>
+  <a href="/categories/%E7%AC%94%E8%AE%B0/" class="category-chain-item">笔记</a>
   
   
 
@@ -328,7 +389,7 @@
       
         <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="print-no-link">#计算机</a>
       
-        <a href="/tags/%E8%82%86%E5%8F%81%E5%B0%8F%E7%81%B6/" class="print-no-link">#肆叁小灶</a>
+        <a href="/tags/%E8%87%AA%E5%AD%A6/" class="print-no-link">#自学</a>
       
     </div>
   
@@ -340,8 +401,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>肆叁小灶第11讲</div>
-      <div>https://sqzr2319.github.io/43Class/43Class-11/</div>
+      <div>自学(4)：计算机图形学</div>
+      <div>https://sqzr2319.github.io/CSDIY/CSDIY-4/</div>
     </div>
     <div class="license-meta">
       
@@ -353,7 +414,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年10月9日</div>
+          <div>2026年2月16日</div>
         </div>
       
       
@@ -385,18 +446,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/25Fall/Dynamics/" title="动力学基础">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">动力学基础</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/43Class/43Class-10/" title="肆叁小灶第10讲 计算机系统漫游">
-                        <span class="hidden-mobile">肆叁小灶第10讲 计算机系统漫游</span>
+                      <a href="/26Spring/EE/" title="电工电子技术基础">
+                        <span class="hidden-mobile">电工电子技术基础</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
