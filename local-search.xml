@@ -4,11 +4,11 @@
   
   
   <entry>
-    <title>自学(4)：计算机图形学</title>
+    <title>自学(4)：图形学与生成模型</title>
     <link href="/CSDIY/CSDIY-4/"/>
     <url>/CSDIY/CSDIY-4/</url>
     
-    <content type="html"><![CDATA[<p>大二下学期的自学笔记，由 GAMES 101 课程组成。</p><span id="more"></span><p><img src="/img/CSDIY-4/1.png"></p><h2 id="一、变换"><a href="#一、变换" class="headerlink" title="一、变换"></a>一、变换</h2><ol><li>$\vec{a}\times \vec{b}&#x3D;A*\vec{b}&#x3D;\begin{bmatrix}0 &amp; -a_z &amp; a_y\\a_z &amp; 0 &amp; -a_x\\-a_y &amp; a_x &amp; 0\end{bmatrix}\vec{b}$，用于判断左右、内外</li><li>仿射坐标：点 $(x,y,z,1)$，向量 $(x,y,z,0)$</li><li>交比：直线上四点 $A,B,C,D$，$(A,B;C,D)&#x3D;\frac{\vec{AC}&#x2F;\vec{CB}}{\vec{AD}&#x2F;\vec{DB}}$，射影变换前后保持不变</li><li>欧拉角：绕 $x,y,z$ 轴旋转 $\alpha,\beta,\gamma$ 角，$R&#x3D;R_z(\gamma)R_y(\beta)R_x(\alpha)$</li><li>绕 $\vec{n}$ 轴旋转 $\alpha$ 角：$R(\vec{n},\alpha)&#x3D;\cos\alpha I+(1-\cos\alpha)\vec{n}\vec{n}^T+\sin\alpha \begin{bmatrix}0 &amp; -n_z &amp; n_y\\n_z &amp; 0 &amp; -n_x\\-n_y &amp; n_x &amp; 0\end{bmatrix}$</li><li>视角变换：把摄像机移动到原点，$y$ 轴向上，看向 $-z$</li><li>正交投影：把长方体变换到 $[-1,1]^3$</li><li>透视投影：把视锥压缩成长方体再正交投影，前平面不变，后平面压缩且中心点不变</li></ol><h2 id="二、几何"><a href="#二、几何" class="headerlink" title="二、几何"></a>二、几何</h2><ol><li>隐式表示：$f(x,y,z)&#x3D;0$、几何体加减、距离函数（可用于插值）、水平集</li><li>显示表示：$(u,v)\to (x,y,z)$、点云、多边形网格</li><li>贝塞尔曲线：三阶 $b_0^3(t)&#x3D;(1-t)^3 b_0+3(1-t)^2tb_1+3(1-t)t^2b_2+t^3b_3$，为保证 $\mathbb{C}^1$ 连续需连接点处平分控制点</li><li>贝塞尔曲面：16 个控制点，先沿 $u$ 求四条曲线，再对每个 $v$ 以四条曲线为控制点</li><li>曲面细分：Loop 细分（三角形加三个中点，一拆四）、Catmull-Clark 细分（加边中点、面中心）</li><li>曲面简化：边收缩，使用二次度量误差建优先队列，贪心收缩</li><li>曲线坐标：切线（方向变化快慢为曲率）、法线（切向量导数）、副法线（叉乘，方向变化快慢为挠率）</li><li>曲面第一基本形式：$I&#x3D;E\mathrm{d}u^2+2F\mathrm{d}u\mathrm{d}v+G\mathrm{d}v^2,E&#x3D;\vec{r_u}\cdot \vec{r_u},F&#x3D;\vec{r_u}\cdot \vec{r_v},G&#x3D;\vec{r_v}\cdot \vec{r_v}$，切向量 $\vec{r_u},\vec{r}_v$，法向量 $\vec{n}$</li><li>曲面第二基本形式：$II&#x3D;L\mathrm{d}u^2+2M\mathrm{d}u\mathrm{d}v+N\mathrm{d}v^2,L&#x3D;\vec{n}\cdot \vec{r_{uu}},M&#x3D;\vec{n}\cdot \vec{r_{uv}},N&#x3D;\vec{n}\cdot \vec{r_{vv}}$，$r_uv$ 为二阶导数</li><li>曲率：法曲率（沿切平面中某方向截曲面得平面曲线的曲率）$\kappa_n&#x3D;\frac{II}{I}$，主曲率（法曲率最大最小值）$\kappa_1,\kappa_2$，平均曲率 $H&#x3D;\frac{\kappa_1+\kappa_2}{2}$，高斯曲率 $K&#x3D;\kappa_1\kappa_2$ 与曲面在 $\mathbb{R}^3$ 中的嵌入无关</li></ol><h2 id="三、摄影"><a href="#三、摄影" class="headerlink" title="三、摄影"></a>三、摄影</h2><ol><li>视场：传感器大小、焦距，等效焦距为 35mm 传感器时</li><li>曝光：光圈直径、快门时间、ISO 倍数</li><li>景深：对焦距离附近的清晰区间，焦距越长、光圈越大、对焦距离越近景深越浅</li><li>光场：前后平面共四维，同物体不同角度、同角度不同物体</li><li>光场相机：微透镜阵列，每一角度对应普通相机一张图，可后期调整焦距、光圈等</li><li>颜色：光谱与视锥细胞响应函数乘积，有同色异谱</li><li>加色系统：sRGB（用三纯色调出纯频率，再调出光谱）、XYZ（人为定义，Y 代表亮度）、HSV（色调、饱和度、明度）、Lab（亮度、绿红轴、蓝黄轴，互补色原理）</li><li>色彩空间：XYZ，固定 Y，$(x,y,z)&#x3D;\frac{(X,Y,Z)}{X+Y+Z}$，$sRGB$ 为三角形</li><li>减色系统：CMYK（品红黄青黑，印刷用）</li></ol><h2 id="四、光栅化"><a href="#四、光栅化" class="headerlink" title="四、光栅化"></a>四、光栅化</h2><ol><li>三角形：判断像素中心是否在内部，可用先模糊或多重采样（MSAA）反走样</li><li>反走样原理：采样等于时域上乘积等于频域上卷积（重复），高低频信号混叠，模糊等于低通滤波</li><li>深度缓冲：逐像素记录最近深度</li><li>着色模型：Blinn-Phong，环境光常数、漫反射（系数、平方反比、余弦）、高光（系数、平方反比、半程向量余弦幂）</li><li>着色频率：逐平面、平面内插值顶点着色、平面内插值顶点法线</li><li>插值方法：重心坐标（用三顶点坐标表示平面内点）、双线性（先 u 再 v，解决纹理过小）、Mipmap（预先计算指数级不同分辨率纹理，解决纹理过大），各向异性过滤（存长方形纹理）</li><li>渲染管线：几何 $\to$ 纹理 $\to$ 着色 $\to$ 变换 $\to$ 光栅化</li><li>高级纹理：环境光贴图、法线贴图、位移贴图</li><li>阴影贴图：从光源视角渲染深度图，像素在深度图中对应位置深度小于等于该值则有光照</li></ol><h2 id="五、光线追踪"><a href="#五、光线追踪" class="headerlink" title="五、光线追踪"></a>五、光线追踪</h2><ol><li>传统方法：从视角发射光线，每次与场景相交时计算着色和反射折射，着色递归相加</li><li>求交：$f(\vec{o}+t\vec{d})&#x3D;0$，三角形先计算平面交点再判断内外或直接套公式</li><li>加速结构：轴对齐包围盒、均匀网格、空间切分（KD 树、层次包围体）</li><li>辐射度量学：立体角（单位球上的面积）、Irradiance（单位面积上接收的功率）、Radiance（单位面积单位立体角上接收的功率）</li><li>渲染方程：$L_o(p,\omega_o)&#x3D;L_e(p,\omega_o)+\int_{\Omega^+} f_r(p,\omega_i,\omega_o)L_i(p,\omega_i)(\vec{n}\cdot \omega_i)\mathrm{d}\omega_i$</li><li>蒙特卡洛积分：$\int_a^b f(x)\mathrm{d}x\approx \frac{b-a}{N}\sum_{i&#x3D;1}^N f(x_i)$</li><li>路径追踪：对不遮挡光源换元到光源上积分，对物体只取一根光线递归（以概率继续）</li><li>改进：双向路径追踪、Markov 链采样、次表面散射（不在原地出射）</li><li>微表面材质：法线分布函数、菲涅尔项（反射率，与入射角正相关）、微遮挡项</li></ol><h2 id="六、动画"><a href="#六、动画" class="headerlink" title="六、动画"></a>六、动画</h2><ol><li>基本方法：关键帧插值、物理模拟（质量弹簧、有限元、质点系统、逆运动学）、动捕</li><li>质量弹簧系统：弹力、阻尼（相对速度在连线上的投影），可模拟布料（对角网格加跳连）</li><li>ODE 求解：欧拉法 $x^{t+\delta t}&#x3D;x^t+\dot{x}^t\delta t$，中点法 $x^{t+\delta t}&#x3D;x^t+\dot{x}_{\mathrm{mid}}\delta t$，隐式欧拉法 $x^{t+\delta t}&#x3D;x^t+\dot{x}^{t+\delta t}\delta t$（逆向优化求解），四阶 Runge-Kutta 法</li><li>流体模拟：质点位置基方法，分质点法（拉格朗日）、格点法（欧拉）、物质点法（混合）</li></ol>]]></content>
+    <content type="html"><![CDATA[<p>大二下学期的自学笔记，由图形学、体系结构、随机过程和生成模型组成。</p><span id="more"></span><p><img src="/img/CSDIY-4/1.png"></p><h2 id="一、GAMES-101"><a href="#一、GAMES-101" class="headerlink" title="一、GAMES 101"></a>一、GAMES 101</h2><h3 id="1-变换"><a href="#1-变换" class="headerlink" title="1. 变换"></a>1. 变换</h3><ol><li>$\vec{a}\times \vec{b}&#x3D;A*\vec{b}&#x3D;\begin{bmatrix}0 &amp; -a_z &amp; a_y\\a_z &amp; 0 &amp; -a_x\\-a_y &amp; a_x &amp; 0\end{bmatrix}\vec{b}$，用于判断左右、内外</li><li>仿射坐标：点 $(x,y,z,1)$，向量 $(x,y,z,0)$</li><li>交比：直线上四点 $A,B,C,D$，$(A,B;C,D)&#x3D;\frac{\vec{AC}&#x2F;\vec{CB}}{\vec{AD}&#x2F;\vec{DB}}$，射影变换前后保持不变</li><li>欧拉角：绕 $x,y,z$ 轴旋转 $\alpha,\beta,\gamma$ 角，$R&#x3D;R_z(\gamma)R_y(\beta)R_x(\alpha)$</li><li>绕 $\vec{n}$ 轴旋转 $\alpha$ 角：$R(\vec{n},\alpha)&#x3D;\cos\alpha I+(1-\cos\alpha)\vec{n}\vec{n}^T+\sin\alpha \begin{bmatrix}0 &amp; -n_z &amp; n_y\\n_z &amp; 0 &amp; -n_x\\-n_y &amp; n_x &amp; 0\end{bmatrix}$</li><li>视角变换：把摄像机移动到原点，$y$ 轴向上，看向 $-z$</li><li>正交投影：把长方体变换到 $[-1,1]^3$</li><li>透视投影：把视锥压缩成长方体再正交投影，前平面不变，后平面压缩且中心点不变</li></ol><h3 id="2-几何"><a href="#2-几何" class="headerlink" title="2. 几何"></a>2. 几何</h3><ol><li>隐式表示：$f(x,y,z)&#x3D;0$、几何体加减、距离函数（可用于插值）、水平集</li><li>显示表示：$(u,v)\to (x,y,z)$、点云、多边形网格</li><li>贝塞尔曲线：三阶 $b_0^3(t)&#x3D;(1-t)^3 b_0+3(1-t)^2tb_1+3(1-t)t^2b_2+t^3b_3$，为保证 $\mathbb{C}^1$ 连续需连接点处平分控制点</li><li>贝塞尔曲面：16 个控制点，先沿 $u$ 求四条曲线，再对每个 $v$ 以四条曲线为控制点</li><li>曲面细分：Loop 细分（三角形加三个中点，一拆四）、Catmull-Clark 细分（加边中点、面中心）</li><li>曲面简化：边收缩，使用二次度量误差建优先队列，贪心收缩</li></ol><h3 id="3-摄影"><a href="#3-摄影" class="headerlink" title="3. 摄影"></a>3. 摄影</h3><ol><li>视场：传感器大小、焦距，等效焦距为 35mm 传感器时</li><li>曝光：光圈直径、快门时间、ISO 倍数</li><li>景深：对焦距离附近的清晰区间，焦距越长、光圈越大、对焦距离越近景深越浅</li><li>光场：前后平面共四维，同物体不同角度、同角度不同物体</li><li>光场相机：微透镜阵列，每一角度对应普通相机一张图，可后期调整焦距、光圈等</li><li>颜色：光谱与视锥细胞响应函数乘积，有同色异谱</li><li>加色系统：sRGB（用三纯色调出纯频率，再调出光谱）、XYZ（人为定义，Y 代表亮度）、HSV（色调、饱和度、明度）、Lab（亮度、绿红轴、蓝黄轴，互补色原理）</li><li>色彩空间：XYZ，固定 Y，$(x,y,z)&#x3D;\frac{(X,Y,Z)}{X+Y+Z}$，$sRGB$ 为三角形</li><li>减色系统：CMYK（品红黄青黑，印刷用）</li></ol><h3 id="4-光栅化"><a href="#4-光栅化" class="headerlink" title="4. 光栅化"></a>4. 光栅化</h3><ol><li>三角形：判断像素中心是否在内部，可用先模糊或多重采样（MSAA）反走样</li><li>反走样原理：采样等于时域上乘积等于频域上卷积（重复），高低频信号混叠，模糊等于低通滤波</li><li>深度缓冲：逐像素记录最近深度</li><li>着色模型：Blinn-Phong，环境光常数、漫反射（系数、平方反比、余弦）、高光（系数、平方反比、半程向量余弦幂）</li><li>着色频率：逐平面、平面内插值顶点着色、平面内插值顶点法线</li><li>插值方法：重心坐标（用三顶点坐标表示平面内点）、双线性（先 u 再 v，解决纹理过小）、Mipmap（预先计算指数级不同分辨率纹理，解决纹理过大），各向异性过滤（存长方形纹理）</li><li>渲染管线：几何 $\to$ 纹理 $\to$ 着色 $\to$ 变换 $\to$ 光栅化</li><li>高级纹理：环境光贴图、法线贴图、位移贴图</li><li>阴影贴图：从光源视角渲染深度图，像素在深度图中对应位置深度小于等于该值则有光照</li></ol><h3 id="5-光线追踪"><a href="#5-光线追踪" class="headerlink" title="5. 光线追踪"></a>5. 光线追踪</h3><ol><li>传统方法：从视角发射光线，每次与场景相交时计算着色和反射折射，着色递归相加</li><li>求交：$f(\vec{o}+t\vec{d})&#x3D;0$，三角形先计算平面交点再判断内外或直接套公式</li><li>加速结构：轴对齐包围盒、均匀网格、空间切分（KD 树、层次包围体）</li><li>辐射度量学：立体角（单位球上的面积）、Irradiance（单位面积上接收的功率）、Radiance（单位面积单位立体角上接收的功率）</li><li>渲染方程：$L_o(p,\omega_o)&#x3D;L_e(p,\omega_o)+\int_{\Omega^+} f_r(p,\omega_i,\omega_o)L_i(p,\omega_i)(\vec{n}\cdot \omega_i)\mathrm{d}\omega_i$</li><li>蒙特卡洛积分：$\int_a^b f(x)\mathrm{d}x\approx \frac{b-a}{N}\sum_{i&#x3D;1}^N f(x_i)$</li><li>路径追踪：对不遮挡光源换元到光源上积分，对物体只取一根光线递归（以概率继续）</li><li>改进：双向路径追踪、Markov 链采样、次表面散射（不在原地出射）</li><li>微表面材质：法线分布函数、菲涅尔项（反射率，与入射角正相关）、微遮挡项</li></ol><h3 id="6-动画"><a href="#6-动画" class="headerlink" title="6. 动画"></a>6. 动画</h3><ol><li>基本方法：关键帧插值、物理模拟（质量弹簧、有限元、质点系统、逆运动学）、动捕</li><li>质量弹簧系统：弹力、阻尼（相对速度在连线上的投影），可模拟布料（对角网格加跳连）</li><li>ODE 求解：欧拉法 $x^{t+\delta t}&#x3D;x^t+\dot{x}^t\delta t$，中点法 $x^{t+\delta t}&#x3D;x^t+\dot{x}_{\mathrm{mid}}\delta t$，隐式欧拉法 $x^{t+\delta t}&#x3D;x^t+\dot{x}^{t+\delta t}\delta t$（逆向优化求解），四阶 Runge-Kutta 法</li><li>流体模拟：质点位置基方法，分质点法（拉格朗日）、格点法（欧拉）、物质点法（混合）</li></ol><h2 id="二、CSAPP-后半部分"><a href="#二、CSAPP-后半部分" class="headerlink" title="二、CSAPP 后半部分"></a>二、CSAPP 后半部分</h2><h3 id="1-链接"><a href="#1-链接" class="headerlink" title="1. 链接"></a>1. 链接</h3><ol><li>编译过程：.c $\to$ 预处理 $\to$ .i $\to$ 编译 $\to$ .s $\to$ 汇编 $\to$ .o $\to$ 链接 $\to$ .exe</li><li>可重定位目标文件 .o：代码 .text，数据 .rodata&#x2F;.data&#x2F;.bss（只读&#x2F;已初始化&#x2F;未初始化），符号表 .symtab，重定位表 .rel.text&#x2F;.rel.data</li><li>库：静态库 .a（多个 .o 文件打包，链接时提取需要的 .o 文件）、动态库 .so&#x2F;.dll（链接时记录库名和符号表，运行时加载）</li><li>链接过程：符号解析确定所需 .o 再合并，重定位引用地址</li></ol><h3 id="2-异常控制流"><a href="#2-异常控制流" class="headerlink" title="2. 异常控制流"></a>2. 异常控制流</h3><ol><li>异常：中断（异步 I&#x2F;O）、陷阱（系统调用）、故障（可恢复错误）、终止（不可恢复错误）</li><li>进程：虚拟内存空间（代码、数据、栈）、寄存器、文件描述符表</li><li>信号：类似异常，接收后内核将控制流转移到信号处理程序再返回</li></ol><h3 id="3-虚拟内存"><a href="#3-虚拟内存" class="headerlink" title="3. 虚拟内存"></a>3. 虚拟内存</h3><ol><li>正常流程：MMU 接收虚拟地址向内存中页表请求查询物理页号，再将物理页号和虚拟页偏移量组合成物理地址向内存请求访问</li><li>缺页：MMU 发现物理页号首位无效（地址指向初始磁盘位置），触发缺页异常将磁盘复制到内存，更新页表后重试访问</li><li>加速：TLB 页表缓存、多级页表、和高速缓存联用</li></ol><h3 id="4-系统级-I-O"><a href="#4-系统级-I-O" class="headerlink" title="4. 系统级 I&#x2F;O"></a>4. 系统级 I&#x2F;O</h3><ol><li>共享文件：描述符表进程独立，打开文件表和 v-node 表进程共享</li><li>打开同一文件两次：描述符表中两条，指向打开文件表中不同条，指向同一 v-node 表条</li><li>父子进程：复制描述符表，对应条指向同一打开文件表条，指向同一 v-node 表条</li><li>重定向：将描述符表条重新指向其他打开文件表条（可用于 stdin&#x2F;out&#x2F;err）</li></ol><h3 id="5-网络编程"><a href="#5-网络编程" class="headerlink" title="5. 网络编程"></a>5. 网络编程</h3><ol><li>端口：客户端由内核自动分配临时端口，服务器为固定端口，服务器内核监听到端口请求后将控制流转移到对应程序</li><li>URL：通用资源定位符，用于静态内容在服务器磁盘上查找</li><li>CGI ：通用网关接口，用于动态内容传递运行参数，用？分隔文件名和参数，用&amp;分隔参数</li></ol><h3 id="6-并发编程"><a href="#6-并发编程" class="headerlink" title="6. 并发编程"></a>6. 并发编程</h3><ol><li>并发方式：进程式（遇请求后 fork）、事件式（遇请求后转移控制流）、多线程</li><li>线程：栈（同一虚拟内存空间的不同区间）、寄存器，共享虚拟内存空间、文件描述符</li><li>信号量：P（减一，阻塞直到非负）、V（加一，唤醒一个等待线程），用于互斥锁</li><li>死锁：等待永远不为真的条件，如 PV 顺序不一致导致的禁止区域左下角</li></ol><h2 id="三、随机过程"><a href="#三、随机过程" class="headerlink" title="三、随机过程"></a>三、随机过程</h2><h3 id="1-离散时间-Markov-链"><a href="#1-离散时间-Markov-链" class="headerlink" title="1. 离散时间 Markov 链"></a>1. 离散时间 Markov 链</h3><ol><li>停时：事件发生与否仅和历史状态有关</li><li>周期：所有 $p^n(x,x)&gt;0$ 的 $n$ 的最大公约数，1 为非周期</li><li>正常返：$P_x(T_x&lt;\infty)&#x3D;1,E_x(T_x)&lt;\infty$，否则为零常返</li><li>平稳分布：$\pi_y&#x3D;\frac{1}{E_y(T_y)}$，需要存在正常返状态（无限不一定）</li><li>细致平衡：$\pi_x p(x,y) &#x3D; \pi_y p(y,x)$（两两平衡，强于平稳分布）</li><li>循环把戏：$\mu_x(y)&#x3D;\sum_{n&#x3D;0}^\infty P_x(X_n&#x3D;y,T_x&gt;n)$ 为平稳测度</li><li>双吸收态概率：$h(a)&#x3D;1,h(b)&#x3D;0,h(x)&#x3D;\sum_y p(x,y)h(y)&#x3D;P_x(T_a&lt;T_b)$</li><li>吸收时间：$E_x(T_A)&#x3D;1+\sum_{y\notin A} p(x,y)E_y(T_A)$</li></ol><h3 id="2-鞅与生灭过程"><a href="#2-鞅与生灭过程" class="headerlink" title="2. 鞅与生灭过程"></a>2. 鞅与生灭过程</h3><h3 id="3-连续时间-Markov-链"><a href="#3-连续时间-Markov-链" class="headerlink" title="3. 连续时间 Markov 链"></a>3. 连续时间 Markov 链</h3><h3 id="4-随机分析"><a href="#4-随机分析" class="headerlink" title="4. 随机分析"></a>4. 随机分析</h3><h2 id="四、微分几何"><a href="#四、微分几何" class="headerlink" title="四、微分几何"></a>四、微分几何</h2><h2 id="五、博弈论"><a href="#五、博弈论" class="headerlink" title="五、博弈论"></a>五、博弈论</h2><ol><li>自身的策略要<strong>最大化</strong>对方的策略可能带来的<strong>最小收益</strong></li><li>鞍点：每个参与者的策略在给定其他参与者策略的情况下都是最优的（纯策略纳什均衡）</li><li>混合策略：<strong>最大化</strong>对方选择每一个纯策略所带来的<strong>最小期望收益</strong></li><li>最大最小值定理：零和博弈两个混合策略线性规划互为对偶，最优值相等（对偶定理）</li><li>非常和博弈：纳什均衡存在定理（纯策略或混合策略），但不一定是帕累托最优</li></ol><h2 id="六、生成模型"><a href="#六、生成模型" class="headerlink" title="六、生成模型"></a>六、生成模型</h2>]]></content>
     
     
     <categories>
@@ -20,9 +20,9 @@
     
     <tags>
       
-      <tag>自学</tag>
-      
       <tag>计算机</tag>
+      
+      <tag>自学</tag>
       
     </tags>
     
@@ -35,7 +35,7 @@
     <link href="/26Spring/EE/"/>
     <url>/26Spring/EE/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<p>大二下学期电工电子技术基础的复习笔记，目前更新至电路原理。</p><span id="more"></span><h2 id="一、电路原理"><a href="#一、电路原理" class="headerlink" title="一、电路原理"></a>一、电路原理</h2><h2 id="二、模拟电路"><a href="#二、模拟电路" class="headerlink" title="二、模拟电路"></a>二、模拟电路</h2><h2 id="三、数字电路"><a href="#三、数字电路" class="headerlink" title="三、数字电路"></a>三、数字电路</h2>]]></content>
     
     
     <categories>
@@ -47,9 +47,9 @@
     
     <tags>
       
-      <tag>大二下</tag>
-      
       <tag>物理</tag>
+      
+      <tag>大二下</tag>
       
     </tags>
     
@@ -101,9 +101,9 @@
     
     <tags>
       
-      <tag>大二下</tag>
-      
       <tag>数学</tag>
+      
+      <tag>大二下</tag>
       
     </tags>
     
@@ -116,7 +116,7 @@
     <link href="/26Spring/AI/"/>
     <url>/26Spring/AI/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<p>大二下学期人工智能基础的复习笔记，目前更新至搜索。</p><span id="more"></span><h2 id="一、搜索"><a href="#一、搜索" class="headerlink" title="一、搜索"></a>一、搜索</h2><h2 id="二、学习"><a href="#二、学习" class="headerlink" title="二、学习"></a>二、学习</h2><h2 id="三、推理"><a href="#三、推理" class="headerlink" title="三、推理"></a>三、推理</h2>]]></content>
     
     
     <categories>
@@ -155,9 +155,9 @@
     
     <tags>
       
-      <tag>物理</tag>
-      
       <tag>大二上</tag>
+      
+      <tag>物理</tag>
       
     </tags>
     
@@ -182,9 +182,9 @@
     
     <tags>
       
-      <tag>数学</tag>
-      
       <tag>大二上</tag>
+      
+      <tag>数学</tag>
       
     </tags>
     
@@ -209,9 +209,9 @@
     
     <tags>
       
-      <tag>计算机</tag>
-      
       <tag>大二上</tag>
+      
+      <tag>计算机</tag>
       
     </tags>
     
@@ -236,9 +236,9 @@
     
     <tags>
       
-      <tag>计算机</tag>
-      
       <tag>大二上</tag>
+      
+      <tag>计算机</tag>
       
     </tags>
     
@@ -263,9 +263,9 @@
     
     <tags>
       
-      <tag>物理</tag>
-      
       <tag>大二上</tag>
+      
+      <tag>物理</tag>
       
     </tags>
     
@@ -332,7 +332,7 @@
     <link href="/CSDIY/CSDIY-3/"/>
     <url>/CSDIY/CSDIY-3/</url>
     
-    <content type="html"><![CDATA[<p>大二上学期及寒假的自学笔记，由信息论、最优化方法、形式语言与自动机和博弈论组成。</p><span id="more"></span><h2 id="一、信息论"><a href="#一、信息论" class="headerlink" title="一、信息论"></a>一、信息论</h2><h3 id="1-错误检测码"><a href="#1-错误检测码" class="headerlink" title="1. 错误检测码"></a>1. 错误检测码</h3><ol><li>奇偶校验码：在数据后加一位，使得 1 的个数为奇数或偶数（例：$\mathrm{ASCII}$）</li><li>改进：按 $N$ 位划分数据块，添加 $N$ 位校验码</li><li>加权校验码：$wxyz\to 4w+3x+2y+z$，再加一位使得和能被某数整除（例：身份证号）</li><li>$x_4&#x3D;x_1+x_2,x_5&#x3D;x_1+x_3,x_6&#x3D;x_2+x_3$</li></ol><h3 id="2-错误纠正码"><a href="#2-错误纠正码" class="headerlink" title="2. 错误纠正码"></a>2. 错误纠正码</h3><ol><li>线性码：将 $k$ 位映射到 $n$ 位，$x&#x3D;sG$，$G$ 为 $k\times n$ 矩阵</li><li>校验：$Hy^T\neq 0$ 则有错，$H$ 为 $(n-k)\times n$ 矩阵，$HG^T&#x3D;0$</li><li>对偶码：将 $H$ 作为生成矩阵，$G$ 作为校验矩阵</li><li>例：三重重复码、$(7,4)\ \mathrm{Hamming}$ 码 $(p_1&#x3D;x_1+x_2+x_4,p_2&#x3D;x_1+x_3+x_4,p_3&#x3D;x_2+x_3+x_4)$</li></ol><h3 id="3-数据压缩"><a href="#3-数据压缩" class="headerlink" title="3. 数据压缩"></a>3. 数据压缩</h3><ol><li>熵：$H(X)&#x3D;-\sum p(x)\log p(x)$</li><li>香农第一定理：编码平均长度 $\geq H(X)$，取等时必为平均分布</li><li>数据压缩码：$\mathrm{Huffman}$ 码（最优前缀码、最优唯一可译码）</li></ol><h3 id="4-信道编码"><a href="#4-信道编码" class="headerlink" title="4. 信道编码"></a>4. 信道编码</h3><ol><li>定义 $P_{X,Y}(x_i,y_j)$：发出 $x_i$ 且接收 $y_j$ 的概率，$P_{Y|X}(y_j|x_i)$：发出 $x_i$ 时接收 $y_j$ 的条件概率</li><li>熵：$H(X,Y)&#x3D;-\sum P_{X,Y}(x_i,y_j)\log P_{X,Y}(x_i,y_j)$，$H(Y|X)&#x3D;-\sum P_{X,Y}(x_i,y_j)\log P_{Y|X}(y_j|x_i)$</li><li>链式法则：$H(X,Y)&#x3D;H(X)+H(Y|X)$（信道的总熵等于输入的熵加上信道引入的熵）</li><li>互信息：$I(x_i;y_j)&#x3D;\log(\frac{1}{P_{X}(x_i)})-\log(\frac{1}{P_{X|Y}(x_i|y_j)})$（接收到 $y_j$ 后对 $x_i$ 的不确定性减少了多少）</li><li>平均互信息：$I(X;Y)&#x3D;\sum P_{X,Y}(x_i,y_j)I(x_i;y_j)&#x3D;H(X)-H(X|Y)$</li><li>性质：$I(X;Y)&#x3D;H(X)$ 当且仅当无损；$I(X;Y)&#x3D;0$ 当且仅当 $X,Y$ 独立（无信息量）</li><li>信道容量：$\displaystyle C&#x3D;\max_{P_X(\cdot)}I(X;Y)$（对所有可能的输入分布求最大平均互信息）</li><li>香农第二定理：若 $R&lt;C$，则存在编码使得误码率 $\to 0$，只要码长足够长；若 $R&gt;C$，则任何编码误码率均有下限，其中 $R$ 为信道传输速率（用几个比特传输一个符号）</li></ol><h2 id="二、最优化方法"><a href="#二、最优化方法" class="headerlink" title="二、最优化方法"></a>二、最优化方法</h2><h3 id="1-最优性理论"><a href="#1-最优性理论" class="headerlink" title="1. 最优性理论"></a>1. 最优性理论</h3><ol><li>共轭函数：$\displaystyle f^*(y)&#x3D;\sup_{x\in \mathrm{dom}f}(y^Tx-f(x))$，二次共轭 $\displaystyle f^{**}(x)&#x3D;\sup_{y\in \mathrm{dom}f^*}(y^Tx-f^*(y))&#x3D;f(x)$</li><li>拉格朗日函数 $L(x,\lambda)&#x3D;f(x)+\sum_{i&#x3D;1}^m \lambda_i g_i(x),\lambda_i \geq 0,g_i(x)\leq 0$ 是原函数的下界</li><li>对偶函数 $\displaystyle g(\lambda)&#x3D;\inf_{x\in \mathrm{dom}f}L(x,\lambda)$ 是原问题的下界，对偶问题即最优下界 $\displaystyle \max_{\lambda} g(\lambda),\lambda \geq 0$</li><li>一阶 $\mathrm{KKT}$ 条件：<ol><li>可行性条件：$g_i(x^*)\leq 0,h_j(x^*)&#x3D;0$</li><li>对偶可行性条件：$\lambda_i^* \geq 0$</li><li>驻点条件：$\nabla_x L(x^*,\lambda^*)&#x3D;0$</li><li>互补松弛条件：$\lambda_i^* g_i(x^*)&#x3D;0$</li></ol></li><li>二阶条件：$d^T\nabla_{xx}^2 L(x^*,\lambda^*)d \geq 0$ 对所有临界锥内的 $d$，即 $\lambda_i^*\nabla g_i(x^*)^Td&#x3D;0$</li></ol><h3 id="2-无约束优化"><a href="#2-无约束优化" class="headerlink" title="2. 无约束优化"></a>2. 无约束优化</h3><ol><li>牛顿法：$f(x^k+d^k)\approx f(x^k)+\nabla f(x^k)^Td^k+\frac{1}{2}d^{kT}\nabla^2 f(x^k)d^k$，右边驻点 $\nabla f(x^k)+\nabla^2 f(x^k)d^k&#x3D;0$</li><li>拟牛顿法：估计 $\nabla^2 f(x^k)$，秩一更新 $B^{k+1}&#x3D;B^k+auu^T$，$\mathrm{BFGS}$ 法 $B^{k+1}&#x3D;B^k+auu^T+bvv^T$</li><li>信赖域法：求解子问题 $\min m_k(d)&#x3D;f(x^k)+\nabla f(x^k)^Td+\frac{1}{2}d^TB^kd,|d|\leq \Delta_k$</li><li>最小二乘高斯-牛顿法：$f(x)&#x3D;\frac{1}{2}\sum_{i&#x3D;1}^m r_i^2(x)$，$\nabla f(x)&#x3D;J(x)^T r(x),\nabla^2 f(x)&#x3D;J(x)^T J(x)+\sum_{i&#x3D;1}^m r_i(x)\nabla^2 r_i(x)\approx J(x)^T J(x)$，计算 $QR$ 分解求解</li></ol><h3 id="3-约束优化"><a href="#3-约束优化" class="headerlink" title="3. 约束优化"></a>3. 约束优化</h3><ol><li>罚函数法：外点二次罚函数罚因子递增，内点对数罚函数罚因子递减</li><li>增广拉格朗日函数法：$L_\sigma(x,\lambda)&#x3D;f(x)+\sum\lambda_i c_i(x)+\frac{\sigma}{2}\sum \hat{c_i}^2(x)$，$\lambda_i^{k+1}&#x3D;\max\{\lambda_i^k+\sigma_k c_i(x^{k+1}),0\}$ 与 $\sigma$ 交替更新</li></ol><h3 id="4-复合优化"><a href="#4-复合优化" class="headerlink" title="4. 复合优化"></a>4. 复合优化</h3><ol><li>邻近算子法：$\mathrm{prox}_h(x)&#x3D;\arg\min\{h(u)+\frac{1}{2}|u-x|^2\}$，$\min \psi(x)&#x3D;f(x)+h(x)$，可微 $f$ 做梯度下降，非光滑 $h$ 用邻近算子</li><li>分块坐标下降法：将自变量 $x$ 拆成 $s$ 块，固定其他块交替优化每一块</li><li>随机优化：详见<a href="https://sqzr2319.github.io/CSDIY/CSDIY-2/">机器学习</a></li></ol><h2 id="三、形式语言与自动机"><a href="#三、形式语言与自动机" class="headerlink" title="三、形式语言与自动机"></a>三、形式语言与自动机</h2><h3 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1. 基本概念"></a>1. 基本概念</h3><ol><li>0型&#x2F;短语结构文法 $\mathrm{PSG}$：无限制，生成递归可枚举语言</li><li>1型&#x2F;上下文有关文法 $\mathrm{CSG}$：$\forall\alpha\to\beta\in P,|\beta|\ge|\alpha|$</li><li>2型&#x2F;上下文无关文法 $\mathrm{CFG}$：$\alpha\in V$</li><li>3型&#x2F;正则&#x2F;右线性文法 $\mathrm{RG}$：$A\to w|wB,A,B\in V,w\in T^*$</li></ol><h3 id="2-正则语言"><a href="#2-正则语言" class="headerlink" title="2. 正则语言"></a>2. 正则语言</h3><ol><li>有限状态自动机 $\mathrm{FA}$：读入读头字符，转移状态，右移读头</li><li>正则表达式 $\mathrm{RE}$：$r,s$ 表示语言 $R,S$，$(r+s)$ 表示 $R\cup S$；$a^+,a^*$</li><li>正则文法 $\Leftrightarrow$ 正则表达式 $\Leftrightarrow$ 有限状态自动机 $\mathrm{FA}$</li></ol><h3 id="3-上下文无关语言"><a href="#3-上下文无关语言" class="headerlink" title="3. 上下文无关语言"></a>3. 上下文无关语言</h3><ol><li>乔姆斯基范式 $\mathrm{CNF}$：$A\to BC|a$</li><li>格雷巴赫范式 $\mathrm{GNF}$：$A\to a\alpha,a\in T,\alpha\in V^*$</li><li>自嵌套文法：$\exists A\overset{+}{\Rightarrow} \alpha A\beta,\alpha,\beta\in (V\cup T)^+$</li><li>非自嵌套文法 $\Rightarrow$ 正则语言</li><li>下推自动机 $\mathrm{PDA}$：基于 $\mathrm{GNF}$，读入读头字符，弹出栈顶符号，压入栈顶符号串并转移状态，右移读头</li><li>上下文无关文法 $\Leftrightarrow$ 下推自动机</li></ol><h3 id="4-图灵机"><a href="#4-图灵机" class="headerlink" title="4. 图灵机"></a>4. 图灵机</h3><ol><li>图灵机 $\mathrm{TM}$：读入读头字符，写入带符号，左&#x2F;右移读头，转移状态</li><li>变形：双向、多带、不确定、多维、多头、离线（只读）</li><li>图灵机 $\Leftrightarrow$ 短语结构文法</li><li>可判定性：递归语言（图灵机停机），是递归可枚举语言的真子集</li><li>$\mathrm{P&#x2F;NP&#x2F;NPC&#x2F;NP-hard}$：多项式可解&#x2F;多项式可验证&#x2F;多项式归约到所有 $\mathrm{NP}$ 且属于 $\mathrm{NP}$&#x2F;多项式归约到所有 $\mathrm{NP}$</li></ol><h3 id="5-上下文有关语言"><a href="#5-上下文有关语言" class="headerlink" title="5. 上下文有关语言"></a>5. 上下文有关语言</h3><ol><li>线性有界自动机 $\mathrm{LBA}$：非确定图灵机，读头限制在端点间，端点不可改写</li><li>上下文有关文法 $\Leftrightarrow$ 线性有界自动机</li></ol><h2 id="四、博弈论"><a href="#四、博弈论" class="headerlink" title="四、博弈论"></a>四、博弈论</h2><ol><li>自身的策略要<strong>最大化</strong>对方的策略可能带来的<strong>最小收益</strong></li><li>鞍点：每个参与者的策略在给定其他参与者策略的情况下都是最优的（纯策略纳什均衡）</li><li>混合策略：<strong>最大化</strong>对方选择每一个纯策略所带来的<strong>最小期望收益</strong></li><li>最大最小值定理：零和博弈两个混合策略线性规划互为对偶，最优值相等（对偶定理）</li><li>非常和博弈：纳什均衡存在定理（纯策略或混合策略），但不一定是帕累托最优</li></ol>]]></content>
+    <content type="html"><![CDATA[<p>大二上学期及寒假的自学笔记，由信息论、最优化方法、形式语言与自动机组成。</p><span id="more"></span><h2 id="一、信息论"><a href="#一、信息论" class="headerlink" title="一、信息论"></a>一、信息论</h2><h3 id="1-错误检测码"><a href="#1-错误检测码" class="headerlink" title="1. 错误检测码"></a>1. 错误检测码</h3><ol><li>奇偶校验码：在数据后加一位，使得 1 的个数为奇数或偶数（例：$\mathrm{ASCII}$）</li><li>改进：按 $N$ 位划分数据块，添加 $N$ 位校验码</li><li>加权校验码：$wxyz\to 4w+3x+2y+z$，再加一位使得和能被某数整除（例：身份证号）</li><li>$x_4&#x3D;x_1+x_2,x_5&#x3D;x_1+x_3,x_6&#x3D;x_2+x_3$</li></ol><h3 id="2-错误纠正码"><a href="#2-错误纠正码" class="headerlink" title="2. 错误纠正码"></a>2. 错误纠正码</h3><ol><li>线性码：将 $k$ 位映射到 $n$ 位，$x&#x3D;sG$，$G$ 为 $k\times n$ 矩阵</li><li>校验：$Hy^T\neq 0$ 则有错，$H$ 为 $(n-k)\times n$ 矩阵，$HG^T&#x3D;0$</li><li>对偶码：将 $H$ 作为生成矩阵，$G$ 作为校验矩阵</li><li>例：三重重复码、$(7,4)\ \mathrm{Hamming}$ 码 $(p_1&#x3D;x_1+x_2+x_4,p_2&#x3D;x_1+x_3+x_4,p_3&#x3D;x_2+x_3+x_4)$</li></ol><h3 id="3-数据压缩"><a href="#3-数据压缩" class="headerlink" title="3. 数据压缩"></a>3. 数据压缩</h3><ol><li>熵：$H(X)&#x3D;-\sum p(x)\log p(x)$</li><li>香农第一定理：编码平均长度 $\geq H(X)$，取等时必为平均分布</li><li>数据压缩码：$\mathrm{Huffman}$ 码（最优前缀码、最优唯一可译码）</li></ol><h3 id="4-信道编码"><a href="#4-信道编码" class="headerlink" title="4. 信道编码"></a>4. 信道编码</h3><ol><li>定义 $P_{X,Y}(x_i,y_j)$：发出 $x_i$ 且接收 $y_j$ 的概率，$P_{Y|X}(y_j|x_i)$：发出 $x_i$ 时接收 $y_j$ 的条件概率</li><li>熵：$H(X,Y)&#x3D;-\sum P_{X,Y}(x_i,y_j)\log P_{X,Y}(x_i,y_j)$，$H(Y|X)&#x3D;-\sum P_{X,Y}(x_i,y_j)\log P_{Y|X}(y_j|x_i)$</li><li>链式法则：$H(X,Y)&#x3D;H(X)+H(Y|X)$（信道的总熵等于输入的熵加上信道引入的熵）</li><li>互信息：$I(x_i;y_j)&#x3D;\log(\frac{1}{P_{X}(x_i)})-\log(\frac{1}{P_{X|Y}(x_i|y_j)})$（接收到 $y_j$ 后对 $x_i$ 的不确定性减少了多少）</li><li>平均互信息：$I(X;Y)&#x3D;\sum P_{X,Y}(x_i,y_j)I(x_i;y_j)&#x3D;H(X)-H(X|Y)$</li><li>性质：$I(X;Y)&#x3D;H(X)$ 当且仅当无损；$I(X;Y)&#x3D;0$ 当且仅当 $X,Y$ 独立（无信息量）</li><li>信道容量：$\displaystyle C&#x3D;\max_{P_X(\cdot)}I(X;Y)$（对所有可能的输入分布求最大平均互信息）</li><li>香农第二定理：若 $R&lt;C$，则存在编码使得误码率 $\to 0$，只要码长足够长；若 $R&gt;C$，则任何编码误码率均有下限，其中 $R$ 为信道传输速率（用几个比特传输一个符号）</li></ol><h2 id="二、最优化方法"><a href="#二、最优化方法" class="headerlink" title="二、最优化方法"></a>二、最优化方法</h2><h3 id="1-最优性理论"><a href="#1-最优性理论" class="headerlink" title="1. 最优性理论"></a>1. 最优性理论</h3><ol><li>共轭函数：$\displaystyle f^*(y)&#x3D;\sup_{x\in \mathrm{dom}f}(y^Tx-f(x))$，二次共轭 $\displaystyle f^{**}(x)&#x3D;\sup_{y\in \mathrm{dom}f^*}(y^Tx-f^*(y))&#x3D;f(x)$</li><li>拉格朗日函数 $L(x,\lambda)&#x3D;f(x)+\sum_{i&#x3D;1}^m \lambda_i g_i(x),\lambda_i \geq 0,g_i(x)\leq 0$ 是原函数的下界</li><li>对偶函数 $\displaystyle g(\lambda)&#x3D;\inf_{x\in \mathrm{dom}f}L(x,\lambda)$ 是原问题的下界，对偶问题即最优下界 $\displaystyle \max_{\lambda} g(\lambda),\lambda \geq 0$</li><li>一阶 $\mathrm{KKT}$ 条件：<ol><li>可行性条件：$g_i(x^*)\leq 0,h_j(x^*)&#x3D;0$</li><li>对偶可行性条件：$\lambda_i^* \geq 0$</li><li>驻点条件：$\nabla_x L(x^*,\lambda^*)&#x3D;0$</li><li>互补松弛条件：$\lambda_i^* g_i(x^*)&#x3D;0$</li></ol></li><li>二阶条件：$d^T\nabla_{xx}^2 L(x^*,\lambda^*)d \geq 0$ 对所有临界锥内的 $d$，即 $\lambda_i^*\nabla g_i(x^*)^Td&#x3D;0$</li></ol><h3 id="2-无约束优化"><a href="#2-无约束优化" class="headerlink" title="2. 无约束优化"></a>2. 无约束优化</h3><ol><li>牛顿法：$f(x^k+d^k)\approx f(x^k)+\nabla f(x^k)^Td^k+\frac{1}{2}d^{kT}\nabla^2 f(x^k)d^k$，右边驻点 $\nabla f(x^k)+\nabla^2 f(x^k)d^k&#x3D;0$</li><li>拟牛顿法：估计 $\nabla^2 f(x^k)$，秩一更新 $B^{k+1}&#x3D;B^k+auu^T$，$\mathrm{BFGS}$ 法 $B^{k+1}&#x3D;B^k+auu^T+bvv^T$</li><li>信赖域法：求解子问题 $\min m_k(d)&#x3D;f(x^k)+\nabla f(x^k)^Td+\frac{1}{2}d^TB^kd,|d|\leq \Delta_k$</li><li>最小二乘高斯-牛顿法：$f(x)&#x3D;\frac{1}{2}\sum_{i&#x3D;1}^m r_i^2(x)$，$\nabla f(x)&#x3D;J(x)^T r(x),\nabla^2 f(x)&#x3D;J(x)^T J(x)+\sum_{i&#x3D;1}^m r_i(x)\nabla^2 r_i(x)\approx J(x)^T J(x)$，计算 $QR$ 分解求解</li></ol><h3 id="3-约束优化"><a href="#3-约束优化" class="headerlink" title="3. 约束优化"></a>3. 约束优化</h3><ol><li>罚函数法：外点二次罚函数罚因子递增，内点对数罚函数罚因子递减</li><li>增广拉格朗日函数法：$L_\sigma(x,\lambda)&#x3D;f(x)+\sum\lambda_i c_i(x)+\frac{\sigma}{2}\sum \hat{c_i}^2(x)$，$\lambda_i^{k+1}&#x3D;\max\{\lambda_i^k+\sigma_k c_i(x^{k+1}),0\}$ 与 $\sigma$ 交替更新</li></ol><h3 id="4-复合优化"><a href="#4-复合优化" class="headerlink" title="4. 复合优化"></a>4. 复合优化</h3><ol><li>邻近算子法：$\mathrm{prox}_h(x)&#x3D;\arg\min\{h(u)+\frac{1}{2}|u-x|^2\}$，$\min \psi(x)&#x3D;f(x)+h(x)$，可微 $f$ 做梯度下降，非光滑 $h$ 用邻近算子</li><li>分块坐标下降法：将自变量 $x$ 拆成 $s$ 块，固定其他块交替优化每一块</li><li>随机优化：详见<a href="https://sqzr2319.github.io/CSDIY/CSDIY-2/">机器学习</a></li></ol><h2 id="三、形式语言与自动机"><a href="#三、形式语言与自动机" class="headerlink" title="三、形式语言与自动机"></a>三、形式语言与自动机</h2><h3 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1. 基本概念"></a>1. 基本概念</h3><ol><li>0型&#x2F;短语结构文法 $\mathrm{PSG}$：无限制，生成递归可枚举语言</li><li>1型&#x2F;上下文有关文法 $\mathrm{CSG}$：$\forall\alpha\to\beta\in P,|\beta|\ge|\alpha|$</li><li>2型&#x2F;上下文无关文法 $\mathrm{CFG}$：$\alpha\in V$</li><li>3型&#x2F;正则&#x2F;右线性文法 $\mathrm{RG}$：$A\to w|wB,A,B\in V,w\in T^*$</li></ol><h3 id="2-正则语言"><a href="#2-正则语言" class="headerlink" title="2. 正则语言"></a>2. 正则语言</h3><ol><li>有限状态自动机 $\mathrm{FA}$：读入读头字符，转移状态，右移读头</li><li>正则表达式 $\mathrm{RE}$：$r,s$ 表示语言 $R,S$，$(r+s)$ 表示 $R\cup S$；$a^+,a^*$</li><li>正则文法 $\Leftrightarrow$ 正则表达式 $\Leftrightarrow$ 有限状态自动机 $\mathrm{FA}$</li></ol><h3 id="3-上下文无关语言"><a href="#3-上下文无关语言" class="headerlink" title="3. 上下文无关语言"></a>3. 上下文无关语言</h3><ol><li>乔姆斯基范式 $\mathrm{CNF}$：$A\to BC|a$</li><li>格雷巴赫范式 $\mathrm{GNF}$：$A\to a\alpha,a\in T,\alpha\in V^*$</li><li>自嵌套文法：$\exists A\overset{+}{\Rightarrow} \alpha A\beta,\alpha,\beta\in (V\cup T)^+$</li><li>非自嵌套文法 $\Rightarrow$ 正则语言</li><li>下推自动机 $\mathrm{PDA}$：基于 $\mathrm{GNF}$，读入读头字符，弹出栈顶符号，压入栈顶符号串并转移状态，右移读头</li><li>上下文无关文法 $\Leftrightarrow$ 下推自动机</li></ol><h3 id="4-图灵机"><a href="#4-图灵机" class="headerlink" title="4. 图灵机"></a>4. 图灵机</h3><ol><li>图灵机 $\mathrm{TM}$：读入读头字符，写入带符号，左&#x2F;右移读头，转移状态</li><li>变形：双向、多带、不确定、多维、多头、离线（只读）</li><li>图灵机 $\Leftrightarrow$ 短语结构文法</li><li>可判定性：递归语言（图灵机停机），是递归可枚举语言的真子集</li><li>$\mathrm{P&#x2F;NP&#x2F;NPC&#x2F;NP-hard}$：多项式可解&#x2F;多项式可验证&#x2F;多项式归约到所有 $\mathrm{NP}$ 且属于 $\mathrm{NP}$&#x2F;多项式归约到所有 $\mathrm{NP}$</li></ol><h3 id="5-上下文有关语言"><a href="#5-上下文有关语言" class="headerlink" title="5. 上下文有关语言"></a>5. 上下文有关语言</h3><ol><li>线性有界自动机 $\mathrm{LBA}$：非确定图灵机，读头限制在端点间，端点不可改写</li><li>上下文有关文法 $\Leftrightarrow$ 线性有界自动机</li></ol><h2 id="四、博弈论"><a href="#四、博弈论" class="headerlink" title="四、博弈论"></a>四、博弈论</h2>]]></content>
     
     
     <categories>
@@ -344,9 +344,9 @@
     
     <tags>
       
-      <tag>自学</tag>
+      <tag>数学</tag>
       
-      <tag>计算机</tag>
+      <tag>自学</tag>
       
     </tags>
     
@@ -398,9 +398,9 @@
     
     <tags>
       
-      <tag>自学</tag>
-      
       <tag>计算机</tag>
+      
+      <tag>自学</tag>
       
     </tags>
     
@@ -427,9 +427,9 @@
       
       <tag>计算机</tag>
       
-      <tag>数学</tag>
-      
       <tag>肆叁小灶</tag>
+      
+      <tag>数学</tag>
       
     </tags>
     
@@ -456,9 +456,9 @@
       
       <tag>计算机</tag>
       
-      <tag>数学</tag>
-      
       <tag>肆叁小灶</tag>
+      
+      <tag>数学</tag>
       
     </tags>
     
@@ -645,9 +645,9 @@
     
     <tags>
       
-      <tag>数学</tag>
-      
       <tag>肆叁小灶</tag>
+      
+      <tag>数学</tag>
       
     </tags>
     
@@ -672,9 +672,9 @@
     
     <tags>
       
-      <tag>自学</tag>
-      
       <tag>计算机</tag>
+      
+      <tag>自学</tag>
       
     </tags>
     
@@ -861,9 +861,9 @@
     
     <tags>
       
-      <tag>数学</tag>
-      
       <tag>肆叁小灶</tag>
+      
+      <tag>数学</tag>
       
     </tags>
     
