@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://sqzr2319.github.io/img/CSDIY-4/1.png">
 <meta property="article:published_time" content="2026-02-16T12:32:36.000Z">
-<meta property="article:modified_time" content="2026-03-20T15:26:49.469Z">
+<meta property="article:modified_time" content="2026-05-18T05:51:50.400Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="计算机">
 <meta property="article:tag" content="自学">
@@ -241,7 +241,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.4k 字
+          3.6k 字
         
       </span>
     
@@ -252,7 +252,7 @@
         
         
         
-          21 分钟
+          30 分钟
         
       </span>
     
@@ -315,6 +315,10 @@
 <li>贝塞尔曲面：16 个控制点，先沿 $u$ 求四条曲线，再对每个 $v$ 以四条曲线为控制点</li>
 <li>曲面细分：Loop 细分（三角形加三个中点，一拆四）、Catmull-Clark 细分（加边中点、面中心）</li>
 <li>曲面简化：边收缩，使用二次度量误差建优先队列，贪心收缩</li>
+<li>曲线坐标：切线（方向变化快慢为曲率）、法线（切向量导数）、副法线（叉乘，方向变化快慢为挠率）</li>
+<li>曲面第一基本形式：$I&#x3D;E\mathrm{d}u^2+2F\mathrm{d}u\mathrm{d}v+G\mathrm{d}v^2,E&#x3D;\vec{r_u}\cdot \vec{r_u},F&#x3D;\vec{r_u}\cdot \vec{r_v},G&#x3D;\vec{r_v}\cdot \vec{r_v}$，切向量 $\vec{r_u},\vec{r}_v$，法向量 $\vec{n}$</li>
+<li>曲面第二基本形式：$II&#x3D;L\mathrm{d}u^2+2M\mathrm{d}u\mathrm{d}v+N\mathrm{d}v^2,L&#x3D;\vec{n}\cdot \vec{r_{uu}},M&#x3D;\vec{n}\cdot \vec{r_{uv}},N&#x3D;\vec{n}\cdot \vec{r_{vv}}$，$r_uv$ 为二阶导数</li></li>
+<li>曲率：法曲率（沿切平面中某方向截曲面得平面曲线的曲率）$\kappa_n&#x3D;\frac{II}{I}$，主曲率（法曲率最大最小值）$\kappa_1,\kappa_2$，平均曲率 $H&#x3D;\frac{\kappa_1+\kappa_2}{2}$，高斯曲率 $K&#x3D;\kappa_1\kappa_2$ 与曲面在 $\mathbb{R}^3$ 中的嵌入无关</li>
 </ol>
 <h3 id="3-摄影"><a href="#3-摄影" class="headerlink" title="3. 摄影"></a>3. 摄影</h3><ol>
 <li>视场：传感器大小、焦距，等效焦距为 35mm 传感器时</li>
@@ -398,14 +402,57 @@
 <li>双吸收态概率：$h(a)&#x3D;1,h(b)&#x3D;0,h(x)&#x3D;\sum_y p(x,y)h(y)&#x3D;P_x(T_a&lt;T_b)$</li>
 <li>吸收时间：$E_x(T_A)&#x3D;1+\sum_{y\notin A} p(x,y)E_y(T_A)$</li>
 </ol>
-<h3 id="2-鞅与生灭过程"><a href="#2-鞅与生灭过程" class="headerlink" title="2. 鞅与生灭过程"></a>2. 鞅与生灭过程</h3><h3 id="3-连续时间-Markov-链"><a href="#3-连续时间-Markov-链" class="headerlink" title="3. 连续时间 Markov 链"></a>3. 连续时间 Markov 链</h3><h3 id="4-随机分析"><a href="#4-随机分析" class="headerlink" title="4. 随机分析"></a>4. 随机分析</h3><h2 id="四、微分几何"><a href="#四、微分几何" class="headerlink" title="四、微分几何"></a>四、微分几何</h2><h2 id="五、博弈论"><a href="#五、博弈论" class="headerlink" title="五、博弈论"></a>五、博弈论</h2><ol>
-<li>自身的策略要<strong>最大化</strong>对方的策略可能带来的<strong>最小收益</strong></li>
-<li>鞍点：每个参与者的策略在给定其他参与者策略的情况下都是最优的（纯策略纳什均衡）</li>
-<li>混合策略：<strong>最大化</strong>对方选择每一个纯策略所带来的<strong>最小期望收益</strong></li>
-<li>最大最小值定理：零和博弈两个混合策略线性规划互为对偶，最优值相等（对偶定理）</li>
-<li>非常和博弈：纳什均衡存在定理（纯策略或混合策略），但不一定是帕累托最优</li>
+<h3 id="2-连续时间-Markov-链"><a href="#2-连续时间-Markov-链" class="headerlink" title="2. 连续时间 Markov 链"></a>2. 连续时间 Markov 链</h3><ol>
+<li>定义：$\forall 0\le s_0\lt \cdots\lt s_n\lt s,\forall i_0,\cdots,i_n,i,j,P(X_{t+s}&#x3D;j|X_{s_0}&#x3D;i_0,\cdots,X_{s_n}&#x3D;i_n,X_s&#x3D;i)&#x3D;P(X_{t}&#x3D;j|X_0&#x3D;i)$</li>
+<li>转移概率：$p_t(i,j)&#x3D;P(X_t&#x3D;j|X_0&#x3D;i)$</li>
+<li>转移速率：$q(i,j)&#x3D;\lim_{t\to 0}\frac{p_t(i,j)}{t}$</li>
+<li>转移速率矩阵：$Q(i,j)&#x3D;\begin{cases}q(i,j) &amp; i\neq j\\-\sum_{k\neq i} q(i,k) &amp; i&#x3D;j\end{cases}$</li>
+<li>Kolmogorov 方程：$p^\prime_t&#x3D;Qp_t&#x3D;p_tQ,p_t&#x3D;e^{Qt}$</li>
+<li>不可约：任意两状态可达，即 $\exists k_0&#x3D;i,k_1,\cdots,k_n&#x3D;j$ 使 $q(k_{l-1},k_l)&gt;0$</li>
+<li>平稳分布：$\forall t\geq 0,\pi p_t&#x3D;\pi$，当且仅当 $\pi Q&#x3D;0,\pi(j)&#x3D;\lim_{t\to\infty} p_t(i,j)$</li>
+<li>细致平衡：$\forall j\neq k,\pi(k)q(k,j)&#x3D;\pi(j)q(j,k)$，强于平稳分布</li>
+<li>嵌入链：记录原连续时间链跳转状态的离散时间链，每个状态停留一单位时间，转移概率为 $r(i,j)&#x3D;\frac{q(i,j)}{\lambda_i},\lambda_i&#x3D;\sum_{j\neq i} q(i,j)$</li>
+<li>离出分布：令 $V_A&#x3D;\min{t:X_t\in A}$，$h(i)&#x3D;P_i(X_{V_A}&#x3D;a)$，则 $h(a)&#x3D;1,h(b)&#x3D;0,b\in A-{a},h(i)&#x3D;\sum_j r(i,j)h(j)$</li>
+<li>首达时刻：停留时间加转移，$E_iV_A&#x3D;\frac{1}{\lambda_i}+\sum_{j} r(i,j)E_jV_A$</li>
 </ol>
-<h2 id="六、生成模型"><a href="#六、生成模型" class="headerlink" title="六、生成模型"></a>六、生成模型</h2>
+<h3 id="3-鞅"><a href="#3-鞅" class="headerlink" title="3. 鞅"></a>3. 鞅</h3><ol>
+<li>Poisson 过程：事件发生间隔为指数分布</li>
+<li>更新过程：Poisson 过程的推广，事件发生间隔为独立同分布的随机变量</li>
+<li>鞅：$E[M_{n+1}|X_0,\cdots,X_n]&#x3D;M_n$，上鞅 $\leq$</li>
+<li>判定定理：$f(x,n)&#x3D;\sum_y p(x,y)f(y,n+1)$，则 $f(X_n)$ 是鞅</li>
+<li>$M_{T\wedge n}&#x3D;\begin{cases}M_n &amp; n\leq T\\M_T &amp; n&gt;T\end{cases}$</li>
+<li>连续时间：$\forall 0\leq s\leq t,E[M_t|\mathcal{F}_s]&#x3D;M_s$，其中 $\mathcal{F}_s$ 是 $s$ 时刻之前不可数多个事件的集合</li>
+<li>半鞅：$X_t&#x3D;M_t+A_t$，$M_t$ 为局部鞅，$A_t$ 为有限变差过程</li>
+<li>局部鞅：如三维 Brown 运动倒数为上鞅，但<strong>存在</strong>停时序列使其为鞅，<strong>非负局部鞅是上鞅</strong></li>
+<li>有限变差过程：$\sum_{i&#x3D;1}^n |A_{t_i}-A_{t_{i-1}}|$ 对所有分割有界，可定义 Stieltjes 积分 $\int_0^t f(s)\mathrm{d}A_s$</li>
+<li>二次变差：$\langle M,M\rangle_t&#x3D;\lim_{|\pi|\to 0} \sum_{i&#x3D;1}^n (M_{t_i}-M_{t_{i-1}})^2,\langle M,N\rangle_t&#x3D;\frac{1}{2}(\langle M+N,M+N\rangle_t-\langle M,M\rangle_t-\langle N,N\rangle_t)$，有限变差为零</li>
+</ol>
+<h3 id="4-随机积分"><a href="#4-随机积分" class="headerlink" title="4. 随机积分"></a>4. 随机积分</h3><ol>
+<li>定义：$\int_0^t H_s\mathrm{d}X_s&#x3D;\lim_{|\pi|\to 0} \sum_{i&#x3D;1}^n H_{t_{i-1}}(X_{t_i}-X_{t_{i-1}})$</li>
+<li>二次变差规则：$\langle\int_0^\cdot H_s\mathrm{d}M_s,\int_0^\cdot K_s\mathrm{d}N_s\rangle_t&#x3D;\int_0^t H_sK_s\mathrm{d}\langle M,N\rangle_s$</li>
+<li>Itô 公式积分形式：$f(X_t)&#x3D;f(X_0)+\int_0^t f^\prime(X_s)\mathrm{d}X_s+\frac{1}{2}\int_0^t f^{\prime\prime}(X_s)\mathrm{d}\langle X,X\rangle_s$</li>
+<li>Itô 公式微分形式：$\mathrm{d}f(X_t)&#x3D;f^\prime(X_t)\mathrm{d}X_t+\frac{1}{2}f^{\prime\prime}(X_t)\mathrm{d}\langle X,X\rangle_t$</li>
+<li>Lévy 定理：Brown 运动为二次变差正好等于时间的连续局部鞅</li>
+<li>Dambis–Dubins–Schwarz 定理：任意连续局部鞅都可看作变速 Brown 运动</li>
+<li>鞅表示定理：相对 Brown 运动滤过的局部鞅可表示为 Brown 运动的随机积分</li>
+<li>Girsanov 定理：改变路径权重可在无漂移 Brown 运动和有漂移 Brown 运动之间切换</li>
+</ol>
+<h3 id="5-随机微分方程"><a href="#5-随机微分方程" class="headerlink" title="5. 随机微分方程"></a>5. 随机微分方程</h3><ol>
+<li>微分形式：$\mathrm{d}X_t&#x3D;f(t,X_t)\mathrm{d}t+g(t,X_t)\mathrm{d}B_t$</li>
+<li>积分形式：$X_t&#x3D;X_0+\int_0^t f(s,X_s)\mathrm{d}s+\int_0^t g(s,X_s)\mathrm{d}B_s$</li>
+<li>齐次方程：$f,g$ 不显含 $t$，有 Markov 性</li>
+</ol>
+<h2 id="四、博弈论"><a href="#四、博弈论" class="headerlink" title="四、博弈论"></a>四、博弈论</h2><ol>
+<li>核心：自身的策略要<strong>最大化</strong>对方的策略可能带来的<strong>最小收益</strong></li>
+<li>序贯行动博弈：博弈树逆向归纳求解</li>
+<li>纳什均衡&#x2F;鞍点：每个参与者的策略在给定其他参与者策略的情况下都是最优的</li>
+<li>连续型策略：最优反应曲线（对方每一个纯策略的最优策略）的交点为纳什均衡</li>
+<li>混合策略：<strong>最大化</strong>对方选择每一个<strong>纯策略</strong>所带来的<strong>最小期望收益</strong></li>
+<li>最大最小值定理：零和博弈两个混合策略线性规划互为对偶，最优值相等（对偶定理）</li>
+<li>非常和博弈：纯策略或混合策略纳什均衡一定存在，但不一定是帕累托最优</li>
+<li>囚徒困境解法：有限重复（会坍缩）、无限重复、冷酷策略、以牙还牙、惩罚、领导</li>
+</ol>
+<h2 id="五、微分几何"><a href="#五、微分几何" class="headerlink" title="五、微分几何"></a>五、微分几何</h2>
                 
               </div>
             

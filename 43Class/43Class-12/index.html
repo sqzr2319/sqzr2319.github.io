@@ -26,12 +26,14 @@
 <meta property="og:site_name" content="sqzr2319&#39;s blog">
 <meta property="og:description" content="肆叁小灶第 12 讲，介绍了随机过程的基础知识。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://sqzr2319.github.io/img/43Class-12/1.png">
 <meta property="article:published_time" content="2026-04-14T15:49:53.000Z">
-<meta property="article:modified_time" content="2026-04-14T16:00:12.704Z">
+<meta property="article:modified_time" content="2026-05-18T05:54:21.119Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="数学">
 <meta property="article:tag" content="肆叁小灶">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://sqzr2319.github.io/img/43Class-12/1.png">
   
   
   
@@ -239,7 +241,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          53 字
+          6k 字
         
       </span>
     
@@ -250,7 +252,7 @@
         
         
         
-          1 分钟
+          50 分钟
         
       </span>
     
@@ -295,7 +297,54 @@
                 <p>肆叁小灶第 12 讲，介绍了随机过程的基础知识。</p>
 <span id="more"></span>
 
-<h2 id="一、离散时间-Markov-链"><a href="#一、离散时间-Markov-链" class="headerlink" title="一、离散时间 Markov 链"></a>一、离散时间 Markov 链</h2><h2 id="二、鞅与停时定理"><a href="#二、鞅与停时定理" class="headerlink" title="二、鞅与停时定理"></a>二、鞅与停时定理</h2><h2 id="三、连续时间-Markov-链"><a href="#三、连续时间-Markov-链" class="headerlink" title="三、连续时间 Markov 链"></a>三、连续时间 Markov 链</h2><h2 id="四、随机分析"><a href="#四、随机分析" class="headerlink" title="四、随机分析"></a>四、随机分析</h2><h2 id="五、随机过程的应用"><a href="#五、随机过程的应用" class="headerlink" title="五、随机过程的应用"></a>五、随机过程的应用</h2>
+<p>笃实 43 班的同学们大家好。随机过程作为图像生成、期权定价和物理仿真等多领域的重要数学工具，应用极其广泛。但在笃实书院的培养方案中，仅在限选课程《运筹学(2)：应用随机模型》中有部分涉及，很多同学也许并不会选课。因此我们决定在本讲中从零开始，由浅入深地介绍随机过程的相关知识，以期为同学们今后在相关领域的学习和研究打下坚实的基础。</p>
+<p>由于随机过程相关理论的严谨表述和证明需要借助测度论、泛函分析等高级数学工具，笔者也不甚熟悉，因此本讲将以直观的方式进行简要介绍，有不严谨之处欢迎指正。感兴趣的同学也可以选修或自学《测度与积分》等相关课程，深入了解随机过程的理论基础。</p>
+<h2 id="一、离散时间-Markov-链"><a href="#一、离散时间-Markov-链" class="headerlink" title="一、离散时间 Markov 链"></a>一、离散时间 Markov 链</h2><h3 id="1-1-转移概率"><a href="#1-1-转移概率" class="headerlink" title="1.1 转移概率"></a>1.1 转移概率</h3><p>随机过程的核心思想是研究<strong>随机变量随时间演化的规律</strong>。形式化地，称一族以 $t$ 为参数的随机变量 ${X_t}$ 为随机过程。考虑参数 $t$ 和 随机变量 $X_t$ 状态空间的结构，可以将随机过程简单分为四种：离散时间离散状态（如随机游走）、离散时间连续状态、连续时间离散状态（如 Poisson 过程）和连续时间连续状态（如 Brown 运动）。</p>
+<p>我们以最简单的一维对称随机游走为例来介绍随机过程的基本概念。不妨设随机游走以原点为起点，即 $X_0&#x3D;0$；之后每一步以 $1&#x2F;2$ 的概率向左或向右移动一个单位，即 $X_{n+1}&#x3D;X_n\pm 1$。这个随机过程满足 <strong>Markov 性</strong>，即未来状态 $X_{n+1}$ 仅与当前状态 $X_n$ 有关，与过去状态 $X_0,\cdots,X_{n-1}$ 无关。更一般地，如果存在转移概率矩阵 $P$ 使得 $P(X_{n+1}&#x3D;y|X_n&#x3D;x)&#x3D;p(x,y)$，则称 ${X_n}$ 为 Markov 链。</p>
+<p>利用概率论的相关知识不难得到该随机游走在每个时刻的分布为二项分布，即 $P(X_n&#x3D;k)&#x3D;\binom{n}{\frac{n+k}{2}}2^{-n}$（$k$ 与 $n$ 同奇偶）。但需要注意的是，按照每个时刻的分布对每个时刻随机采样一个值所得出的轨迹不一定是合法的随机游走轨迹，因为它可能不满足转移条件 $X_{n+1}&#x3D;X_n\pm 1$。也就是说，<strong>随机过程的轨迹分布不等于每个时刻状态分布的乘积</strong>。因此我们需要引入更强的概念来描述随机过程的分布，即<strong>有限维分布</strong>，它是指任意有限个时刻 $n_1,\cdots,n_k$ 的联合分布 $P(X_{n_1}&#x3D;x_1,\cdots,X_{n_k}&#x3D;x_k)$。对于 Markov 链来说，有限维分布可以通过转移概率矩阵 $P$ 和初始分布 $P(X_0&#x3D;x)$ 递归计算得到。</p>
+<h3 id="1-2-返回性质"><a href="#1-2-返回性质" class="headerlink" title="1.2 返回性质"></a>1.2 返回性质</h3><p>若随机过程从某状态出发后几乎必定能返回该状态（即返回的概率为 1），则称该状态为<strong>常返态</strong>；反之，若存在一个不为零的概率使得随机过程永远无法返回该状态，则称其为<strong>瞬态</strong>。我们可以将随机游走的状态转移过程建模为一个<strong>转移图</strong>，其中状态为节点，转移概率不为 0 的两个状态之间有一条边。不难发现，一个状态是瞬态当且仅当其在转移图中<strong>存在不与其双向联通的邻居</strong>。这就表明，<strong>同一个极大强连通分量中的状态共享同样的返回性质，且为瞬态当且仅当这个强连通分量有出边</strong>。</p>
+<p>下面介绍一个定理：有限状态的 Markov 链中至少存在一个常返态。我们可以使用图论知识来证明：首先使用 Tarjan 算法找出所有强连通分量并缩点，缩点后的图是一个 DAG，使用拓扑排序找到拓扑序列的最后一个节点，这个节点所对应的强连通分量没有出边，故内部的状态为常返态。</p>
+<p>如果这个没有出边的强连通分量内部只有一个点，即一旦进入这个状态后就无法离开，我们就称这个状态为<strong>吸收态</strong>。对于带吸收态的 Markov 链，我们关心两个问题：从某个状态出发，最终被吸收的概率是多少？以及被吸收的期望时间是多少？这两个问题都可以使用递推的方法来解决：设 $u(x)$ 为从状态 $x$ 出发最终被吸收的概率，$t(x)$ 为从状态 $x$ 出发被吸收的期望时间，则对于非吸收态 $x$，有 $u(x)&#x3D;\sum_y p(x,y)u(y)$ 和 $t(x)&#x3D;1+\sum_y p(x,y)t(y)$；对于吸收态 $x$，有 $u(x)&#x3D;1$ 和 $t(x)&#x3D;0$。求解方程组即可得到所有状态的被吸收概率和期望时间。</p>
+<p>关于返回性质还有一个有趣的定理：对于二维及以下的对称随机游走，原点是常返态；但对于三维及以上的对称随机游走，原点则是瞬态。证明思路是：计算无限时间内随机过程返回原点的次数，如果次数的期望有限则为瞬态，反之则为常返态。对于二维情形，该次数是一个 $\frac{1}{n}$ 级别的级数，是发散的；但对于三维情形，该次数是一个 $\frac{1}{n^{3&#x2F;2}}$ 级别的级数，是收敛的，因此导致了不同的返回性质。感兴趣的同学可以自行计算验证上述结论。直观上来说，维度越高，随机游走所能选择的路径越多，因此越不容易返回原点。</p>
+<h3 id="1-3-鞅与停时"><a href="#1-3-鞅与停时" class="headerlink" title="1.3 鞅与停时"></a>1.3 鞅与停时</h3><p>鞅的研究来源于赌博问题：假设一个赌徒赌了 $n$ 轮，每轮的结果是随机变量 $X_i$，他所获得的总收益 $M_i$ 是 $X_0,\cdots,X_i$ 的函数。如果赌徒赌第 $n+1$ 轮后的总收益 $M_{n+1}$ 的<strong>期望</strong>和当前的总收益 $M_n$ 一样多，也即游戏是公平的，那么我们就称 ${M_n}$ 是一个<strong>鞅</strong>。形式化地，如果 ${M_n}$ 是一个随机过程，并且满足 $E[M_{n+1}|X_0,\cdots,X_n]&#x3D;M_n$，则称 ${M_n}$ 是一个鞅。类似地，我们可以定义<strong>上鞅</strong>：$E[M_{n+1}|X_0,\cdots,X_n]\leq M_n$，代表对赌徒不利的游戏，反之则为下鞅。</p>
+<p>那倘若赌徒发现了自己处在对自己不利的上鞅中，能否通过及时停止来获得盈利呢？为此我们需要先定义<strong>停时</strong>：如果某事件在时刻 $t$ 是否发生只需要 $X_0,\cdots,X_t$ 的信息就能判断，那我们就称这个事件是一个停时事件。例如“今年冬天北京的第一场雪”就是一个停时事件，因为在初雪发生的当天就能判断；而“今年冬天北京的最后一场雪”就不是一个停时事件，因为在最后一场雪发生的当天无法判断。这样一来，用数学的语言来描述赌徒的想法就是：能否通过采用一个停时策略，让上鞅变为一个鞅，从而避免亏损？</p>
+<p>形式化地，我们可以定义停时下的随机过程：$M_{T\wedge n}&#x3D;\begin{cases}M_n &amp; n\leq T\\M_T &amp; n&gt;T\end{cases}$. 不难发现，对于 $n\leq T$ 的情况，停时下的随机过程与原随机过程相同，如果原随机过程是一个上鞅，即 $E[M_n]$ 随着 $n$ 增大而减小，那么停时下的随机过程也是一个上鞅；对于 $n&gt;T$ 的情况，停时下的随机过程是一个常数，因此也是一个上鞅。综上所述，<strong>停时下的上鞅仍然是一个上鞅</strong>。</p>
+<p>有些随机过程的性质并没有鞅那么良好，但也有类似的“不随时间变化”的性质，为此我们可以引入<strong>局部鞅</strong>的概念：如果<strong>存在</strong>一个停时序列 $T_n\to \infty$ 使得停时下的随机过程 $M_{t\wedge T_n}$ 是一个鞅，那么我们就称 $M_t$ 为一个局部鞅。可见这个要求是弱于鞅的，因为鞅在<strong>任意</strong>停时下都必须是鞅，而局部鞅只要求<strong>存在</strong>一个停时序列使其为鞅。事实上，非负的局部鞅只能保证其为<strong>上鞅</strong>，而不能保证其为鞅。</p>
+<h2 id="二、连续时间-Markov-链"><a href="#二、连续时间-Markov-链" class="headerlink" title="二、连续时间 Markov 链"></a>二、连续时间 Markov 链</h2><h3 id="2-1-转移速率"><a href="#2-1-转移速率" class="headerlink" title="2.1 转移速率"></a>2.1 转移速率</h3><p>想必大家在概率论课程中都学习过 Poisson 分布，但大家可能不知道 Poisson 分布的来源。实际上，Poisson 分布来源于满足如下条件的随机过程：在一小段时间 $\mathrm{d}t$ 内，$X_{t+\mathrm{d}t}-X_t$ 以概率 $\lambda \mathrm{d}t$ 增加 1，以概率 $1-\lambda \mathrm{d}t$ 保持不变，以概率 $o(\mathrm{d}t)$ 增加 2 或更多（即不考虑两个顾客同时到达的情况）。满足上述条件的随机过程被称为 Poisson 过程，且在时间 $t$ 时刻的状态 $X_t$ 就服从参数为 $\lambda t$ 的 Poisson 分布。</p>
+<p>从 Poisson 过程的例子中可见，对连续时间随机过程来说，不仅转移概率矩阵不好定义（因为并不存在一个最小的时间单位 $\mathrm{d}t$ 使得状态转移只发生在这个时间单位上），连 Markov 性的定义都需要修改（只有 Markov 过程才有一步转移矩阵）：对于连续时间随机过程 ${X_t}$ 来说，如果对于<strong>任意 $0\le s_1\lt\cdots\lt s_k\le s\lt t$</strong> 和任意状态 $x_0,\cdots,x_k,x,y$ 都满足 $P(X_t&#x3D;y|X_s&#x3D;x,X_{s_k}&#x3D;x_k,\cdots,X_0&#x3D;x_0)&#x3D;P(X_t&#x3D;y|X_s&#x3D;x)$，则称 ${X_t}$ 是一个连续时间 Markov 链。</p>
+<p>Poisson 过程中一小段时间 $\mathrm{d}t$ 内转移概率为 $\lambda \mathrm{d}t$ 的性质启发我们引入<strong>转移速率</strong>的概念：$q(i,j)&#x3D;\frac{\mathrm{d}P(X_{t}&#x3D;j|X_0&#x3D;i)}{\mathrm{d}t}$。同样地，可以定义 $q(i,i)&#x3D;\frac{\mathrm{d}P(X_{t}&#x3D;i|X_0&#x3D;i)}{\mathrm{d}t}&#x3D;\frac{\mathrm{d}(1-P(X_{t}\neq i|X_0&#x3D;i))}{\mathrm{d}t}&#x3D;-\sum_{j\neq i} q(i,j)$。把所有 $q(i,j)$ 组成一个矩阵，我们就得到了连续时间 Markov 链的转移速率矩阵 $Q$。显然对于 Poisson 过程来说，$q(i,i+1)&#x3D;\lambda,q(i,i)&#x3D;-\lambda$，其他元素为 0。根据转移速率矩阵的定义，不难发现对于状态概率向量 $p(t)&#x3D;(P(X_t&#x3D;0),P(X_t&#x3D;1),\cdots)$，有 $\frac{\mathrm{d}p(t)}{\mathrm{d}t}&#x3D;p(t)Q$，这个线性微分方程称为 <strong>Kolmogorov 方程</strong>，利用微分方程的相关知识可以解得 $p(t)&#x3D;p(0)e^{Qt}$。</p>
+<p>根据这个结论，可以得到：对 Poisson 过程来说，停留在某状态的时间服从参数为 $\lambda$ 的指数分布，即停留时间的期望为 $\frac{1}{\lambda}$；换句话说，称<strong>停留在原状态的时间服从参数为 $\lambda$ 的指数分布且只能发生 +1 状态转移的随机过程为 Poisson 过程</strong>。这样一来我们就可以对 Poisson 过程做一个推广：称停留在原状态的时间服从任意分布且只能发生 +1 的状态转移的随机过程为<strong>更新过程</strong>。</p>
+<h3 id="2-2-离散性质的推广"><a href="#2-2-离散性质的推广" class="headerlink" title="2.2 离散性质的推广"></a>2.2 离散性质的推广</h3><p>首先我们介绍<strong>嵌入链</strong>：这是为了解决带吸收态的连续时间 Markov 链中被吸收的概率和期望时间的问题。对于连续时间 Markov 链来说，状态转移的时刻是随机的，因此我们可以定义一个停时序列 $T_n$ 来记录第 $n$ 次状态转移发生的时刻。这样一来，我们就得到了一个离散时间随机过程 ${X_{T_n}}$，称为连续时间 Markov 链的<strong>嵌入链</strong>，这个随机过程记录了原连续时间 Markov 链的状态转移轨迹。不难发现，嵌入链也是一个 Markov 链，只需要对原连续时间 Markov 链的 Markov 性定义取停时序列即可：$P(X_{T_{n+1}}&#x3D;y|X_{T_n}&#x3D;x,X_{T_k}&#x3D;x_k,\cdots,X_{T_0}&#x3D;x_0)&#x3D;P(X_{T_{n+1}}&#x3D;y|X_{T_n}&#x3D;x)$。</p>
+<p>嵌入链的转移概率矩阵 $P$ 可以通过连续时间 Markov 链的转移速率矩阵 $Q$ 来计算得到：对于 $i\neq j$，有 $p(i,j)&#x3D;\frac{q(i,j)\mathrm{d}t}{\sum_{k\neq i} q(i,k)\mathrm{d}t}&#x3D;\frac{q(i,j)}{\sum_{k\neq i} q(i,k)}&#x3D;\frac{q(i,j)}{-q(i,i)}$；由于嵌入链每次转移都必须发生状态改变，因此 $p(i,i)&#x3D;0$。得到嵌入链的转移概率矩阵后，我们就可以使用离散时间 Markov 链的相关知识来计算被吸收的概率和期望时间了：设 $u(i)$ 为从状态 $i$ 出发最终被吸收的概率，$t(i)$ 为从状态 $i$ 出发被吸收的期望时间，则对于非吸收态 $i$，有 $u(i)&#x3D;\sum_j p(i,j)u(j)$ 和 $t(i)&#x3D;\frac{1}{\sum_{k\neq i} q(i,k)}+\sum_j p(i,j)t(j)$，其中 $\frac{1}{\sum_{k\neq i} q(i,k)}$ 是停留在状态 $i$ 的期望时间（因为停留时间服从参数为 $\sum_{k\neq i} q(i,k)$ 的指数分布）；对于吸收态 $i$，有 $u(i)&#x3D;1$ 和 $t(i)&#x3D;0$。求解方程组即可得到所有状态的被吸收概率和期望时间。</p>
+<p>鞅也可以推广到连续时间的情形：对任意 $0\leq s\lt t$，满足 $E[M_t|\mathcal{F}_s]&#x3D;M_s$，其中 $\mathcal{F}_s$ 表示随机过程在 <strong>$[0,s]$ 时间段内的所有信息</strong>。可见这个条件比连续时间的 Markov 性的条件是更强的，因为 Markov 性只要求 $[0,s]$ 中<strong>任意有限个</strong>时刻的信息，而鞅要求<strong>整个时间段</strong>内的信息。</p>
+<h3 id="2-3-Brown-运动"><a href="#2-3-Brown-运动" class="headerlink" title="2.3 Brown 运动"></a>2.3 Brown 运动</h3><p>接下来我们介绍一个极其重要的<strong>连续时间、连续状态空间</strong>的随机过程：Brown 运动。Brown 运动的定义如下：在一小段时间 $\mathrm{d}t$ 内，$X_{t+\mathrm{d}t}-X_t$ 服从均值为 0、方差为 $\mathrm{d}t$ 的正态分布，并且增量独立。根据正态分布的性质，我们可以得到 Brown 运动在任意时刻 $t$ 的状态分布都是一个均值为 0、方差为 $t$ 的正态分布。当然如前面所说，这并不意味着 Brown 运动的轨迹分布等于每个时刻状态分布的乘积，因为根据定义，Brown 运动的轨迹是<strong>几乎处处连续</strong>的。事实上，Brown 运动的轨迹一般如下图所示：</p>
+<p><img src="/img/43Class-12/1.png" srcset="/img/loading.gif" lazyload alt="Brown 运动的轨迹"></p>
+<p>对投资感兴趣的同学可能已经发现 Brown 运动的轨迹与股票价格的走势非常相似。这并不是错觉：Brown 运动在金融领域有着重要的应用。此外，我们在物理课中学过的水中小颗粒的运动也是 Brown 运动的一个经典例子。当然，数学家研究 Brown 运动的初衷并不是为了这些应用，而是它本身就具有非常丰富的数学性质。我们将在下面的随机分析一节中继续介绍。</p>
+<h2 id="三、随机分析"><a href="#三、随机分析" class="headerlink" title="三、随机分析"></a>三、随机分析</h2><p>随机分析的目标是<strong>将确定性函数的微积分推广到随机过程</strong>。如前面所说，该部分的理论需要借助测度论、泛函分析等高级数学工具，因此我们在这里仅以直观的方式介绍一些基本概念和结论。</p>
+<h3 id="3-1-半鞅与变差"><a href="#3-1-半鞅与变差" class="headerlink" title="3.1 半鞅与变差"></a>3.1 半鞅与变差</h3><p>既然我们的目标是将微积分推广到随机过程，首先要做的就是区分普通微积分能解决的问题和需要引入新的随机分析理论的问题。首先考虑积分：对于积分形式 $\int_a^b f(x)\mathrm{d}g(x)$，其含义为对任意最大间距趋于零的分割 $a&#x3D;t_0\lt t_1\lt\cdots\lt t_n&#x3D;b$，求 $\sum_{i&#x3D;1}^n f(t_{i-1})(g(t_i)-g(t_{i-1}))$ 的极限。由此我们自然会关注 $g(t_i)-g(t_{i-1})$ 的性质：如果 $g$ 的形状足够良好，能够保证当分割越来越小时 $|g(t_i)-g(t_{i-1})|$ 的和不至于发散，那么我们就可以使用普通的微积分来求解这个积分。我们称满足上述条件的函数是<strong>有限变差</strong>的。但如果 $g$ 的形状过于崎岖，就比如前面展示的 Brown 运动或我们所熟知的 Weierstrass 函数，那么当分割越来越小时 $|g(t_i)-g(t_{i-1})|$ 的和就会趋于无穷大，使用原始的积分定义显然无法解决这个问题。</p>
+<p>这就是<strong>半鞅</strong>的由来：如果 $X_t$ 是一个随机过程，并且可以表示为 $X_t&#x3D;M_t+A_t$，其中 $M_t$ 是一个<strong>局部鞅</strong>，$A_t$ 是一个<strong>有限变差过程</strong>，那么我们就称 $X_t$ 是一个半鞅。直观上来说，半鞅就是将一个随机过程分解成一个<strong>形状良好的、随时间变化的漂移量</strong>加上一个<strong>形状崎岖但不随时间变化的随机扰动</strong>。对于半鞅来说，我们可以将积分 $\int_a^b f(t)\mathrm{d}X_t$ 定义为 $\int_a^b f(t)\mathrm{d}M_t+\int_a^b f(t)\mathrm{d}A_t$，其中 $\int_a^b f(t)\mathrm{d}A_t$ 可以使用普通的微积分来求解，而 $\int_a^b f(t)\mathrm{d}M_t$ 则需要引入新的理论来求解。</p>
+<p>为了描述半鞅分解过后随机扰动 $M_t$ 的强度，我们引入<strong>二次变差</strong>的概念：对于一个随机过程 $X_t$，如果对于任意最大间距趋于零的分割 $0&#x3D;t_0\lt t_1\lt\cdots\lt t_n&#x3D;t$，$\sum_{i&#x3D;1}^n (X_{t_i}-X_{t_{i-1}})^2$ 的极限存在，那么我们就称这个极限为 $X_t$ 的二次变差，记作 $\langle X,X\rangle_t$。对于有限变差过程，二次变差一定为零；对于 Brown 运动，二次变差等于时间长度 $t$；对于 Weierstrass 函数，二次变差等于无穷大。我们还可以引入两个随机扰动的<strong>互变差</strong>：$\langle M,N\rangle_t&#x3D;\frac{1}{2}(\langle M+N,M+N\rangle_t-\langle M,M\rangle_t-\langle N,N\rangle_t)$，它可以用来描述两个随机扰动之间的相关性。二次变差和互变差的概念使我们能够定量地描述随机扰动的强度和相关性，从而为后续的随机积分和随机微分方程的理论奠定基础。</p>
+<h3 id="3-2-随机积分"><a href="#3-2-随机积分" class="headerlink" title="3.2 随机积分"></a>3.2 随机积分</h3><p>局部鞅的随机积分是定义在依概率收敛上的，故不满足有限变差性也可求解。求解过程一般使用 <strong>Itô 公式</strong>的积分形式 $f(X_t)&#x3D;f(X_0)+\int_0^t f^\prime(X_s)\mathrm{d}X_s+\frac{1}{2}\int_0^t f^{\prime\prime}(X_s)\mathrm{d}\langle X,X\rangle_s$。回想普通积分的 Newton-Leibniz 公式 $f(X_t)&#x3D;f(X_0)+\int_0^t f^\prime(X_s)\mathrm{d}X_s$，我们可以发现 Itô 公式在普通积分的基础上多了一个项 $\frac{1}{2}\int_0^t f^{\prime\prime}(X_s)\mathrm{d}\langle X,X\rangle_s$，这个项正是为了补偿随机扰动的强度而引入的。等式两边同时取微分，我们就得到了 Itô 公式的微分形式 $\mathrm{d}f(X_t)&#x3D;f^\prime(X_t)\mathrm{d}X_t+\frac{1}{2}f^{\prime\prime}(X_t)\mathrm{d}\langle X,X\rangle_t$。</p>
+<p>随机积分的性质和普通积分的性质有很多相似之处，例如线性性、分部积分法则等，但也有一些独特的性质，例如<strong>二次变差规则</strong>：$\langle\int_0^\cdot H_s\mathrm{d}M_s,\int_0^\cdot K_s\mathrm{d}N_s\rangle_t&#x3D;\int_0^t H_sK_s\mathrm{d}\langle M,N\rangle_s$，这个规则在求解随机微分方程时非常有用。</p>
+<p>这里给出一个最经典的随机积分计算例子帮助理解：$\int_0^t B_s\mathrm{d}B_s$，其中 $B_s$ 是一个 Brown 运动。根据 Itô 公式的积分形式，我们可以得到 $B_t^2&#x3D;B_0^2+2\int_0^t B_s\mathrm{d}B_s+\int_0^t \mathrm{d}\langle B,B\rangle_s$。由于 $B_0&#x3D;0$，$\langle B,B\rangle_t&#x3D;t$，我们就得到了 $\int_0^t B_s\mathrm{d}B_s&#x3D;\frac{1}{2}B_t^2-\frac{1}{2}t$。</p>
+<p>由 Itô 公式可以导出很多有用的结论：</p>
+<ol>
+<li><strong>Lévy 定理</strong>：Brown 运动为二次变差正好等于时间的连续局部鞅</li>
+<li><strong>Dambis–Dubins–Schwarz 定理</strong>：任意连续局部鞅都可看作变速 Brown 运动</li>
+<li><strong>鞅表示定理</strong>：基于 Brown 运动信息的局部鞅可表示为 Brown 运动的随机积分</li>
+<li><strong>Girsanov 定理</strong>：改变路径权重可在无漂移 Brown 运动和有漂移 Brown 运动之间切换</li>
+</ol>
+<p>由此可见 Brown 运动的重要性：它不仅是一个重要的随机过程，还可以看作是<strong>所有连续局部鞅的基本构建模块</strong>，因此对 Brown 运动的研究也就成为了随机分析的核心内容。</p>
+<h3 id="3-3-随机微分方程"><a href="#3-3-随机微分方程" class="headerlink" title="3.3 随机微分方程"></a>3.3 随机微分方程</h3><p>随机微分方程用于描述<strong>带有随机扰动的动态系统的演化规律</strong>。一个简单的随机微分方程的形式为 $\mathrm{d}X_t&#x3D;f(t,X_t)\mathrm{d}t+g(t,X_t)\mathrm{d}B_t$，其中 $f(t,X_t)\mathrm{d}t$ 是系统的确定性部分，$g(t,X_t)\mathrm{d}B_t$ 是系统的随机扰动部分。等式两边同时积分后，我们就得到了随机微分方程的积分形式：$X_t&#x3D;X_0+\int_0^t f(s,X_s)\mathrm{d}s+\int_0^t g(s,X_s)\mathrm{d}B_s$。随机微分方程的解 $X_t$ 是一个随机过程，它描述了系统在时间 $t$ 的状态。如果方程中 $f$ 和 $g$ 都不显含 $t$，我们就称这个随机微分方程是<strong>齐次的</strong>。不难发现，一个齐次随机微分方程的解一定是一个 Markov 过程，因为它的演化规律仅与当前状态 $X_t$ 有关。</p>
+<p>随机微分方程的解的存在性和唯一性理论以及求解方法都极其复杂，这里就不做展开了。但我们可以通过一个简单的例子来展示随机微分方程的求解过程：$\mathrm{d}X_t&#x3D;\mu X_t\mathrm{d}t+\sigma X_t\mathrm{d}B_t$，其中 $\mu$ 和 $\sigma$ 是常数。我们可以使用 Itô 公式的微分形式来求解这个随机微分方程：设 $Y_t&#x3D;\ln X_t$，则 $\mathrm{d}Y_t&#x3D;\frac{1}{X_t}\mathrm{d}X_t-\frac{1}{2}\frac{1}{X_t^2}\mathrm{d}\langle X,X\rangle_t$。将 $\mathrm{d}X_t$ 和 $\mathrm{d}\langle X,X\rangle_t$ 的表达式代入上式，我们就得到了 $\mathrm{d}Y_t&#x3D;(\mu-\frac{\sigma^2}{2})\mathrm{d}t+\sigma \mathrm{d}B_t$。这是一个线性随机微分方程，我们可以直接积分得到 $Y_t&#x3D;Y_0+(\mu-\frac{\sigma^2}{2})t+\sigma B_t$，因此 $X_t&#x3D;X_0 e^{(\mu-\frac{\sigma^2}{2})t+\sigma B_t}$。我们称这个解为<strong>几何 Brown 运动</strong>，它在金融领域有着重要的应用，例如 Black-Scholes 模型就是基于几何 Brown 运动来对期权进行定价的。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>由于篇幅限制，很多细节和证明都没有展开。对于感兴趣的同学，我们推荐以下资料进行扩展学习：</p>
+<ol>
+<li>叶俊，课程《随机数学与统计》：随机游走、Poisson 过程与 Brown 运动初步</li>
+<li>杨朋昆，课程《随机过程引论》：Markov 链理论、停时与鞅、随机分析初步</li>
+<li>Jean-François Le Gall, “Brownian Motion, Martingales, and Stochastic Calculus”：严谨的随机分析理论教材</li>
+</ol>
+<p>希望同学们能够通过本讲对随机过程有一个初步的了解，并且激发起对这个领域更深入学习的兴趣。选课在即，祝大家选课顺利！</p>
+
                 
               </div>
             
