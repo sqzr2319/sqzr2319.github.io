@@ -19,15 +19,15 @@
   <meta name="author" content="sqzr2319">
   <meta name="keywords" content="">
   
-    <meta name="description" content="大二下学期电工电子技术基础的复习笔记，目前更新至电路原理。">
+    <meta name="description" content="大二下学期电工电子技术基础的复习笔记，目前更新至模拟电路。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="电工电子技术基础">
 <meta property="og:url" content="https://sqzr2319.github.io/26Spring/EE/index.html">
 <meta property="og:site_name" content="sqzr2319&#39;s blog">
-<meta property="og:description" content="大二下学期电工电子技术基础的复习笔记，目前更新至电路原理。">
+<meta property="og:description" content="大二下学期电工电子技术基础的复习笔记，目前更新至模拟电路。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-01-19T08:50:16.000Z">
-<meta property="article:modified_time" content="2026-03-11T13:15:10.597Z">
+<meta property="article:modified_time" content="2026-05-25T10:21:54.119Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="大二下">
 <meta property="article:tag" content="物理">
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          42 字
+          1.9k 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          1 分钟
+          17 分钟
         
       </span>
     
@@ -292,10 +292,98 @@
             
               <div class="markdown-body">
                 
-                <p>大二下学期电工电子技术基础的复习笔记，目前更新至电路原理。</p>
+                <p>大二下学期电工电子技术基础的复习笔记，目前更新至模拟电路。</p>
 <span id="more"></span>
 
-<h2 id="一、电路原理"><a href="#一、电路原理" class="headerlink" title="一、电路原理"></a>一、电路原理</h2><h2 id="二、模拟电路"><a href="#二、模拟电路" class="headerlink" title="二、模拟电路"></a>二、模拟电路</h2><h2 id="三、数字电路"><a href="#三、数字电路" class="headerlink" title="三、数字电路"></a>三、数字电路</h2>
+<h2 id="一、电路原理"><a href="#一、电路原理" class="headerlink" title="一、电路原理"></a>一、电路原理</h2><h3 id="1-直流电路"><a href="#1-直流电路" class="headerlink" title="1. 直流电路"></a>1. 直流电路</h3><ol>
+<li>电源等效变换<ol>
+<li>开路是电流为零的恒流源，短路是电压为零的恒压源</li>
+<li>恒压源并电阻等于没并，恒流源串电阻等于没串</li>
+<li>恒压源串电阻可等效为恒流源并电阻</li>
+<li>受控源也可进行</li>
+</ol>
+</li>
+<li>广义 KCL：三端网络 $i_1+i_2+i_3&#x3D;0$，二端网络 $i_i&#x3D;i_o$，一端网络 $i&#x3D;0$</li>
+<li>支路电流法：$N$ 结点 $B$ 支路，设支路电流，列 $N-1$ 个独立 KCL 和 $B-N+1$ 个独立 KVL</li>
+<li>节点电位法：取参考点，设未知结点电位，列 $N-1$ 个独立 KCL<ol>
+<li>左边：未知结点电位×Σ与该结点相连的不含恒流源支路电导-相邻结点电位×Σ与未知结点共有支路电导</li>
+<li>右边：Σ与该结点相连的含恒压源支路电动势×本支路电导（电动势朝向该结点时为正）+Σ与该结点相连的含恒流源支路电流（电流朝向该结点时为正）</li>
+<li>带受控源电路列方程时增加受控源关系式</li>
+</ol>
+</li>
+<li>线性电路叠加原理、齐性定理：电压电流满足功率不满足；受控源不能单独作用于电路</li>
+<li>替代定理：已知某支路电压或电流，将该支路替换为恒压源或恒流源</li>
+<li>戴维南等效：等效电压源电压等于有源二端网络的开路电压，内阻等于有源二端网络相应无源二端网络的等效电阻</li>
+<li>Y-Δ 转换：$Y_A&#x3D;\frac{Δ_{AB}Δ_{AC}}{Δ_{AB}+Δ_{BC}+Δ_{AC}}$，$Δ_{AB}&#x3D;Y_A+Y_B+\frac{Y_AY_B}{Y_C}$（相等时 $Y&#x3D;Δ&#x2F;3$）</li>
+<li>平衡电桥：$R_1R_4&#x3D;R_2R_3$，$R_5$ 可取任意值（短路或开路）</li>
+<li>负载电阻等于电源内阻时，负载功率最大</li>
+<li>二端口网络：输入电阻去除独立源保留受控源后加压求流，输出电阻需<strong>短路输入端</strong></li>
+</ol>
+<h3 id="2-正弦交流电路"><a href="#2-正弦交流电路" class="headerlink" title="2. 正弦交流电路"></a>2. 正弦交流电路</h3><ol>
+<li>$\Delta\varphi&#x3D;\varphi_1-\varphi_2\gt 0$ 称领先，反之称落后</li>
+<li>瞬时值 $u$，最大值 $U_m$，有效值 $U$，相量 $\dot{U}$，复数 $U\angle\varphi$</li>
+<li>电感：$u&#x3D;L\frac{di}{dt}$，直流中相当于短路，交流复数感抗 $X_L&#x3D;j\omega L$，无功功率 $Q&#x3D;UI$ 表示瞬时功率最大值，单位 var</li>
+<li>电容：$i&#x3D;C\frac{du}{dt}$，直流中相当于开路，交流复数容抗 $X_C&#x3D;-j\frac{1}{\omega C}$，无功功率 $Q&#x3D;-UI$</li>
+<li>视在功率 $S&#x3D;UI$，单位 $V\cdot A$，复数阻抗 $Z&#x3D;|Z|\angle\varphi$</li>
+<li>有功功率 $P&#x3D;UI\cos(\varphi_u-\varphi_i)$，无功功率 $Q&#x3D;UI\sin(\varphi_u-\varphi_i)$</li>
+<li>提高功率因数：并联电容 $C&#x3D;\frac{P}{\omega U^2}(\tan\varphi_L-\tan\varphi_{CL})$</li>
+<li>负载阻抗可任意改变时，$Z_{外}&#x3D;Z_{内}^*$ 时功率最大；只可改变电抗则 $X_{外}&#x3D;-X_{内}$</li>
+<li>品质因数：串联&#x2F;电压谐振电感或电容上的电压与总电压之比</li>
+<li>上下限截止频率：$I&#x3D;\frac{I_m}{\sqrt{2}}$，通频带带宽 $BW&#x3D;f_{C2}-f_{C1}&#x3D;\frac{R}{2\pi L}&#x3D;\frac{f_0}{Q}$</li>
+<li>并联&#x2F;电流谐振：RL与C并联，$\omega_0&#x3D;\sqrt{\frac{1}{LC}-\frac{R^2}{L^2}}$，总阻抗 $Z_0&#x3D;\frac{L}{RC}$ 接近最大值</li>
+<li>理想串联谐振相当于短路，理想并联谐振相当于开路</li>
+</ol>
+<h3 id="3-一阶暂态分析"><a href="#3-一阶暂态分析" class="headerlink" title="3. 一阶暂态分析"></a>3. 一阶暂态分析</h3><ol>
+<li>换路定理：RC或RL电路换路瞬间电容电压和电感电流不跃变</li>
+<li>初始值：$u,i$ 在 $t&#x3D;0^+$ 的值，$u_C,i_L$ 用换路定理确定，其他用电路方程确定</li>
+<li>三要素法：$f(t)&#x3D;f(\infty)+[f(0^+)-f(\infty)]e^{-\frac{t}{\tau}},\tau&#x3D;RC$ 或 $\frac{L}{R}$，$R$ 为电容或电感两端有源二端网络等效电阻，$t&#x3D;5\tau$ 达到稳态值</li>
+<li>多电容电路是否为一阶电路：去除独立源后电容能否等效为一个</li>
+<li>有无穷大电流冲击时：换路定理不成立，使用电荷守恒（两电容电荷的变化量相等）</li>
+<li>同时含电容和电感的电路是否为一阶电路：两元件间是否相互独立（换路后L和C部分电路与恒流源串联或与恒压源并联）</li>
+</ol>
+<h2 id="二、模拟电路"><a href="#二、模拟电路" class="headerlink" title="二、模拟电路"></a>二、模拟电路</h2><h3 id="4-半导体器件"><a href="#4-半导体器件" class="headerlink" title="4. 半导体器件"></a>4. 半导体器件</h3><ol>
+<li>二极管：击穿区、截止区、导通区，反向击穿电压、反向漏电流 μA、死区电压 0.5V、导通压降 0.7V，小信号等效电阻 $r_D&#x3D;\Delta u_D&#x2F;\Delta i_D$</li>
+<li>理想二极管：死区电压等于导通压降等于零，反向电阻无穷大</li>
+<li>稳压二极管：击穿区，电流在一定范围内时电压近似为常数</li>
+<li>三极管：截止区 $U_{BE}$ 小于死区电压，饱和区集电结正偏 $U_{CE}&#x3D;0.3V$，线性放大区发射结正偏集电结反偏</li>
+</ol>
+<h3 id="5-基本放大电路"><a href="#5-基本放大电路" class="headerlink" title="5. 基本放大电路"></a>5. 基本放大电路</h3><ol>
+<li>直流量 $U_A$，交流量 $u_a$，全量 $u_A$，电压放大倍数 $\dot{A_u}&#x3D;A_u\angle\varphi$</li>
+<li>三极管小信号等效电路：$r_{be}&#x3D;300\Omega+(1+\beta)\frac{26\text{ mV}}{I_E\text{ mA}}$</li>
+<li>共射级放大电路：$\dot{A_u}&#x3D;-\beta\frac{R_C||R_L}{r_{be}}$</li>
+<li>分压偏置式：$V_B\approx\frac{R_2}{R_1+R_2}V_{CC},I_C\approx I_E$</li>
+<li>信号源带内阻：$\dot{A_{us}}&#x3D;\dot{A_u}\frac{r_i}{r_i+R_S}$</li>
+<li>带交流射极负反馈电阻：$\dot{A_u}&#x3D;-\frac{\beta(R_C||R_L)}{r_{be}+(\beta+1)R_F},r_i&#x3D;R_{B1}||R_{B2}||(r_{be}+(\beta+1)R_F)$</li>
+<li>共集电极放大器：$\dot{A_u}&#x3D;\frac{(1+\beta)(R_E||R_L)}{r_{be}+(1+\beta)(R_E||R_L)},r_i&#x3D;R_B||(r_{be}+(1+\beta)(R_E||R_L)),r_o&#x3D;R_E||\frac{r_{be}+(R_S||R_B)}{1+\beta}$</li>
+<li>差分放大电路：共模分量 $u_c&#x3D;\frac{u_{i1}+u_{i2}}{2}$ 大小相等极性相同，差模分量 $u_d&#x3D;\frac{u_{i1}-u_{i2}}{2}$ 大小相等极性相反，差模放大倍数 $\dot{A_d}&#x3D;\frac{u_o}{2u_d}&#x3D;-\frac{\beta (R_C||\frac{R_L}{2})}{R_B+r_{be}}$，单端输出 $\dot{A_d}&#x3D;-\frac{\beta (R_C||R_L)}{2(R_B+r_{be})}$</li>
+</ol>
+<h3 id="6-负反馈"><a href="#6-负反馈" class="headerlink" title="6. 负反馈"></a>6. 负反馈</h3><ol>
+<li>开环放大倍数 $\dot{A_o}&#x3D;\frac{\dot{X_o}}{\dot{X_d}}$，闭环放大倍数 $\dot{A_f}&#x3D;\frac{\dot{X_o}}{\dot{X_i}}$，理想负反馈 $\dot{A_f}&#x3D;\frac{\dot{A_o}}{1+\dot{A_o}\dot{F}}$</li>
+<li>电流&#x2F;电压：指输出量，短路输出端后仍有反馈为电流</li>
+<li>串联&#x2F;并联：指反馈量（并联为电流），输入和反馈在相同端为并联</li>
+<li>三极管极性传递：$u_B↑\Rightarrow u_C↓,u_B↑\Rightarrow u_E↑,u_E↑\Rightarrow u_C↑$</li>
+<li>集成运放极性传递：$u_+↑\Rightarrow u_o↑,u_-↑\Rightarrow u_o↓$</li>
+<li>串联反馈，反馈和输入极性相同为负反馈；并联反馈，反馈和输入极性相反为负反馈</li>
+<li>深度负反馈：$\dot{A_F}&#x3D;\frac{1}{\dot{F}},\dot{X_i}&#x3D;\dot{X_f},\dot{X_d}&#x3D;0$</li>
+<li>电压放大倍数和输入输出电阻（$1+A_oF$ 倍）<ol>
+<li>电压串联：$\frac{1}{\dot{F_{uu}}}$，输入增大输出减小</li>
+<li>电压并联：$\frac{1}{\dot{F_{iu}}}\cdot\frac{1}{R_S}$，输入输出减小</li>
+<li>电流串联：$\frac{1}{\dot{F_{ui}}}\cdot R_{L^\prime}$，输入输出增大</li>
+<li>电流并联：$\frac{1}{\dot{F_{ii}}}\cdot\frac{R_{L^\prime}}{R_S}$，输入减小输出增大</li>
+</ol>
+</li>
+</ol>
+<h3 id="7-运放应用"><a href="#7-运放应用" class="headerlink" title="7. 运放应用"></a>7. 运放应用</h3><ol>
+<li>分析方法：虚短路（$u_+&#x3D;u_-$）和虚断路（$i_+&#x3D;i_-&#x3D;0$）</li>
+<li>平衡电阻：输入端和输出端都接地，计算对地等效电阻</li>
+<li>非线性状态：虚短路不成立，虚断路成立</li>
+<li>方波发生器：$T&#x3D;2RC\ln(1+2\frac{R_1}{R_2})$</li>
+<li>三角波发生器：$T&#x3D;4RC\frac{R_1}{R_2}$，锯齿波 $T&#x3D;2(R+R^\prime)C\frac{R_1}{R_2}$</li>
+<li>自激振荡：正反馈，$\dot{A_u}\dot{F}&#x3D;1$</li>
+<li>文氏桥（RC串并联选频网络）：$\omega_0&#x3D;\frac{1}{\sqrt{R_1R_2C_1C_2}}&#x3D;\frac{1}{RC}$，$\dot{F}&#x3D;\frac{1}{3+j(\frac{\omega}{\omega_0}-\frac{\omega_0}{\omega})}$</li>
+<li>三点式LC并联电路：中间端交流接地则首尾极性相反；首尾接地则另两端极性相同</li>
+</ol>
+<h2 id="三、数字电路"><a href="#三、数字电路" class="headerlink" title="三、数字电路"></a>三、数字电路</h2>
                 
               </div>
             
@@ -387,9 +475,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/CSDIY/CSDIY-4/" title="自学(4)：图形学与生成模型">
+                      <a href="/CSDIY/CSDIY-4/" title="自学(4)：杂项">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">自学(4)：图形学与生成模型</span>
+                        <span class="hidden-mobile">自学(4)：杂项</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     

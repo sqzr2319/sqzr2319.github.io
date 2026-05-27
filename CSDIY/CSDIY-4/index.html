@@ -19,16 +19,16 @@
   <meta name="author" content="sqzr2319">
   <meta name="keywords" content="">
   
-    <meta name="description" content="大二下学期的自学笔记，由图形学、体系结构、随机过程和生成模型组成。">
+    <meta name="description" content="大二下学期的自学笔记，由图形学、CSAPP、随机过程、博弈论、微分几何、金融数学组成。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="自学(4)：图形学与生成模型">
+<meta property="og:title" content="自学(4)：杂项">
 <meta property="og:url" content="https://sqzr2319.github.io/CSDIY/CSDIY-4/index.html">
 <meta property="og:site_name" content="sqzr2319&#39;s blog">
-<meta property="og:description" content="大二下学期的自学笔记，由图形学、体系结构、随机过程和生成模型组成。">
+<meta property="og:description" content="大二下学期的自学笔记，由图形学、CSAPP、随机过程、博弈论、微分几何、金融数学组成。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://sqzr2319.github.io/img/CSDIY-4/1.png">
 <meta property="article:published_time" content="2026-02-16T12:32:36.000Z">
-<meta property="article:modified_time" content="2026-05-18T05:51:50.400Z">
+<meta property="article:modified_time" content="2026-05-27T16:51:16.509Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="计算机">
 <meta property="article:tag" content="自学">
@@ -37,7 +37,7 @@
   
   
   
-  <title>自学(4)：图形学与生成模型 - sqzr2319&#39;s blog</title>
+  <title>自学(4)：杂项 - sqzr2319&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -218,7 +218,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="自学(4)：图形学与生成模型"></span>
+            <span id="subtitle" data-typed-text="自学(4)：杂项"></span>
           
         </div>
 
@@ -252,7 +252,7 @@
         
         
         
-          30 分钟
+          31 分钟
         
       </span>
     
@@ -289,16 +289,16 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">自学(4)：图形学与生成模型</h1>
+            <h1 id="seo-header">自学(4)：杂项</h1>
             
             
               <div class="markdown-body">
                 
-                <p>大二下学期的自学笔记，由图形学、体系结构、随机过程和生成模型组成。</p>
+                <p>大二下学期的自学笔记，由图形学、CSAPP、随机过程、博弈论、微分几何、金融数学组成。</p>
 <span id="more"></span>
 
-<p><img src="/img/CSDIY-4/1.png" srcset="/img/loading.gif" lazyload></p>
-<h2 id="一、GAMES-101"><a href="#一、GAMES-101" class="headerlink" title="一、GAMES 101"></a>一、GAMES 101</h2><h3 id="1-变换"><a href="#1-变换" class="headerlink" title="1. 变换"></a>1. 变换</h3><ol>
+<h2 id="一、GAMES-101"><a href="#一、GAMES-101" class="headerlink" title="一、GAMES 101"></a>一、GAMES 101</h2><p><img src="/img/CSDIY-4/1.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="1-变换"><a href="#1-变换" class="headerlink" title="1. 变换"></a>1. 变换</h3><ol>
 <li>$\vec{a}\times \vec{b}&#x3D;A*\vec{b}&#x3D;\begin{bmatrix}0 &amp; -a_z &amp; a_y\\a_z &amp; 0 &amp; -a_x\\-a_y &amp; a_x &amp; 0\end{bmatrix}\vec{b}$，用于判断左右、内外</li>
 <li>仿射坐标：点 $(x,y,z,1)$，向量 $(x,y,z,0)$</li>
 <li>交比：直线上四点 $A,B,C,D$，$(A,B;C,D)&#x3D;\frac{\vec{AC}&#x2F;\vec{CB}}{\vec{AD}&#x2F;\vec{DB}}$，射影变换前后保持不变</li>
@@ -319,6 +319,7 @@
 <li>曲面第一基本形式：$I&#x3D;E\mathrm{d}u^2+2F\mathrm{d}u\mathrm{d}v+G\mathrm{d}v^2,E&#x3D;\vec{r_u}\cdot \vec{r_u},F&#x3D;\vec{r_u}\cdot \vec{r_v},G&#x3D;\vec{r_v}\cdot \vec{r_v}$，切向量 $\vec{r_u},\vec{r}_v$，法向量 $\vec{n}$</li>
 <li>曲面第二基本形式：$II&#x3D;L\mathrm{d}u^2+2M\mathrm{d}u\mathrm{d}v+N\mathrm{d}v^2,L&#x3D;\vec{n}\cdot \vec{r_{uu}},M&#x3D;\vec{n}\cdot \vec{r_{uv}},N&#x3D;\vec{n}\cdot \vec{r_{vv}}$，$r_uv$ 为二阶导数</li></li>
 <li>曲率：法曲率（沿切平面中某方向截曲面得平面曲线的曲率）$\kappa_n&#x3D;\frac{II}{I}$，主曲率（法曲率最大最小值）$\kappa_1,\kappa_2$，平均曲率 $H&#x3D;\frac{\kappa_1+\kappa_2}{2}$，高斯曲率 $K&#x3D;\kappa_1\kappa_2$ 与曲面在 $\mathbb{R}^3$ 中的嵌入无关</li>
+<li>双曲几何：直线为与单位圆正交的圆弧，平行线有无数条</li>
 </ol>
 <h3 id="3-摄影"><a href="#3-摄影" class="headerlink" title="3. 摄影"></a>3. 摄影</h3><ol>
 <li>视场：传感器大小、焦距，等效焦距为 35mm 传感器时</li>
@@ -452,7 +453,7 @@
 <li>非常和博弈：纯策略或混合策略纳什均衡一定存在，但不一定是帕累托最优</li>
 <li>囚徒困境解法：有限重复（会坍缩）、无限重复、冷酷策略、以牙还牙、惩罚、领导</li>
 </ol>
-<h2 id="五、微分几何"><a href="#五、微分几何" class="headerlink" title="五、微分几何"></a>五、微分几何</h2>
+<h2 id="五、微分几何"><a href="#五、微分几何" class="headerlink" title="五、微分几何"></a>五、微分几何</h2><h2 id="六、金融数学"><a href="#六、金融数学" class="headerlink" title="六、金融数学"></a>六、金融数学</h2>
                 
               </div>
             
@@ -499,7 +500,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>自学(4)：图形学与生成模型</div>
+      <div>自学(4)：杂项</div>
       <div>https://sqzr2319.github.io/CSDIY/CSDIY-4/</div>
     </div>
     <div class="license-meta">
