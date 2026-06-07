@@ -19,13 +19,15 @@
   <meta name="author" content="sqzr2319">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="article">
+    <meta name="description" content="大二下学期数值分析基础的复习笔记，目前更新至数值积分。">
+<meta property="og:type" content="article">
 <meta property="og:title" content="数值分析基础">
 <meta property="og:url" content="https://sqzr2319.github.io/26Spring/Numerical/index.html">
 <meta property="og:site_name" content="sqzr2319&#39;s blog">
+<meta property="og:description" content="大二下学期数值分析基础的复习笔记，目前更新至数值积分。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-01-19T08:49:32.000Z">
-<meta property="article:modified_time" content="2026-01-19T08:52:42.609Z">
+<meta property="article:modified_time" content="2026-06-06T15:37:17.106Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="数学">
 <meta property="article:tag" content="大二下">
@@ -237,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          0 字
+          1.8k 字
         
       </span>
     
@@ -248,7 +250,7 @@
         
         
         
-          1 分钟
+          15 分钟
         
       </span>
     
@@ -290,7 +292,68 @@
             
               <div class="markdown-body">
                 
-                
+                <p>大二下学期数值分析基础的复习笔记，目前更新至数值积分。</p>
+<span id="more"></span>
+
+<h2 id="一、预备知识"><a href="#一、预备知识" class="headerlink" title="一、预备知识"></a>一、预备知识</h2><ol>
+<li>有效数字：误差不大到影响前 $n$ 位数字</li>
+<li>误差估计：$|y-\tilde{y}|\leq\sum_i \left|\frac{\partial f}{\partial x_i}\right||x_i-\tilde{x}_i|$</li>
+<li>避免：大数吃小数、相近数相减、与大数相乘、与小数相除</li>
+<li>特征值：$\text{trace}(A)&#x3D;\sum \lambda_i$，$\det(A)&#x3D;\prod \lambda_i,\sigma(A)&#x3D;{\lambda_i},\rho(A)&#x3D;\max |\lambda_i|$</li>
+<li>实对称阵：特征值全为实数，可对角化，特征向量构成正交基</li>
+<li>内积：加法、数乘、共轭对称、正定</li>
+<li>MGS：立刻投影</li>
+<li>范数：正定、齐次、三角不等式，p-范数 $||x||_p&#x3D;(\sum |x_i|^p)^{1&#x2F;p}$，$\infty$-范数 $||x||_\infty&#x3D;\max_i |x_i|$</li>
+<li>范数等价：存在正常数使得 $c_1||x||_\alpha\leq ||x||_\beta\leq c_2||x||_\alpha,\forall x\in V$，有限维空间所有范数等价，由 Cauchy-Schwarz $|(x,y)^2|\leq (x,x)(y,y)$ 有 $||x||_1\leq \sqrt{n}||x||_2$</li>
+<li>距离：非负、对称、三角不等式，可由范数诱导 $d(x,y)&#x3D;||x-y||$</li>
+</ol>
+<h2 id="二、线性方程组的直接法"><a href="#二、线性方程组的直接法" class="headerlink" title="二、线性方程组的直接法"></a>二、线性方程组的直接法</h2><ol>
+<li>三对角矩阵 LU 分解：主次对角线，循环三对角加最后一行&#x2F;列</li>
+<li>矩阵范数：正定、齐次、三角不等式、次可乘&#x2F;相容 $||AB||\leq||A||\cdot||B||$</li>
+<li>矩阵范数与向量范数相容：$||Ax||\leq ||A||\cdot||x||$，F 范数 $\sqrt{\sum_{i,j} a_{ij}^2}&#x3D;\sqrt{\text{trace}(A^TA)}&#x3D;\sqrt{\sum \sigma_i^2}$ 与 2-范数相容</li>
+<li>从属于给定向量范数的矩阵范数：$||A||&#x3D;\max_{x\neq 0} \frac{||Ax||}{||x||}$，与对应向量范数相容</li>
+<li>常用矩阵范数：$\infty$-范数&#x2F;1-范数（行&#x2F;列向量 1-范数最大值）、2-范数 $\sqrt{\rho(A^TA)}$（最大奇异值，对称阵为谱半径）</li>
+<li>谱半径与范数：$\rho(A)\leq ||A||$，且 $\forall\epsilon$ 存在范数使得 $||A||\leq \rho(A)+\epsilon$</li>
+<li>摄动引理：$||\cdot||$ 为从属范数，A 可逆，$||A^{-1}||\cdot||\delta A||\lt 1\Rightarrow A\pm\delta A$ 可逆且 $||(A\pm\delta A)^{-1}||\leq \frac{||A^{-1}||}{1-||A^{-1}||\cdot||\delta A||}$</li>
+<li>条件数：$\frac{|f(x+\delta x)-f(x)|}{|f(x)|}\leq \kappa(x)\frac{|\delta x|}{|x|}\Rightarrow\kappa(x)&#x3D;\left|\frac{xf^\prime(x)}{f(x)}\right|$，矩阵为 $||A||\cdot||A^{-1}||$，其中 $||\cdot||$ 为从属范数，描述 $\delta b$ 对 $x&#x3D;A^{-1}b$ 的影响</li>
+<li>方程组扰动分析：$\frac{||\delta x||}{||x||}\leq \frac{\text{cond}(A)}{1-||A^{-1}||\cdot||\delta A||}\left(\frac{||\delta A||}{||A||}+\frac{||\delta b||}{||b||}\right)$</li>
+<li>条件数与特征值：$\text{cond}(A)\geq \frac{\lambda_{\max}}{\lambda_{\min}}$，$\text{cond}<em>2(A)&#x3D;\frac{\sigma</em>{\max}}{\sigma_{\min}}$，对称阵 $\text{cond}<em>2(A)&#x3D;\frac{\lambda</em>{\max}}{\lambda_{\min}}$</li>
+</ol>
+<h2 id="三、方程组的迭代法"><a href="#三、方程组的迭代法" class="headerlink" title="三、方程组的迭代法"></a>三、方程组的迭代法</h2><ol>
+<li>收敛阶：$\forall k\ge k_0$ 有 $\frac{||x^{(k+1)}-x^*||}{||x^{(k)}-x^*||^p}\leq C$，超线性 $p&#x3D;1$ 且 $\lim\frac{||x^{(k+1)}-x^*||}{||x^{(k)}-x^*||}&#x3D;0$</li>
+<li>线性定常单步迭代法：$x^{(k+1)}&#x3D;Bx^{(k)}+f$，$\rho(B)\lt 1$ 或存在从属矩阵范数使得 $||B||\lt 1$ 时收敛，收敛率 $R_k(B)&#x3D;-\ln||B^k||^{1&#x2F;k}\to-\ln\rho(B)$</li>
+<li>压缩映射原理：转化为 $x&#x3D;G(x)$，检查 $G$ 局部压缩、映内（多用 1-范数）</li>
+<li>Newton 迭代：$x^{(k+1)}&#x3D;x^{(k)}-F^\prime(x^{(k)})^{-1}F(x^{(k)})$，求解 $F^\prime(x^{(k)})\delta x&#x3D;-F(x^{(k)})$，阻尼 $F^\prime(x^{(k)})^{-1}\Rightarrow [F^\prime(x^{(k)})+\lambda_k I]^{-1}$</li>
+<li>Shamanskii 方法：每 $m$ 步更新一次 $F^\prime$，$+\infty$ 时为 chord</li>
+<li>线性方程组：$x&#x3D;(I-M^{-1}A)x+M^{-1}b$，Richardson $M&#x3D;I$，Damping $M&#x3D;\alpha I$，Jacobi $M&#x3D;\text{diag}(A)$，Gauss-Seidel $M&#x3D;D+L$，SOR $M&#x3D;\frac{1}{\omega}D+L$，有 $\rho(B_\omega)\geq |\omega-1|$</li>
+<li>对角占优：$|a_{ii}|\geq \sum_{j\neq i} |a_{ij}|$ 至少一个严格成立，有 Jacobi、Gauss-Seidel 收敛</li>
+<li>对称正定：有 Gauss-Seidel 收敛，$0\lt\omega\lt 2$ 时 SOR 收敛</li>
+<li>最速下降法：$\phi(x)&#x3D;\frac{1}{2}x^TAx-b^Tx$，沿梯度方向线搜索，两次方向正交且 $||x^{(k)}-x^*||_A\leq\left(\frac{\lambda_1-\lambda_n}{\lambda_1+\lambda_n}\right)^k||x^{(0)}-x^*||_A$</li>
+<li>共轭梯度法：用 $A$-共轭向量组 $p^{(k)}&#x3D;r^{(k)}+\beta_{k-1}p^{(k-1)}$，满足 $(r^{(k+1)},p^{(k)})&#x3D;0$、剩余向量组正交、$||x^{(k)}-x^*||_A\leq2\left(\frac{\sqrt{\kappa}-1}{\sqrt{\kappa}+1}\right)^k||x^{(0)}-x^*||_A$</li>
+</ol>
+<h2 id="四、多项式插值"><a href="#四、多项式插值" class="headerlink" title="四、多项式插值"></a>四、多项式插值</h2><ol>
+<li>插值方程：$\sum_{j&#x3D;0}^n c_ja_j(x_i)&#x3D;f(x_i)$，Lagrange $f(x_i)\prod_{i\neq j} \frac{x-x_i}{x_j-x_i}$，余项 $\frac{f^{(n+1)}(\xi(x))}{(n+1)!}\omega_{n+1}(x),\omega_{n+1}(x)&#x3D;\prod_{i&#x3D;0}^n (x-x_i)$</li>
+<li>Newton 插值：$\sum_{j&#x3D;0}^n f[x_0,\cdots,x_j]\omega_j(x),f[x_0]&#x3D;f(x_0),f[x_0,\cdots,x_n]&#x3D;\frac{f[x_1,\cdots,x_n]-f[x_0,\cdots,x_{n-1}]}{x_n-x_0}$ 或 $\frac{f^{(n)}(x_0)}{n!}$，余项 $f[x,x_0,\cdots,x_n]\omega_{n+1}(x)$</li>
+<li>分段低次插值：线性有 $a_i(x_j)&#x3D;\delta_{ij}$ 且线性；$k$ 次有子区间上不超 $k$ 次且 $C^{k-1}[a,b]$</li>
+<li>三次样条：$f(x_i)$、节点 0,1,2 阶连续、边界条件 $n+1+3\cdot(n-1)+2&#x3D;4n$，固支 $S^\prime(x_0,x_n)&#x3D;f^\prime(x_0,x_n)$，自然 $S^{\prime\prime}(x_0,x_n)&#x3D;0$，周期 $S^{(k)}(x_0)&#x3D;S^{(k)}(x_n),k&#x3D;0,1,2$</li>
+<li>三弯矩方程：$h_i&#x3D;x_i-x_{i-1},\frac{h_i}{h_i+h_{i+1}}S^{\prime\prime}<em>{i-1}+2S^{\prime\prime}<em>i+\frac{h</em>{i+1}}{h_i+h</em>{i+1}}S^{\prime\prime}<em>{i+1}&#x3D;6f[x</em>{i-1},x_i,x_{i+1}],1\leq i\leq n-1$，固支 $h_0&#x3D;h_{n+1}&#x3D;0$，周期 $h_1(2S^{\prime\prime}_0+S^{\prime\prime}<em>1)+h_n(S^{\prime\prime}</em>{n-1}+2S^{\prime\prime}<em>n)&#x3D;6(f[x_0,x_1]-f[x</em>{n-1},x_n])$</li>
+</ol>
+<h2 id="五、函数逼近"><a href="#五、函数逼近" class="headerlink" title="五、函数逼近"></a>五、函数逼近</h2><ol>
+<li>法方程：$\sum_{j&#x3D;0}^n c_j(a_j,a_i)&#x3D;(f,a_i)$，解有 $(f(x)-s^*(x),s(x))&#x3D;0$，误差 $||\delta(x)||&#x3D;||f(x)-s^*(x)||$</li>
+<li>周期函数的最佳平方逼近：$\frac{1}{2}a_0+\sum_{j&#x3D;1}^n (a_j\cos jx+b_j\sin jx),a_j,b_j&#x3D;\frac{1}{\pi}\int_{0}^{2\pi} f(x)\cos jx,\sin jx \mathrm{d}x$</li>
+<li>正交多项式：在 $[a,b]$ 上恰有 $n$ 个零点，Legendre $[-1,1],\rho&#x3D;1$；Lagurre $\mathbb{R^+},\rho&#x3D;e^{-x}$；Hermite $\mathbb{R},\rho&#x3D;e^{-x^2},H_{n+1}(x)&#x3D;2xH_n(x)-2nH_{n-1}(x)$</li>
+<li>Chebyshev 多项式：$[-1,1],\rho&#x3D;\frac{1}{\sqrt{1-x^2}},T_{n+1}(x)&#x3D;2xT_n(x)-T_{n-1}(x)$，极值点 $\cos\frac{j}{n}\pi$ 交替 $\pm 1$，在首 1 $\mathcal{P}_n$ 中 $[-1,1]$ 上 $\infty$-范数最小，零点 $\cos\frac{2j-1}{2n}\pi$ 用于 Lagrange 插值</li>
+<li>最小二乘问题：离散内积 $\sum_{i&#x3D;0}^m \rho(x_i)f(x_i)g(x_i)$ 下的最佳平方逼近，或 $x&#x3D;(A^TA)^{-1}A^Tb&#x3D;R^{-1}Q^Tb$，正则化误差 $||\delta(x)||^2_2+\lambda||x||^2_2\Rightarrow$ $A^TA+\lambda I$</li>
+<li>奇异值分解：$U,V$ 为 $AA^T,A^TA$ 特征向量，非列满秩最小二乘 $x&#x3D;V_1\Sigma_r^{-1}U_1^Tb+V_2z&#x3D;A^+b+V_2z$</li>
+</ol>
+<h2 id="六、数值积分"><a href="#六、数值积分" class="headerlink" title="六、数值积分"></a>六、数值积分</h2><ol>
+<li>插值型求积公式：中点、梯形、Simpson $\frac{h}{3}(1,4,1)$，截断误差 $\frac{(b-a)^3}{24}f^{\prime\prime}(\xi),\frac{(b-a)^3}{12}f^{\prime\prime}(\xi),\frac{(b-a)^5}{2880}f^{(4)}(\xi)$</li>
+<li>代数精度：对所有 $\mathcal{P}<em>n$ 精确但对某些 $\mathcal{P}</em>{n+1}$ 不精确</li>
+<li>Newton-Cotes 公式：等距 Lagrange，梯形、Simpson、Simpson 3&#x2F;8 $\frac{3h}{8}(1,3,3,1)$、Boole $\frac{2h}{45}(7,32,12,32,7)$，代数精度偶 $n+1$ 奇 $n$</li>
+<li>复合求积法：分段低阶，复合梯形误差 $\frac{(b-a)h^2}{12}f^{\prime\prime}(\xi)$，复合 Simpson $\frac{(b-a)h^4}{2880}f^{(4)}(\xi)$</li>
+<li>Gauss 求积：节点 $x_0,\cdots,x_n$ 为带权 $\rho$ 在 $[a,b]$ 上的 $n+1$ 阶正交多项式零点，代数精度 $2n+1$，Gauss-Chebyshev 用于含 $\frac{1}{\sqrt{1-x^2}}$ 的积分</li>
+</ol>
+<h2 id="七、常微分方程数值解"><a href="#七、常微分方程数值解" class="headerlink" title="七、常微分方程数值解"></a>七、常微分方程数值解</h2>
                 
               </div>
             

@@ -27,10 +27,10 @@
 <meta property="og:description" content="大一下学期线性代数(2)的复习笔记，目前已完结。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-06-12T08:45:51.000Z">
-<meta property="article:modified_time" content="2026-01-03T19:28:15.909Z">
+<meta property="article:modified_time" content="2026-06-03T15:18:39.332Z">
 <meta property="article:author" content="sqzr2319">
-<meta property="article:tag" content="数学">
 <meta property="article:tag" content="大一下">
+<meta property="article:tag" content="数学">
 <meta name="twitter:card" content="summary_large_image">
   
   
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.4k 字
+          3k 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          20 分钟
+          26 分钟
         
       </span>
     
@@ -384,7 +384,23 @@
 <li>非退化对称型可化简为相合标准形，非退化反对称型可化简为 $\mathrm{diag}\begin{pmatrix}0&amp;1\\-1&amp;0\end{pmatrix}$，故有非退化反对称型的线性空间只能是偶数维</li>
 <li>广义内积空间：$(V,g)$，$g$ 为非退化对称型时称为正交空间，$g$ 为非退化反对称型时称为辛空间</li>
 </ol>
-<h2 id="七、技巧与例题"><a href="#七、技巧与例题" class="headerlink" title="七、技巧与例题"></a>七、技巧与例题</h2><ol>
+<h2 id="七、张量"><a href="#七、张量" class="headerlink" title="七、张量"></a>七、张量</h2><ol>
+<li>三阶张量切片：$\mathcal{A}\in \mathbb{R}^{I\times J\times K},\textbf{A}<em>{i::}\in \mathbb{R}^{J\times K},\textbf{A}</em>{:j:}\in \mathbb{R}^{K\times I},\textbf{A}_{::k}\in \mathbb{R}^{I\times J}$</li>
+<li>三阶张量的 Kiers 水平展开：$\mathcal{A}\in\mathbb{R}^{I\times J\times K},\textbf{A}^{(I\times JK)}&#x3D;\textbf{A}<em>{(1)}&#x3D;[\textbf{A}</em>{::1},\cdots,\textbf{A}_{::K}]$</li>
+<li>三阶张量的向量化：$\mathcal{A}\in \mathbb{R}^{I\times J\times K},\text{vec}(\mathcal{A})&#x3D;(\text{vec}(\textbf{A}<em>{::1})^T,\cdots,\text{vec}(\textbf{A}</em>{::K})^T)^T\in \mathbb{R}^{IJK}$，其中 $\textbf{A}<em>{::k}\in \mathbb{R}^{I\times J},\text{vec}(\textbf{A}</em>{::k})&#x3D;(a_{11k},\cdots,a_{I1k},a_{12k},\cdots,a_{IJk})^T$</li>
+<li>张量内积：$\langle \mathcal{A},\mathcal{B}\rangle&#x3D;\langle \text{vec}(\mathcal{A}),\text{vec}(\mathcal{B})\rangle$</li>
+<li>张量的 Frobenius 范数：$||\mathcal{A}||_F&#x3D;\sqrt{\langle \mathcal{A},\mathcal{A}\rangle}$</li>
+<li>多向量外积：$\textbf{a}^{(i)}\in\mathbb R^{I_i},\mathcal{A}&#x3D;\textbf{a}^{(1)}\circ\cdots \circ \textbf{a}^{(N)}\in \mathbb{R}^{I_1\times \cdots\times I_N},a_{i_1i_2\cdots i_N}&#x3D;a_{i_1}^{(1)}\cdots a_{i_N}^{(N)}$ 为秩-1 张量</li>
+<li>张量外积：$\mathcal{A}\in \mathbb{R}^{I_1\times \cdots \times I_N},\mathcal{B}\in \mathbb{R}^{J_1\times \cdots \times J_M},\mathcal{A}\circ\mathcal{B}\in \mathbb{R}^{I_1\times \cdots \times I_N\times J_1\times \cdots \times J_M},(\mathcal{A}\circ\mathcal{B})<em>{i_1\cdots i_Nj_1\cdots j_M}&#x3D;a</em>{i_1\cdots i_N}b_{j_1\cdots j_M}$</li>
+<li>Hadmard 积：$\textbf{A},\textbf{B}\in \mathbb{R}^{m\times n},\textbf{A}* \textbf{B}&#x3D;(a_{ij}b_{ij})_{m\times n}$</li>
+<li>Kronecker 积：$\textbf{A}\in \mathbb{R}^{m\times n},\textbf{B}\in \mathbb{R}^{p\times q},\textbf{A}\otimes \textbf{B}&#x3D;\begin{bmatrix}a_{11}\textbf{B} &amp; \cdots &amp; a_{1n}\textbf{B}\\ \vdots &amp; \ddots &amp; \vdots\\ a_{m1}\textbf{B} &amp; \cdots &amp; a_{mn}\textbf{B}\end{bmatrix}\in \mathbb{R}^{mp\times nq}$</li>
+<li>Khatri-Rao 积：$\textbf{F}\in \mathbb{R}^{p\times n},\textbf{G}\in \mathbb{R}^{q\times n},\textbf{F}\odot \textbf{G}&#x3D;[\textbf{f}_1\otimes \textbf{g}_1,\cdots,\textbf{f}_n\otimes \textbf{g}_n]\in \mathbb{R}^{pq\times n}$，其中 $\textbf{f}_i$ 和 $\textbf{g}_i$ 是 $\textbf{F}$ 和 $\textbf{G}$ 的第 $i$ 列（对应列 Kronecker 积）</li>
+<li>模式-n 矩阵积：$\mathcal{X}\in \mathbb{R}^{I_1\times \cdots \times I_N},\textbf{A}\in \mathbb{R}^{J\times I_n},\mathcal{X}\times_n \textbf{A}\in \mathbb{R}^{I_1\times \cdots \times I_{n-1}\times J\times I_{n+1}\times \cdots \times I_N},(\mathcal{X}\times_n \textbf{A})<em>{i_1\cdots i</em>{n-1}ji_{n+1}\cdots i_N}&#x3D;\sum_{i_n&#x3D;1}^{I_n} x_{i_1\cdots i_N}a_{ji_n}$，$n&#x3D;3$ 为 Tucker 积</li>
+<li>模式-n 秩：$\mathcal{A}\in \mathbb{R}^{I_1\times \cdots \times I_N}$ 的 $I_1\cdots I_{n-1}I_{n+1}\cdots I_N$ 个 $I_n$ 维模式-n 向量的秩，记为 $r_n&#x3D;\text{rank}_n(\mathcal{A})$</li>
+<li>张量的秩：$\mathcal{A}&#x3D;\sum_{r&#x3D;1}^R \sigma_i \mathcal{U}_i$，$\mathcal{U}_i$ 是秩-1 张量，截断即为 CP 分解（N 阶主成分分析）</li>
+<li>Tucker 分解（N 阶奇异值分解）：$\mathcal{A}\in \mathbb{R}^{I_1\times \cdots \times I_N},\mathcal{A}&#x3D;\mathcal{G}\times_1 \textbf{U}^{(1)}\times\cdots \times_N \textbf{U}^{(N)}$，其中 $\textbf{U}^{(n)}\in \mathbb{R}^{I_n\times J_n}$ 是半正交矩阵，核心张量 $\mathcal{G}\in \mathbb{R}^{J_1\times J_N},J_n\leq I_n$ 满足子张量 $\langle\mathcal{G}<em>{j_n&#x3D;\alpha},\mathcal{G}</em>{j_n&#x3D;\beta}\rangle&#x3D;0,||\mathcal{G}_{j_n&#x3D;1}||<em>\text{F}\geq \cdots\geq||\mathcal{G}</em>{j_n&#x3D;J_n}||_\text{F}$</li>
+</ol>
+<h2 id="八、技巧与例题"><a href="#八、技巧与例题" class="headerlink" title="八、技巧与例题"></a>八、技巧与例题</h2><ol>
 <li>常用证明技巧<ol>
 <li>存在 $f(A)&#x3D;B$ 的充要条件是存在 $\mathrm{Jordan}$ 标准形 $J$ 使得 $f(J)$ 的 $\mathrm{Jordan}$ 标准形与 $B$ 的 $\mathrm{Jordan}$ 标准形相同</li>
 <li>循环矩阵可被 $\mathrm{Fourier}$ 矩阵对角化，其特征值为 $\omega^k$ 的线性组合</li>
@@ -452,9 +468,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E6%95%B0%E5%AD%A6/" class="print-no-link">#数学</a>
-      
         <a href="/tags/%E5%A4%A7%E4%B8%80%E4%B8%8B/" class="print-no-link">#大一下</a>
+      
+        <a href="/tags/%E6%95%B0%E5%AD%A6/" class="print-no-link">#数学</a>
       
     </div>
   

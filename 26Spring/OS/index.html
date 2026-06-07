@@ -19,17 +19,21 @@
   <meta name="author" content="sqzr2319">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="article">
+    <meta name="description" content="大二下学期操作系统的复习笔记，目前已完结。">
+<meta property="og:type" content="article">
 <meta property="og:title" content="操作系统">
 <meta property="og:url" content="https://sqzr2319.github.io/26Spring/OS/index.html">
 <meta property="og:site_name" content="sqzr2319&#39;s blog">
+<meta property="og:description" content="大二下学期操作系统的复习笔记，目前已完结。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://sqzr2319.github.io/img/OS/1.png">
 <meta property="article:published_time" content="2026-01-19T08:49:44.000Z">
-<meta property="article:modified_time" content="2026-01-19T08:52:36.039Z">
+<meta property="article:modified_time" content="2026-06-03T11:31:12.676Z">
 <meta property="article:author" content="sqzr2319">
-<meta property="article:tag" content="计算机">
 <meta property="article:tag" content="大二下">
+<meta property="article:tag" content="计算机">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://sqzr2319.github.io/img/OS/1.png">
   
   
   
@@ -237,7 +241,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          0 字
+          1.7k 字
         
       </span>
     
@@ -248,7 +252,7 @@
         
         
         
-          1 分钟
+          15 分钟
         
       </span>
     
@@ -290,7 +294,110 @@
             
               <div class="markdown-body">
                 
-                
+                <p>大二下学期操作系统的复习笔记，目前已完结。</p>
+<span id="more"></span>
+
+<h2 id="一、进程管理"><a href="#一、进程管理" class="headerlink" title="一、进程管理"></a>一、进程管理</h2><h3 id="1-1-基本概念"><a href="#1-1-基本概念" class="headerlink" title="1.1 基本概念"></a>1.1 基本概念</h3><ol>
+<li>进程状态：就绪、运行、阻塞（挂起）</li>
+<li>写时复制：fork 后父子进程共享物理内存，某一方修改内存后再复制</li>
+<li>Jacketing：ULT 调用可能触发阻塞的系统调用前先检查资源是否准备好</li>
+</ol>
+<h3 id="1-2-进程调度"><a href="#1-2-进程调度" class="headerlink" title="1.2 进程调度"></a>1.2 进程调度</h3><ol>
+<li>调度指标：CPU利用率、吞吐量、周转&#x2F;等待&#x2F;响应时间（提交到完成、队列等待、提交到首次）</li>
+<li>调度算法：先来先服务 FCFS、短作业优先 SJF 指数平均预测、时间片轮转 RR、优先级调度 Aging</li>
+<li>多级反馈队列 MLFQ：从最高耗尽时间片降级，定时提升</li>
+<li>高响应比优先 HRRN：(等待 + 服务) &#x2F; 服务</li>
+<li>比例公平：彩票调度、步长调度（步长 &#x3D; 常数 &#x2F; 票数，每次选择累计步值最小并加步长）</li>
+<li>实时调度：截止时间最近优先 EDF、短周期优先 RMS（定时触发事件）</li>
+</ol>
+<h3 id="1-3-进程互斥"><a href="#1-3-进程互斥" class="headerlink" title="1.3 进程互斥"></a>1.3 进程互斥</h3><ol>
+<li>自旋锁：<code>while(lock==1);</code></li>
+<li>Peterson 算法：想进时先让对方进，对方不想进或轮到自己时再进</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs cpp">flag[i] = <span class="hljs-literal">true</span>;<br>turn = j;<br><br><span class="hljs-keyword">while</span> (flag[j] &amp;&amp; turn == j) &#123;<br>    <span class="hljs-comment">// 等待</span><br>&#125;<br><br><span class="hljs-comment">// 临界区</span><br></code></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>Dekker 算法：没轮到自己时撤回意愿，轮到自己再表达</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs cpp">flag[i] = <span class="hljs-literal">true</span>;<br><br><span class="hljs-keyword">while</span> (flag[j]) &#123;<br>    <span class="hljs-keyword">if</span> (turn == j) &#123;<br>        flag[i] = <span class="hljs-literal">false</span>;<br><br>        <span class="hljs-keyword">while</span> (turn == j) &#123;<br>            <span class="hljs-comment">// 等待轮到自己</span><br>        &#125;<br><br>        flag[i] = <span class="hljs-literal">true</span>;<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">// 临界区</span><br><br>turn = j;<br>flag[i] = <span class="hljs-literal">false</span>;<br></code></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>信号量：P操作减一，若＜0则置为等待态；V操作加一，若≤0则唤醒一个等待进程</li>
+<li>生产者-消费者问题：设置产品（初值0）和缓冲区（初值1）信号量</li>
+<li>哲学家就餐问题：拿左右两个叉子，都拿左边会死锁，相邻两个不能同时就餐</li>
+</ol>
+<h2 id="二、存储管理"><a href="#二、存储管理" class="headerlink" title="二、存储管理"></a>二、存储管理</h2><h3 id="2-1-基本概念"><a href="#2-1-基本概念" class="headerlink" title="2.1 基本概念"></a>2.1 基本概念</h3><ol>
+<li>分区管理：首次适应、最佳适应、最坏适应（最大）、下次适应</li>
+<li>驻留集：进程实际驻留在内存中的逻辑页面集合，小于工作集时抖动 thrashing</li>
+<li>反置页表：根据进程号页号通过 Hash 加速查询系统中唯一的反置页表</li>
+<li>多级页表：分段，用第 i 段查询第 i 级页表，最后一级页表是物理页框</li>
+<li>段式管理：独立逻辑地址，内存中多段连续物理地址</li>
+<li>段页式管理：段表记录每段页表地址</li>
+</ol>
+<h3 id="2-2-页面调度"><a href="#2-2-页面调度" class="headerlink" title="2.2 页面调度"></a>2.2 页面调度</h3><ol>
+<li>最佳 Opt：不再访问、距下次访问最久</li>
+<li>最近较久未用 LRU：移位寄存器，每周期右移，选最小</li>
+<li>最不常用 LFU：次数链表</li>
+<li>先进先出 FIFO：有 Belady 异常，增加页框数反而增加缺页率</li>
+<li>一次机会 Clock：循环链表，淘汰时把扫描到的1置零，淘汰第一个0</li>
+<li>两次机会 EClock：访问和修改位，10或01置为00，11置为01</li>
+</ol>
+<h2 id="三、设备管理"><a href="#三、设备管理" class="headerlink" title="三、设备管理"></a>三、设备管理</h2><h3 id="3-1-基本概念"><a href="#3-1-基本概念" class="headerlink" title="3.1 基本概念"></a>3.1 基本概念</h3><ol>
+<li>编址方式：独立编址、内存映像编址、混合编址（设备控制器寄存器独立，缓存区内存映像）</li>
+<li>控制方式：轮询、中断驱动、直接内存访问 DMA（从设备直接传输至内存）</li>
+<li>通道（直接读通道程序）：字节多路（字符类，字节交叉）、选择（块）、数组多路（块，轮流）</li>
+<li>I&#x2F;O 软件层次：硬件、中断处理程序、设备驱动程序、独立于设备的 I&#x2F;O 软件、用户程序</li>
+</ol>
+<h3 id="3-2-磁盘结构"><a href="#3-2-磁盘结构" class="headerlink" title="3.2 磁盘结构"></a>3.2 磁盘结构</h3><ol>
+<li>盘片、盘面、磁道，不同盘面的同一磁道组成柱面，每个磁道分为多个扇区，相邻扇区组成簇</li>
+<li>物理块地址：柱面号、磁头号（盘面号）、扇区号</li>
+<li>存取时间：柱面定位、旋转延迟、数据传送</li>
+<li>移臂调度：先来先服务 FCFS、最短定位时间优先 SSTF；单向&#x2F;双向&#x2F;电梯扫描</li>
+<li>旋转调度：交替排序，交叉因子为 n:1 表示相邻编号间隔 n−1 个扇区</li>
+</ol>
+<h2 id="四、文件管理"><a href="#四、文件管理" class="headerlink" title="四、文件管理"></a>四、文件管理</h2><ol>
+<li>卷&#x2F;块：介质的物理单位；介质上连续信息所组成的一个区域（物理记录），有间隙</li>
+<li>块因子：每块中的逻辑记录数，系统缓冲区用于成组&#x2F;分解</li>
+<li>文件控制块 FCB&#x2F;索引节点 inode：第一个物理块 X1 地址，记录在目录中</li>
+<li>文件分配表 FAT：第 X1 项中记录第二个物理块编号 X2，表项个数等于物理块个数</li>
+<li>系统调用：进程打开文件表指向系统打开文件表项，系统打开文件表项复制目录项</li>
+<li>辅存空间管理：空闲块成组索引法，用物理块记录空闲物理块编号，头指向上一组</li>
+</ol>
+<h2 id="五、Petri-网"><a href="#五、Petri-网" class="headerlink" title="五、Petri 网"></a>五、Petri 网</h2><h3 id="5-1-基本概念"><a href="#5-1-基本概念" class="headerlink" title="5.1 基本概念"></a>5.1 基本概念</h3><ol>
+<li>简单网：不存在前后集相同的不同节点</li>
+<li>单纯网：没有自环</li>
+<li>连通网：无向图连通</li>
+<li>对偶网：交换库所和变迁</li>
+<li>互逆网：流关系调转方向</li>
+</ol>
+<h3 id="5-2-基本网系统-EN"><a href="#5-2-基本网系统-EN" class="headerlink" title="5.2 基本网系统 EN"></a>5.2 基本网系统 EN</h3><ol>
+<li>定义：$(B,E;F,c_{\text{in}})$，库所、变迁、流关系、初始情态，$c_{\text{in}}$ 是库所的子集</li>
+<li>可达集 $C_{\Sigma}$：从 $c_{\text{in}}$ 开始的所有后继丛（情态）集合</li>
+<li>FR($\cdot$)&#x2F;RC($\cdot$)：对后继丛封闭&#x2F;可达集</li>
+<li>顺序：$c[e_1\rangle c^\prime,c^\prime[e_2\rangle $，但不满足 $c[e_2\rangle $</li>
+<li>并发：情态 $c$ 同时满足 $e_1,e_2$，且 $e_1,e_2$ 外延（前后集的并）不相交，反之冲突</li>
+<li>情态 $c$ 在变迁 $b$ 有冲撞：$b$ 满足但 $b$ 的后集已有 token</li>
+<li>结构互补条件：一方前集、后集为另一方后集、前集，token 互补</li>
+<li>条件&#x2F;事件系统 C&#x2F;E：没有初态，所有可能状态构成完全可达情态集</li>
+</ol>
+<h3 id="5-3-库所-变迁系统-P-T"><a href="#5-3-库所-变迁系统-P-T" class="headerlink" title="5.3 库所&#x2F;变迁系统 P&#x2F;T"></a>5.3 库所&#x2F;变迁系统 P&#x2F;T</h3><ol>
+<li>定义：$(S,T;F,K,W,M_0)$，库所、变迁、流关系、库所容量函数、流关系权函数、库所初始标识，$M\leq K$ 称为标识</li>
+<li>广义权函数：不在 $S\times T$ 中的流关系权值为 0</li>
+<li>可达标识集：$[M_0\rangle$</li>
+<li>变迁序列：$\sigma&#x3D;\tau_1\cdots\tau_n$，$M_n$ 称为 $\sigma$ 的后继标识，记作$M_0[\sigma\rangle M_n$</li>
+<li>活性：对任意可达集中的标识，若干步后都能满足某变迁；所有变迁都是活的则称系统 $\Sigma$ 是活的</li>
+<li>有界性：任意可达集中的标识在所有库所都不超过某常数</li>
+<li>公平性：不存在无穷变迁序列使得某变迁发生无穷次但某变迁只发生有限次</li>
+<li>出现网：库所单入单出且整个系统无环</li>
+<li>补库所：$M(s)+M(s^\prime)&#x3D;K(s)$</li>
+</ol>
+<h3 id="5-4-Colored-Petri-Nets"><a href="#5-4-Colored-Petri-Nets" class="headerlink" title="5.4 Colored Petri Nets"></a>5.4 Colored Petri Nets</h3><ol>
+<li>基本思想：结构折叠、token 编号（颜色）</li>
+<li>发生规则：变迁含有变量，变迁在某个绑定（变量赋值）下发生</li>
+<li>哲学家用餐问题</li>
+</ol>
+<p><img src="/img/OS/1.png" srcset="/img/loading.gif" lazyload></p>
+
                 
               </div>
             
@@ -323,9 +430,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="print-no-link">#计算机</a>
-      
         <a href="/tags/%E5%A4%A7%E4%BA%8C%E4%B8%8B/" class="print-no-link">#大二下</a>
+      
+        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="print-no-link">#计算机</a>
       
     </div>
   
