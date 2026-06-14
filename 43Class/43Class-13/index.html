@@ -19,26 +19,23 @@
   <meta name="author" content="sqzr2319">
   <meta name="keywords" content="">
   
-    <meta name="description" content="大二下学期人工智能基础的复习笔记，目前已完结。">
+    <meta name="description" content="肆叁小灶第 13 讲，梳理了《人工智能基础》课程中推理板块的相关知识。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="人工智能基础">
-<meta property="og:url" content="https://sqzr2319.github.io/26Spring/AI/index.html">
+<meta property="og:title" content="肆叁小灶第13讲 推理">
+<meta property="og:url" content="https://sqzr2319.github.io/43Class/43Class-13/index.html">
 <meta property="og:site_name" content="sqzr2319&#39;s blog">
-<meta property="og:description" content="大二下学期人工智能基础的复习笔记，目前已完结。">
+<meta property="og:description" content="肆叁小灶第 13 讲，梳理了《人工智能基础》课程中推理板块的相关知识。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://sqzr2319.github.io/img/AI/1.png">
-<meta property="og:image" content="https://sqzr2319.github.io/img/AI/2.png">
-<meta property="article:published_time" content="2026-01-19T08:48:51.000Z">
-<meta property="article:modified_time" content="2026-06-09T14:36:21.383Z">
+<meta property="article:published_time" content="2026-06-09T12:40:16.000Z">
+<meta property="article:modified_time" content="2026-06-09T13:47:12.116Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="计算机">
-<meta property="article:tag" content="大二下">
+<meta property="article:tag" content="肆叁小灶">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://sqzr2319.github.io/img/AI/1.png">
   
   
   
-  <title>人工智能基础 - sqzr2319&#39;s blog</title>
+  <title>肆叁小灶第13讲 推理 - sqzr2319&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -219,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="人工智能基础"></span>
+            <span id="subtitle" data-typed-text="肆叁小灶第13讲 推理"></span>
           
         </div>
 
@@ -230,8 +227,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-01-19 16:48" pubdate>
-          2026年1月19日 下午
+        <time datetime="2026-06-09 20:40" pubdate>
+          2026年6月9日 晚上
         </time>
       </span>
     
@@ -242,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k 字
+          31 字
         
       </span>
     
@@ -253,7 +250,7 @@
         
         
         
-          13 分钟
+          1 分钟
         
       </span>
     
@@ -290,79 +287,17 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">人工智能基础</h1>
+            <h1 id="seo-header">肆叁小灶第13讲 推理</h1>
             
             
               <div class="markdown-body">
                 
-                <p>大二下学期人工智能基础的复习笔记，目前已完结。</p>
+                <p>肆叁小灶第 13 讲，梳理了《人工智能基础》课程中推理板块的相关知识。</p>
 <span id="more"></span>
 
-<h2 id="一、搜索"><a href="#一、搜索" class="headerlink" title="一、搜索"></a>一、搜索</h2><h3 id="1-A-算法"><a href="#1-A-算法" class="headerlink" title="1. A* 算法"></a>1. A* 算法</h3><ol>
-<li>可采纳性（Admissibility）：$0\leq h(n) \leq h^*(n)$，A* 树搜索保证最优性</li>
-<li>地标差分启发式：$h(n) &#x3D; \max_{l\in L} |C^*(n,l)-C^*(l,T)|$，满足可采纳性（三角不等式）</li>
-<li>一致性（Consistency）：$h(n)-h(n^\prime) \leq c(n,n^\prime)$，A* 图搜索保证最优性，强于可采纳性</li>
-<li>性质证明：$h(n)\leq h^*(n)+C_1\Rightarrow g(T)\leq h^*(S)+C_1$；$h(n)\leq C_2\cdot h^*(n)\Rightarrow g(T)\leq C_2\cdot h^*(S)$</li>
-</ol>
-<p><img src="/img/AI/1.png" srcset="/img/loading.gif" lazyload></p>
-<h2 id="二、学习"><a href="#二、学习" class="headerlink" title="二、学习"></a>二、学习</h2><h3 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1. 基本概念"></a>1. 基本概念</h3><ol>
-<li>贝叶斯误差&#x2F;最优误差 Bayes&#x2F;Optimal Error：目标函数（最优分类器）在测试集上的误差</li>
-<li>精确率 Precision：$\frac{TP}{TP+FP}$</li>
-<li>召回率&#x2F;灵敏度&#x2F;真正率 Recall&#x2F;Sensitivity&#x2F;TPR：$\frac{TP}{TP+FN}$</li>
-<li>准确率 Accuracy：$\frac{TP+TN}{TP+FP+TN+FN}$</li>
-<li>假阳性率 FPR：$\frac{FP}{FP+TN}$</li>
-<li>特异度 Specificity：$1-\text{FPR}$</li>
-<li>误差 Error：$1- \text{Accuracy}$</li>
-<li>F1-Score：$\frac{1}{F_1} &#x3D; \frac{1}{2}\left(\frac{1}{\text{Precision}}+\frac{1}{\text{Recall}}\right)$</li>
-<li>ROC 曲线：横轴 FPR，纵轴 TPR，对模型输出的分数 $f(x)$ 设置不同阈值时 (FPR, TPR) 的变化曲线，曲线下面积 AUC 越大越好</li>
-</ol>
-<h3 id="2-决策树"><a href="#2-决策树" class="headerlink" title="2. 决策树"></a>2. 决策树</h3><ol>
-<li>$H(D)&#x3D;-\sum_{i&#x3D;1}^k \frac{|C_i|}{|D|} \log_2 \frac{|C_i|}{|D|}$，信息增益 Information Gain：$H(D)-\sum_{i&#x3D;1}^k \frac{|D_i|}{|D|} H(D_i)$</li>
-<li>内在值 Intrinsic Value：$-\sum_{i&#x3D;1}^k \frac{|D_i|}{|D|} \log_2 \frac{|D_i|}{|D|}$，增益率 Gain Ratio：$\frac{\text{Information Gain}}{\text{Intrinsic Value}}$</li>
-<li>代价 Cost：$\frac{(\text{Gain Ratio})^2}{\text{Cost}}$</li>
-<li>缺失值：用完整数据计算 GR 再乘以缺失率，再将缺失数据按比例分配到子节点</li>
-<li>连续值：选取切分点</li>
-<li>剪枝：预剪枝（每次分叉时检查验证集准确率是否提升）、后剪枝（从叶子开始）</li>
-<li>损失函数：$-\sum_{t&#x3D;1}^{|T|} N_{t}\sum_{i&#x3D;1}^k \frac{N_{ti}}{N_t} \log_2 \frac{N_{ti}}{N_t}+\alpha |T|$</li>
-<li>决策树本质：在高维空间中用超平面把数据分成不同的区域做独热编码</li>
-<li>随机森林：每棵树从全体 $n$ 个样本中有放回采样 $n$ 次；随机选取 $k$ 个特征（$k\approx \sqrt{d}$），多数投票</li>
-<li>偏差方差分解：$\text{Error} &#x3D; \text{Bias}[h_D(x)|x]^2 + \text{Var}_D[h_D(x)|x] + \text{Var}(y|x)(\text{Noise,Irreducible Error})$</li>
-</ol>
-<h3 id="3-深度学习"><a href="#3-深度学习" class="headerlink" title="3. 深度学习"></a>3. 深度学习</h3><ol>
-<li>BatchNorm：$n$ 个样本 $n\times w\times h$ 做归一化（逐通道）</li>
-<li>LayerNorm：同样本内部所有特征做归一化</li>
-<li>位置编码：$e_i(2j)&#x3D;\sin(i&#x2F;10000^{2j&#x2F;d})$，$e_i(2j+1)&#x3D;\cos(i&#x2F;10000^{2j&#x2F;d})$</li>
-<li>交叉注意力：$q$ 来自 Decoder，$k,v$ 来自 Encoder</li>
-<li>混合专家 MoE：FFN 门控</li>
-<li>感知机的收敛保证：</li>
-</ol>
-<p><img src="/img/AI/2.png" srcset="/img/loading.gif" lazyload></p>
-<h2 id="三、推理"><a href="#三、推理" class="headerlink" title="三、推理"></a>三、推理</h2><h3 id="1-概率图模型"><a href="#1-概率图模型" class="headerlink" title="1. 概率图模型"></a>1. 概率图模型</h3><ol>
-<li>贝叶斯网络 BN 转马尔可夫随机场 MRF：每个节点的父节点两两相连</li>
-<li>D-分离：BN 头对头独立但观测到C或任意C后代则条件相关，其他相反；MRF 关于割集条件独立</li>
-<li>马尔可夫边界：观测后与外界条件独立，BN 父&#x2F;子节点&#x2F;子节点其他父节点，MRF 邻居集</li>
-<li>变量消除法：把所有含 $X_i$ 的因子相乘后边缘化 $X_i$ 得到新因子替换原因子</li>
-<li>信息传递：$m_{i\to j}(x_j) &#x3D; \sum_{x_i} \psi_i(x_i) \psi_{ij}(x_i,x_j) \prod_{k\in N(i)\setminus j} m_{k\to i}(x_i)$，$P(X_i) &#x3D; \psi_i(x_i) \prod_{k\in N(i)} m_{k\to i}(x_i)$，最大后验把 $\sum$ 换成 $\max$，图每次选一条边来回更新</li>
-</ol>
-<h3 id="2-贝叶斯推断"><a href="#2-贝叶斯推断" class="headerlink" title="2. 贝叶斯推断"></a>2. 贝叶斯推断</h3><ol>
-<li>最大似然估计法：观测到数据 $D$，使用以 $\theta$ 为参数的模型让 $D$ 出现的概率尽可能大 $\hat{\theta}&#x3D;\arg\max_\theta p(D|\theta)$</li>
-<li>最大后验估计法：假设模型参数 $\theta$ 服从先验分布，观测到数据 $D$ 后修正对 $\theta$ 的信念得到后验分布，选择后验概率最大的 $\hat{\theta}&#x3D;\arg\max_\theta p(\theta|D)&#x3D;\arg\max_\theta p(D|\theta)p(\theta)$</li>
-<li>贝叶斯模型平均法：不选择后验概率最大的 $\hat{\theta}$，而是对所有后验分布中的 $\theta$ 加权求和，$p(x|D) &#x3D; \int p(x|\theta)p(\theta|D)d\theta$（假设给定 $\theta$ 后 $x$ 和 $D$ 独立）</li>
-<li>隐变量模型：$x$ 由 $z$ 决定，$\arg\max_\theta p(x|\theta)$ 难以计算，引入 ELBO $\log p(x|\theta) &#x3D; \log\sum_z p(x,z|\theta) &#x3D; \log\sum_z q(z)\frac{p(x,z|\theta)}{q(z)} \geq \sum_z q(z) \log\frac{p(x,z|\theta)}{q(z)}$</li>
-<li>KL：ELBO $&#x3D;\sum_z q(z) \log \frac{p(z|x,\theta)p(x|\theta)}{q(z)} &#x3D; \sum_z q(z) \log \frac{p(z|x,\theta)}{q(z)} + \sum_z q(z) \log p(x|\theta)&#x3D;-\text{KL}(q(z)||p(z|x,\theta)) + \log p(x|\theta)$</li>
-<li>EM 算法：E 步 $q^*(z)&#x3D;p(z|x,\theta)$，M 步 $\theta&#x3D;\arg\max_\theta \sum_z q^*(z) \log \frac{p(x,z|\theta)}{q^*(z)}$</li>
-<li>MAP：$\log p(\theta|x)&#x3D;\log p(x|\theta)+\log p(\theta)-\log p(x)$，M 步 $\theta&#x3D;\arg\max_\theta (\log p(x|\theta)+\log p(\theta))$</li>
-<li>变分推断：$q^*(z)&#x3D;p(z|x,\theta)$ 难以计算，用 $q_\phi(z)\in\mathcal{Q}$ 近似取 $\phi&#x3D;\arg\min_\phi \text{KL}(q_\phi(z)||p(z|x,\theta))$，使用优化方法求解 $q_\phi(z)$</li>
-<li>平均场理论：若 $q_\phi(z)&#x3D;\prod_{i&#x3D;1}^m q_{\phi_i}(z_i)$，则有 $q_{\phi_i}(z_i)&#x3D;\mathbb{E}_{j\neq i}[\log p(x,z|\theta)]$</li>
-</ol>
-<h3 id="3-概率主题模型"><a href="#3-概率主题模型" class="headerlink" title="3. 概率主题模型"></a>3. 概率主题模型</h3><ol>
-<li>朴素贝叶斯分类器、高斯判别分析、混合高斯模型</li>
-<li>LDA：推理时隐变量取 $\arg\max_{z} q_\phi(z)$</li>
-<li>困惑度：$\exp\left(-\frac{\sum_{d&#x3D;1}^{D_\text{test}} \log p(w_d|\alpha,\eta,\beta)}{\sum_{d&#x3D;1}^{D_\text{test}} N_d}\right)$</li>
-<li>VAE：用 $\theta$ 为参数的 Decoder 神经网络从先验为 $p(z)$ 的隐变量中生成 $x$，$\arg\max_\theta p_\theta(x)&#x3D;\sum_z p_\theta(x|z)p(z)$ 不好计算，即 EM 所需的隐变量后验 $p_\theta(z|x)&#x3D;\frac{p_\theta(x|z)p(z)}{p_\theta(x)}$ 分母不好计算，引入 Encoder 神经网络 $q_\phi(z|x)$ 近似隐变量后验</li>
-<li>ELBO：$\sum_z q_\phi(z|x) \log\frac{p(x,z|\theta)}{q_\phi(z|x)}&#x3D;\sum_z q_\phi(z|x) \log \frac{p(x|z,\theta)p(z)}{q_\phi(z|x)} &#x3D; \sum_z q_\phi(z|x) \log \frac{p(z)}{q_\phi(z|x)} + \sum_z q_\phi(z|x) \log p(x|z,\theta)&#x3D;-\text{KL}(q_\phi(z|x)||p(z)) + \mathbb{E}_{q_\phi(z|x)}[\log p(x|z,\theta)]$，对应 Encoder 不偏离先验、Decoder 能重构输入</li>
-<li>重参数化技巧：$z&#x3D;\mu_\phi(x)+\sigma_\phi(x)\odot \epsilon,\epsilon\sim \mathcal{N}(0,I)$</li>
-</ol>
+<blockquote>
+<p>已力竭。。。</p>
+</blockquote>
 
                 
               </div>
@@ -381,7 +316,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E7%AC%94%E8%AE%B0/" class="category-chain-item">笔记</a>
+  <a href="/categories/%E6%8E%A8%E9%80%81/" class="category-chain-item">推送</a>
   
   
 
@@ -398,7 +333,7 @@
       
         <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="print-no-link">#计算机</a>
       
-        <a href="/tags/%E5%A4%A7%E4%BA%8C%E4%B8%8B/" class="print-no-link">#大二下</a>
+        <a href="/tags/%E8%82%86%E5%8F%81%E5%B0%8F%E7%81%B6/" class="print-no-link">#肆叁小灶</a>
       
     </div>
   
@@ -410,8 +345,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>人工智能基础</div>
-      <div>https://sqzr2319.github.io/26Spring/AI/</div>
+      <div>肆叁小灶第13讲 推理</div>
+      <div>https://sqzr2319.github.io/43Class/43Class-13/</div>
     </div>
     <div class="license-meta">
       
@@ -423,7 +358,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年1月19日</div>
+          <div>2026年6月9日</div>
         </div>
       
       
@@ -455,18 +390,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/26Spring/Numerical/" title="数值分析基础">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">数值分析基础</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/25Fall/Physics-B2/" title="大学物理B(2)">
-                        <span class="hidden-mobile">大学物理B(2)</span>
+                      <a href="/26Spring/Finance/" title="金融学基础">
+                        <span class="hidden-mobile">金融学基础</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
