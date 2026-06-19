@@ -27,10 +27,10 @@
 <meta property="og:description" content="大二下学期数值分析基础的复习笔记，目前已完结。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-01-19T08:49:32.000Z">
-<meta property="article:modified_time" content="2026-06-18T12:40:16.752Z">
+<meta property="article:modified_time" content="2026-06-19T07:20:56.272Z">
 <meta property="article:author" content="sqzr2319">
-<meta property="article:tag" content="大二下">
 <meta property="article:tag" content="数学">
+<meta property="article:tag" content="大二下">
 <meta name="twitter:card" content="summary_large_image">
   
   
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.5k 字
+          2.4k 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          21 分钟
+          20 分钟
         
       </span>
     
@@ -317,7 +317,7 @@
 <li>摄动引理：$||\cdot||$ 为从属范数，A 可逆，$||A^{-1}||\cdot||\delta A||\lt 1\Rightarrow A\pm\delta A$ 可逆且 $||(A\pm\delta A)^{-1}||\leq \frac{||A^{-1}||}{1-||A^{-1}||\cdot||\delta A||}$</li>
 <li>条件数：$\frac{|f(x+\delta x)-f(x)|}{|f(x)|}\leq \kappa(x)\frac{|\delta x|}{|x|}$，矩阵为 $||A||\cdot||A^{-1}||$，其中 $||\cdot||$ 为从属范数，描述 $\delta b$ 对 $x&#x3D;A^{-1}b$ 的影响</li>
 <li>方程组扰动分析：$\frac{||\delta x||}{||x||}\leq \frac{\text{cond}(A)}{1-||A^{-1}||\cdot||\delta A||}\left(\frac{||\delta A||}{||A||}+\frac{||\delta b||}{||b||}\right)$</li>
-<li>条件数与特征值：$\text{cond}(A)\geq \frac{\lambda_{\max}}{\lambda_{\min}}$，$\text{cond}<em>2(A)&#x3D;\frac{\sigma</em>{\max}}{\sigma_{\min}}$，对称阵 $\text{cond}<em>2(A)&#x3D;\frac{\lambda</em>{\max}}{\lambda_{\min}}$</li>
+<li>条件数与特征值：$\text{cond}(A)\geq \frac{\lambda_{\max}}{\lambda_{\min}}$，$\mathrm{cond_2}(A)&#x3D;\frac{\sigma_{\max}}{\sigma_{\min}}$，对称阵 $\mathrm{cond_2}(A)&#x3D;\frac{\lambda_{\max}}{\lambda_{\min}}$</li>
 </ol>
 <h2 id="三、方程组的迭代法"><a href="#三、方程组的迭代法" class="headerlink" title="三、方程组的迭代法"></a>三、方程组的迭代法</h2><ol>
 <li>收敛阶：$\forall k\ge k_0$ 有 $\frac{||x^{(k+1)}-x^*||}{||x^{(k)}-x^*||^p}\leq C$，超线性 $p&#x3D;1$ 且 $\lim\frac{||x^{(k+1)}-x^*||}{||x^{(k)}-x^*||}&#x3D;0$</li>
@@ -336,7 +336,7 @@
 <li>Newton 插值：$\sum_{j&#x3D;0}^n f[x_0,\cdots,x_j]\omega_j(x),f[x_0]&#x3D;f(x_0),f[x_0,\cdots,x_n]&#x3D;\frac{f[x_1,\cdots,x_n]-f[x_0,\cdots,x_{n-1}]}{x_n-x_0}$ 或 $\frac{f^{(n)}(x_0)}{n!}$，余项 $f[x,x_0,\cdots,x_n]\omega_{n+1}(x)$</li>
 <li>分段低次插值：线性有 $a_i(x_j)&#x3D;\delta_{ij}$ 且线性；$k$ 次有子区间上不超 $k$ 次且 $C^{k-1}[a,b]$</li>
 <li>三次样条：$f(x_i)$、节点 0,1,2 阶连续、边界条件 $n+1+3\cdot(n-1)+2&#x3D;4n$，固支 $S^\prime(x_0,x_n)&#x3D;f^\prime(x_0,x_n)$，自然 $S^{\prime\prime}(x_0,x_n)&#x3D;0$，周期 $S^{(k)}(x_0)&#x3D;S^{(k)}(x_n),k&#x3D;0,1,2$</li>
-<li>三弯矩方程：$h_i&#x3D;x_i-x_{i-1},\frac{h_i}{h_i+h_{i+1}}S^{\prime\prime}<em>{i-1}+2S^{\prime\prime}<em>i+\frac{h</em>{i+1}}{h_i+h</em>{i+1}}S^{\prime\prime}<em>{i+1}&#x3D;6f[x</em>{i-1},x_i,x_{i+1}],1\leq i\leq n-1$，固支 $h_0&#x3D;h_{n+1}&#x3D;0$，周期 $h_1(2S^{\prime\prime}_0+S^{\prime\prime}<em>1)+h_n(S^{\prime\prime}</em>{n-1}+2S^{\prime\prime}<em>n)&#x3D;6(f[x_0,x_1]-f[x</em>{n-1},x_n])$</li>
+<li>三弯矩方程：$h_i&#x3D;x_i-x_{i-1},\frac{h_i}{h_i+h_{i+1}}S_{i-1}^{\prime\prime}+2S_i^{\prime\prime}+\frac{h_{i+1}}{h_i+h_{i+1}}S_{i+1}^{\prime\prime}&#x3D;6f[x_{i-1},x_i,x_{i+1}],1\leq i\leq n-1$，固支 $h_0&#x3D;h_{n+1}&#x3D;0$，周期 $h_1(2S_0^{\prime\prime}+S_1^{\prime\prime})+h_n(S_{n-1}^{\prime\prime}+2S_n^{\prime\prime})&#x3D;6(f[x_0,x_1]-f[x_{n-1},x_n])$</li>
 </ol>
 <h2 id="五、函数逼近"><a href="#五、函数逼近" class="headerlink" title="五、函数逼近"></a>五、函数逼近</h2><ol>
 <li>法方程：$\sum_{j&#x3D;0}^n c_j(a_j,a_i)&#x3D;(f,a_i)$，解有 $(f(x)-s^*(x),s(x))&#x3D;0$，误差 $||\delta(x)||&#x3D;||f(x)-s^*(x)||$</li>
@@ -347,11 +347,10 @@
 <li>奇异值分解：$U,V$ 为 $AA^T,A^TA$ 特征向量，非列满秩最小二乘 $x&#x3D;V_1\Sigma_r^{-1}U_1^Tb+V_2z&#x3D;A^+b+V_2z$</li>
 </ol>
 <h2 id="六、数值积分"><a href="#六、数值积分" class="headerlink" title="六、数值积分"></a>六、数值积分</h2><ol>
-<li>插值型求积公式：中点、梯形、Simpson $\frac{h}{3}(1,4,1)$，截断误差 $\frac{(b-a)^3}{24}f^{\prime\prime}(\xi),\frac{(b-a)^3}{12}f^{\prime\prime}(\xi),\frac{(b-a)^5}{2880}f^{(4)}(\xi)$</li>
-<li>代数精度：对所有 $\mathcal{P}<em>n$ 精确但对某些 $\mathcal{P}</em>{n+1}$ 不精确</li>
-<li>Newton-Cotes 公式：等距 Lagrange，梯形、Simpson、Simpson 3&#x2F;8 $\frac{3h}{8}(1,3,3,1)$、Boole $\frac{2h}{45}(7,32,12,32,7)$，代数精度偶 $n+1$ 奇 $n$</li>
-<li>复合求积法：分段低阶，复合梯形误差 $\frac{(b-a)h^2}{12}f^{\prime\prime}(\xi)$，复合 Simpson $\frac{(b-a)h^4}{2880}f^{(4)}(\xi)$</li>
-<li>Gauss 求积：节点 $x_0,\cdots,x_n$ 为带权 $\rho$ 在 $[a,b]$ 上的 $n+1$ 阶正交多项式零点，代数精度 $2n+1$，Gauss-Chebyshev 用于含 $\frac{1}{\sqrt{1-x^2}}$ 的积分</li>
+<li>插值型求积公式：中点、梯形、Simpson $\frac{b-a}{6}(1,4,1)$ 截断误差 $\frac{(b-a)^5}{2880}f^{(4)}(\xi)$，复合求积法分段低阶</li>
+<li>代数精度：对所有 $\mathcal{P_n}$ 精确但对某些 $\mathcal{P_{n+1}}$ 不精确</li>
+<li>Newton-Cotes 公式：等距 Lagrange，梯形、Simpson、Simpson 3&#x2F;8 $\frac{b-a}{8}(1,3,3,1)$，代数精度偶 $n+1$ 奇 $n$</li>
+<li>Gauss 求积：节点 $x_0,\cdots,x_n$ 为带权 $\rho$ 在 $[a,b]$ 上的 $n+1$ 阶正交多项式零点，代数精度 $2n+1$，Gauss-Chebyshev 系数 $\frac{\pi}{n+1}$ 求含 $\frac{1}{\sqrt{1-x^2}}$ 的积分</li>
 </ol>
 <h2 id="七、常微分方程数值解"><a href="#七、常微分方程数值解" class="headerlink" title="七、常微分方程数值解"></a>七、常微分方程数值解</h2><ol>
 <li>定义：$\frac{\mathrm{d}y}{\mathrm{d}x}&#x3D;f(x,y),x\in[a,b]$，令 $x_n&#x3D;a+nh,h&#x3D;\frac{b-a}{N}$，则 $y(x_{n+1})&#x3D;y(x_n)+\int_{x_n}^{x_{n+1}} f(x,y(x))\mathrm{d}x&#x3D;y(x_n)+hf(\xi)$，取 $\xi&#x3D;x_n$ 得左矩形公式 $y(x_{n+1})&#x3D;y(x_n)+hf(x_n,y(x_n))$，用 $x_i$ 代替得向前 Euler 公式 $y_{n+1}&#x3D;y_n+hf(x_n,y_n)$</li>
@@ -396,9 +395,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%A4%A7%E4%BA%8C%E4%B8%8B/" class="print-no-link">#大二下</a>
-      
         <a href="/tags/%E6%95%B0%E5%AD%A6/" class="print-no-link">#数学</a>
+      
+        <a href="/tags/%E5%A4%A7%E4%BA%8C%E4%B8%8B/" class="print-no-link">#大二下</a>
       
     </div>
   
