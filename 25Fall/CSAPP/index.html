@@ -27,7 +27,7 @@
 <meta property="og:description" content="大二上学期计算机组成原理的复习笔记，目前已完结。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-01-09T08:49:03.000Z">
-<meta property="article:modified_time" content="2026-01-01T04:56:39.739Z">
+<meta property="article:modified_time" content="2026-06-29T16:22:35.210Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="计算机">
 <meta property="article:tag" content="大二上">
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          896 字
+          1.6k 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          8 分钟
+          14 分钟
         
       </span>
     
@@ -378,6 +378,39 @@
 <li>矩阵乘法：<code>A[i][k]*B[k][*]=C[i][*]</code>；分块 $3B^2&lt;C$</li>
 <li>通用方法：代码移动（减少函数调用）、临时变量</li>
 <li>循环展开：减少数据依赖，展开、重组、并行</li>
+</ol>
+<h2 id="五、链接"><a href="#五、链接" class="headerlink" title="五、链接"></a>五、链接</h2><ol>
+<li>编译过程：.c $\to$ 预处理 $\to$ .i $\to$ 编译 $\to$ .s $\to$ 汇编 $\to$ .o $\to$ 链接 $\to$ .exe</li>
+<li>可重定位目标文件 .o：代码 .text，数据 .rodata&#x2F;.data&#x2F;.bss（只读&#x2F;已初始化&#x2F;未初始化），符号表 .symtab，重定位表 .rel.text&#x2F;.rel.data</li>
+<li>库：静态库 .a（多个 .o 文件打包，链接时提取需要的 .o 文件）、动态库 .so&#x2F;.dll（链接时记录库名和符号表，运行时加载）</li>
+<li>链接过程：符号解析确定所需 .o 再合并，重定位引用地址</li>
+</ol>
+<h2 id="六、异常控制流"><a href="#六、异常控制流" class="headerlink" title="六、异常控制流"></a>六、异常控制流</h2><ol>
+<li>异常：中断（异步 I&#x2F;O）、陷阱（系统调用）、故障（可恢复错误）、终止（不可恢复错误）</li>
+<li>进程：虚拟内存空间（代码、数据、栈）、寄存器、文件描述符表</li>
+<li>信号：类似异常，接收后内核将控制流转移到信号处理程序再返回</li>
+</ol>
+<h2 id="七、虚拟内存"><a href="#七、虚拟内存" class="headerlink" title="七、虚拟内存"></a>七、虚拟内存</h2><ol>
+<li>正常流程：MMU 接收虚拟地址向内存中页表请求查询物理页号，再将物理页号和虚拟页偏移量组合成物理地址向内存请求访问</li>
+<li>缺页：MMU 发现物理页号首位无效（地址指向初始磁盘位置），触发缺页异常将磁盘复制到内存，更新页表后重试访问</li>
+<li>加速：TLB 页表缓存、多级页表、和高速缓存联用</li>
+</ol>
+<h2 id="八、系统级-I-O"><a href="#八、系统级-I-O" class="headerlink" title="八、系统级 I&#x2F;O"></a>八、系统级 I&#x2F;O</h2><ol>
+<li>共享文件：描述符表进程独立，打开文件表和 v-node 表进程共享</li>
+<li>打开同一文件两次：描述符表中两条，指向打开文件表中不同条，指向同一 v-node 表条</li>
+<li>父子进程：复制描述符表，对应条指向同一打开文件表条，指向同一 v-node 表条</li>
+<li>重定向：将描述符表条重新指向其他打开文件表条（可用于 stdin&#x2F;out&#x2F;err）</li>
+</ol>
+<h2 id="九、网络编程"><a href="#九、网络编程" class="headerlink" title="九、网络编程"></a>九、网络编程</h2><ol>
+<li>端口：客户端由内核自动分配临时端口，服务器为固定端口，服务器内核监听到端口请求后将控制流转移到对应程序</li>
+<li>URL：通用资源定位符，用于静态内容在服务器磁盘上查找</li>
+<li>CGI ：通用网关接口，用于动态内容传递运行参数，用？分隔文件名和参数，用&amp;分隔参数</li>
+</ol>
+<h2 id="十、并发编程"><a href="#十、并发编程" class="headerlink" title="十、并发编程"></a>十、并发编程</h2><ol>
+<li>并发方式：进程式（遇请求后 fork）、事件式（遇请求后转移控制流）、多线程</li>
+<li>线程：栈（同一虚拟内存空间的不同区间）、寄存器，共享虚拟内存空间、文件描述符</li>
+<li>信号量：P（减一，阻塞直到非负）、V（加一，唤醒一个等待线程），用于互斥锁</li>
+<li>死锁：等待永远不为真的条件，如 PV 顺序不一致导致的禁止区域左下角</li>
 </ol>
 
                 
