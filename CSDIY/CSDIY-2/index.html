@@ -29,7 +29,7 @@
 <meta property="og:image" content="https://sqzr2319.github.io/img/CSDIY-2/1.png">
 <meta property="og:image" content="https://sqzr2319.github.io/img/CSDIY-2/2.png">
 <meta property="article:published_time" content="2025-07-01T11:46:31.000Z">
-<meta property="article:modified_time" content="2026-06-12T07:25:19.966Z">
+<meta property="article:modified_time" content="2026-07-01T12:05:00.600Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="计算机">
 <meta property="article:tag" content="自学">
@@ -242,7 +242,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.4k 字
+          2.6k 字
         
       </span>
     
@@ -253,7 +253,7 @@
         
         
         
-          21 分钟
+          22 分钟
         
       </span>
     
@@ -397,6 +397,12 @@
 <li>$\mathrm{Benchmark}$：$\mathrm{InceptionScore}$（可识别性分布与生成多样性分布的 $\mathrm{KL}$ 散度）、$\mathrm{FID}$（生成样本与真实样本的高斯分布差异）</li>
 <li>模式崩溃：使用 $\mathrm{GradientPenalty}$ 或系数矩阵谱归一化限制 $\mathrm{Lipschitz}$ 系数</li>
 <li>条件生成：加入重建误差，对标签数据 $(x_i,y_i)$ 优化 $\displaystyle\min_G\max_D(\log D(x_i,y_i)+\log(1-D(G(x_i,z_i)))+|G(x_i,z_i)-y_i|)$</li>
+</ol>
+<h3 id="10-传统方法"><a href="#10-传统方法" class="headerlink" title="10. 传统方法"></a>10. 传统方法</h3><ol>
+<li>目标检测：One-stage 法（Yolo）图像分块后逐块预测物体框和种类再合并（按置信度从高到低排序，重叠过多视为同一个），Two-stage 法（Faster-RCNN）先生成候选框再分类</li>
+<li>图像分割：逐像素输出分类（UNet）</li>
+<li>词向量：CBOW 模型根据上下文预测中间词（word2vec），Skip-gram 模型根据中间词预测上下文</li>
+<li>统计语言模型：N-gram 模型统计语料库中前 $n-1$ 个词出现时第 $n$ 个词的条件概率，平滑处理低频词</li>
 </ol>
 <h2 id="三、强化学习"><a href="#三、强化学习" class="headerlink" title="三、强化学习"></a>三、强化学习</h2><h3 id="1-表格式学习（状态、动作都离散）"><a href="#1-表格式学习（状态、动作都离散）" class="headerlink" title="1. 表格式学习（状态、动作都离散）"></a>1. 表格式学习（状态、动作都离散）</h3><ol>
 <li>算法：$\mathrm{SARSA}\to \mathrm{Q-learning}$（将$\mathrm{A^\prime}$ 替换为最优动作）</li>

@@ -19,17 +19,17 @@
   <meta name="author" content="sqzr2319">
   <meta name="keywords" content="">
   
-    <meta name="description" content="大二下学期人工智能基础的复习笔记，目前已完结。">
+    <meta name="description" content="大二下学期人工智能基础的复习笔记，目前已完结。含自学的状态空间模型和采样方法。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="人工智能基础">
 <meta property="og:url" content="https://sqzr2319.github.io/26Spring/AI/index.html">
 <meta property="og:site_name" content="sqzr2319&#39;s blog">
-<meta property="og:description" content="大二下学期人工智能基础的复习笔记，目前已完结。">
+<meta property="og:description" content="大二下学期人工智能基础的复习笔记，目前已完结。含自学的状态空间模型和采样方法。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://sqzr2319.github.io/img/AI/1.png">
 <meta property="og:image" content="https://sqzr2319.github.io/img/AI/2.png">
-<meta property="article:published_time" content="2026-01-19T08:48:51.000Z">
-<meta property="article:modified_time" content="2026-06-09T14:36:21.383Z">
+<meta property="article:published_time" content="2026-06-17T08:48:51.000Z">
+<meta property="article:modified_time" content="2026-07-01T11:55:01.146Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="计算机">
 <meta property="article:tag" content="大二下">
@@ -230,8 +230,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-01-19 16:48" pubdate>
-          2026年1月19日 下午
+        <time datetime="2026-06-17 16:48" pubdate>
+          2026年6月17日 下午
         </time>
       </span>
     
@@ -242,7 +242,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k 字
+          2.2k 字
         
       </span>
     
@@ -253,7 +253,7 @@
         
         
         
-          13 分钟
+          19 分钟
         
       </span>
     
@@ -295,7 +295,7 @@
             
               <div class="markdown-body">
                 
-                <p>大二下学期人工智能基础的复习笔记，目前已完结。</p>
+                <p>大二下学期人工智能基础的复习笔记，目前已完结。含自学的状态空间模型和采样方法。</p>
 <span id="more"></span>
 
 <h2 id="一、搜索"><a href="#一、搜索" class="headerlink" title="一、搜索"></a>一、搜索</h2><h3 id="1-A-算法"><a href="#1-A-算法" class="headerlink" title="1. A* 算法"></a>1. A* 算法</h3><ol>
@@ -362,6 +362,18 @@
 <li>VAE：用 $\theta$ 为参数的 Decoder 神经网络从先验为 $p(z)$ 的隐变量中生成 $x$，$\arg\max_\theta p_\theta(x)&#x3D;\sum_z p_\theta(x|z)p(z)$ 不好计算，即 EM 所需的隐变量后验 $p_\theta(z|x)&#x3D;\frac{p_\theta(x|z)p(z)}{p_\theta(x)}$ 分母不好计算，引入 Encoder 神经网络 $q_\phi(z|x)$ 近似隐变量后验</li>
 <li>ELBO：$\sum_z q_\phi(z|x) \log\frac{p(x,z|\theta)}{q_\phi(z|x)}&#x3D;\sum_z q_\phi(z|x) \log \frac{p(x|z,\theta)p(z)}{q_\phi(z|x)} &#x3D; \sum_z q_\phi(z|x) \log \frac{p(z)}{q_\phi(z|x)} + \sum_z q_\phi(z|x) \log p(x|z,\theta)&#x3D;-\text{KL}(q_\phi(z|x)||p(z)) + \mathbb{E}_{q_\phi(z|x)}[\log p(x|z,\theta)]$，对应 Encoder 不偏离先验、Decoder 能重构输入</li>
 <li>重参数化技巧：$z&#x3D;\mu_\phi(x)+\sigma_\phi(x)\odot \epsilon,\epsilon\sim \mathcal{N}(0,I)$</li>
+<li>HMM：$P(z_t|x_{1:t})&#x3D;P(x_t|z_t)\sum_{z_{t-1}} P(z_t|z_{t-1})P(z_{t-1}|x_{1:t-1})$，Viterbi 算法最小化隐变量序列误差，Forward-Backward 算法最小化隐变量状态误差</li>
+<li>线性动态系统：$P(z_t|x_{1:t})&#x3D;P(x_t|z_t)\int P(z_t|z_{t-1})P(z_{t-1}|x_{1:t-1}) \mathrm{d}z_{t-1}$，卡尔曼滤波假设高斯分布，粒子滤波用蒙特卡洛计算积分</li>
+</ol>
+<h3 id="4-采样方法"><a href="#4-采样方法" class="headerlink" title="4. 采样方法"></a>4. 采样方法</h3><ol>
+<li>蒙特卡洛积分：$I&#x3D;\int_{\Omega}f(x)\mathrm{d}x&#x3D;|\Omega|\mathbb{E}[f(X)]\approx \frac{|\Omega|}{N}\sum_{i&#x3D;1}^N f(x_i)$，$x_i\sim U(\Omega)$，有均方根误差 $\frac{|\Omega|\sigma}{\sqrt{N}}$，需要最小化 $\sigma$ 以降低误差</li>
+<li>重要性采样：$\int f(x)\mathrm{d}x&#x3D;\int \frac{f(x)}{g(x)}g(x)\mathrm{d}x&#x3D;\mathbb{E}<em>g\left[\frac{f(X)}{g(X)}\right]\approx \frac{1}{N}\sum</em>{i&#x3D;1}^N \frac{f(x_i)}{g(x_i)}$，$x_i\sim g(x)$，有最优重要性密度 $g^*(x)&#x3D;\frac{|f(x)|}{\int |f(x)|\mathrm{d}x}$，$g$ 与 $f$ 越相似方差越小</li>
+<li>控制变量法：辅助函数 $\mathbb{E}[h(X)]&#x3D;c,Y&#x3D;f(X)-\lambda (h(X)-c)$，有最优系数和对应方差 $\lambda^*&#x3D;\frac{\text{Cov}(f(X),h(X))}{\text{Var}(h(X))},\text{Var}(Y)&#x3D;\text{Var}(f(X))(1-\rho^2)$，$h$ 与 $f$ 越相关方差越小</li>
+<li>分层抽样：将 $\Omega$ 划分成 $K$ 个不相交子域，内部独立抽取样本，$N_k\propto \frac{|\Omega_k|}{|\Omega|}\sigma_k$ 时最小化方差</li>
+<li>对偶变量法：$U\sim U[0,1],I\approx \frac{1}{2N}\sum_{i&#x3D;1}^N (f(U_i)+f(1-U_i))$，有方差 $\frac{\sigma^2+\text{Cov}(f(U),f(1-U))}{2N}$，越负相关方差越小</li>
+<li>拒绝采样：从密度 $f(x)$ 采样时选取包络密度 $g(x)$ 和 $c\ge 1$，$f(x)\le cg(x)$，先从 $g$ 采样，再独立产生 $U\sim U[0,1]$，若 $U\le \frac{f(x)}{cg(x)}$ 则接受，否则拒绝（在 $cg(x)$ 下方采样，保留 $f(x)$ 下方的点，接受概率 $\frac{1}{c}$）</li>
+<li>拟蒙特卡洛 QMC：用确定性低差异序列代替伪随机数，更均匀地填满高维空间</li>
+<li>马尔可夫链蒙特卡洛 MCMC Metropolis-Hastings 算法：为了从密度 $\pi(x)$ 采样，从状态 $x$ 出发按建议分布 $q(\cdot|x)$ 生成候选 $y$，以概率 $\alpha(x,y)&#x3D;\min\left(1,\frac{\pi(y)q(x|y)}{\pi(x)q(y|x)}\right)$ 接受 $y$，否则保持 $x$，得到马尔可夫链 ${X_t}$，满足细致平衡 $\pi(x)p(x,y)&#x3D;\pi(x)q(y|x)\alpha(x,y)&#x3D;\pi(y)p(y,x)$，两边对 $x$ 积分得到平稳分布 $\int \pi(x)p(x,y)\mathrm{d}x&#x3D;\pi(y)$</li>
 </ol>
 
                 
@@ -423,7 +435,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年1月19日</div>
+          <div>2026年6月17日</div>
         </div>
       
       
@@ -465,8 +477,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/25Fall/Physics-B2/" title="大学物理B(2)">
-                        <span class="hidden-mobile">大学物理B(2)</span>
+                      <a href="/26Spring/EE/" title="电工电子技术基础">
+                        <span class="hidden-mobile">电工电子技术基础</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
