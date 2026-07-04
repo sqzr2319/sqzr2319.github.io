@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://sqzr2319.github.io/img/CSDIY-4/1.png">
 <meta property="article:published_time" content="2026-02-16T12:32:36.000Z">
-<meta property="article:modified_time" content="2026-07-04T16:35:20.073Z">
+<meta property="article:modified_time" content="2026-07-04T16:49:27.115Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="计算机">
 <meta property="article:tag" content="数学">
@@ -363,7 +363,7 @@
 <li>细致平衡：$\pi_x p(x,y) &#x3D; \pi_y p(y,x)$（两两平衡，强于平稳分布）</li>
 <li>循环把戏：$\mu_x(y)&#x3D;\sum_{n&#x3D;0}^\infty P_x(X_n&#x3D;y,T_x&gt;n)$ 为平稳测度</li>
 <li>双吸收态概率：$h(a)&#x3D;1,h(b)&#x3D;0,h(x)&#x3D;\sum_y p(x,y)h(y)&#x3D;P_x(T_a&lt;T_b)$</li>
-<li>吸收时间：$\mathbb{E}<em>x(T_A)&#x3D;1+\sum</em>{y\notin A} p(x,y)\mathbb{E}_y(T_A)$</li>
+<li>吸收时间：$\mathbb{E_x}(T_A)&#x3D;1+\sum_{y\notin A} p(x,y)\mathbb{E_y}(T_A)$</li>
 </ol>
 <h3 id="2-连续时间-Markov-链"><a href="#2-连续时间-Markov-链" class="headerlink" title="2. 连续时间 Markov 链"></a>2. 连续时间 Markov 链</h3><ol>
 <li>定义：$\forall 0\le s_0\lt \cdots\lt s_n\lt s,\forall i_0,\cdots,i_n,i,j,P(X_{t+s}&#x3D;j|X_{s_0}&#x3D;i_0,\cdots,X_{s_n}&#x3D;i_n,X_s&#x3D;i)&#x3D;P(X_{t}&#x3D;j|X_0&#x3D;i)$</li>
@@ -376,7 +376,7 @@
 <li>细致平衡：$\forall j\neq k,\pi(k)q(k,j)&#x3D;\pi(j)q(j,k)$，强于平稳分布</li>
 <li>嵌入链：记录原连续时间链跳转状态的离散时间链，每个状态停留一单位时间，转移概率为 $r(i,j)&#x3D;\frac{q(i,j)}{\lambda_i},\lambda_i&#x3D;\sum_{j\neq i} q(i,j)$</li>
 <li>离出分布：令 $V_A&#x3D;\min{t:X_t\in A}$，$h(i)&#x3D;P_i(X_{V_A}&#x3D;a)$，则 $h(a)&#x3D;1,h(b)&#x3D;0,b\in A-{a},h(i)&#x3D;\sum_j r(i,j)h(j)$</li>
-<li>首达时刻：停留时间加转移，$\mathbb{E}<em>iV_A&#x3D;\frac{1}{\lambda_i}+\sum</em>{j} r(i,j)\mathbb{E}_jV_A$</li>
+<li>首达时刻：停留时间加转移，$\mathbb{E_i}V_A&#x3D;\frac{1}{\lambda_i}+\sum_{j} r(i,j)\mathbb{E_j}V_A$</li>
 </ol>
 <h3 id="3-鞅"><a href="#3-鞅" class="headerlink" title="3. 鞅"></a>3. 鞅</h3><ol>
 <li>Poisson 过程：事件发生间隔为指数分布</li>
@@ -401,7 +401,7 @@
 <h3 id="5-随机微分方程"><a href="#5-随机微分方程" class="headerlink" title="5. 随机微分方程"></a>5. 随机微分方程</h3><ol>
 <li>定义：$\mathrm{d}X_t&#x3D;b(t,X_t)\mathrm{d}t+\sigma(t,X_t)\mathrm{d}B_t$，有 Euler-Maruyama 方法数值解 $X_{t+\delta t}&#x3D;X_t+b(t,X_t)\delta t+\sigma(t,X_t)\sqrt{\delta t}Z$，$Z\sim N(0,1)$</li>
 <li>生成元：$\mathcal{L_t}f(x)&#x3D;\lim_{h\to 0}\frac{\mathbb{E}[f(X_{t+h})|X_t&#x3D;x]-f(x)}{h}&#x3D;\frac{\mathrm{d}f(x)}{\mathrm{d}t}$，对 SDE 由 Itô 公式有 $\mathcal{L_t}f(x)&#x3D;b(t,x)f_x(t,x)+\frac{1}{2}\sigma^2(t,x)f_{xx}(t,x)$</li>
-<li>伴随算子：$\langle \mathcal{L_t}f,p\rangle&#x3D;\langle f,\mathcal{L_t}^<em>p\rangle$，对 SDE 有 Fokker-Planck 前向方程 $\mathcal{L_t}^</em>p&#x3D;\frac{\partial p(t,x)}{\partial t}&#x3D;-\frac{\partial}{\partial x}(b(t,x)p(t,x))+\frac{1}{2}\frac{\partial^2}{\partial x^2}(\sigma^2(t,x)p(t,x))$</li>
+<li>伴随算子：$\langle \mathcal{L_t}f,p\rangle&#x3D;\langle f,\mathcal{L_t}^\star p\rangle$，对 SDE 有 Fokker-Planck 前向方程 $\mathcal{L_t}^\star p&#x3D;\frac{\partial p(t,x)}{\partial t}&#x3D;-\frac{\partial}{\partial x}(b(t,x)p(t,x))+\frac{1}{2}\frac{\partial^2}{\partial x^2}(\sigma^2(t,x)p(t,x))$</li>
 <li>Feynman-Kac 后向方程：$v(t,x)&#x3D;\mathbb{E}[g(X_T)|X_t&#x3D;x]$，则 $\frac{\partial v(t,x)}{\partial t}+\mathcal{L_t}v(t,x)&#x3D;0$，边界条件 $v(T,x)&#x3D;g(x)$</li>
 </ol>
 <h2 id="三、微分几何"><a href="#三、微分几何" class="headerlink" title="三、微分几何"></a>三、微分几何</h2><h3 id="1-张量"><a href="#1-张量" class="headerlink" title="1. 张量"></a>1. 张量</h3><ol>
@@ -439,7 +439,7 @@
 <li>切向量：存在可微曲线 $\gamma:[0,1]\to X\subset \mathbb{R}^n$ 满足 $\gamma(0)&#x3D;p\in X,\gamma^\prime(0)&#x3D;\lim_{t\to 0^+}\frac{\gamma(t)-\gamma(0)}{t}&#x3D;v$</li>
 <li>切空间：$\forall p\in X\subset \mathbb{R}^n$，所有可能的切向量构成一个 $k$ 维子空间 $T_pX$，称 $X$ 为一个可微 $k$-set</li>
 <li>可微映射：$f:X\to Y$，若在 $p\in X$ 处存在线性映射 $L:T_pX\to T_{f(p)}Y$，使得对 $X$ 上任一满足 $\gamma(0)&#x3D;p,\gamma^\prime(0)&#x3D;v$ 的曲线有 $f_\star(\gamma)(t)$ 在 $t&#x3D;0$ 处的导数为 $Lv$，记 $L:f_\star|_p$</li>
-<li>协变张量：$f:X\to\mathbb{R}$ 诱导出 $f_\star|<em>p:T_pX\to T</em>{f(p)}\mathbb{R}&#x3D;\mathbb{R}$，记 $f_\star|_p&#x3D;\mathrm{d}f|_p$，方向导数 $df|_p(v)$</li>
+<li>协变张量：$f:X\to\mathbb{R}$ 诱导出 $f_\star|_p:T_pX\to T_{f(p)}\mathbb{R}&#x3D;\mathbb{R}$，记 $f_\star|_p&#x3D;\mathrm{d}f|_p$，方向导数 $df|_p(v)$</li>
 </ol>
 <h2 id="四、博弈论"><a href="#四、博弈论" class="headerlink" title="四、博弈论"></a>四、博弈论</h2><ol>
 <li>核心：自身的策略要<strong>最大化</strong>对方的策略可能带来的<strong>最小收益</strong></li>

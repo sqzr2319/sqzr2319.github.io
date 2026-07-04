@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://sqzr2319.github.io/img/43Class-13/2.png">
 <meta property="og:image" content="https://sqzr2319.github.io/img/43Class-13/3.png">
 <meta property="article:published_time" content="2026-07-01T12:49:00.000Z">
-<meta property="article:modified_time" content="2026-07-01T15:33:59.988Z">
+<meta property="article:modified_time" content="2026-07-04T17:05:53.843Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="计算机">
 <meta property="article:tag" content="肆叁小灶">
@@ -243,7 +243,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          8.2k 字
+          8k 字
         
       </span>
     
@@ -254,7 +254,7 @@
         
         
         
-          69 分钟
+          68 分钟
         
       </span>
     
@@ -301,12 +301,12 @@
 
 <p>笃实 43 班的同学们大家好。众所周知《人工智能基础》课程由于课时不够，最后两章关于状态空间模型与采样方法的内容没有讲完。然而，其中涉及到的蒙特卡洛方法以及扩散模型等内容同样重要，因此我们决定用一期推送来补充这部分内容，希望能对大家有所帮助。</p>
 <h2 id="一、隐马尔可夫模型"><a href="#一、隐马尔可夫模型" class="headerlink" title="一、隐马尔可夫模型"></a>一、隐马尔可夫模型</h2><p>在现实生活中，很多序列数据本身并不满足 Markov 性质，但如果我们引入隐藏状态，往往能够发现隐藏状态之间存在着 Markov 依赖关系。这就是<strong>隐马尔可夫模型</strong>（Hidden Markov Model, HMM）的核心思想。</p>
-<h3 id="1-1-从-Markov-链到-HMM"><a href="#1-1-从-Markov-链到-HMM" class="headerlink" title="1.1 从 Markov 链到 HMM"></a>1.1 从 Markov 链到 HMM</h3><p>回顾一下 Markov 模型的定义：如果一个随机过程满足 $P(\mathbf{x}<em>{t+1}|\mathbf{x}<em>t,\ldots,\mathbf{x}<em>1)&#x3D;P(\mathbf{x}</em>{t+1}|\mathbf{x}<em>t)$，即下一个状态只依赖于当前状态，与历史状态无关，那么我们就称这个随机过程是一个 Markov 链。Markov 链可以用一个<strong>状态转移矩阵</strong> $A$ 来描述，其中 $A</em>{ij}&#x3D;P(x</em>{t+1,j}&#x3D;1|x</em>{t,i}&#x3D;1)$ 表示从状态 $i$ 转移到状态 $j$ 的概率。</p>
+<h3 id="1-1-从-Markov-链到-HMM"><a href="#1-1-从-Markov-链到-HMM" class="headerlink" title="1.1 从 Markov 链到 HMM"></a>1.1 从 Markov 链到 HMM</h3><p>回顾一下 Markov 模型的定义：如果一个随机过程满足 $P(\mathbf{x_{t+1}}|\mathbf{x_t},\ldots,\mathbf{x_1})&#x3D;P(\mathbf{x_{t+1}}|\mathbf{x_t})$，即下一个状态只依赖于当前状态，与历史状态无关，那么我们就称这个随机过程是一个 Markov 链。Markov 链可以用一个<strong>状态转移矩阵</strong> $A$ 来描述，其中 $A_{ij}&#x3D;P(x_{t+1,j}&#x3D;1|x_{t,i}&#x3D;1)$ 表示从状态 $i$ 转移到状态 $j$ 的概率。</p>
 <p>但在实际应用中，我们观测到的数据往往不满足 Markov 性质。例如，我们想根据人们是否带伞来推测天气情况（晴天或雨天）。虽然观测数据”是否带伞”本身不满足 Markov 性质，但隐藏状态”天气”却是一个 Markov 链：今天的天气只依赖于昨天的天气，与更早的天气无关。这就是 HMM 的应用场景。</p>
-<h3 id="1-2-HMM-的定义"><a href="#1-2-HMM-的定义" class="headerlink" title="1.2 HMM 的定义"></a>1.2 HMM 的定义</h3><p>隐马尔可夫模型由一系列隐藏状态 ${\mathbf{z}_t}$ 和观测值 ${\mathbf{x}_t}$ 组成，满足以下性质：</p>
+<h3 id="1-2-HMM-的定义"><a href="#1-2-HMM-的定义" class="headerlink" title="1.2 HMM 的定义"></a>1.2 HMM 的定义</h3><p>隐马尔可夫模型由一系列隐藏状态 ${\mathbf{z_t}}$ 和观测值 ${\mathbf{x_t}}$ 组成，满足以下性质：</p>
 <ul>
-<li><strong>转移分布</strong>：隐藏状态 $\mathbf{z}<em>t$ 是一个 Markov 链，即 $P(\mathbf{z}<em>t|\mathbf{z}</em>{t-1},\mathbf{x}</em>{1:t-1})&#x3D;P(\mathbf{z}<em>t|\mathbf{z}</em>{t-1})$</li>
-<li><strong>发射分布</strong>：观测值 $\mathbf{x}<em>t$ 只依赖于当前的隐藏状态，即 $P(\mathbf{x}<em>t|\mathbf{z}</em>{1:t},\mathbf{x}</em>{1:t-1})&#x3D;P(\mathbf{x}_t|\mathbf{z}_t)$</li>
+<li><strong>转移分布</strong>：隐藏状态 $\mathbf{z_t}$ 是一个 Markov 链，即 $P(\mathbf{z_t}|\mathbf{z_{t-1}},\mathbf{x_{1:t-1}})&#x3D;P(\mathbf{z_t}|\mathbf{z_{t-1}})$</li>
+<li><strong>发射分布</strong>：观测值 $\mathbf{x_t}$ 只依赖于当前的隐藏状态，即 $P(\mathbf{x_t}|\mathbf{z_{1:t}},\mathbf{x_{1:t-1}})&#x3D;P(\mathbf{x_t}|\mathbf{z_t})$</li>
 </ul>
 <p>与高斯混合模型（GMM）相比，HMM 的隐藏状态不仅表示数据的聚类，还具有时间上的顺序和依赖关系。这使得 HMM 能够很好地建模序列数据，如语音识别、DNA 序列分析、自然语言处理等领域都有广泛应用。</p>
 <p>以天气预报为例，假设隐藏状态只有”晴天”和”雨天”两种，观测值只有”带伞”和”不带伞”两种。我们可以用转移矩阵和发射矩阵来描述这个 HMM：</p>
@@ -349,124 +349,124 @@
 </tr>
 </tbody></table>
 <p><img src="/img/43Class-13/1.png" srcset="/img/loading.gif" lazyload alt="隐马尔可夫模型示意图"></p>
-<h3 id="1-3-HMM-的推断问题"><a href="#1-3-HMM-的推断问题" class="headerlink" title="1.3 HMM 的推断问题"></a>1.3 HMM 的推断问题</h3><p>给定观测序列 $\mathbf{X}&#x3D;{\mathbf{x}_1,\ldots,\mathbf{x}_T}$，我们希望推断隐藏状态序列 $\mathbf{Z}&#x3D;{\mathbf{z}_1,\ldots,\mathbf{z}_T}$。根据优化目标的不同，有两种常见的推断方法：</p>
+<h3 id="1-3-HMM-的推断问题"><a href="#1-3-HMM-的推断问题" class="headerlink" title="1.3 HMM 的推断问题"></a>1.3 HMM 的推断问题</h3><p>给定观测序列 $\mathbf{X}&#x3D;{\mathbf{x_1},\ldots,\mathbf{x_T}}$，我们希望推断隐藏状态序列 $\mathbf{Z}&#x3D;{\mathbf{z_1},\ldots,\mathbf{z_T}}$。根据优化目标的不同，有两种常见的推断方法：</p>
 <ol>
 <li><p><strong>最小化序列错误率</strong>：$\hat{\mathbf{Z}}&#x3D;\arg\max_{\mathbf{Z}}P(\mathbf{Z}|\mathbf{X})$，即找到使整个序列概率最大的状态序列。这个问题可以用 <strong>Viterbi 算法</strong>求解。</p>
 </li>
-<li><p><strong>最小化状态错误率</strong>：$\hat{\mathbf{z}}<em>t&#x3D;\arg\max</em>{\mathbf{z}_t}P(\mathbf{z}_t|\mathbf{X})$，即对每个时刻分别找到概率最大的状态。这个问题可以用 <strong>Forward-Backward 算法</strong>求解。</p>
+<li><p><strong>最小化状态错误率</strong>：$\hat{\mathbf{z_t}}&#x3D;\arg\max_{\mathbf{z_t}}P(\mathbf{z_t}|\mathbf{X})$，即对每个时刻分别找到概率最大的状态。这个问题可以用 <strong>Forward-Backward 算法</strong>求解。</p>
 </li>
 </ol>
 <p>两种方法的区别在于：Viterbi 算法保证找到的是一条完整的、概率最大的路径；而 Forward-Backward 算法对每个时刻独立优化，可能导致相邻时刻的状态转移概率为零（即找到的路径在原模型中不存在）。</p>
-<h3 id="1-4-Viterbi-算法"><a href="#1-4-Viterbi-算法" class="headerlink" title="1.4 Viterbi 算法"></a>1.4 Viterbi 算法</h3><p>Viterbi 算法的核心思想是<strong>动态规划</strong>。我们将问题转化为在格子图（lattice diagram）中寻找最短路径的问题：每一列代表一个时刻，每一行代表一个可能的状态，从时刻 $t-1$ 到时刻 $t$ 的边权重为 $\psi_t(\mathbf{z}<em>t,\mathbf{z}</em>{t-1})&#x3D;-\log P(\mathbf{z}<em>t|\mathbf{z}</em>{t-1})$，节点权重为 $\phi_t(\mathbf{z}_t)&#x3D;-\log P(\mathbf{x}_t|\mathbf{z}_t)$。</p>
+<h3 id="1-4-Viterbi-算法"><a href="#1-4-Viterbi-算法" class="headerlink" title="1.4 Viterbi 算法"></a>1.4 Viterbi 算法</h3><p>Viterbi 算法的核心思想是<strong>动态规划</strong>。我们将问题转化为在格子图（lattice diagram）中寻找最短路径的问题：每一列代表一个时刻，每一行代表一个可能的状态，从时刻 $t-1$ 到时刻 $t$ 的边权重为 $\psi_t(\mathbf{z_t},\mathbf{z_{t-1}})&#x3D;-\log P(\mathbf{z_t}|\mathbf{z_{t-1}})$，节点权重为 $\phi_t(\mathbf{z_t})&#x3D;-\log P(\mathbf{x_t}|\mathbf{z_t})$。</p>
 <p>算法流程如下：</p>
 <ol>
-<li><strong>初始化</strong>：对每个初始状态 $\mathbf{z}_1$，计算 $f_1(\mathbf{z}_1)&#x3D;\phi_1(\mathbf{z}_1)$</li>
-<li><strong>递推</strong>：对于 $t&#x3D;2,\ldots,T$，计算 $f_t(\mathbf{z}<em>t)&#x3D;\phi_t(\mathbf{z}<em>t)+\min</em>{\mathbf{z}</em>{t-1}}[\psi_t(\mathbf{z}<em>t,\mathbf{z}</em>{t-1})+f_{t-1}(\mathbf{z}_{t-1})]$</li>
-<li><strong>回溯</strong>：找到 $\hat{\mathbf{z}}<em>T&#x3D;\arg\min</em>{\mathbf{z}_T}f_T(\mathbf{z}_T)$，然后从后向前回溯得到完整路径</li>
+<li><strong>初始化</strong>：对每个初始状态 $\mathbf{z_1}$，计算 $f_1(\mathbf{z_1})&#x3D;\phi_1(\mathbf{z_1})$</li>
+<li><strong>递推</strong>：对于 $t&#x3D;2,\ldots,T$，计算 $f_t(\mathbf{z_t})&#x3D;\phi_t(\mathbf{z_t})+\min_{\mathbf{z_{t-1}}}[\psi_t(\mathbf{z_t},\mathbf{z_{t-1}})+f_{t-1}(\mathbf{z_{t-1}})]$</li>
+<li><strong>回溯</strong>：找到 $\hat{\mathbf{z_T}}&#x3D;\arg\min_{\mathbf{z_T}}f_T(\mathbf{z_T})$，然后从后向前回溯得到完整路径</li>
 </ol>
 <p>算法的时间复杂度为 $O(TK^2)$，其中 $T$ 是序列长度，$K$ 是状态数。相比暴力枚举所有可能的路径（共 $K^T$ 条），Viterbi 算法的效率大大提高。</p>
 <h3 id="1-5-Forward-Backward-算法"><a href="#1-5-Forward-Backward-算法" class="headerlink" title="1.5 Forward-Backward 算法"></a>1.5 Forward-Backward 算法</h3><p>Forward-Backward 算法分为两个步骤：</p>
-<p><strong>Forward 算法</strong>用于计算 $\alpha_t(\mathbf{z}_t)&#x3D;P(\mathbf{z}<em>t|\mathbf{x}</em>{1:t})$，即给定前 $t$ 个观测值，当前状态的后验概率。递推公式为：</p>
-<p>$$\alpha_t(\mathbf{z}<em>t)&#x3D;c_t P(\mathbf{x}<em>t|\mathbf{z}<em>t)\sum</em>{\mathbf{z}</em>{t-1}}P(\mathbf{z}<em>t|\mathbf{z}</em>{t-1})\alpha</em>{t-1}(\mathbf{z}_{t-1})$$</p>
+<p><strong>Forward 算法</strong>用于计算 $\alpha_t(\mathbf{z_t})&#x3D;P(\mathbf{z_t}|\mathbf{x_{1:t}})$，即给定前 $t$ 个观测值，当前状态的后验概率。递推公式为：</p>
+<p>$$\alpha_t(\mathbf{z_t})&#x3D;c_t P(\mathbf{x_t}|\mathbf{z_t})\sum_{\mathbf{z_{t-1}}}P(\mathbf{z_t}|\mathbf{z_{t-1}})\alpha_{t-1}(\mathbf{z_{t-1}})$$</p>
 <p>其中 $c_t$ 是归一化常数。直观理解：我们先根据上一时刻的后验概率和转移矩阵<strong>预测</strong>当前状态的先验概率，再根据当前观测值<strong>更新</strong>为后验概率。</p>
-<p><strong>Backward 算法</strong>用于计算 $\beta_t(\mathbf{z}<em>t)&#x3D;P(\mathbf{x}</em>{t+1:T}|\mathbf{z}_t)$，即给定当前状态，未来观测值的概率。递推公式为：</p>
-<p>$$\beta_t(\mathbf{z}<em>t)&#x3D;\sum</em>{\mathbf{z}<em>{t+1}}P(\mathbf{x}</em>{t+1}|\mathbf{z}<em>{t+1})P(\mathbf{z}</em>{t+1}|\mathbf{z}<em>t)\beta</em>{t+1}(\mathbf{z}_{t+1})$$</p>
-<p>将两者结合，我们就可以计算每个时刻的边缘后验概率：$P(\mathbf{z}<em>t|\mathbf{x}</em>{1:T})\propto\alpha_t(\mathbf{z}_t)\beta_t(\mathbf{z}_t)$。</p>
+<p><strong>Backward 算法</strong>用于计算 $\beta_t(\mathbf{z_t})&#x3D;P(\mathbf{x_{t+1:T}}|\mathbf{z_t})$，即给定当前状态，未来观测值的概率。递推公式为：</p>
+<p>$$\beta_t(\mathbf{z_t})&#x3D;\sum_{\mathbf{z_{t+1}}}P(\mathbf{x_{t+1}}|\mathbf{z_{t+1}})P(\mathbf{z_{t+1}}|\mathbf{z_t})\beta_{t+1}(\mathbf{z_{t+1}})$$</p>
+<p>将两者结合，我们就可以计算每个时刻的边缘后验概率：$P(\mathbf{z_t}|\mathbf{x_{1:T}})\propto\alpha_t(\mathbf{z_t})\beta_t(\mathbf{z_t})$。</p>
 <p>这个算法也是 HMM 的 <strong>EM 算法</strong>的 E 步：E 步计算隐藏状态的后验概率，M 步根据后验概率更新转移矩阵和发射矩阵的参数。</p>
 <h2 id="二、线性动态系统"><a href="#二、线性动态系统" class="headerlink" title="二、线性动态系统"></a>二、线性动态系统</h2><p>隐马尔可夫模型虽然强大，但只能处理离散的隐藏状态。在很多实际应用中，隐藏状态是连续的，例如跟踪物体的位置、速度，或者监测病人的血压变化等。这时我们需要使用<strong>线性动态系统</strong>（Linear Dynamical System, LDS）。</p>
 <h3 id="2-1-从-HMM-到-LDS"><a href="#2-1-从-HMM-到-LDS" class="headerlink" title="2.1 从 HMM 到 LDS"></a>2.1 从 HMM 到 LDS</h3><p>线性动态系统的结构与 HMM 几乎完全相同，唯一的区别是：LDS 的隐藏状态和观测值都是<strong>连续变量</strong>，而不是离散的类别标签。具体而言，LDS 由以下方程定义：</p>
 <ul>
-<li><strong>转移方程</strong>：$\mathbf{z}<em>t&#x3D;\mathbf{A}\mathbf{z}</em>{t-1}+\mathbf{w}_t$，其中 $\mathbf{w}_t\sim\mathcal{N}(\mathbf{0},\mathbf{\Gamma})$ 是过程噪声</li>
-<li><strong>观测方程</strong>：$\mathbf{x}_t&#x3D;\mathbf{C}\mathbf{z}_t+\mathbf{v}_t$，其中 $\mathbf{v}_t\sim\mathcal{N}(\mathbf{0},\mathbf{\Sigma})$ 是观测噪声</li>
+<li><strong>转移方程</strong>：$\mathbf{z_t}&#x3D;\mathbf{A}\mathbf{z_{t-1}}+\mathbf{w_t}$，其中 $\mathbf{w_t}\sim\mathcal{N}(\mathbf{0},\mathbf{\Gamma})$ 是过程噪声</li>
+<li><strong>观测方程</strong>：$\mathbf{x_t}&#x3D;\mathbf{C}\mathbf{z_t}+\mathbf{v_t}$，其中 $\mathbf{v_t}\sim\mathcal{N}(\mathbf{0},\mathbf{\Sigma})$ 是观测噪声</li>
 </ul>
 <p>这里 $\mathbf{A}$ 是状态转移矩阵，$\mathbf{C}$ 是观测矩阵，$\mathbf{\Gamma}$ 和 $\mathbf{\Sigma}$ 分别是过程噪声和观测噪声的协方差矩阵。</p>
 <p>例如，假设我们要跟踪一个人的收缩压 $P_t$，但测量仪器存在误差。我们可以建立如下模型：$P_t&#x3D;P_{t-1}+w_t$（血压有随机波动）和 $M_t&#x3D;P_t+v_t$（测量值有误差），这就是一个简单的 LDS。</p>
-<h3 id="2-2-Kalman-滤波"><a href="#2-2-Kalman-滤波" class="headerlink" title="2.2 Kalman 滤波"></a>2.2 Kalman 滤波</h3><p>对于 LDS 的推断问题，我们希望根据观测序列 $\mathbf{x}_{1:t}$ 来估计当前的隐藏状态 $\mathbf{z}_t$。如果直接套用 HMM 的 Forward 算法：</p>
-<p>$$P(\mathbf{z}<em>t|\mathbf{x}</em>{1:t})&#x3D;c_t P(\mathbf{x}<em>t|\mathbf{z}<em>t)\int P(\mathbf{z}<em>t|\mathbf{z}</em>{t-1})P(\mathbf{z}</em>{t-1}|\mathbf{x}</em>{1:t-1})d\mathbf{z}_{t-1}$$</p>
+<h3 id="2-2-Kalman-滤波"><a href="#2-2-Kalman-滤波" class="headerlink" title="2.2 Kalman 滤波"></a>2.2 Kalman 滤波</h3><p>对于 LDS 的推断问题，我们希望根据观测序列 $\mathbf{x_{1:t}}$ 来估计当前的隐藏状态 $\mathbf{z_t}$。如果直接套用 HMM 的 Forward 算法：</p>
+<p>$$P(\mathbf{z_t}|\mathbf{x_{1:t}})&#x3D;c_t P(\mathbf{x_t}|\mathbf{z_t})\int P(\mathbf{z_t}|\mathbf{z_{t-1}})P(\mathbf{z_{t-1}}|\mathbf{x_{1:t-1}})d\mathbf{z_{t-1}}$$</p>
 <p>我们会发现，由于积分的存在，分布的形式会变得越来越复杂，难以计算。</p>
 <p>好消息是：如果我们假设所有分布都是<strong>高斯分布</strong>，那么通过线性变换和加法运算，分布的形式不会改变，仍然是高斯分布。这就是 <strong>Kalman 滤波</strong>的基本思想。</p>
-<p>具体而言，假设 $P(\mathbf{z}<em>{t-1}|\mathbf{x}</em>{1:t-1})&#x3D;\mathcal{N}(\boldsymbol{\mu}<em>{t-1},\mathbf{V}</em>{t-1})$，Kalman 滤波通过以下步骤更新状态估计：</p>
+<p>具体而言，假设 $P(\mathbf{z_{t-1}}|\mathbf{x_{1:t-1}})&#x3D;\mathcal{N}(\boldsymbol{\mu_{t-1}},\mathbf{V_{t-1}})$，Kalman 滤波通过以下步骤更新状态估计：</p>
 <ol>
 <li><p><strong>预测步</strong>：根据转移方程预测先验分布</p>
 <ul>
-<li>$\tilde{\boldsymbol{\mu}}<em>t&#x3D;\mathbf{A}\boldsymbol{\mu}</em>{t-1}$</li>
-<li>$\mathbf{P}<em>t&#x3D;\mathbf{A}\mathbf{V}</em>{t-1}\mathbf{A}^T+\mathbf{\Gamma}$</li>
+<li>$\tilde{\boldsymbol{\mu_t}}&#x3D;\mathbf{A}\boldsymbol{\mu_{t-1}}$</li>
+<li>$\mathbf{P_t}&#x3D;\mathbf{A}\mathbf{V_{t-1}}\mathbf{A}^T+\mathbf{\Gamma}$</li>
 </ul>
 </li>
 <li><p><strong>更新步</strong>：根据观测值更新后验分布</p>
 <ul>
-<li>$\mathbf{K}_t&#x3D;\mathbf{P}_t\mathbf{C}^T(\mathbf{C}\mathbf{P}_t\mathbf{C}^T+\mathbf{\Sigma})^{-1}$（Kalman 增益矩阵）</li>
-<li>$\boldsymbol{\mu}_t&#x3D;\tilde{\boldsymbol{\mu}}_t+\mathbf{K}_t(\mathbf{x}_t-\mathbf{C}\tilde{\boldsymbol{\mu}}_t)$</li>
-<li>$\mathbf{V}_t&#x3D;(\mathbf{I}-\mathbf{K}_t\mathbf{C})\mathbf{P}_t$</li>
+<li>$\mathbf{K_t}&#x3D;\mathbf{P_t}\mathbf{C}^T(\mathbf{C}\mathbf{P_t}\mathbf{C}^T+\mathbf{\Sigma})^{-1}$（Kalman 增益矩阵）</li>
+<li>$\boldsymbol{\mu_t}&#x3D;\tilde{\boldsymbol{\mu_t}}+\mathbf{K_t}(\mathbf{x_t}-\mathbf{C}\tilde{\boldsymbol{\mu_t}})$</li>
+<li>$\mathbf{V_t}&#x3D;(\mathbf{I}-\mathbf{K_t}\mathbf{C})\mathbf{P_t}$</li>
 </ul>
 </li>
 </ol>
-<p>Kalman 增益矩阵 $\mathbf{K}_t$ 的作用是权衡预测值和观测值的可信度：如果先验方差 $\mathbf{P}_t$ 很大（预测不准确），那么 $\mathbf{K}_t$ 会更大，更信任观测值；反之则更信任预测值。</p>
+<p>Kalman 增益矩阵 $\mathbf{K_t}$ 的作用是权衡预测值和观测值的可信度：如果先验方差 $\mathbf{P_t}$ 很大（预测不准确），那么 $\mathbf{K_t}$ 会更大，更信任观测值；反之则更信任预测值。</p>
 <h3 id="2-3-粒子滤波"><a href="#2-3-粒子滤波" class="headerlink" title="2.3 粒子滤波"></a>2.3 粒子滤波</h3><p>Kalman 滤波要求所有分布都是高斯分布，且转移方程和观测方程都是线性的。但在很多实际应用中，这些假设并不成立。例如，在机器人定位问题中，隐藏状态的后验分布可能是多峰的（机器人可能在多个位置之一），此时 Kalman 滤波就失效了。</p>
-<p><strong>粒子滤波</strong>（Particle Filter）是一种更通用的方法，它使用蒙特卡洛方法（将在第四节中详细介绍）来近似任意分布。基本思想是：用一组带权重的样本（称为”粒子”）来表示后验分布 $P(\mathbf{z}<em>t|\mathbf{x}</em>{1:t})$。</p>
+<p><strong>粒子滤波</strong>（Particle Filter）是一种更通用的方法，它使用蒙特卡洛方法（将在第四节中详细介绍）来近似任意分布。基本思想是：用一组带权重的样本（称为”粒子”）来表示后验分布 $P(\mathbf{z_t}|\mathbf{x_{1:t}})$。</p>
 <p>算法流程如下：</p>
 <ol>
-<li><strong>初始化</strong>：从先验分布 $P(\mathbf{z}_0)$ 中采样 $N$ 个粒子</li>
-<li><strong>传播</strong>：对每个粒子，根据转移分布采样下一时刻的状态：$\mathbf{z}_t^{(i)}\sim P(\mathbf{z}<em>t|\mathbf{z}</em>{t-1}^{(i)})$</li>
-<li><strong>加权</strong>：根据观测值计算每个粒子的权重：$w_t^{(i)}\propto P(\mathbf{x}_t|\mathbf{z}_t^{(i)})$</li>
+<li><strong>初始化</strong>：从先验分布 $P(\mathbf{z_0})$ 中采样 $N$ 个粒子</li>
+<li><strong>传播</strong>：对每个粒子，根据转移分布采样下一时刻的状态：$\mathbf{z_t}^{(i)}\sim P(\mathbf{z_t}|\mathbf{z_{t-1}}^{(i)})$</li>
+<li><strong>加权</strong>：根据观测值计算每个粒子的权重：$w_t^{(i)}\propto P(\mathbf{x_t}|\mathbf{z_t}^{(i)})$</li>
 <li><strong>重采样</strong>：根据权重重新采样 $N$ 个粒子（权重大的粒子被采样的概率更高）</li>
 </ol>
 <p>通过不断迭代，粒子会逐渐聚集在后验概率较高的区域，从而近似后验分布。粒子滤波的优点是可以处理任意的非线性、非高斯系统，缺点是需要大量的粒子才能得到准确的近似，计算代价较高。</p>
 <h2 id="三、扩散模型"><a href="#三、扩散模型" class="headerlink" title="三、扩散模型"></a>三、扩散模型</h2><p>近年来，<strong>扩散模型</strong>（Diffusion Probabilistic Model）在图像生成领域取得了巨大成功，甚至超越了 GAN 的性能。著名的 DALL-E 2、Stable Diffusion、Midjourney 等文生图模型都基于扩散模型。扩散模型的核心思想来源于非平衡态热力学，通过逐步添加噪声将数据转化为纯噪声，再学习逆向的去噪过程来生成新数据。</p>
 <p><img src="/img/43Class-13/2.png" srcset="/img/loading.gif" lazyload alt="扩散模型示意图"></p>
-<h3 id="3-1-前向扩散过程"><a href="#3-1-前向扩散过程" class="headerlink" title="3.1 前向扩散过程"></a>3.1 前向扩散过程</h3><p>扩散模型包含两个过程：<strong>前向扩散过程</strong>和<strong>反向去噪过程</strong>。前向扩散过程是固定的，不需要学习，其作用是逐步将数据 $\mathbf{x}_0$ 转化为纯噪声 $\mathbf{x}_T$。</p>
+<h3 id="3-1-前向扩散过程"><a href="#3-1-前向扩散过程" class="headerlink" title="3.1 前向扩散过程"></a>3.1 前向扩散过程</h3><p>扩散模型包含两个过程：<strong>前向扩散过程</strong>和<strong>反向去噪过程</strong>。前向扩散过程是固定的，不需要学习，其作用是逐步将数据 $\mathbf{x_0}$ 转化为纯噪声 $\mathbf{x_T}$。</p>
 <p>具体而言，前向扩散过程定义为一个 Markov 链：</p>
-<p>$$q(\mathbf{x}<em>t|\mathbf{x}</em>{t-1})&#x3D;\mathcal{N}(\mathbf{x}<em>t;\sqrt{1-\beta_t}\mathbf{x}</em>{t-1},\beta_t\mathbf{I})$$</p>
+<p>$$q(\mathbf{x_t}|\mathbf{x_{t-1}})&#x3D;\mathcal{N}(\mathbf{x_t};\sqrt{1-\beta_t}\mathbf{x_{t-1}},\beta_t\mathbf{I})$$</p>
 <p>即每一步给数据添加一点高斯噪声。通过重参数化技巧，我们可以写成：</p>
-<p>$$\mathbf{x}<em>t&#x3D;\sqrt{1-\beta_t}\mathbf{x}</em>{t-1}+\sqrt{\beta_t}\boldsymbol{\epsilon}<em>{t-1},\quad\boldsymbol{\epsilon}</em>{t-1}\sim\mathcal{N}(\mathbf{0},\mathbf{I})$$</p>
-<p>一个重要的性质是：我们可以直接从 $\mathbf{x}_0$ 采样得到任意时刻的 $\mathbf{x}_t$，而不需要逐步迭代。定义 $\alpha_t&#x3D;1-\beta_t$ 和 $\bar{\alpha}<em>t&#x3D;\prod</em>{s&#x3D;1}^t\alpha_s$，可以得到<strong>扩散核</strong>（Diffusion Kernel）：</p>
-<p>$$q(\mathbf{x}_t|\mathbf{x}_0)&#x3D;\mathcal{N}(\mathbf{x}_t;\sqrt{\bar{\alpha}_t}\mathbf{x}_0,(1-\bar{\alpha}_t)\mathbf{I})$$</p>
-<p>也就是说，$\mathbf{x}_t&#x3D;\sqrt{\bar{\alpha}_t}\mathbf{x}_0+\sqrt{1-\bar{\alpha}_t}\boldsymbol{\epsilon}$，其中 $\boldsymbol{\epsilon}\sim\mathcal{N}(\mathbf{0},\mathbf{I})$。</p>
-<p>噪声调度 ${\beta_t}$ 的设计需要满足：当 $t&#x3D;T$ 时，$\bar{\alpha}_T\approx 0$，即 $q(\mathbf{x}_T|\mathbf{x}_0)\approx\mathcal{N}(\mathbf{0},\mathbf{I})$，数据已经完全变成了纯噪声。常用的噪声调度包括线性调度和余弦调度。</p>
-<h3 id="3-2-反向去噪过程"><a href="#3-2-反向去噪过程" class="headerlink" title="3.2 反向去噪过程"></a>3.2 反向去噪过程</h3><p>生成过程就是反向去噪：从纯噪声 $\mathbf{x}_T\sim\mathcal{N}(\mathbf{0},\mathbf{I})$ 开始，逐步去噪得到 $\mathbf{x}_0$。理想情况下，我们希望反向过程满足：</p>
-<p>$$p(\mathbf{x}_{t-1}|\mathbf{x}<em>t)\propto q(\mathbf{x}</em>{t-1})q(\mathbf{x}<em>t|\mathbf{x}</em>{t-1})$$</p>
-<p>但这个分布在生成过程中是无法计算的（因为 $q(\mathbf{x}<em>{t-1})$ 未知）。不过，有一个重要的理论结果：如果每一步的噪声 $\beta_t$ 足够小，那么 $q(\mathbf{x}</em>{t-1}|\mathbf{x}_t,\mathbf{x}_0)$ 也是一个高斯分布。</p>
+<p>$$\mathbf{x_t}&#x3D;\sqrt{1-\beta_t}\mathbf{x_{t-1}}+\sqrt{\beta_t}\boldsymbol{\epsilon_{t-1}},\quad\boldsymbol{\epsilon_{t-1}}\sim\mathcal{N}(\mathbf{0},\mathbf{I})$$</p>
+<p>一个重要的性质是：我们可以直接从 $\mathbf{x_0}$ 采样得到任意时刻的 $\mathbf{x_t}$，而不需要逐步迭代。定义 $\alpha_t&#x3D;1-\beta_t$ 和 $\bar{\alpha_t}&#x3D;\prod_{s&#x3D;1}^t\alpha_s$，可以得到<strong>扩散核</strong>（Diffusion Kernel）：</p>
+<p>$$q(\mathbf{x_t}|\mathbf{x_0})&#x3D;\mathcal{N}(\mathbf{x_t};\sqrt{\bar{\alpha_t}}\mathbf{x_0},(1-\bar{\alpha_t})\mathbf{I})$$</p>
+<p>也就是说，$\mathbf{x_t}&#x3D;\sqrt{\bar{\alpha_t}}\mathbf{x_0}+\sqrt{1-\bar{\alpha_t}}\boldsymbol{\epsilon}$，其中 $\boldsymbol{\epsilon}\sim\mathcal{N}(\mathbf{0},\mathbf{I})$。</p>
+<p>噪声调度 ${\beta_t}$ 的设计需要满足：当 $t&#x3D;T$ 时，$\bar{\alpha_T}\approx 0$，即 $q(\mathbf{x_T}|\mathbf{x_0})\approx\mathcal{N}(\mathbf{0},\mathbf{I})$，数据已经完全变成了纯噪声。常用的噪声调度包括线性调度和余弦调度。</p>
+<h3 id="3-2-反向去噪过程"><a href="#3-2-反向去噪过程" class="headerlink" title="3.2 反向去噪过程"></a>3.2 反向去噪过程</h3><p>生成过程就是反向去噪：从纯噪声 $\mathbf{x_T}\sim\mathcal{N}(\mathbf{0},\mathbf{I})$ 开始，逐步去噪得到 $\mathbf{x_0}$。理想情况下，我们希望反向过程满足：</p>
+<p>$$p(\mathbf{x_{t-1}}|\mathbf{x_t})\propto q(\mathbf{x_{t-1}})q(\mathbf{x_t}|\mathbf{x_{t-1}})$$</p>
+<p>但这个分布在生成过程中是无法计算的（因为 $q(\mathbf{x_{t-1}})$ 未知）。不过，有一个重要的理论结果：如果每一步的噪声 $\beta_t$ 足够小，那么 $q(\mathbf{x_{t-1}}|\mathbf{x_t},\mathbf{x_0})$ 也是一个高斯分布。</p>
 <p>因此，我们可以用一个参数化的高斯分布来近似反向过程：</p>
-<p>$$p_\theta(\mathbf{x}_{t-1}|\mathbf{x}<em>t)&#x3D;\mathcal{N}(\mathbf{x}</em>{t-1};\boldsymbol{\mu}_\theta(\mathbf{x}_t,t),\sigma_t^2\mathbf{I})$$</p>
-<p>其中 $\boldsymbol{\mu}_\theta(\mathbf{x}_t,t)$ 是一个神经网络（通常是 U-Net），需要学习。</p>
-<h3 id="3-3-训练目标"><a href="#3-3-训练目标" class="headerlink" title="3.3 训练目标"></a>3.3 训练目标</h3><p>扩散模型的训练目标是最大化数据的对数似然 $\log p(\mathbf{x}_0)$。通过变分推断，我们可以得到证据下界（ELBO）：</p>
-<p>$$\log p(\mathbf{x}<em>0)\geq\mathbb{E}</em>{q(\mathbf{x}_{1:T}|\mathbf{x}<em>0)}\left[\log\frac{p(\mathbf{x}<em>T)\prod</em>{t&#x3D;1}^Tp_\theta(\mathbf{x}</em>{t-1}|\mathbf{x}<em>t)}{\prod</em>{t&#x3D;1}^Tq(\mathbf{x}<em>t|\mathbf{x}</em>{t-1})}\right]$$</p>
+<p>$$p_\theta(\mathbf{x_{t-1}}|\mathbf{x_t})&#x3D;\mathcal{N}(\mathbf{x_{t-1}};\boldsymbol{\mu}_\theta(\mathbf{x_t},t),\sigma_t^2\mathbf{I})$$</p>
+<p>其中 $\boldsymbol{\mu}_\theta(\mathbf{x_t},t)$ 是一个神经网络（通常是 U-Net），需要学习。</p>
+<h3 id="3-3-训练目标"><a href="#3-3-训练目标" class="headerlink" title="3.3 训练目标"></a>3.3 训练目标</h3><p>扩散模型的训练目标是最大化数据的对数似然 $\log p(\mathbf{x_0})$。通过变分推断，我们可以得到证据下界（ELBO）：</p>
+<p>$$\log p(\mathbf{x_0})\geq\mathbb{E_{q(\mathbf{x_{1:T}}|\mathbf{x_0})}}\left[\log\frac{p(\mathbf{x_T})\prod_{t&#x3D;1}^Tp_\theta(\mathbf{x_{t-1}}|\mathbf{x_t})}{\prod_{t&#x3D;1}^Tq(\mathbf{x_t}|\mathbf{x_{t-1}})}\right]$$</p>
 <p>经过一系列推导（利用 Bayes 规则和 Markov 性质），这个下界可以分解为：</p>
-<p>$$L_{\text{VLB}}&#x3D;\underbrace{D_{\text{KL}}(q(\mathbf{x}<em>T|\mathbf{x}<em>0)|p(\mathbf{x}<em>T))}</em>{L_T}+\sum</em>{t&#x3D;2}^T\underbrace{\mathbb{E}</em>{q(\mathbf{x}<em>t|\mathbf{x}<em>0)}D</em>{\text{KL}}(q(\mathbf{x}</em>{t-1}|\mathbf{x}<em>t,\mathbf{x}<em>0)|p_\theta(\mathbf{x}</em>{t-1}|\mathbf{x}<em>t))}</em>{L</em>{t-1}}-\underbrace{\mathbb{E}_{q(\mathbf{x}_1|\mathbf{x}_0)}\log p_\theta(\mathbf{x}_0|\mathbf{x}<em>1)}</em>{L_0}$$</p>
+<p>$$L_{\text{VLB}}&#x3D;\underbrace{D_{\text{KL}}(q(\mathbf{x_T}|\mathbf{x_0})|p(\mathbf{x_T}))_{L_T}}+\sum_{t&#x3D;2}^T\underbrace{\mathbb{E_{q(\mathbf{x_t}|\mathbf{x_0})}}D_{\text{KL}}(q(\mathbf{x_{t-1}}|\mathbf{x_t},\mathbf{x_0})|p_\theta(\mathbf{x_{t-1}}|\mathbf{x_t}))_{L_{t-1}}}-\underbrace{\mathbb{E_{q(\mathbf{x_1}|\mathbf{x_0})}}\log p_\theta(\mathbf{x_0}|\mathbf{x_1})_{L_0}}$$</p>
 <p>其中 $L_T$ 是常数（因为前向过程固定），关键是最小化 $L_{t-1}$。</p>
-<p>一个重要的简化是：我们可以将 $\boldsymbol{\mu}_\theta$ 重参数化为预测噪声 $\boldsymbol{\epsilon}_\theta(\mathbf{x}_t,t)$。根据扩散核 $\mathbf{x}_t&#x3D;\sqrt{\bar{\alpha}_t}\mathbf{x}_0+\sqrt{1-\bar{\alpha}_t}\boldsymbol{\epsilon}$，我们可以得到简化的训练目标：</p>
-<p>$$L_{\text{simple}}&#x3D;\mathbb{E}_{t,\mathbf{x}_0,\boldsymbol{\epsilon}}\left[|\boldsymbol{\epsilon}-\boldsymbol{\epsilon}_\theta(\mathbf{x}_t,t)|^2\right]$$</p>
+<p>一个重要的简化是：我们可以将 $\boldsymbol{\mu}_\theta$ 重参数化为预测噪声 $\boldsymbol{\epsilon}_\theta(\mathbf{x_t},t)$。根据扩散核 $\mathbf{x_t}&#x3D;\sqrt{\bar{\alpha_t}}\mathbf{x_0}+\sqrt{1-\bar{\alpha_t}}\boldsymbol{\epsilon}$，我们可以得到简化的训练目标：</p>
+<p>$$L_{\text{simple}}&#x3D;\mathbb{E_{t,\mathbf{x_0},\boldsymbol{\epsilon}}}\left[|\boldsymbol{\epsilon}-\boldsymbol{\epsilon}_\theta(\mathbf{x_t},t)|^2\right]$$</p>
 <p>也就是说，训练目标就是<strong>让神经网络学会预测添加的噪声</strong>。算法流程非常简单：</p>
 <p><strong>训练</strong>：</p>
 <ol>
-<li>从数据集中采样 $\mathbf{x}_0\sim q(\mathbf{x}_0)$</li>
+<li>从数据集中采样 $\mathbf{x_0}\sim q(\mathbf{x_0})$</li>
 <li>随机选择时间步 $t\sim\text{Uniform}({1,\ldots,T})$</li>
 <li>采样噪声 $\boldsymbol{\epsilon}\sim\mathcal{N}(\mathbf{0},\mathbf{I})$</li>
-<li>计算损失 $|\boldsymbol{\epsilon}-\boldsymbol{\epsilon}_\theta(\sqrt{\bar{\alpha}_t}\mathbf{x}_0+\sqrt{1-\bar{\alpha}_t}\boldsymbol{\epsilon},t)|^2$ 并更新参数</li>
+<li>计算损失 $|\boldsymbol{\epsilon}-\boldsymbol{\epsilon}_\theta(\sqrt{\bar{\alpha_t}}\mathbf{x_0}+\sqrt{1-\bar{\alpha_t}}\boldsymbol{\epsilon},t)|^2$ 并更新参数</li>
 </ol>
 <p><strong>采样</strong>：</p>
 <ol>
-<li>从 $\mathbf{x}_T\sim\mathcal{N}(\mathbf{0},\mathbf{I})$ 开始</li>
-<li>对 $t&#x3D;T,\ldots,1$，采样 $\mathbf{x}_{t-1}&#x3D;\frac{1}{\sqrt{\alpha_t}}\left(\mathbf{x}_t-\frac{\beta_t}{\sqrt{1-\bar{\alpha}_t}}\boldsymbol{\epsilon}_\theta(\mathbf{x}_t,t)\right)+\sigma_t\mathbf{z}$，其中 $\mathbf{z}\sim\mathcal{N}(\mathbf{0},\mathbf{I})$</li>
-<li>返回 $\mathbf{x}_0$</li>
+<li>从 $\mathbf{x_{T}}\sim\mathcal{N}(\mathbf{0},\mathbf{I})$ 开始</li>
+<li>对 $t&#x3D;T,\ldots,1$，采样 $\mathbf{x_{t-1}}&#x3D;\frac{1}{\sqrt{\alpha_t}}\left(\mathbf{x_t}-\frac{\beta_t}{\sqrt{1-\bar{\alpha_t}}}\boldsymbol{\epsilon}_\theta(\mathbf{x_t},t)\right)+\sigma_t\mathbf{z}$，其中 $\mathbf{z}\sim\mathcal{N}(\mathbf{0},\mathbf{I})$</li>
+<li>返回 $\mathbf{x_0}$</li>
 </ol>
 <h3 id="3-4-实现细节"><a href="#3-4-实现细节" class="headerlink" title="3.4 实现细节"></a>3.4 实现细节</h3><p>在实际实现中，扩散模型通常使用 <strong>U-Net 架构</strong>（带有 ResNet 块和自注意力层）作为去噪网络 $\boldsymbol{\epsilon}_\theta$。时间信息 $t$ 通过正弦位置编码或 Fourier 特征嵌入，然后通过自适应组归一化（AdaGN）层注入到 ResNet 块中。</p>
 <p>对于文生图任务，文本条件可以通过交叉注意力机制引入：在 U-Net 的每个注意力层中，图像特征作为 Query，文本特征（通过 CLIP 或 T5 编码器获得）作为 Key 和 Value。这样模型就能根据文本描述生成对应的图像。</p>
 <p>扩散模型的一个缺点是采样速度较慢：生成一张图像需要迭代 $T$ 次（通常 $T&#x3D;1000$）。为了加速采样，研究者提出了很多改进方法，如 DDIM（去掉采样过程中的随机性）、DPM-Solver（使用更高阶的数值求解器）等，可以将采样步数降低到 20-50 步，同时保持生成质量。</p>
 <h2 id="四、采样方法"><a href="#四、采样方法" class="headerlink" title="四、采样方法"></a>四、采样方法</h2><p>在前面的章节中，我们介绍了粒子滤波——一种用蒙特卡洛采样来近似任意分布的方法。实际上，采样方法的应用远不止于此：在贝叶斯推断、强化学习、生成模型等众多领域，我们都需要从复杂的概率分布中采样，或者用采样方法来估计难以解析计算的积分。本节我们将系统介绍<strong>蒙特卡洛方法</strong>的基础理论和方差减少技术。</p>
 <h3 id="4-1-蒙特卡洛积分的基本原理"><a href="#4-1-蒙特卡洛积分的基本原理" class="headerlink" title="4.1 蒙特卡洛积分的基本原理"></a>4.1 蒙特卡洛积分的基本原理</h3><p>假设我们要计算积分 $I&#x3D;\int f(\mathbf{x})d\mathbf{x}$，其中 $\mathbf{x}$ 的定义域是 $\Omega$。然而，对于高维积分的情况，传统的数值积分方法（如我们在数值分析课程中学习的 Simpson 公式等）需要在每个维度上进行网格划分，计算量呈指数级增长，这就是所谓的<strong>维度灾难</strong>。</p>
-<p>因此，在高维空间中，传统的数值积分方法往往难以应用。这时我们可以使用蒙特卡洛方法：在 $\Omega$ 上均匀采样 $M$ 个点 $\mathbf{x}_1,\ldots,\mathbf{x}_M$，然后用平均值来估计积分：</p>
-<p>$$\hat{I}<em>M&#x3D;\frac{|\Omega|}{M}\sum</em>{i&#x3D;1}^M f(\mathbf{x}_i)$$</p>
-<p>其中 $|\Omega|$ 是定义域的体积。这个估计量的理论基础来自大数定律：当 $M\to\infty$ 时，$\hat{I}_M$ 几乎必然收敛到真实值 $I$。</p>
+<p>因此，在高维空间中，传统的数值积分方法往往难以应用。这时我们可以使用蒙特卡洛方法：在 $\Omega$ 上均匀采样 $M$ 个点 $\mathbf{x_1},\ldots,\mathbf{x_M}$，然后用平均值来估计积分：</p>
+<p>$$\hat{I_M}&#x3D;\frac{|\Omega|}{M}\sum_{i&#x3D;1}^M f(\mathbf{x}_i)$$</p>
+<p>其中 $|\Omega|$ 是定义域的体积。这个估计量的理论基础来自大数定律：当 $M\to\infty$ 时，$\hat{I_M}$ 几乎必然收敛到真实值 $I$。</p>
 <p>但问题在于：<strong>收敛有多快？</strong> 根据中心极限定理，蒙特卡洛方法的误差（以 RMSE 度量）为：</p>
-<p>$$\text{RMSE}(\hat{I}_M)&#x3D;\frac{|\Omega|\sigma}{\sqrt{M}}&#x3D;O(M^{-1&#x2F;2})$$</p>
+<p>$$\text{RMSE}(\hat{I_M})&#x3D;\frac{|\Omega|\sigma}{\sqrt{M}}&#x3D;O(M^{-1&#x2F;2})$$</p>
 <p>其中 $\sigma^2&#x3D;\text{Var}(f(\mathbf{X}))$ 是 $f(\mathbf{X})$ 的方差。这意味着：精度提高 10 倍，需要采样数增大 100 倍——计算代价以平方速率增长。</p>
 <p>这就引出了一个关键问题：在固定计算预算下，<strong>降低方差 $\sigma^2$ 比单纯增大 $M$ 更高效</strong>。这正是方差减少技术的核心思想。</p>
 <h3 id="4-2-方差减少技术"><a href="#4-2-方差减少技术" class="headerlink" title="4.2 方差减少技术"></a>4.2 方差减少技术</h3><p>为了降低蒙特卡洛估计的方差，研究者提出了多种巧妙的方法。我们介绍四种最常用的方差减少技术，它们分别从不同角度来优化采样过程。</p>
 <h4 id="4-2-1-重要性采样"><a href="#4-2-1-重要性采样" class="headerlink" title="4.2.1 重要性采样"></a>4.2.1 重要性采样</h4><p>回顾前面扩散模型一节，我们提到过变分推断中的重要性采样思想。实际上，重要性采样是一种通用的方差减少技术，其核心思想是：<strong>选取与被积函数形状相似的抽样分布，集中采样于高贡献区域</strong>。</p>
 <p>假设存在密度 $g(\mathbf{x})$ 满足 $f(\mathbf{x})\neq 0\Rightarrow g(\mathbf{x})&gt;0$，我们可以将积分改写为关于 $g$ 的期望：</p>
 <p>$$I&#x3D;\int f(\mathbf{x})d\mathbf{x}&#x3D;\int\frac{f(\mathbf{x})}{g(\mathbf{x})}\cdot g(\mathbf{x})d\mathbf{x}&#x3D;\mathbb{E}_g\left[\frac{f(\mathbf{X})}{g(\mathbf{X})}\right],\quad \mathbf{X}\sim g$$</p>
-<p>相应的估计量为 $\hat{I}<em>M&#x3D;\frac{1}{M}\sum</em>{i&#x3D;1}^M\frac{f(\mathbf{X}_i)}{g(\mathbf{X}_i)}$，其中 $\mathbf{X}_i\sim g$。如果 $g$ 的形状与 $|f|$ 相似，那么 $f(\mathbf{X})&#x2F;g(\mathbf{X})$ 的波动会比 $f(\mathbf{X})$ 本身小得多，从而降低方差。</p>
+<p>相应的估计量为 $\hat{I_M}&#x3D;\frac{1}{M}\sum_{i&#x3D;1}^M\frac{f(\mathbf{X}_i)}{g(\mathbf{X}_i)}$，其中 $\mathbf{X}_i\sim g$。如果 $g$ 的形状与 $|f|$ 相似，那么 $f(\mathbf{X})&#x2F;g(\mathbf{X})$ 的波动会比 $f(\mathbf{X})$ 本身小得多，从而降低方差。</p>
 <p>那么什么样的 $g$ 是最优的呢？我们可以通过变分法来求解。优化目标是最小化 $\text{Var}_g(f&#x2F;g)&#x3D;\int\frac{f^2(\mathbf{x})}{g(\mathbf{x})}d\mathbf{x}-I^2$，在约束 $\int g d\mathbf{x}&#x3D;1$ 下，引入 Lagrange 乘子 $\lambda$ 求偏导：</p>
 <p>$$\frac{\delta}{\delta g(\mathbf{x})}\left[\frac{f^2(\mathbf{x})}{g(\mathbf{x})}-\lambda g(\mathbf{x})\right]&#x3D;0\Longrightarrow\frac{f^2(\mathbf{x})}{g^2(\mathbf{x})}-\lambda&#x3D;0\Longrightarrow g(\mathbf{x})\propto|f(\mathbf{x})|$$</p>
 <p>因此，归一化后最优重要性密度为：</p>
@@ -482,20 +482,20 @@
 <p>其中 $\rho&#x3D;\text{Corr}(f(\mathbf{X}),h(\mathbf{X}))$ 是相关系数。可以看到，$|\rho|$ 越接近 1，方差缩减越显著。</p>
 <p>直观上，如果 $h$ 与 $f$ 高度相关，那么当 $f(\mathbf{X}_i)$ 偏大时，$h(\mathbf{X}_i)$ 也倾向于偏大；此时 $h(\mathbf{X}_i)-c$ 的波动可以”对冲” $f(\mathbf{X}_i)$ 的波动，从而降低整体方差。这就像是股票投资中的对冲策略。</p>
 <h4 id="4-2-3-分层抽样"><a href="#4-2-3-分层抽样" class="headerlink" title="4.2.3 分层抽样"></a>4.2.3 分层抽样</h4><p>分层抽样的思想来源于统计调查：将总体划分为若干层，在每层内分别抽样，可以消除层间波动对方差的贡献。</p>
-<p>具体而言，将 $\Omega$ 划分为 $K$ 个不相交子域 ${\Omega_k}$，令权重 $p_k&#x3D;|\Omega_k|&#x2F;|\Omega|$（满足 $\sum_k p_k&#x3D;1$）。在 $\Omega_k$ 中独立抽取 $M_k$ 个样本 $\mathbf{X}_{k,i}\sim U(\Omega_k)$，分层估计量为：</p>
-<p>$$\hat{I}<em>{\text{strat}}&#x3D;|\Omega|\sum</em>{k&#x3D;1}^K p_k\cdot\frac{1}{M_k}\sum_{i&#x3D;1}^{M_k}f(\mathbf{X}_{k,i})$$</p>
-<p>无偏性容易验证：记 $\mu_k&#x3D;\mathbb{E}[f(\mathbf{X})|\mathbf{X}\in\Omega_k]$，则 $\mathbb{E}[\hat{I}_{\text{strat}}]&#x3D;|\Omega|\sum_k p_k\mu_k&#x3D;I$。</p>
+<p>具体而言，将 $\Omega$ 划分为 $K$ 个不相交子域 ${\Omega_k}$，令权重 $p_k&#x3D;|\Omega_k|&#x2F;|\Omega|$（满足 $\sum_k p_k&#x3D;1$）。在 $\Omega_k$ 中独立抽取 $M_k$ 个样本 $\mathbf{X_{k,i}}\sim U(\Omega_k)$，分层估计量为：</p>
+<p>$$\hat{I_{\text{strat}}}&#x3D;|\Omega|\sum_{k&#x3D;1}^K p_k\cdot\frac{1}{M_k}\sum_{i&#x3D;1}^{M_k}f(\mathbf{X_{k,i}})$$</p>
+<p>无偏性容易验证：记 $\mu_k&#x3D;\mathbb{E}[f(\mathbf{X})|\mathbf{X}\in\Omega_k]$，则 $\mathbb{E}[\hat{I_{\text{strat}}}]&#x3D;|\Omega|\sum_k p_k\mu_k&#x3D;I$。</p>
 <p>为什么分层抽样能降低方差呢？我们以<strong>比例分配</strong>（即 $M_k&#x3D;p_kM$）为例来分析。记 $\sigma_k^2&#x3D;\text{Var}(f(\mathbf{X})|\mathbf{X}\in\Omega_k)$ 为第 $k$ 层的条件方差，则：</p>
-<p>$$\text{Var}(\hat{I}<em>{\text{strat}})&#x3D;\frac{|\Omega|^2}{M}\sum</em>{k&#x3D;1}^K p_k\sigma_k^2$$</p>
-<p>而普通蒙特卡洛的方差为 $\text{Var}(\hat{I}_M)&#x3D;\frac{|\Omega|^2\sigma^2}{M}$。根据<strong>条件方差公式</strong>（全方差分解）：</p>
-<p>$$\sigma^2&#x3D;\text{Var}(f)&#x3D;\underbrace{\mathbb{E}[\text{Var}(f|K)]}<em>{\text{层内方差}&#x3D;\sum_k p_k\sigma_k^2}+\underbrace{\text{Var}(\mathbb{E}[f|K])}</em>{\text{层间方差}&#x3D;\sum_k p_k(\mu_k-\bar{\mu})^2\geq 0}$$</p>
-<p>由于层间方差非负，我们有 $\sigma^2\geq\sum_k p_k\sigma_k^2$，因此 $\text{Var}(\hat{I}_{\text{strat}})\leq\text{Var}(\hat{I}_M)$。</p>
+<p>$$\text{Var}(\hat{I_{\text{strat}}})&#x3D;\frac{|\Omega|^2}{M}\sum_{k&#x3D;1}^K p_k\sigma_k^2$$</p>
+<p>而普通蒙特卡洛的方差为 $\text{Var}(\hat{I_{M}})&#x3D;\frac{|\Omega|^2\sigma^2}{M}$。根据<strong>条件方差公式</strong>（全方差分解）：</p>
+<p>$$\sigma^2&#x3D;\text{Var}(f)&#x3D;\underbrace{\mathbb{E}[\text{Var}(f|K)]_{\text{层内方差}}&#x3D;\sum_k p_k\sigma_k^2}+\underbrace{\text{Var}(\mathbb{E}[f|K])_{\text{层间方差}}&#x3D;\sum_k p_k(\mu_k-\bar{\mu})^2\geq 0}$$</p>
+<p>由于层间方差非负，我们有 $\sigma^2\geq\sum_k p_k\sigma_k^2$，因此 $\text{Var}(\hat{I_{\text{strat}}})\leq\text{Var}(\hat{I_{M}})$。</p>
 <p>这个结果告诉我们：分层抽样通过在每层内独立采样，<strong>消除了层间方差的贡献</strong>，只保留层内方差。如果层划分得当（使得层内变异小、层间变异大），方差缩减效果会非常显著。进一步地，可以证明 <strong>Neyman 最优分配</strong>：在总量 $M$ 固定下，令 $M_k\propto p_k\sigma_k$ 可以最小化分层抽样的方差。</p>
 <h4 id="4-2-4-对偶变量法"><a href="#4-2-4-对偶变量法" class="headerlink" title="4.2.4 对偶变量法"></a>4.2.4 对偶变量法</h4><p>对偶变量法利用了一个简单但巧妙的观察：$U\sim U(0,1)\Rightarrow 1-U\sim U(0,1)$。我们可以利用这种对称性来构造配对估计量：</p>
-<p>$$\hat{I}<em>{\text{AV}}&#x3D;\frac{1}{2M}\sum</em>{i&#x3D;1}^M[f(U_i)+f(1-U_i)],\quad U_i\sim U(0,1)$$</p>
+<p>$$\hat{I_{\text{AV}}}&#x3D;\frac{1}{2M}\sum_{i&#x3D;1}^M[f(U_i)+f(1-U_i)],\quad U_i\sim U(0,1)$$</p>
 <p>高维推广时，可以用 $(\mathbf{U}_i,1-\mathbf{U}_i)$ 配对，或者通过逆变换 $F^{-1}(U)$ 与 $F^{-1}(1-U)$ 生成对偶样本。</p>
 <p>对偶变量法的方差为：</p>
-<p>$$\text{Var}(\hat{I}_{\text{AV}})&#x3D;\frac{\sigma^2+\text{Cov}(f(U),f(1-U))}{2M}$$</p>
+<p>$$\text{Var}(\hat{I_{\text{AV}}})&#x3D;\frac{\sigma^2+\text{Cov}(f(U),f(1-U))}{2M}$$</p>
 <p>关键问题是：$\text{Cov}(f(U),f(1-U))$ 的符号是什么？可以证明，当 $f$ 单调时，协方差为负，因此方差小于普通蒙特卡洛的 $\sigma^2&#x2F;M$。</p>
 <p>设 $U,V\sim U(0,1)$ 独立同分布，$f$ 单调不减。注意到：</p>
 <ul>
@@ -504,7 +504,7 @@
 </ul>
 <p>因此对所有 $U,V$，都有 $(f(U)-f(V))(f(1-U)-f(1-V))\leq 0$。对期望展开（利用 $1-V\sim U(0,1)$ 与 $U$ 独立）：</p>
 <p>$$2\mathbb{E}[f(U)f(1-U)]-2(\mathbb{E}[f(U)])^2\leq 0$$</p>
-<p>即 $\text{Cov}(f(U),f(1-U))\leq 0$，故 $\text{Var}(\hat{I}_{\text{AV}})\leq\frac{\sigma^2}{2M}&lt;\frac{\sigma^2}{M}$。</p>
+<p>即 $\text{Cov}(f(U),f(1-U))\leq 0$，故 $\text{Var}(\hat{I_{\text{AV}}})\leq\frac{\sigma^2}{2M}&lt;\frac{\sigma^2}{M}$。</p>
 <p>直观上，当 $U$ 偏大时，$f(U)$ 倾向于偏大（$f$ 单调），而 $1-U$ 偏小使得 $f(1-U)$ 倾向于偏小；两者的波动方向相反，取平均后相互抵消，从而降低方差。</p>
 <h3 id="4-3-样本生成方法"><a href="#4-3-样本生成方法" class="headerlink" title="4.3 样本生成方法"></a>4.3 样本生成方法</h3><p>蒙特卡洛方法的基础是生成随机样本。但计算机本质上是确定性的——给定相同的输入，总会产生相同的输出。那么计算机是如何生成”随机数”的呢？答案是：计算机生成的是<strong>伪随机数</strong>——通过确定性算法产生的、统计特性与真实均匀独立样本无法区分的数列。</p>
 <p>在概率论和算法设计课程中大家可能学习过基于逆变换定理和线性同余发生器的伪随机数生成方法。然而，若待采样的密度函数 $f$ 过于复杂，以至于难以直接采样，基于逆变换的采样方法就不再适用了。下面我们介绍几种常用的复杂分布采样方法。</p>
@@ -530,7 +530,8 @@
 <p>$$\pi(\mathbf{x})T(\mathbf{x}’|\mathbf{x})&#x3D;\pi(\mathbf{x}’)T(\mathbf{x}|\mathbf{x}’)$$</p>
 <p>那么 $\pi$ 就是该 Markov 链的平稳分布。我们来验证 M-H 算法确实满足这个条件。</p>
 <p>不失一般性，假设 $\frac{\pi(\mathbf{x}’)q(\mathbf{x}|\mathbf{x}’)}{\pi(\mathbf{x})q(\mathbf{x}’|\mathbf{x})}\geq 1$（即从 $\mathbf{x}$ 跳到 $\mathbf{x}’$ 时接受概率为 1，反向跳跃接受概率小于 1）。此时：</p>
-<p>$$\begin{aligned}<br>\pi(\mathbf{x})T(\mathbf{x}’|\mathbf{x})&amp;&#x3D;\pi(\mathbf{x})q(\mathbf{x}’|\mathbf{x})\cdot 1\<br>&amp;&#x3D;\pi(\mathbf{x})q(\mathbf{x}’|\mathbf{x})\<br>\pi(\mathbf{x}’)T(\mathbf{x}|\mathbf{x}’)&amp;&#x3D;\pi(\mathbf{x}’)q(\mathbf{x}|\mathbf{x}’)\cdot\frac{\pi(\mathbf{x})q(\mathbf{x}’|\mathbf{x})}{\pi(\mathbf{x}’)q(\mathbf{x}|\mathbf{x}’)}\<br>&amp;&#x3D;\pi(\mathbf{x})q(\mathbf{x}’|\mathbf{x})<br>\end{aligned}$$</p>
+<p>$$\pi(\mathbf{x})T(\mathbf{x}’|\mathbf{x})&#x3D;\pi(\mathbf{x})q(\mathbf{x}’|\mathbf{x})\cdot 1&#x3D;\pi(\mathbf{x})q(\mathbf{x}’|\mathbf{x})$$</p>
+<p>$$\pi(\mathbf{x}’)T(\mathbf{x}|\mathbf{x}’)&#x3D;\pi(\mathbf{x}’)q(\mathbf{x}|\mathbf{x}’)\cdot\frac{\pi(\mathbf{x})q(\mathbf{x}’|\mathbf{x})}{\pi(\mathbf{x}’)q(\mathbf{x}|\mathbf{x}’)}&#x3D;\pi(\mathbf{x})q(\mathbf{x}’|\mathbf{x})$$</p>
 <p>两者相等，细致平衡条件得证。这个结果说明：M-H 算法通过巧妙设计的接受-拒绝机制，确保了从状态 $\mathbf{x}$ 到 $\mathbf{x}’$ 的”流量”与反向流量精确平衡，从而保证了平稳分布的正确性。</p>
 <h4 id="4-3-3-拟蒙特卡洛"><a href="#4-3-3-拟蒙特卡洛" class="headerlink" title="4.3.3 拟蒙特卡洛"></a>4.3.3 拟蒙特卡洛</h4><p>我们不妨退一步思考一个问题：在蒙特卡洛方法中，我们使用伪随机数生成器来产生样本点。然而，伪随机数虽然在统计上表现得像真正的随机数，但它们仍然是确定性的。那为什么不直接使用<strong>确定性的低差异序列</strong>来代替伪随机数呢？这就是拟蒙特卡洛（Quasi-Monte Carlo, QMC）方法的核心思想。</p>
 <p>使用精心设计的低差异序列代替伪随机数，不仅可以规避复杂分布采样的困难，还能够提供更均匀的点分布，从而在某些情况下提高积分估计的精度。例如，取 Sobol 序列作为采样点，积分误差的收敛速度可以达到 $O(M^{-1}(\log M)^d)$，其中 $d$ 是积分的维度。这比传统蒙特卡洛方法的 $O(M^{-1&#x2F;2})$ 收敛速度要快得多，尤其在高维积分中优势明显。</p>

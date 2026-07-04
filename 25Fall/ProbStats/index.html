@@ -27,10 +27,10 @@
 <meta property="og:description" content="大二上学期随机数学与统计的复习笔记，目前已完结。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-01-10T04:04:23.000Z">
-<meta property="article:modified_time" content="2026-01-03T19:00:14.509Z">
+<meta property="article:modified_time" content="2026-07-04T16:46:17.482Z">
 <meta property="article:author" content="sqzr2319">
-<meta property="article:tag" content="大二上">
 <meta property="article:tag" content="数学">
+<meta property="article:tag" content="大二上">
 <meta name="twitter:card" content="summary_large_image">
   
   
@@ -391,22 +391,22 @@
 <li>随机徘徊：$S_n&#x3D;S_0+\sum_{i&#x3D;1}^n X_i$，$\{X_i\}$ 独立同分布于 $\begin{pmatrix} -1 &amp; 1 \\ 1-p &amp; p \end{pmatrix}$，$X_0$ 为任意整值随机变量，$p&#x3D;\frac{1}{2}$ 时称为一维对称简单随机徘徊</li>
 <li>$\mathrm{Cov}(S_n,S_m)&#x3D;\min(n,m)DX_1$</li>
 </ol>
-<h2 id="三、-mathrm-Poisson-分布与过程"><a href="#三、-mathrm-Poisson-分布与过程" class="headerlink" title="三、$\mathrm{Poisson}$ 分布与过程"></a>三、$\mathrm{Poisson}$ 分布与过程</h2><h3 id="1-物理背景"><a href="#1-物理背景" class="headerlink" title="1. 物理背景"></a>1. 物理背景</h3><ol>
+<h2 id="三、Poisson-分布与过程"><a href="#三、Poisson-分布与过程" class="headerlink" title="三、Poisson 分布与过程"></a>三、Poisson 分布与过程</h2><h3 id="1-物理背景"><a href="#1-物理背景" class="headerlink" title="1. 物理背景"></a>1. 物理背景</h3><ol>
 <li>时齐的独立增量过程，连续时间、离散状态空间</li>
 <li>普通性：$P(N_{t+h}-N_t\ge 2)&#x3D;o(h),P(N_{t+h}-N_t&#x3D;1)&#x3D;\lambda h+o(h)$</li>
 <li>$\mathrm{Poisson}$ 定理（二项分布逼近）：$\displaystyle X\sim B(n,p_n),\lim_{n\to\infty} np_n&#x3D;\lambda$，则 $P(X&#x3D;k)\rightarrow e^{-\lambda}\frac{\lambda^k}{k!}$</li>
 </ol>
-<h3 id="2-mathrm-Poisson-分布"><a href="#2-mathrm-Poisson-分布" class="headerlink" title="2. $\mathrm{Poisson}$ 分布"></a>2. $\mathrm{Poisson}$ 分布</h3><ol>
+<h3 id="2-Poisson-分布"><a href="#2-Poisson-分布" class="headerlink" title="2. Poisson 分布"></a>2. Poisson 分布</h3><ol>
 <li>$P(X&#x3D;k)&#x3D;e^{-\lambda}\frac{\lambda^k}{k!},k&#x3D;0,1,2,\cdots$</li>
 <li>$EX&#x3D;DX&#x3D;\lambda,M_X(u)&#x3D;e^{\lambda(e^u-1)}$</li>
 <li>合&#x2F;分流：可加性、随机选择下的不变性</li>
 </ol>
-<h3 id="3-mathrm-Poisson-过程"><a href="#3-mathrm-Poisson-过程" class="headerlink" title="3. $\mathrm{Poisson}$ 过程"></a>3. $\mathrm{Poisson}$ 过程</h3><ol>
+<h3 id="3-Poisson-过程"><a href="#3-Poisson-过程" class="headerlink" title="3. Poisson 过程"></a>3. Poisson 过程</h3><ol>
 <li>定义：$N_0&#x3D;0$，独立增量，$N_{t+h}-N_t\sim \mathrm{Poisson}(\lambda h)$</li>
 <li>分流选择：$\{X_t\},\{Y_t\}$ 强度分别为 $\lambda_1,\lambda_2$ 的独立 $\mathrm{Poisson}$ 过程，则 $Y_t|X_t+Y_t&#x3D;n\sim B\left(n,\frac{\lambda_2}{\lambda_1+\lambda_2}\right)$</li>
 <li>时间选择：$X_u|X_t&#x3D;n\sim B\left(n,\frac{u}{t}\right)$</li>
 </ol>
-<h3 id="4-复合-mathrm-Poisson-过程"><a href="#4-复合-mathrm-Poisson-过程" class="headerlink" title="4. 复合 $\mathrm{Poisson}$ 过程"></a>4. 复合 $\mathrm{Poisson}$ 过程</h3><ol>
+<h3 id="4-复合-Poisson-过程"><a href="#4-复合-Poisson-过程" class="headerlink" title="4. 复合 Poisson 过程"></a>4. 复合 Poisson 过程</h3><ol>
 <li>定义：$\displaystyle Y_t&#x3D;\sum_{i&#x3D;1}^{N_t} X_i$，$\{X_i\}$ 独立同分布且与 $\{N_t\}$ 独立，是时齐的独立增量过程</li>
 <li>$EY_t&#x3D;\lambda t EX_1,DY_t&#x3D;\lambda t E(X_1^2),M_{Y_t}(u)&#x3D;e^{\lambda t[M_{X_1}(u)-1]}$</li>
 </ol>
@@ -437,7 +437,7 @@
 <li>$F$ 和 $\varphi$ 一一对应：$P(x\lt X\lt y)+\frac{P(X&#x3D;x)+P(X&#x3D;y)}{2}&#x3D;$ $\displaystyle \lim_{T\to\infty}\frac{1}{2\pi}\int_{-T}^T \frac{e^{-i\theta x}-e^{-i\theta y}}{i\theta}\varphi(\theta)\mathrm{d}\theta,f_X(x)&#x3D;\frac{1}{2\pi}\int_{-\infty}^{+\infty} e^{-i\theta x}\varphi(\theta)\mathrm{d}\theta$</li>
 <li>$X_1,X_2,\cdots,X_m$ 独立等价于 $\displaystyle\varphi(\theta_1,\theta_2,\cdots,\theta_m)&#x3D;\prod_{i&#x3D;1}^m \varphi_{X_i}(\theta_i)$</li>
 </ol>
-<h3 id="5-mathrm-Gauss-分布"><a href="#5-mathrm-Gauss-分布" class="headerlink" title="5. $\mathrm{Gauss}$ 分布"></a>5. $\mathrm{Gauss}$ 分布</h3><ol>
+<h3 id="5-Gauss-分布"><a href="#5-Gauss-分布" class="headerlink" title="5. Gauss 分布"></a>5. Gauss 分布</h3><ol>
 <li>一维正态分布：$E(X^{2k})&#x3D;(2k-1)!!,\mathrm{Kurt}(X)&#x3D;E\left(\frac{X-EX}{\sqrt{DX}}\right)^4-3&#x3D;0$</li>
 <li>多维 $\mathrm{Gauss}$ 分布：$\mathbf{X}&#x3D;\mathbf{A}_{m\times n}\mathbf{Z}+\boldsymbol{\mu}\sim \mathbf{N}(\boldsymbol{\mu},\mathbf{AA^T}),Z_i\sim N(0,1)$ 独立，$\mathrm{rank}(\mathbf{A})&#x3D;m$ 为正态</li>
 <li>特征函数：$\varphi_{\mathbf{X}}(\boldsymbol{\theta})&#x3D;e^{i\boldsymbol{\theta^T\mu}-\frac{1}{2}\boldsymbol{\theta^T\Sigma \theta}}$</li>
@@ -445,7 +445,7 @@
 <li>密度函数：$f(\mathbf{x})&#x3D;\frac{1}{(2\pi)^{m&#x2F;2}|\boldsymbol{\Sigma}|^{1&#x2F;2}}e^{-\frac{1}{2}(\mathbf{x}-\boldsymbol{\mu})^T\boldsymbol{\Sigma}^{-1}(\mathbf{x}-\boldsymbol{\mu})}$</li>
 <li>条件分布：$\mathbf{X}&#x3D;\begin{pmatrix} \mathbf{X_1} \\ \mathbf{X_2} \end{pmatrix}\sim \mathbf{N}\left(\begin{pmatrix} \boldsymbol{\mu_1} \\ \boldsymbol{\mu_2} \end{pmatrix},\begin{pmatrix} \boldsymbol{\Sigma_{11}} &amp; \boldsymbol{\Sigma_{12}} \\ \boldsymbol{\Sigma_{21}} &amp; \boldsymbol{\Sigma_{22}} \end{pmatrix}\right)$，则 $\mathbf{X_1|X_2&#x3D;x_2}\sim \mathbf{N}(\boldsymbol{\mu_1}+\boldsymbol{\Sigma_{12}}\boldsymbol{\Sigma_{22}^{-1}}(\mathbf{x_2}-\boldsymbol{\mu_2}),\boldsymbol{\Sigma_{11}}-\boldsymbol{\Sigma_{12}}\boldsymbol{\Sigma_{22}^{-1}}\boldsymbol{\Sigma_{21}})$</li>
 </ol>
-<h3 id="6-mathrm-Brown-运动"><a href="#6-mathrm-Brown-运动" class="headerlink" title="6. $\mathrm{Brown}$ 运动"></a>6. $\mathrm{Brown}$ 运动</h3><ol>
+<h3 id="6-Brown-运动"><a href="#6-Brown-运动" class="headerlink" title="6. Brown 运动"></a>6. Brown 运动</h3><ol>
 <li>背景：时齐独立增量、空间对称、$\sigma(t)&#x3D;E(B_{t+h}-B_t)^2$ 连续 $\Rightarrow B_{s+t}-B_s\sim N(0,t)$</li>
 <li>$\mathrm{Brown}$ 运动 $\Leftrightarrow$ $\mathrm{Gauss}$ 过程（有限维向量服从 $\mathrm{Gauss}$ 分布）且 $EB_t&#x3D;0,E(B_sB_t)&#x3D;\min(s,t)$</li>
 <li>不变性：$\{\frac{B_{ct}}{\sqrt{c}}\},\{tB_{\frac{1}{t}}\}$ 是 $\mathrm{Brown}$ 运动</li>
@@ -537,7 +537,7 @@
 <li>满秩指数族：$\{(\xi_1(\theta),\xi_2(\theta),\cdots,\xi_k(\theta))\}$ 包含 $R^k$ 的一个开集，即 $\mathrm{dim}&#x3D;k$</li>
 <li>满秩指数族的充分统计量是完备统计量</li>
 </ol>
-<h3 id="4-mathrm-UMVUE"><a href="#4-mathrm-UMVUE" class="headerlink" title="4. $\mathrm{UMVUE}$"></a>4. $\mathrm{UMVUE}$</h3><ol>
+<h3 id="4-UMVUE"><a href="#4-UMVUE" class="headerlink" title="4. UMVUE"></a>4. UMVUE</h3><ol>
 <li>定义：最小方差无偏估计</li>
 <li>$\mathrm{Rao-Blackwell}$ 定理：$\hat{\theta}$ 是 $\theta$ 的无偏估计，$T$ 是 $\theta$ 的充分统计量，则 $\varphi(T)&#x3D;E(\hat{\theta}|T)$ 方差不大于 $\hat{\theta}$</li>
 <li>零无偏估计定理：$\hat{\theta}$ 是 $\theta$ 的无偏估计，且对任意零无偏估计 $\varphi$ 有 $\mathrm{Cov}_\theta(\hat{\theta},\varphi)&#x3D;0$，则 $\hat{\theta}$ 是 $\theta$ 的 $\mathrm{UMVUE}$</li>
@@ -570,13 +570,13 @@
 <li>$\mathrm{Neyman-Pearson}$ 引理：简单假设对简单假设时，似然比检验是显著性水平相同时的最优势检验</li>
 <li>复合假设：分子取 $\displaystyle\sup_{\theta\in\Theta}$，分母取 $\displaystyle\sup_{\theta\in\Theta_0}$</li>
 </ol>
-<h2 id="九、-mathrm-Bayes-统计"><a href="#九、-mathrm-Bayes-统计" class="headerlink" title="九、$\mathrm{Bayes}$ 统计"></a>九、$\mathrm{Bayes}$ 统计</h2><h3 id="1-mathrm-Bayes-估计"><a href="#1-mathrm-Bayes-估计" class="headerlink" title="1. $\mathrm{Bayes}$ 估计"></a>1. $\mathrm{Bayes}$ 估计</h3><ol>
+<h2 id="九、Bayes-统计"><a href="#九、Bayes-统计" class="headerlink" title="九、Bayes 统计"></a>九、Bayes 统计</h2><h3 id="1-Bayes-估计"><a href="#1-Bayes-估计" class="headerlink" title="1. Bayes 估计"></a>1. Bayes 估计</h3><ol>
 <li>后验分布 $\pi(\theta|X)\propto f(X|\theta)\pi(\theta)$</li>
 <li>共轭先验分布族：先验和后验分布属于同一个分布族</li>
 <li>$\mathrm{Jeffreys}$ 先验：$\pi_{J}(\theta)\propto \sqrt{I(\theta)}$</li>
 <li>不变性：双射 $g(\theta)$ 的先验仍为 $\sqrt{I(\theta)}$ 形式</li>
 </ol>
-<h3 id="2-mathrm-Bayes-检验"><a href="#2-mathrm-Bayes-检验" class="headerlink" title="2. $\mathrm{Bayes}$ 检验"></a>2. $\mathrm{Bayes}$ 检验</h3><ol>
+<h3 id="2-Bayes-检验"><a href="#2-Bayes-检验" class="headerlink" title="2. Bayes 检验"></a>2. Bayes 检验</h3><ol>
 <li>后验概率比：对 $H_0:\theta\in \Theta_0,H_1:\theta\in \Theta_1$，后验分布 $\pi(\theta|X)$，$\frac{\alpha_0}{\alpha_1}&#x3D;\frac{P(\theta\in\Theta_0)}{P(\theta\in\Theta_1)}$</li>
 <li>$\mathrm{Jeffreys}$ 准则：$\frac{\alpha_0}{\alpha_1}\lt 1$ 拒绝 $H_0$</li>
 <li>$\mathrm{Bayes}$ 因子：先验分布 $\pi$，$B^\pi&#x3D;\frac{\alpha_0&#x2F;\alpha_1}{\pi_0&#x2F;\pi_1}$，越大约偏向于接受 $H_0$</li>
@@ -670,9 +670,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%A4%A7%E4%BA%8C%E4%B8%8A/" class="print-no-link">#大二上</a>
-      
         <a href="/tags/%E6%95%B0%E5%AD%A6/" class="print-no-link">#数学</a>
+      
+        <a href="/tags/%E5%A4%A7%E4%BA%8C%E4%B8%8A/" class="print-no-link">#大二上</a>
       
     </div>
   
