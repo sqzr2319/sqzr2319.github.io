@@ -29,7 +29,7 @@
 <meta property="og:image" content="https://sqzr2319.github.io/img/AI/1.png">
 <meta property="og:image" content="https://sqzr2319.github.io/img/AI/2.png">
 <meta property="article:published_time" content="2026-06-17T08:48:51.000Z">
-<meta property="article:modified_time" content="2026-07-01T11:55:01.146Z">
+<meta property="article:modified_time" content="2026-07-05T14:58:21.117Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="计算机">
 <meta property="article:tag" content="大二下">
@@ -362,8 +362,9 @@
 <li>VAE：用 $\theta$ 为参数的 Decoder 神经网络从先验为 $p(z)$ 的隐变量中生成 $x$，$\arg\max_\theta p_\theta(x)&#x3D;\sum_z p_\theta(x|z)p(z)$ 不好计算，即 EM 所需的隐变量后验 $p_\theta(z|x)&#x3D;\frac{p_\theta(x|z)p(z)}{p_\theta(x)}$ 分母不好计算，引入 Encoder 神经网络 $q_\phi(z|x)$ 近似隐变量后验</li>
 <li>ELBO：$\sum_z q_\phi(z|x) \log\frac{p(x,z|\theta)}{q_\phi(z|x)}&#x3D;\sum_z q_\phi(z|x) \log \frac{p(x|z,\theta)p(z)}{q_\phi(z|x)} &#x3D; \sum_z q_\phi(z|x) \log \frac{p(z)}{q_\phi(z|x)} + \sum_z q_\phi(z|x) \log p(x|z,\theta)&#x3D;-\text{KL}(q_\phi(z|x)||p(z)) + \mathbb{E}_{q_\phi(z|x)}[\log p(x|z,\theta)]$，对应 Encoder 不偏离先验、Decoder 能重构输入</li>
 <li>重参数化技巧：$z&#x3D;\mu_\phi(x)+\sigma_\phi(x)\odot \epsilon,\epsilon\sim \mathcal{N}(0,I)$</li>
-<li>HMM：$P(z_t|x_{1:t})&#x3D;P(x_t|z_t)\sum_{z_{t-1}} P(z_t|z_{t-1})P(z_{t-1}|x_{1:t-1})$，Viterbi 算法最小化隐变量序列误差，Forward-Backward 算法最小化隐变量状态误差</li>
-<li>线性动态系统：$P(z_t|x_{1:t})&#x3D;P(x_t|z_t)\int P(z_t|z_{t-1})P(z_{t-1}|x_{1:t-1}) \mathrm{d}z_{t-1}$，卡尔曼滤波假设高斯分布，粒子滤波用蒙特卡洛计算积分</li>
+<li>HMM：Viterbi 算法最小化隐变量序列误差，Forward-Backward 算法最小化隐变量状态误差</li>
+<li>线性动态系统：连续化 HMM 的状态空间后隐变量分布 Forward 算法积分难计算，卡尔曼滤波假设高斯分布只变参数，粒子滤波用蒙特卡洛模拟分布（初始化 $\to$ 前向传播 $\to$ 观测赋权 $\to$ 重采样）</li>
+<li>DDPM：训练 U-Net 接收加噪后的图像预测添加的噪声，推理时从纯噪声根据预测的噪声逐步去噪</li>
 </ol>
 <h3 id="4-采样方法"><a href="#4-采样方法" class="headerlink" title="4. 采样方法"></a>4. 采样方法</h3><ol>
 <li>蒙特卡洛积分：$I&#x3D;\int_{\Omega}f(x)\mathrm{d}x&#x3D;|\Omega|\mathbb{E}[f(X)]\approx \frac{|\Omega|}{N}\sum_{i&#x3D;1}^N f(x_i)$，$x_i\sim U(\Omega)$，有均方根误差 $\frac{|\Omega|\sigma}{\sqrt{N}}$，需要最小化 $\sigma$ 以降低误差</li>
