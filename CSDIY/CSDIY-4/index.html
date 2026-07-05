@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://sqzr2319.github.io/img/CSDIY-4/1.png">
 <meta property="article:published_time" content="2026-02-16T12:32:36.000Z">
-<meta property="article:modified_time" content="2026-07-04T16:49:27.115Z">
+<meta property="article:modified_time" content="2026-07-05T11:46:41.805Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="计算机">
 <meta property="article:tag" content="数学">
@@ -242,7 +242,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.2k 字
+          4.7k 字
         
       </span>
     
@@ -253,7 +253,7 @@
         
         
         
-          36 分钟
+          40 分钟
         
       </span>
     
@@ -439,7 +439,19 @@
 <li>切向量：存在可微曲线 $\gamma:[0,1]\to X\subset \mathbb{R}^n$ 满足 $\gamma(0)&#x3D;p\in X,\gamma^\prime(0)&#x3D;\lim_{t\to 0^+}\frac{\gamma(t)-\gamma(0)}{t}&#x3D;v$</li>
 <li>切空间：$\forall p\in X\subset \mathbb{R}^n$，所有可能的切向量构成一个 $k$ 维子空间 $T_pX$，称 $X$ 为一个可微 $k$-set</li>
 <li>可微映射：$f:X\to Y$，若在 $p\in X$ 处存在线性映射 $L:T_pX\to T_{f(p)}Y$，使得对 $X$ 上任一满足 $\gamma(0)&#x3D;p,\gamma^\prime(0)&#x3D;v$ 的曲线有 $f_\star(\gamma)(t)$ 在 $t&#x3D;0$ 处的导数为 $Lv$，记 $L:f_\star|_p$</li>
-<li>协变张量：$f:X\to\mathbb{R}$ 诱导出 $f_\star|_p:T_pX\to T_{f(p)}\mathbb{R}&#x3D;\mathbb{R}$，记 $f_\star|_p&#x3D;\mathrm{d}f|_p$，方向导数 $df|_p(v)$</li>
+<li>余切向量：$f:X\to\mathbb{R}$ 诱导出 $f_\star|_p:T_pX\to T_{f(p)}\mathbb{R}&#x3D;\mathbb{R}$，记 $f_\star|_p&#x3D;\mathrm{d}f|_p$，方向导数 $df|_p(v)$</li>
+<li>微分形式：$\omega&#x3D;\omega_{i_1,\cdots,i_k}\mathrm{d}x^{i_1,\cdots,i_k},\mathrm{d}x^{i_1,\cdots,i_k}&#x3D;e^{i_1}\wedge\cdots\wedge e^{i_k}&#x3D;\sum_{\sigma\in S_k}\text{sgn}(\sigma)e^{i_{\sigma(1)}}\otimes\cdots\otimes e^{i_{\sigma(k)}}$ 为交替的 $(0,k)$-张量</li>
+<li>欧氏空间中微分形式的积分：<ol>
+<li>第二类曲线积分：$\mathbb{R}^1,\mathbb{R}^2,\mathbb{R}^3$ 中的 1-形式，$\int_\gamma \omega(\gamma^\prime(t)\mathrm{d}t)$</li>
+<li>第二类曲面积分：$\mathbb{R}^2,\mathbb{R}^3$ 中的 2-形式，$\int_S \omega(\frac{\partial r}{\partial u}\mathrm{d}u,\frac{\partial r}{\partial v}\mathrm{d}v)$</li>
+<li>第一类曲线积分：$\mathbb{R}^1,\mathbb{R}^2,\mathbb{R}^3$ 中 1-形式诱导出的 $\mathrm{d}l&#x3D;\sqrt{\mathrm{d}x^2+\mathrm{d}y^2+\mathrm{d}z^2}$，$\mathbb{R}^1$ 中等价于第二类（即一重积分）</li>
+<li>第一类曲面积分：$\mathbb{R}^2,\mathbb{R}^3$ 中 2-形式诱导出的 $\mathrm{d}S&#x3D;\sqrt{(\mathrm{d}x\wedge \mathrm{d}y)^2+(\mathrm{d}y\wedge \mathrm{d}z)^2+(\mathrm{d}z\wedge \mathrm{d}x)^2}$，$\mathbb{R}^2$ 中等价于第二类（即二重积分）</li>
+<li>三重积分：$\mathbb{R}^3$ 中的 3-形式，即第一第二类超曲面积分</li>
+</ol>
+</li>
+<li>双曲平面：度量张量（两切向量内积） $\frac{\mathrm{d}x\otimes \mathrm{d}x+\mathrm{d}y\otimes \mathrm{d}y}{y^2}$，诱导距离 $\mathrm{d}s^2&#x3D;\frac{\mathrm{d}x^2+\mathrm{d}y^2}{y^2}$，测地线为与单位圆正交的圆弧，平行线有无数条，第一类曲线积分 $\mathrm{d}l&#x3D;\frac{\sqrt{\mathrm{d}x^2+\mathrm{d}y^2}}{y}$，第一类曲面积分 $\mathrm{d}S&#x3D;\frac{\mathrm{d}x\wedge \mathrm{d}y}{y^2}$</li>
+<li>$n$ 维定向流形：存在处处不为零的光滑 $n$-形式（$\omega_{i_1,\cdots,i_n}$ 有连续偏导且不全为零），等价于不包含任何拓扑等价于莫比乌斯带的子流形</li>
+<li>外导数：$\mathrm{d}(f)&#x3D;\mathrm{d}f&#x3D;\sum_i \frac{\partial f}{\partial x^i}\mathrm{d}x^i,\mathrm{d}\circ\mathrm{d}&#x3D;0$，对定向流形有 Stokes 定理 $\int_{\partial M} \omega&#x3D;\int_M \mathrm{d}\omega$</li>
 </ol>
 <h2 id="四、博弈论"><a href="#四、博弈论" class="headerlink" title="四、博弈论"></a>四、博弈论</h2><ol>
 <li>核心：自身的策略要<strong>最大化</strong>对方的策略可能带来的<strong>最小收益</strong></li>
