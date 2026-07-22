@@ -27,7 +27,7 @@
 <meta property="og:description" content="大二暑假的自学笔记，由金融学基础、时间序列分析、金融数学、量化交易组成。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-07-01T12:32:36.000Z">
-<meta property="article:modified_time" content="2026-07-12T14:42:27.883Z">
+<meta property="article:modified_time" content="2026-07-22T14:40:47.761Z">
 <meta property="article:author" content="sqzr2319">
 <meta property="article:tag" content="数学">
 <meta property="article:tag" content="自学">
@@ -240,7 +240,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.8k 字
+          3.9k 字
         
       </span>
     
@@ -251,7 +251,7 @@
         
         
         
-          16 分钟
+          33 分钟
         
       </span>
     
@@ -334,7 +334,45 @@
 <li>二叉树近似：$S_u&#x3D;S_0e^{\sigma\sqrt{\frac{t}{n}}},p&#x3D;\frac{1}{2}(1+\frac{\mu}{\sigma}\sqrt{\frac{t}{n}}),S_d&#x3D;S_0e^{-\sigma\sqrt{\frac{t}{n}}},p&#x3D;\frac{1}{2}(1-\frac{\mu}{\sigma}\sqrt{\frac{t}{n}})$，$n\to\infty$ 时二叉树近似 Black-Scholes 公式</li>
 <li>平价公式：买入一股股票 $S_0$ 和看跌期权 $P$、卖出一份看涨期权 $C$，到期收益总为执行价 $X$，$(S+P-C)e^{rt}&#x3D;X$，有 $P&#x3D;C-S+e^{-rt}X&#x3D;-S_0N(-d_1)+Xe^{-rt}N(-d_2)$</li>
 </ol>
-<h2 id="二、时间序列分析"><a href="#二、时间序列分析" class="headerlink" title="二、时间序列分析"></a>二、时间序列分析</h2><h2 id="三、量化交易"><a href="#三、量化交易" class="headerlink" title="三、量化交易"></a>三、量化交易</h2>
+<h2 id="二、时间序列分析"><a href="#二、时间序列分析" class="headerlink" title="二、时间序列分析"></a>二、时间序列分析</h2><h3 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1. 基本概念"></a>1. 基本概念</h3><ol>
+<li>时间序列：离散时间连续取值，时间之间可能相关</li>
+<li>白噪声：均值方差恒定、协方差为零，Poisson 白噪声 $\epsilon_n&#x3D;N(n+1)-N(n)-\lambda\Rightarrow \mathrm{IWN}(0,\lambda)$</li>
+<li>正交&#x2F;不相关：$\forall t,s,\mathbb{E}[X_tY_s]&#x3D;0;\mathrm{Cov}(X_t,Y_s)&#x3D;0$</li>
+<li>自协方差&#x2F;自相关函数 ACVF&#x2F;ACF：$\gamma_{t,s}&#x3D;\mathrm{Cov}(X_t,X_s),\rho_{t,s}&#x3D;\mathrm{Corr}(X_t,X_s)$</li>
+<li>弱&#x2F;强平稳：均值恒定且 $\mathrm{Cov}(X_t,X_{t+k})$ 与 $t$ 无关，有 $\gamma_k&#x3D;\mathrm{Cov}(X_t,X_{t+k}),\rho_k&#x3D;\mathrm{Corr}(X_t,X_{t+k})&#x3D;\frac{\gamma_k}{\gamma_0}$；联合分布不随时间平移改变</li>
+<li>偏自相关函数 PACF：$\phi_{kk}&#x3D;\mathrm{Corr}(R_{t|t+1,\cdots,t+k-1},R_{t+k|t+1,\dots,t+k-1}),R_{t|t+1,\cdots,t+k-1}$ 为 $X_{t+1},\cdots,X_{t+k-1}$ 上线性回归对 $X_t$ 的残差，有 Durbin 公式 $\phi_{k+1,k+1}&#x3D;\frac{\rho_{k+1}-\sum_{j&#x3D;1}^k\phi_{kj}\rho_{k+1-j}}{1-\sum_{j&#x3D;1}^k\phi_{kj}\rho_j},\phi_{k+1,j}&#x3D;\phi_{kj}-\phi_{k+1,k+1}\phi_{k,k+1-j},j&#x3D;1,\cdots,k$</li>
+<li>PACF 展开式：$\phi_{kk} &#x3D; \frac{\begin{vmatrix}1 &amp; \rho_1 &amp; \rho_2 &amp; \cdots &amp; \rho_{k-2} &amp; \rho_1 \\\rho_1 &amp; 1 &amp; \rho_1 &amp; \cdots &amp; \rho_{k-3} &amp; \rho_2 \\\vdots &amp; \vdots &amp; \vdots &amp; &amp; \vdots &amp; \vdots \\\rho_{k-1} &amp; \rho_{k-2} &amp; \rho_{k-3} &amp; \cdots &amp; \rho_1 &amp; \rho_k\end{vmatrix}}{\begin{vmatrix}1 &amp; \rho_1 &amp; \rho_2 &amp; \cdots &amp; \rho_{k-2} &amp; \rho_{k-1} \\\rho_1 &amp; 1 &amp; \rho_1 &amp; \cdots &amp; \rho_{k-3} &amp; \rho_{k-2} \\\vdots &amp; \vdots &amp; \vdots &amp; &amp; \vdots &amp; \vdots \\\rho_{k-1} &amp; \rho_{k-2} &amp; \rho_{k-3} &amp; \cdots &amp; \rho_1 &amp; 1\end{vmatrix}}$</li>
+<li>参数估计：ACVF&#x2F;ACF $\hat{\gamma_k}&#x3D;\frac{1}{n}\sum_{t&#x3D;1}^{n-k}(X_t-\bar{X})(X_{t+k}-\bar{X}),\hat{\rho_k}&#x3D;\frac{\hat{\gamma_k}}{\hat{\gamma_0}}$，PACF 用 Durbin 公式或展开式计算</li>
+<li>自相关检验：Fuller 检验 $\sqrt{n}\hat{\rho_k}\sim N(0,1)\Rightarrow\sqrt{n}|\hat{\rho_k}|\geq z_{\alpha&#x2F;2}$ 则拒绝 $k$ 水平上不相关原假设；Box-Pierce 检验 $Q_m&#x3D;n\sum_{k&#x3D;1}^m\hat{\rho_k}^2\sim \chi_m^2$ 用于检验 $1,\cdots,m$ 水平上不相关原假设；改进的 Ljung-Box 检验 $Q_m^*&#x3D;n(n+2)\sum_{k&#x3D;1}^m\frac{\hat{\rho_k}^2}{n-k}\sim \chi_m^2$，$m$ 通常取 $\ln n$</li>
+<li>方差稳定变换：若 $\mathrm{Var}(X)$ 与 $\mathbb{E}[X]$ 相关即 $\mathrm{Var}(X)&#x3D;v(\mu)$，做变换 $f(\mu)&#x3D;\int v(\mu)^{-1&#x2F;2}\mathrm{d}\mu$ 可使 $\mathrm{Var}(f(X))$ 与 $\mathbb{E}[f(X)]$ 无关</li>
+</ol>
+<h3 id="2-ARMA-模型"><a href="#2-ARMA-模型" class="headerlink" title="2. ARMA 模型"></a>2. ARMA 模型</h3><ol>
+<li>$\mathrm{AR}(p)$ 模型：$y_t&#x3D;\phi_1 y_{t-1}+\cdots+\phi_p y_{t-p}+\epsilon_t$，$\epsilon_t\sim \mathrm{WN}(0,\sigma^2)$，$\phi(z)&#x3D;1-\phi_1z-\cdots-\phi_pz^p$ 的根在单位圆外则弱平稳，可写作 $\mathrm{MA}(\infty), y_t&#x3D;\frac{1}{\phi(B)}\epsilon_t$</li>
+<li>$\mathrm{MA}(q)$ 模型：$y_t&#x3D;\epsilon_t+\theta_1\epsilon_{t-1}+\cdots+\theta_q\epsilon_{t-q}$，$\epsilon_t\sim \mathrm{WN}(0,\sigma^2)$，均值恒定、始终弱平稳，$\theta(z)&#x3D;1+\theta_1z+\cdots+\theta_qz^q$ 的根在单位圆外则可逆（可根据 $y_t$ 序列推测 $\epsilon_t$），可写作 $\mathrm{AR}(\infty),\epsilon_t&#x3D;\frac{1}{\theta(B)}y_t$</li>
+<li>$\mathrm{ARMA}(p,q)$ 模型：$y_t&#x3D;\phi_1 y_{t-1}+\cdots+\phi_p y_{t-p}+\epsilon_t+\theta_1\epsilon_{t-1}+\cdots+\theta_q\epsilon_{t-q}$，$\epsilon_t\sim \mathrm{WN}(0,\sigma^2)$，$\phi(z)$ 的根在单位圆外则弱平稳，$\theta(z)$ 的根在单位圆外则可逆，可写作 $\mathrm{MA}(\infty),y_t&#x3D;\frac{\theta(B)}{\phi(B)}\epsilon_t$ 或 $\mathrm{AR}(\infty),\epsilon_t&#x3D;\frac{\phi(B)}{\theta(B)}y_t$</li>
+<li>$\mathrm{ARIMA}(p,d,q)$ 模型：做 $d$ 次差分后用 $\mathrm{ARMA}(p,q)$ 模型</li>
+<li>$\mathrm{SARIMA}(p,d,q)\times (P,D,Q)_s$ 模型：$\Phi_P(B^s) \phi_p(B) (1-B)^d (1-B^s)^D \dot{y}_t &#x3D; \theta_q(B) \Theta_Q(B^s) \epsilon_t$，可推广到多周期的通用 $\mathrm{ARIMA}$ 模型</li>
+</ol>
+<h3 id="3-模型选择"><a href="#3-模型选择" class="headerlink" title="3. 模型选择"></a>3. 模型选择</h3><ol>
+<li>Box-Jenkins 法：做数据变换（方差稳定、对数、截距、趋势项）$\Rightarrow$ 单位根检验确定 $d\Rightarrow$ 确定 $p,q\Rightarrow$ 参数估计 $\Rightarrow$ 对残差做检验 $\Rightarrow$ 预测</li>
+<li>单位根检验：$\mathrm{AR}(p)$ 存在 $n$ 重单位根 $\Rightarrow \phi_p(B)&#x3D;\phi^\star_{p-n}(B)(1-B)^n$，$n$ 阶差分后变为弱平稳 $\mathrm{AR}(p-n)$，ADF 检验做回归 $\Delta y_t&#x3D;\rho y_{t-1}+\alpha_1^\star \Delta y_{t-1}+\cdots+\alpha_{p-1}^\star \Delta y_{t-p+1}+\epsilon_t$，$\rho&lt;0$ 时拒绝无单位根原假设；KPSS 检验 $\eta&#x3D;\frac{1}{n^2s^2(l)}\sum_{t&#x3D;1}^n\left(\sum_{j&#x3D;1}^t\epsilon_j\right)^2$，$\epsilon_t$ 为去除截距和漂移项后的残差，$s^2(l)&#x3D;\frac{1}{n}\sum_{t&#x3D;1}^n\epsilon_t^2+\frac{2}{n}\sum_{j&#x3D;1}^l(1-\frac{j}{l+1})\sum_{t&#x3D;j+1}^n \epsilon_t\epsilon_{t-j}$</li>
+<li>相关函数法：迭代回归 $y_t &#x3D; \sum_{i&#x3D;1}^m \phi_i^{(m,k)} y_{t-i} + \sum_{j&#x3D;1}^k \beta_j^{(m,k)} \epsilon_{t-j}^{(m, k-1)} + \epsilon_t,\epsilon_{t-j}^{(m, k-1)}$ 为假定 $\mathrm{MA}$ 阶数为 $k-1$ 时的残差，用滤除 $\mathrm{AR}$ 效应后的 $w_t^{(m,k)} &#x3D; y_t - \hat{\phi_1}^{(m,k)} y_{t-1} - \hat{\phi_2}^{(m,k)} y_{t-2} - \dots - \hat{\phi_m}^{(m,k)} y_{t-m}$ 计算 EACF，$\mathrm{ARMA}(p,q)$ 在 $(p,q+1)$ 及右下角不显著</li>
+<li>信息准则法：最小化模型选择准则值 $\mathrm{MSC(p,q)}&#x3D;\ln(\tilde{\sigma}^2(p,q))+c_n\psi(p,q),\tilde{\sigma}^2(p,q)$ 为拟合 $\mathrm{ARMA}(p,q)$ 模型后残差的方差，正则项 AIC $\frac{2}{n}(p+q)$，BIC $\frac{\ln(n)}{n}(p+q)$</li>
+<li>参数估计：最大似然估计 $\hat{\phi_1},\cdots,\hat{\phi_p},\hat{\theta_1},\cdots,\hat{\theta_q},\hat{\sigma^2}&#x3D;\arg\max f(y_1,\cdots,y_n|\phi_1,\cdots,\phi_p,\theta_1,\cdots,\theta_q,\sigma^2)$，条件最小二乘估计递归计算残差 $\epsilon_t$（假设最初几个 $\epsilon&#x3D;0$），$\hat{\mathbf{\phi}},\hat{\mathbf{\theta}}&#x3D;\arg\min \sum_{t&#x3D;1}^n\epsilon_t^2,\hat{\sigma^2}&#x3D;\frac{1}{n-(p+q+1)}\sum_{t&#x3D;1}^n\epsilon_t^2$</li>
+<li>扩展 Yule-Walker 估计：$\begin{bmatrix}\rho_{q+1} \\\rho_{q+2} \\\vdots \\\rho_{q+p}\end{bmatrix}&#x3D;\begin{bmatrix}\rho_q &amp; \rho_{q-1} &amp; \cdots &amp; \rho_{q+2-p} &amp; \rho_{q+1-p} \\\rho_{q+1} &amp; \rho_q &amp; \cdots &amp; \rho_{q+3-p} &amp; \rho_{q+2-p} \\\vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\\rho_{q+p-1} &amp; \rho_{q+p-2} &amp; \cdots &amp; \rho_{q+1} &amp; \rho_q\end{bmatrix}\begin{bmatrix}\phi_1 \\\phi_2 \\\vdots \\\phi_p\end{bmatrix}$，估计 $\rho_k$ 后代入解得 $\hat{\mathbf{\phi}}$，再化为 $\mathrm{MA}(q)$ 模型估计 $\hat{\mathbf{\theta}}$，$\hat{\sigma}^2 &#x3D; \frac{1}{n - p} \sum_{t&#x3D;p+1}^n \hat{\epsilon}_t^2$</li>
+<li>残差检验：自相关检验；条件异方差 McLeod-Li 检验（方差随时间波动）$\mathrm{McL}(m)&#x3D;n(n+2) \sum_{k&#x3D;1}^m \frac{[r_k(\hat{\epsilon}^2)]^2}{n-k}\sim \chi_{m-p-q}^2$，$m$ 通常取 $\ln n$；正态性 Jarque-Bera 检验 $\frac{n}{6} \hat{SK}_{\hat{\epsilon}}^2 + \frac{n}{24} (\hat{K}_{\hat{\epsilon}} - 3)^2 \sim \chi_2^2$，偏度 $\hat{SK}_{\hat{\epsilon}} &#x3D; \frac{\hat{m}_3}{\sqrt{\hat{m}_2^3}}$，峰度 $\hat{K}_{\hat{\epsilon}} &#x3D; \frac{\hat{m}_4}{\hat{m}_2^2}$，其中 $\hat{m}_j &#x3D; \frac{1}{n} \sum_{t&#x3D;1}^n \hat{\epsilon}_t^j$</li>
+<li>异常值检验：加性&#x2F;革新性异常值 AO&#x2F;IO 为作用在 $y_t$ 或 $\epsilon_t$ 上的脉冲函数，对 $\mathrm{AR}(\infty)$ IO 有残差 $a_T&#x3D;\omega_I+\epsilon_T$，统计量 $\lambda_{I, T} &#x3D; \frac{a_T}{\sigma} \sim \mathcal{N}(0, 1)$，未知时刻取最大统计量并提高临界值；AO 有残差 $a_t &#x3D; -\omega_A \pi_{t-T} + \epsilon_t,\pi_0&#x3D;-1,a_t$ 对 $\pi_{t-T}$ 回归得统计量 $\lambda_{A, T} &#x3D; \frac{\hat{\omega_{A, T}}}{\rho \sigma} \sim \mathcal{N}(0, 1),\rho^2 &#x3D; \frac{1}{\sum_{t&#x3D;T}^n \pi_{t-T}^2}$，取 IO&#x2F;AO 中更显著的并迭代修正</li>
+<li>预测：条件期望预测法 $y_{t+h|t}&#x3D;\mathbb{E}[y_{t+h}|\mathcal{F_t}]$、线性投影预测法 $y^\star_{t+h|t}&#x3D;\sum_{j&#x3D;0}^\infty c_jy_{t-j},\mathbf{c}&#x3D;\arg\min_{\mathbf{c}}\mathbb{E}[(y_{t+h}-\sum_{j&#x3D;0}^\infty c_jy_{t-j})^2]$</li>
+</ol>
+<h3 id="4-多序列分析"><a href="#4-多序列分析" class="headerlink" title="4. 多序列分析"></a>4. 多序列分析</h3><ol>
+<li>交叉协方差&#x2F;交叉自相关函数 CCF：$\gamma_{X,Y}(t,s)&#x3D;\mathrm{Cov}(x_t,y_s)$，弱平稳有 $\rho_{X,Y}(k)&#x3D;\mathrm{corr}(x_t,y_{t-k})$</li>
+<li>转移函数：$y_t&#x3D;\nu(B)x_t+n_t$，$n_t$ 独立于 $x_t$，两者满足 ARMA 则称为 ARMAX 模型，参数化为 $\nu(B)&#x3D;\frac{\omega(B)B^b}{\delta(B)}$ 表示阶数 $s$ 的短期冲击和阶数 $r$ 的内部机制，$x_t$ 白噪声有 $\rho_{xy}(k) &#x3D; \frac{\sigma_x}{\sigma_y} \nu_k$</li>
+<li>模型构建：预白化 $\Rightarrow$ 计算 $\nu(k)$ 与参数化形式对应 $\Rightarrow$ 计算 $n_t$ 并用合适模型拟合得 $y_t&#x3D;\nu(B)x_t+\frac{\sigma(B)}{\phi(B)}a_t\Rightarrow$ 残差检验 $\Rightarrow$ 预测</li>
+<li>预白化：对 $x_t$ 用 $\mathrm{AR}(\infty)$ 拟合后取白噪声残差 $\epsilon_t$，对 $y_t$ 用同一 $\pi(B)$ 过滤得 $\tilde{y_t}$，计算 $\epsilon_t$ 和 $\tilde{y_t}$ 的 CCF 并做相关性检验</li>
+<li>残差检验：互相关检验 $a_t$ 和 $x_t$ CCF $\Rightarrow$ 自相关检验 $a_t$ ACF，不可颠倒</li>
+<li>多输入的转移函数：$y_t &#x3D; \sum_{j&#x3D;1}^{k} \nu_j(B) x_{j,t} +\frac{\theta(B)}{\phi(B)} a_t$，$x_{j,t}$ 互相独立可分别预白化计算 $\nu_j(B)$，否则需向量自回归</li>
+</ol>
+<h2 id="三、量化交易"><a href="#三、量化交易" class="headerlink" title="三、量化交易"></a>三、量化交易</h2>
                 
               </div>
             
