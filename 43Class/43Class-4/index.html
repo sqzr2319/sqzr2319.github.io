@@ -1,21 +1,21 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=auto>
+<html lang="zh-CN" data-default-color-scheme=light>
 
 
 
 <head>
   <meta charset="UTF-8">
 
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/sqzr2319.png">
-  <link rel="icon" href="/img/sqzr2319.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar-small.webp">
+  <link rel="icon" href="/img/avatar-small.webp">
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  <meta name="theme-color" content="#2f4154">
+  <meta name="theme-color" content="#f7f8f4">
   <meta name="author" content="sqzr2319">
   <meta name="keywords" content="">
   
@@ -47,8 +47,8 @@
 <meta property="article:published_time" content="2025-06-16T16:34:30.000Z">
 <meta property="article:modified_time" content="2025-06-18T13:08:13.324Z">
 <meta property="article:author" content="sqzr2319">
-<meta property="article:tag" content="数学">
 <meta property="article:tag" content="计算机">
+<meta property="article:tag" content="数学">
 <meta property="article:tag" content="肆叁小灶">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://sqzr2319.github.io/img/43Class-4/1.png">
@@ -89,11 +89,15 @@
 
 
 
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"sqzr2319.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"sqzr2319.github.io","root":"/","version":"1.9.8","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#527565","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -116,7 +120,6 @@
         {left: '\\[', right: '\\]', display: true}
       ]
     });"></script>
-    <link rel="stylesheet" href="/css/custom.css">
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
@@ -124,22 +127,25 @@
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
 
 
-<body>
+<body class="article-page">
+  <a class="skip-link" href="#board">跳转到内容</a>
   
 
   <header>
     
 
-<div class="header-inner" style="height: 70vh;">
+<div class="header-inner" style="height: 42vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
+      <span class="brand-symbol" aria-hidden="true">✳</span>
       <strong>sqzr2319</strong>
+      <span class="brand-caption">学习 · 记录 · 分享</span>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="展开导航菜单">
       <div class="animated-icon"><span></span><span></span><span></span></div>
     </button>
 
@@ -152,8 +158,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/" target="_self">
-                <i class="iconfont icon-home-fill"></i>
+              
+              <a class="nav-link "  href="/" target="_self">
+                
                 <span>首页</span>
               </a>
             </li>
@@ -164,8 +171,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/" target="_self">
-                <i class="iconfont icon-archive-fill"></i>
+              
+              <a class="nav-link "  href="/archives/" target="_self">
+                
                 <span>归档</span>
               </a>
             </li>
@@ -176,8 +184,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/" target="_self">
-                <i class="iconfont icon-category-fill"></i>
+              
+              <a class="nav-link "  href="/categories/" target="_self">
+                
                 <span>分类</span>
               </a>
             </li>
@@ -188,8 +197,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/" target="_self">
-                <i class="iconfont icon-tags-fill"></i>
+              
+              <a class="nav-link "  href="/tags/" target="_self">
+                
                 <span>标签</span>
               </a>
             </li>
@@ -200,8 +210,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/" target="_self">
-                <i class="iconfont icon-user-fill"></i>
+              
+              <a class="nav-link "  href="/about/" target="_self">
+                
                 <span>关于</span>
               </a>
             </li>
@@ -209,17 +220,17 @@
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              <i class="iconfont icon-search"></i>
-            </a>
+            <button class="nav-link nav-tool" type="button" data-toggle="modal" data-target="#modalSearch" aria-label="搜索文章" title="搜索文章">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg>
+            </button>
           </li>
           
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
-              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
-            </a>
+            <button class="nav-link nav-tool" type="button" aria-label="切换明暗主题" title="切换明暗主题">
+              <i class="iconfont icon-dark" id="color-toggle-icon" aria-hidden="true"></i>
+            </button>
           </li>
         
       </ul>
@@ -229,16 +240,17 @@
 
   
 
-<div id="banner" class="banner" parallax=true
+
+<div id="banner" class="banner" false
      style="background: url('/img/Planet.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
-    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.45)">
       <div class="banner-text text-center fade-in-up">
-        <div class="h2">
+        <h1 class="h2">
           
-            <span id="subtitle" data-typed-text="肆叁小灶第四讲 数据结构预备知识（上）"></span>
+            <span id="subtitle">肆叁小灶第四讲 数据结构预备知识（上）</span>
           
-        </div>
+        </h1>
 
         
           
@@ -248,7 +260,7 @@
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
         <time datetime="2025-06-17 00:34" pubdate>
-          2025年6月17日 凌晨
+          2025年06月17日
         </time>
       </span>
     
@@ -288,6 +300,7 @@
   </div>
 </div>
 
+
 </div>
 
   </header>
@@ -307,7 +320,6 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">肆叁小灶第四讲 数据结构预备知识（上）</h1>
             
             
               <div class="markdown-body">
@@ -428,9 +440,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E6%95%B0%E5%AD%A6/" class="print-no-link">#数学</a>
-      
         <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="print-no-link">#计算机</a>
+      
+        <a href="/tags/%E6%95%B0%E5%AD%A6/" class="print-no-link">#数学</a>
       
         <a href="/tags/%E8%82%86%E5%8F%81%E5%B0%8F%E7%81%B6/" class="print-no-link">#肆叁小灶</a>
       
@@ -604,19 +616,19 @@
     
 
     
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="search-title"
      aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+        <h4 id="search-title" class="modal-title w-100 font-weight-bold">搜索这座小花园</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="关闭搜索">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
+          <input type="search" id="local-search-input" class="form-control validate" placeholder="试试搜索算法、数学或课程名称" autocomplete="off">
           <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
@@ -632,6 +644,7 @@
 
   <footer>
     <div class="footer-inner">
+  <div class="footer-brand"><span aria-hidden="true">✳</span> sqzr2319<span class="footer-motto">愿群星于道路中寻见你。</span></div>
   
     <div class="footer-content">
        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
@@ -662,21 +675,6 @@
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-
-  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var subtitle = document.getElementById('subtitle');
-      if (!subtitle || !typing) {
-        return;
-      }
-      var text = subtitle.getAttribute('data-typed-text');
-      
-        typing(text);
-      
-    })(window, document);
-  </script>
 
 
 
@@ -784,6 +782,10 @@
   <script  src="/js/local-search.js" ></script>
 
 
+
+
+  
+<script src="/js/custom.js"></script>
 
 
 
